@@ -1,0 +1,954 @@
+---
+title: Batch Deployments
+deprecated: false
+hidden: false
+metadata:
+  title: Batch Deployments
+  description: Given a successful build, you can deploy your model as a batch application.
+  robots: index
+  legacyUUIDs:
+  - UUID-75a82642-5be8-5e27-1489-aee42b6f6880
+  - UUID-12d4c0e7-3bd3-f679-1303-c306f58f29df
+  - UUID-d07a4461-8a25-0063-eaea-f2499c725049
+  - UUID-25499b2d-d497-1322-368b-8be210e34367
+  - UUID-e83ba9c3-bcef-b30a-5e5e-2d8d47d8abcc
+  - UUID-17525b81-e83e-b999-cd33-7cbbe6cb9084
+  - UUID-a2de47d6-19af-2414-56bd-574a3c34ed8e
+  - UUID-38aa3c57-6473-a6a8-ed98-84a92a2332fc
+---
+
+Given a successful build, you can deploy your model as a batch application.
+
+This deployment type enables you to run batch inference executions in the system, and handle data files from an online cloud storage provider.
+
+## Deployment Configuration
+
+
+
+<Table>
+  <thead>
+    <tr>
+      <th>
+        Parameter
+      </th>
+      <th>
+        Description
+      </th>
+      <th>
+        Default Value
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Model ID [**Required**]
+      </td>
+      <td>
+        The Model ID, as displayed on the model header.
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Build ID [**Required**]
+      </td>
+      <td>
+        The JFrog ML-assigned build ID.
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Initial number of pods
+      </td>
+      <td>
+        The number of <Anchor label="k8s pods" href="https://kubernetes.io/docs/concepts/workloads/pods/" target="_blank">k8s pods</Anchor> to be used by the deployment. Each pod handles one or more files/tasks.
+      </td>
+      <td>
+        1
+      </td>
+    </tr>
+    <tr>
+      <td>
+        CPU fraction
+      </td>
+      <td>
+        The CPU fraction allocated to each pod. The CPU resource is measured in CPU units. One CPU, in JFrog ML, is equivalent to:
+        
+        1 AWS vCPU
+        
+        1 GCP Core
+        
+        1 Azure vCore
+        
+        1 Hyperthread on a bare-metal Intel processor with Hyperthreading
+      </td>
+      <td>
+        2
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Memory
+      </td>
+      <td>
+        The RAM memory (in MB) to allocate to each pod.
+      </td>
+      <td>
+        512
+      </td>
+    </tr>
+    <tr>
+      <td>
+        IAM role ARN
+      </td>
+      <td>
+        The user-provided AWS custom IAM role.
+      </td>
+      <td>
+        None
+      </td>
+    </tr>
+    <tr>
+      <td>
+        GPU Type
+      </td>
+      <td>
+        The GPU Type to use in the model deployment. Supported options are, NVIDIA K80, NVIDIA Tesla V100, NVIDIA T4 and NVIDIA A10.
+      </td>
+      <td>
+        None
+      </td>
+    </tr>
+    <tr>
+      <td>
+        GPU Amount
+      </td>
+      <td>
+        The number of GPUs available for the model deployment.
+        
+        Varies based on the selected GPU type.
+      </td>
+      <td>
+        Based on GPU Type
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Purchase Option
+      </td>
+      <td>
+        Choose between `on-demand` or `spot` instances for the batch executions.
+      </td>
+      <td>
+        None (spot)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Service Account Key Secret Name
+      </td>
+      <td>
+        The service account key secret name to reach Google cloud services.
+      </td>
+      <td>
+        None
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+
+
+## Batch Deployment from the UI
+
+To deploy a batch model from the UI:
+
+1. In the left navigation bar in the JFrog ML UI, select **Models** and select a model to deploy.
+2. Select the **Builds** tab. Find a build to deploy and click the deployment toggle. The **Deploy** dialog box appears.
+3. Select **Batch** and then select **Next**.
+
+## Batch Deployment from the CLI
+
+To deploy a model in batch mode from the CLI, populate the following command template:
+
+```
+frogml models deploy batch \
+    --model-id <model-id> \
+    --build-id <build-id> \
+    --pods <pods-count> \
+    --cpus <cpus-fraction> \
+    --memory <memory-size>
+```
+
+For example, for the model built in the [Get Started with JFrog ML](/docs/get-started-with-jfrog-ml "Get Started with JFrog ML") section, the deployment command is:
+
+```
+frogml models deploy batch \
+    --model-id churn_model \
+    --build-id 7121b796-5027-11ec-b97c-367dda8b746f \
+    --pods 4 \
+    --cpus 3 \
+    --memory 1024
+```
+
+## Storage-Based Execution
+
+The low-level API of the batch execution allows you to start and execution from a specific remote path, and write the results to another path.
+
+Each file in the input path is translated to a single unit of processing (a JFrog ML task). Each input file is read and passed as a single chunk to the model `predict` function.
+
+<Callout icon="⚠️" theme="warning">
+**Warning**
+
+***Task Processing***
+
+As the file is transformed to a single prediction request, you must ensure that the model is deployed on an instance with sufficient resources to handle the batch request.
+
+Where batch predictions are resource-heavy, consider splitting the input dataset into multiple smaller files.
+</Callout>
+
+
+#### Execution Configuration
+
+
+
+<Table>
+  <thead>
+    <tr>
+      <th>
+        Parameter
+      </th>
+      <th>
+        Description
+      </th>
+      <th>
+        Default Value
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Model ID [**Required**]
+      </td>
+      <td>
+        The Model ID, as displayed on the model header.
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Build ID
+      </td>
+      <td>
+        The JFrog ML-assigned build ID. You can optionally add this to use a different build in order to perform the execution.
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Bucket
+      </td>
+      <td>
+        The source and destination bucket. If you read and write to the same bucket, you can specify this, but it is not mandatory. Note: This parameter is **required** if 'Source Bucket' and 'Destination Bucket' are not set.
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Source bucket
+      </td>
+      <td>
+        The bucket from which the input files are read, to start an execution. Note: This parameter is **required** if 'Bucket' is not set.
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Destination bucket
+      </td>
+      <td>
+        The bucket into which the execution output files are written. Note: This parameter is **required** if 'Bucket' is not set.
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Source folder [**Required**]
+      </td>
+      <td>
+        The path to the source bucket where all the inference files are located.
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Destination Folder [**Required**]
+      </td>
+      <td>
+        The path to the destination bucket where the result files are stored.
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Input File Type
+      </td>
+      <td>
+        The file types supported by JFrog ML. The supported formats are: CSV, Parquet and Feather.
+      </td>
+      <td>
+        CSV
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Output File Type
+      </td>
+      <td>
+        The types of the files stored by JFrog ML. The supported formats are: CSV, Parquet and Feather.
+      </td>
+      <td>
+        CSV
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Access Token Name
+      </td>
+      <td>
+        The name of the secret (created using our Secret Service) that contains the Access Token with permission to the source and destination buckets.
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Access Secret Name
+      </td>
+      <td>
+        The name of the secret (created using our Secret Service) that contains the Access Secret with permission to the source and destination buckets.
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Job Timeout
+      </td>
+      <td>
+        The job timeout, in seconds. By setting the job timeout, you will limit the execution time, and it will fail if not completed in time.
+      </td>
+      <td>
+        0 - No Timeout
+      </td>
+    </tr>
+    <tr>
+      <td>
+        File Timeout
+      </td>
+      <td>
+        A single file timeout, in seconds. Setting this will limit the processing time for a single file, and fail the entire execution if one of the files does not finish in time.
+      </td>
+      <td>
+        0 - No Timeout
+      </td>
+    </tr>
+    <tr>
+      <td>
+        IAM role ARN
+      </td>
+      <td>
+        The user-provided AWS custom IAM role.
+      </td>
+      <td>
+        None
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Pods
+      </td>
+      <td>
+        The number of <Anchor label="k8s pods" href="https://kubernetes.io/docs/concepts/workloads/pods/" target="_blank">k8s pods</Anchor> which will be used at batch inference time. Number of pods sets the maximum parallelism for an inference job. Each pod handles one or more files/tasks. This configuration takes precedence over the deployed model configuration.
+      </td>
+      <td>
+        The number of executors/pods defined in the deployment.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Instance
+      </td>
+      <td>
+        The relevant [Instance](/docs/instance-sizes-ml-credits#general-purpose-instances) to run the batch operation.
+      </td>
+      <td>
+        Small
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Parameters
+      </td>
+      <td>
+        A list of parameters expressed as key-value pairs which will be passed to the execution request. The parameters are passed to the inference container as **environment variables**.
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        service account key secret name
+      </td>
+      <td>
+        Gcp service account key name to reach google cloud provider.
+      </td>
+      <td>
+        None
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+
+
+#### Running Batch Execution Using S3 Buckets
+
+Currently, only **S3** buckets situated in the region configured for your JFrog ML environment are compatible as sources for input / output paths.
+
+If you intend to employ a different IAM Role ARN to grant permissions to an S3 location, you must include the provided trust policy. For customized parameters, please reach out to our support team.
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "Federated": "arn:aws:iam::<AWS_ACCOUNT_ID>:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/<OIDC_EKS_CLUSTER_ID>"
+            },
+            "Action": "sts:AssumeRoleWithWebIdentity",
+            "Condition": {
+                "StringEquals": {
+                    "oidc.eks.us-east-1.amazonaws.com/id/<OIDC_PROVIDER_EKS_CLUSTER_ID>:aud": "sts.amazonaws.com"
+                },
+                "ForAnyValue:StringEquals": {
+                    "oidc.eks.us-east-1.amazonaws.com/id/<OIDC_PROVIDER_EKS_CLUSTER_ID>:sub": [
+                        "system:serviceaccount:qwak:kube-deployment-captain-access"
+                    ]
+                }
+            }
+        }
+    ]
+}
+```
+
+#### Using Custom AWS IAM Role
+
+Custom IAM Role allow access to both private buckets and source / destination folders. Provide the custom IAM role name when calling a batch execution.
+
+The IAM role should be created with the following trust policy:
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::<account-id>:root"
+      },
+      "Action": "sts:AssumeRole",
+      "Condition": {
+        "ArnLike": {
+          "aws:PrincipalArn": "arn:aws:iam::<account-id>:role/qwak-eks-base*"
+        }
+      }
+    }
+  ]
+}
+```
+
+#### Batch Execution
+
+To start an execution from the SDK, use the following command:
+
+```
+from frogml.core.clients.batch_job_management.client import BatchJobManagerClient
+from frogml.core.clients.batch_job_management.results import StartExecutionResult
+from frogml.core.clients.batch_job_management.executions_config import ExecutionConfig
+
+// The execution configuration
+execution_spec = ExecutionConfig.Execution(
+    model_id=<model-id>,
+    source_bucket=<source-bucket-name>,
+    destination_bucket=<destination-bucket-name>,
+    source_folder=<source-folder-path>,
+    destination_folder=<destination-folder-path>,
+    input_file_type=<input-file-type>,
+    output_file_type=<output-file-type>,
+    access_token_name=<access_token_name>,
+    access_secret_name=<access-secret-name>,
+    job_timeout=<job-timeout>,
+    file_timeout=<file-timeout>,
+    parameters=<dictionary of user provided paramaters>
+)
+
+resources_config = ExecutionConfig.Resources(
+    pods=<number-of-pods>,
+    instance=<instance-type>,
+)
+
+execution_config = ExecutionConfig(execution=execution_spec, resources=resources_config)
+batch_job_manager_client = BatchJobManagerClient()
+
+execution_result: StartExecutionResult = batch_job_manager_client.start_execution(execution_config)
+execution_id = execution_result.execution_id
+```
+
+```
+frogml models execution start \                                                                                                                             TERM ✘  8m 34s   base   12:58:22 
+    --model-id <model-id> \
+    --source-bucket <source-bucket-name> \
+    --source-folder <source-folder-path> \
+    --destination-bucket <destination-bucket-name> \    
+    --destination-folder <destination-folder-path> \
+    --input-file-type <input-file-type> \
+    --output-file-type <output-file-type> \
+    --access-token-name <buckets-access-token-secret-name> \
+    --access-secret-name <buckets-access-secret-secret-name> \
+    --job-timeout <entire-job-timeout-in-seconds> \
+    --file-timeout <single-file-timeout-in-seconds> \
+    --pods <pods-count> \
+    --cpus <cpus-fraction> \
+    --memory <memory-size> \
+    --build-id <alternate-build-id>
+```
+
+Here is a simplified version with all the default values:
+
+```
+from frogml.core.clients.batch_job_management.client import BatchJobManagerClient
+from frogml.core.clients.batch_job_management.results import StartExecutionResult
+from frogml.core.clients.batch_job_management.executions_config import ExecutionConfig
+
+// The execution configuration
+execution_spec = ExecutionConfig.Execution(
+    model_id=<model-id>,
+    bucket=<bucket-name>,
+    destination_bucket=<destination-bucket-name>,
+    source_folder=<source-folder-path>,
+    destination_folder=<destination-folder-path>,
+    access_token_name=<access_token_name>,
+    access_secret_name=<access-secret-name>
+)
+
+execution_config = ExecutionConfig(execution=execution_spec)
+batch_job_manager_client = BatchJobManagerClient()
+
+execution_result: StartExecutionResult = batch_job_manager_client.start_execution(execution_config)
+execution_id = execution_result.execution_id
+```
+
+```
+frogml models execution start \                                                                                                                             TERM ✘  8m 34s   base   12:58:22 
+    --model-id <model-id> \
+    --bucket <bucket-name> \
+    --source-folder <source-folder-path> \
+    --destination-folder <destination-folder-path> \
+    --access-token-name <buckets-access-token-secret-name> \
+    --access-secret-name <buckets-access-secret-secret-name>
+```
+
+#### Batch Job Parallelism
+
+Note that every file in the given input path is considered a task. A task is the main unit of parallelism for a batch execution job.
+
+For example, if five pods are requested during the batch execution (whether specified by the deployment or in the batch execution job itself), and 10 files need to processed, five files (or tasks) are executed in parallel, out of the 10 tasks that comprise the batch job.
+
+For this reason, there is no point in requesting more pods than the number of files which need to be processed.
+
+<Callout icon="📘" theme="info">
+**Note**
+
+***Concurrent Executions***
+
+You can run multiple executions, concurrently. The only limitation is not running executions with identical values for the following parameters:
+
+1. Model ID
+2. Build ID
+3. Source Bucket
+4. Source Folder
+5. Destination Bucket
+6. Destination Folder
+
+The assumption is that running two executions with the same parameters, is redundant.
+</Callout>
+
+
+#### Switching Between On-demand and Spot Instances
+
+It is possible to choose a specific instance type per batch execution, overriding the configuration stated at the currently deployed models.
+
+By providing the purchase option as advanced options, you may choose the instance type for a specific batch execution.
+
+When not providing a specific option, the option stated in the currently deployed build will be taken.
+
+```
+from frogml.core.clients.batch_job_management.executions_config import ExecutionConfig
+
+# Using an on-demand instance for this execution
+execution_spec = ExecutionConfig.Execution(
+    ...
+    advanced_options=ExecutionConfig.AdvancedOptions(
+      purchase_option="on-demand",
+    )
+)
+
+# Using an spot instance for this execution
+execution_spec = ExecutionConfig.Execution(
+    ...
+    advanced_options=ExecutionConfig.AdvancedOptions(
+      purchase_option="spot",
+    )
+)
+```
+
+#### Local File Mode
+
+It's also possible to run a batch execution using files stored locally.
+
+#### SDK
+
+The local file mode can be started by either using the `local_file_run` function from the `BatchInferenceClient`:
+
+```
+from frogml_inference.batch_client.batch_client import BatchInferenceClient
+
+client = BatchInferenceClient()
+
+client.local_file_run(
+  model_id=...,
+  source_folder=...,
+  destination_folder=...,
+  input_file_type=...,
+  output_file_type=...,
+  job_timeout=...,
+  task_timeout=...,
+  executors=...,
+  instance=...,
+  iam_role_arn=...,
+  build_id=...,
+  parameters=...,
+  instance=...,
+)
+```
+
+Parameters have the same meaning as in the execution configuration above. The source folder and the destination folder must start with `file://` prefix.
+
+It's also required to provide the input file type that will be used to select files from the source folder (by file extension).
+
+<Callout icon="❗️" theme="error">
+**Important**
+
+***Local File Mode Parameters***
+
+Remember that the source and destination folder paths MUST start with the `file://` prefix.
+
+`model_id`, `source_folder`, `destination_folder`, and `input_file_type` are required parameters.
+</Callout>
+
+<Callout icon="❗️" theme="error">
+**Important**
+
+***Dependencies***
+
+The local file mode requires additional dependencies that can be installed using `pip install "frogml-inference[batch,feedback]"`
+
+If the dependencies are missing, the SDK will display the following error: `Notice that BatchInferenceClient and FeedbackClient are not available in the skinny package. In order to use them, please install them as extras: pip install "frogml-inference[batch,feedback]"`.
+</Callout>
+
+<Callout icon="⚠️" theme="warning">
+**Warning**
+
+***Output Directory***
+
+If the destination directory doesn't exist, it will be created.
+
+If the destination directory exists and contains files with the same names as the ones created by the batch job, those files **WILL BE OVERWRITTEN**!
+</Callout>
+
+
+#### CLI
+
+Alternatively, we can run the same local file mode using the CLI.
+
+In this case, we run the `frogml models execution start` command with the source folder and destination folder beginning with the `file://` prefix.
+
+The meaning of other parameters is the same as in the execution configuration above. The local file mode started with CLI requires the same parameters and dependencies as the local file mode started with an SDK. See the warnings above.
+
+Example: `frogml models execution start --model-id the_model_id --source-folder file://path_to_a_directory --destination-folder file://path_to_output_directory --input-file-type csv` .
+
+#### REST API
+
+Use the following curl command template to send requests to the Batch Job Manager. Replace `<your-environment>` with the name of your account, which can be found in the bottom left corner of the JFrog ML Dashboard, and fill in the batch job details as per your needs.
+
+```
+curl --location --request POST '[https://grpc.](https://grpc.)<your-environment>.qwak.ai/api/v1/batch-job/start-job'  
+--header 'Content-Type: application/json'  
+--header "Authorization: Bearer $JFROG_TOKEN"  
+--data '{
+    "model_id": "<your_model_id>",
+    "source_bucket": "...",
+    "destination_bucket": "...",
+    "source_folder": "batch_execution/my_model/input",
+    "destination_folder": "batch_execution/my_model/output",
+    "batch_job_deployment_size": {
+        "number_of_pods": 4,
+        "cpu": 1.0,
+        "memory_amount": 512,
+        "memory_units": "MIB"
+    },
+    "input_file_type": "PARQUET_INPUT_FILE_TYPE",
+    "output_file_type": "PARQUET_OUTPUT_FILE_TYPE",
+    "advanced_deployment_options": {
+        "custom_iam_role_arn": "..."}
+}'
+```
+
+Ensure the header is enclosed in double quotes (") when passing the `JFROG_TOKEN` as an environment variable.
+
+**Example Output:**
+
+```
+{
+  "batch_id": "<some_execution_id>",
+  "success": true,
+  "failure_message": ""
+}
+```
+
+<Callout icon="📘" theme="info">
+**Note**
+
+Before executing the curl command, ensure the `JFROG_TOKEN` environment variable is correctly set in your terminal with the value of your generated JFrog ML Token. This step is crucial for authenticating your requests to the JFrog ML Platform.
+</Callout>
+
+## DataFrame Execution
+
+The DataFrame-based execution allows you to execute a batch job on an input Pandas DataFrame, and receive an output DataFrame back.
+
+This process is useful when you're predicting inside a notebook or as part of another process that already has a DataFrame ready. Behind the scenes, we take the DataFrame, transform it, upload the files to the cloud, and run the execution for you, waiting for a successful response.
+
+<Callout icon="❗️" theme="error">
+**Important**
+
+***Output Row Order***
+
+The order of the results DataFrame is not guaranteed to be in the order of the input DataFrame. If the ordering is critical, consider adding a column you can sort on in the results DataFrame.
+</Callout>
+
+
+#### Installing the `frogml-inference` SDK
+
+To enable batch processing of data from your local computer using Python Dataframes with the `frogml-inference` client, you need to install additional libraries that are not included by default in the client. Therefore, it is necessary to install the `[batch]` version of the package to ensure the successful execution of data batches.
+
+```
+pip install frogml-inference[batch]
+```
+
+#### Execution Example
+
+```
+from frogml_inference import BatchInferenceClient
+
+# You can also set the FROG_MODEL_ID environment variable instead of passing it
+batch_inference_client = BatchInferenceClient(model_id=<model-id>)
+
+# You should pass the DataFrame and batch size, and the others will use the deployed configuration
+result_df = batch_inference_client.run(
+    df, # mandatory
+    batch_size=<number-of-records-in-each-batch>, # mandatory
+    executors=<number-of-pods>,
+    instance=<instance-type>,
+    iam_role_arn=<custom-iam-role>,
+    parameters=<parameters>)
+```
+
+#### Batch Job Parallelism
+
+Behind the scenes, JFrog ML's batch processing [low level](/docs/storage-based-execution "Storage-Based Execution") API is used.
+
+JFrog ML splits the requested `df` into tasks according to the batch size, and the size of the requested `df`. For example, if the requested `df` has **1000** rows, and the requested batch size is **50**, then **20** FrogML tasks are executed as part of the batch job.
+
+The parallelism, that is, how many tasks are running in parallel, is controlled by the `executors` parameter. For example, if the `executors` parameter is set to **5**, then FrogML launches **20** tasks, with **5** tasks running in parallel.
+
+Code example:
+
+```
+import pandas as pd
+import numpy as np
+from frogml_inference import BatchInferenceClient
+
+# DF with a 1000 rows
+batch_df = pd.DataFrame(np.random.randint(0,10, size=(1000,2)))
+
+batch_inference_client = BatchInferenceClient(model_id="test_model")
+
+# Will launch 20 tasks in general, where 5 run in parallel
+result_df = batch_inference_client.run(
+    df=batch_df,
+    batch_size=50,
+    executors=5,
+    instance="small",
+    parameters={"attribute": "customer_a"},
+)
+```
+
+The provided parameters will be available as **environment variables**, and can be accessed as in the following example:
+
+```
+import os
+import frogml
+import pandas as pd
+
+@frogml.api()
+def predict(self, df):
+    attribute = os.getenv("attribute", "default_customer"))
+
+    df = df.drop([attribute], axis=1)
+    return pd.DataFrame(self.catboost.predict_proba(df)[:, 1], columns=['Churn_Probability'])
+```
+
+## Batch Execution Management
+
+See that various commands that help you manage and track the execution status of your batch models.
+
+#### Getting Batch Execution Status
+
+To check the current status of an execution, use the following command:
+
+```
+frogml models execution status --execution-id <execution-id>
+```
+
+```
+from frogml.core.clients.batch_job_management.client import BatchJobManagerClient
+from frogml.core.clients.batch_job_management.results import ExecutionStatusResult
+
+batch_job_manager_client = BatchJobManagerClient()
+status_response: ExecutionStatusResult = batch_job_manager_client.get_execution_status("<execution-id>")
+status = status_response.status
+```
+
+The `execution_id` is returned when an execution is created, and is also visible in the UI.
+
+#### Cancelling a Batch Execution
+
+To cancel an execution, use the following command:
+
+```
+frogml models execution cancel --execution-id <execution-id>
+```
+
+```
+from frogml.core.clients.batch_job_management.client import BatchJobManagerClient
+
+batch_job_manager_client = BatchJobManagerClient()
+batch_job_manager_client.cancel_execution("<execution-id>")
+```
+
+#### Using Warmup
+
+In some cases, the execution is a single step in a larger workflow orchestration. If the speed of execution is critical, use the warmup option.
+
+The warmup option allows you to allocate the resources for execution before the execution starts. The resources are raised and kept running until the execution itself starts. This is especially relevant when a lot of resources are needed, or when reducing the running time by even 5 minutes is critical.
+
+Low-level API
+
+```
+from frogml.core.clients.batch_job_management.client import BatchJobManagerClient
+from frogml.core.clients.batch_job_management.executions_config import ExecutionConfig
+
+# execution configuration
+execution_spec = ExecutionConfig.Execution(
+    model_id=<model-id>,
+    bucket=<bucket-name>,
+    destination_bucket=<destination-bucket-name>,
+    source_folder=<source-folder-path>,
+    destination_folder=<destination-folder-path>,
+    access_token_name=<access_token_name>,
+    access_secret_name=<access-secret-name>,
+    build_id=<alternate-build-id>
+)
+
+warmup_spec = ExecutionConfig.Warmup(
+    timeout=0 # warmup timeout in seconds
+)
+
+batch_job_manager_client = BatchJobManagerClient()
+
+execution_config = ExecutionConfig(execution=execution_spec, warmup=warmup_spec)
+batch_job_manager_client = BatchJobManagerClient()
+batch_job_manager_client.start_warmup_job(execution_config)
+```
+
+DF API
+
+```
+from frogml_inference.batch_client.batch_client import BatchInferenceClient
+
+# You can also set FROGML_MODEL_ID environment variable instead of passing it
+batch_inference_client = BatchInferenceClient(model_id="<model-id>")
+
+batch_inference_client.warmup(
+    executors=<number-of-pods>,
+    cpus=<number-of-cpus>,
+    memory=<memory-amount>,
+    timeout=<timeout-for-warmup>,
+    build_id=<alternate-build-id>)
+```
+
+#### Troubleshooting
+
+For each execution there are two types of logs.
+
+1. **Execution Report**: Contains the initial request, status updates, as well as the cancel and failed requests.
+2. **Model Logs**: These are available once the execution advances to the stage during which the files are processed.
+
+To view both log types, use the following command:
+
+```
+frogml models execution report --execution-id <execution-id>
+```
+
+```
+from frogml.core.clients.batch_job_management.client import BatchJobManagerClient
+from frogml.core.clients.batch_job_management.results import GetExecutionReportResult
+
+execution_report: GetExecutionReportResult = batch_job_manager_client.get_execution_report(<execution-id>)
+report_records = execution_report.records
+model_logs = execution_report.model_logs
+```
+
+In some cases you might want to output logs from the model itself in order to better understand the model processing behavior. In order to make the logs available, you need to use the JFrog ML Logger in your model's code.
+
+```
+from frogml.core.tools.logger import get_frogml_logger
+
+logger = get_frogml_logger()
+
+logger.info("your message here")
+```

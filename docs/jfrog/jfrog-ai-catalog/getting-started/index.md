@@ -1,0 +1,103 @@
+---
+title: Getting Started
+deprecated: false
+hidden: false
+metadata:
+  title: Getting Started
+  description: 'Once you have set up your JFrog ML account and your AI catalog entitlement,
+    all you need to do to start allowing models is follow these simple steps:'
+  robots: index
+  legacyUUIDs:
+  - UUID-b67e32b5-672a-1774-5aae-edf70ab6a2a4
+  - UUID-622ac15d-69f5-5745-e323-4a476ff55b0e
+  - UUID-622ac15d-69f5-5745-e323-4a476ff55b0e_UUID-ea3a6fcc-67be-f602-cb97-abb587ec9cd0
+  - UUID-220fcfe1-76a3-d592-77fe-ab422c8067b1
+  - UUID-4771c876-6465-e8a5-841a-169aeb05ceed
+  - UUID-4771c876-6465-e8a5-841a-169aeb05ceed_UUID-a5e35879-2d88-5f0f-b9cc-ad2df4eacaf5
+---
+
+Once you have set up your JFrog ML account and your AI catalog entitlement, all you need to do to start allowing models is follow these simple steps:
+
+## Workflow for Using the AI Catalog
+
+![AIWORKFLOW1HORIZONTAL2.png](../image/uuid-828e705f-fb86-8866-f036-653a28178d36.png)
+
+### Access the AI Catalog
+
+From the JFrog Platform menu, navigate to **AI/ML** > **Models** to open the AI Catalog.
+
+The AI Catalog has three main tabs:
+
+* **Registry:** This is the default view. It lists the models approved for use in your organization. If you are a new user, this tab is empty until models are approved.
+* **Discovery:** Explore all available models provided by approved (supported) providers that you can review and approve for use.
+* **Detection:** View and manage all package* type models found in your organization’s artifacts as scanned by JFrog Xray.
+
+To explore all available models, switch to the **Discovery** tab. This tab displays the full list of models that can be reviewed and allowed for use within your organization.
+
+![discovery_callouts_new.png](../image/uuid-b8bdfc28-e136-b233-92ad-7dc8947fb882.png) 
+<Callout icon="📘" theme="info">
+**Note**
+
+* While all users can consume allowed models, only Admin level users have the permission to decide which models are allowed for use within your organization.
+* By default, on first use, no models have been allowed.
+</Callout>
+
+
+### Finding Your First Model
+
+Since the **Registry** tab is empty on first use, your first action is to switch to the **Discovery** tab. Browse the comprehensive catalog of external APIs, model packages, and your own custom models to discover the best fits for your project requirements.
+
+Use the [**Filter & Search**](/docs/discover-and-allow-models) functionality to quickly pinpoint the most suitable models.
+
+The JFrog platform automatically scans each model for vulnerabilities, and offers transparent license information to help you avoid compliance issues.".
+
+![modeldetails.png](../image/uuid-e38f6c34-b8b8-e8ea-f30b-5ce210887d4f.png) 
+<Callout icon="📘" theme="info">
+**Note**
+
+Even if your AI Catalog is empty, that does not mean your organization is not using any models. It maybe be using unmanaged models. Using the Shadow AI detection feature, which uses Xray to scan your JFrog artifacts, you can detect which models are already being used, and manage them in the AI Catalog.
+</Callout>
+
+
+### Allow Models
+
+Next, governance becomes straightforward and effective. Admin users can easily allow models (from the [Discovery](/docs/discover-and-allow-models "Discover and Allow Models") tab) for secure use within your organization. Models can be approved on a per-project basis, with a comprehensive list of allowed models available on the *[Registry (allowed models)](/docs/discover-and-allow-models "Discover and Allow Models")* tab.
+
+![registry.png](../image/uuid-9a9ffa87-6cb7-5559-4d09-332db660a3dc.png)
+
+You can create an allow-list of models, ensuring that if a model is not on the list, it cannot be used, thereby preventing unvetted models from entering your supply chain.
+
+### Using an Allowed Model
+
+Once a model has been successfully allowed in a project, it moves into the **Registry** tab and is ready for use. The steps for model consumption vary depending on the model type (Package or External API).
+
+![usinganallowedmodel_new.png](../image/uuid-97c3e7f7-146f-bd6f-6b8f-bf743f340714.png)
+
+See: [Allow Your First Model](/docs/allow-your-first-model "Allow Your First Model") | [Discover and Allow Models](/docs/discover-and-allow-models "Discover and Allow Models") | [Get Started with JFrog ML](/docs/get-started-with-jfrog-ml "Get Started with JFrog ML")
+
+## Set Up Curation Settings for Model Packages
+
+This procedure outlines the **prerequisite steps** to enable the use of **model packages** on your platform. Specifically, it involves configuring the curation settings in the administration module.
+
+**To set up curation settings for model packages:**
+
+1. Navigate to the curation settings: Select **Administration** > **Curation Settings** > **General**.
+2. Toggle the **Curation On** switch to **ON**.
+
+   ![generalcurationsettings.png](../../image/uuid-0ba2785a-f59a-4165-4377-d92a96a8bc51.png)
+3. Click **Enable repositories** to navigate to the *Remote Repositories* page.
+4. Verify the **PackageType**. Ensure that HuggingFaceML is toggled **ON**
+
+   ![enable_package_type.png](../../image/uuid-c4e98f40-913f-b505-7bb7-427a0bec44bf.png)
+5. Click the package type row to view the package type's repositories.
+6. Make sure all the repositories in the package type are also enabled. If any are not enabled, a notification is shown at the top, for example, "*Connect package type status: Partially Connected*".
+
+The prerequisite Curation Settings setup is now complete. If required, you can now return to your model page in the AI Catalog, and continue to enable use of your open source model.
+
+<Callout icon="❗️" theme="error">
+**Important**
+
+Failure to activate these curation settings may result in the following error when attempting to add a model package. To resolve this error, ensure both settings are activated as described.
+
+![curationerror.png](../../image/uuid-96821bba-e102-d87a-fa81-0d0dc9df5e09.png) 
+</Callout>
