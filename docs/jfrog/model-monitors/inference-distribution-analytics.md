@@ -29,17 +29,17 @@ Distribution is being charted both on inference-only data, as well as comparing 
 
 In order to compare **inference** data with **training** data please select the relevant build from `Build ID` in the UI and the relevant Dataframe that was previously logged and tagged, under the`Data tag` dropdown.
 
-![UI for selecting build and data tag for comparison.](../image/uuid-e4526ebd-2416-2638-3df5-4fde40c0b7c5.png)
+![UI for selecting build and data tag for comparison.](https://files.readme.io/830e833fbc6f40e146111ee266f3c79a3272dae24f0fabd507cfa72eca7c2960-uuid-e4526ebd-2416-2638-3df5-4fde40c0b7c5.png)
 
 **Example Dashboard:**
 
-![real-time-churn-model.png](../image/uuid-a2247c18-8207-3f93-4d7f-8673676976f7.png)
+![real-time-churn-model.png](https://files.readme.io/309e3cbb9fc60efc0143aa48cd4a2952e9eaec6ec54cbb3155c0ed054a59cd4a-uuid-a2247c18-8207-3f93-4d7f-8673676976f7.png)
 
 ### Inference-Only Data
 
 **Example Dashboard:**
 
-![inference-only-data.png](../image/uuid-870a011b-ff84-e58c-9a8d-99f9117e1947.png)
+![inference-only-data.png](https://files.readme.io/40d6f6054d42dfee83ebca181da432858e7ddb04bc3a6cdbe3f5da37169c32b3-uuid-870a011b-ff84-e58c-9a8d-99f9117e1947.png)
 
 ### Available Statistics
 

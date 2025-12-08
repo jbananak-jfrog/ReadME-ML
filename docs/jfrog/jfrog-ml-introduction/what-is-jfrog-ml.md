@@ -14,7 +14,7 @@ JFrog ML simplifies the process of building, deploying, and monitoring machine l
 
 The image below shows the entire ML model lifecycle from research to production.
 
-![JFrog ML platform overview](../image/uuid-593a04bd-f54d-8c1b-8702-5291c546c32d.png)
+![JFrog ML platform overview](https://files.readme.io/581df9b88feda60fe172d526e7da2416b26d5d092552cd1e7ffdabfcb9d9a848-uuid-593a04bd-f54d-8c1b-8702-5291c546c32d.png)
 
 Use JFrog ML to build and manage the entire machine learning lifecycle. Easily prepare data, build, train, and deploy models, and monitor and automate your pipelines, all in one place.
 

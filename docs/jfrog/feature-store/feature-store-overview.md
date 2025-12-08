@@ -79,4 +79,4 @@ JFrog ML's Feature Store systematically ensures that there are no discrepancies 
 
 * **Inference**: Serve the most up-to-date feature values for a given Key from one centralized location.
 * **Training**: Keep a log of all features, and then retrieve them for training, at any point in time.
-![feature-store-materialization.png](../image/uuid-a4086297-addb-f7cd-8da2-7eba66c0b28d.png)
+![feature-store-materialization.png](https://files.readme.io/3191aa9a6d43358c0cc5787e3b132616e49b3d97989883893276da4c0d996d13-uuid-a4086297-addb-f7cd-8da2-7eba66c0b28d.png)

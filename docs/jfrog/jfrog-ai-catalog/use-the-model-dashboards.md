@@ -21,7 +21,7 @@ There are two dashboards:
 
 This section describes the model dashboard for models that have been allowed, but that are not deployed.
 
-![modeldashboard.png](../image/uuid-77f9b35c-94e6-6893-516a-e4b0f63f54cf.png)
+![modeldashboard.png](https://files.readme.io/d617d3968c9e7b6abb6eb1e36d0cee8c25fb9cce1bc822f7d7a8cbcada4b9f93-uuid-77f9b35c-94e6-6893-516a-e4b0f63f54cf.png)
 
 Note that the dashboard only shows data when there is traffic.
 
@@ -169,7 +169,7 @@ Note that the dashboard only shows data when there is traffic.
 
 This section describes the model dashboard for models that are already deployed.
 
-![deployed models dashboard](../image/uuid-08cba23a-9fb9-9140-d949-e1f4cbf25271.png)
+![deployed models dashboard](https://files.readme.io/c194d1977b77cbc482ab8f97d94263f13d54502c42a1296da3622df30069ed8c-uuid-08cba23a-9fb9-9140-d949-e1f4cbf25271.png)
 
 <Table>
   <thead>

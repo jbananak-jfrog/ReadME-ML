@@ -14,7 +14,7 @@ metadata:
 
 This diagram shows how JFrog's AI Catalog works together with the various components of the JFrog platform.
 
-![Screenshot_2025-08-27_at_17_44_07.png](../image/uuid-473ad575-fe34-030c-84c5-912146a9361b.png)
+![Screenshot_2025-08-27_at_17_44_07.png](https://files.readme.io/706b0ee87658aaef28f0b7a864287393f0fc4075767077bb709cadf83ab51202-uuid-473ad575-fe34-030c-84c5-912146a9361b.png)
 
 With a focus on governance and compliance, the AI Catalog ensures that you can access all necessary models while maintaining the security of your operations.
 

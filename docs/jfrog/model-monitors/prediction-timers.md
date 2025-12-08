@@ -16,7 +16,7 @@ Configure multiple timers with custom names for clear visibility using either a 
 
 After building, deploying and sending inference requests to your model, you can view these timers on the Latency breakdown graph.
 
-![See the Qwak prediction timer in the Model Overview](../image/uuid-b4fc091d-9e12-c102-6abe-0fcecf365f79.png)
+![See the Qwak prediction timer in the Model Overview](https://files.readme.io/7d5d9d764abbadd5142a14b9c4caa744b9e1cf934809920571cdaa25a60873c8-uuid-b4fc091d-9e12-c102-6abe-0fcecf365f79.png)
 
 See the JFrog ML prediction timer in the Model Overview
 

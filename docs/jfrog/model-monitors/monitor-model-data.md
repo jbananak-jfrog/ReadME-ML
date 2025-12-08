@@ -22,7 +22,7 @@ JFrog ML model monitoring helps you to track selected model inputs and outputs, 
 Model monitoring is currently in beta phase, and is being actively developed and refined. We're continuously working to improve features and performance based on valuable user feedback.
 </Callout>
 
-![Model Monitoring Overview](../image/uuid-e4d616bc-fdd0-ad78-bd7b-580f79703e47.png)
+![Model Monitoring Overview](https://files.readme.io/ed137ab2d64086c63e66de2fa84a2c87563f4ede2d3d8e3473f6154ad6a5ae04-uuid-e4d616bc-fdd0-ad78-bd7b-580f79703e47.png)
 
 ### Monitoring KL Divergence
 
@@ -37,7 +37,7 @@ KL divergence measures the difference between the probability distributions of t
 
 ### Creating KL Divergence Monitors
 
-![Creating a KL divergence monitor](../image/uuid-89238b2d-0682-02eb-d460-88ad44e2557f.png)
+![Creating a KL divergence monitor](https://files.readme.io/0114af8d8b372afeafe8f8715936bc3e1b5c24705b713761061e919b17eaa8d2-uuid-89238b2d-0682-02eb-d460-88ad44e2557f.png)
 
 Creating a new model monitor can be done in several simple steps:
 
@@ -50,7 +50,7 @@ Creating a new model monitor can be done in several simple steps:
 7. **Preview Monitor Data:** Click 'Preview' to see the monitor data before defining the alert threshold.
 8. **Set Alert Parameters:** Specify the criteria for triggering alerts. Define the threshold and conditions for triggering a monitoring alert.
 9. **Configure Alert Channels:** Decide which Slack channels will received the monitoring alerts.
-![Monitor configuration details](../image/uuid-aa2f0546-b478-1178-53d2-65776e1c24a1.png)
+![Monitor configuration details](https://files.readme.io/d9841e9b4dc3de72988d18a89a61523093e9990a7e8625e77e1c3a72a8da3a27-uuid-aa2f0546-b478-1178-53d2-65776e1c24a1.png)
 
 ### Using build-based baseline
 
@@ -69,13 +69,13 @@ Tagging data sets is done by using: `frogml.log_data(dataframe=df, tag="train_da
 KL divergence calculation cannot use builds without logged data sets.
 </Callout>
 
-![Selecting a build-based baseline](../image/uuid-cf1570c6-b4a9-8e11-91aa-6c9bf5f2f9e9.png)
+![Selecting a build-based baseline](https://files.readme.io/286def2188cf95ac0cbdba96dee4f1cd2c46766fc555f48226a789da62b20dad-uuid-cf1570c6-b4a9-8e11-91aa-6c9bf5f2f9e9.png)
 
 ### Using Static Baseline
 
 A static baseline defines the timeframe with which KL divergence data will be calculated. The system takes as reference all the received values during this time period and will calculate KL divergence against it.
 
-![Selecting a static baseline](../image/uuid-fdab6159-0b57-6856-8e4f-df1f93d809e0.png)
+![Selecting a static baseline](https://files.readme.io/1c8e19a7187f8482fd217c0113e754827b1201f2bdca616bcb5c5ba2b2dbb0ca-uuid-fdab6159-0b57-6856-8e4f-df1f93d809e0.png)
 
 ### Using Sliding Window Baseline
 
@@ -83,7 +83,7 @@ Sliding window is measured in minutes, and specifies the length of the sliding w
 
 The default sliding window size is 60 minutes.
 
-![Selecting a sliding window baseline](../image/uuid-2f47b69a-9e60-2373-c5f3-136fead37d04.png)
+![Selecting a sliding window baseline](https://files.readme.io/8881991d286109f8ebabcdc4b82866f7a4e1dcb2b344694fce4ae271c2f33711-uuid-2f47b69a-9e60-2373-c5f3-136fead37d04.png)
 
 ### Monitoring Null Percentage
 
@@ -93,7 +93,7 @@ Missing values are common, and monitoring their occurrence can be crucial for en
 
 Configuring null percentage monitors is simpler compared to KL divergence monitors, as the only required parameter is the dimension you wish to monitor.
 
-![Configuring a null percentage monitor](../image/uuid-2032bd06-a23f-c76c-1014-5e324c3a5bfe.png)
+![Configuring a null percentage monitor](https://files.readme.io/4ef620b585bd5780496ed912eb44ca1f79e14b3c009c175dec8dd5754d2872de-uuid-2032bd06-a23f-c76c-1014-5e324c3a5bfe.png)
 
 ### Configuring Monitor Parameters
 
@@ -116,13 +116,13 @@ Prior to setting up alerts, please make sure that the relevant integrations and 
 
 Alerts help you stay up-to-date with your model in real time. After configuring your model monitor details, choose the adequate threshold and alerting condition, whether above or below the threshold value.
 
-![Configuring alert parameters](../image/uuid-5d91396d-3eb4-f170-96c5-98a19fa972c3.png)
+![Configuring alert parameters](https://files.readme.io/f61050e2754ed260053b8e6909425852b11cad4187ed98ca8d49f948f33b9f37-uuid-5d91396d-3eb4-f170-96c5-98a19fa972c3.png)
 
 ### Tags and Priority
 
 Tags and priority help you organize model monitor alerts. Tags let you categorize alerts, while priority helps in sorting alerts as they occur.
 
-![Configuring tags and priority for alerts](../image/uuid-12133894-5bcf-191d-fa4e-db5423db87cd.png)
+![Configuring tags and priority for alerts](https://files.readme.io/abf39544e7a2a9183c7dac3a7159542e84e0e690d203867f323b245c78c11942-uuid-12133894-5bcf-191d-fa4e-db5423db87cd.png)
 
 ### Priority
 

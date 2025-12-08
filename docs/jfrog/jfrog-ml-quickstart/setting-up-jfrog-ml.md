@@ -29,7 +29,7 @@ Only a Platform **Admin** can perform the initial setup.
 
 1. Click on the **AI/ML** link in the left sidebar of your JFrog platform. This will open the JFrog ML setup form.
 
-   ![JFrog ML Setup Form](../image/uuid-7f7888c7-668d-78cb-a11f-cfb4eee8e2eb.png)
+   ![JFrog ML Setup Form](https://files.readme.io/e4d6fb33474a29a2b9dcfa89a760b4d5a7de4c4e51940e12c0363ff9ff3308ff-uuid-7f7888c7-668d-78cb-a11f-cfb4eee8e2eb.png)
 2. During setup, you'll need to select:
 
    1. A JFrog project where JFrog ML will store generated artifacts, such as Docker images and files.
@@ -90,7 +90,7 @@ After installing the frogml-cli, you need to configure it. You have two main opt
 
 1. With this option, you must first [generate an access token](/docs/360935#UUID-36a58105-bc2e-c0f6-0bd1-3cfd01e66fd0) in the Jfrog platform.
 
-   ![configuring-qwak-sdk-jfrogml.png](../image/uuid-e2092192-8a39-bb2e-7f5e-2ce203e74599.png)
+   ![configuring-qwak-sdk-jfrogml.png](https://files.readme.io/994c0d7f55ccbd32b229d01d1b5707fc6f8ab0ddd785e8d0d5afe33f5275170b-uuid-e2092192-8a39-bb2e-7f5e-2ce203e74599.png)
 2. Open the terminal and type in the following command, replacing the variables:
 
    ```
@@ -128,7 +128,7 @@ Logged in successfully to: <PLATFORM_BASE_URL>
 
 There is an additional option, called "interactive". If you have previously configured the frogml-cli, it enables you to load the configuration. Alternatively, it enables your to connect to a new server using the access token or username and password, but in an interactive 'guided' manner.
 
-![interactive_config_via_cli.gif](../image/uuid-a6c3024a-c6bc-e93d-d6e0-f6bb2b6ac03f.gif) 
+![interactive_config_via_cli.gif](https://files.readme.io/ade0f02f2c03299c158f5f76e4c1d5f58297e21528a09fa6bd951f03c6f8b4ec-uuid-a6c3024a-c6bc-e93d-d6e0-f6bb2b6ac03f.gif) 
 </Callout>
 
 

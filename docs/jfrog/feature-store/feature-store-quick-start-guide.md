@@ -317,13 +317,13 @@ frogml features register
 
 During the registration process, you will be prompted with requests to create the *credit\_risk\_data* data source and *user-credit-risk-features* feature set.
 
-![registering-the-feature-set.png](../image/uuid-344a79d8-be26-b2da-f407-be1b27f15e2f.png)
+![registering-the-feature-set.png](https://files.readme.io/788e0c18e211e59323341cc1a005c8509ba1326767be9f4b2eef5214806be808-uuid-344a79d8-be26-b2da-f407-be1b27f15e2f.png)
 
 After successful registration, you should see your new Feature Set in the JFrog ML UI.
 
 You can also manage the Feature Set in the JFrog ML UI, checking the status of processing jobs, querying the data, and exploring feature distributions.
 
-![credit-risk-features.png](../image/uuid-a67af581-d766-e81d-52be-6765f7f8e5c3.png)
+![credit-risk-features.png](https://files.readme.io/0413ad79c79603ad46eba81f6a361c91b66e58eedecb64386a0c7b0d38beb8a8-uuid-a67af581-d766-e81d-52be-6765f7f8e5c3.png)
 
 ### Consume Features for Batch Model Training
 
@@ -562,7 +562,7 @@ This section could address common issues that you might encounter and how to res
 
 If your data ingestion pipeline fails, the first step is to consult the logs for clues about the failure. Navigate to the 'Feature Set Jobs' section in the JFrog ML Dashboard, as shown below.
 
-![user-features-batch.png](../image/uuid-87d98165-f7d5-6152-6904-2b2814cb508b.png)
+![user-features-batch.png](https://files.readme.io/129ecd58c2fa72287e8cf37a3c9923ec318bee8995ff41d5e9250f7eb0d567a9-uuid-87d98165-f7d5-6152-6904-2b2814cb508b.png)
 
 #### FeatureSet Querying
 
@@ -570,7 +570,7 @@ If you find that the Offline or Online client isn't retrieving any rows for a gi
 
 Note: When constructing your query, make sure to enclose column names in double quotes and prefix them with `feature-store.feature`, as shown in the example below.
 
-![featureset-querying.png](../image/uuid-3728680a-855d-09cc-b7c3-3432a700ef70.png)
+![featureset-querying.png](https://files.readme.io/6349a2bae2f4a48e7a1901952906ddd8c3396b3a299a23faa338cf3cbb6126c1-uuid-3728680a-855d-09cc-b7c3-3432a700ef70.png)
 
 ### Conclusion
 

@@ -53,7 +53,7 @@ You can also configure columns to be excluded from analytics. To do that, you sh
 
 In the Analytics view, you can write SQL queries to analyze the model requests and predictions:
 
-![Analytics Query UI](../image/uuid-87b31a63-b24c-ccef-01e5-472902acd5d0.png) 
+![Analytics Query UI](https://files.readme.io/5300ec7c021f3e6a87a5cbd83d5f93b6f1c00b35c9ba32c7aa9678fc5f235184-uuid-87b31a63-b24c-ccef-01e5-472902acd5d0.png) 
 <Callout icon="❗️" theme="error">
 **Important**
 

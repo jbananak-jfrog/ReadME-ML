@@ -20,7 +20,7 @@ At its core, the architecture leverages the power of the JFrog platform. JFrog A
 
 Seamlessly integrating with the JFrog platform, JFrog ML allows you to use JFrog Artifactory as a trusted model registry while leveraging JFrog Security products to secure your entire model development lifecycle.
 
-![JFrog ML Logo](../image/uuid-593a04bd-f54d-8c1b-8702-5291c546c32d.png)
+![JFrog ML Logo](https://files.readme.io/581df9b88feda60fe172d526e7da2416b26d5d092552cd1e7ffdabfcb9d9a848-uuid-593a04bd-f54d-8c1b-8702-5291c546c32d.png)
 
 This document outlines the architecture that enables this powerful combination of flexibility and security.
 
@@ -33,7 +33,7 @@ The JFrog ML architecture is fundamentally based on a separation of concerns, di
 
 This design ensures that sensitive data and computational workloads remain isolated within a secure environment, while orchestration and metadata management are handled centrally.
 
-![JFrog ML high level overview](../image/uuid-f5a6747b-cb2c-d992-2d0b-b30d141a3471.png)
+![JFrog ML high level overview](https://files.readme.io/494adbc982d4684e99bb9a7707576e6bc1cae534c6120164a85ddd64c3278503-uuid-f5a6747b-cb2c-d992-2d0b-b30d141a3471.png)
 
 #### JFrog ML Control Plane
 

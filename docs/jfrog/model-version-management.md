@@ -18,7 +18,7 @@ With the FrogML SDK, you can easily log, package, and upload models as trackable
 
 The *Versions* tab in the Custom Models page shows a list of available versions of the model you selected from the AI Catalog. This list might include versions that have been built, unbuilt, or updated.
 
-![catboost_model_mor_1.png](image/uuid-c313ed70-f97c-5376-c818-15fa4886459a.png)
+![catboost_model_mor_1.png](https://files.readme.io/85273a3a00c871ce486b2cf6f05754fb9d53a92df6307fb2723a1f5d5a841f5d-uuid-c313ed70-f97c-5376-c818-15fa4886459a.png)
 
 * **Unbuilt Versions:** New versions exist but have not yet been built (processed). These model versions have the "**Build Version**" button in the Build column.
 * **Built Versions:** Versions of a model that have already undergone the necessary processing and compilation that makes them ready for deployment and integration into various applications. These model versions have the "**Rebuild Version**" button in the Build column.
@@ -317,7 +317,7 @@ The FrogML platform enables efficient movement of successful experiments from de
 
 1. Navigate to **AI Catalog**  > **Models**.
 
-   ![figma_modelversions.png](image/uuid-28020f7c-e313-368c-111a-fac0da8eb475.png)
+   ![figma_modelversions.png](https://files.readme.io/83365bda9fe77c0043f33c9e865dbe2d963f291e4123862bde023aa15a149ea7-uuid-28020f7c-e313-368c-111a-fac0da8eb475.png)
 2. Select the custom model for which you want to create a build, and select the **Versions** tab.
 3. Create a build according to the following guidelines:
 

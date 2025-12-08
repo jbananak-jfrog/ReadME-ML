@@ -14,7 +14,7 @@ Runtime metrics are track anything about your models over time, from latency to 
 
 The JFrog ML UI displays the model metrics in the Health in the in the **Overview** tab.
 
-![Health Metrics Dashboard](../image/uuid-c61977ae-e3d2-e7ae-65c7-74ac4100383e.png)
+![Health Metrics Dashboard](https://files.readme.io/078cfb2faa4a96e79f56e0b3538d74b9f7d3323f64e6323a2419f420b69bc60c-uuid-c61977ae-e3d2-e7ae-65c7-74ac4100383e.png)
 
 <Table>
   <thead>

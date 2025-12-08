@@ -29,7 +29,7 @@ In the *Connections* page, you can view a list of all the connections defined in
 The *Connections* page is only available to platform admins.
 </Callout>
 
-![connections.png](../image/uuid-7e511d8a-5063-80df-e79f-286f041f8e9c.png)
+![connections.png](https://files.readme.io/9d8003abfcd79d3733037c33ef2209e94cc48cd6d65e37821629eea6f967df96-uuid-7e511d8a-5063-80df-e79f-286f041f8e9c.png)
 
 To view the *Connections* page:
 
@@ -65,7 +65,7 @@ EITHER:
 
 1. In the *Allow Model Usage* pane, enter a unique **Connection name**.
 
-   ![createconnection_allowmodelusage.png](../../image/uuid-29575b5f-c35e-a875-5cd9-26bbc11b60f0.png)
+   ![createconnection_allowmodelusage.png](https://files.readme.io/2b35d96ffb6292a18e3456e2995e3f48ca17b77f49799dd17c4de3ceb2e7b6ff-uuid-29575b5f-c35e-a875-5cd9-26bbc11b60f0.png)
 2. Select a secret from the **API Key as Secret Name** dropdown list or [Create a New Secret](/docs/create-a-new-secret "Create a New Secret").
 3. Click **Create connection**. The "*Connection created successfully*" notification is displayed.
 
@@ -73,7 +73,7 @@ OR:
 
 1. In the Administration module menu bar, select **AI/ML Settings** > **Connections**.
 
-   ![createnewconnection_admin.png](../../image/uuid-13eca0a8-3e13-1944-5679-e21c4ea4f2d3.png)
+   ![createnewconnection_admin.png](https://files.readme.io/a4a376d61d8b9477032da9ed4a6233a0baaab35bce8d6b60030d4376427882b8-uuid-13eca0a8-3e13-1944-5679-e21c4ea4f2d3.png)
 2. Click **Create new connection**.
 3. Enter a unique **Connection name**, the project and the model provider for the connection.
 4. Select a secret for the connection from the **API Key as Secret Name** dropdown list or [Create a New Secret](/docs/create-a-new-secret "Create a New Secret").
@@ -93,7 +93,7 @@ This procedure outlines the steps to create a new secret, which is used to secur
 
 1. In the *Allow Model Usage* pane, click **Create new secret**.
 
-   ![createnewsecret.png](../../image/uuid-52761a2e-a9cb-e72d-0913-9b903ba655d8.png)
+   ![createnewsecret.png](https://files.readme.io/740d60fbb5bba070e491ad73871321e3b8e70c3694f57bddd312e1a5a0a70aa2-uuid-52761a2e-a9cb-e72d-0913-9b903ba655d8.png)
 2. Enter a **Secret name** and the **Secret value**.
 
    

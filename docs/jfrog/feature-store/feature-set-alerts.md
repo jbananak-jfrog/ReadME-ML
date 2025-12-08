@@ -32,10 +32,10 @@ Before setting up alerts, please make sure that the relevant integrations and ch
 5. Select `Failure` to be notified of failed feature set ingestions.
 6. Choose the relevant alert channels to receive notifications. (If no channels appear, go to [Alert Integrations](/docs/jfrog-ml-alerts "JFrog ML Alerts") to add them.)
 
-   ![feature-set-alert-dashboard.png](../image/uuid-755425ea-ff3e-5cdb-b588-b925ddb2e129.png)
+   ![feature-set-alert-dashboard.png](https://files.readme.io/6c28c289c4568a78fc0e54c8d50ed4ef64048d88080f6b98f5142f91e9e4322e-uuid-755425ea-ff3e-5cdb-b588-b925ddb2e129.png)
 7. Optionally, add a description for the alert, which will be included in the notification body.
 
-   ![description.png](../image/uuid-7ae4ba74-4bd6-10fd-c855-86cc0bbc1e75.png)
+   ![description.png](https://files.readme.io/5bc052217636a4025499a3f9c9c7c4255aa67f52ea0c3e0992c92fd2e4692808-uuid-7ae4ba74-4bd6-10fd-c855-86cc0bbc1e75.png)
 8. Save the Alert.
 <Callout icon="❗️" theme="error">
 **Important**
@@ -49,7 +49,7 @@ General constraints
 
 ### Tags and Priority
 
-![tags-and-priority.png](../image/uuid-55930c08-5034-1652-bb02-306bc7ff6ea3.png)
+![tags-and-priority.png](https://files.readme.io/e589ebcff4550ef707e21e1917c920d256f3600f5f56ddd3b1953575c333e0e9-uuid-55930c08-5034-1652-bb02-306bc7ff6ea3.png)
 
 #### Priority
 

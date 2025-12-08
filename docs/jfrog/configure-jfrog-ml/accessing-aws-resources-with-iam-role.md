@@ -88,7 +88,7 @@ If your JFrog ML deployment is running on JFrog ML Cloud, use `377488441568` as 
 
 Your dashboard should look something like this:
 
-![select-trusted-entity.png](../image/uuid-10fea49e-5548-df31-fbb0-2d96ba7a11f3.png)
+![select-trusted-entity.png](https://files.readme.io/1ac836e651d8af387e961cd56b5ad61f2cef2687c7ecb4647c62fd80b107bafa-uuid-10fea49e-5548-df31-fbb0-2d96ba7a11f3.png)
 
 #### Step 5. Add Permissions
 
@@ -128,6 +128,6 @@ Essentially, this Permissions Policy allows this IAM role to read and list files
 
 Now that you created your IAM role you can use it to read data for CSV and Parquet [Data Sources](/docs/batch-data-sources "Batch Data Sources"), access S3 files for [Build Configurations](/docs/build-configurations "Build Configurations") or [Batch Executions](/docs/automating-batch-execution "Automating Batch Execution") just by referring the IAM Role ARN in the JFrog ML SDK or via the JFrog ML UI.
 
-![iam-role-arn.png](../image/uuid-6bfcbb65-6f0e-2f20-007a-de01bca8e342.png)
+![iam-role-arn.png](https://files.readme.io/72014fd05470d92e3c03347eff4cf0b7efeaa26c80aeb127f4cd4ce9713db2db-uuid-6bfcbb65-6f0e-2f20-007a-de01bca8e342.png)
 
 For more information on using IAM Role ARN please refer to the documentation page for your specific use case.

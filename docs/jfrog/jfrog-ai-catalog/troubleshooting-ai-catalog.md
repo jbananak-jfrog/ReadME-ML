@@ -195,7 +195,7 @@ metadata:
 
 Receive error:
 
-![curationerrorcropped.png](../image/uuid-e57cc6f5-42c2-5b4c-7cad-30da24978702.png)
+![curationerrorcropped.png](https://files.readme.io/0f430a7574c850cf2efbe4f78a8727c163e4a0b7dd291e176fed4fd1468160aa-uuid-e57cc6f5-42c2-5b4c-7cad-30da24978702.png)
 
 <Table>
   <tbody>

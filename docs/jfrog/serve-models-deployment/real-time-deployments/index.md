@@ -38,11 +38,11 @@ JFrog ML real time models deploy your ML models with a lightweight, simple and s
 
 We set up the network requirements and deploy your model on a managed Kubernetes cluster, allowing you to leverage auto-scaling and security. JFrog ML also adds a suite of monitoring tools, simplifying the process of managing your model performance.
 
-![Real-time model deployment overview](../image/uuid-5a77810a-0d93-ea20-6692-73b7b87032e3.png)
+![Real-time model deployment overview](https://files.readme.io/c22e14438f25fe2ee4e3b4a00a29a8e5206e9356f795e0290e3d6251393c2c4e-uuid-5a77810a-0d93-ea20-6692-73b7b87032e3.png)
 
 ### Deploying Real-time Models from the UI
 
-![Deploying a real-time model from the UI](../image/uuid-ba434fe8-6697-f02d-b1e0-c884dee29695.gif)
+![Deploying a real-time model from the UI](https://files.readme.io/c37504c48ecaf10085959181c6692b60a42ebe123e004704f8af89c3c79dff23-uuid-ba434fe8-6697-f02d-b1e0-c884dee29695.gif)
 
 To deploy a real-time model from the UI:
 
@@ -404,11 +404,11 @@ JFrog ML comes bundled with Grafana and Prometheus to provide monitoring dashboa
 
 The following health metrics appear in the model **Overview** tab:
 
-![Model health monitoring dashboard](../image/uuid-3c1b994a-ff06-7bdc-d129-5bfce1b81001.png)
+![Model health monitoring dashboard](https://files.readme.io/8de63ece4bf79ce77ad93a33db42bde236adfd2ca428c31b2264933be23e0a8f-uuid-3c1b994a-ff06-7bdc-d129-5bfce1b81001.png)
 
 In addition, you can follow and search the applicable logs produced by your model in the **Logs** tab:
 
-![Model logs tab](../image/uuid-96057c91-dc54-213f-69da-34593108ce29.png)
+![Model logs tab](https://files.readme.io/e3e6dc87c0d361da0419c49706cd4fc07c9d483534a7ddd2990f755ee8216a38-uuid-96057c91-dc54-213f-69da-34593108ce29.png)
 
 ### Auto-scaling Real-time Models
 
@@ -1167,7 +1167,7 @@ The only exception is the *Shadow Variation*, which can receive less than 100% o
 
 The currently deployed Variations appear under Traffic Control section in the model overview:
 
-![Traffic Control section in model overview](../../../image/uuid-518425b8-8751-e692-299c-d29cd5d3a2cb.png)
+![Traffic Control section in model overview](https://files.readme.io/19adae73594096b9ba655bd85c5e609764ce0abb8a4832d9bf205d4dc8b68177-uuid-518425b8-8751-e692-299c-d29cd5d3a2cb.png)
 
 **Fallback Variation:** Receives traffic that doesn't match any audience.
 
@@ -1296,7 +1296,7 @@ Traffic for shadow deployments is routed from the general traffic and not from a
 
 Every audience can have at most one shadow variation!
 
-![Shadow Deployment UI](../../../image/uuid-6186de32-84d8-fc3e-1a04-90bdfb4fe8ab.png)
+![Shadow Deployment UI](https://files.readme.io/65b1f7404d63bf81a65fad4fd99dfb1d4639ef9da9e22ae553c480b84746398c-uuid-6186de32-84d8-fc3e-1a04-90bdfb4fe8ab.png)
 
 To add a shadow deployment:
 

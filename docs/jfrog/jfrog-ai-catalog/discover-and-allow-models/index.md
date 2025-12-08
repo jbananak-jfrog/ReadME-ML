@@ -50,11 +50,11 @@ In order to help you find the best model for your project in the AI Catalog, in 
 * **Free text**: Either in the filter panel or the search bar, enter text to search.
 * **Allowed status**: Select to display only allowed models.
 * **Model type:** Select a specific model type to display. Options: All/Custom/External/Package.
-![filtersearch.png](../image/uuid-71a3b4c8-054f-61a8-0d00-4c55a681a6a3.png)
+![filtersearch.png](https://files.readme.io/e639adbcaf0a8238835b684242f3f918afaa515cc2628c3ae5d19ed1be92a197-uuid-71a3b4c8-054f-61a8-0d00-4c55a681a6a3.png)
 
 The filters selected are shown across the top of the models, and the search text remains in the free text box in the Filters panel:
 
-![filter2.png](../image/uuid-cf3cf075-2a48-86b7-5e61-e3b788ab7a30.png)
+![filter2.png](https://files.readme.io/72286d78a1c5df5a9ead1ae122eb56f28d13a2c4fe03f9991d2de4e01ac1e24f-uuid-cf3cf075-2a48-86b7-5e61-e3b788ab7a30.png)
 
 Click **Clear all** to remove all filters.
 
@@ -74,7 +74,7 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
    1. From the JFrog platform menu, select **AI/ML** > **Models**. The Models page opens. If this is your first model, the **Allowed models** tab is empty.
    2. Select the **Discover AI Catalog** tab to view all available models.
 
-      ![models_page.png](../../image/uuid-b96e380e-cfad-f41a-319f-d151e7836fd0.png)
+      ![models_page.png](https://files.readme.io/526d6c2fdf3acb6835f76cb07164185627c7525b33c5080bcacbb9696726c708-uuid-b96e380e-cfad-f41a-319f-d151e7836fd0.png)
    3. Browse through the catalog to find the model you want. You can [search and filter](/docs/discover-and-allow-models) to locate a specific model or model type.
    4. Click the model you wish to allow. The model details are displayed. To enable your developers to use this model, assign it to a project, connect it (for external models), and allow it.
 2. **Select the project and configure model allowance:**
@@ -88,10 +88,10 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
   <tbody>
     <tr>
       <td>
-        ![connectandallow.png](../../image/uuid-8831faf2-28ba-a271-cae0-7600ca750219.png)
+        ![connectandallow.png](https://files.readme.io/d080a4d055e4b7984f2571fda016b71cf159742f3a5b7912dc9ee59d3cb5e150-uuid-8831faf2-28ba-a271-cae0-7600ca750219.png)
       </td>
       <td>
-        ![opensource_model_information.png](../../image/uuid-8b6ad253-c7ff-9e1d-601d-9faa5087e539.png)
+        ![opensource_model_information.png](https://files.readme.io/fbf64abb2989205a4d9245714e8d40c37876ecaaa6f43cb6f3e8edc11b81df9a-uuid-8b6ad253-c7ff-9e1d-601d-9faa5087e539.png)
       </td>
     </tr>
   </tbody>
@@ -121,10 +121,10 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
   <tbody>
     <tr>
       <td>
-        ![allowmodelusage_ext_long.png](../../image/uuid-fe2ab1f2-b02d-cd83-c4b5-72ff9459cd58.png)
+        ![allowmodelusage_ext_long.png](https://files.readme.io/66ad1650cfba4bc4ae88cdf7ea6e7478eade8744b48b5a9582eace551a8b3021-uuid-fe2ab1f2-b02d-cd83-c4b5-72ff9459cd58.png)
       </td>
       <td>
-        ![opensource_projects_dropdown.png](../../image/uuid-7a3f611c-65bb-095e-22f3-d950608454b9.png)
+        ![opensource_projects_dropdown.png](https://files.readme.io/f9fffb90ecedbcfedcf936fbeb77dbaeaaf8e8bc0d658889051cd2e6ac9dec6a-uuid-7a3f611c-65bb-095e-22f3-d950608454b9.png)
       </td>
     </tr>
   </tbody>
@@ -156,7 +156,7 @@ This procedure explains how to allow a model for additional projects, after it i
 1. In the JFrog platform, navigate to **AI/ML** > **Models** and select the model that you want to allow for an additional project.
 2. In the model page, click the **Add** button adjacent to the "Allowed in projects" title and select the project to allow the model for (in the Allow model usage pane).
 
-   ![allowmodelusage_addbutton.png](../../image/uuid-414d9bfe-d8b1-6ec6-c392-712ef65d438a.png) 
+   ![allowmodelusage_addbutton.png](https://files.readme.io/452b2c86bdcc118329e086a2ca3059dab86d2e4a54ceed53b738c16b87108944-uuid-414d9bfe-d8b1-6ec6-c392-712ef65d438a.png) 
 <Callout icon="✅" theme="okay">
    **Tip**
 

@@ -403,7 +403,7 @@ When training in the `build` stage of the Build pipeline, sometimes we'd like to
    1. Navigate to the individual Build
    2. Click on the three dots in the upper-right corner
    3. Select "**Add Tags**"
-   4. Add a tag called `training`![Tagging a build in the FrogML UI.](../../image/uuid-b939238b-861d-a278-25d6-69ba965e27b7.png)
+   4. Add a tag called `training`![Tagging a build in the FrogML UI.](https://files.readme.io/d9f41e2b7d9a46695c588e30e8a1279006e1c5d2f8993cbd5ebcbdb63d5cfe19-uuid-b939238b-861d-a278-25d6-69ba965e27b7.png)
 4. ##### Retrieve and Load the Pre-trained Artifact
 
    Use the `initialize_model()` method to load the pre-trained model during deployment:

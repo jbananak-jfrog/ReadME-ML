@@ -218,7 +218,7 @@ After executing the `build()` function in the model-building process, JFrog ML i
 
 1. **Initialization**: The `initialize_model()` function is executed to ensure the model serving is correctly set up and started within the container.
 2. **Dummy Request Handling**: The container, with its embedded webserver, is tested with a dummy request. This step confirms the container's operational status and its ability to handle incoming requests successfully.
-![Models Build Page](../../image/uuid-4a40f754-534e-a799-7d35-701739673f86.png)
+![Models Build Page](https://files.readme.io/a3da2094453494cc7b946cd58323026c5ff68b781585918be4de96c6a653784f-uuid-4a40f754-534e-a799-7d35-701739673f86.png)
 
 JFrog ML Models Build Page
 

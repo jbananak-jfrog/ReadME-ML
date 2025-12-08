@@ -30,11 +30,11 @@ When a model is allowed, the **Use Model** button appears in the *Model informat
 
    For example:
 
-   ![clickprojectname.png](../image/uuid-f4c25885-17bd-5203-6cbb-6e0baae5e9cd.png)
+   ![clickprojectname.png](https://files.readme.io/86d23b25e173118efeba38a73865eff315f783f47995b0a0599a6c65b1915e14-uuid-f4c25885-17bd-5203-6cbb-6e0baae5e9cd.png)
 
    The model dashboard is shown.
 
-   ![modeldashboard.png](../image/uuid-77f9b35c-94e6-6893-516a-e4b0f63f54cf.png)
+   ![modeldashboard.png](https://files.readme.io/d617d3968c9e7b6abb6eb1e36d0cee8c25fb9cce1bc822f7d7a8cbcada4b9f93-uuid-77f9b35c-94e6-6893-516a-e4b0f63f54cf.png)
 
    For details on how to read the dashboard to monitor and interpret the model's performance, refer to [Use the Model Dashboards](/docs/use-the-model-dashboards "Use the Model Dashboards")
 
@@ -42,7 +42,7 @@ When a model is allowed, the **Use Model** button appears in the *Model informat
 3. Click **Use Model**. The *Use Model* pane is displayed. Here you are able to generate a token and insert it into the code snippet for the framework of your choice.
 4. Browse through the example code snippets for different libraries and frameworks (Python, Javascript, cURL).
 
-   ![usemodel_externalnew.png](../image/uuid-6e700449-f4f8-c9cc-169e-7f61f39f1f5a.png)
+   ![usemodel_externalnew.png](https://files.readme.io/ec567ae747bcc8bdf1a3cae95cd5e7a7984ed954b93a296196b71e0949e1d6de-uuid-6e700449-f4f8-c9cc-169e-7f61f39f1f5a.png)
 
    Note that this code snippet shown includes a placeholder for the `api_key` for the token you are about to generate, and the `model` name, which includes the name of the connection.
 
@@ -121,7 +121,7 @@ After an open-source model has been allowed, the **Use Model** and **Deploy** bu
 2. Click the project name in the **Allowed in projects** list.
 3. Click **Use Model**. The *Use model* pane is displayed. Here you define how to use this model securely with your framework of choice.
 
-   ![usemodelbutton.png](../image/uuid-0904a59a-38c7-b378-ca45-36bbb033cc59.png) 
+   ![usemodelbutton.png](https://files.readme.io/8911d7370e6857dd47f57798bda8b4eee0957e1f7dd63ccb2bf5d7aede0dc3d2-uuid-0904a59a-38c7-b378-ca45-36bbb033cc59.png) 
 <Callout icon="📘" theme="info">
    **Note**
 

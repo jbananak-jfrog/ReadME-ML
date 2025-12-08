@@ -20,7 +20,7 @@ Once you have set up your JFrog ML account and your AI catalog entitlement, all 
 
 ## Workflow for Using the AI Catalog
 
-![AIWORKFLOW1HORIZONTAL2.png](../image/uuid-828e705f-fb86-8866-f036-653a28178d36.png)
+![AIWORKFLOW1HORIZONTAL2.png](https://files.readme.io/83b9af02da8e5642f158bf939206e339fe2ab1b2b6489cdae811633b61074907-uuid-828e705f-fb86-8866-f036-653a28178d36.png)
 
 ### Access the AI Catalog
 
@@ -34,7 +34,7 @@ The AI Catalog has three main tabs:
 
 To explore all available models, switch to the **Discovery** tab. This tab displays the full list of models that can be reviewed and allowed for use within your organization.
 
-![discovery_callouts_new.png](../image/uuid-b8bdfc28-e136-b233-92ad-7dc8947fb882.png) 
+![discovery_callouts_new.png](https://files.readme.io/b5d1f24f9cfdd91ccd1975576539062b1a510ba5f3e4f550188d27a6da8e81f1-uuid-b8bdfc28-e136-b233-92ad-7dc8947fb882.png) 
 <Callout icon="📘" theme="info">
 **Note**
 
@@ -51,7 +51,7 @@ Use the [**Filter & Search**](/docs/discover-and-allow-models) functionality to 
 
 The JFrog platform automatically scans each model for vulnerabilities, and offers transparent license information to help you avoid compliance issues.".
 
-![modeldetails.png](../image/uuid-e38f6c34-b8b8-e8ea-f30b-5ce210887d4f.png) 
+![modeldetails.png](https://files.readme.io/c338827ad0a4936b782d2feda9208535d8cb7c173f768d837198d11500e1040f-uuid-e38f6c34-b8b8-e8ea-f30b-5ce210887d4f.png) 
 <Callout icon="📘" theme="info">
 **Note**
 
@@ -63,7 +63,7 @@ Even if your AI Catalog is empty, that does not mean your organization is not us
 
 Next, governance becomes straightforward and effective. Admin users can easily allow models (from the [Discovery](/docs/discover-and-allow-models "Discover and Allow Models") tab) for secure use within your organization. Models can be approved on a per-project basis, with a comprehensive list of allowed models available on the *[Registry (allowed models)](/docs/discover-and-allow-models "Discover and Allow Models")* tab.
 
-![registry.png](../image/uuid-9a9ffa87-6cb7-5559-4d09-332db660a3dc.png)
+![registry.png](https://files.readme.io/5f29ba39c68182a139f14e7386eff2f7d44bd9b1d9da029b51129c754526036f-uuid-9a9ffa87-6cb7-5559-4d09-332db660a3dc.png)
 
 You can create an allow-list of models, ensuring that if a model is not on the list, it cannot be used, thereby preventing unvetted models from entering your supply chain.
 
@@ -71,7 +71,7 @@ You can create an allow-list of models, ensuring that if a model is not on the l
 
 Once a model has been successfully allowed in a project, it moves into the **Registry** tab and is ready for use. The steps for model consumption vary depending on the model type (Package or External API).
 
-![usinganallowedmodel_new.png](../image/uuid-97c3e7f7-146f-bd6f-6b8f-bf743f340714.png)
+![usinganallowedmodel_new.png](https://files.readme.io/843add4b7c3092c4accbe46accb7d3ee4172ab7c75d2bb1bf6e0392c63b2a718-uuid-97c3e7f7-146f-bd6f-6b8f-bf743f340714.png)
 
 See: [Allow Your First Model](/docs/allow-your-first-model "Allow Your First Model") | [Discover and Allow Models](/docs/discover-and-allow-models "Discover and Allow Models") | [Get Started with JFrog ML](/docs/get-started-with-jfrog-ml "Get Started with JFrog ML")
 
@@ -84,11 +84,11 @@ This procedure outlines the **prerequisite steps** to enable the use of **model 
 1. Navigate to the curation settings: Select **Administration** > **Curation Settings** > **General**.
 2. Toggle the **Curation On** switch to **ON**.
 
-   ![generalcurationsettings.png](../../image/uuid-0ba2785a-f59a-4165-4377-d92a96a8bc51.png)
+   ![generalcurationsettings.png](https://files.readme.io/f510882210e66935fde8abe1a3fb135a1b71c2756fa67a6a698123c7e1cc9488-uuid-0ba2785a-f59a-4165-4377-d92a96a8bc51.png)
 3. Click **Enable repositories** to navigate to the *Remote Repositories* page.
 4. Verify the **PackageType**. Ensure that HuggingFaceML is toggled **ON**
 
-   ![enable_package_type.png](../../image/uuid-c4e98f40-913f-b505-7bb7-427a0bec44bf.png)
+   ![enable_package_type.png](https://files.readme.io/4166d946f0869f019052e907fbcdab1220ccdb9a50a56df5ebfb83149c34a134-uuid-c4e98f40-913f-b505-7bb7-427a0bec44bf.png)
 5. Click the package type row to view the package type's repositories.
 6. Make sure all the repositories in the package type are also enabled. If any are not enabled, a notification is shown at the top, for example, "*Connect package type status: Partially Connected*".
 
@@ -99,5 +99,5 @@ The prerequisite Curation Settings setup is now complete. If required, you can n
 
 Failure to activate these curation settings may result in the following error when attempting to add a model package. To resolve this error, ensure both settings are activated as described.
 
-![curationerror.png](../../image/uuid-96821bba-e102-d87a-fa81-0d0dc9df5e09.png) 
+![curationerror.png](https://files.readme.io/929da6052201da6b2a2360dc7233c3ca3b0f803e03de5732edb9a209664a5b69-uuid-96821bba-e102-d87a-fa81-0d0dc9df5e09.png) 
 </Callout>

@@ -46,7 +46,7 @@ After the secret is created, only the secret name is displayed, not the value.
 3. Click **Create new secret**.
 4. Enter **Secret name** and **Secret value**.
 5. Click **Save**. The "Successfully created new secret message" appears, and the secret now appears in the *Secrets* page.
-![Access Secrets from AI/ML Settings](../image/uuid-c362639b-120f-a177-ed14-24006a530530.png)
+![Access Secrets from AI/ML Settings](https://files.readme.io/a1fe5c0ddac3e880dc578b4f1547eee985148506d9d88864b932a30b7bc528f1-uuid-c362639b-120f-a177-ed14-24006a530530.png)
 
 #### The Secrets Page
 

@@ -92,7 +92,7 @@ frogml models builds logs -b ed761a55-72ff-4136-9484-f6a9d667e000 --follow
 https://mydemo.jfrog.io/ui/ml/models/credit_risk/build/ed761a55-72ff-4136-9484-f6a9d667e000
 ```
 
-![viewing-buildlogs-jfrogml.png](../image/uuid-28802b14-750c-2e1d-0750-b808329427ce.png)
+![viewing-buildlogs-jfrogml.png](https://files.readme.io/427361d08f02bc1a14daabe284ff7a18a176c45f2c7993e551d23a7f92dc90b3-uuid-28802b14-750c-2e1d-0750-b808329427ce.png)
 
 *An example of the build logs page on FrogML*
 
@@ -179,7 +179,7 @@ if __name__ == '__main__':
 
 Once you begin making predictions using the deployed model, you will be able to view relevant metrics in the Health dashboard on the **Model Overview** tab.
 
-![Health Dashboard](../image/uuid-c775e2a0-8928-8d1f-f2e5-290fcb894819.png)
+![Health Dashboard](https://files.readme.io/aaa54580ce30be2ba6be3b4f4ac244414be52c2781ad23fb5709fe2795045f3b-uuid-c775e2a0-8928-8d1f-f2e5-290fcb894819.png)
 
 ### Querying Model Predictions
 
@@ -188,6 +188,6 @@ Querying model predictions is an essential step in the machine learning developm
 1. Open your model page on the JFrog Application.
 2. Select the **Analytics** tab.
 3. Click **Run**, and you'll see a table containing a row for every prediction made against the model.
-![The Analytics tab on the model page](../image/uuid-905ee08a-6227-73eb-c357-e15313332776.png)
+![The Analytics tab on the model page](https://files.readme.io/a07558344f54383960de540117aecb833433ef430e53a38734a9fdd2e8b103aa-uuid-905ee08a-6227-73eb-c357-e15313332776.png)
 
 *The Analytics tab on the model page*

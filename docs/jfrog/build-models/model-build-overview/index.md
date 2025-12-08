@@ -29,7 +29,7 @@ The build process is similar to building software, and is a critical step in dev
 
 JFrog ML builds models on a scalable infrastructure that allows you to customize resources, whether using a pre-trained model or running live training of any size. Model builds are stored in the model repository, where they are tracked and versioned.
 
-![Model build lifecycle diagram](../image/uuid-0a72d21a-026a-197b-1e97-18074b5c7136.png)
+![Model build lifecycle diagram](https://files.readme.io/1266aa9e944c458dfad58d56b022c7e24d1d56346550568c46cb84efd5eab7a3-uuid-0a72d21a-026a-197b-1e97-18074b5c7136.png)
 
 ### Model Build Lifecycle
 

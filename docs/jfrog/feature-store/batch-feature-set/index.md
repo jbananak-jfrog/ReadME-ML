@@ -46,7 +46,7 @@ Batch Feature Sets in JFrog ML empower users to derive machine learning (ML) fea
    * The Offline Store acts as your "data warehouse," a secure and organized place where feature data is stored after being processed by the batch or stream engines. It's designed to handle large volumes of data and is optimized for batch analytics.
    * The Online Store is designed for low-latency access to feature data. It's optimized for quick reads and is the go-to place for real-time applications.
    * Both layers serve as a unified hub for both online inference and the generation of training sets, facilitating seamless integration into ML workflows.
-![batch-data-sources.png](../image/uuid-bd24e1b7-8b34-8390-7901-8af3af0d6b40.png)
+![batch-data-sources.png](https://files.readme.io/84ec81abb887b1fba1aa13631d9e3fa1bfdee0a85633d7580dacf2aa9bd3b8f5-uuid-bd24e1b7-8b34-8390-7901-8af3af0d6b40.png)
 
 ### **Common Use Cases**
 

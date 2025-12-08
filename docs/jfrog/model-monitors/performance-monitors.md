@@ -14,7 +14,7 @@ Monitoring ML model performance on JFrog ML is essential for maintaining the rel
 
 ### Configuring Infrastructure Monitors
 
-![Infrastructure Monitor Configuration Screen](../image/uuid-0c2c7ade-1d96-3e88-c3e2-6893ae7e7292.png)
+![Infrastructure Monitor Configuration Screen](https://files.readme.io/1255bebb2b5d220428ede0c8b731fc408bc9b21024983d7b22519037512c2ac1-uuid-0c2c7ade-1d96-3e88-c3e2-6893ae7e7292.png)
 
 1. Open the model you'd like to monitor and switch to the **Monitors** tab.
 2. Click **Create New Monitor** -> **Infrastructure Monitor**.
@@ -26,7 +26,7 @@ Monitoring ML model performance on JFrog ML is essential for maintaining the rel
 4. In the **Aggregation** you can select what aggregation is relevant for the monitoring metric.
 5. **Variation** is the model version that you'd like to get alerted on. Generally Default when the model is deployed under one variation only.
 6. Under the **Alerting** tab you will find the Condition, Threshold and the Duration which is the aggregation interval.
-7. ![create-new-monitor.png](../image/uuid-f563a35d-660e-8ddb-4cce-97c7c6c5bdba.png)
+7. ![create-new-monitor.png](https://files.readme.io/438db3826dff69b8be373a34a34bc694288d67caea92ade27d52ab3141217eaf-uuid-f563a35d-660e-8ddb-4cce-97c7c6c5bdba.png)
 8. From the **Channels** dropdown, select a channel to receive the notifications. If you don't see your channel there, follow the instructions below to add a new channel.
 9. Pick which model variant should be tracked or choose "All variations".
 10. Remember to save your enable the alert by clicking the **Status** toggle and save the changes using the **Save** button!
@@ -34,7 +34,7 @@ Monitoring ML model performance on JFrog ML is essential for maintaining the rel
 
 ### Tags and Priority
 
-![tags-and-priorities.png](../image/uuid-12133894-5bcf-191d-fa4e-db5423db87cd.png)
+![tags-and-priorities.png](https://files.readme.io/abf39544e7a2a9183c7dac3a7159542e84e0e690d203867f323b245c78c11942-uuid-12133894-5bcf-191d-fa4e-db5423db87cd.png)
 
 ### Priority
 
