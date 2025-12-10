@@ -14,11 +14,11 @@ metadata:
 ---
 This page describes how to set up JFrog ML, including installing and configuring FrogML CLI and SDK.
 
-# Self-Managed
+## Self-Managed
 
 For self-managed, follow the instructions in [Activate AI ML](/docs/927949#UUID-9d538a74-8194-6c3b-7c50-fa52d9760755).
 
-# JFrog SAAS
+## JFrog SAAS
 
 **To set up JFrog ML in SAAS:**
 
@@ -38,7 +38,7 @@ For self-managed, follow the instructions in [Activate AI ML](/docs/927949#UUID-
    3. A cloud region for deployment.
 3. Click **Get Started**. JFrog ML is enabled in your JFrog account.
 
-### Install FrogML CLI
+## Install FrogML CLI
 
 After your Admin has setup the JFrog ML on your account (SAAS or self-managed), you are ready to start using the JFrog ML solution. Within JFrog ML, the FrogML SDK & CLI are your gateway to building and deploying models and features on JFrog ML, seamlessly integrating with your existing JFrog platform.
 
@@ -77,14 +77,14 @@ After your Admin has setup the JFrog ML on your account (SAAS or self-managed), 
   Installing the FrogML CLI also installs the FrogML SDK.
 </Callout>
 
-### Configuring FrogML SDK and CLI
+## Configuring FrogML SDK and CLI
 
 After installing the frogml-cli, you need to configure it. You have two main options, with several sub-options:
 
 * Configure [Via CLI](/docs/setting-up-jfrog-ml#to-configure-via-cli)
 * Configure [Via environment variable](/docs/setting-up-jfrog-ml#to-configure-via-environment-variable)
 
-#### To configure via CLI:
+### To configure via CLI:
 
 **Sub-option 1: Define access token:**
 
@@ -131,7 +131,7 @@ Logged in successfully to: <PLATFORM_BASE_URL>
   <Image alt="interactive_config_via_cli.gif" border={false} src="https://files.readme.io/ade0f02f2c03299c158f5f76e4c1d5f58297e21528a09fa6bd951f03c6f8b4ec-uuid-a6c3024a-c6bc-e93d-d6e0-f6bb2b6ac03f.gif" />
 </Callout>
 
-#### To configure via environment variable:
+### To configure via environment variable:
 
 JFrog ML also allows you to configure your session authentication key via environment variables. Note that this is only relevant for the individual Terminal session or until the next computer restart.
 
@@ -146,15 +146,15 @@ Here you need to define the `platform_base_URL` and the `access_token`.
 
 The same behavior occurs when you're running Python code that calls the FrogML SDK; it will read the environment variable for authentication.
 
-### Troubleshooting
+## Troubleshooting
 
-#### Unrecognized `frogml` Command
+### Unrecognized `frogml` Command
 
 | Problem  | Local system fails to recognize the `frogml` command.          |
 | :------- | :------------------------------------------------------------- |
 | Solution | Ensure it is added to your system's PATH environment variable. |
 
-#### Read/Write Permission Issues
+### Read/Write Permission Issues
 
 <Table align={["left","left"]}>
   <thead>
@@ -190,6 +190,6 @@ The same behavior occurs when you're running Python code that calls the FrogML S
   </tbody>
 </Table>
 
-#### Additional Troubleshooting
+## Additional Troubleshooting
 
 _For any other issues with installing and configuring your FrogML SDK/CLI please refer to_  <Anchor label="Installation Issues" title="Installation Issues" href="/docs/installation-issues">Installation Issues</Anchor>  _or_  <Anchor label="Performance Issues" title="Performance Issues" href="/docs/performance-issues">Performance Issues</Anchor>  _pages._
