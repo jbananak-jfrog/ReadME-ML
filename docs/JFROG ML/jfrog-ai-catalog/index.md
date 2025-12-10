@@ -47,7 +47,7 @@ All these models need governance, have many versions, and may have issues. The A
 ## AI Catalog Features and Benefits
 
 <Cards columns={3} rows={2}>
-  <Card title="Centralized Model Management and Visibility" />
+  <Card title="Centralized Model Management and Visibility" align="center" />
 
   <Card title="Precise Control Over Model Access" />
 
