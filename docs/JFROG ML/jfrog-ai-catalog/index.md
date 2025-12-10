@@ -46,18 +46,18 @@ All these models need governance, have many versions, and may have issues. The A
 
 ## AI Catalog Features and Benefits
 
-<Cards columns={3}>
-  <Card title="Centralized Model Management and Visibility" >
-    
-  </Card>
+<Cards columns={3} rows={2}>
+  <Card title="Centralized Model Management and Visibility" />
 
-  <Card title="Precise Control Over Model Access" >
-   
-  </Card>
+  <Card title="Precise Control Over Model Access" />
 
-  <Card title="Unified Security and Permissions in the JFrog Platform" >
-    
-  </Card>
+  <Card title="Unified Security and Permissions in the JFrog Platform" />
+  
+	<Card title="Centralized Model Management and Visibility" />
+
+  <Card title="Precise Control Over Model Access" />
+
+  <Card title="Unified Security and Permissions in the JFrog Platform" />
 </Cards>
 
 | Centralized Model Management and Visibility |                                                           | Precise Control Over Model Access                                                           |    | Unified Security and Permissions in the JFrog Platform |
