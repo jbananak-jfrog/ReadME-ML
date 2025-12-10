@@ -1,7 +1,14 @@
 ---
 title: JFrog AI Catalog
+excerpt: >-
+  Welcome to the JFrog AI Catalog – your centralized hub for AI model discovery,
+  governance, and deployment. Here you can view and manage all AI models in your
+  organization, including both those you are currently using, and those you want
+  to use.
 deprecated: false
 hidden: false
+link:
+  new_tab: false
 metadata:
   title: JFrog AI Catalog
   description: >-
@@ -32,7 +39,7 @@ The AI Catalog shadow AI detection, enables you to find all models used in your 
 
 This documentation is tailored for developers, DevOps, and MLOps teams who are looking to efficiently manage and govern AI models.
 
-Whether you are new to JFrog or seeking to leverage advanced features, this guide will help you navigate core capabilities and essential functions, making your AI integration process straightforward and secure. You’ll gain insights into managing both external models, model packages, and your custom models, allowing you to maintain control over which models can be deployed within your organization.
+Whether you are new to JFrog or seeking to leverage advanced features, this guide will help you navigate core capabilities and essential functions, making your AI integration process straightforward and secure. You'll gain insights into managing both external models, model packages, and your custom models, allowing you to maintain control over which models can be deployed within your organization.
 
 AI Catalog supports **three types of models**:
 
@@ -40,7 +47,7 @@ AI Catalog supports **three types of models**:
 | ------------------- | ---------------------------------------------------------------------- |
 | **External Models** | Accessed via third-party APIs (for example, OpenAI, and Google Gemini) |
 | **Model Packages**  | Utilized from public repositories (for example, Hugging Face)          |
-| **Custom Models**   | Internally developed models tailored to your organization’s needs      |
+| **Custom Models**   | Internally developed models tailored to your organization's needs      |
 
 All these models need governance, have many versions, and may have issues. The AI Catalog allows you to manage them all in a unified way.
 
@@ -49,15 +56,15 @@ All these models need governance, have many versions, and may have issues. The A
 <Cards columns={3} rows={2}>
   <Card title="Centralized Model Management and Visibility" align="center" />
 
-  <Card title="Precise Control Over Model Access" />
+  <Card title="Precise Control Over Model Access" align="center" />
 
-  <Card title="Unified Security and Permissions in the JFrog Platform" />
+  <Card title="Unified Security and Permissions in the JFrog Platform" align="center" />
 
-  <Card title="Quick access for enhanced productivity" />
+  <Card title="Quick access for enhanced productivity" align="center" />
 
-  <Card title="Collaboration for AI teams by streamlined model discovery" />
+  <Card title="Collaboration for AI teams by streamlined model discovery" align="center" />
 
-  <Card title="Informed Decisions - make better choices on model implementation based on available options" />
+  <Card title="Informed Decisions - make better choices on model implementation based on available options" align="center" />
 </Cards>
 
 > See also:
