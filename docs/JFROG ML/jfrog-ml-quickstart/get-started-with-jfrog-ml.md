@@ -4,24 +4,23 @@ deprecated: false
 hidden: false
 metadata:
   title: Get Started with JFrog ML
-  description: "Deploy your first model on JFrog ML in minutes!"
-  robots: index
+  description: Deploy your first model on JFrog ML in minutes!
   legacyUUIDs:
     - UUID-6bfdcfc1-3a3e-05d6-a792-59fa6b2ec132
     - UUID-3c15078f-7592-e203-9f96-b217d8498dff
+  robots: index
 ---
 Deploy your first model on JFrog ML in minutes!
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-***Installation***
+  _**Installation**_
 
-Follow the [Setting Up JFrog ML](/docs/setting-up-jfrog-ml "Setting Up JFrog ML") guide prior to completing this guide.
+  Follow the <Anchor label="Setting Up JFrog ML" title="Setting Up JFrog ML" href="/docs/setting-up-jfrog-ml">Setting Up JFrog ML</Anchor> guide prior to completing this guide.
 </Callout>
 
-
-### Building Your First Model
+## Building Your First Model
 
 It's time to build your first ML model on JFrog ML.🚀
 
@@ -29,7 +28,7 @@ A model build is a trained, serialized and tested model instance, bundled with n
 
 JFrog ML builds models on a scalable infrastructure that allows you to customize resources, whether using a pre-trained model or running live training of any size.
 
-### Creating a Model
+## Creating a Model
 
 To begin, you need to create a new model and a new project on JFrog ML. Projects enable you to group and organize your models in a single location.
 
@@ -68,7 +67,7 @@ This example tutorial, shows how to create a model using the FrogML CLI.
    https://mydemo.jfrog.io/ui/ml/models/credit_risk/build/2cac1883-47eb-44dd-9806-bdd9887dcc16
    ```
 
-### Viewing Build Logs
+## Viewing Build Logs
 
 To monitor the progress of your build on JFrog ML, view logs via the CLI or UI.
 
@@ -92,9 +91,9 @@ frogml models builds logs -b ed761a55-72ff-4136-9484-f6a9d667e000 --follow
 https://mydemo.jfrog.io/ui/ml/models/credit_risk/build/ed761a55-72ff-4136-9484-f6a9d667e000
 ```
 
-![viewing-buildlogs-jfrogml.png](https://files.readme.io/427361d08f02bc1a14daabe284ff7a18a176c45f2c7993e551d23a7f92dc90b3-uuid-28802b14-750c-2e1d-0750-b808329427ce.png)
+<Image alt="viewing-buildlogs-jfrogml.png" border={false} src="https://files.readme.io/427361d08f02bc1a14daabe284ff7a18a176c45f2c7993e551d23a7f92dc90b3-uuid-28802b14-750c-2e1d-0750-b808329427ce.png" />
 
-*An example of the build logs page on FrogML*
+_An example of the build logs page on FrogML_
 
 > Using the `--deploy` flag will build and automatically deploy your model.
 >
@@ -115,7 +114,7 @@ https://mydemo.jfrog.io/ui/ml/models/credit_risk/build/ed761a55-72ff-4136-9484-f
 > # https://mydemo.jfrog.io/ui/ml/models/b731b293-405a-491e-a17d-8c63c3d03017/credit_risk
 > ```
 
-### Deploying Your Model
+## Deploying Your Model
 
 After a successful build, our model can be deployed as a real-time inference endpoint on JFrog ML, ready to handle predictions. Copy the build ID from the previous build step and replace it with `YOUR_BUILD_ID`
 
@@ -139,7 +138,7 @@ After running the deployment command, you can expect to see the following output
 Deployment initiated successfully, Use --sync to wait for deployment to be ready.
 ```
 
-### Testing Your Model
+## Testing Your Model
 
 After a successful model deployment, you can test your live inference endpoint.
 
@@ -179,15 +178,15 @@ if __name__ == '__main__':
 
 Once you begin making predictions using the deployed model, you will be able to view relevant metrics in the Health dashboard on the **Model Overview** tab.
 
-![Health Dashboard](https://files.readme.io/aaa54580ce30be2ba6be3b4f4ac244414be52c2781ad23fb5709fe2795045f3b-uuid-c775e2a0-8928-8d1f-f2e5-290fcb894819.png)
+<Image alt="Health Dashboard" border={false} src="https://files.readme.io/aaa54580ce30be2ba6be3b4f4ac244414be52c2781ad23fb5709fe2795045f3b-uuid-c775e2a0-8928-8d1f-f2e5-290fcb894819.png" />
 
-### Querying Model Predictions
+## Querying Model Predictions
 
 Querying model predictions is an essential step in the machine learning development process. With JFrog ML, it's easy to query your model's predictions and view relevant metrics.
 
 1. Open your model page on the JFrog Application.
 2. Select the **Analytics** tab.
 3. Click **Run**, and you'll see a table containing a row for every prediction made against the model.
-![The Analytics tab on the model page](https://files.readme.io/a07558344f54383960de540117aecb833433ef430e53a38734a9fdd2e8b103aa-uuid-905ee08a-6227-73eb-c357-e15313332776.png)
+   ![](https://files.readme.io/a07558344f54383960de540117aecb833433ef430e53a38734a9fdd2e8b103aa-uuid-905ee08a-6227-73eb-c357-e15313332776.png)
 
-*The Analytics tab on the model page*
+_The Analytics tab on the model page_
