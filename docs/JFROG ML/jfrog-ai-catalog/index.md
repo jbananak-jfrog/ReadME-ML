@@ -47,18 +47,17 @@ All these models need governance, have many versions, and may have issues. The A
 ## AI Catalog Features and Benefits
 
 <Cards columns={3}>
-  <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
-    Neque porro quisquam est qui dolorem ipsum quia
+  <Card title="Centralized Model Management and Visibility" >
+    
   </Card>
 
-  <Card title="Second Card" icon="fa-user">
-    *Lorem ipsum dolor sit amet, consectetur adipiscing elit*
+  <Card title="Precise Control Over Model Access" >
+   
   </Card>
 
-  <Card title="Third Card" icon="fa-star">
-    > Ut enim ad minim veniam, quis nostrud ullamco
+  <Card title="Unified Security and Permissions in the JFrog Platform" >
+    
   </Card>
-
 </Cards>
 
 | Centralized Model Management and Visibility |                                                           | Precise Control Over Model Access                                                           |    | Unified Security and Permissions in the JFrog Platform |
