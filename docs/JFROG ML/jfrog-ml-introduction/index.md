@@ -22,7 +22,7 @@ The image below shows the entire ML model lifecycle from research to production.
 
 Use JFrog ML to build and manage the entire machine learning lifecycle. Easily prepare data, build, train, and deploy models, and monitor and automate your pipelines, all in one place.
 
-### The First ML Engineering Platform
+## The First ML Engineering Platform
 
 Take your machine learning models from research to production faster and with more confidence with JFrog ML, including:
 
@@ -32,17 +32,17 @@ Take your machine learning models from research to production faster and with mo
 * Gradually deploying and A/B testing your models in production
 * Querying model results and visualizing model behavior in production
 
-### ML Production Observability
+## ML Production Observability
 
 Gain complete control and visibility of your machine learning production environment with JFrog ML observability features. Easily deploy builds, view performance metrics, manage model features, and analyze and query your inference models.
 
-### Automated Feature Pipelines
+## Automated Feature Pipelines
 
 Simplify the process of building feature pipelines with JFrog ML <Anchor label="Feature Store Overview" title="Feature Store Overview" href="/docs/feature-store-overview">Feature Store Overview</Anchor>.
 
 Create batch, streaming and real-time feature transformations with end-to-end pipeline visibility. Seamlessly integrate these pipelines with JFrog ML-based models using the platform's powerful and automatic feature extraction mechanism.
 
-### Flexible Deployment Models
+## Flexible Deployment Models
 
 Choose the deployment option that works best for your business needs.
 
