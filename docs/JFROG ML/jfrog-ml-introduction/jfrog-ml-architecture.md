@@ -49,11 +49,11 @@ The Data Plane is the secure execution environment where all sensitive data proc
 
 _Core Responsibilities:_
 
-* **Secure Execution Environment:**Executes all computational workloads, including model training jobs, build processes, and batch inference tasks.
-* **Model Repository & Artifact Storage:**Stores models, artifacts, and associated metadata in encrypted registries or object stores.
+* **Secure Execution Environment:** Executes all computational workloads, including model training jobs, build processes, and batch inference tasks.
+* **Model Repository & Artifact Storage:** Stores models, artifacts, and associated metadata in encrypted registries or object stores.
 * **Feature Store:** Manages the storage and retrieval of feature data for training and real-time inference.
-* **Inference Lake:**Collects and stores model prediction logs, ground truth data, and operational metrics for monitoring and analysis.
-* **Real-time Model Serving:**Manages the deployment of models as scalable, high-availability endpoints, complete with built-in monitoring and logging.
+* **Inference Lake:** Collects and stores model prediction logs, ground truth data, and operational metrics for monitoring and analysis.
+* **Real-time Model Serving:** Manages the deployment of models as scalable, high-availability endpoints, complete with built-in monitoring and logging.
 * **Compute & Autoscaling Management:** Provisions the necessary compute resources for all jobs and manages the autoscaling of model endpoints based on real-time traffic, latency, or custom metrics.
 
-See <Anchor label="Control and Data Planes Interaction" title="Control and Data Planes Interaction" href="/docs/control-and-data-planes-interaction">Control and Data Planes Interaction</Anchor>
+See <Anchor label="Control and Data Planes Interaction" target="_blank" href="/docs/control-and-data-planes-interaction">Control and Data Planes Interaction</Anchor>
