@@ -52,12 +52,12 @@ All these models need governance, have many versions, and may have issues. The A
   <Card title="Precise Control Over Model Access" />
 
   <Card title="Unified Security and Permissions in the JFrog Platform" />
-  
-	<Card title="Centralized Model Management and Visibility" />
 
-  <Card title="Precise Control Over Model Access" />
+  <Card title="Quick access for enhanced productivity" />
 
-  <Card title="Unified Security and Permissions in the JFrog Platform" />
+  <Card title="Collaboration for AI teams by streamlined model discovery" />
+
+  <Card title="Informed Decisions - make better choices on model implementation based on available options" />
 </Cards>
 
 | Centralized Model Management and Visibility |                                                           | Precise Control Over Model Access                                                           |    | Unified Security and Permissions in the JFrog Platform |
