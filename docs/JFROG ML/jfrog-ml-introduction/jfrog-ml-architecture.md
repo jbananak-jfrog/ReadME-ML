@@ -22,7 +22,7 @@ Seamlessly integrating with the JFrog platform, JFrog ML enables you to use JFro
 
 This document outlines the architecture that enables this powerful combination of flexibility and security.
 
-### High Level Architecture
+## High Level Architecture
 
 The JFrog ML architecture is fundamentally based on a separation of concerns, divided into two distinct components:
 
@@ -33,7 +33,7 @@ This design ensures that sensitive data and computational workloads remain isola
 
 <Image alt="JFrog ML high level overview" border={false} src="https://files.readme.io/494adbc982d4684e99bb9a7707576e6bc1cae534c6120164a85ddd64c3278503-uuid-f5a6747b-cb2c-d992-2d0b-b30d141a3471.png" />
 
-#### JFrog ML Control Plane
+### JFrog ML Control Plane
 
 The Control Plane is the centralized orchestration and management layer, securely hosted and managed by JFrog. It serves as the brain of the system, coordinating all activities without ever accessing sensitive customer data or models. Its sole focus is on metadata, workflow management, and state tracking.
 
@@ -43,7 +43,7 @@ _**Core Responsibilities:**_
 * **Orchestration & Workflow Management:**Coordinates multi-step workflows such as build, deploy, promote and monitor and delegates sensitive operations to the Data Plane.
 * **Delegation & Status Reporting:**Sends requests to the data plane and receives operation updates (for example, build progress, deployment status).
 
-#### JFrog ML Data Plane
+### JFrog ML Data Plane
 
 The Data Plane is the secure execution environment where all sensitive data processing, model computation, and artifact storage occurs. This plane is deployed either in JFrog's secure cloud (for a fully managed SaaS experience) or directly within a customer's own cloud environment/VPC (for a hybrid deployment). This flexibility ensures data sovereignty, and enables integration with private data sources via mechanisms like VPC Peering or AWS PrivateLink.
 
