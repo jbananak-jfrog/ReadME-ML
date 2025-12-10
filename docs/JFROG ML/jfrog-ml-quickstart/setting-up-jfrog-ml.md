@@ -107,9 +107,9 @@ After installing the frogml-cli, you need to configure it. You have two main opt
 
 For this option, you need to make sure you have enabled token generation API as follows:
 
-1. In the Administration module, select Security > General.
-2. Scroll down and click Enable token generation via api. under Basic Authentication.
-3. Click Save.
+1. In the Administration module, select **Security** > **General**.
+2. Scroll down and click **Enable token generation via api**. under **Basic Authentication**.
+3. Click **Save**.
 
 Then, type in the following command, replacing the variables:
 
