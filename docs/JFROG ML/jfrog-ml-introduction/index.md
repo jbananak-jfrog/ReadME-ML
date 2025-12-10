@@ -12,6 +12,8 @@ metadata:
     - UUID-95c2edbb-2225-0dbf-6455-b920b07b19d1
   robots: index
 ---
+JFrog ML is a unified platform designed to streamline the entire machine learning lifecycle by integrating MLOps, security, and DevOps into a single system of record. It provides a robust, scalable, and secure foundation for building, deploying, and monitoring your models in production.
+
 JFrog ML simplifies the process of building, deploying, and monitoring machine learning models, bridging the gap between data scientists and engineers as a unified AI solution for every need.
 
 The image below shows the entire ML model lifecycle from research to production.
