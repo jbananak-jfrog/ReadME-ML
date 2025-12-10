@@ -60,11 +60,7 @@ All these models need governance, have many versions, and may have issues. The A
   <Card title="Informed Decisions - make better choices on model implementation based on available options" />
 </Cards>
 
-| Centralized Model Management and Visibility |                                                           | Precise Control Over Model Access                                                           |    | Unified Security and Permissions in the JFrog Platform |
-| :------------------------------------------ | :-------------------------------------------------------- | :------------------------------------------------------------------------------------------ | :- | :----------------------------------------------------- |
-| Quick access for enhanced productivity      | Collaboration for AI teams by streamlined model discovery | Informed Decisions - make better choices on model implementation based on available options |    |                                                        |
-
-See also:
+> See also:
 
 * <Anchor label="JFrog AI Catalog Architecture" title="JFrog AI Catalog Architecture" href="/docs/jfrog-ai-catalog-architecture">JFrog AI Catalog Architecture</Anchor>
 * <Anchor label="Getting Started" title="Getting Started" href="/docs/getting-started">Getting Started</Anchor>
