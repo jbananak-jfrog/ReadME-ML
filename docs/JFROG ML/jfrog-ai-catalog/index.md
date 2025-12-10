@@ -55,27 +55,27 @@ All these models need governance, have many versions, and may have issues. The A
 
 <Cards columns={3} align="center">
   <Card title="">
-    <center>Centralized Model Management and Visibility</center>
+    <center>**Centralized Model Management and Visibility**</center>
   </Card>
 
   <Card title="">
-    <center>Precise Control Over Model Access</center>
+    <center>**Precise Control Over Model Access**</center>
   </Card>
 
   <Card title="">
-    <center>Unified Security and Permissions in the JFrog Platform</center>
+    <center>**Unified Security and Permissions in the JFrog Platform**</center>
   </Card>
 
   <Card title="">
-    <center>Quick access for enhanced productivity</center>
+    <center>**Quick access for enhanced productivity**</center>
   </Card>
 
   <Card title="">
-    <center>Collaboration for AI teams by streamlined model discovery</center>
+    <center>**Collaboration for AI teams by streamlined model discovery**</center>
   </Card>
 
   <Card title="">
-    <center>Informed Decisions - make better choices on model implementation based on available options</center>
+    <center>**Informed Decisions - make better choices on model implementation based on available options**</center>
   </Card>
 </Cards>
 
