@@ -14,7 +14,7 @@ metadata:
 ---
 The interaction between the control plane and data plane is best illustrated through common MLOps workflows.
 
-### Model Build & Scan
+## Model Build & Scan
 
 1. **Build Trigger:** A user, via the JFrog ML CLI or SDK, initiates a jfrog ml build command. The request is authenticated by the control plane, which creates a unique build ID and records the initial metadata.
 2. **Code Upload:** The control plane provides a secure, pre-signed URL for the user's client to upload the model source code directly to a staging area within the data plane.
@@ -22,7 +22,7 @@ The interaction between the control plane and data plane is best illustrated thr
 4. **Store in Artifactory:** Upon a successful and clean scan, the data plane pushes the versioned, immutable model artifact to its designated repository in JFrog Artifactory.
 5. **Build Status Update:** The data plane reports the final status (including the Artifactory path and Xray scan results) back to the control plane, which updates the model's metadata, making it available for deployment.
 
-### Model Deployment
+## Model Deployment
 
 The following are the stages of model deployment:
 
@@ -31,7 +31,7 @@ The following are the stages of model deployment:
 3. **Deployment Execution:** The data plane pulls the specific, versioned model artifact directly from JFrog Artifactory. It then provisions the necessary resources and deploys the model as a scalable inference endpoint.
 4. **Deployment Status Update:** The data plane continuously reports the deployment's health, endpoint URL, and replica count back to the control plane, providing a live operational view to the user.
 
-### Autoscaling ML Endpoint
+## Autoscaling ML Endpoint
 
 This example ensures that model endpoints remain performant and cost-efficient under variable load without manual intervention.
 
@@ -39,7 +39,7 @@ This example ensures that model endpoints remain performant and cost-efficient u
 2. **Scale Autonomously:**Based on pre-defined autoscaling policies, the data plane autonomously adjusts the endpoint's resources. This can involve scaling out by adding replicas to handle traffic spikes or scaling in by removing them during idle periods to optimize costs.
 3. **Report State:** The data plane reports the new scaling state, current replica count, and overall health summary back to the control plane. This ensures that the platform's UI and API always reflect the endpoint's real-time operational status.
 
-### Feature Store Execution
+## Feature Store Execution
 
 This workflow automates the computation and refreshing of feature sets for training and inference.
 
@@ -48,7 +48,7 @@ This workflow automates the computation and refreshing of feature sets for train
 3. **Store Results:** The data plane saves the computed feature values to the Feature Store's storage layer, making them available for low-latency retrieval by training jobs or inference services.
 4. **Update Status:** The data plane reports the job's completion status, health, and execution metrics (for example, rows processed, errors) back to the control plane for central tracking and observability.
 
-### Control and Data Plane Separation
+## Control and Data Plane Separation
 
 This architectural separation is a deliberate design choice and is highly important. It provides significant advantages for security, scalability, and governance.
 
