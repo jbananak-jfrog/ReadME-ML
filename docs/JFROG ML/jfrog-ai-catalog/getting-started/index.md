@@ -1,19 +1,22 @@
 ---
-title: Getting Started
+title: 'Get Started with the AI Catalog '
 deprecated: false
 hidden: false
 metadata:
   title: Getting Started
-  description: 'Once you have set up your JFrog ML account and your AI catalog entitlement,
-    all you need to do to start allowing models is follow these simple steps:'
-  robots: index
+  description: >-
+    Once you have set up your JFrog ML account and your AI catalog entitlement,
+    all you need to do to start allowing models is follow these simple steps:
   legacyUUIDs:
-  - UUID-b67e32b5-672a-1774-5aae-edf70ab6a2a4
-  - UUID-622ac15d-69f5-5745-e323-4a476ff55b0e
-  - UUID-622ac15d-69f5-5745-e323-4a476ff55b0e_UUID-ea3a6fcc-67be-f602-cb97-abb587ec9cd0
-  - UUID-220fcfe1-76a3-d592-77fe-ab422c8067b1
-  - UUID-4771c876-6465-e8a5-841a-169aeb05ceed
-  - UUID-4771c876-6465-e8a5-841a-169aeb05ceed_UUID-a5e35879-2d88-5f0f-b9cc-ad2df4eacaf5
+    - UUID-b67e32b5-672a-1774-5aae-edf70ab6a2a4
+    - UUID-622ac15d-69f5-5745-e323-4a476ff55b0e
+    - >-
+      UUID-622ac15d-69f5-5745-e323-4a476ff55b0e_UUID-ea3a6fcc-67be-f602-cb97-abb587ec9cd0
+    - UUID-220fcfe1-76a3-d592-77fe-ab422c8067b1
+    - UUID-4771c876-6465-e8a5-841a-169aeb05ceed
+    - >-
+      UUID-4771c876-6465-e8a5-841a-169aeb05ceed_UUID-a5e35879-2d88-5f0f-b9cc-ad2df4eacaf5
+  robots: index
 ---
 
 Once you have set up your JFrog ML account and your AI catalog entitlement, all you need to do to start allowing models is follow these simple steps:
