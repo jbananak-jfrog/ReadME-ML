@@ -4,17 +4,19 @@ deprecated: false
 hidden: false
 metadata:
   title: JFrog AI Catalog Architecture
-  description: This diagram shows how JFrog's AI Catalog works together with the various components of the JFrog platform.
-  robots: index
+  description: >-
+    This diagram shows how JFrog's AI Catalog works together with the various
+    components of the JFrog platform.
   legacyUUIDs:
     - UUID-09ac565e-a82a-65ce-6218-d18be441ad49
     - UUID-c8aaae0a-a2b6-fb4f-b789-b9acea06c841
+  robots: index
 ---
-#### AI Catalog High Level Architecture
+## AI Catalog High Level Architecture
 
 This diagram shows how JFrog's AI Catalog works together with the various components of the JFrog platform.
 
-![Screenshot_2025-08-27_at_17_44_07.png](https://files.readme.io/706b0ee87658aaef28f0b7a864287393f0fc4075767077bb709cadf83ab51202-uuid-473ad575-fe34-030c-84c5-912146a9361b.png)
+<Image alt="Screenshot_2025-08-27_at_17_44_07.png" border={false} src="https://files.readme.io/706b0ee87658aaef28f0b7a864287393f0fc4075767077bb709cadf83ab51202-uuid-473ad575-fe34-030c-84c5-912146a9361b.png" />
 
 With a focus on governance and compliance, the AI Catalog ensures that you can access all necessary models while maintaining the security of your operations.
 
