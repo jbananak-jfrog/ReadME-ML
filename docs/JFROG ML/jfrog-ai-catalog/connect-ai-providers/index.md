@@ -1,32 +1,38 @@
 ---
 title: Connect AI Providers
+excerpt: >-
+  A Connection stores the credentials required to access an external API model
+  provider, and can be established with providers such as OpenAI, or other cloud
+  services such as Amazon Bedrock.
 deprecated: false
 hidden: false
+link:
+  new_tab: false
 metadata:
   title: Connect AI Providers
-  description: A Connection stores the credentials required to access an external
-    API model provider, and can be established with providers such as OpenAI, or other
+  description: >-
+    A Connection stores the credentials required to access an external API model
+    provider, and can be established with providers such as OpenAI, or other
     cloud services such as Amazon Bedrock.
-  robots: index
   legacyUUIDs:
-  - UUID-2c846677-c49c-db81-d8a8-ff9f3ffe1881
-  - UUID-dc048153-9d27-b3ab-e41a-ba9153e1409b
-  - UUID-8c6f5b8d-9ce0-e9c1-e377-ce6c03f19f04
-  - UUID-79ba98b5-f592-daed-3f37-209d0bba01b9
-  - UUID-c068368d-5a22-9d19-f833-33817853ea07
-  - UUID-e9c72368-1e48-1697-6793-f620e2f15c2f
-  - UUID-1289f52f-4576-bb98-7cdd-c3f7b3064574
-  - UUID-97727780-6781-59d9-ca78-db1df075101f
+    - UUID-2c846677-c49c-db81-d8a8-ff9f3ffe1881
+    - UUID-dc048153-9d27-b3ab-e41a-ba9153e1409b
+    - UUID-8c6f5b8d-9ce0-e9c1-e377-ce6c03f19f04
+    - UUID-79ba98b5-f592-daed-3f37-209d0bba01b9
+    - UUID-c068368d-5a22-9d19-f833-33817853ea07
+    - UUID-e9c72368-1e48-1697-6793-f620e2f15c2f
+    - UUID-1289f52f-4576-bb98-7cdd-c3f7b3064574
+    - UUID-97727780-6781-59d9-ca78-db1df075101f
+  robots: index
 ---
-
 A **Connection** stores the credentials required to access an external API model provider, and can be established with providers such as OpenAI, or other cloud services such as Amazon Bedrock.
 
 In the *Connections* page, you can view a list of all the connections defined in your system.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-The *Connections* page is only available to platform admins.
+  The *Connections* page is only available to platform admins.
 </Callout>
 
 ![connections.png](https://files.readme.io/9d8003abfcd79d3733037c33ef2209e94cc48cd6d65e37821629eea6f967df96-uuid-7e511d8a-5063-80df-e79f-286f041f8e9c.png)
@@ -47,11 +53,12 @@ In the *Connections* page, you can:
 * Group by project
 * Show/hide columns
 
-See also:
+{/* See also:
 
 [Create a New Model Provider Connection](/docs/create-a-new-model-provider-connection "Create a New Model Provider Connection")
 
 [Create a New Secret](/docs/create-a-new-secret "Create a New Secret")
+*/}
 
 ## Create a New Model Provider Connection
 
@@ -81,7 +88,7 @@ OR:
 
 ## How to Get API Keys for External Providers
 
-API keys serve as unique identifiers used to authenticate requests from external applications or users to the service provider’s API. To enhance your JFrog ML workflows with integrated trading and AI models, acquiring API keys from external providers, such as Gemini and OpenAI, is essential. These keys enable secure and efficient access to powerful functionalities, ensuring smooth operations and automation.
+API keys serve as unique identifiers used to authenticate requests from external applications or users to the service provider's API. To enhance your JFrog ML workflows with integrated trading and AI models, acquiring API keys from external providers, such as Gemini and OpenAI, is essential. These keys enable secure and efficient access to powerful functionalities, ensuring smooth operations and automation.
 
 You can integrate several accounts from OpenAI, AWS, and Anthropic, each with your own unique API keys or authentication tokens. Each of these provider accounts can manage multiple models offered by the respective providers.
 
@@ -94,13 +101,13 @@ This procedure outlines the steps to create a new secret, which is used to secur
 1. In the *Allow Model Usage* pane, click **Create new secret**.
 
    ![createnewsecret.png](https://files.readme.io/740d60fbb5bba070e491ad73871321e3b8e70c3694f57bddd312e1a5a0a70aa2-uuid-52761a2e-a9cb-e72d-0913-9b903ba655d8.png)
+
 2. Enter a **Secret name** and the **Secret value**.
 
-   
-<Callout icon="📘" theme="info">
+   <Callout icon="📘" theme="info">
    **Note**
 
    For important information about choosing a name for your secret, see [Secret Management](/docs/secret-management "Secret Management").
-</Callout>
+   </Callout>
 
 3. Click **Save secret**. The secret is now displayed in the **API Key as Secret name** box.
