@@ -37,7 +37,7 @@ Deploying a model means actually setting up servers, often GPUs, and getting the
   If you are deploying a Hugging Face gated model, see the _**[Deploying Gated Models](/docs/deploy-model-packages-open-source#deploying-gated-models)**_ section below.
 </Callout>
 
-<Image alt="deploymodel1.png" border={false} src="https://files.readme.io/e8cc1e7b7049184a0c104b6dcc740308cf97d3abddd30c4fee0cc2424aa2510c-uuid-9391de17-3f66-eecd-8b78-77617e80c98b.png" />
+<Image align="left" alt="deploymodel1.png" border={false} width="70% " src="https://files.readme.io/e8cc1e7b7049184a0c104b6dcc740308cf97d3abddd30c4fee0cc2424aa2510c-uuid-9391de17-3f66-eecd-8b78-77617e80c98b.png" />
 
 1. Verify that the model name at the top of the _Deploy model_ pane is the model you want to deploy, and also that the project associated with the deployment is the correct project.
 
