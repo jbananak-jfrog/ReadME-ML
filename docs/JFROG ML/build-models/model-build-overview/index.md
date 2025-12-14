@@ -5,21 +5,20 @@ hidden: false
 metadata:
   title: Model Build Overview
   description: Learn how to easily build a model on JFrog ML
-  robots: index
   legacyUUIDs:
-  - UUID-1e1717bd-a990-ef61-f73b-c88807281bc6
-  - UUID-b99330dc-89d0-f415-bb3b-5394dacbcbda
-  - UUID-e7749bd6-96fd-3645-085d-f553d6788e1a
-  - UUID-5c446e4d-6004-628e-efe6-2532736b1eea
-  - UUID-92351a63-7ff2-4dea-35a1-91e706555c62
-  - UUID-3d6aba73-ad31-9fb8-9fe4-124abbd7e4a6
-  - UUID-4a1ddc4e-f4fa-67bf-3ced-6b6e7ad7e987
-  - UUID-a0c3f5dc-d2e5-23cd-d3f7-208d80cc9d39
-  - UUID-96679a3e-16ee-5f70-9b1d-1501870d98ea
-  - UUID-251bbfb6-7da7-6343-d503-444ab0e79174
+    - UUID-1e1717bd-a990-ef61-f73b-c88807281bc6
+    - UUID-b99330dc-89d0-f415-bb3b-5394dacbcbda
+    - UUID-e7749bd6-96fd-3645-085d-f553d6788e1a
+    - UUID-5c446e4d-6004-628e-efe6-2532736b1eea
+    - UUID-92351a63-7ff2-4dea-35a1-91e706555c62
+    - UUID-3d6aba73-ad31-9fb8-9fe4-124abbd7e4a6
+    - UUID-4a1ddc4e-f4fa-67bf-3ced-6b6e7ad7e987
+    - UUID-a0c3f5dc-d2e5-23cd-d3f7-208d80cc9d39
+    - UUID-96679a3e-16ee-5f70-9b1d-1501870d98ea
+    - UUID-251bbfb6-7da7-6343-d503-444ab0e79174
+  robots: index
 ---
-
-Learn how to easily build a model on JFrog ML
+Learn how to easily build a model on JFrog ML 
 
 ### About Model Builds
 
@@ -207,8 +206,6 @@ or for example with mock values:
 
 ```
 frogml models build --model-id "titanic" -E VERSION_NUMBER=1.2 -E MODEL_NAME=catboost .
-```
-
 ```
 
 ## Model Builds SDK
