@@ -29,7 +29,7 @@ Deploying a model means actually setting up servers, often GPUs, and getting the
 * **Simplified Integration:** Accelerate the process of bringing AI applications into production.
 * **Ongoing Monitoring:** Keep track of model performance and usage post-deployment.
 
-**>> To deploy a model package:**
+/ ** ▶ To deploy a model package:**
 
 <Callout icon="📘" theme="info">
   **Note**
