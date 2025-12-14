@@ -37,7 +37,7 @@ Deploying a model means actually setting up servers, often GPUs, and getting the
   If you are deploying a Hugging Face gated model, see the _**[Deploying Gated Models](/docs/deploy-model-packages-open-source#deploying-gated-models)**_ section below.
 </Callout>
 
-<Image align="left" alt="deploymodel1.png" border={false} width="80% " src="https://files.readme.io/e8cc1e7b7049184a0c104b6dcc740308cf97d3abddd30c4fee0cc2424aa2510c-uuid-9391de17-3f66-eecd-8b78-77617e80c98b.png" />
+<Image align="left" alt="deploymodel1.png" border={true} width="80% " src="https://files.readme.io/e8cc1e7b7049184a0c104b6dcc740308cf97d3abddd30c4fee0cc2424aa2510c-uuid-9391de17-3f66-eecd-8b78-77617e80c98b.png" className="border" />
 
 1. Verify that the model name at the top of the _Deploy model_ pane is the model you want to deploy, and also that the project associated with the deployment is the correct project.
 
@@ -89,6 +89,6 @@ Deploying gated models requires obtaining access approval from Hugging Face befo
 
 1. Enter the Deploy model pane for the required project (as described at the top of this page). Note that it is slightly different.
 
-   <Image alt="deploygatedmodels.png" border={false} src="https://files.readme.io/6c2a51021badf52e9470c5552f3d5c5ee4ea2ef352e879e88c53c60d848c5b02-uuid-dcaa992a-3997-ca6a-37a5-8dc3940f015f.png" />
+   <Image align="center" alt="deploygatedmodels.png" border={true} src="https://files.readme.io/6c2a51021badf52e9470c5552f3d5c5ee4ea2ef352e879e88c53c60d848c5b02-uuid-dcaa992a-3997-ca6a-37a5-8dc3940f015f.png" className="border" />
 2. Follow the instructions at the top of the pane for getting access approval from Hugging Face.
 3. Fill in the other fields as described above, and click **Deploy model**.
