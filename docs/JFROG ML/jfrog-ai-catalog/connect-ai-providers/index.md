@@ -27,22 +27,22 @@ metadata:
 ---
 A **Connection** stores the credentials required to access an external API model provider, and can be established with providers such as OpenAI, or other cloud services such as Amazon Bedrock.
 
-In the *Connections* page, you can view a list of all the connections defined in your system.
+In the _Connections_ page, you can view a list of all the connections defined in your system.
 
 <Callout icon="📘" theme="info">
   **Note**
 
-  The *Connections* page is only available to platform admins.
+  The _Connections_ page is only available to platform admins.
 </Callout>
 
-![connections.png](https://files.readme.io/9d8003abfcd79d3733037c33ef2209e94cc48cd6d65e37821629eea6f967df96-uuid-7e511d8a-5063-80df-e79f-286f041f8e9c.png)
+<Image alt="connections.png" border={false} src="https://files.readme.io/9d8003abfcd79d3733037c33ef2209e94cc48cd6d65e37821629eea6f967df96-uuid-7e511d8a-5063-80df-e79f-286f041f8e9c.png" />
 
-To view the *Connections* page:
+To view the _Connections_ page:
 
 1. In the JFrog platform, select the **Administration** module.
 2. Scroll down to the bottom of the left menu bar and select **AI/ML Settings** > **Connections**.
 
-In the *Connections* page, you can:
+In the _Connections_ page, you can:
 
 * Sort ascending/descending by Secret name, Environment, or time of creation
 * Filter by Connection name, Provider, Project or Environment
@@ -70,20 +70,20 @@ When you select a project for allowing a model, and you do not have any models f
 
 EITHER:
 
-1. In the *Allow Model Usage* pane, enter a unique **Connection name**.
+1. In the _Allow Model Usage_ pane, enter a unique **Connection name**.
 
-   ![createconnection_allowmodelusage.png](https://files.readme.io/2b35d96ffb6292a18e3456e2995e3f48ca17b77f49799dd17c4de3ceb2e7b6ff-uuid-29575b5f-c35e-a875-5cd9-26bbc11b60f0.png)
-2. Select a secret from the **API Key as Secret Name** dropdown list or [Create a New Secret](/docs/create-a-new-secret "Create a New Secret").
-3. Click **Create connection**. The "*Connection created successfully*" notification is displayed.
+   <Image align="center" alt="createconnection_allowmodelusage.png" border={false} src="https://files.readme.io/2b35d96ffb6292a18e3456e2995e3f48ca17b77f49799dd17c4de3ceb2e7b6ff-uuid-29575b5f-c35e-a875-5cd9-26bbc11b60f0.png" />
+2. Select a secret from the **API Key as Secret Name** dropdown list or <Anchor label="Create a New Secret" title="Create a New Secret" href="/docs/create-a-new-secret">Create a New Secret</Anchor>.
+3. Click **Create connection**. The "_Connection created successfully_" notification is displayed.
 
 OR:
 
 1. In the Administration module menu bar, select **AI/ML Settings** > **Connections**.
 
-   ![createnewconnection_admin.png](https://files.readme.io/a4a376d61d8b9477032da9ed4a6233a0baaab35bce8d6b60030d4376427882b8-uuid-13eca0a8-3e13-1944-5679-e21c4ea4f2d3.png)
+   <Image alt="createnewconnection_admin.png" border={false} src="https://files.readme.io/a4a376d61d8b9477032da9ed4a6233a0baaab35bce8d6b60030d4376427882b8-uuid-13eca0a8-3e13-1944-5679-e21c4ea4f2d3.png" />
 2. Click **Create new connection**.
 3. Enter a unique **Connection name**, the project and the model provider for the connection.
-4. Select a secret for the connection from the **API Key as Secret Name** dropdown list or [Create a New Secret](/docs/create-a-new-secret "Create a New Secret").
+4. Select a secret for the connection from the **API Key as Secret Name** dropdown list or <Anchor label="Create a New Secret" title="Create a New Secret" href="/docs/create-a-new-secret">Create a New Secret</Anchor>.
 5. Click **Save**.
 
 ## How to Get API Keys for External Providers
@@ -98,16 +98,16 @@ This procedure outlines the steps to create a new secret, which is used to secur
 
 **To create a new secret:**
 
-1. In the *Allow Model Usage* pane, click **Create new secret**.
+1. In the _Allow Model Usage_ pane, click **Create new secret**.
 
-   ![createnewsecret.png](https://files.readme.io/740d60fbb5bba070e491ad73871321e3b8e70c3694f57bddd312e1a5a0a70aa2-uuid-52761a2e-a9cb-e72d-0913-9b903ba655d8.png)
+   <Image alt="createnewsecret.png" border={false} src="https://files.readme.io/740d60fbb5bba070e491ad73871321e3b8e70c3694f57bddd312e1a5a0a70aa2-uuid-52761a2e-a9cb-e72d-0913-9b903ba655d8.png" />
 
 2. Enter a **Secret name** and the **Secret value**.
 
    <Callout icon="📘" theme="info">
-   **Note**
+     **Note**
 
-   For important information about choosing a name for your secret, see [Secret Management](/docs/secret-management "Secret Management").
+     For important information about choosing a name for your secret, see <Anchor label="Secret Management" title="Secret Management" href="/docs/secret-management">Secret Management</Anchor>.
    </Callout>
 
 3. Click **Save secret**. The secret is now displayed in the **API Key as Secret name** box.
