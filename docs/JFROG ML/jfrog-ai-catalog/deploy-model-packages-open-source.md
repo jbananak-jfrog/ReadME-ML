@@ -45,8 +45,8 @@ Deploying a model means actually setting up servers, often GPUs, and getting the
 
 3. Select the **Scaling policy** and number of **replicas**:
 
-   * **Autoscaling** - Coming soon (this option will allow the replicas to scale according to demand).
-   * **Fixed replicas** - Select this to maintain a fixed number of replicas, according to the number you select. Select either on the **Replicas** bar, or select the **Custom replica count** checkbox and enter a value.
+   * **Autoscaling:** Coming soon (this option will allow the replicas to scale according to demand).
+   * **Fixed replicas:** Select this to maintain a fixed number of replicas, according to the number you select. Select either on the **Replicas** bar, or select the **Custom replica count** checkbox and enter a value.
 
 4. Click **Deploy model**. The model Overview page shows the deployment status.
 
@@ -81,7 +81,7 @@ After the deployment has completed successfully you can see the model dashboard 
 
 **Now in the model overview page, you can see the model's usage metrics.**
 
-### Deploying Gated Models
+## Deploying Gated Models
 
 Deploying gated models requires obtaining access approval from Hugging Face before deployment.
 
