@@ -18,3 +18,30 @@ By scanning all artifacts across the JFrog Platform, we identify what models are
 <Callout icon="📘" theme="info">
   Shadow AI Detection is available to all organizations with an active AI Catalog subscription.
 </Callout>
+
+## How does the Shadow AI Detection Process Work?
+
+The ​**Detection**​​ tab provides a single view of all AI models discovered in your JFrog Platform, whether managed or unmanaged. To detect models, your JFrog system uses Xray to scan artifacts.
+​
+According to your Xray scan settings, repositories are scanned to detect models.
+​
+If no models appear in the Detection tab, verify that the correct repositories are being scanned by Xray.
+
+<Callout icon="📘" theme="info">
+  ​​**For Administrators only: To verify or select repositories to scan:​**
+  ​
+  ​In the ​Administration​ Module, navigate to ​**Xray Settings**​ > **​Indexed Resources**​​.
+  ​
+  Browse the list of repositories displayed. If the repositories you want to be scanned are not selected, click ​**Add a Repository**​​.
+  ​
+  ​
+  ​
+  Select the repositories you want Xray to scan to detect models and the arrow button to move it into the ​Selected Repositories​​column.
+  ​
+  ​
+  ​
+  Click ​Save​​.
+  ​
+  ​
+  ​​​addrepositorytoxrayscan.gif​​
+</Callout>
