@@ -77,7 +77,7 @@ The *Versions* tab in the Custom Models page shows a list of available versions 
 <Callout icon="📘" theme="info">
 **Note**
 
-To learn more about FrogML and machine learning repositories in Artifactory, see [Machine Learning Repositories](/docs/889841#UUID-9ec527c3-5e95-0faa-0bb9-2d23823903de)
+To learn more about FrogML and machine learning repositories in Artifactory, see [Machine Learning Repositories](/artifactory/docs/machine-learning-repositories#UUID-9ec527c3-5e95-0faa-0bb9-2d23823903de)
 </Callout>
 
 
