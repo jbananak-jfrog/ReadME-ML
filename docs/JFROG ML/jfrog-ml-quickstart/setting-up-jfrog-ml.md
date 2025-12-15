@@ -16,7 +16,7 @@ This page describes how to set up JFrog ML, including installing and configuring
 
 ## Self-Managed
 
-For self-managed, follow the instructions in [Activate AI ML](/docs/927949#UUID-9d538a74-8194-6c3b-7c50-fa52d9760755).
+For self-managed, follow the instructions in [Activate AI ML](/machine-learning/docs/setting-up-jfrog-ml).
 
 ## JFrog SAAS
 
@@ -88,7 +88,7 @@ After installing the frogml-cli, you need to configure it. You have two main opt
 
 **Sub-option 1: Define access token:**
 
-1. With this option, you must first [generate an access token](/docs/360935#UUID-36a58105-bc2e-c0f6-0bd1-3cfd01e66fd0) in the Jfrog platform.
+1. With this option, you must first [generate an access token](/administration/docs/access-tokens) in the Jfrog platform.
 
    <Image alt="configuring-qwak-sdk-jfrogml.png" border={false} src="https://files.readme.io/994c0d7f55ccbd32b229d01d1b5707fc6f8ab0ddd785e8d0d5afe33f5275170b-uuid-e2092192-8a39-bb2e-7f5e-2ce203e74599.png" />
 2. Open the terminal and type in the following command, replacing the variables:

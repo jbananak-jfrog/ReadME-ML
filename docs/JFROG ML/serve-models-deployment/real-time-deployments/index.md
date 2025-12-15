@@ -566,7 +566,7 @@ After deploying a FrogML-based model, you can use a REST client to request infer
 
 To access the REST client, you first need to generate an access token.
 
-1. [Generate an access token](/governance/docs/access-tokens#UUID-36a58105-bc2e-c0f6-0bd1-3cfd01e66fd0).
+1. [Generate an access token](/governance/docs/access-tokens).
 2. Set up your environment: Add the generated token to your environment by using the following command;
 
 ```
