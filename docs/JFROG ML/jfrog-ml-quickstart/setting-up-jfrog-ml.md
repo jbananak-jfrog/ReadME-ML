@@ -16,7 +16,7 @@ This page describes how to set up JFrog ML, including installing and configuring
 
 ## Self-Managed
 
-For self-managed, follow the instructions in [Activate AI ML](/machine-learning/docs/setting-up-jfrog-ml).
+For self-managed, follow the instructions in [Activate AI ML](/docs/setting-up-jfrog-ml).
 
 ## JFrog SAAS
 
