@@ -136,111 +136,139 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
 
 <HTMLBlock>{`
 <style>
-  /* 1. The Container: Sets up the row */
-  .horizontal-cards {
-    display: flex;
-    flex-wrap: wrap; /* Allows items to wrap if screen is small */
-    gap: 10px;       /* Space between cards */
+  /* 1. The Container: Uses Grid to force 5 columns */
+  .grid-accordion {
+    display: grid;
+    /* This creates exactly 5 equal columns */
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 10px;
     margin-bottom: 20px;
+    width: 100%;
   }
 
-  /* 2. The Magic: Unbox the details tag so we can sort children directly */
-  .horizontal-cards details {
+  /* 2. Unbox the details tag so grid sees the children directly */
+  .grid-accordion details {
     display: contents;
   }
 
   /* 3. The Card Headers (Summaries) */
-  .horizontal-cards summary {
-    order: 1;              /* Force all headers to stay at the top */
-    flex: 1 0 18%;         /* Width: roughly 5 items = 20% minus gap */
-    min-width: 160px;      /* Prevent them from getting too skinny */
+  .grid-accordion summary {
+    grid-row: 1;          /* Force ALL summaries to the first row */
+    cursor: pointer;
     
-    /* Layout for the text inside the card */
+    /* Visual Styling */
+    background: #ffffff;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 15px 5px;    /* 5px side padding prevents overflow */
+    text-align: center;
+    font-weight: 600;
+    font-size: 13px;      /* Slightly smaller font to ensure fit */
+    line-height: 1.3;
+    list-style: none;     /* Hide triangle */
+    
+    /* Center the text vertically */
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    height: auto;
-    min-height: 80px;      /* Consistent height */
-    
-    background: #ffffff;
-    padding: 15px;
-    border: 1px solid #e1e4e8;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 1.4;
-    list-style: none;      /* Hide default triangle */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    transition: all 0.2s ease;
+    height: 100%;         /* Fill the grid cell height */
+    min-height: 70px;     /* Minimum height for look */
+    transition: all 0.2s ease-in-out;
   }
 
   /* Hover State */
-  .horizontal-cards summary:hover {
+  .grid-accordion summary:hover {
     background: #f6f8fa;
     border-color: #0366d6;
-    transform: translateY(-2px);
   }
 
-  /* Selected/Open State */
-  .horizontal-cards details[open] summary {
-    background: #f0f7ff;
-    border-color: #0366d6;
-    border-bottom: 3px solid #0366d6;
-    color: #0366d6;
+  /* 4. ACTIVE STATE (The Highlighting You Requested) */
+  .grid-accordion details[open] summary {
+    background-color: #2f3747; /* Dark blue background */
+    color: #ffffff;            /* White text */
+    border-color: #2f3747;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transform: scale(1.02);    /* Pop out slightly */
+    z-index: 2;                /* Sit above others */
   }
+  
+  /* Remove the default arrow marker */
+  .grid-accordion summary::-webkit-details-marker { display: none; }
 
-  /* Hide default marker in Chrome/Safari */
-  .horizontal-cards summary::-webkit-details-marker {
-    display: none;
-  }
-
-  /* 4. The Content Box (Opens below) */
-  .horizontal-cards .card-content {
-    order: 2;              /* Force content to appear AFTER the row of cards */
-    width: 100%;           /* Span the full width of the container */
+  /* 5. The Content Box */
+  .grid-accordion .grid-content {
+    grid-row: 2;           /* Force content to the SECOND row */
+    grid-column: 1 / -1;   /* Span across ALL columns (start to end) */
     
     background: #fff;
     border: 1px solid #e1e4e8;
     border-radius: 8px;
     padding: 25px;
-    margin-top: 10px;
+    margin-top: 5px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    
-    /* Animation */
-    animation: slideDown 0.3s ease-out;
+    animation: fadeIn 0.3s ease-in;
   }
 
-  @keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
     to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Mobile Responsive: If screen is tiny, stack them instead of squishing */
+  @media (max-width: 700px) {
+    .grid-accordion {
+      display: flex;
+      flex-direction: column;
+    }
+    .grid-accordion summary {
+      min-height: 50px;
+    }
   }
 </style>
 
-<div class="horizontal-cards">
+<div class="grid-accordion">
 
   <details name="ai-group">
     <summary>Detect AI Usage</summary>
-    <div class="card-content">
-      <h3>Gain Full AI Visibility</h3>
+    <div class="grid-content">
+      <h3 style="margin-top:0;">Gain Full AI Visibility</h3>
       <p>You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory. By revealing "Shadow AI", you can assess immediate risks and establish a clean, trusted baseline for your AI operations journey.</p>
     </div>
   </details>
 
   <details name="ai-group">
-    <summary>Centralize & Govern AI Assets</summary>
-    <div class="card-content">
-      <h3>Gain Full AI Visibility</h3>
-      <p>You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory. By revealing "Shadow AI", you can assess immediate risks and establish a clean, trusted baseline for your AI operations journey.</p>
+    <summary>Centralize & Govern</summary>
+    <div class="grid-content">
+      <h3 style="margin-top:0;">Centralized Governance</h3>
+      <p>Content for Centralize & Govern AI Assets goes here. This text appears below the cards when clicked.</p>
     </div>
   </details>
 
   <details name="ai-group">
-    <summary>Build & Deploy Models</summary>
-    <div class="card-content">
-      <h3>Gain Full AI Visibility</h3>
-      <p>You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory. By revealing "Shadow
+    <summary>Build & Deploy</summary>
+    <div class="grid-content">
+      <h3 style="margin-top:0;">Build & Deploy Models</h3>
+      <p>Content for Build & Deploy Models goes here. This text appears below the cards when clicked.</p>
+    </div>
+  </details>
+
+  <details name="ai-group">
+    <summary>Monitor Performance</summary>
+    <div class="grid-content">
+      <h3 style="margin-top:0;">Monitor Model Performance</h3>
+      <p>Content for Monitor Model Performance goes here. This text appears below the cards when clicked.</p>
+    </div>
+  </details>
+
+  <details name="ai-group">
+    <summary>Turn Data Into Features</summary>
+    <div class="grid-content">
+      <h3 style="margin-top:0;">Turn Data Into Features</h3>
+      <p>Content for Turn Data Into Features goes here. This text appears below the cards when clicked.</p>
+    </div>
+  </details>
+
+</div>
 `}</HTMLBlock>
 
 <br />
