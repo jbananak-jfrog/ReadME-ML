@@ -26,7 +26,7 @@ When you enter the AI Catalog, you can explore various models available for use 
 
 After you have allowed your first model, you will see that the allowed models all appear in the **Allowed Models** tab.
 
-* For instructions how to allow your first model, see <Anchor label="**Allowing Your First Model**" title="Allow Your First Model" href="/docs/allow-your-first-model">**Allowing Your First Model**</Anchor>.
+* For instructions how to allow your first model, see <Anchor label="**Allowing Your First Model**" title="Allow Your First Model" href="#allow-your-first-model">**Allowing Your First Model**</Anchor>.
 * To allow additional models, the same instructions can be followed. Note, however, that if the **model provider is already associated with the project** (meaning that another model from the same provider is associated with the project), the **connection is already set up** and does not need to be re-selected.
 
 ## Managing External APIs

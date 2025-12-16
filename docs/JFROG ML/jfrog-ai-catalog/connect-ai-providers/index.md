@@ -73,7 +73,7 @@ EITHER:
 1. In the _Allow Model Usage_ pane, enter a unique **Connection name**.
 
    <Image align="center" alt="createconnection_allowmodelusage.png" border={false} src="https://files.readme.io/2b35d96ffb6292a18e3456e2995e3f48ca17b77f49799dd17c4de3ceb2e7b6ff-uuid-29575b5f-c35e-a875-5cd9-26bbc11b60f0.png" />
-2. Select a secret from the **API Key as Secret Name** dropdown list or <Anchor label="Create a New Secret" title="Create a New Secret" href="/docs/create-a-new-secret">Create a New Secret</Anchor>.
+2. Select a secret from the **API Key as Secret Name** dropdown list or <Anchor label="Create a New Secret" title="Create a New Secret" href="#create-a-new-secret">Create a New Secret</Anchor>.
 3. Click **Create connection**. The "_Connection created successfully_" notification is displayed.
 
 OR:
@@ -83,7 +83,7 @@ OR:
    <Image alt="createnewconnection_admin.png" border={false} src="https://files.readme.io/a4a376d61d8b9477032da9ed4a6233a0baaab35bce8d6b60030d4376427882b8-uuid-13eca0a8-3e13-1944-5679-e21c4ea4f2d3.png" />
 2. Click **Create new connection**.
 3. Enter a unique **Connection name**, the project and the model provider for the connection.
-4. Select a secret for the connection from the **API Key as Secret Name** dropdown list or <Anchor label="Create a New Secret" title="Create a New Secret" href="/docs/create-a-new-secret">Create a New Secret</Anchor>.
+4. Select a secret for the connection from the **API Key as Secret Name** dropdown list or <Anchor label="Create a New Secret" title="Create a New Secret" href="#create-a-new-secret">Create a New Secret</Anchor>.
 5. Click **Save**.
 
 ## How to Get API Keys for External Providers
