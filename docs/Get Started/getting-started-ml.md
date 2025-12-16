@@ -15,73 +15,82 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
 
 ## ✍️ How Does it Work?
 
-<style>{`
-  /* Container for the grid */
-  .card-accordion {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
-    align-items: stretch; /* Makes all cards in a row the same height */
-  }
+<HTMLBlock>{`
+<style>
+  {\`
+    /* Container for the grid */
+    .card-accordion {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 20px;
+      align-items: stretch; /* Makes all cards in a row the same height */
+    }
 
-  /* 'display: contents' unboxes the details tag so we can order children directly */
-  .card-accordion details {
-    display: contents;
-  }
+    /* 'display: contents' unboxes the details tag so we can order children directly */
+    .card-accordion details {
+      display: contents;
+    }
 
-  /* The Card Headers (Summaries) - UPDATED FOR MULTILINE */
-  .card-accordion summary {
-    order: 1;             
-    flex: 1 0 18%;        /* Roughly 5 cards in a row */
-    min-width: 150px;     
-    padding: 12px 16px;
-    background: #ffffff;
-    border: 2px solid #e1e4e8;
-    border-radius: 8px;
-    cursor: pointer;
-    text-align: center;
-    font-weight: 600;
-    color: #24292e;
-    transition: all 0.2s ease;
-  }
+    /* The Card Headers (Summaries) - UPDATED FOR MULTILINE */
+    .card-accordion summary {
+      order: 1;             
+      flex: 1 0 18%;        /* Roughly 5 cards in a row */
+      min-width: 150px;     
+      padding: 12px 16px;
+      background: #ffffff;
+      border: 2px solid #e1e4e8;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      font-weight: 600;
+      color: #24292e;
+      transition: all 0.2s ease;
+    }
 
-  /* Hover and Active States */
-  .card-accordion summary:hover {
-    background: #f6f8fa;
-    border-color: #0366d6;
-  }
+    /* Hover and Active States */
+    .card-accordion summary:hover {
+      background: #f6f8fa;
+      border-color: #0366d6;
+    }
 
-  /* Style when a card is open */
-  .card-accordion details[open] summary {
-    background: #f1f8ff;
-    border-color: #0366d6;
-    border-bottom: 3px solid #0366d6;
-  }
+    /* Style when a card is open */
+    .card-accordion details[open] summary {
+      background: #f1f8ff;
+      border-color: #0366d6;
+      border-bottom: 3px solid #0366d6;
+    }
 
-  /* Hide the default triangle marker in Webkit/Chrome */
-  .card-accordion summary::-webkit-details-marker {
-    display: none;
-  }
+    /* Hide the default triangle marker in Webkit/Chrome */
+    .card-accordion summary::-webkit-details-marker {
+      display: none;
+    }
 
-  /* The Content Box */
-  .card-content {
-    order: 2;             
-    width: 100%;          
-    background: #fff;
-    border: 1px solid #e1e4e8;
-    border-radius: 8px;
-    padding: 20px;
-    margin-top: 5px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    animation: fadeIn 0.3s ease-in;
-  }
+    /* The Content Box */
+    .card-content {
+      order: 2;             
+      width: 100%;          
+      background: #fff;
+      border: 1px solid #e1e4e8;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 5px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      animation: fadeIn 0.3s ease-in;
+    }
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-`}</style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  \`}
+
+</style>
+`}</HTMLBlock>
+
+<br />
+
+
 
 <Tabs>
   <Tab title="Detect AI Usage">
