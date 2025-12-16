@@ -134,6 +134,117 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
 
 <br />
 
+<HTMLBlock>{`
+<style>
+  /* 1. The Container: Sets up the row */
+  .horizontal-cards {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap if screen is small */
+    gap: 10px;       /* Space between cards */
+    margin-bottom: 20px;
+  }
+
+  /* 2. The Magic: Unbox the details tag so we can sort children directly */
+  .horizontal-cards details {
+    display: contents;
+  }
+
+  /* 3. The Card Headers (Summaries) */
+  .horizontal-cards summary {
+    order: 1;              /* Force all headers to stay at the top */
+    flex: 1 0 18%;         /* Width: roughly 5 items = 20% minus gap */
+    min-width: 160px;      /* Prevent them from getting too skinny */
+    
+    /* Layout for the text inside the card */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: auto;
+    min-height: 80px;      /* Consistent height */
+    
+    background: #ffffff;
+    padding: 15px;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.4;
+    list-style: none;      /* Hide default triangle */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.2s ease;
+  }
+
+  /* Hover State */
+  .horizontal-cards summary:hover {
+    background: #f6f8fa;
+    border-color: #0366d6;
+    transform: translateY(-2px);
+  }
+
+  /* Selected/Open State */
+  .horizontal-cards details[open] summary {
+    background: #f0f7ff;
+    border-color: #0366d6;
+    border-bottom: 3px solid #0366d6;
+    color: #0366d6;
+  }
+
+  /* Hide default marker in Chrome/Safari */
+  .horizontal-cards summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* 4. The Content Box (Opens below) */
+  .horizontal-cards .card-content {
+    order: 2;              /* Force content to appear AFTER the row of cards */
+    width: 100%;           /* Span the full width of the container */
+    
+    background: #fff;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    padding: 25px;
+    margin-top: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    
+    /* Animation */
+    animation: slideDown 0.3s ease-out;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<div class="horizontal-cards">
+
+  <details name="ai-group">
+    <summary>Detect AI Usage</summary>
+    <div class="card-content">
+      <h3>Gain Full AI Visibility</h3>
+      <p>You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory. By revealing "Shadow AI", you can assess immediate risks and establish a clean, trusted baseline for your AI operations journey.</p>
+    </div>
+  </details>
+
+  <details name="ai-group">
+    <summary>Centralize & Govern AI Assets</summary>
+    <div class="card-content">
+      <h3>Gain Full AI Visibility</h3>
+      <p>You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory. By revealing "Shadow AI", you can assess immediate risks and establish a clean, trusted baseline for your AI operations journey.</p>
+    </div>
+  </details>
+
+  <details name="ai-group">
+    <summary>Build & Deploy Models</summary>
+    <div class="card-content">
+      <h3>Gain Full AI Visibility</h3>
+      <p>You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory. By revealing "Shadow
+`}</HTMLBlock>
+
+<br />
+
 <Tabs>
   <Tab title="Detect AI Usage">
     Welcome to the content that you can only see inside the first Tab.
