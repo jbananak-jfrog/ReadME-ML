@@ -1,21 +1,39 @@
 ---
-title: Getting Started with Machine Learning (MLOps)
-excerpt: >-
-  This page will help you get started with Machine Learning (MLOps). You'll be
-  up and running in a jiffy!
+title: Getting Started with AI/ML (MLOps)
+excerpt: This page will help you get started with Machine Learning (MLOps).
 hidden: false
 ---
-# Welcome to ReadMe
-
-Welcome to your JFrog AI ML.
+# Welcome to JFrog AI ML
 
 <Image align="center" border={true} src="https://files.readme.io/24416c14ed7f479f1e433d68050b3ff4e7a64b08318759636b35055ec0cec97c-AI_ML_Diagram_for_JFrog_ML.png" className="border" />
 
-You’re looking at a starter page we included to help you get started. Feel free to treat this as your first doc by hitting **Edit** at the top to make it your own, or delete it to start fresh.
+You’re looking at a map of how JFrog can help you govern and manage all your AI and ML assets. Read on to understand how JFrog secures your system, and helps prevent the entry of malicious or ??? assets into your software environment.
 
 ***
 
-## ✍️ Write Docs with Components & Guides
+## ✍️ How Does it Work?
+
+<Cards columns={4}>
+  <Card title="Detect AI Usage" href="https://readme.com" icon="fa-home" target="_blank">
+    Detect AI Usage
+  </Card>
+
+  <Card title="Centralize & Govern AI Assets" icon="fa-user">
+    *123*
+  </Card>
+
+  <Card title="Build & Deploy Models" icon="fa-star">
+    123
+  </Card>
+
+  <Card title="Monitor Model Performance" icon="fa-question">
+    **1233**
+  </Card>
+ <Card title="Turn Data Into Features" icon="fa-question">
+    **Turn Data Into Features
+**
+  </Card>
+</Cards>
 
 Start by creating <Anchor label="**Guides**" target="_blank" href="https://docs.readme.com/main/docs/creating-and-managing-guides">**Guides**</Anchor> - your API's instruction manual where you can walk users through key concepts, tutorials, or best practices.
 
