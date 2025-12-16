@@ -13,7 +13,7 @@ You’re looking at a map of how JFrog can help you govern and manage all your A
 
 ## ✍️ How Does it Work?
 
-<Cards columns={4}>
+<Cards columns={5}>
   <Card title="Detect AI Usage" href="https://readme.com" icon="fa-home" target="_blank">
     Detect AI Usage
   </Card>
@@ -29,9 +29,10 @@ You’re looking at a map of how JFrog can help you govern and manage all your A
   <Card title="Monitor Model Performance" icon="fa-question">
     **1233**
   </Card>
- <Card title="Turn Data Into Features" icon="fa-question">
-    **Turn Data Into Features
-**
+
+  <Card title="Turn Data Into Features" icon="fa-question">
+    \*\*Turn Data Into Features
+    \*\*
   </Card>
 </Cards>
 
