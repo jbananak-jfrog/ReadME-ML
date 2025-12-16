@@ -31,8 +31,7 @@ You’re looking at a map of how JFrog can help you govern and manage all your A
   </Card>
 
   <Card title="Turn Data Into Features" icon="fa-question">
-    \*\*Turn Data Into Features
-    \*\*
+    \*\*Turn Data Into Features\*\*
   </Card>
 </Cards>
 
