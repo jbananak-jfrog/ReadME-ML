@@ -2,39 +2,105 @@
 title: Getting Started with AI/ML (MLOps)
 excerpt: This page will help you get started with Machine Learning (MLOps).
 hidden: false
+link:
+  new_tab: false
 ---
 # Welcome to JFrog AI ML
 
 <Image align="center" border={true} src="https://files.readme.io/24416c14ed7f479f1e433d68050b3ff4e7a64b08318759636b35055ec0cec97c-AI_ML_Diagram_for_JFrog_ML.png" className="border" />
 
-You’re looking at a map of how JFrog can help you govern and manage all your AI and ML assets. Read on to understand how JFrog secures your system, and helps prevent the entry of malicious or ??? assets into your software environment.
+You're looking at a map of how JFrog can help you govern and manage all your AI and ML assets. Read on to understand how JFrog secures your system, and helps prevent the entry of malicious or ??? assets into your software environment.
 
 ***
 
 ## ✍️ How Does it Work?
+
+<style>{`
+  /* Container for the grid */
+  .card-accordion {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    align-items: stretch; /* Makes all cards in a row the same height */
+  }
+
+  /* 'display: contents' unboxes the details tag so we can order children directly */
+  .card-accordion details {
+    display: contents;
+  }
+
+  /* The Card Headers (Summaries) - UPDATED FOR MULTILINE */
+  .card-accordion summary {
+    order: 1;             
+    flex: 1 0 18%;        /* Roughly 5 cards in a row */
+    min-width: 150px;     
+    padding: 12px 16px;
+    background: #ffffff;
+    border: 2px solid #e1e4e8;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 600;
+    color: #24292e;
+    transition: all 0.2s ease;
+  }
+
+  /* Hover and Active States */
+  .card-accordion summary:hover {
+    background: #f6f8fa;
+    border-color: #0366d6;
+  }
+
+  /* Style when a card is open */
+  .card-accordion details[open] summary {
+    background: #f1f8ff;
+    border-color: #0366d6;
+    border-bottom: 3px solid #0366d6;
+  }
+
+  /* Hide the default triangle marker in Webkit/Chrome */
+  .card-accordion summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* The Content Box */
+  .card-content {
+    order: 2;             
+    width: 100%;          
+    background: #fff;
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 5px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    animation: fadeIn 0.3s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+`}</style>
 
 <Tabs>
   <Tab title="Detect AI Usage">
     Welcome to the content that you can only see inside the first Tab.
   </Tab>
 
-  <Tab title="Centralize & 
-Govern AI Assets">
+  <Tab title="Centralize & Govern AI Assets">
     Here's content that's only inside the second Tab.
   </Tab>
 
-  <Tab title="Build & Deploy 
-Models">
+  <Tab title="Build & Deploy Models">
     Here's content that's only inside the third Tab.
   </Tab>
 
-  <Tab title="Monitor 
-Model Performance">
+  <Tab title="Monitor Model Performance">
     Here's content that's only inside the third Tab.
   </Tab>
 
-  <Tab title="Turn Data 
-Into Features">
+  <Tab title="Turn Data Into Features">
     Here's content that's only inside the third Tab.
   </Tab>
 </Tabs>
@@ -114,7 +180,7 @@ AI is built into ReadMe to help you and your users move faster. Slide the panel 
 
 You can create a branch directly from the Versions & Branches menu, save edits into a new branch, or sync with GitHub and automatically reflect branches across both platforms.
 
-Once you're ready, merge the branch back into a live version. Enterprise plans can control who has merge access, and you’ll always get a conflict check before merging.
+Once you're ready, merge the branch back into a live version. Enterprise plans can control who has merge access, and you'll always get a conflict check before merging.
 
 ***
 
@@ -134,7 +200,7 @@ Whether you write docs in ReadMe's editor or your local dev environment, ReadMe 
 
 Want to know how developers are actually using your API and docs?
 
-* **<Anchor label="My Developers" target="_blank" href="https://docs.readme.com/main/docs/developer-dashboard">My Developers</Anchor>** gives you real-time visibility into who is visiting your docs, what endpoints they’re using, and where they’re getting stuck.
+* **<Anchor label="My Developers" target="_blank" href="https://docs.readme.com/main/docs/developer-dashboard">My Developers</Anchor>** gives you real-time visibility into who is visiting your docs, what endpoints they're using, and where they're getting stuck.
 * Segment usage by key users or cohorts to monitor engagement and spot issues before they turn into support tickets.
 * To set up My Developers, you'll first authenticate logged-in users with the <Anchor label="Personalized Docs Webhook" target="_blank" href="https://docs.readme.com/main/docs/personalized-docs-webhook">Personalized Docs Webhook</Anchor>, then integrate the [Metrics SDK](https://docs.readme.com/main/docs/sending-api-logs) to send API logs to ReadMe.
 
