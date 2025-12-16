@@ -17,80 +17,122 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
 
 <HTMLBlock>{`
 <style>
-  {\`
-    /* Container for the grid */
-    .card-accordion {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 20px;
-      align-items: stretch; /* Makes all cards in a row the same height */
-    }
+  /* Container style */
+  .vertical-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between items */
+    max-width: 100%;
+  }
 
-    /* 'display: contents' unboxes the details tag so we can order children directly */
-    .card-accordion details {
-      display: contents;
-    }
+  /* The Title Bar (Summary) */
+  .vertical-stack summary {
+    background: #ffffff;
+    padding: 15px 20px;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    list-style: none; /* Hides default triangle */
+    position: relative;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    transition: background 0.2s, border-color 0.2s;
+  }
 
-    /* The Card Headers (Summaries) - UPDATED FOR MULTILINE */
-    .card-accordion summary {
-      order: 1;             
-      flex: 1 0 18%;        /* Roughly 5 cards in a row */
-      min-width: 150px;     
-      padding: 12px 16px;
-      background: #ffffff;
-      border: 2px solid #e1e4e8;
-      border-radius: 8px;
-      cursor: pointer;
-      text-align: center;
-      font-weight: 600;
-      color: #24292e;
-      transition: all 0.2s ease;
-    }
+  /* Hover Effect */
+  .vertical-stack summary:hover {
+    background-color: #f6f8fa;
+    border-color: #0366d6;
+  }
 
-    /* Hover and Active States */
-    .card-accordion summary:hover {
-      background: #f6f8fa;
-      border-color: #0366d6;
-    }
+  /* Active/Open Style */
+  .vertical-stack details[open] summary {
+    border-bottom: 1px solid #e1e4e8;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: #f1f8ff;
+    color: #0366d6;
+  }
 
-    /* Style when a card is open */
-    .card-accordion details[open] summary {
-      background: #f1f8ff;
-      border-color: #0366d6;
-      border-bottom: 3px solid #0366d6;
-    }
+  /* The Content Box */
+  .vertical-stack .stack-content {
+    background: #fff;
+    border: 1px solid #e1e4e8;
+    border-top: none;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    padding: 20px;
+    color: #444;
+    line-height: 1.6;
+  }
 
-    /* Hide the default triangle marker in Webkit/Chrome */
-    .card-accordion summary::-webkit-details-marker {
-      display: none;
-    }
-
-    /* The Content Box */
-    .card-content {
-      order: 2;             
-      width: 100%;          
-      background: #fff;
-      border: 1px solid #e1e4e8;
-      border-radius: 8px;
-      padding: 20px;
-      margin-top: 5px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      animation: fadeIn 0.3s ease-in;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  \`}
-
+  /* Hide default browser marker */
+  .vertical-stack summary::-webkit-details-marker { display: none; }
+  
+  /* Custom +/- icon on the right */
+  .vertical-stack summary::after {
+    content: "+"; 
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #888;
+    font-weight: bold;
+  }
+  
+  .vertical-stack details[open] summary::after {
+    content: "−"; /* Minus sign */
+  }
 </style>
+
+<div class="vertical-stack">
+
+  <details>
+    <summary>Detect AI Usage</summary>
+    <div class="stack-content">
+      <strong>Gain Full AI Visibility</strong>
+      <p>You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory. By revealing "Shadow AI", you can assess immediate risks and establish a clean, trusted baseline for your AI operations journey.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Centralize & Govern AI Assets</summary>
+    <div class="stack-content">
+      <strong>Gain Full AI Visibility</strong>
+      <p>You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory. By revealing "Shadow AI", you can assess immediate risks and establish a clean, trusted baseline for your AI operations journey.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Build & Deploy Models</summary>
+    <div class="stack-content">
+      <strong>Gain Full AI Visibility</strong>
+      <p>You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory. By revealing "Shadow AI", you can assess immediate risks and establish a clean, trusted baseline for your AI operations journey.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Monitor Model Performance</summary>
+    <div class="stack-content">
+      <strong>Gain Full AI Visibility</strong>
+      <p>You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory. By revealing "Shadow AI", you can assess immediate risks and establish a clean, trusted baseline for your AI operations journey.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Turn Data Into Features</summary>
+    <div class="stack-content">
+      <strong>Gain Full AI Visibility</strong>
+      <p>You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory. By revealing "Shadow AI", you can assess immediate risks and establish a clean, trusted baseline for your AI operations journey.</p>
+    </div>
+  </details>
+
+</div>
 `}</HTMLBlock>
 
 <br />
-
-
 
 <Tabs>
   <Tab title="Detect AI Usage">
