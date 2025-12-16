@@ -13,6 +13,27 @@ You’re looking at a map of how JFrog can help you govern and manage all your A
 
 ## ✍️ How Does it Work?
 
+<Tabs>
+  <Tab title="Detect AI Usage">
+    Welcome to the content that you can only see inside the first Tab.
+  </Tab>
+
+  <Tab title="Centralize & Govern AI Assets">
+    Here's content that's only inside the second Tab.
+  </Tab>
+
+  <Tab title="Build & Deploy Models">
+    Here's content that's only inside the third Tab.
+  </Tab>
+ <Tab title="Monitor Model Performance">
+    Here's content that's only inside the third Tab.
+  </Tab>
+ <Tab title="Turn Data Into Features">
+    Here's content that's only inside the third Tab.
+  </Tab>
+</Tabs>
+
+
 <Cards columns={5}>
   <Card title="Detect AI Usage" href="https://readme.com" icon="fa-home" target="_blank">
     Detect AI Usage
