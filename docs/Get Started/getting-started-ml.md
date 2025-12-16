@@ -133,22 +133,30 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
 
   <div id="tab-2" class="tab-content-area">
     <h3 style="margin-top:0;">Centralize & Govern AI Assets</h3>
-    <p>Detailed content regarding Centralization and Governance goes here. This text is now free from the columns and will span the full width of the page.</p>
+    <p>Your Single Source of Truth for AI</p>
+<p>Unify every AI asset, including commercial APIs (like OpenAI), open-source models (like Hugging Face), and MCP servers, into one secure, centralized hub. Provide developers with self-service access to approved tools while ensuring strict security and compliance.
+</p>
   </div>
 
   <div id="tab-3" class="tab-content-area">
     <h3 style="margin-top:0;">Build & Deploy Models</h3>
-    <p>Detailed content regarding Building and Deploying goes here. This text is now free from the columns and will span the full width of the page.</p>
+    <p>From Notebook to Production</p>
+<p>Bridge the gap between experimentation and production with a simplified workflow to log, build, and deploy your custom models. By automating the transition from code to a production-ready artifact, you ensure reproducibility without the usual infrastructure headaches.
+</p>
   </div>
 
   <div id="tab-4" class="tab-content-area">
     <h3 style="margin-top:0;">Monitor Model Performance</h3>
-    <p>Detailed content regarding Performance Monitoring goes here. This text is now free from the columns and will span the full width of the page.</p>
+    <p>Maintain Trust in Live Models</p>
+<p>Models degrade over time as real-world data changes. JFrog tracks real-time model health and automatically detects data drift. By monitoring live traffic against your training baseline, you ensure your AI remains accurate and trustworthy without constant manual checking.
+</p>
   </div>
 
   <div id="tab-5" class="tab-content-area">
     <h3 style="margin-top:0;">Turn Data Into Features</h3>
-    <p>Detailed content regarding Data Features goes here. This text is now free from the columns and will span the full width of the page.</p>
+    <p>Accelerate Feature Management</p>
+<p>Simplify the data preparation process by transforming raw data into a centralized library of governed features. By defining your data logic once using simple SQL, you ensure the exact same features used for training are available for production, eliminating costly data mismatch bugs.
+</p>
   </div>
 
 </div>
