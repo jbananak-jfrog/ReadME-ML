@@ -17,154 +17,166 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
 
 <HTMLBlock>{`
 <style>
-  /* 1. The Container: Forces 5 equal columns */
-  .full-width-accordion {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 10px;
-    margin-bottom: 20px;
+  /* --- CONTAINER STYLES --- */
+  .custom-tabs-container {
     width: 100%;
+    font-family: system-ui, -apple-system, sans-serif;
   }
 
-  /* 2. CRITICAL: This command forces the 'details' tag to disappear 
-     so the Header and Content become direct parts of the grid. 
-     We use !important to ensure ReadMe doesn't override it. */
-  .full-width-accordion details {
-    display: contents !important;
+  /* --- 1. THE BUTTON ROW --- */
+  .tab-buttons {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 0; /* No margin so triangle touches content */
   }
 
-  /* 3. The Card Headers (Summaries) */
-  .full-width-accordion summary {
-    grid-row: 1;          /* Keep all headers on the top row */
-    cursor: pointer;
-    
-    /* Box Styling */
+  /* --- 2. INDIVIDUAL BUTTON STYLING --- */
+  .tab-btn {
+    flex: 1;                /* Make all buttons equal width */
     background: #ffffff;
     border: 1px solid #e1e4e8;
     border-radius: 6px;
-    padding: 10px;
-    text-align: center;
-    font-weight: 600;
+    padding: 15px 5px;
+    cursor: pointer;
     font-size: 13px;
-    list-style: none;     /* Hide triangle */
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    transition: all 0.2s ease;
     
-    /* Centering Text */
+    /* Flex to center text */
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 60px;     
-    transition: all 0.2s ease-in-out;
+    min-height: 60px;
+    position: relative; /* Needed for the triangle arrow */
   }
 
-  /* Hover State */
-  .full-width-accordion summary:hover {
-    background: #f6f8fa;
+  .tab-btn:hover {
+    background-color: #f6f8fa;
     border-color: #0366d6;
   }
 
-  /* 4. ACTIVE STATE (Dark Blue Highlight) */
-  .full-width-accordion details[open] summary {
-    background-color: #2f3747 !important;
-    color: #ffffff !important;
-    border-color: #2f3747 !important;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    position: relative;
-    z-index: 10;          /* Bring to front */
+  /* --- 3. ACTIVE BUTTON STATE (Dark Blue) --- */
+  .tab-btn.active {
+    background-color: #2f3747;
+    color: white;
+    border-color: #2f3747;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   }
-  
-  /* Add a tiny pointer triangle at the bottom of the active card */
-  .full-width-accordion details[open] summary::after {
+
+  /* The Triangle Pointer for the Active Button */
+  .tab-btn.active::after {
     content: "";
     position: absolute;
-    bottom: -6px;
+    bottom: -8px; /* Pushes it slightly below the button */
     left: 50%;
-    margin-left: -6px;
-    border-width: 6px 6px 0;
+    transform: translateX(-50%);
+    border-width: 8px 8px 0; /* Size of triangle */
     border-style: solid;
     border-color: #2f3747 transparent transparent transparent;
+    z-index: 10;
   }
 
-  /* Remove default browser marker */
-  .full-width-accordion summary::-webkit-details-marker { display: none; }
-
-  /* 5. The Content Box (Full Width) */
-  .full-width-accordion .accordion-content {
-    grid-row: 2;           /* Force to the second row */
-    grid-column: 1 / -1;   /* SPAN ALL 5 COLUMNS (Full Width) */
-    
+  /* --- 4. THE CONTENT AREA (Full Width) --- */
+  .tab-content-area {
+    width: 100%;
     background: #fff;
     border: 1px solid #e1e4e8;
     border-radius: 6px;
     padding: 30px;
-    margin-top: 5px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    
-    /* Ensure text readability */
-    text-align: left;
-    line-height: 1.6;
-    width: 100%;           /* Force full width */
+    margin-top: 10px; /* Space for the triangle */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: none; /* Hidden by default */
+    animation: fadeIn 0.3s ease;
+  }
+  
+  /* Show the active content */
+  .tab-content-area.active {
+    display: block;
   }
 
-  /* Mobile Responsive: Stack them if screen is small */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Mobile Responsive: Stack buttons if screen is small */
   @media (max-width: 768px) {
-    .full-width-accordion {
-      display: flex;
+    .tab-buttons {
       flex-direction: column;
     }
-    .full-width-accordion summary {
-      min-height: 50px;
+    .tab-btn.active::after {
+      display: none; /* Hide triangle on mobile stack */
+    }
+    .tab-content-area {
+      margin-top: 5px;
     }
   }
 </style>
 
-<div class="full-width-accordion">
+<div class="custom-tabs-container">
 
-  <details name="jfrog-ai">
-    <summary>Detect AI Usage</summary>
-    <div class="accordion-content">
-      <h3 style="margin-top:0;">Gain Full AI Visibility</h3>
-      <p>You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory. By revealing "Shadow AI", you can assess immediate risks and establish a clean, trusted baseline for your AI operations journey.</p>
-    </div>
-  </details>
+  <div class="tab-buttons">
+    <div class="tab-btn active" onclick="openTab(event, 'tab-1')">Detect AI Usage</div>
+    <div class="tab-btn" onclick="openTab(event, 'tab-2')">Centralize & Govern</div>
+    <div class="tab-btn" onclick="openTab(event, 'tab-3')">Build & Deploy</div>
+    <div class="tab-btn" onclick="openTab(event, 'tab-4')">Monitor Performance</div>
+    <div class="tab-btn" onclick="openTab(event, 'tab-5')">Turn Data Into Features</div>
+  </div>
 
-  <details name="jfrog-ai">
-    <summary>Centralize & Govern</summary>
-    <div class="accordion-content">
-      <h3 style="margin-top:0;">Centralize & Govern AI Assets</h3>
-      <p>Gain Full AI Visibility. You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory.</p>
-    </div>
-  </details>
+  <div id="tab-1" class="tab-content-area active">
+    <h3 style="margin-top:0;">Gain Full AI Visibility (Detect)</h3>
+    <p>You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory. By revealing "Shadow AI", you can assess immediate risks and establish a clean, trusted baseline for your AI operations journey.</p>
+  </div>
 
-  <details name="jfrog-ai">
-    <summary>Build & Deploy</summary>
-    <div class="accordion-content">
-      <h3 style="margin-top:0;">Build & Deploy Models</h3>
-      <p>Gain Full AI Visibility. You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory.</p>
-    </div>
-  </details>
+  <div id="tab-2" class="tab-content-area">
+    <h3 style="margin-top:0;">Centralize & Govern AI Assets</h3>
+    <p>Detailed content regarding Centralization and Governance goes here. This text is now free from the columns and will span the full width of the page.</p>
+  </div>
 
-  <details name="jfrog-ai">
-    <summary>Monitor Performance</summary>
-    <div class="accordion-content">
-      <h3 style="margin-top:0;">Monitor Model Performance</h3>
-      <p>Gain Full AI Visibility. You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory.</p>
-    </div>
-  </details>
+  <div id="tab-3" class="tab-content-area">
+    <h3 style="margin-top:0;">Build & Deploy Models</h3>
+    <p>Detailed content regarding Building and Deploying goes here. This text is now free from the columns and will span the full width of the page.</p>
+  </div>
 
-  <details name="jfrog-ai">
-    <summary>Turn Data Into Features</summary>
-    <div class="accordion-content">
-      <h3 style="margin-top:0;">Turn Data Into Features</h3>
-      <p>Gain Full AI Visibility. You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory.</p>
-    </div>
-  </details>
+  <div id="tab-4" class="tab-content-area">
+    <h3 style="margin-top:0;">Monitor Model Performance</h3>
+    <p>Detailed content regarding Performance Monitoring goes here. This text is now free from the columns and will span the full width of the page.</p>
+  </div>
+
+  <div id="tab-5" class="tab-content-area">
+    <h3 style="margin-top:0;">Turn Data Into Features</h3>
+    <p>Detailed content regarding Data Features goes here. This text is now free from the columns and will span the full width of the page.</p>
+  </div>
 
 </div>
+
+<script>
+  function openTab(evt, tabId) {
+    // 1. Get all content elements and hide them
+    var contents = document.getElementsByClassName("tab-content-area");
+    for (var i = 0; i < contents.length; i++) {
+      contents[i].className = contents[i].className.replace(" active", "");
+    }
+
+    // 2. Get all button elements and remove 'active' class
+    var buttons = document.getElementsByClassName("tab-btn");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].className = buttons[i].className.replace(" active", "");
+    }
+
+    // 3. Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(tabId).className += " active";
+    evt.currentTarget.className += " active";
+  }
+</script>
 `}</HTMLBlock>
 
 <br />
 
-
+<br />
 
 Start by creating <Anchor label="**Guides**" target="_blank" href="https://docs.readme.com/main/docs/creating-and-managing-guides">**Guides**</Anchor> - your API's instruction manual where you can walk users through key concepts, tutorials, or best practices.
 
