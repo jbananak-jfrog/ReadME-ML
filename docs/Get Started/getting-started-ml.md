@@ -17,254 +17,145 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
 
 <HTMLBlock>{`
 <style>
-  /* Container style */
-  .vertical-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Space between items */
-    max-width: 100%;
-  }
-
-  /* The Title Bar (Summary) */
-  .vertical-stack summary {
-    background: #ffffff;
-    padding: 15px 20px;
-    border: 1px solid #e1e4e8;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 16px;
-    list-style: none; /* Hides default triangle */
-    position: relative;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-    transition: background 0.2s, border-color 0.2s;
-  }
-
-  /* Hover Effect */
-  .vertical-stack summary:hover {
-    background-color: #f6f8fa;
-    border-color: #0366d6;
-  }
-
-  /* Active/Open Style */
-  .vertical-stack details[open] summary {
-    border-bottom: 1px solid #e1e4e8;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    background-color: #f1f8ff;
-    color: #0366d6;
-  }
-
-  /* The Content Box */
-  .vertical-stack .stack-content {
-    background: #fff;
-    border: 1px solid #e1e4e8;
-    border-top: none;
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
-    padding: 20px;
-    color: #444;
-    line-height: 1.6;
-  }
-
-  /* Hide default browser marker */
-  .vertical-stack summary::-webkit-details-marker { display: none; }
-  
-  /* Custom +/- icon on the right */
-  .vertical-stack summary::after {
-    content: "+"; 
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 18px;
-    color: #888;
-    font-weight: bold;
-  }
-  
-  .vertical-stack details[open] summary::after {
-    content: "−"; /* Minus sign */
-  }
-</style>
-
-<div class="vertical-stack">
-
-  <details>
-    <summary>Detect AI Usage</summary>
-    <div class="stack-content">
-      <strong>Gain Full AI Visibility</strong>
-      <p>You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory. By revealing "Shadow AI", you can assess immediate risks and establish a clean, trusted baseline for your AI operations journey.</p>
-    </div>
-  </details>
-
-  <details>
-    <summary>Centralize & Govern AI Assets</summary>
-    <div class="stack-content">
-      <strong>Gain Full AI Visibility</strong>
-      <p>You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory. By revealing "Shadow AI", you can assess immediate risks and establish a clean, trusted baseline for your AI operations journey.</p>
-    </div>
-  </details>
-
-  <details>
-    <summary>Build & Deploy Models</summary>
-    <div class="stack-content">
-      <strong>Gain Full AI Visibility</strong>
-      <p>You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory. By revealing "Shadow AI", you can assess immediate risks and establish a clean, trusted baseline for your AI operations journey.</p>
-    </div>
-  </details>
-
-  <details>
-    <summary>Monitor Model Performance</summary>
-    <div class="stack-content">
-      <strong>Gain Full AI Visibility</strong>
-      <p>You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory. By revealing "Shadow AI", you can assess immediate risks and establish a clean, trusted baseline for your AI operations journey.</p>
-    </div>
-  </details>
-
-  <details>
-    <summary>Turn Data Into Features</summary>
-    <div class="stack-content">
-      <strong>Gain Full AI Visibility</strong>
-      <p>You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory. By revealing "Shadow AI", you can assess immediate risks and establish a clean, trusted baseline for your AI operations journey.</p>
-    </div>
-  </details>
-
-</div>
-`}</HTMLBlock>
-
-<br />
-
-<HTMLBlock>{`
-<style>
-  /* 1. The Container: Uses Grid to force 5 columns */
-  .grid-accordion {
+  /* 1. The Container: Forces 5 equal columns */
+  .full-width-accordion {
     display: grid;
-    /* This creates exactly 5 equal columns */
     grid-template-columns: repeat(5, 1fr); 
     gap: 10px;
     margin-bottom: 20px;
     width: 100%;
   }
 
-  /* 2. Unbox the details tag so grid sees the children directly */
-  .grid-accordion details {
-    display: contents;
+  /* 2. CRITICAL: This command forces the 'details' tag to disappear 
+     so the Header and Content become direct parts of the grid. 
+     We use !important to ensure ReadMe doesn't override it. */
+  .full-width-accordion details {
+    display: contents !important;
   }
 
   /* 3. The Card Headers (Summaries) */
-  .grid-accordion summary {
-    grid-row: 1;          /* Force ALL summaries to the first row */
+  .full-width-accordion summary {
+    grid-row: 1;          /* Keep all headers on the top row */
     cursor: pointer;
     
-    /* Visual Styling */
+    /* Box Styling */
     background: #ffffff;
     border: 1px solid #e1e4e8;
     border-radius: 6px;
-    padding: 15px 5px;    /* 5px side padding prevents overflow */
+    padding: 10px;
     text-align: center;
     font-weight: 600;
-    font-size: 13px;      /* Slightly smaller font to ensure fit */
-    line-height: 1.3;
+    font-size: 13px;
     list-style: none;     /* Hide triangle */
     
-    /* Center the text vertically */
+    /* Centering Text */
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;         /* Fill the grid cell height */
-    min-height: 70px;     /* Minimum height for look */
+    min-height: 60px;     
     transition: all 0.2s ease-in-out;
   }
 
   /* Hover State */
-  .grid-accordion summary:hover {
+  .full-width-accordion summary:hover {
     background: #f6f8fa;
     border-color: #0366d6;
   }
 
-  /* 4. ACTIVE STATE (The Highlighting You Requested) */
-  .grid-accordion details[open] summary {
-    background-color: #2f3747; /* Dark blue background */
-    color: #ffffff;            /* White text */
-    border-color: #2f3747;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transform: scale(1.02);    /* Pop out slightly */
-    z-index: 2;                /* Sit above others */
+  /* 4. ACTIVE STATE (Dark Blue Highlight) */
+  .full-width-accordion details[open] summary {
+    background-color: #2f3747 !important;
+    color: #ffffff !important;
+    border-color: #2f3747 !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 10;          /* Bring to front */
   }
   
-  /* Remove the default arrow marker */
-  .grid-accordion summary::-webkit-details-marker { display: none; }
+  /* Add a tiny pointer triangle at the bottom of the active card */
+  .full-width-accordion details[open] summary::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    margin-left: -6px;
+    border-width: 6px 6px 0;
+    border-style: solid;
+    border-color: #2f3747 transparent transparent transparent;
+  }
 
-  /* 5. The Content Box */
-  .grid-accordion .grid-content {
-    grid-row: 2;           /* Force content to the SECOND row */
-    grid-column: 1 / -1;   /* Span across ALL columns (start to end) */
+  /* Remove default browser marker */
+  .full-width-accordion summary::-webkit-details-marker { display: none; }
+
+  /* 5. The Content Box (Full Width) */
+  .full-width-accordion .accordion-content {
+    grid-row: 2;           /* Force to the second row */
+    grid-column: 1 / -1;   /* SPAN ALL 5 COLUMNS (Full Width) */
     
     background: #fff;
     border: 1px solid #e1e4e8;
-    border-radius: 8px;
-    padding: 25px;
+    border-radius: 6px;
+    padding: 30px;
     margin-top: 5px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    animation: fadeIn 0.3s ease-in;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    
+    /* Ensure text readability */
+    text-align: left;
+    line-height: 1.6;
+    width: 100%;           /* Force full width */
   }
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-5px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* Mobile Responsive: If screen is tiny, stack them instead of squishing */
-  @media (max-width: 700px) {
-    .grid-accordion {
+  /* Mobile Responsive: Stack them if screen is small */
+  @media (max-width: 768px) {
+    .full-width-accordion {
       display: flex;
       flex-direction: column;
     }
-    .grid-accordion summary {
+    .full-width-accordion summary {
       min-height: 50px;
     }
   }
 </style>
 
-<div class="grid-accordion">
+<div class="full-width-accordion">
 
-  <details name="ai-group">
+  <details name="jfrog-ai">
     <summary>Detect AI Usage</summary>
-    <div class="grid-content">
+    <div class="accordion-content">
       <h3 style="margin-top:0;">Gain Full AI Visibility</h3>
       <p>You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory. By revealing "Shadow AI", you can assess immediate risks and establish a clean, trusted baseline for your AI operations journey.</p>
     </div>
   </details>
 
-  <details name="ai-group">
+  <details name="jfrog-ai">
     <summary>Centralize & Govern</summary>
-    <div class="grid-content">
-      <h3 style="margin-top:0;">Centralized Governance</h3>
-      <p>Content for Centralize & Govern AI Assets goes here. This text appears below the cards when clicked.</p>
+    <div class="accordion-content">
+      <h3 style="margin-top:0;">Centralize & Govern AI Assets</h3>
+      <p>Gain Full AI Visibility. You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory.</p>
     </div>
   </details>
 
-  <details name="ai-group">
+  <details name="jfrog-ai">
     <summary>Build & Deploy</summary>
-    <div class="grid-content">
+    <div class="accordion-content">
       <h3 style="margin-top:0;">Build & Deploy Models</h3>
-      <p>Content for Build & Deploy Models goes here. This text appears below the cards when clicked.</p>
+      <p>Gain Full AI Visibility. You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory.</p>
     </div>
   </details>
 
-  <details name="ai-group">
+  <details name="jfrog-ai">
     <summary>Monitor Performance</summary>
-    <div class="grid-content">
+    <div class="accordion-content">
       <h3 style="margin-top:0;">Monitor Model Performance</h3>
-      <p>Content for Monitor Model Performance goes here. This text appears below the cards when clicked.</p>
+      <p>Gain Full AI Visibility. You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory.</p>
     </div>
   </details>
 
-  <details name="ai-group">
+  <details name="jfrog-ai">
     <summary>Turn Data Into Features</summary>
-    <div class="grid-content">
+    <div class="accordion-content">
       <h3 style="margin-top:0;">Turn Data Into Features</h3>
-      <p>Content for Turn Data Into Features goes here. This text appears below the cards when clicked.</p>
+      <p>Gain Full AI Visibility. You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory.</p>
     </div>
   </details>
 
@@ -273,49 +164,7 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
 
 <br />
 
-<Tabs>
-  <Tab title="Detect AI Usage">
-    Welcome to the content that you can only see inside the first Tab.
-  </Tab>
 
-  <Tab title="Centralize & Govern AI Assets">
-    Here's content that's only inside the second Tab.
-  </Tab>
-
-  <Tab title="Build & Deploy Models">
-    Here's content that's only inside the third Tab.
-  </Tab>
-
-  <Tab title="Monitor Model Performance">
-    Here's content that's only inside the third Tab.
-  </Tab>
-
-  <Tab title="Turn Data Into Features">
-    Here's content that's only inside the third Tab.
-  </Tab>
-</Tabs>
-
-<Cards columns={5}>
-  <Card title="Detect AI Usage" href="https://readme.com" icon="fa-home" target="_blank">
-    Detect AI Usage
-  </Card>
-
-  <Card title="Centralize & Govern AI Assets" icon="fa-user">
-    *123*
-  </Card>
-
-  <Card title="Build & Deploy Models" icon="fa-star">
-    123
-  </Card>
-
-  <Card title="Monitor Model Performance" icon="fa-question">
-    **1233**
-  </Card>
-
-  <Card title="Turn Data Into Features" icon="fa-question">
-    \*\*Turn Data Into Features\*\*
-  </Card>
-</Cards>
 
 Start by creating <Anchor label="**Guides**" target="_blank" href="https://docs.readme.com/main/docs/creating-and-managing-guides">**Guides**</Anchor> - your API's instruction manual where you can walk users through key concepts, tutorials, or best practices.
 
