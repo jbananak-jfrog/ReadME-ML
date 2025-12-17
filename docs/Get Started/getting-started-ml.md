@@ -1,6 +1,6 @@
 ---
 title: Getting Started with AI/ML in JFrog (MLOps)
-excerpt: This page will help you get started with Machine Learning (MLOps).
+excerpt: This page will help you get started with JFrog's ML and AI assets management.
 hidden: false
 link:
   new_tab: false
@@ -244,7 +244,7 @@ Example
 
 ## 🤖 Example what to do now:
 
-AI is built into ReadMe to help you and your users move faster. Slide the panel open by hitting **:sparkles:AI** in your top navigation bar.
+AI is built into your JFrog help to help you move faster. Slide the panel open by hitting **:sparkles:AI** in your top navigation bar.
 
 * **AI Agent**  
   Our built-in AI agent is your sidekick for drafting documentation, translating pages, and applying style guides.
@@ -260,18 +260,26 @@ AI is built into ReadMe to help you and your users move faster. Slide the panel 
 
 ***
 
-\{/\* ## 🌿 Edit, Preview, and Publish in Branches
-
-<Anchor label="Branches" target="_blank" href="https://docs.readme.com/main/docs/branches">Branches</Anchor> bring Git-style workflows to your documentation process. Use them to:
-
-* Draft changes across multiple pages without publishing immediately
-* Review and preview updates before they go live
-* Share edits with teammates for feedback
-* Safely iterate without disrupting your production docs
-
-You can create a branch directly from the Versions & Branches menu, save edits into a new branch, or sync with GitHub and automatically reflect branches across both platforms.
-
+\{/* ## 🌿 Edit, Preview, and Publish in Branches<Anchor label="Branches" target="_blank" href="https://docs.readme.com/main/docs/branches">Branches</Anchor> bring Git-style workflows to your documentation process. Use them to:\
+\
+* Draft changes across multiple pages without publishing immediately\
+* Review and preview updates before they go live\
+* Share edits with teammates for feedback\
+* Safely iterate without disrupting your production docs\
+\
+You can create a branch directly from the Versions & Branches menu, save edits into a new branch, or sync with GitHub and automatically reflect branches across both platforms.\
+\
 Once you're ready, merge the branch back into a live version. Enterprise plans can control who has merge access, and you'll always get a conflict check before merging.\*/}
+\*/}
+
+<br />
+
+*
+*
+*
+*
+
+<br />
 
 ***
 
