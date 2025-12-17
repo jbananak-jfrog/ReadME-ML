@@ -271,15 +271,15 @@ Note that our AI-powered search has been built into your JFrog help to help you 
   </Card>
 
   <Card title="Feature Store" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/feature-store">
-    <small>A centralized service to facilitate the discoverability, reuse, & accuracy of features*</small>
+    <small>*A centralized service to facilitate the discoverability, reuse, & accuracy of features*</small>
   </Card>
 
   <Card title="FrogML Client Examples" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/frogml-client-examples">
-    <small>Programmatically access JFrog ML functions and operations using FrogML*</small>
+    <small>*Programmatically access JFrog ML functions and operations using FrogML*</small>
   </Card>
 
   <Card title="JFrog ML Troubleshooting" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ml-troubleshooting">
-    <small>Troubleshoot installation, performance, & connectivity issues*</small>
+    <small>*Troubleshoot installation, performance, & connectivity issues*</small>
   </Card>
 </Cards>
 
