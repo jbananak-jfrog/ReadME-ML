@@ -281,11 +281,5 @@ Note that our AI-powered search has been built into your JFrog help to help you 
 
   <Card title="JFrog ML Troubleshooting" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ml-troubleshooting">
     Troubleshoot installation, performance, & connectivity issues.
-
-Performance Issues
-
-Installation Issues
-
-Network and Connectivity Issuess
   </Card>
 </Cards>
