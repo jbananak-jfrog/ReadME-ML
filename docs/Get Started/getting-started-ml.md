@@ -247,28 +247,28 @@ Note that our AI-powered search has been built into your JFrog help to help you 
     Manage your AI Assets in a centralized hub for AI model discovery, governance, and deployment.
   </Card>
 
-  <Card title="Build Models " icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/build-models">
+  <Card title="Building Models " icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/build-models">
     The Build Models section provides instructions on developing, training, and validating models with the FrogML SDK.
   </Card>
 
-  <Card title="Fourth Card" icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog">
-    **Excepteur sint occaecat cupidatat non proident**
+  <Card title="Deploying Models" icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/serve-models-deployment">
+    This section covers key topics including Prediction Input & Output Adapters, Real-Time, Batch, and Streaming Deployments, as well as Inference Analytics.
   </Card>
 
-  <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
-    Neque porro quisquam est qui dolorem ipsum quia
+  <Card title="Monitoring Models" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/model-monitors" icon="fa-home" target="_blank">
+    This section explores essential aspects including Runtime Metrics, monitoring model data, tracking prediction timers, evaluating performance monitors, and analyzing inference distribution.
   </Card>
 
-  <Card title="Second Card" icon="fa-user" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog">
-    *Lorem ipsum dolor sit amet, consectetur adipiscing elit*
+  <Card title="Automations" icon="fa-user" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/automate-jfrog-ml">
+    Tutorials and more about how to manage automations.
   </Card>
 
-  <Card title="Third Card" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog">
-    > Ut enim ad minim veniam, quis nostrud ullamco
+  <Card title="Configuring JFrog ML" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/configure-jfrog-ml">
+    Need to optimize your JFrog ML experience? This section covers alerts, instance sizes, secret management, and AWS access.
   </Card>
 
-  <Card title="Fourth Card" icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog">
-    **Excepteur sint occaecat cupidatat non proident**
+  <Card title="Model Experimentation" icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog">
+   This guide will walk you through the process of setting up experiment tracking platforms integrations within your JFrog ML environment.
   </Card>
 
   <Card title="Fourth Card" icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog">
