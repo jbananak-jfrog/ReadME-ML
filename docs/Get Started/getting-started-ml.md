@@ -17,22 +17,28 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
 
 <HTMLBlock>{`
 <style>
-  /* --- CONTAINER STYLES --- */
-  .custom-tabs-container {
+  /* --- CONTAINER --- */
+  .css-tabs {
     width: 100%;
     font-family: system-ui, -apple-system, sans-serif;
   }
 
-  /* --- 1. THE BUTTON ROW --- */
-  .tab-buttons {
+  /* --- HIDE RADIO INPUTS --- */
+  /* These control the logic but are invisible to the user */
+  .css-tabs input[type="radio"] {
+    display: none;
+  }
+
+  /* --- LABEL ROW (The Buttons) --- */
+  .tab-labels {
     display: flex;
     gap: 10px;
     width: 100%;
     margin-bottom: 0;
   }
 
-  /* --- 2. INDIVIDUAL BUTTON STYLING --- */
-  .tab-btn {
+  /* --- BUTTON STYLING --- */
+  .tab-label {
     flex: 1;
     background: #ffffff;
     border: 1px solid #e1e4e8;
@@ -45,7 +51,6 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
     text-align: center;
     transition: all 0.2s ease;
     
-    /* Flex to center text */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,21 +58,49 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
     position: relative;
   }
 
-  .tab-btn:hover {
+  .tab-label:hover {
     background-color: #f6f8fa;
     border-color: #0366d6;
   }
 
-  /* --- 3. ACTIVE BUTTON STATE (Dark Blue) --- */
-  .tab-btn.active {
+  /* --- CONTENT BOXES --- */
+  .tab-content {
+    display: none; /* Hidden by default */
+    width: 100%;
+    background: #fff;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    padding: 30px;
+    margin-top: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* --- THE LOGIC (Magic CSS) --- */
+  
+  /* 1. When Radio 1 is checked, turn Label 1 dark blue */
+  #tab-1:checked ~ .tab-labels label[for="tab-1"],
+  #tab-2:checked ~ .tab-labels label[for="tab-2"],
+  #tab-3:checked ~ .tab-labels label[for="tab-3"],
+  #tab-4:checked ~ .tab-labels label[for="tab-4"],
+  #tab-5:checked ~ .tab-labels label[for="tab-5"] {
     background-color: #2f3747;
     color: white;
     border-color: #2f3747;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   }
 
-  /* The Triangle Pointer for the Active Button */
-  .tab-btn.active::after {
+  /* 2. Add the little triangle pointer to the active label */
+  #tab-1:checked ~ .tab-labels label[for="tab-1"]::after,
+  #tab-2:checked ~ .tab-labels label[for="tab-2"]::after,
+  #tab-3:checked ~ .tab-labels label[for="tab-3"]::after,
+  #tab-4:checked ~ .tab-labels label[for="tab-4"]::after,
+  #tab-5:checked ~ .tab-labels label[for="tab-5"]::after {
     content: "";
     position: absolute;
     bottom: -8px;
@@ -79,111 +112,67 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
     z-index: 10;
   }
 
-  /* --- 4. THE CONTENT AREA (Full Width) --- */
-  .tab-content-area {
-    width: 100%;
-    background: #fff;
-    border: 1px solid #e1e4e8;
-    border-radius: 6px;
-    padding: 30px;
-    margin-top: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    display: none;
-    animation: fadeIn 0.3s ease;
-  }
-  
-  /* Show the active content */
-  .tab-content-area.active {
+  /* 3. Show the corresponding content when radio is checked */
+  #tab-1:checked ~ .content-1,
+  #tab-2:checked ~ .content-2,
+  #tab-3:checked ~ .content-3,
+  #tab-4:checked ~ .content-4,
+  #tab-5:checked ~ .content-5 {
     display: block;
   }
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(5px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* Mobile Responsive */
+  /* Mobile Stack */
   @media (max-width: 768px) {
-    .tab-buttons {
-      flex-direction: column;
-    }
-    .tab-btn.active::after {
-      display: none;
-    }
-    .tab-content-area {
-      margin-top: 5px;
-    }
+    .tab-labels { flex-direction: column; }
+    .tab-label::after { display: none !important; }
   }
 </style>
 
-<div class="custom-tabs-container" id="jfrog-tabs">
+<div class="css-tabs">
+  <input type="radio" name="jfrog-tabs" id="tab-1" checked>
+  <input type="radio" name="jfrog-tabs" id="tab-2">
+  <input type="radio" name="jfrog-tabs" id="tab-3">
+  <input type="radio" name="jfrog-tabs" id="tab-4">
+  <input type="radio" name="jfrog-tabs" id="tab-5">
 
-  <div class="tab-buttons">
-    <div class="tab-btn active" data-target="tab-1">Detect AI Usage</div>
-    <div class="tab-btn" data-target="tab-2">Centralize & Govern</div>
-    <div class="tab-btn" data-target="tab-3">Build & Deploy</div>
-    <div class="tab-btn" data-target="tab-4">Monitor Performance</div>
-    <div class="tab-btn" data-target="tab-5">Turn Data Into Features</div>
+  <div class="tab-labels">
+    <label for="tab-1" class="tab-label">Detect AI Usage</label>
+    <label for="tab-2" class="tab-label">Centralize & Govern</label>
+    <label for="tab-3" class="tab-label">Build & Deploy</label>
+    <label for="tab-4" class="tab-label">Monitor Performance</label>
+    <label for="tab-5" class="tab-label">Turn Data Into Features</label>
   </div>
 
-  <div id="tab-1" class="tab-content-area active">
+  <div class="tab-content content-1">
     <h3 style="margin-top:0;">Gain Full AI Visibility (Detect)</h3>
     <p>You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory. By revealing "Shadow AI", you can assess immediate risks and establish a clean, trusted baseline for your AI operations journey.</p>
   </div>
 
-  <div id="tab-2" class="tab-content-area">
+  <div class="tab-content content-2">
     <h3 style="margin-top:0;">Centralize & Govern AI Assets</h3>
     <p>Your Single Source of Truth for AI</p>
     <p>Unify every AI asset, including commercial APIs (like OpenAI), open-source models (like Hugging Face), and MCP servers, into one secure, centralized hub. Provide developers with self-service access to approved tools while ensuring strict security and compliance.</p>
   </div>
 
-  <div id="tab-3" class="tab-content-area">
+  <div class="tab-content content-3">
     <h3 style="margin-top:0;">Build & Deploy Models</h3>
     <p>From Notebook to Production</p>
     <p>Bridge the gap between experimentation and production with a simplified workflow to log, build, and deploy your custom models. By automating the transition from code to a production-ready artifact, you ensure reproducibility without the usual infrastructure headaches.</p>
   </div>
 
-  <div id="tab-4" class="tab-content-area">
+  <div class="tab-content content-4">
     <h3 style="margin-top:0;">Monitor Model Performance</h3>
     <p>Maintain Trust in Live Models</p>
     <p>Models degrade over time as real-world data changes. JFrog tracks real-time model health and automatically detects data drift. By monitoring live traffic against your training baseline, you ensure your AI remains accurate and trustworthy without constant manual checking.</p>
   </div>
 
-  <div id="tab-5" class="tab-content-area">
+  <div class="tab-content content-5">
     <h3 style="margin-top:0;">Turn Data Into Features</h3>
     <p>Accelerate Feature Management</p>
     <p>Simplify the data preparation process by transforming raw data into a centralized library of governed features. By defining your data logic once using simple SQL, you ensure the exact same features used for training are available for production, eliminating costly data mismatch bugs.</p>
   </div>
 
 </div>
-
-<script>
-  (function() {
-    var container = document.getElementById('jfrog-tabs');
-    if (!container) return;
-
-    var buttons = container.querySelectorAll('.tab-btn');
-    var contents = container.querySelectorAll('.tab-content-area');
-
-    buttons.forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        // Reset all
-        buttons.forEach(function(b) { b.classList.remove('active'); });
-        contents.forEach(function(c) { c.classList.remove('active'); });
-
-        // Activate clicked
-        this.classList.add('active');
-
-        // Activate content
-        var targetId = this.getAttribute('data-target');
-        var targetContent = document.getElementById(targetId);
-        if (targetContent) {
-          targetContent.classList.add('active');
-        }
-      });
-    });
-  })();
-</script>
 `}</HTMLBlock>
 
 <br />
