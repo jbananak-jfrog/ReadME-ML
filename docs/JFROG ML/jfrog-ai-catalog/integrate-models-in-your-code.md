@@ -22,7 +22,7 @@ This procedure explains how to utilize the allowed models within your organizati
 
 ## External API Models
 
-**To use an allowed external API model:**
+**▶ To use an allowed external API model:**
 
 When a model is allowed, the **Use Model** button appears in the _Model information_ window with the relevant code snippets.
 
@@ -114,12 +114,12 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
 
 After an open-source model has been allowed, the **Use Model** and **Deploy** buttons appear in the _Model information_ window, allowing you to either use the model with the transformers library or to use it in all your applications.
 
-### Using the Model with Your Transformers Library vs. Deploying:
+**Using the Model with Your Transformers Library vs. Deploying:**
 
 * **Use Model:** Enables you to integrate the model with the transformers library, you use the model locally within your development environment. This approach is ideal for experimenting, testing, and small-scale applications. For instructions, see below.
 * **Deploy:** Deploying the model through this platform involves configuring it to run within a managed infrastructure. Once deployed, the model can be accessed and used across all your applications, facilitating consistent performance and scalability. For instructions, see <Anchor label="Deploy Model Packages (Open source)" title="Deploy Model Packages (Open source)" href="/docs/deploy-model-packages--open-source-">Deploy Model Packages (Open source)</Anchor>.
 
-### To use the allowed model only with the transformers library:
+**▶ To use the allowed model only with the transformers library:**
 
 1. Click the allowed model.
 2. Click the project name in the **Allowed in projects** list.
