@@ -136,11 +136,11 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
   <input type="radio" name="jfrog-tabs" id="tab-5">
 
   <div class="tab-labels">
-    <label for="tab-1" class="tab-label">Detect AI Usage</label>
-    <label for="tab-2" class="tab-label">Centralize & Govern</label>
-    <label for="tab-3" class="tab-label">Build & Deploy</label>
-    <label for="tab-4" class="tab-label">Monitor Performance</label>
-    <label for="tab-5" class="tab-label">Turn Data Into Features</label>
+    <label for="tab-1" class="tab-label">Detect AI Usage +</label>
+    <label for="tab-2" class="tab-label">Centralize & Govern +</label>
+    <label for="tab-3" class="tab-label">Build & Deploy +</label>
+    <label for="tab-4" class="tab-label">Monitor Performance +</label>
+    <label for="tab-5" class="tab-label">Turn Data Into Features +</label>
   </div>
 
   <div class="tab-content content-1">
