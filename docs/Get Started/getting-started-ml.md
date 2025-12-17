@@ -235,34 +235,43 @@ Note that our AI-powered search has been built into your JFrog help to help you 
 ***
 
 <Cards columns={5}>
+  <Card title="Activate" href="https://jfrog-enterprise-group.readme.io/installation/docs/activate-ai-ml" icon="fa-home" target="_blank">
+    Activate AI ML
+  </Card>
+
+  <Card title="Setup" icon="fa-user" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/setting-up-jfrog-ml" target="_blank">
+    *How to set up your JFrog ML*
+  </Card>
+
+  <Card title="AI Catalog" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog" target="_blank">
+    > Manage your AI Assets
+  </Card>
+ 
+  <Card title="Build Models " icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog">
+    **Excepteur sint occaecat cupidatat non proident**
+  </Card>
+
+<Card title="Fourth Card" icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog">
+    **Excepteur sint occaecat cupidatat non proident**
+  </Card>
+
   <Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
     Neque porro quisquam est qui dolorem ipsum quia
   </Card>
 
-  <Card title="Second Card" icon="fa-user">
+  <Card title="Second Card" icon="fa-user" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog">
     *Lorem ipsum dolor sit amet, consectetur adipiscing elit*
   </Card>
 
-  <Card title="Third Card" icon="fa-star">
+  <Card title="Third Card" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog">
     > Ut enim ad minim veniam, quis nostrud ullamco
   </Card>
 
-  <Card title="Fourth Card" icon="fa-question">
+  <Card title="Fourth Card" icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog">
     **Excepteur sint occaecat cupidatat non proident**
   </Card>
-<Card title="First Card" href="https://readme.com" icon="fa-home" target="_blank">
-    Neque porro quisquam est qui dolorem ipsum quia
-  </Card>
 
-  <Card title="Second Card" icon="fa-user">
-    *Lorem ipsum dolor sit amet, consectetur adipiscing elit*
-  </Card>
-
-  <Card title="Third Card" icon="fa-star">
-    > Ut enim ad minim veniam, quis nostrud ullamco
-  </Card>
-
-  <Card title="Fourth Card" icon="fa-question">
+<Card title="Fourth Card" icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog">
     **Excepteur sint occaecat cupidatat non proident**
   </Card>
 </Cards>
