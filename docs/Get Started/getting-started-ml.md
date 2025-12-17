@@ -225,24 +225,24 @@ With ReadMe's MDX editor, you can combine Markdown and custom JSX components lik
 You can even [build your own custom **Components**](/docs/getting-started#/settings/custom-components/start) to reuse across your docs.
 
 <Cards columns={3}>
-  <Card title="Explore the Component Marketplace" href="https://github.com/readmeio/marketplace/tree/main/components" icon="fa-store" target="_blank">
+  <Card title="Example" href="https://github.com/readmeio/marketplace/tree/main/components" icon="fa-store" target="_blank">
     Drop in and customize components.
   </Card>
 
   <Card title="MDX (Markdown + JSX)" href="https://docs.readme.com/main/docs/mdx" icon="fa-code">
-    Learn more about MDX to build interactive components.
+    Example.
   </Card>
 
   <Card title="Custom MDX Components" href="https://docs.readme.com/main/docs/building-custom-mdx-components" icon="fa-wrench">
-    Build your own components to reuse anywhere.
+    Example.
   </Card>
 </Cards>
 
-Looking for a branded entry point? Enable a **<Anchor label="Landing Page" target="_blank" href="https://docs.readme.com/main/docs/landing-page">Landing Page</Anchor>** to welcome your developers and direct them to key docs.
+Example
 
 ***
 
-## 🤖 Add AI to Your Dev Hub
+## 🤖 Example what to do now:
 
 AI is built into ReadMe to help you and your users move faster. Slide the panel open by hitting **:sparkles:AI** in your top navigation bar.
 
@@ -260,7 +260,7 @@ AI is built into ReadMe to help you and your users move faster. Slide the panel 
 
 ***
 
-## 🌿 Edit, Preview, and Publish in Branches
+\{/\* ## 🌿 Edit, Preview, and Publish in Branches
 
 <Anchor label="Branches" target="_blank" href="https://docs.readme.com/main/docs/branches">Branches</Anchor> bring Git-style workflows to your documentation process. Use them to:
 
@@ -271,7 +271,7 @@ AI is built into ReadMe to help you and your users move faster. Slide the panel 
 
 You can create a branch directly from the Versions & Branches menu, save edits into a new branch, or sync with GitHub and automatically reflect branches across both platforms.
 
-Once you're ready, merge the branch back into a live version. Enterprise plans can control who has merge access, and you'll always get a conflict check before merging.
+Once you're ready, merge the branch back into a live version. Enterprise plans can control who has merge access, and you'll always get a conflict check before merging.\*/}
 
 ***
 
