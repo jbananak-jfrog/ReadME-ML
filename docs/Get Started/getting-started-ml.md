@@ -16,6 +16,7 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
 ## ✍️ How Does it Work?
 
 <HTMLBlock>{`
+<HTMLBlock>{\`
 <style>
   /* --- CONTAINER STYLES --- */
   .custom-tabs-container {
@@ -28,12 +29,12 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
     display: flex;
     gap: 10px;
     width: 100%;
-    margin-bottom: 0; /* No margin so triangle touches content */
+    margin-bottom: 0;
   }
 
   /* --- 2. INDIVIDUAL BUTTON STYLING --- */
   .tab-btn {
-    flex: 1;                /* Make all buttons equal width */
+    flex: 1;
     background: #ffffff;
     border: 1px solid #e1e4e8;
     border-radius: 6px;
@@ -50,7 +51,7 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
     align-items: center;
     justify-content: center;
     min-height: 60px;
-    position: relative; /* Needed for the triangle arrow */
+    position: relative;
   }
 
   .tab-btn:hover {
@@ -70,10 +71,10 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
   .tab-btn.active::after {
     content: "";
     position: absolute;
-    bottom: -8px; /* Pushes it slightly below the button */
+    bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
-    border-width: 8px 8px 0; /* Size of triangle */
+    border-width: 8px 8px 0;
     border-style: solid;
     border-color: #2f3747 transparent transparent transparent;
     z-index: 10;
@@ -86,9 +87,9 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
     border: 1px solid #e1e4e8;
     border-radius: 6px;
     padding: 30px;
-    margin-top: 10px; /* Space for the triangle */
+    margin-top: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    display: none; /* Hidden by default */
+    display: none;
     animation: fadeIn 0.3s ease;
   }
   
@@ -102,13 +103,13 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* Mobile Responsive: Stack buttons if screen is small */
+  /* Mobile Responsive */
   @media (max-width: 768px) {
     .tab-buttons {
       flex-direction: column;
     }
     .tab-btn.active::after {
-      display: none; /* Hide triangle on mobile stack */
+      display: none;
     }
     .tab-content-area {
       margin-top: 5px;
@@ -116,14 +117,14 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
   }
 </style>
 
-<div class="custom-tabs-container">
+<div class="custom-tabs-container" id="jfrog-tabs">
 
   <div class="tab-buttons">
-    <div class="tab-btn active" onclick="openTab(event, 'tab-1')">Detect AI Usage</div>
-    <div class="tab-btn" onclick="openTab(event, 'tab-2')">Centralize & Govern</div>
-    <div class="tab-btn" onclick="openTab(event, 'tab-3')">Build & Deploy</div>
-    <div class="tab-btn" onclick="openTab(event, 'tab-4')">Monitor Performance</div>
-    <div class="tab-btn" onclick="openTab(event, 'tab-5')">Turn Data Into Features</div>
+    <div class="tab-btn active" data-target="tab-1">Detect AI Usage</div>
+    <div class="tab-btn" data-target="tab-2">Centralize & Govern</div>
+    <div class="tab-btn" data-target="tab-3">Build & Deploy</div>
+    <div class="tab-btn" data-target="tab-4">Monitor Performance</div>
+    <div class="tab-btn" data-target="tab-5">Turn Data Into Features</div>
   </div>
 
   <div id="tab-1" class="tab-content-area active">
@@ -134,52 +135,61 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
   <div id="tab-2" class="tab-content-area">
     <h3 style="margin-top:0;">Centralize & Govern AI Assets</h3>
     <p>Your Single Source of Truth for AI</p>
-<p>Unify every AI asset, including commercial APIs (like OpenAI), open-source models (like Hugging Face), and MCP servers, into one secure, centralized hub. Provide developers with self-service access to approved tools while ensuring strict security and compliance.
-</p>
+    <p>Unify every AI asset, including commercial APIs (like OpenAI), open-source models (like Hugging Face), and MCP servers, into one secure, centralized hub.</p>
   </div>
 
   <div id="tab-3" class="tab-content-area">
     <h3 style="margin-top:0;">Build & Deploy Models</h3>
     <p>From Notebook to Production</p>
-<p>Bridge the gap between experimentation and production with a simplified workflow to log, build, and deploy your custom models. By automating the transition from code to a production-ready artifact, you ensure reproducibility without the usual infrastructure headaches.
-</p>
+    <p>Bridge the gap between experimentation and production with a simplified workflow to log, build, and deploy your custom models.</p>
   </div>
 
   <div id="tab-4" class="tab-content-area">
     <h3 style="margin-top:0;">Monitor Model Performance</h3>
     <p>Maintain Trust in Live Models</p>
-<p>Models degrade over time as real-world data changes. JFrog tracks real-time model health and automatically detects data drift. By monitoring live traffic against your training baseline, you ensure your AI remains accurate and trustworthy without constant manual checking.
-</p>
+    <p>Models degrade over time as real-world data changes. JFrog tracks real-time model health and automatically detects data drift.</p>
   </div>
 
   <div id="tab-5" class="tab-content-area">
     <h3 style="margin-top:0;">Turn Data Into Features</h3>
     <p>Accelerate Feature Management</p>
-<p>Simplify the data preparation process by transforming raw data into a centralized library of governed features. By defining your data logic once using simple SQL, you ensure the exact same features used for training are available for production, eliminating costly data mismatch bugs.
-</p>
+    <p>Simplify the data preparation process by transforming raw data into a centralized library of governed features.</p>
   </div>
 
 </div>
 
 <script>
-  function openTab(evt, tabId) {
-    // 1. Get all content elements and hide them
-    var contents = document.getElementsByClassName("tab-content-area");
-    for (var i = 0; i < contents.length; i++) {
-      contents[i].className = contents[i].className.replace(" active", "");
-    }
+  (function() {
+    // 1. Select the specific container to avoid conflicts
+    var container = document.getElementById('jfrog-tabs');
+    if (!container) return;
 
-    // 2. Get all button elements and remove 'active' class
-    var buttons = document.getElementsByClassName("tab-btn");
-    for (var i = 0; i < buttons.length; i++) {
-      buttons[i].className = buttons[i].className.replace(" active", "");
-    }
+    // 2. Select all buttons inside this container
+    var buttons = container.querySelectorAll('.tab-btn');
+    var contents = container.querySelectorAll('.tab-content-area');
 
-    // 3. Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(tabId).className += " active";
-    evt.currentTarget.className += " active";
-  }
+    // 3. Add click event listener to each button
+    buttons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        
+        // Remove 'active' class from ALL buttons and ALL content
+        buttons.forEach(function(b) { b.classList.remove('active'); });
+        contents.forEach(function(c) { c.classList.remove('active'); });
+
+        // Add 'active' class to THIS button
+        this.classList.add('active');
+
+        // Find the target content ID from the data attribute and activate it
+        var targetId = this.getAttribute('data-target');
+        var targetContent = document.getElementById(targetId);
+        if (targetContent) {
+          targetContent.classList.add('active');
+        }
+      });
+    });
+  })();
 </script>
+\`}</HTMLBlock>
 `}</HTMLBlock>
 
 <br />
