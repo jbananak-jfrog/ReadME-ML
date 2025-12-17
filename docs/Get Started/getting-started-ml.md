@@ -13,7 +13,7 @@ JFrog ML is a unified platform designed to streamline the entire machine learnin
 
 <Image align="center" border={true} src="https://files.readme.io/24416c14ed7f479f1e433d68050b3ff4e7a64b08318759636b35055ec0cec97c-AI_ML_Diagram_for_JFrog_ML.png" className="border" />
 
-You're looking at a map of how JFrog can help you govern and manage all your AI and ML assets. Read on to understand how JFrog secures your system, and helps prevent the entry of malicious or ??? assets into your software environment.
+You're looking at a map of how JFrog can help you govern and manage all your AI and ML assets. Read on to understand how JFrog secures your system, and helps prevent the entry of malicious or unvetted assets into your software environment.
 
 ***
 
@@ -241,7 +241,7 @@ Note that our AI-powered search has been built into your JFrog help to help you 
     <small>*How to set up your JFrog ML*</small>
   </Card>
 
-  <Card title="AI Catalog" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog" target="_blank">
+  <Card title="AI Catalog (including Shadow AI Detection)" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog" target="_blank">
     <small>Manage your AI Assets in a centralized hub for AI model discovery, governance, and deployment.</small>
   </Card>
 
