@@ -1,5 +1,5 @@
 ---
-title: Getting Started with AI/ML (MLOps)
+title: Getting Started with AI/ML in JFrog (MLOps)
 excerpt: This page will help you get started with Machine Learning (MLOps).
 hidden: false
 link:
