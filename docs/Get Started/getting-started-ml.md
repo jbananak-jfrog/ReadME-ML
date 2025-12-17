@@ -268,14 +268,14 @@ Note that our AI-powered search has been built into your JFrog help to help you 
   </Card>
 
   <Card title="Model Experimentation" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog">
-    This guide walks you through the process of setting up experiment tracking platforms integrations within your JFrog ML environment.
+    This guide walks you through the process of setting up JFrog ML experiment tracking platforms integrations.
   </Card>
 
   <Card title="Feature Store" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/feature-store">
     JFrog ML's centralized service that facilitates the discoverability, reuse & accuracy of features
   </Card>
 
- <Card title="FrogML Client Examples" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/frogml-client-examples">
+  <Card title="FrogML Client Examples" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/frogml-client-examples">
     Use FrogML to programmatically access many of the JFrog ML functions and operations.
   </Card>
 
