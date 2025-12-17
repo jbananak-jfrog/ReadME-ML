@@ -241,9 +241,10 @@ Note that our AI-powered search has been built into your JFrog help to help you 
     <small>*How to set up your JFrog ML*</small>
   </Card>
 
-  <Card title="AI Catalog (including Shadow AI Detection)" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog" target="_blank">
-    <small>Manage your AI Assets in a centralized hub for AI model discovery, governance, and deployment.</small>
-  </Card>
+  <Card title="AI Catalog" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog" target="_blank">
+  (Including Shadow AI Detection)<br />
+  <small>Manage your AI Assets in a centralized hub for AI model discovery, governance, and deployment.</small>
+</Card>
 
   <Card title="Building Models" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/build-models">
     <small>Instructions on developing, training, & validating models with the FrogML SDK.</small>
