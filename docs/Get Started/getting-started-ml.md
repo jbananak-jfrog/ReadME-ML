@@ -242,44 +242,44 @@ Note that our AI-powered search has been built into your JFrog help to help you 
   </Card>
 
   <Card title="AI Catalog" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog" target="_blank">
-  (Including Shadow AI Detection)<br />
-  <small>Manage your AI Assets in a centralized hub for AI model discovery, governance, and deployment.</small>
-</Card>
+    <small>(Including Shadow AI Detection)</small><br />
+    <small>*Manage your AI Assets in a centralized hub for AI model discovery, governance, and deployment*</small>
+  </Card>
 
   <Card title="Building Models" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/build-models">
-    <small>Instructions on developing, training, & validating models with the FrogML SDK.</small>
+    <small>*Instructions on developing, training, & validating models with the FrogML SDK*</small>
   </Card>
 
   <Card title="Deploying Models" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/serve-models-deployment">
-    <small>Manage adapters, inference analytics, and real-time, batch, or streaming deployments.</small>
+    <small>*Manage adapters, inference analytics, and real-time, batch, or streaming deployments*</small>
   </Card>
 
   <Card title="Monitoring Models" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/model-monitors" icon="fa-star" target="_blank">
-    <small>Track runtime metrics, prediction timing, performance monitors, and inference distribution.</small>
+    <small>*Track runtime metrics, prediction timing, performance monitors, and inference distribution*</small>
   </Card>
 
   <Card title="Automations" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/automate-jfrog-ml">
-    <small>Tutorials and documentation on how to manage automations.</small>
+    <small>*Tutorials and documentation on how to manage automations*</small>
   </Card>
 
   <Card title="Configuring JFrog ML" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/configure-jfrog-ml">
-    <small>Optimize your experience with alerts, instance sizes, secret management, and AWS access.</small>
+    <small>*Optimize your experience with alerts, instance sizes, secret management, and AWS access*</small>
   </Card>
 
   <Card title="Model Experimentation" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog">
-    <small>Set up integrations for JFrog ML experiment tracking platforms easily.</small>
+    <small>*Set up integrations for JFrog ML experiment tracking platforms easily*</small>
   </Card>
 
   <Card title="Feature Store" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/feature-store">
-    <small>A centralized service to facilitate the discoverability, reuse, & accuracy of features.</small>
+    <small>A centralized service to facilitate the discoverability, reuse, & accuracy of features*</small>
   </Card>
 
   <Card title="FrogML Client Examples" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/frogml-client-examples">
-    <small>Programmatically access JFrog ML functions and operations using FrogML.</small>
+    <small>Programmatically access JFrog ML functions and operations using FrogML*</small>
   </Card>
 
   <Card title="JFrog ML Troubleshooting" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ml-troubleshooting">
-    <small>Troubleshoot installation, performance, & connectivity issues.</small>
+    <small>Troubleshoot installation, performance, & connectivity issues*</small>
   </Card>
 </Cards>
 
