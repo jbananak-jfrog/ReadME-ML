@@ -23,8 +23,7 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
     font-family: system-ui, -apple-system, sans-serif;
   }
 
-  /* --- HIDE RADIO INPUTS --- */
-  /* These control the logic but are invisible to the user */
+  /* --- HIDE RADIO INPUTS (The Logic) --- */
   .css-tabs input[type="radio"] {
     display: none;
   }
@@ -37,25 +36,29 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
     margin-bottom: 0;
   }
 
-  /* --- BUTTON STYLING --- */
+  /* --- INDIVIDUAL BUTTON STYLING (Multi-line Support) --- */
   .tab-label {
     flex: 1;
     background: #ffffff;
     border: 1px solid #e1e4e8;
     border-radius: 6px;
-    padding: 15px 5px;
+    padding: 12px 5px;
     cursor: pointer;
     font-size: 13px;
-    font-weight: 600;
     color: #333;
     text-align: center;
     transition: all 0.2s ease;
     
+    /* Flex settings to stack text vertically */
     display: flex;
+    flex-direction: column; /* Forces 2 lines */
     align-items: center;
     justify-content: center;
-    min-height: 60px;
+    gap: 4px; /* Space between the two lines */
+    
+    min-height: 70px;
     position: relative;
+    line-height: 1.2; 
   }
 
   .tab-label:hover {
@@ -63,7 +66,47 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
     border-color: #0366d6;
   }
 
-  /* --- CONTENT BOXES --- */
+  /* --- ACTIVE STATE STYLING --- */
+  
+  /* 1. Turn the active label dark blue */
+  #tab-1:checked ~ .tab-labels label[for="tab-1"],
+  #tab-2:checked ~ .tab-labels label[for="tab-2"],
+  #tab-3:checked ~ .tab-labels label[for="tab-3"],
+  #tab-4:checked ~ .tab-labels label[for="tab-4"],
+  #tab-5:checked ~ .tab-labels label[for="tab-5"] {
+    background-color: #2f3747;
+    color: white;
+    border-color: #2f3747;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  /* 2. Add the triangle pointer to the active label */
+  #tab-1:checked ~ .tab-labels label[for="tab-1"]::after,
+  #tab-2:checked ~ .tab-labels label[for="tab-2"]::after,
+  #tab-3:checked ~ .tab-labels label[for="tab-3"]::after,
+  #tab-4:checked ~ .tab-labels label[for="tab-4"]::after,
+  #tab-5:checked ~ .tab-labels label[for="tab-5"]::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px 8px 0;
+    border-style: solid;
+    border-color: #2f3747 transparent transparent transparent;
+    z-index: 10;
+  }
+
+  /* 3. Show the corresponding content block */
+  #tab-1:checked ~ .content-1,
+  #tab-2:checked ~ .content-2,
+  #tab-3:checked ~ .content-3,
+  #tab-4:checked ~ .content-4,
+  #tab-5:checked ~ .content-5 {
+    display: block;
+  }
+
+  /* --- CONTENT BOX STYLING --- */
   .tab-content {
     display: none; /* Hidden by default */
     width: 100%;
@@ -81,46 +124,6 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* --- THE LOGIC (Magic CSS) --- */
-  
-  /* 1. When Radio 1 is checked, turn Label 1 dark blue */
-  #tab-1:checked ~ .tab-labels label[for="tab-1"],
-  #tab-2:checked ~ .tab-labels label[for="tab-2"],
-  #tab-3:checked ~ .tab-labels label[for="tab-3"],
-  #tab-4:checked ~ .tab-labels label[for="tab-4"],
-  #tab-5:checked ~ .tab-labels label[for="tab-5"] {
-    background-color: #2f3747;
-    color: white;
-    border-color: #2f3747;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  }
-
-  /* 2. Add the little triangle pointer to the active label */
-  #tab-1:checked ~ .tab-labels label[for="tab-1"]::after,
-  #tab-2:checked ~ .tab-labels label[for="tab-2"]::after,
-  #tab-3:checked ~ .tab-labels label[for="tab-3"]::after,
-  #tab-4:checked ~ .tab-labels label[for="tab-4"]::after,
-  #tab-5:checked ~ .tab-labels label[for="tab-5"]::after {
-    content: "";
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-width: 8px 8px 0;
-    border-style: solid;
-    border-color: #2f3747 transparent transparent transparent;
-    z-index: 10;
-  }
-
-  /* 3. Show the corresponding content when radio is checked */
-  #tab-1:checked ~ .content-1,
-  #tab-2:checked ~ .content-2,
-  #tab-3:checked ~ .content-3,
-  #tab-4:checked ~ .content-4,
-  #tab-5:checked ~ .content-5 {
-    display: block;
-  }
-
   /* Mobile Stack */
   @media (max-width: 768px) {
     .tab-labels { flex-direction: column; }
@@ -136,11 +139,32 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
   <input type="radio" name="jfrog-tabs" id="tab-5">
 
   <div class="tab-labels">
-    <label for="tab-1" class="tab-label">Detect AI Usage +</label>
-    <label for="tab-2" class="tab-label">Centralize & Govern +</label>
-    <label for="tab-3" class="tab-label">Build & Deploy +</label>
-    <label for="tab-4" class="tab-label">Monitor Performance +</label>
-    <label for="tab-5" class="tab-label">Turn Data Into Features +</label>
+    
+    <label for="tab-1" class="tab-label">
+      <strong>Detect AI Usage</strong>
+      <span style="font-size: 11px; opacity: 0.8;">Gain Visibility</span>
+    </label>
+    
+    <label for="tab-2" class="tab-label">
+      <strong>Centralize & Govern</strong>
+      <span style="font-size: 11px; opacity: 0.8;">Single Source</span>
+    </label>
+    
+    <label for="tab-3" class="tab-label">
+      <strong>Build & Deploy</strong>
+      <span style="font-size: 11px; opacity: 0.8;">To Production</span>
+    </label>
+    
+    <label for="tab-4" class="tab-label">
+      <strong>Monitor Performance</strong>
+      <span style="font-size: 11px; opacity: 0.8;">Track Health</span>
+    </label>
+    
+    <label for="tab-5" class="tab-label">
+      <strong>Turn Data Into Features</strong>
+      <span style="font-size: 11px; opacity: 0.8;">Feature Mgmt</span>
+    </label>
+    
   </div>
 
   <div class="tab-content content-1">
@@ -149,22 +173,26 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
   </div>
 
   <div class="tab-content content-2">
-    <h3 style="margin-top:0;">Your Single Source of Truth for AI</h3>
+    <h3 style="margin-top:0;">Centralize & Govern AI Assets</h3>
+    <p>Your Single Source of Truth for AI</p>
     <p>Unify every AI asset, including commercial APIs (like OpenAI), open-source models (like Hugging Face), and MCP servers, into one secure, centralized hub. Provide developers with self-service access to approved tools while ensuring strict security and compliance.</p>
   </div>
 
   <div class="tab-content content-3">
-    <h3 style="margin-top:0;">From Notebook to Production</h3>
-   <p>Bridge the gap between experimentation and production with a simplified workflow to log, build, and deploy your custom models. By automating the transition from code to a production-ready artifact, you ensure reproducibility without the usual infrastructure headaches.</p>
+    <h3 style="margin-top:0;">Build & Deploy Models</h3>
+    <p>From Notebook to Production</p>
+    <p>Bridge the gap between experimentation and production with a simplified workflow to log, build, and deploy your custom models. By automating the transition from code to a production-ready artifact, you ensure reproducibility without the usual infrastructure headaches.</p>
   </div>
 
   <div class="tab-content content-4">
-    <h3 style="margin-top:0;">Maintain Trust in Live Models</h3>
+    <h3 style="margin-top:0;">Monitor Model Performance</h3>
+    <p>Maintain Trust in Live Models</p>
     <p>Models degrade over time as real-world data changes. JFrog tracks real-time model health and automatically detects data drift. By monitoring live traffic against your training baseline, you ensure your AI remains accurate and trustworthy without constant manual checking.</p>
   </div>
 
   <div class="tab-content content-5">
-    <h3 style="margin-top:0;">Accelerate Feature Management</h3>
+    <h3 style="margin-top:0;">Turn Data Into Features</h3>
+    <p>Accelerate Feature Management</p>
     <p>Simplify the data preparation process by transforming raw data into a centralized library of governed features. By defining your data logic once using simple SQL, you ensure the exact same features used for training are available for production, eliminating costly data mismatch bugs.</p>
   </div>
 
