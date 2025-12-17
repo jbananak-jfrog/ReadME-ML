@@ -232,7 +232,8 @@ Note that our AI-powered search has been built into your JFrog help to help you 
 
 ***
 
-<Cards columns={4}>
+<div class="green-shadow-cards">
+  <Cards columns={4}>
   <Card title="Activate" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/installation/docs/activate-ai-ml" target="_blank">
     <small>Activate AI ML</small>
   </Card>
@@ -281,6 +282,8 @@ Note that our AI-powered search has been built into your JFrog help to help you 
   <Card title="JFrog ML Troubleshooting" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ml-troubleshooting">
     <small>*Troubleshoot installation, performance, & connectivity issues*</small>
   </Card>
-</Cards>
+  </Cards> </div>
+
+
 
 <br />
