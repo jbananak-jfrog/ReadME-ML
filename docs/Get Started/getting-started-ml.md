@@ -256,7 +256,7 @@ Note that our AI-powered search has been built into your JFrog help to help you 
   </Card>
 
   <Card title="Monitoring Models" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/model-monitors" icon="fa-home" target="_blank">
-    This section explores essential aspects including Runtime Metrics, monitoring model data, tracking prediction timers, evaluating performance monitors, and analyzing inference distribution.
+    Explore here essential aspects including Runtime Metrics, monitoring model data, tracking prediction timers, evaluating performance monitors, & analyzing inference distribution.
   </Card>
 
   <Card title="Automations" icon="fa-user" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/automate-jfrog-ml">
@@ -264,14 +264,14 @@ Note that our AI-powered search has been built into your JFrog help to help you 
   </Card>
 
   <Card title="Configuring JFrog ML" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/configure-jfrog-ml">
-    Need to optimize your JFrog ML experience? This section covers alerts, instance sizes, secret management, and AWS access.
+    Need to optimize your JFrog ML experience? Read here about alerts, instance sizes, secret management, & AWS access.
   </Card>
 
   <Card title="Model Experimentation" icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog">
-   This guide will walk you through the process of setting up experiment tracking platforms integrations within your JFrog ML environment.
+   This guide walks you through the process of setting up experiment tracking platforms integrations within your JFrog ML environment.
   </Card>
 
-  <Card title="Fourth Card" icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog">
-    **Excepteur sint occaecat cupidatat non proident**
+  <Card title="Feature Store" icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/feature-store">
+    JFrog ML's centralized service that facilitates the discoverability, reuse & accuracy of features
   </Card>
 </Cards>
