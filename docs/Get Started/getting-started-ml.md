@@ -247,9 +247,9 @@ Note that our AI-powered search has been built into your JFrog help to help you 
     Manage your AI Assets in a centralized hub for AI model discovery, governance, and deployment.
   </Card>
 
-  <Card title="Building Models " icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/build-models">
-    The Build Models section provides instructions on developing, training, and validating models with the FrogML SDK.
-  </Card>
+  <Card title="Building Models" icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/build-models">
+    Provides instructions on developing, training, & validating models with the FrogML SDK.
+</Card>
 
   <Card title="Deploying Models" icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/serve-models-deployment">
     This section covers key topics including Prediction Input & Output Adapters, Real-Time, Batch, and Streaming Deployments, as well as Inference Analytics.
