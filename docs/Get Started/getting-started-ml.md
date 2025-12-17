@@ -235,7 +235,7 @@ Note that our AI-powered search has been built into your JFrog help to help you 
 ***
 
 <Cards columns={5}>
-  <Card title="Activate" icon="fa-home" href="https://jfrog-enterprise-group.readme.io/installation/docs/activate-ai-ml"  target="_blank">
+  <Card title="Activate" icon="fa-home" href="https://jfrog-enterprise-group.readme.io/installation/docs/activate-ai-ml" target="_blank">
     Activate AI ML
   </Card>
 
@@ -249,10 +249,10 @@ Note that our AI-powered search has been built into your JFrog help to help you 
 
   <Card title="Building Models" icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/build-models">
     Provides instructions on developing, training, & validating models with the FrogML SDK.
-</Card>
+  </Card>
 
   <Card title="Deploying Models" icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/serve-models-deployment">
-    This section covers key topics including Prediction Input & Output Adapters, Real-Time, Batch, and Streaming Deployments, as well as Inference Analytics.
+    Covers key topics including prediction input/output adapters, real-time/batch/streaming deployments, as well as inference analytics.
   </Card>
 
   <Card title="Monitoring Models" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/model-monitors" icon="fa-home" target="_blank">
