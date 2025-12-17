@@ -16,7 +16,6 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
 ## ✍️ How Does it Work?
 
 <HTMLBlock>{`
-<HTMLBlock>{\`
 <style>
   /* --- CONTAINER STYLES --- */
   .custom-tabs-container {
@@ -135,51 +134,47 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
   <div id="tab-2" class="tab-content-area">
     <h3 style="margin-top:0;">Centralize & Govern AI Assets</h3>
     <p>Your Single Source of Truth for AI</p>
-    <p>Unify every AI asset, including commercial APIs (like OpenAI), open-source models (like Hugging Face), and MCP servers, into one secure, centralized hub.</p>
+    <p>Unify every AI asset, including commercial APIs (like OpenAI), open-source models (like Hugging Face), and MCP servers, into one secure, centralized hub. Provide developers with self-service access to approved tools while ensuring strict security and compliance.</p>
   </div>
 
   <div id="tab-3" class="tab-content-area">
     <h3 style="margin-top:0;">Build & Deploy Models</h3>
     <p>From Notebook to Production</p>
-    <p>Bridge the gap between experimentation and production with a simplified workflow to log, build, and deploy your custom models.</p>
+    <p>Bridge the gap between experimentation and production with a simplified workflow to log, build, and deploy your custom models. By automating the transition from code to a production-ready artifact, you ensure reproducibility without the usual infrastructure headaches.</p>
   </div>
 
   <div id="tab-4" class="tab-content-area">
     <h3 style="margin-top:0;">Monitor Model Performance</h3>
     <p>Maintain Trust in Live Models</p>
-    <p>Models degrade over time as real-world data changes. JFrog tracks real-time model health and automatically detects data drift.</p>
+    <p>Models degrade over time as real-world data changes. JFrog tracks real-time model health and automatically detects data drift. By monitoring live traffic against your training baseline, you ensure your AI remains accurate and trustworthy without constant manual checking.</p>
   </div>
 
   <div id="tab-5" class="tab-content-area">
     <h3 style="margin-top:0;">Turn Data Into Features</h3>
     <p>Accelerate Feature Management</p>
-    <p>Simplify the data preparation process by transforming raw data into a centralized library of governed features.</p>
+    <p>Simplify the data preparation process by transforming raw data into a centralized library of governed features. By defining your data logic once using simple SQL, you ensure the exact same features used for training are available for production, eliminating costly data mismatch bugs.</p>
   </div>
 
 </div>
 
 <script>
   (function() {
-    // 1. Select the specific container to avoid conflicts
     var container = document.getElementById('jfrog-tabs');
     if (!container) return;
 
-    // 2. Select all buttons inside this container
     var buttons = container.querySelectorAll('.tab-btn');
     var contents = container.querySelectorAll('.tab-content-area');
 
-    // 3. Add click event listener to each button
     buttons.forEach(function(btn) {
       btn.addEventListener('click', function() {
-        
-        // Remove 'active' class from ALL buttons and ALL content
+        // Reset all
         buttons.forEach(function(b) { b.classList.remove('active'); });
         contents.forEach(function(c) { c.classList.remove('active'); });
 
-        // Add 'active' class to THIS button
+        // Activate clicked
         this.classList.add('active');
 
-        // Find the target content ID from the data attribute and activate it
+        // Activate content
         var targetId = this.getAttribute('data-target');
         var targetContent = document.getElementById(targetId);
         if (targetContent) {
@@ -189,7 +184,6 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
     });
   })();
 </script>
-\`}</HTMLBlock>
 `}</HTMLBlock>
 
 <br />
