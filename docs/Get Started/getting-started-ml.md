@@ -5,6 +5,10 @@ hidden: false
 link:
   new_tab: false
 ---
+JFrog ML is a unified platform designed to streamline the entire machine learning lifecycle by integrating MLOps, security, and DevOps into a single system of record. It provides a robust, scalable, and secure foundation for building, deploying, and monitoring your models in production.
+
+***
+
 # Welcome to JFrog AI ML
 
 <Image align="center" border={true} src="https://files.readme.io/24416c14ed7f479f1e433d68050b3ff4e7a64b08318759636b35055ec0cec97c-AI_ML_Diagram_for_JFrog_ML.png" className="border" />
@@ -214,19 +218,18 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
 </div>
 `}</HTMLBlock>
 
+<br />
+
+***
+
+<br />
+
+## 🤖 What to do now:
+
 Start by searching for what you need - your JFrog AI ML guide walks you through key concepts, tutorials, or best practices.
 
-***
-
-<br />
-
-## 🤖 Example what to do now:
-
-AI is built into your JFrog help to help you move faster. Slide the panel open by hitting **:sparkles:AI** in your top navigation bar.   
-
-* **AI-Powered Search**  
-  An AI Search has been enabled to help you ask questions about your product and instantly receive an answer.
+Note that our AI-powered search has been built into your JFrog help to help you move faster. Slide the panel open by hitting **:sparkles:AI** in your top navigation bar. This can help you answer questions about our product and instantly receive an answer.
 
 ***
 
-<br />
+To 
