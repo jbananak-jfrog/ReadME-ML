@@ -244,14 +244,14 @@ Note that our AI-powered search has been built into your JFrog help to help you 
   </Card>
 
   <Card title="AI Catalog" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog" target="_blank">
-    Manage your AI Assets in a centralized hub for AI model discovery, governance, and deployment. Here you can view and manage all AI models in your organization, including both those you are currently using, and those you want to use.
-  </Card>
- 
-  <Card title="Build Models " icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/build-models">
-    The Build Models section provides instructions on developing, training, and validating models with the FrogML SDK, including managing dependencies, working with pre-built models, and exploring advanced build options for streamlined deployment.
+    Manage your AI Assets in a centralized hub for AI model discovery, governance, and deployment.
   </Card>
 
-<Card title="Fourth Card" icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog">
+  <Card title="Build Models " icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/build-models">
+    The Build Models section provides instructions on developing, training, and validating models with the FrogML SDK.
+  </Card>
+
+  <Card title="Fourth Card" icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog">
     **Excepteur sint occaecat cupidatat non proident**
   </Card>
 
@@ -271,7 +271,7 @@ Note that our AI-powered search has been built into your JFrog help to help you 
     **Excepteur sint occaecat cupidatat non proident**
   </Card>
 
-<Card title="Fourth Card" icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog">
+  <Card title="Fourth Card" icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog">
     **Excepteur sint occaecat cupidatat non proident**
   </Card>
 </Cards>
