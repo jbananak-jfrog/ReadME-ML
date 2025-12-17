@@ -36,7 +36,7 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
     margin-bottom: 0;
   }
 
-  /* --- INDIVIDUAL BUTTON STYLING (Multi-line Support) --- */
+  /* --- INDIVIDUAL BUTTON STYLING --- */
   .tab-label {
     flex: 1;
     background: #ffffff;
@@ -49,12 +49,12 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
     text-align: center;
     transition: all 0.2s ease;
     
-    /* Flex settings to stack text vertically */
+    /* Stack Title and Arrow Vertically */
     display: flex;
-    flex-direction: column; /* Forces 2 lines */
+    flex-direction: column; 
     align-items: center;
     justify-content: center;
-    gap: 4px; /* Space between the two lines */
+    gap: 6px; /* Space between Title and Arrow */
     
     min-height: 70px;
     position: relative;
@@ -64,6 +64,15 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
   .tab-label:hover {
     background-color: #f6f8fa;
     border-color: #0366d6;
+  }
+
+  /* --- ARROW STYLING --- */
+  .tab-arrow {
+    font-size: 12px;     /* Size of the arrow */
+    color: #888;         /* Grey color by default */
+    transition: transform 0.3s ease; /* Smooth rotation animation */
+    display: block;      /* Ensures it sits on its own line */
+    line-height: 1;
   }
 
   /* --- ACTIVE STATE STYLING --- */
@@ -80,7 +89,17 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   }
 
-  /* 2. Add the triangle pointer to the active label */
+  /* 2. Rotate the Arrow UP and turn it White when active */
+  #tab-1:checked ~ .tab-labels label[for="tab-1"] .tab-arrow,
+  #tab-2:checked ~ .tab-labels label[for="tab-2"] .tab-arrow,
+  #tab-3:checked ~ .tab-labels label[for="tab-3"] .tab-arrow,
+  #tab-4:checked ~ .tab-labels label[for="tab-4"] .tab-arrow,
+  #tab-5:checked ~ .tab-labels label[for="tab-5"] .tab-arrow {
+    transform: rotate(180deg); /* Flip upside down */
+    color: #ffffff;            /* Turn white */
+  }
+
+  /* 3. Add the triangle pointer at the bottom */
   #tab-1:checked ~ .tab-labels label[for="tab-1"]::after,
   #tab-2:checked ~ .tab-labels label[for="tab-2"]::after,
   #tab-3:checked ~ .tab-labels label[for="tab-3"]::after,
@@ -97,7 +116,7 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
     z-index: 10;
   }
 
-  /* 3. Show the corresponding content block */
+  /* 4. Show the corresponding content block */
   #tab-1:checked ~ .content-1,
   #tab-2:checked ~ .content-2,
   #tab-3:checked ~ .content-3,
@@ -142,27 +161,27 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
     
     <label for="tab-1" class="tab-label">
       <strong>Detect AI Usage</strong>
-      <span style="font-size: 11px; opacity: 0.8;">Gain Visibility</span>
+      <span class="tab-arrow">&#9660;</span>
     </label>
     
     <label for="tab-2" class="tab-label">
       <strong>Centralize & Govern</strong>
-      <span style="font-size: 11px; opacity: 0.8;">Single Source</span>
+      <span class="tab-arrow">&#9660;</span>
     </label>
     
     <label for="tab-3" class="tab-label">
       <strong>Build & Deploy</strong>
-      <span style="font-size: 11px; opacity: 0.8;">To Production</span>
+      <span class="tab-arrow">&#9660;</span>
     </label>
     
     <label for="tab-4" class="tab-label">
       <strong>Monitor Performance</strong>
-      <span style="font-size: 11px; opacity: 0.8;">Track Health</span>
+      <span class="tab-arrow">&#9660;</span>
     </label>
     
     <label for="tab-5" class="tab-label">
       <strong>Turn Data Into Features</strong>
-      <span style="font-size: 11px; opacity: 0.8;">Feature Mgmt</span>
+      <span class="tab-arrow">&#9660;</span>
     </label>
     
   </div>
