@@ -256,7 +256,7 @@ Note that our AI-powered search has been built into your JFrog help to help you 
   </Card>
 
   <Card title="Monitoring Models" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/model-monitors" icon="fa-home" target="_blank">
-    Explore here essential aspects including Runtime Metrics, monitoring model data, tracking prediction timers, evaluating performance monitors, & analyzing inference distribution.
+    Explore here runtime metrics, monitoring model data, prediction timer tracking, performance monitor evaluation & inference distribution analysis.
   </Card>
 
   <Card title="Automations" icon="fa-user" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/automate-jfrog-ml">
