@@ -235,7 +235,7 @@ Note that our AI-powered search has been built into your JFrog help to help you 
 ***
 
 <Cards columns={5}>
-  <Card title="Activate" href="https://jfrog-enterprise-group.readme.io/installation/docs/activate-ai-ml" icon="fa-home" target="_blank">
+  <Card title="Activate" icon="fa-home" href="https://jfrog-enterprise-group.readme.io/installation/docs/activate-ai-ml"  target="_blank">
     Activate AI ML
   </Card>
 
@@ -268,7 +268,7 @@ Note that our AI-powered search has been built into your JFrog help to help you 
   </Card>
 
   <Card title="Model Experimentation" icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog">
-   This guide walks you through the process of setting up experiment tracking platforms integrations within your JFrog ML environment.
+    This guide walks you through the process of setting up experiment tracking platforms integrations within your JFrog ML environment.
   </Card>
 
   <Card title="Feature Store" icon="fa-question" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/feature-store">
