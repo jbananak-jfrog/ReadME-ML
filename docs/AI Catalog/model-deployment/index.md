@@ -1,5 +1,5 @@
 ---
-title: Model Deployment
+title: Deploy Models
 deprecated: false
 hidden: false
 metadata:
