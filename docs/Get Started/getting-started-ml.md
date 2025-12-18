@@ -245,7 +245,7 @@ Start by searching for what you need - your JFrog AI ML guide walks you through 
     </Card>
 
     <Card title="AI Catalog" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog" target="_blank">
-      <small>(Including Shadow AI Detection)</small><br />
+      (Including Shadow AI Detection)<br />
       <small>*Manage your AI Assets in a centralized hub for AI model discovery, governance, and deployment*</small>
     </Card>
   </Cards>
