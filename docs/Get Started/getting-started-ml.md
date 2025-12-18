@@ -238,8 +238,6 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
 
 Start by searching for what you need - your JFrog AI ML guide walks you through key concepts, tutorials, or best practices. Either use the search bar or select from the options below.
 
-Note that our AI-powered search has been built into your JFrog help to help you move faster. Slide the panel open by hitting **:sparkles:AI** in your top navigation bar. This can help you answer questions about our product and instantly receive an answer.
-
 <div class="green-shadow-cards">
   <Cards columns={2}>
     <Card title="Setting Up JFrog ML" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/setting-up-jfrog-ml" target="_blank">
@@ -252,6 +250,7 @@ Note that our AI-powered search has been built into your JFrog help to help you 
     </Card>
   </Cards>
 </div>
+
 
 ***
 
