@@ -14,6 +14,14 @@ metadata:
 ---
 This page describes how to set up JFrog ML, including installing and configuring FrogML CLI and SDK.
 
+<Callout icon="📘" theme="info">
+
+
+  <big>**Self-Managed**</big>
+
+  For self-managed, follow the instructions in [Activate AI ML](/docs/setting-up-jfrog-ml).
+</Callout>
+
 ## Self-Managed
 
 For self-managed, follow the instructions in [Activate AI ML](/docs/setting-up-jfrog-ml).
