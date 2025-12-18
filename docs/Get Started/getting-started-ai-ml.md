@@ -251,6 +251,4 @@ Start by searching for what you need - your JFrog AI ML guide walks you through 
   </Cards>
 </div>
 
-***
-
 <br />
