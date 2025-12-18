@@ -1,5 +1,5 @@
 ---
-title: Getting Started with AI/ML in JFrog (MLOps)
+title: Getting Started with AI/ML in JFrog
 excerpt: This page will help you get started with JFrog's ML and AI assets management.
 hidden: false
 link:
