@@ -1,6 +1,7 @@
 - jfrog-ai-catalog
 - jfrog-ai-catalog-architecture
 - discover-and-allow-models
+- shadow-ai-detection-governing-unmanaged-models
 - connect-ai-providers
 - deploy-model-packages-open-source
 - deploy-custom-models
@@ -8,4 +9,3 @@
 - upload-custom-models
 - use-the-model-dashboards
 - troubleshooting-ai-catalog
-- shadow-ai-detection-governing-unmanaged-models
