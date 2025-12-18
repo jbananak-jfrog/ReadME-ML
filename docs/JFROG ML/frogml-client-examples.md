@@ -169,7 +169,7 @@ List data tags by its model ID.
 
 * `List[DataTag]` - List of data tags with their specifications.
 
-```
+```python
 from frogml import FrogMLClient
 from frogml.core.clients.data_versioning.data_tag_filter import DataTagFilter
 
@@ -200,7 +200,7 @@ Assign a tag to an existing build.
 
 * `List[Build]` - List of builds that contains the requested filters.
 
-```
+```python
 from frogml import FrogMLClient
 
 client = FrogMLClient()
@@ -221,7 +221,7 @@ Assign a list of tags to an existing build.
 
 * `List[Build]` - List of builds that contains the requested filters.
 
-```
+```python
 from frogml import FrogMLClient
 
 client = FrogMLClient()
@@ -264,7 +264,7 @@ List projects.
 
 * `List[Project]` - List of projects.
 
-```
+```python
 from frogml import FrogMLClient 
 
 client = FrogMLClient() 
@@ -296,7 +296,7 @@ Create a new model.
 
 * `str` - The model ID of the newly created project.
 
-```
+```python
 from frogml import FrogMlClient
 
 client = FrogMlClient()
@@ -316,7 +316,7 @@ Get model by its model ID.
 
 * `Optional[Model]` - Model by ID.
 
-```
+```python
 from frogml import FrogMLClient
 
 client = FrogMLClient()
@@ -336,7 +336,7 @@ Get model metadata by its model ID.
 
 * `Optional[ModelMetadata]` - Model metadata by ID.
 
-```
+```python
 from frogml import FrogMLClient
 
 client = FrogMLClient()
@@ -353,7 +353,7 @@ Delete model by its project & model ID's.
 * **project_id** (_str_) - The project ID
 * **model_id** (_str_) - The model ID
 
-```
+```python
 from frogml.sdk.frogml_client.client import FrogMLClient
 
 client = FrogMLClient()
