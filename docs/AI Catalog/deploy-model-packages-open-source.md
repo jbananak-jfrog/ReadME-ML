@@ -1,5 +1,5 @@
 ---
-title: Deploy Model Packages (Open source)
+title: Deploy Model Packages
 deprecated: false
 hidden: false
 metadata:
