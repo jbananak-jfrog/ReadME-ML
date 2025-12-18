@@ -1,5 +1,5 @@
 ---
-title: Setting Up JFrog ML
+title: Set Up JFrog ML
 deprecated: false
 hidden: false
 metadata:
