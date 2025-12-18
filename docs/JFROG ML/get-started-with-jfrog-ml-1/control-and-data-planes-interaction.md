@@ -1,5 +1,6 @@
 ---
-title: Control and Data Planes Interaction
+title: Control and Data Planes
+excerpt: Learn how the control and data planes of JFrog ML interact.
 deprecated: false
 hidden: false
 metadata:
