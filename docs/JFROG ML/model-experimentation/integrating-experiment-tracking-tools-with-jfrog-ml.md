@@ -4,21 +4,23 @@ deprecated: false
 hidden: false
 metadata:
   title: Integrating Experiment Tracking Tools with JFrog ML
-  description: Experiment tracking is an essential aspect of the machine learning workflow, allowing you to monitor and compare different models and runs.
-  robots: index
+  description: >-
+    Experiment tracking is an essential aspect of the machine learning workflow,
+    allowing you to monitor and compare different models and runs.
   legacyUUIDs:
     - UUID-56dbf851-5eef-25c7-93fc-f98cf7361c86
     - UUID-feeae0bd-9829-5f42-d8a5-3c77fc3aa2ef
+  robots: index
 ---
 Experiment tracking is an essential aspect of the machine learning workflow, allowing you to monitor and compare different models and runs.
 
 JFrog ML provides seamless integration with leading experiment tracking platforms such as Weights & Biases (wandb) and MLflow. This guide will walk you through the process of setting up these integrations within your JFrog ML environment.
 
-### Weights and Biases Integration
+## Weights and Biases Integration
 
 When using Weights & Biases (wandb), you store and manage artifacts, which can include datasets, models, and other files, in a centralized database on the wandb cloud service. Here's how to retrieve and utilize model artifacts, metrics, and parameters logged with wandb.
 
-#### Setting Up wandb
+## Setting Up wandb
 
 Before you begin, ensure you have a Weights & Biases account. Follow these steps to integrate wandb with JFrog ML:
 
@@ -43,7 +45,7 @@ To use wandb in your JFrog ML model, you'll need to:
 
 Here's a practical example of how to use wandb in your JFrog ML model :
 
-```
+```python
 from frogml import FrogMlModel
 from frogml.core.clients.secret_service import  SecretServiceClient
 import wandb
@@ -111,8 +113,10 @@ class MyCustomModel(FrogMlModel):
         pass
 ```
 
-When initiating this build using the JFrog ML SDK, please include the necessary environment variables by utilizing the `-E` flag, as outlined in the [Build Configurations](/docs/build-configurations "Build Configurations") documentation page.
+When initiating this build using the JFrog ML SDK, please include the necessary environment variables by utilizing the `-E` flag, as outlined in the <Anchor label="Build Configurations" title="Build Configurations" href="/docs/build-configurations">Build Configurations</Anchor> documentation page.
 
-### Conclusion
+## Conclusion
 
 By integrating experiment tracking tools like `wandb` and `MLflow`, you can enhance the capabilities of your JFrog ML-based ML models. This setup enables you to keep track of your experiments, compare results, and ensure that your ML operations are efficient.
+
+<br />
