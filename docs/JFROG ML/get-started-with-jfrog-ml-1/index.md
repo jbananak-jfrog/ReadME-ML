@@ -1,5 +1,5 @@
 ---
-title: Get Started with JFrog ML
+title: About JFrog ML
 deprecated: false
 hidden: false
 metadata:
