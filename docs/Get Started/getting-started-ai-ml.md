@@ -240,11 +240,11 @@ Start by searching for what you need - your JFrog AI ML guide walks you through 
 
 <div class="green-shadow-cards">
   <Cards columns={2}>
-    <Card title="Setting Up JFrog ML" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/setting-up-jfrog-ml" target="_blank">
+    <Card title="Setting Up JFrog ML" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/setting-up-jfrog-ml" target="_self">
       <small>*How to set up your JFrog ML*</small>
     </Card>
 
-    <Card title="AI Catalog" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog" target="_blank">
+    <Card title="AI Catalog" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog" target="_self">
       (Including Shadow AI Detection)<br />
       <small>*Manage your AI Assets in a centralized hub for AI model discovery, governance, and deployment*</small>
     </Card>
