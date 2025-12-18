@@ -1,5 +1,6 @@
 ---
-title: 'Shadow AI Detection: Governing Unmanaged Models ​'
+title: Shadow AI Detection
+excerpt: 'Governing Unmanaged Models '
 deprecated: false
 hidden: false
 metadata:
