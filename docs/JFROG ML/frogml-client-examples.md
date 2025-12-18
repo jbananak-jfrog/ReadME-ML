@@ -369,7 +369,7 @@ Retrieves all models that belong to the project with the given ID.
 
 * **project_id** (_str_) - the project ID
 
-```
+```python
 from frogml import FrogMLClient
 
 client = FrogMLClient()
@@ -385,7 +385,7 @@ Retrieves the metadata of all models that belong to the project with a given ID
 
 * **project_id** (_str_) - the project ID
 
-```
+```python
 from frogml import FrogMLClient
 
 client = FrogMLClient()
@@ -407,7 +407,7 @@ Get deployed build ID per environment by its model ID.
 
 * `Dict[str, str]` - Map environment to deployed build ID. None if the model is not deployed.
 
-```
+```python
 from frogml import FrogMLClient
 
 client = FrogMLClient()
@@ -430,7 +430,7 @@ List batch executions by model ID
 
 * `List[Execution]` - List of executions with their specifications.
 
-```
+```python
 from frogml import FrogMLClient
 
 client = FrogMLClient()
@@ -450,7 +450,7 @@ List batch executions tasks by its job ID
 
 * `List[Task]` - List of execution tasks with their specifications.
 
-```
+```python
 from frogml import FrogMLClient
 
 client = FrogMLClient()
