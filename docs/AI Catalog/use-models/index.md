@@ -1,5 +1,5 @@
 ---
-title: Use Models
+title: Integrate Models
 deprecated: false
 hidden: false
 metadata:
