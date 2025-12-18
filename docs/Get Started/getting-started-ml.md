@@ -4,11 +4,6 @@ excerpt: This page will help you get started with JFrog's ML and AI assets manag
 hidden: false
 link:
   new_tab: false
-next:
-  pages:
-    - slug: jfrog-ai-catalog
-      title: JFrog AI Catalog Overview
-      type: basic
 ---
 JFrog ML is a unified platform designed to streamline the entire machine learning lifecycle by integrating MLOps, security, and DevOps into a single system of record. It provides a robust, scalable, and secure foundation for building, deploying, and monitoring your models in production.
 
