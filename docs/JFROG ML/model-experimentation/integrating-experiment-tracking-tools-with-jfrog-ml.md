@@ -31,7 +31,7 @@ Before you begin, ensure you have a Weights & Biases account. Follow these steps
 
    Using the SDK as below, [or using the UI](/docs/secret-management).
 
-   ```
+   ```shell
    frogml secrets set --name 'wandb-api-key' --value "<YOUR_WANDB_API_KEY>"
    ```
 
