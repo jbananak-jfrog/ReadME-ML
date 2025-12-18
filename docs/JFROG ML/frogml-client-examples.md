@@ -1,24 +1,25 @@
 ---
-title: FrogML Client Examples
+title: FrogML Client
+excerpt: Learn how to use the FrogML client through these examples.
 deprecated: false
 hidden: false
 metadata:
   title: FrogML Client Examples
-  description: Use FrogML to programmatically access many of the JFrog ML functions and operations.
-  robots: index
+  description: >-
+    Use FrogML to programmatically access many of the JFrog ML functions and
+    operations.
   legacyUUIDs:
     - UUID-b95666d0-3525-57f7-3303-9c917c7a52c6
     - UUID-4f76733a-210a-f0a6-b031-ef6d33908663
+  robots: index
 ---
-Use `FrogML` to programmatically access many of the JFrog ML functions and operations.
-
 The FrogML client is a wrapper and a single entry point for different JFrog ML clients such as the `BatchClient`, `DeploymentClient`, and more.
 
 ##### JFrog ML Configuration File
 
 If the frogml-cli is already configured, the method fetches the token from the pre-configured conf file.
 
-```
+```python
 from frogml import FrogMLClient
 
 client = FrogMLClient()
@@ -27,29 +28,29 @@ token = client.get_token()
 
 ### Builds
 
-#### get\_latest\_build
+#### get_latest_build
 
 Returns the latest build by its model ID.
 
-Optionally gets a build\_status, by default filters on 'SUCCESSFUL'.
+Optionally gets a build_status, by default filters on 'SUCCESSFUL'.
 
 ##### Args:
 
-* **model\_id** (*str*) - The model ID.
-* **build\_status** (*str*) - Build statuses to filter on. Valid values are 'SUCCESSFUL', 'IN\_PROGRESS', 'FAILED'.
+* **model_id** (_str_) - The model ID.
+* **build_status** (_str_) - Build statuses to filter on. Valid values are 'SUCCESSFUL', 'IN_PROGRESS', 'FAILED'.
 
 ##### Returns:
 
 * `str` - The build ID of the latest build according to the build status. None if no builds match the filter.
 
-```
+```python
 from frogml import FrogMLClient
 
 client = FrogMLClient()
 client.get_latest_build(model_id="model_id")
 ```
 
-#### get\_builds\_by\_tags
+#### get_builds_by_tags
 
 Returns a list of builds by a given model ID, filtered by a list of build tags.
 
@@ -57,16 +58,16 @@ Note that the method has several options of filtering builds by tags.
 
 ##### Args:
 
-* **model\_id** (*str*) - The model ID.
-* **tags** (*List[str]*) - List of tags to filter by.
-* **match\_any** (*boolean, optional, default=True*) - Setting this to True will return builds with at least one tag from the given filter list of tags. Setting it to False will only return builds where all the tags in the provided list are present.
-* **include\_extra\_tags** (*boolean, optional, default=True*) - Setting it to True will return builds that match exactly or more tags from the provided list of tags. Setting it to False will return exactly the list of tags included.
+* **model_id** (_str_) - The model ID.
+* **tags** (_List[str]_) - List of tags to filter by.
+* **match_any** (_boolean, optional, default=True_) - Setting this to True will return builds with at least one tag from the given filter list of tags. Setting it to False will only return builds where all the tags in the provided list are present.
+* **include_extra_tags** (_boolean, optional, default=True_) - Setting it to True will return builds that match exactly or more tags from the provided list of tags. Setting it to False will return exactly the list of tags included.
 
 ##### Returns:
 
 * `List[Build]` - Returns a list of builds that contain the requested tags.
 
-```
+```python
 from frogml import FrogMLClient
 
 client = FrogMLClient()
@@ -85,42 +86,42 @@ client.get_builds_by_tags(model_id="model_id", tags=['tag1', 'tag2'], include_ex
 client.get_builds_by_tags(model_id="model_id", tags=['tag1', 'tag2'], include_extra_tags=False, match_any=True)
 ```
 
-#### list\_builds
+#### list_builds
 
 List builds by its model ID and explicit filters.
 
 ##### Args
 
-* **model\_id** (*str*) - The model ID
-* **tags** (*List[str]*) - List of tags to filter by
-* **filters** (*List[str]*) - List of metric and parameter filters
+* **model_id** (_str_) - The model ID
+* **tags** (_List[str]_) - List of tags to filter by
+* **filters** (_List[str]_) - List of metric and parameter filters
 
 ##### Returns
 
 * `List[Build]` - List of builds that contains the requested filters.
 
-```
+```python
 from frogml import FrogMLClient
 
 client = FrogMLClient()
 builds_list = client.list_builds(model_id='your-model-id')
 ```
 
-#### list\_file\_tags
+#### list_file_tags
 
 List file tags by its model ID.
 
 ##### Args:
 
-* **model\_id** (*str*) - The model ID
-* **build\_id** (*str, optional, default=""*) - The build ID - If not specified, returns all model file tags
-* **filter** (*FileTagFilter, optional, default=None*) - Filter the returning list
+* **model_id** (_str_) - The model ID
+* **build_id** (_str, optional, default=""_) - The build ID - If not specified, returns all model file tags
+* **filter** (_FileTagFilter, optional, default=None_) - Filter the returning list
 
   * If not specified, returns all model file tags
   * When provided:
 
-    * **value** (*str*) - Filter value
-    * **type** (*enum*) - Filter type
+    * **value** (_str_) - Filter value
+    * **type** (_enum_) - Filter type
 
       * `FILE_TAG_FILTER_TYPE_CONTAINS`
       * `FILE_TAG_FILTER_TYPE_PREFIX`
@@ -129,7 +130,7 @@ List file tags by its model ID.
 
 * `List[FileTag]` - List of file tags with their specifications.
 
-```
+```python
 from frogml import FrogMLClient
 from frogml.core.clients.file_versioning.file_tag_filter import FileTagFilter
 
@@ -145,21 +146,21 @@ output = client.list_file_tags(
 )
 ```
 
-#### list\_data\_tags
+#### list_data_tags
 
 List data tags by its model ID.
 
 ##### Args:
 
-* **model\_id** (*str*) - The model ID
-* **build\_id** (*str, optional, default=""*) - The build ID - If not specified, returns all model data tags
-* **filter** (*DataTagFilter, optional, default=None*) - Filter the returning list
+* **model_id** (_str_) - The model ID
+* **build_id** (_str, optional, default=""_) - The build ID - If not specified, returns all model data tags
+* **filter** (_DataTagFilter, optional, default=None_) - Filter the returning list
 
   * If not specified, returns all model file tags
   * When provided:
 
-    * **value** (*str*) - Filter value
-    * **type** (*enum*) - Filter type
+    * **value** (_str_) - Filter value
+    * **type** (_enum_) - Filter type
 
       * `DATA_TAG_FILTER_TYPE_CONTAINS`
       * `DATA_TAG_FILTER_TYPE_PREFIX`
@@ -186,14 +187,14 @@ output = client.list_data_tags(
 
 ### Tags
 
-#### set\_tag
+#### set_tag
 
 Assign a tag to an existing build.
 
 ##### Args:
 
-* **build\_id** (*str*) - The build ID
-* **tag** (*str*) - The tag to assign
+* **build_id** (_str_) - The build ID
+* **tag** (_str_) - The tag to assign
 
 ##### Returns:
 
@@ -207,14 +208,14 @@ client = FrogMLClient()
 client.set_tag(build_id="build_id", tag="tag")
 ```
 
-#### set\_tags
+#### set_tags
 
 Assign a list of tags to an existing build.
 
 ##### Args:
 
-* **build\_id** (*str*) - The build ID
-* **tags** (*List[str]*) - List of tags to assign
+* **build_id** (_str_) - The build ID
+* **tags** (_List[str]_) - List of tags to assign
 
 ##### Returns:
 
@@ -230,32 +231,32 @@ client.set_tags(build_id="build_id", tags=["tag_1", "tag_2"])
 
 ### Projects
 
-#### create\_project
+#### create_project
 
 Create a new project.
 
 ##### Args:
 
-* **project\_name** (*str*) - The requested name
-* **project\_description** (*str*) - The requested description
+* **project_name** (_str_) - The requested name
+* **project_description** (_str_) - The requested description
 
 ##### Returns:
 
 * `str` - The project ID of the newly created project.
 
-#### get\_project
+#### get_project
 
 Get model by its project ID.
 
 ##### Args:
 
-* **project\_id** (*str*) - The project ID
+* **project_id** (_str_) - The project ID
 
 ##### Returns:
 
 * `Optional[Project]` - Project by ID.
 
-#### list\_projects
+#### list_projects
 
 List projects.
 
@@ -271,25 +272,25 @@ client = FrogMLClient()
 client.list_projects()
 ```
 
-#### delete\_project
+#### delete_project
 
 Delete project by its project ID.
 
 ##### Args:
 
-* **project\_id** (*str*) - The project ID
+* **project_id** (_str_) - The project ID
 
 ### Models
 
-#### create\_model
+#### create_model
 
 Create a new model.
 
 ##### Args:
 
-* **project\_id** (*str*) - The project ID to associate the model
-* **model\_name** (*str*) - The requested name
-* **model\_description** (*str*) - The requested description
+* **project_id** (_str_) - The project ID to associate the model
+* **model_name** (_str_) - The requested name
+* **model_description** (_str_) - The requested description
 
 ##### Returns:
 
@@ -303,13 +304,13 @@ client = FrogMlClient()
 client.create_model(project_id="project_id", model_name="model_name", model_description="model_description")
 ```
 
-#### get\_model
+#### get_model
 
 Get model by its model ID.
 
 ##### Args:
 
-* **model\_id** (*str*) - The model ID
+* **model_id** (_str_) - The model ID
 
 ##### Returns:
 
@@ -323,13 +324,13 @@ client = FrogMLClient()
 client.get_model(model_id="model_id")
 ```
 
-#### get\_model\_metadata
+#### get_model_metadata
 
 Get model metadata by its model ID.
 
 ##### Args:
 
-* **model\_id** (*str*) - The model ID
+* **model_id** (_str_) - The model ID
 
 ##### Returns:
 
@@ -343,14 +344,14 @@ client = FrogMLClient()
 client.get_model_metadata(model_id="model_id")
 ```
 
-#### delete\_model
+#### delete_model
 
 Delete model by its project & model ID's.
 
 ##### Args:
 
-* **project\_id** (*str*) - The project ID
-* **model\_id** (*str*) - The model ID
+* **project_id** (_str_) - The project ID
+* **model_id** (_str_) - The model ID
 
 ```
 from frogml.sdk.frogml_client.client import FrogMLClient
@@ -360,13 +361,13 @@ client = FrogMLClient()
 client.delete_model(project_id="project_id", model_id="model_name")
 ```
 
-#### list\_models
+#### list_models
 
 Retrieves all models that belong to the project with the given ID.
 
 ##### Args:
 
-* **project\_id** (*str*) - the project ID
+* **project_id** (_str_) - the project ID
 
 ```
 from frogml import FrogMLClient
@@ -376,13 +377,13 @@ client = FrogMLClient()
 client.list_models(project_id="project_id")
 ```
 
-#### list\_model\_metadata
+#### list_model_metadata
 
 Retrieves the metadata of all models that belong to the project with a given ID
 
 ##### Args:
 
-* **project\_id** (*str*) - the project ID
+* **project_id** (_str_) - the project ID
 
 ```
 from frogml import FrogMLClient
@@ -394,13 +395,13 @@ client.list_model_metadata(project_id="project_id")
 
 ### Deployments
 
-#### get\_deployed\_build\_id\_per\_environment
+#### get_deployed_build_id_per_environment
 
 Get deployed build ID per environment by its model ID.
 
 ##### Args:
 
-* **model\_id** (*str*) - The model ID
+* **model_id** (_str_) - The model ID
 
 ##### Returns:
 
@@ -416,14 +417,14 @@ client.get_deployed_build_id_per_environment(model_id="your_model_id")
 
 ### Batch Executions
 
-#### list\_executions
+#### list_executions
 
 List batch executions by model ID
 
 ##### Args:
 
-* **model\_id** (*str*) - The model ID
-* **build\_id** (*str, optional, default=""*) - The build ID - If not specified, returns all batch executions
+* **model_id** (_str_) - The model ID
+* **build_id** (_str, optional, default=""_) - The build ID - If not specified, returns all batch executions
 
 ##### Returns:
 
@@ -437,13 +438,13 @@ client = FrogMLClient()
 client.list_executions(model_id="your_model_id", build_id="build_id")
 ```
 
-#### list\_execution\_tasks
+#### list_execution_tasks
 
 List batch executions tasks by its job ID
 
 ##### Args:
 
-* **execution\_id** (*str*) - The execution ID
+* **execution_id** (_str_) - The execution ID
 
 ##### Returns:
 
