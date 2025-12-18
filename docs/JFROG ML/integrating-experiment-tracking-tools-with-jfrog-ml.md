@@ -1,5 +1,6 @@
 ---
-title: Integrating Experiment Tracking Tools with JFrog ML
+title: Experiment Tracking
+excerpt: Easily integrate experiment tracking tools with JFrog ML.
 deprecated: false
 hidden: false
 metadata:
