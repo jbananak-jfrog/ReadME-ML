@@ -1,5 +1,5 @@
 ---
-title: JFrog AI Catalog
+title: JFrog AI Catalog Overview
 excerpt: >-
   Welcome to the JFrog AI Catalog – your centralized hub for AI model discovery,
   governance, and deployment. Here you can view and manage all AI models in your
