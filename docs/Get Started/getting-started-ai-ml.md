@@ -21,6 +21,8 @@ JFrog ML is a unified platform designed to streamline the entire machine learnin
 
 You're looking at a map of how JFrog can help you govern and manage all your AI and ML assets. Read on to understand how JFrog secures your system, and helps prevent the entry of malicious or unvetted assets into your software environment.
 
+## How Does it Work
+
 <HTMLBlock>{`
 <style>
   /* --- CONTAINER --- */
