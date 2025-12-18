@@ -1,6 +1,6 @@
 ---
-title: Shadow AI Detection
-excerpt: 'Governing Unmanaged Models '
+title: Detect Shadow AI
+excerpt: Identify and control unmanaged models across your platform
 deprecated: false
 hidden: false
 metadata:
