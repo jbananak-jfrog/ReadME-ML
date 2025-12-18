@@ -247,7 +247,7 @@ Note that our AI-powered search has been built into your JFrog help to help you 
 ***
 
 <div class="green-shadow-cards">
-  <Cards columns={4}>
+  <Cards columns={2}>
     <Card title="Activate" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/installation/docs/activate-ai-ml" target="_blank">
       <small>Activate AI ML</small>
     </Card>
