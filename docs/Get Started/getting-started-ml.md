@@ -234,7 +234,7 @@ You're looking at a map of how JFrog can help you govern and manage all your AI 
 
 ***
 
-## 🤖 What to do now:
+## 🐸 What To Do Now
 
 Start by searching for what you need - your JFrog AI ML guide walks you through key concepts, tutorials, or best practices. Either use the search bar or select from the options below.
 
