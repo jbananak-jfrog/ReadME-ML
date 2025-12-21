@@ -1091,7 +1091,7 @@ Should your additional dependency folder not be located within the current worki
 
 ## The FrogML Model Class
 
-#### The `FrogMlModel`
+### The`FrogMlModel`
 
 The FrogML model class is the core abstraction which encapsulates the model build and serving logic. Every Frogml-based model should inherit from `FrogMModel` which is defined as:
 
@@ -1202,7 +1202,7 @@ class IrisClassifier(FrogMlModel):
 
 Let's break it down:
 
-#### Build
+### Build
 
 The `build` method defines the model training logic and is invoked once, on build time. In case the model should be trained on the FrogML platform - the function should include the training code invocation:
 
@@ -1215,7 +1215,7 @@ def build(self):
     self._model = clf.fit(X, y)
 ```
 
-#### Predict
+### Predict
 
 The `predict` method defines the serving logic, invoked on every prediction request:
 
@@ -1237,7 +1237,7 @@ Notice that in this case we use pandas `DataFrame` for both the input and the ou
   If you enable batching, your endpoint code must be ready to handle multiple model invocations during a single call to the `predict` method.
 </Callout>
 
-#### `@api` Decorator
+### `@api` Decorator
 
 JFrogML's API decorator adds additional functionality to the `predict` method. There are currently 4 options:
 
@@ -1248,7 +1248,7 @@ JFrogML's API decorator adds additional functionality to the `predict` method. T
 | `Input Adapter`      | `BaseInputAdapter`  | To which format should the input request be serialized. For a list of supported adapters see <Anchor label="Input & Output Adapters" title="Prediction Input & Output Adapters" href="/docs/prediction-input---output-adapters">Input & Output Adapters</Anchor>.                           | `DataframeInputAdapter`  |
 | `Output Adapter`     | `BaseOutputAdapter` | To which format should the output of the `predict` function be serialized. For a list of supported adapters see <Anchor label="Input & Output Adapters" title="Prediction Input & Output Adapters" href="/docs/prediction-input---output-adapters">Input & Output Adapters</Anchor>.        | `DataframeOutputAdapter` |
 
-#### Schema
+### Schema
 
 The optional schema method defines the input and output schemas of your model:
 
@@ -1276,7 +1276,7 @@ It is used for two main purposes:
 
 After building and deploying the model, the schema information will appear in the interface tab of the model, with a snippet of code used for interactions with the model.
 
-#### Initialize model
+### Initialize model
 
 The `initalize_model` is invoked when the model is loaded during the serving container initialization. It can be used to execute logic that should be applied once and only in a production setting (meaning not in build time).
 
@@ -1314,7 +1314,7 @@ def predict(self, df: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(data=self._model.predict(df), columns=['species'])
 ```
 
-#### Accessing the FrogML Logger
+### Accessing the FrogML Logger
 
 To log statements during the build and deployment stages on the FrogML platform, you can utilize the FrogML `Logger` object. This is accessible through the utility method demonstrated below:
 
