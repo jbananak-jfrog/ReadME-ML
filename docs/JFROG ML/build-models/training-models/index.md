@@ -41,7 +41,7 @@ Easily customize your training resources to achieve faster training times and be
 
   Building your first model?
 
-  Please refer to our**[Get Started with JFrog ML](/docs/get-started-with-jfrog-ml)**guide if you're creating your first model. The guide provides step-by-step instructions on how to install all relevant dependencies to get you up and running.
+  Please refer to our**[JFrog ML Quickstart](/docs/get-started-with-jfrog-ml)**guide if you're creating your first model. The guide provides step-by-step instructions on how to install all relevant dependencies to get you up and running.
 </Callout>
 
 ### Training HuggingFace Models
