@@ -405,7 +405,7 @@ Our model is quite large, so we need to ask for a large GPU-based machine that h
 frogml models build --model-id hugging_face_tokenizer_model --instance "gpu.t4.xl" .
 ```
 
-Visit the JFrog ML <Anchor label="GPU Instance Sizes" title="Instance Sizes & ML Credits" href="/docs/instance-sizes---ml-credits">GPU Instance Sizes</Anchor> page to choose the resources that fit your use case best. Each GPU type has its own configuration for pre-defined memory and number of CPUs.
+Visit the JFrog [GPU Instance Sizes](doc:instance-sizes-ml-credits) page to choose the resources that fit your use case best. Each GPU type has its own configuration for pre-defined memory and number of CPUs.
 
 <Callout icon="📘" theme="info">
   **Note**
@@ -613,10 +613,12 @@ You can update the base image in one of two ways:
    ```
 2. **Via YAML Configuration**
 
-   Update your YAML configuration file with the base image settings. Refer to our <Anchor label="Build Configurations" title="Build Configurations" href="/docs/build-configurations">Build Configurations</Anchor> page for more details.
+   Update your YAML configuration file with the base image settings. Refer to our [Build Configurations](/docs/build-configurations) page for more details.
 
    ```
    build_env:
      docker:
        base_image: public.ecr.aws/w8k8y6b6/qwak-base:0.0.14-gpu-opencv
    ```
+
+<br />
