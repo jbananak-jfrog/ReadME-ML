@@ -57,3 +57,5 @@ _Core Responsibilities:_
 * **Compute & Autoscaling Management:** Provisions the necessary compute resources for all jobs and manages the autoscaling of model endpoints based on real-time traffic, latency, or custom metrics.
 
 See <Anchor label="Control and Data Planes Interaction" target="_blank" href="/docs/control-and-data-planes-interaction">Control and Data Planes Interaction</Anchor>
+
+<br />
