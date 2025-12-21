@@ -50,7 +50,7 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
 
    Note that this code snippet shown includes a placeholder for the `api_key` for the token you are about to generate, and the `model` name, which includes the name of the connection.
 
-   ```
+   ```python
    from openai import OpenAI
 
    client = OpenAI(
