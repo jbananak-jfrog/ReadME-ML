@@ -13,7 +13,7 @@ This procedure outlines the **prerequisite steps** to enable the use of **model 
 
 2. Toggle the **Curation On** switch to **ON**.
 
-<Image align="center" border={false} src="https://files.readme.io/094ecb76990c1d412dd38bb696c97ed17638f6ec952a06b8a23dceee0ebeaf07-generalcurationsettings.png" />
+   <Image align="center" alt="generalcurationsettings.png" border={true} src= "https://files.readme.io/094ecb76990c1d412dd38bb696c97ed17638f6ec952a06b8a23dceee0ebeaf07-.generalcurationsettings.png" />
 
 1. Click **Enable repositories** to navigate to the _Remote Repositories_ page.
 
