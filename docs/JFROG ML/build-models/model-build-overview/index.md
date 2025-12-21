@@ -1252,7 +1252,7 @@ JFrogML's API decorator adds additional functionality to the `predict` method. T
 
 The optional schema method defines the input and output schemas of your model:
 
-```
+```python
 def schema(self):
     from frogml.sdk.model.schema import ModelSchema, InferenceOutput
     from frogml.sdk.model.schema_entities import RequestInput
@@ -1282,7 +1282,7 @@ The `initalize_model` is invoked when the model is loaded during the serving con
 
 For example, loading secrets:
 
-```
+```python
 import boto3
 import frogml
 from frogml.core.clients.secret_service import SecretServiceClient
