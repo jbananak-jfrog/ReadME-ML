@@ -577,7 +577,7 @@ Both files `pyproject.toml` and `poetry.lock` will be used by Poetry while execu
 
 pyproject.toml
 
-```
+```python
 [tool.poetry]
 name = "example-project"
 version = "0.1.0"
@@ -622,7 +622,7 @@ To get started, here’s a basic `conda.yml` setup:
 
 conda.yml
 
-```
+```conda
 name: example_conda_model
 channels:
   - defaults
