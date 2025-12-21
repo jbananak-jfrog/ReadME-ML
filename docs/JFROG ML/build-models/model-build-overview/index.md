@@ -323,7 +323,7 @@ catboost
 
 ###### titanic/main/**init**.py
 
-```
+```python
 from .model import TitanicSurvivalPrediction
 
 def load_model():
@@ -332,7 +332,7 @@ def load_model():
 
 ###### titanic/main/model.py
 
-```
+```python
 import os
 
 import frogml
@@ -430,7 +430,7 @@ The code below will register a new build under the `titanic_survival_prediction`
 
 **titanic/run_build.py**
 
-```
+```python
 from frogml.sdk.frogml_client.client import FrogMLClient
 from frogml.sdk.model.tools import run_local
 
@@ -496,7 +496,7 @@ The code snippet using a medium instance to build the model, provide build tags 
 
 `Python`
 
-```
+```python
 from frogml.sdk.frogml_client.client import FrogMLClient
 from frogml.sdk.model.tools import run_local
 
