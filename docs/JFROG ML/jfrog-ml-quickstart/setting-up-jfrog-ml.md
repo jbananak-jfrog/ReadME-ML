@@ -17,7 +17,7 @@ This page describes how to set up JFrog ML, including installing and configuring
 <Callout icon="📘" theme="info">
   **Note for Self-Managed**
 
-  For self-managed, follow the instructions in [Activate AI ML](/docs/setting-up-jfrog-ml).
+  For self-managed, follow the instructions in [Activate AI ML](ac)https://jfrog-enterprise-group.readme.io/installation/docs/activate-ai-ml .
 </Callout>
 
 ## Setting Up JFrog ML in SaaS
