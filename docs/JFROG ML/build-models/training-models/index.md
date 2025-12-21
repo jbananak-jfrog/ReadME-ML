@@ -179,7 +179,7 @@ def build(self):
 
 The inference method is called when the model is invoked through the real-time endpoint, batch or streaming inference. This method is only triggered when the model is deployed or during local testing.
 
-The inference method receives and returns a Pandas `DataFrame` by default. Provide it with <Anchor label="Input & Output Adapters" title="Prediction Input & Output Adapters" href="/docs/prediction-input---output-adapters">Input & Output Adapters</Anchor> to receive and return different data types.
+The inference method receives and returns a Pandas `DataFrame` by default. Provide it with [Prediction Input & Output Adapters](doc:prediction-input-output-adapters) to receive and return different data types.
 
 ```
     @frogml.api()
