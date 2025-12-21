@@ -54,6 +54,6 @@ Receive error:
 
 <Image alt="curationerrorcropped.png" border={false} src="https://files.readme.io/0f430a7574c850cf2efbe4f78a8727c163e4a0b7dd291e176fed4fd1468160aa-uuid-e57cc6f5-42c2-5b4c-7cad-30da24978702.png" />
 
-| Possible Cause: | Repository isn't yet enabled when allowing model usage for an open source model                                                                                                                    |
-| :-------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Verify:         | Curation is turned on, and package type and repository are enabled, according to the instructions in [Set Up Curation Settings for Model Packages](/docs/-up-curation-settings-for-model-packages) |
+| Possible Cause: | Repository isn't yet enabled when allowing model usage for an open source model                                                                                                                      |
+| :-------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Verify:         | Curation is turned on, and package type and repository are enabled, according to the instructions in [Set Up Curation Settings for Model Packages](doc:set-up-curation-settings-for-model-packages). |
