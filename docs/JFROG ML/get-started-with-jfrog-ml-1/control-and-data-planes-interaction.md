@@ -13,7 +13,7 @@ metadata:
     - UUID-b25ff6d4-a332-0f48-7aa1-0682b379b4ff
   robots: index
 ---
-The interaction between the control plane and data plane is best illustrated through common MLOps workflows.
+The interaction between the control plane and the data plane is best illustrated through common MLOps workflows.
 
 ## Model Build & Scan
 
