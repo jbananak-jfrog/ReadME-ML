@@ -17,7 +17,7 @@ Deploy your first model on JFrog ML in minutes!
 
   _**Installation**_
 
-  Follow the <Anchor label="Setting Up JFrog ML" title="Setting Up JFrog ML" href="/docs/setting-up-jfrog-ml">Setting Up JFrog ML</Anchor> guide prior to completing this guide.
+  Follow the [Set Up JFrog ML](doc:setting-up-jfrog-ml) guide prior to completing this guide.
 </Callout>
 
 ## Building Your First Model
