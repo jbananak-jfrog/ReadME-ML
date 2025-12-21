@@ -163,4 +163,4 @@ Now you are ready to use the model directly within your development environment 
 
 **To use the model with all your applications (Deploy):**
 
-* **See <Anchor label="Deploy Model Packages (Open source)" title="Deploy Model Packages (Open source)" href="/docs/deploy-model-packages--open-source-">Deploy Model Packages (Open source)</Anchor> for instructions.** These instructions include how to deploy the model **and** also how to configure the model for use in your developments. After you have deployed and configured the model, you can see the model's usage metrics in the model _Overview_ page.
+* **See [Deploy Model Packages](doc:deploy-model-packages-open-source) for instructions.** These instructions include how to deploy the model **and** also how to configure the model for use in your developments. After you have deployed and configured the model, you can see the model's usage metrics in the model _Overview_ page.
