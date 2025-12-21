@@ -87,7 +87,7 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
 
    Example `Python`
 
-   ```
+   ```python
    from openai import OpenAI
 
    client = OpenAI(
