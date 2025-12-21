@@ -29,12 +29,13 @@ This procedure outlines the **prerequisite steps** to enable the use of **model 
 
 The prerequisite Curation Settings setup is now complete. If required, you can now return to your model page in the AI Catalog, and continue to enable use of your open source model.
 
-<Callout icon="❗️">
+<Callout icon="❗️" theme="error">
   **Important**
 
   Failure to activate these curation settings may result in the following error when attempting to add a model package. To resolve this error, ensure both settings are activated as described.
 
-  <Image align="left" border={true} src="https://files.readme.io/7e5d331ed128bae11dc821c5bc69398339c385759c5b021e7b59b63f63dac3ce-curationerror_copy.png" />
+  <Image align="center" border={false} src="https://files.readme.io/fdffe986a5c30bdae494dda9a1b005fa52e7ce7fbb312cfc4e5f3d9e7cef81e9-curationerror_copy.png" />
+
 </Callout>
 
 <br />
