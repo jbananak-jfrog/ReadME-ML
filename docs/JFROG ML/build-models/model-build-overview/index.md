@@ -67,13 +67,13 @@ Generate the **Titanic** example model, which is available in the example templa
 
 This command will create the files needed to build a model on JFrog ML.
 
-```
+```text
 frogml models init --example titanic .
 ```
 
 The models init command works in the following format:
 
-```
+```shell
 frog models init --example <example-name> <local-model-directory>
 ```
 
@@ -321,7 +321,7 @@ scikit-learn
 catboost
 ```
 
-###### titanic/main/__init__.py
+###### titanic/main/**init**.py
 
 ```
 from .model import TitanicSurvivalPrediction
@@ -890,7 +890,7 @@ The `main` directory should be a valid Python module, meaning it should include 
 
 The `__init__.py` file lets the Python interpreter know that a directory contains code for a Python module. This file should set up the imports for the FrogML model class, so it will be picked up by the model build process - in one of two ways:
 
-__init__.py (Option 1)
+**init**.py (Option 1)
 
 ```
 from .model import IrisClassifier
@@ -898,7 +898,7 @@ from .model import IrisClassifier
 
 Or:
 
-__init__.py (Option 2)
+**init**.py (Option 2)
 
 ```
 from .model import IrisClassifier
