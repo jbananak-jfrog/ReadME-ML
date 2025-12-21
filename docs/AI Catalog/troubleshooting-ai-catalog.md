@@ -5,215 +5,55 @@ hidden: false
 metadata:
   title: Troubleshooting AI Catalog
   description: Problem
-  robots: index
   legacyUUIDs:
     - UUID-5d11ac49-bd22-a739-bf90-5bfb3e677080
     - UUID-1c107c30-8da0-362d-dcad-02fc0ecb84af
+  robots: index
 ---
 ### Deploy Model Validate Fails
 
+| Problem  | Local system fails to recognize the `frogml` command.                 |
+| :------- | :-------------------------------------------------------------------- |
+| Solution:| Ensure it's added to your system's PATH environment variable          |
 
-
-<Table>
-  <tbody>
-    <tr>
-      <td>
-        Problem
-      </td>
-      <td>
-        Local system fails to recognize the `frogml` command.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Solution:
-      </td>
-      <td>
-        Ensure it's added to your system's PATH environment variable
-      </td>
-    </tr>
-  </tbody>
-</Table>
-
-
-
-<Table>
-  <tbody>
-    <tr>
-      <td>
-        Possible Cause 2:
-      </td>
-      <td>
-        Deployed model not supported
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Verify:
-      </td>
-      <td>
-        Model supported
-      </td>
-    </tr>
-  </tbody>
-</Table>
-
-
+| Possible Cause 2: | Deployed model not supported |
+| :---------------- | :----------------------------------------------------------- |
+| Verify:           | Model supported              |
 
 ### Execute Inference Fails - 404
 
-
-
-<Table>
-  <tbody>
-    <tr>
-      <td>
-        Possible Cause:
-      </td>
-      <td>
-        Execute performed after blocking
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Verify:
-      </td>
-      <td>
-        Model not blocked
-      </td>
-    </tr>
-  </tbody>
-</Table>
-
-
+| Possible Cause:   | Execute performed after blocking |
+| :---------------- | :----------------------------------------------------------- |
+| Verify:           | Model not blocked                |
 
 ### Execute Inference Fails - 401
 
+| Possible Cause 1: | Bad token   |
+| :---------------- | :----------------------------------------------------------- |
+| Verify:           | Token value |
 
-
-<Table>
-  <tbody>
-    <tr>
-      <td>
-        Possible Cause 1:
-      </td>
-      <td>
-        Bad token
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Verify:
-      </td>
-      <td>
-        Token value
-      </td>
-    </tr>
-  </tbody>
-</Table>
-
-
-
-<Table>
-  <tbody>
-    <tr>
-      <td>
-        Possible Cause 2:
-      </td>
-      <td>
-        Incorrect Model Name
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Verify:
-      </td>
-      <td>
-        Model name/known model
-      </td>
-    </tr>
-  </tbody>
-</Table>
-
-
+| Possible Cause 2: | Incorrect Model Name   |
+| :---------------- | :----------------------------------------------------------- |
+| Verify:           | Model name/known model |
 
 ### Block Model Fails
 
-
-
-<Table>
-  <tbody>
-    <tr>
-      <td>
-        Possible Cause:
-      </td>
-      <td>
-        Model is currently deployed
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Verify:
-      </td>
-      <td>
-        Model is undeployed for the project before blocking
-      </td>
-    </tr>
-  </tbody>
-</Table>
-
-
+| Possible Cause:   | Model is currently deployed                                  |
+| :---------------- | :----------------------------------------------------------- |
+| Verify:           | Model is undeployed for the project before blocking.         |
 
 ### Delete Connection Fails
 
-
-
-<Table>
-  <tbody>
-    <tr>
-      <td>
-        Possible Cause:
-      </td>
-      <td>
-        Model is allowed/connected
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Verify:
-      </td>
-      <td>
-        Try blocking first and then deleting the connection
-      </td>
-    </tr>
-  </tbody>
-</Table>
-
-
+| Possible Cause:   | Model is allowed/connected                                   |
+| :---------------- | :----------------------------------------------------------- |
+| Verify:           | Try blocking first and then deleting the connection          |
 
 ### Error Allowing Model Usage
 
 Receive error:
 
-![curationerrorcropped.png](https://files.readme.io/0f430a7574c850cf2efbe4f78a8727c163e4a0b7dd291e176fed4fd1468160aa-uuid-e57cc6f5-42c2-5b4c-7cad-30da24978702.png)
+<Image alt="curationerrorcropped.png" border={false} src="https://files.readme.io/0f430a7574c850cf2efbe4f78a8727c163e4a0b7dd291e176fed4fd1468160aa-uuid-e57cc6f5-42c2-5b4c-7cad-30da24978702.png" />
 
-<Table>
-  <tbody>
-    <tr>
-      <td>
-        Possible Cause:
-      </td>
-      <td>
-        Repository isn't yet enabled when allowing model usage for an open source model
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Verify:
-      </td>
-      <td>
-        Curation is turned on, and package type and repository are enabled, according to the instructions in [Set Up Curation Settings for Model Packages](/docs/set-up-curation-settings-for-model-packages "Set Up Curation Settings for Model Packages")
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| Possible Cause: | Repository isn't yet enabled when allowing model usage for an open source model                                                                                                                                                                                                                                                    |
+| :-------------- | :----------------------------------------------------------------- |
+| Verify:         | Curation is turned on, and package type and repository are enabled, according to the instructions in <Anchor label="Set Up Curation Settings for Model Packages" title="Set Up Curation Settings for Model Packages" href="/docs/set-up-curation-settings-for-model-packages">Set Up Curation Settings for Model Packages</Anchor> |
