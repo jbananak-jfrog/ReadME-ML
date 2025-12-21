@@ -48,7 +48,7 @@ Note that the dashboard only shows data when there is traffic.
     </tr>
   </thead>
 
-  <tbody style={{ verticalAlign: 'top' }}>
+  <tbody>
     <tr>
       <td>
         **1**
@@ -195,7 +195,7 @@ Note that the dashboard only shows data when there is traffic.
   </tbody>
 </Table>
 
-#### Deployed Open Source Models
+#### Deployed Model Packages
 
 This section describes the model dashboard for models that are already deployed.
 
