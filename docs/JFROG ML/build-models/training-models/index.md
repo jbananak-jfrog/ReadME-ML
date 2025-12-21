@@ -613,7 +613,7 @@ You can update the base image in one of two ways:
    ```
 2. **Via YAML Configuration**
 
-   Update your YAML configuration file with the base image settings. Refer to our [Build Configurations](/docs/build-configurations) page for more details.
+   Update your YAML configuration file with the base image settings. Refer to our [Build Configurations](https://jfrog-enterprise-group.readme.io/ai-ml/docs/advanced-build-concepts#build-configurations) page for more details.
 
    ```
    build_env:
