@@ -52,7 +52,7 @@ In this tutorial, we use a `distilbert` text classifier from HuggingFace and to 
 
 ### Choosing the Correct GPU
 
-Visit the <Anchor label="GPU Instance Sizes" title="Instance Sizes & ML Credits" href="/docs/instance-sizes---ml-credits">GPU Instance Sizes</Anchor> page to view the full specifications of FrogML's GPU instance selection.
+Visit the [GPU Instance Sizes](doc:instance-sizes-ml-credits) page to view the full specifications of FrogML's GPU instance selection.
 
 ### Project Dependencies
 
