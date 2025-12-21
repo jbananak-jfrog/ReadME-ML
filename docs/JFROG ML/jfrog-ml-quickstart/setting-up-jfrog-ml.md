@@ -57,19 +57,19 @@ After your Admin has setup the JFrog ML on your account (SAAS or self-managed), 
 
    Using uv (recommended method, as this enables the CLI to be accessed from any environment)
 
-   ```
+   ```shell
    uv tool install frogml-cli
    ```
 
    Using pip / conda:
 
-   ```
+   ```shell
    pip install frogml-cli
    ```
 
    Using poetry:
 
-   ```
+   ```shell
    poetry add frogml-cli
    ```
 
