@@ -788,7 +788,7 @@ clf = svm.SVC(gamma='scale')
 clf.fit(X, y)
 ```
 
-#### Model Directory Structure
+### Model Directory Structure
 
 Below, we show the default and recommended structure of a model project on JFrog ML.
 
@@ -806,7 +806,7 @@ frogml_based_model/
 │   │   ├── sample_test.py
 ```
 
-#### Generating the Directory Structure
+### Generating the Directory Structure
 
 First, we will generate the directory structure for our JFrog ML-based model. To do so, you can use the following command:
 
@@ -831,11 +831,11 @@ frogml models init \
 
 That will create a new directory named `iris_model` at the user's home directory.
 
-###### `main` Directory
+#### `main` Directory
 
 `main` is the most important directory of a JFrog ML project. Everything that is supposed to be part of the model artifact should be located in it.
 
-###### `FrogMlModel` Class
+#### `FrogMlModel` Class
 
 The first step is creating a model class, which defines the two mandatory functions:
 
@@ -909,7 +909,7 @@ def load_model():
 
 The `load_model` function gives more control over how the model class should be initialized during the build process.
 
-#### Dependency Files
+### Dependency Files
 
 Most projects depend on external packages to build and run correctly. JFrog ML downloads and links the dependencies on build time - based on a Python virtual environment which is used both for build and serving contexts.
 
@@ -923,7 +923,7 @@ JFrog ML supports the following types of dependency descriptors. Pick one! Do no
   Note that the `frogml-sdk` is automatically injected as a dependency during the build process, so you do not need to manually add it to your dependency file.
 </Callout>
 
-###### Conda
+#### Conda
 
 The `conda.yml` or `conda.yaml` should be stored in the `main` directory. For example:
 
@@ -940,7 +940,7 @@ dependencies:
   - scikit-learn=1.0.1
 ```
 
-###### pip
+#### pip
 
 Store the `requirements.txt` in the `main` directory:
 
@@ -948,7 +948,7 @@ Store the `requirements.txt` in the `main` directory:
 scikit-learn==1.0.1
 ```
 
-###### Poetry
+#### Poetry
 
 In this case, the `main` directory should contain the `pyproject.toml` file:
 
@@ -1001,11 +1001,11 @@ def load_model():
     return TestModel
 ```
 
-###### `tests` Directory
+#### `tests` Directory
 
 The directory `tests` is where tests of each component in the model reside.
 
-#### Unit Testing
+### Unit Testing
 
 This Python file will define unit tests that will run during the build process. For example, if we will define a helper function in `<model-dir>/main/util.py` as follows:
 
@@ -1027,7 +1027,7 @@ def add_test():
     assert add(3,2) == 5
 ```
 
-#### Integration Testing
+### Integration Testing
 
 This Python file will define integration tests we will run during the build process after the serving container is built and initialized.
 
@@ -1047,12 +1047,12 @@ def test_iris_classifier(real_time_client):
     assert iris_type == 1
 ```
 
-#### Notes
+### Notes
 
 * **Files operations** - The current working directory of build execution is the root directory of the model. For example, if a file is located in `./main/sample.txt` and you want to read it simply open it in path `./main/sample.txt` where `.` represents the model root directory.
 * **Model fields** - Model fields should be objects which can be pickled, S3 client, for example, can't pickle due to the fact that the session should remain active.
 
-#### Additional Directories
+### Additional Directories
 
 By default, the FrogML-SDK does not copy any other directories from the build directory, only `main` and `tests`.
 
