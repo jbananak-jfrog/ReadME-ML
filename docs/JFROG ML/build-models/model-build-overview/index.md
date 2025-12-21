@@ -765,7 +765,7 @@ Once the dependency is properly configured, you can import and use it in your Py
 
 `Python`
 
-```
+```python
 import pandas as pd
 ```
 
@@ -775,7 +775,7 @@ As an example, we will use the well-known Iris Classifier SVM model, which typic
 
 train.py
 
-```
+```python
 from sklearn import svm
 from sklearn import datasets
 
@@ -792,7 +792,7 @@ clf.fit(X, y)
 
 Below, we show the default and recommended structure of a model project on JFrog ML.
 
-```
+```python
 frogml_based_model/
 ├── main/
 │   ├── __init__.py    # Required for exporting model from main
@@ -1037,7 +1037,7 @@ For example:
 
 test_model.py
 
-```
+```python
 import pandas as pd
 from frogml.core.testing.fixtures import real_time_client
 
@@ -1095,7 +1095,7 @@ Should your additional dependency folder not be located within the current worki
 
 The FrogML model class is the core abstraction which encapsulates the model build and serving logic. Every Frogml-based model should inherit from `FrogMModel` which is defined as:
 
-```
+```python
 from frogml import FrogMlModel
 
 class BaseModel:
@@ -1165,7 +1165,7 @@ class BaseModel:
 
 For reference, a complete working example of a FrogML model, in the `model.py` file:
 
-```
+```python
 import pandas as pd
 from sklearn import svm, datasets
 from frogml import api,FrogMlModel
