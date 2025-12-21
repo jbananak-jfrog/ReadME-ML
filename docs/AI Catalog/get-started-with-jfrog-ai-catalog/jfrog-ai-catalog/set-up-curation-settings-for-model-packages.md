@@ -13,24 +13,28 @@ This procedure outlines the **prerequisite steps** to enable the use of **model 
 
 2. Toggle the **Curation On** switch to **ON**.
 
-   <Image align="center" alt="generalcurationsettings.png" border={true} src= "https://files.readme.io/094ecb76990c1d412dd38bb696c97ed17638f6ec952a06b8a23dceee0ebeaf07-.generalcurationsettings.png" />
+   <Image align="center" alt="generalcurationsettings.png" border={true} src="https://files.readme.io/67c846925d98157989a4df7e87d8de05af8f60c2450c87f3615c2927b93e1f25-generalcurationsettings.png" className="border" />
 
-1. Click **Enable repositories** to navigate to the _Remote Repositories_ page.
+3. Click **Enable repositories** to navigate to the _Remote Repositories_ page.
 
-2. <br />
+   <Image align="center" border={false} src="https://files.readme.io/7b68b4a590a50c8b4d4fb97f4e553ddd3aa4e85c3c91ee8e477a6f3ed14edce1-enable_package_type.png" />
 
-3. Verify the **PackageType**. Ensure that HuggingFaceML is toggled **ON**
+4. Verify the **PackageType**. Ensure that HuggingFaceML is toggled **ON**
 
    <Image border={false} src="UUID-c4e98f40-913f-b505-7bb7-427a0bec44bf" />
 
-4. Click the package type row to view the package type's repositories.
+5. Click the package type row to view the package type's repositories.
 
-5. Make sure all the repositories in the package type are also enabled. If any are not enabled, a notification is shown at the top, for example, "_Connect package type status: Partially Connected_".
+6. Make sure all the repositories in the package type are also enabled. If any are not enabled, a notification is shown at the top, for example, "_Connect package type status: Partially Connected_".
 
 The prerequisite Curation Settings setup is now complete. If required, you can now return to your model page in the AI Catalog, and continue to enable use of your open source model.
 
-> **Important**
->
-> Failure to activate these curation settings may result in the following error when attempting to add a model package. To resolve this error, ensure both settings are activated as described.
->
-> <Image border={false} src="UUID-96821bba-e102-d87a-fa81-0d0dc9df5e09" />
+<Callout icon="❗️">
+  **Important**
+
+  Failure to activate these curation settings may result in the following error when attempting to add a model package. To resolve this error, ensure both settings are activated as described.
+
+  <Image align="left" border={true} src="https://files.readme.io/7e5d331ed128bae11dc821c5bc69398339c385759c5b021e7b59b63f63dac3ce-curationerror_copy.png" />
+</Callout>
+
+<br />
