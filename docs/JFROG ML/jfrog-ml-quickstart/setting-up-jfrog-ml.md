@@ -20,9 +20,9 @@ This page describes how to set up JFrog ML, including installing and configuring
   For self-managed, follow the instructions in [Activate AI ML](/docs/setting-up-jfrog-ml).
 </Callout>
 
-## Setting Up JFrog ML in SAAS
+## Setting Up JFrog ML in SaaS
 
-**To set up JFrog ML in SAAS:**
+**To set up JFrog ML in SaaS:**
 
 <Callout icon="❗️" theme="error">
   **Important**
