@@ -13,17 +13,19 @@ This procedure outlines the **prerequisite steps** to enable the use of **model 
 
 2. Toggle the **Curation On** switch to **ON**.
 
-   <Image border={false} src="UUID-0ba2785a-f59a-4165-4377-d92a96a8bc51" />
+<Image align="center" border={false} src="https://files.readme.io/094ecb76990c1d412dd38bb696c97ed17638f6ec952a06b8a23dceee0ebeaf07-generalcurationsettings.png" />
 
-3. Click **Enable repositories** to navigate to the _Remote Repositories_ page.
+1. Click **Enable repositories** to navigate to the _Remote Repositories_ page.
 
-4. Verify the **PackageType**. Ensure that HuggingFaceML is toggled **ON**
+2. <br />
+
+3. Verify the **PackageType**. Ensure that HuggingFaceML is toggled **ON**
 
    <Image border={false} src="UUID-c4e98f40-913f-b505-7bb7-427a0bec44bf" />
 
-5. Click the package type row to view the package type's repositories.
+4. Click the package type row to view the package type's repositories.
 
-6. Make sure all the repositories in the package type are also enabled. If any are not enabled, a notification is shown at the top, for example, "_Connect package type status: Partially Connected_".
+5. Make sure all the repositories in the package type are also enabled. If any are not enabled, a notification is shown at the top, for example, "_Connect package type status: Partially Connected_".
 
 The prerequisite Curation Settings setup is now complete. If required, you can now return to your model page in the AI Catalog, and continue to enable use of your open source model.
 
