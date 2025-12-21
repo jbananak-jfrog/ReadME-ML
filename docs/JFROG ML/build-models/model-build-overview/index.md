@@ -73,7 +73,7 @@ frogml models init --example titanic .
 
 The models init command works in the following format:
 
-```shell cli
+```shell
 frog models init --example <example-name> <local-model-directory>
 ```
 
@@ -126,7 +126,7 @@ Visit your model's page and choose the current build ID. Alternatively, follow t
 
 #### Option 2: Following Logs in the CLI
 
-```
+```Text cli
 frogml models builds logs -b <build-id> --follow
 ```
 
