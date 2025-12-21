@@ -24,7 +24,7 @@ JFrog ML let's you easily train models on a scalable infrastructure, either with
 
 Training takes place during the build phase on the model. Your training code should be placed inside the `build()` method, which is called only once during the build phase.
 
-Training data can be ingested from the <Anchor label="Feature Store" target="_blank" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/">Feature Store</Anchor>, in an uploaded CSV file or directly from S3 or Parquet files.
+Training data can be ingested from the [Feature Store](https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/), in an uploaded CSV file or directly from S3 or Parquet files.
 
 In this section we will show you how to train your models using various examples.
 
