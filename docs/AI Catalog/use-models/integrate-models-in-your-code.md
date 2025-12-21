@@ -38,7 +38,7 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
 
    <Image alt="modeldashboard.png" border={false} src="https://files.readme.io/d617d3968c9e7b6abb6eb1e36d0cee8c25fb9cce1bc822f7d7a8cbcada4b9f93-uuid-77f9b35c-94e6-6893-516a-e4b0f63f54cf.png" />
 
-   For details on how to read the dashboard to monitor and interpret the model's performance, refer to <Anchor label="Use the Model Dashboards" title="Use the Model Dashboards" href="/docs/use-the-model-dashboards">Use the Model Dashboards</Anchor>
+   For details on how to read the dashboard to monitor and interpret the model's performance, refer to [Use the Model Dashboards](/docs/use-the-model-dashboards)
 
    Note that the dashboard only shows data when there is traffic.
 
@@ -110,14 +110,14 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
    ```
 10. Copy the code snippet into your code editor. You can now use this model in your applications.
 
-## Open Source Models
+## &#x20;Model Packages
 
-After an open-source model has been allowed, the **Use Model** and **Deploy** buttons appear in the _Model information_ window, allowing you to either use the model with the transformers library or to use it in all your applications.
+After a model. package has been allowed, the **Use Model** and **Deploy** buttons appear in the _Model information_ window, allowing you to either use the model with the transformers library or to use it in all your applications.
 
 **Using the Model with Your Transformers Library vs. Deploying:**
 
 * **Use Model:** Enables you to integrate the model with the transformers library, you use the model locally within your development environment. This approach is ideal for experimenting, testing, and small-scale applications. For instructions, see below.
-* **Deploy:** Deploying the model through this platform involves configuring it to run within a managed infrastructure. Once deployed, the model can be accessed and used across all your applications, facilitating consistent performance and scalability. For instructions, see <Anchor label="Deploy Model Packages (Open source)" title="Deploy Model Packages (Open source)" href="/docs/deploy-model-packages--open-source-">Deploy Model Packages (Open source)</Anchor>.
+* **Deploy:** Deploying the model through this platform involves configuring it to run within a managed infrastructure. Once deployed, the model can be accessed and used across all your applications, facilitating consistent performance and scalability. For instructions, see [Deploy Model Packages](doc:deploy-model-packages-open-source).
 
 **▶ To use the allowed model only with the transformers library:**
 
