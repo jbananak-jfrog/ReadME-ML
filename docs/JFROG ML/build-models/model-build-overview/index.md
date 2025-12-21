@@ -18,19 +18,19 @@ metadata:
     - UUID-251bbfb6-7da7-6343-d503-444ab0e79174
   robots: index
 ---
-Learn how to easily build a model on JFrog ML 
+Learn how to easily build a model on JFrog ML
 
-### About Model Builds
+## About Model Builds
 
-A model build is a trained, serialized and tested model instance, bundled with the necessary dependencies that can be deployed to production.
+A model build in JFrog ML is the process of creating a ready-for-deployment, trained, serialized, and tested version of your machine learning model.
 
-The build process is similar to building software, and is a critical step in developing reliable and effective machine learning models.
+During the build, JFrog ML packages your model’s source code, dependencies, and metadata into a secure, immutable artifact stored in JFrog Artifactory.
 
-JFrog ML builds models on a scalable infrastructure that allows you to customize resources, whether using a pre-trained model or running live training of any size. Model builds are stored in the model repository, where they are tracked and versioned.
+The build process can be triggered from the FrogML CLI/SDK or the platform UI, and it runs on JFrog’s scalable infrastructure that supports any workload size, from lightweight pre-trained models to full training pipelines.
 
-![Model build lifecycle diagram](https://files.readme.io/1266aa9e944c458dfad58d56b022c7e24d1d56346550568c46cb84efd5eab7a3-uuid-0a72d21a-026a-197b-1e97-18074b5c7136.png)
+<Image alt="Model build lifecycle diagram" border={false} src="https://files.readme.io/1266aa9e944c458dfad58d56b022c7e24d1d56346550568c46cb84efd5eab7a3-uuid-0a72d21a-026a-197b-1e97-18074b5c7136.png" />
 
-### Model Build Lifecycle
+## Model Build Lifecycle
 
 The remote build process on JFrog ML comprises the following steps:
 
@@ -41,18 +41,17 @@ The remote build process on JFrog ML comprises the following steps:
 5. Building a docker image
 6. Pushing the docker image to JFrog ML model registry
 
-### Building a Model with FrogML CLI
+## Building a Model with FrogML CLI
 
 The following steps will show you how easily to build your first model on JFrog ML.
 
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-*Please install the FrogML Python SDK.*
+  _Please install the FrogML Python SDK._
 </Callout>
 
-
-#### 1. Creating a New Model
+### 1. Creating a New Model
 
 Start by creating a new project and model on the JFrog ML platform. Note that the command doesn't generate local output but rather creates a remote project and model.
 
@@ -62,7 +61,7 @@ Your model ID will be the model name in lowercase letters and stripped from spac
 frogml models create "Titanic" --project "example-models"
 ```
 
-#### 2. Generating the Model Code
+### 2. Generating the Model Code
 
 Generate the **Titanic** example model, which is available in the example templates provided with the FrogML SDK.
 
@@ -78,16 +77,15 @@ The models init command works in the following format:
 frog models init --example <example-name> <local-model-directory>
 ```
 
-#### 3. Building Your Model
+### 3. Building Your Model
 
 With the local model code, and our new model on JFrog ML, we can initiate a model build. Build names are unique across a project.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-Note that the build name parameter is optional.
+  Note that the build name parameter is optional.
 </Callout>
-
 
 ```
 frogml models build --model-id titanic --name v1 ./titanic_survival_classification
@@ -114,7 +112,7 @@ frogml models builds logs -b 2cac1883-47eb-44dd-9806-bdd9887dcc16 --follow
 https://mydemo.jfrog.io/ui/ml/models/credit_risk/build/2cac1883-47eb-44dd-9806-bdd9887dcc16
 ```
 
-#### 4. Tracking Build Progress
+### 4. Tracking Build Progress
 
 Building a model takes several minutes to complete. To view the build status, open the the model's build table.
 
@@ -122,11 +120,11 @@ When the build is complete, you can proceed to deploy your model.
 
 There are two options for viewing the build progress logs:
 
-##### Option1: Build Page in JFrog ML UI
+#### Option1: Build Page in JFrog ML UI
 
 Visit your model's page and choose the current build ID. Alternatively, follow the link you received in the CLI.
 
-##### Option 2: Following Logs in the CLI
+#### Option 2: Following Logs in the CLI
 
 ```
 frogml models builds logs -b <build-id> --follow
@@ -136,7 +134,7 @@ frogml models builds logs -b <build-id> --follow
 
 ### Building Models with GPUs
 
-JFrog ML [*GPU Instances*](/docs/instance-sizes-ml-credits) provide high-performance computing resources that can significantly accelerate the model build process. Easily customize your build resources to achieve faster training times and better results.
+JFrog ML [_GPU Instances_](/docs/instance-sizes-ml-credits) provide high-performance computing resources that can significantly accelerate the model build process. Easily customize your build resources to achieve faster training times and better results.
 
 To build a model on a GPU instance, specify the following additional arguments in the model build command:
 
@@ -145,32 +143,30 @@ frogml models build  --model-id <model-id> --instance gpu.t4.xl .
 ```
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-***Choosing the Correct GPU***
+  _**Choosing the Correct GPU**_
 
-Visit the JFrog ML [*GPU Resources*](/docs/instance-sizes-ml-credits) page to select the resources that best fit your use-case.
+  Visit the JFrog ML [_GPU Resources_](/docs/instance-sizes-ml-credits) page to select the resources that best fit your use-case.
 
-Each GPU type has its own configuration of pre-defined memory and number of CPUs.
+  Each GPU type has its own configuration of pre-defined memory and number of CPUs.
 </Callout>
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-JFrog ML utilizes EC2 Spot instances for cost-effective GPU-based builds. This may result in a slightly extended wait time when initiating GPU Spot instances.
+  JFrog ML utilizes EC2 Spot instances for cost-effective GPU-based builds. This may result in a slightly extended wait time when initiating GPU Spot instances.
 </Callout>
-
 
 ### Deploying Models with GPUs
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-To deploy models using a GPU, you do not need to build it on a GPU instance.
+  To deploy models using a GPU, you do not need to build it on a GPU instance.
 
-Simply use the `--gpu-compatible` flag during the model build process.
+  Simply use the `--gpu-compatible` flag during the model build process.
 </Callout>
-
 
 When deploying a model on a GPU instance, you must verify that the model was build using a GPU compatible image. Building a model using a GPU compatible image installs additional dependencies and drivers.
 
@@ -214,7 +210,7 @@ Data scientists often train models in Workspaces, Jupyter notebooks or locally, 
 
 JFrog ML provides the Build Model SDK to address this need, simplifying the transition from model training to deployment, from your local machine or your Jupyter notebook.
 
-#### Key Features
+### Key Features
 
 ##### 1. Build Models from Workspaces
 
@@ -264,21 +260,20 @@ client.build_model(
 #### Folder Structure
 
 <Callout icon="⚠️" theme="warning">
-**Warning**
+  **Warning**
 
-***File Structure Requirements***
+  _**File Structure Requirements**_
 
-When using the Build SDK, your file and folder structure is preserved when uploading to JFrogML.
+  When using the Build SDK, your file and folder structure is preserved when uploading to JFrogML.
 
-Please ensure to:
+  Please ensure to:
 
-* Avoid Python files with top-level executable statements in the build directory.
-* All code with side effects should be guarded with `if __name__ == "__main__"` blocks.
-* Place shared functionality in properly encapsulated classes and functions.
+  * Avoid Python files with top-level executable statements in the build directory.
+  * All code with side effects should be guarded with `if __name__ == "__main__"` blocks.
+  * Place shared functionality in properly encapsulated classes and functions.
 
-Failure to follow these guidelines may cause unintended code execution during the import process.
+  Failure to follow these guidelines may cause unintended code execution during the import process.
 </Callout>
-
 
 The Build SDK uploads local model files together with the trained model object. By default, the Build SDK uploads the `main` folder under the current file location.
 
@@ -299,7 +294,7 @@ Use the Build SDK to build models with an existing instance of a trained model t
 
 #### Creating a Model Instance
 
-In this example, we'll use the Titanic model, which can be found on the <Anchor label="FrogML Examples repository" href="https://github.com/jfrog/JFrogMLExamples" target="_blank">FrogML Examples repository</Anchor>.
+In this example, we'll use the Titanic model, which can be found on the <Anchor label="FrogML Examples repository" target="_blank" href="https://github.com/jfrog/JFrogMLExamples">FrogML Examples repository</Anchor>.
 
 Our folder structure will look as follows:
 
@@ -313,11 +308,10 @@ titanic
 ```
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-Make sure to import `from frogml.sdk.model.tools import run_local` when using the build SDK. The build command cannot complete without it.
+  Make sure to import `from frogml.sdk.model.tools import run_local` when using the build SDK. The build command cannot complete without it.
 </Callout>
-
 
 ###### requirements.txt
 
@@ -327,7 +321,7 @@ scikit-learn
 catboost
 ```
 
-###### titanic/main/\_\_init\_\_.py
+###### titanic/main/__init__.py
 
 ```
 from .model import TitanicSurvivalPrediction
@@ -407,7 +401,7 @@ class TitanicSurvivalPrediction(FrogMlModel):
 
 Let's create a new model instance and run the build method to train it.
 
-**titanic/run\_build.py**
+**titanic/run_build.py**
 
 ```
 from titanic.main import TitanicSurvivalPrediction
@@ -434,7 +428,7 @@ Now that we have trained a model locally, we want to register this model version
 
 The code below will register a new build under the `titanic_survival_prediction` model, with the trained titanic model we just created and a tag: `prebuilt`
 
-**titanic/run\_build.py**
+**titanic/run_build.py**
 
 ```
 from frogml.sdk.frogml_client.client import FrogMLClient
@@ -482,177 +476,19 @@ https://mydemo.jfrog.io/ui/ml/models/credit_risk_frogml/build/116a6385-8bbf-41bb
 
 The Build SDK supports a multitude of parameters which users may configure
 
-
-
-<Table>
-  <thead>
-    <tr>
-      <th>
-        Description
-      </th>
-      <th>
-        Required
-      </th>
-      <th>
-        Default Value
-      </th>
-      <th>
-        Description
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        `model_id`
-      </td>
-      <td>
-        Yes
-      </td>
-      <td>
-      </td>
-      <td>
-        Model ID on the JFrog platform
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `main_module_path`
-      </td>
-      <td>
-        No
-      </td>
-      <td>
-        "main"
-      </td>
-      <td>
-        Path to the local folder where model files exists
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `dependencies_file`
-      </td>
-      <td>
-        No
-      </td>
-      <td>
-      </td>
-      <td>
-        Path to a Python dependencies file, in pip, poetry or conda format.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `dependencies_list`
-      </td>
-      <td>
-        No
-      </td>
-      <td>
-      </td>
-      <td>
-        List of strict Python dependencies
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `tags`
-      </td>
-      <td>
-        No
-      </td>
-      <td>
-      </td>
-      <td>
-        List of tags saved on the remote model build
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `instance`
-      </td>
-      <td>
-        No
-      </td>
-      <td>
-        "small"
-      </td>
-      <td>
-        Instance type during mode build
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `gpu_compatible`
-      </td>
-      <td>
-        No
-      </td>
-      <td>
-      </td>
-      <td>
-        Build the model using a GPU compatible image
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `run_tests`
-      </td>
-      <td>
-        No
-      </td>
-      <td>
-        True
-      </td>
-      <td>
-        Run tests during model build
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `validate_build_artifact`
-      </td>
-      <td>
-        No
-      </td>
-      <td>
-        True
-      </td>
-      <td>
-        Validate model deployment during build phase
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `validate_build_artifact_timeout`
-      </td>
-      <td>
-        No
-      </td>
-      <td>
-      </td>
-      <td>
-        Model validation timeout
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `frogml_model`
-      </td>
-      <td>
-        No
-      </td>
-      <td>
-      </td>
-      <td>
-        Providing a prebuilt FrogmlModel instance will skip the build phase and use a pre-existing trained model version.
-      </td>
-    </tr>
-  </tbody>
-</Table>
-
-
+| Description                       | Required | Default Value | Description                                                                                                       |
+| :-------------------------------- | :------- | :------------ | :---------------------------------------------------------------------------------------------------------------- |
+| `model_id`                        | Yes      |               | Model ID on the JFrog platform                                                                                    |
+| `main_module_path`                | No       | "main"        | Path to the local folder where model files exists                                                                 |
+| `dependencies_file`               | No       |               | Path to a Python dependencies file, in pip, poetry or conda format.                                               |
+| `dependencies_list`               | No       |               | List of strict Python dependencies                                                                                |
+| `tags`                            | No       |               | List of tags saved on the remote model build                                                                      |
+| `instance`                        | No       | "small"       | Instance type during mode build                                                                                   |
+| `gpu_compatible`                  | No       |               | Build the model using a GPU compatible image                                                                      |
+| `run_tests`                       | No       | True          | Run tests during model build                                                                                      |
+| `validate_build_artifact`         | No       | True          | Validate model deployment during build phase                                                                      |
+| `validate_build_artifact_timeout` | No       |               | Model validation timeout                                                                                          |
+| `frogml_model`                    | No       |               | Providing a prebuilt FrogmlModel instance will skip the build phase and use a pre-existing trained model version. |
 
 For example, the below is an example using the advanced features of the Build SDK.
 
@@ -689,126 +525,21 @@ The Build SDK support most of the parameters that are supported in the FrogML CL
 
 The following parameters are not supported:
 
-
-
-<Table>
-  <thead>
-    <tr>
-      <th>
-        Parameter
-      </th>
-      <th>
-        Description
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        `environment`
-      </td>
-      <td>
-        JFrog ML environment
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `purchase-option`
-      </td>
-      <td>
-        Receiving only the build id and any exception as return values (Depends on --programmatic in order to avoid UI output)
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `deployment-instance`
-      </td>
-      <td>
-        The instance size to automatically deploy the build after completion
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `deploy`
-      </td>
-      <td>
-        Automatically deploy build after completion
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `json-logs`
-      </td>
-      <td>
-        Return the live build logs as JSON
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `param-list`
-      </td>
-      <td>
-        Provide a list of parameters to the build
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `main-dir`
-      </td>
-      <td>
-        Change the name of the `main` model directory
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `env-vars`
-      </td>
-      <td>
-        Provide a list of environment variables
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `base-image`
-      </td>
-      <td>
-        Change the base image of the model build
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `--cache / -no-cache`
-      </td>
-      <td>
-        Use or disable docker cache
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `git-credentials`
-      </td>
-      <td>
-        Provide git credentials token
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `git-credentials-secret`
-      </td>
-      <td>
-        The git credentials secret
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `git-branch`
-      </td>
-      <td>
-        Use a different git branch
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| Parameter                | Description                                                                                                            |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| `environment`            | JFrog ML environment                                                                                                   |
+| `purchase-option`        | Receiving only the build id and any exception as return values (Depends on --programmatic in order to avoid UI output) |
+| `deployment-instance`    | The instance size to automatically deploy the build after completion                                                   |
+| `deploy`                 | Automatically deploy build after completion                                                                            |
+| `json-logs`              | Return the live build logs as JSON                                                                                     |
+| `param-list`             | Provide a list of parameters to the build                                                                              |
+| `main-dir`               | Change the name of the `main` model directory                                                                          |
+| `env-vars`               | Provide a list of environment variables                                                                                |
+| `base-image`             | Change the base image of the model build                                                                               |
+| `--cache / -no-cache`    | Use or disable docker cache                                                                                            |
+| `git-credentials`        | Provide git credentials token                                                                                          |
+| `git-credentials-secret` | The git credentials secret                                                                                             |
+| `git-branch`             | Use a different git branch                                                                                             |
 
 ## Managing Dependencies
 
@@ -825,11 +556,10 @@ When building and managing your Python projects, different tools have varying le
 #### Using Poetry with JFrogML
 
 <Callout icon="⚠️" theme="warning">
-**Warning**
+  **Warning**
 
-JFrogML uses **Poetry version 1.8.3**.JFrog ML supports `poetry.lock` files as long as they're under the same scope as the `pyproject.toml` file.
+  JFrogML uses **Poetry version 1.8.3**.JFrog ML supports `poetry.lock` files as long as they're under the same scope as the `pyproject.toml` file.
 </Callout>
-
 
 ##### Model Directory Structure
 
@@ -907,11 +637,10 @@ dependencies:
 ```
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-There’s no need to manually add `frogml-sdk` to the environment. JFrogML’s build process includes it automatically based on your local version.
+  There’s no need to manually add `frogml-sdk` to the environment. JFrogML’s build process includes it automatically based on your local version.
 </Callout>
-
 
 #### .frogmlignore file
 
@@ -940,15 +669,14 @@ README.md
 ```
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-***Hidden Files***
+  _**Hidden Files**_
 
-By default, JFrog ML disregards hidden files. Hidden files are files or directories whose names start with a dot (`.`) in Unix-like operating systems, or they may have the "Hidden" attribute set in Windows. These files are typically used to store configuration data or hold temporary information.
+  By default, JFrog ML disregards hidden files. Hidden files are files or directories whose names start with a dot (`.`) in Unix-like operating systems, or they may have the "Hidden" attribute set in Windows. These files are typically used to store configuration data or hold temporary information.
 
-Suppose you have a directory with files and subdirectories, including a hidden file named `.config_file`. JFrog ML, following its default behavior, will exclude this file from processing when triggering a remote build.
+  Suppose you have a directory with files and subdirectories, including a hidden file named `.config_file`. JFrog ML, following its default behavior, will exclude this file from processing when triggering a remote build.
 </Callout>
-
 
 #### Incorporating Python Dependencies from .whl Files
 
@@ -1119,7 +847,7 @@ And two optional ones:
 1. `schema` - defines the model interface - input and the output of your model.
 2. `initialize_model` - invoked when the model is loaded during the serving container initialization.
 
-Read more about JFrogMl's model class method and how they can be used in the dedicated [section](/docs/the-frogml-model-class "The FrogML Model Class").
+Read more about JFrogMl's model class method and how they can be used in the dedicated <Anchor label="section" title="The FrogML Model Class" href="/docs/the-frogml-model-class">section</Anchor>.
 
 For example, we can implement the Iris classifier in the following way:
 
@@ -1162,7 +890,7 @@ The `main` directory should be a valid Python module, meaning it should include 
 
 The `__init__.py` file lets the Python interpreter know that a directory contains code for a Python module. This file should set up the imports for the FrogML model class, so it will be picked up by the model build process - in one of two ways:
 
-\_\_init\_\_.py (Option 1)
+__init__.py (Option 1)
 
 ```
 from .model import IrisClassifier
@@ -1170,7 +898,7 @@ from .model import IrisClassifier
 
 Or:
 
-\_\_init\_\_.py (Option 2)
+__init__.py (Option 2)
 
 ```
 from .model import IrisClassifier
@@ -1188,13 +916,12 @@ Most projects depend on external packages to build and run correctly. JFrog ML d
 JFrog ML supports the following types of dependency descriptors. Pick one! Do not include multiple dependency configuration files at once.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-***FrogML SDK automatic dependency***
+  _**FrogML SDK automatic dependency**_
 
-Note that the `frogml-sdk` is automatically injected as a dependency during the build process, so you do not need to manually add it to your dependency file.
+  Note that the `frogml-sdk` is automatically injected as a dependency during the build process, so you do not need to manually add it to your dependency file.
 </Callout>
-
 
 ###### Conda
 
@@ -1291,7 +1018,7 @@ def add(x, y):
 
 Then we can define the following test:
 
-test\_util.py
+test_util.py
 
 ```
 from main.util import add
@@ -1308,7 +1035,7 @@ During the integration tests, a real model deployment will be running, and you w
 
 For example:
 
-test\_model.py
+test_model.py
 
 ```
 import pandas as pd
@@ -1498,103 +1225,28 @@ def predict(self, df: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(data=self._model.predict(df), columns=['species'])
 ```
 
-Notice that in this case we use pandas `DataFrame` for both the input and the output. For other options, see [Prediction Input & Output Adapters](/docs/prediction-input---output-adapters "Prediction Input & Output Adapters").
+Notice that in this case we use pandas `DataFrame` for both the input and the output. For other options, see <Anchor label="Prediction Input & Output Adapters" title="Prediction Input & Output Adapters" href="/docs/prediction-input---output-adapters">Prediction Input & Output Adapters</Anchor>.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-**Inference Batching**
+  **Inference Batching**
 
-By default, the endpoint doesn't batch predictions. You can control this configuration using the `MAX BATCH SIZE` parameter (default: 1).
+  By default, the endpoint doesn't batch predictions. You can control this configuration using the `MAX BATCH SIZE` parameter (default: 1).
 
-If you enable batching, your endpoint code must be ready to handle multiple model invocations during a single call to the `predict` method.
+  If you enable batching, your endpoint code must be ready to handle multiple model invocations during a single call to the `predict` method.
 </Callout>
-
 
 #### `@api` Decorator
 
 JFrogML's API decorator adds additional functionality to the `predict` method. There are currently 4 options:
 
-
-
-<Table>
-  <thead>
-    <tr>
-      <th>
-        Paramater
-      </th>
-      <th>
-        Type
-      </th>
-      <th>
-        Description
-      </th>
-      <th>
-        Default Value
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        `analytics`
-      </td>
-      <td>
-        `bool`
-      </td>
-      <td>
-        Whether to activate JFrogML's built-in inference data collection mechanism, which streams all inference requests to the [FrogML Lake](/docs/inference-analytics).
-      </td>
-      <td>
-        `True`
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `feature_extraction`
-      </td>
-      <td>
-        `bool`
-      </td>
-      <td>
-        Whether to activate the automatic feature extraction mechanism, pulling features from JFrog ML's feature store. For more info see [Getting Features for Inference](/docs/features-in-inference "Features in Inference") .
-      </td>
-      <td>
-        `False`
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `Input Adapter`
-      </td>
-      <td>
-        `BaseInputAdapter`
-      </td>
-      <td>
-        To which format should the input request be serialized. For a list of supported adapters see [Input & Output Adapters](/docs/prediction-input---output-adapters "Prediction Input & Output Adapters").
-      </td>
-      <td>
-        `DataframeInputAdapter`
-      </td>
-    </tr>
-    <tr>
-      <td>
-        `Output Adapter`
-      </td>
-      <td>
-        `BaseOutputAdapter`
-      </td>
-      <td>
-        To which format should the output of the `predict` function be serialized. For a list of supported adapters see [Input & Output Adapters](/docs/prediction-input---output-adapters "Prediction Input & Output Adapters").
-      </td>
-      <td>
-        `DataframeOutputAdapter`
-      </td>
-    </tr>
-  </tbody>
-</Table>
-
-
+| Paramater            | Type                | Description                                                                                                                                                                                                                                                                                 | Default Value            |
+| :------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :----------------------- |
+| `analytics`          | `bool`              | Whether to activate JFrogML's built-in inference data collection mechanism, which streams all inference requests to the [FrogML Lake](/docs/inference-analytics).                                                                                                                           | `True`                   |
+| `feature_extraction` | `bool`              | Whether to activate the automatic feature extraction mechanism, pulling features from JFrog ML's feature store. For more info see <Anchor label="Getting Features for Inference" title="Features in Inference" href="/docs/features-in-inference">Getting Features for Inference</Anchor> . | `False`                  |
+| `Input Adapter`      | `BaseInputAdapter`  | To which format should the input request be serialized. For a list of supported adapters see <Anchor label="Input & Output Adapters" title="Prediction Input & Output Adapters" href="/docs/prediction-input---output-adapters">Input & Output Adapters</Anchor>.                           | `DataframeInputAdapter`  |
+| `Output Adapter`     | `BaseOutputAdapter` | To which format should the output of the `predict` function be serialized. For a list of supported adapters see <Anchor label="Input & Output Adapters" title="Prediction Input & Output Adapters" href="/docs/prediction-input---output-adapters">Input & Output Adapters</Anchor>.        | `DataframeOutputAdapter` |
 
 #### Schema
 
@@ -1620,7 +1272,7 @@ def schema(self):
 It is used for two main purposes:
 
 1. For creating inference templates that make it easier for model consumers to integrate with the model. There can be found under the **Interface** tab in the management platform model page.
-2. As an integration point with JFrogML's Feature store, for feature auto extraction during inference time. For more info see [Getting Features for Inference](/docs/features-in-inference "Features in Inference").
+2. As an integration point with JFrogML's Feature store, for feature auto extraction during inference time. For more info see <Anchor label="Getting Features for Inference" title="Features in Inference" href="/docs/features-in-inference">Getting Features for Inference</Anchor>.
 
 After building and deploying the model, the schema information will appear in the interface tab of the model, with a snippet of code used for interactions with the model.
 
