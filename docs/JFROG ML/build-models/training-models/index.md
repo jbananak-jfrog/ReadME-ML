@@ -453,7 +453,7 @@ To facilitate the deployment of models trained on GPU environments onto CPU-base
 
 my_model.py
 
-```
+```python
 class MyModel(FrogMlModel):
 
   def init():
@@ -476,7 +476,7 @@ By employing a custom _unpickler_ you can ensure the model is properly directed 
 
 my_model.py
 
-```
+```python
 import pickle
 import torch
 import io
