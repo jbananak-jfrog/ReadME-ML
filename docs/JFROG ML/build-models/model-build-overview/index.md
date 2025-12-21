@@ -1272,7 +1272,7 @@ def schema(self):
 It is used for two main purposes:
 
 1. For creating inference templates that make it easier for model consumers to integrate with the model. There can be found under the **Interface** tab in the management platform model page.
-2. As an integration point with JFrogML's Feature store, for feature auto extraction during inference time. For more info see <Anchor label="Getting Features for Inference" title="Features in Inference" href="/docs/features-in-inference">Getting Features for Inference</Anchor>.
+2. As an integration point with JFrogML's Feature store, for feature auto extraction during inference time. For more info see  [Features Consumption].
 
 After building and deploying the model, the schema information will appear in the interface tab of the model, with a snippet of code used for interactions with the model.
 
