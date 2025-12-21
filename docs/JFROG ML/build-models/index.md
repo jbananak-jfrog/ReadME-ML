@@ -18,7 +18,7 @@ Use this section to learn how to build, train, test, and manage machine learning
 
 This section comprises the following topics:
 
-* <Anchor label="Model Build Overview" title="Model Build Overview" href="/docs/model-build-overview">Model Build Overview</Anchor>
+* [Model Build Overview](/docs/model-build-overview)
 * <Anchor label="Training Models" title="Training Models" href="/docs/training-models">Training Models</Anchor>
 * <Anchor label="Testing Models" title="Testing Models" href="/docs/testing-models">Testing Models</Anchor>
 * <Anchor label="Loading Pre-built Models" title="Loading Pre-built Models" href="/docs/loading-pre-built-models">Loading Pre-built Models</Anchor>
