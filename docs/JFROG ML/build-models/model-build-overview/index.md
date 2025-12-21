@@ -726,7 +726,7 @@ dependencies:
 
 pyproject.toml
 
-```
+```toml
 [tool.poetry]
 name = "example-project"
 version = "0.1.0"
@@ -954,7 +954,7 @@ In this case, the `main` directory should contain the `pyproject.toml` file:
 
 pyproject.toml
 
-```
+```toml
 [tool.poetry]
 name = "iris-classifier"
 version = "0.1.0"
