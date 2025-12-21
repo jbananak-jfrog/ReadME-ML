@@ -577,7 +577,7 @@ Both files `pyproject.toml` and `poetry.lock` will be used by Poetry while execu
 
 pyproject.toml
 
-```python
+```toml
 [tool.poetry]
 name = "example-project"
 version = "0.1.0"
