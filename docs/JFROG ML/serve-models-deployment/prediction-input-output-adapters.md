@@ -30,7 +30,7 @@ This document lists to wide variety of available input and output adapters.
 
 In the model file, we have to import the `ImageInputAdapter`.
 
-```
+```python
 import frogml
 import numpy as np
 import pandas as pd
@@ -44,7 +44,7 @@ Now, the `predict` function, gets a list of arrays containing the RGB properties
 
 If you trained your model using grayscale pictures but pass RGB values in production, remember to convert the input to grayscale. For example like this:
 
-```
+```python
 @frogml.api(analytics=False, input_adapter=ImageInputAdapter())
 def predict(self, input_data) -> pd.DataFrame:
     def rgb2gray(rgb):
@@ -69,7 +69,7 @@ We can pass the image as a file data stream and load it as a file inside the `pr
 
 Before we start, we have to add the `Pillow` library to the model dependencies and import the `Image` class and the input adapter
 
-```
+```python
 import numpy as np
 import pandas as pd
 from PIL import Image
@@ -78,7 +78,7 @@ from frogml.model.adapters import FileInputAdapter
 
 Now, we can change the input_adapter parameter in the `frogml.api` decorator:
 
-```
+```python
 @frogml.api(analytics=False, input_adapter=FileInputAdapter())
 def predict(self, file_streams) -> pd.DataFrame:
 ```
@@ -92,7 +92,7 @@ In the `predict` function, we will:
 
 After that, we need to pass the image data to the model to get the prediction.
 
-```
+```python
 result = []
 for fs in file_streams:
     im = Image.open(fs).convert(mode="L").resize((28, 28))
@@ -110,13 +110,13 @@ If we want to pass a single sentence to the ML model, we can use the `StringInpu
 
 First, import the StringInputAdapter.
 
-```
+```python
 from frogml.sdk.model.adapters import StringInputAdapter
 ```
 
 Now, configure the predict function to use the input adapter:
 
-```
+```python
 @frogml.api(analytics=False, input_adapter=StringInputAdapter())
 def predict(self, texts) -> pd.DataFrame:
 ```
