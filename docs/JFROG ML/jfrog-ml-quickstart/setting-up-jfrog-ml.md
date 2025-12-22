@@ -116,7 +116,7 @@ For this option, you need to make sure you have enabled token generation API as 
 Then, type in the following command, replacing the variables:
 
 ```python
-frogml config add --url={server_url} --username={user_name} --password{password} --server-id={optional_server_id}frogml config add --url={server_url}
+frogml config add --url={server_url} --username={user_name} --password{password} --server-id={optional_server_id}
 ```
 
 When configured correctly, you'll receive the following message:
