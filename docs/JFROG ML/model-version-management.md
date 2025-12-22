@@ -10,7 +10,7 @@ metadata:
     - UUID-8ab1812c-5320-a8cb-dbe1-80fcae8118c4
   robots: index
 ---
-**Summary**
+## Summary
 
 Model Versions are trained experiments saved with their code, dependencies, and optional data like metrics or parameters. Version Management ensures these experiments are reproducible, traceable, and securely stored in JFrog Artifactory as a single source of truth.
 
@@ -47,9 +47,7 @@ The _Versions_ tab in the Custom Models page shows a list of available versions 
   To learn more about FrogML and machine learning repositories in Artifactory, see [Machine Learning Repositories](/artifactory/docs/machine-learning-repositories)
 </Callout>
 
-To learn more about
-
-**Log your model - Simple model version**
+### Log your model - Simple model version
 
 ```python
 import frogml
@@ -64,7 +62,7 @@ frogml.catboost.log_model(
 )
 ```
 
-**Log your model - Model with additional metadata and properties**
+### Log your model - Model with additional metadata and properties
 
 ```python
 import frogml
@@ -82,16 +80,16 @@ frogml.catboost.log_model(
 )
 ```
 
-### Custom Prediction Logic Integration
+## Custom Prediction Logic Integration
 
 This feature meets the demand for custom prediction logic in real-world deployment scenarios, accommodating common requirements like data validation, transformation, and other runtime needs. It enables the inclusion of user-defined prediction functions within a model version, ensuring the deployed model performs exactly as intended.
 
-**How to add custom prediction code:**
+### How to add custom prediction code:
 
 1. In your python code, use the example code snippet below to add a custom prediction function.
 2. If you want to define the name of the new build version, add the line: `version="<new version name>"` in the code.
 
-**Code Example - Logging a Hugging Face model without a custom prediction function:**
+#### Code Example - Logging a Hugging Face model without a custom prediction function:
 
 ```python
 import frogml
@@ -109,7 +107,7 @@ frogml.huggingface.log_model(
 )
 ```
 
-**Code Example - Logging a Hugging Face model with a custom prediction function:**
+#### Code Example - Logging a Hugging Face model with a custom prediction function:
 
 ```python
 import frogml
@@ -200,7 +198,7 @@ frogml.huggingface.log_model(
   | **The Solution:**  | The unpickler can now successfully import `serving_code.predict` and load your model.                       |
 </Callout>
 
-### Promotion of Model Version to Production-Ready Build
+## Promotion of Model Version to Production-Ready Build
 
 The FrogML platform enables efficient movement of successful experiments from development to production. It allows conversion of a Model Version—an experiment with code and metadata—into a Build, which serves as a self-contained, traceable record of all artifacts and dependencies required to create a production-ready Docker image for deployment.. This automated process is seamless, and one model version can generate multiple builds, thus facilitating deployment of the same model with varied dependencies or configurations.
 
@@ -218,7 +216,7 @@ The FrogML platform enables efficient movement of successful experiments from de
   </Card>
 </Cards>
 
-### **How to create a build from the model versions tab:**
+### How to create a build from the model versions tab:
 
 1. Navigate to **AI Catalog**  > **Models**.
 
