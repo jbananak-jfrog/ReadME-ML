@@ -36,7 +36,7 @@ The _Versions_ tab in the Custom Models page shows a list of available versions 
     The SDK automatically handles the work of packaging your model and all its associated files.
   </Card>
 
-  <Card style="small" title="Upload to Artifactory →">
+  <Card title="Upload to Artifactory →">
     The packaged model is then uploaded to your designated ML repository in Artifactory, where it becomes a new, trackable Model Version. This gives you a single, centralized location for all your experiments and models.
   </Card>
 </Cards>
@@ -51,9 +51,7 @@ To learn more about
 
 **Log your model - Simple model version**
 
-`Python`
-
-```
+```python
 import frogml
 from catboost import CatBoostClassifier
 
@@ -68,9 +66,7 @@ frogml.catboost.log_model(
 
 **Log your model - Model with additional metadata and properties**
 
-`Python`
-
-```
+```python
 import frogml
 
 # Assumes you have a trained model
@@ -97,9 +93,7 @@ This feature meets the demand for custom prediction logic in real-world deployme
 
 **Code Example - Logging a Hugging Face model without a custom prediction function:**
 
-`Python`
-
-```
+```python
 import frogml
 from transformers import DistilBertTokenizer, DistilBertForSequenceClassification
 
@@ -117,9 +111,7 @@ frogml.huggingface.log_model(
 
 **Code Example - Logging a Hugging Face model with a custom prediction function:**
 
-`Python`
-
-```
+```python
 import frogml
 from transformers import DistilBertTokenizer, DistilBertForSequenceClassification
 
@@ -211,6 +203,21 @@ frogml.huggingface.log_model(
 ### Promotion of Model Version to Production-Ready Build
 
 The FrogML platform enables efficient movement of successful experiments from development to production. It allows conversion of a Model Version—an experiment with code and metadata—into a Build, which serves as a self-contained, traceable record of all artifacts and dependencies required to create a production-ready Docker image for deployment.. This automated process is seamless, and one model version can generate multiple builds, thus facilitating deployment of the same model with varied dependencies or configurations.
+
+<Cards columns={3}>
+  <Card title="Initiate Promotion →" >
+    Initiate the process by clicking a button in the JFrog UI, selecting the desired model version, and providing any required details, such as a name for the new build
+  </Card>
+
+  <Card title="Automated Build Process →">
+    Behind the scenes, the system retrieves all files associated with the model version, including code and dependencies, and packages them into a secure, temporary workspace.
+  </Card>
+
+  <Card title="Build Registration →">
+    The system registers the new build in JFrog Artifactory, creating a fully self-contained, production-ready Docker image.
+  </Card>
+
+</Cards>
 
 | Initiate Promotion                                                                                                                                                    | →  | Automated Build Process                                                                                                                                                     | →  | Build Registration                                                                                                       |
 | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :- | :----------------------------------------------------------------------------------------------------------------------- |
