@@ -36,7 +36,7 @@ The _Versions_ tab in the Custom Models page shows a list of available versions 
     The SDK automatically handles the work of packaging your model and all its associated files.
   </Card>
 
-  <Card title="Upload to <br/>Artifactory →">
+  <Card title="Upload <small> to </small>Artifactory →">
     The packaged model is then uploaded to your designated ML repository in Artifactory, where it becomes a new, trackable Model Version. This gives you a single, centralized location for all your experiments and models.
   </Card>
 </Cards>
