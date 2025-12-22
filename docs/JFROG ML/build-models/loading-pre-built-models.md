@@ -4,17 +4,19 @@ deprecated: false
 hidden: false
 metadata:
   title: Loading Pre-built Models
-  description: The fastest way to start using FrogML is to deploy a model you have trained in the past as a FrogML service.
-  robots: index
+  description: >-
+    The fastest way to start using FrogML is to deploy a model you have trained
+    in the past as a FrogML service.
   legacyUUIDs:
     - UUID-54f36073-49e8-4202-1c51-067f639f0757
     - UUID-d26067a2-57d8-a583-a496-641ef0b53c24
+  robots: index
 ---
 The fastest way to start using FrogML is to deploy a model you have trained in the past as a FrogML service.
 
 Let's assume that you have already trained the model and stored it in S3. The storage mechanism doesn't matter as long as you can download it using Python code.
 
-### Creating a New Model
+## Creating a New Model
 
 First, we have to create a new FrogML project and models:
 
@@ -28,18 +30,17 @@ Then we want to create an empty project template:
 frogml models init .
 ```
 
-### Adding Dependencies
+## Adding Dependencies
 
 In this example, we will use `conda` so we have to edit the `conda.yml` file and put the required libraries into the dependency list.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-FrogML uses `conda` for dependency management.
+  FrogML uses `conda` for dependency management.
 
-Alternatively, you may use virtual environments such as pip `requirements.txt` files and `poetry` dependency manager.
+  Alternatively, you may use virtual environments such as pip `requirements.txt` files and `poetry` dependency manager.
 </Callout>
-
 
 For this pre-trained model example, we need pandas, scikit-learn, and catboost.
 
@@ -60,14 +61,14 @@ dependencies:
   - boto3
 ```
 
-### Loading Model Code
+## Loading Model Code
 
 JFrog ML offers two ways of loading an existing model:
 
 1. Use the `build()` function.
 2. Use the `initialize_model()` function.
 
-### Models in `build()`
+## Models in `build()`
 
 The `build` function is more flexible. You can load not only the model but also run additional fine-tuning training. You can preprocess the training data for fine-tuning.
 
@@ -75,7 +76,7 @@ In general, you can do whatever you want. The only difference between full train
 
 When the build method finishes running, all model class fields will be pickled. Those fields are loaded at the model serving stage and are available in the `predict` function.
 
-### Models in `initialize_model()`
+## Models in `initialize_model()`
 
 If you use the `initialize_model` function, we will load the model while starting the inference service.
 
@@ -85,14 +86,14 @@ On the other hand, using the `initialize_model` function lets you skip additiona
 
 In the following sections, we will show you how to load the model from a file stored S3 in the `build` function and load a model from a pickle file included in the project directory.
 
-### Loading Model Files
+## Loading Model Files
 
 Let's see two ways for loading pre-trained models:
 
 1. Download the model from S3.
 2. Store the model as a pickle file in the build directory and load it from the file.
 
-#### Loading Models from S3
+### Loading Models from S3
 
 In the build function, instead of training the model, you can download and load the Python object from a file.
 
@@ -176,15 +177,15 @@ class TitanicSurvivalPrediction(FrogMlModel):
         self.model.load_model('model_file.cbm')
 ```
 
-### Loading Models from Pickle
+## Loading Models from Pickle
 
 If you have your model in a pickle file, you can put it in the main directory and use the `initialize_model` method to load it.
 
 In this case, the build method is not implemented, but it still needs to be included in the class.
 
-We can have an empty implementation of the build method. Now, we can define the initialize\_model method and load the model from a pickle file:
+We can have an empty implementation of the build method. Now, we can define the initialize_model method and load the model from a pickle file:
 
-```
+```python
 import frogml
 import pickle
 from frogml.sdk.model.base import BaseModel as FrogMlModel
@@ -203,7 +204,7 @@ class TitanicSurvivalPrediction(FrogMlModel):
             self.model = pickle.load(infile)
 ```
 
-### Adding Preprocessing
+## Adding Preprocessing
 
 Every machine learning model running in production requires some preprocessing code that converts the data from the business domain into model-compatible values.
 
@@ -211,14 +212,14 @@ In FrogML models, that code is put in the predict function.
 
 That is also the place where we call the model to obtain the predictions:
 
-```
+```python
 @frogml.api()
     def predict(self, df: pd.DataFrame) -> pd.DataFrame:
         df = df.drop(['PassengerId'], axis=1)
         return pd.DataFrame(self.model.predict_proba(df)[:, 1], columns=['Survived_Probability'])
 ```
 
-### Building the Model
+## Building the Model
 
 Now you have everything you need to deploy your pre-trained model as a FrogML model.
 
