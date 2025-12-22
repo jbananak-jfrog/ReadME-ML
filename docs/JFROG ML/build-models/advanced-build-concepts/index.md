@@ -5,35 +5,38 @@ hidden: false
 metadata:
   title: Advanced Build Concepts
   description: 'This section reviews the following topics:'
-  robots: index
   legacyUUIDs:
-  - UUID-0e2f886c-03b6-0849-796d-863b769aae03
-  - UUID-5bfe5db9-1647-cd5b-eeb1-b8b2d416dfb3
-  - UUID-901ba285-36f5-436f-62d4-ba9c01e10948
-  - UUID-30209b41-f52f-5f4b-40aa-208469d31134
-  - UUID-39eb8e17-0eac-4ded-1fa9-88da8bec160e
-  - UUID-ba142be6-3886-4f66-8279-e9085f131b7e
-  - UUID-9c768a59-b170-dd55-5cd9-0de105b9621d
-  - UUID-990507bb-f41b-c973-6984-5bb3b4590f1a
-  - UUID-379ce3cb-48db-23de-bd08-a85c6917e54b
-  - UUID-382d9323-759e-3d46-069d-22e4a3eaf082
+    - UUID-0e2f886c-03b6-0849-796d-863b769aae03
+    - UUID-5bfe5db9-1647-cd5b-eeb1-b8b2d416dfb3
+    - UUID-901ba285-36f5-436f-62d4-ba9c01e10948
+    - UUID-30209b41-f52f-5f4b-40aa-208469d31134
+    - UUID-39eb8e17-0eac-4ded-1fa9-88da8bec160e
+    - UUID-ba142be6-3886-4f66-8279-e9085f131b7e
+    - UUID-9c768a59-b170-dd55-5cd9-0de105b9621d
+    - UUID-990507bb-f41b-c973-6984-5bb3b4590f1a
+    - UUID-379ce3cb-48db-23de-bd08-a85c6917e54b
+    - UUID-382d9323-759e-3d46-069d-22e4a3eaf082
+  robots: index
 ---
-
 This section reviews the following topics:
 
-[Build Configurations](/docs/build-configurations "Build Configurations")
+<Anchor label="Build Configurations" title="Build Configurations" href="/docs/build-configurations">Build Configurations</Anchor>
 
-[Reusing Trained Artifacts](/docs/reusing-trained-artifacts "Reusing Trained Artifacts")
+<Anchor label="Reusing Trained Artifacts" title="Reusing Trained Artifacts" href="/docs/reusing-trained-artifacts">Reusing Trained Artifacts</Anchor>
 
-[Hyperparameter Optimization (HPO)](/docs/hyperparameter-optimization--hpo- "Hyperparameter Optimization (HPO)")
+<Anchor label="Hyperparameter Optimization (HPO)" title="Hyperparameter Optimization (HPO)" href="/docs/hyperparameter-optimization--hpo-">Hyperparameter Optimization (HPO)</Anchor>
 
-[Custom HTTP Status Codes](/docs/custom-http-status-codes "Custom HTTP Status Codes")
+<Anchor label="Custom HTTP Status Codes" title="Custom HTTP Status Codes" href="/docs/custom-http-status-codes">Custom HTTP Status Codes</Anchor>
+
+***
+
+<br />
 
 ## Build Configurations
 
 Learn how to adjust and configure the build for some advanced use-cases.
 
-#### Using a Custom AWS IAM Role ARN
+### Using a Custom AWS IAM Role ARN
 
 In some cases, a model needs to access external services during its build process.
 
@@ -58,20 +61,19 @@ session = boto3.Session(profile_name='user-provided-role')
 s3 = session.client('s3')
 ```
 
-For additional information on how to configure an AWS IAM role to allow JFrog ML runtime to access your resources, please also visit the [AWS Resources access dedicated page](/docs/accessing-aws-resources-with-iam-role "Accessing AWS Resources with IAM Role").
+For additional information on how to configure an AWS IAM role to allow JFrog ML runtime to access your resources, please also visit the <Anchor label="AWS Resources access dedicated page" title="Accessing AWS Resources with IAM Role" href="/docs/accessing-aws-resources-with-iam-role">AWS Resources access dedicated page</Anchor>.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-In the provided code snippet, the profile name specified as `user-provided-role` is automatically associated by JFrog ML with your assumed IAM role. Therefore, there's no need to replace it in the code. This ensures seamless integration and access to AWS services within your model code.
+  In the provided code snippet, the profile name specified as `user-provided-role` is automatically associated by JFrog ML with your assumed IAM role. Therefore, there's no need to replace it in the code. This ensures seamless integration and access to AWS services within your model code.
 </Callout>
 
-
-#### Using GCP Service Account
+### Using GCP Service Account
 
 In order to reach a GCP client resource make sure to create secret with you json service account. Once the secret key was created use the following flag to define it: `--service-account-key-secret-name`.
 
-#### Generating Config Files
+### Generating Config Files
 
 To generate a config file from a command that you already use, specify the `--outconf` flag, which will print to the console a ready config based on the options you specified. For example assume you run the following command:
 
@@ -129,9 +131,9 @@ build_properties:
 
 To save the configuration into redirection , For example: `frogml models build --model-id test_model ~/model --out-conf > config.yml`.
 
-#### Customizing Your Build
+### Customizing Your Build
 
-##### Custom Docker Image
+#### Custom Docker Image
 
 You can use a custom Docker image for the build process. The custom base image will also be used for the serving image.
 
@@ -157,7 +159,7 @@ The custom docker image should be based on:
 
 **The Docker image entry point should not be changed.**
 
-#### Custom Build Instance Type
+### Custom Build Instance Type
 
 You can choose either `ondemand` or `spot` by using the flag `--purchase-option`. By default the remote build will run on `spot` . For example:
 
@@ -169,7 +171,7 @@ frogml models build \
     --purchase-option ondemand \
 ```
 
-##### Environment Variables
+#### Environment Variables
 
 Configuring environment variable in build and serving environment, The environment variables should specified with the flag `-E` when executing a build:
 
@@ -189,13 +191,12 @@ frogml models build \
 `<uri>` - FrogML based model URI.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-When you pass environment variables to the build process, their impact goes beyond just the build phase. These variables are not only propagated to the `testing` phase but are also 'baked' into the resulting image. As a result, they remain available during deployment, providing flexibility to overwrite them as needed. This enables seamless configuration management throughout the entire lifecycle of your application.
+  When you pass environment variables to the build process, their impact goes beyond just the build phase. These variables are not only propagated to the `testing` phase but are also 'baked' into the resulting image. As a result, they remain available during deployment, providing flexibility to overwrite them as needed. This enables seamless configuration management throughout the entire lifecycle of your application.
 </Callout>
 
-
-##### Passing Secrets as Environment Variables
+#### Passing Secrets as Environment Variables
 
 JFrog ML allows passing environment variables to model builds which receive values from JFrog ML secrets during the model build process.
 
@@ -212,13 +213,12 @@ frogml models build --model-id <model>  -E APP_TOKEN=secret.cloud_token <dest>
 ```
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-Note: Please note that the secrets must exist in the JFrog ML platform before running the above command.
+  Note: Please note that the secrets must exist in the JFrog ML platform before running the above command.
 </Callout>
 
-
-##### Customizing Main Directory
+#### Customizing Main Directory
 
 Given the following FrogML-based model directory structure:
 
@@ -250,11 +250,11 @@ build_properties:
     main_dir: iris-classifier
 ```
 
-##### Installing Packages from PyPI
+#### Installing Packages from PyPI
 
 During the build process you can download and use packages from private repositories.
 
-Create an environment variable PIP\_EXTRA\_INDEX\_URL .
+Create an environment variable PIP_EXTRA_INDEX_URL .
 
 `Shell`
 
@@ -274,11 +274,11 @@ export JFROG_PASSWORD=<PASSWORD>
 frogml models build --env-vars PIP_EXTRA_INDEX_URL=https://${JFROG_USERNAME}:${JFROG_PASSWORD}@JFROG_ARTIFACTORY_URL
 ```
 
-#### Fetching Model Code from a Private Git Repository
+### Fetching Model Code from a Private Git Repository
 
 You can fetch model code from a private Git repository using either the `--git-credentials-secret` or `--git-secret-ssh`  flags.
 
-##### Using Token Credentials
+#### Using Token Credentials
 
 1. Generate a GitHub Access Token:
 
@@ -305,14 +305,14 @@ You can fetch model code from a private Git repository using either the `--git-
      --git-credentials-secret '<your-jfrogml-secret>' \
      --git-branch '<your-branch>'
    ```
-<Callout icon="📘" theme="info">
-**Note**
 
-The `#models/model/churn` part specifies the folder path where the model is located inside the repository.
+<Callout icon="📘" theme="info">
+  **Note**
+
+  The `#models/model/churn` part specifies the folder path where the model is located inside the repository.
 </Callout>
 
-
-##### Using SSH Authentication
+#### Using SSH Authentication
 
 1. Generate an SSH Key:
 
@@ -353,16 +353,16 @@ The `#models/model/churn` part specifies the folder path where the model is lo
 
 When training in the `build` stage of the Build pipeline, sometimes we'd like to iterate on different parts of the model logic, without going through a training iteration. For example we have a training iteration that takes a significant amount of time and instead of going thorough this again with each code iteration, we can just skip this phase and simply load the trained artifact from previous model Builds.
 
-#### Key Concepts
+### Key Concepts
 
 * **Build Types**: Differentiating between build jobs created for training or deployment (or both).
-* **Model Registry**: Using JFrog ML's [Model Registry](/docs/model-registry-and-metadata "Model Registry and Metadata") to log and retrieve trained artifacts.
+* **Model Registry**: Using JFrog ML's <Anchor label="Model Registry" title="Model Registry and Metadata" href="/docs/model-registry-and-metadata">Model Registry</Anchor> to log and retrieve trained artifacts.
 * **Build Tagging**: Tagging builds for easy identification and retrieval.
 * **Model Initialization**: Leveraging the `initialize_model()` method to load pre-trained models.
 
-#### Implementation Steps
+### Implementation Steps
 
-1. ##### Add a Job Type Parameter
+1. #### Add a Job Type Parameter
 
    First, we'll add a flag as an environment variable to distinguish between training and deployment builds.
 
@@ -374,7 +374,7 @@ When training in the `build` stage of the Build pipeline, sometimes we'd like to
            self.model = XGBClassifier()
            self.job_type = os.environ.get('JOB_TYPE', 'deploy')
    ```
-2. ##### Log the Trained Artifact to the Model Registry
+2. #### Log the Trained Artifact to the Model Registry
 
    In the `build()` method, we'll save the trained model and log it to the JFrog ML Model Registry.
 
@@ -396,15 +396,15 @@ When training in the `build` stage of the Build pipeline, sometimes we'd like to
        # Log the trained artifact
        frogml.log_file(from_path=LOCAL_MODEL_FILEPATH, tag=MODEL_ARTIFACT_TAG)
    ```
-3. ##### Tag the Training Job Build
+3. #### Tag the Training Job Build
 
    After a successful training build, tag it in the JFrog ML UI:
 
    1. Navigate to the individual Build
    2. Click on the three dots in the upper-right corner
    3. Select "**Add Tags**"
-   4. Add a tag called `training`![Tagging a build in the FrogML UI.](https://files.readme.io/d9f41e2b7d9a46695c588e30e8a1279006e1c5d2f8993cbd5ebcbdb63d5cfe19-uuid-b939238b-861d-a278-25d6-69ba965e27b7.png)
-4. ##### Retrieve and Load the Pre-trained Artifact
+   4. Add a tag called `training`![](https://files.readme.io/d9f41e2b7d9a46695c588e30e8a1279006e1c5d2f8993cbd5ebcbdb63d5cfe19-uuid-b939238b-861d-a278-25d6-69ba965e27b7.png)
+4. #### Retrieve and Load the Pre-trained Artifact
 
    Use the `initialize_model()` method to load the pre-trained model during deployment:
 
@@ -440,7 +440,7 @@ When training in the `build` stage of the Build pipeline, sometimes we'd like to
            self.model = pickle.load(file)
    ```
 
-#### Complete `FrogMlModel` Class
+### Complete `FrogMlModel` Class
 
 Here's how the complete `XGBoostModel` class might look:
 
@@ -470,7 +470,7 @@ class XGBoostModel(FrogMLClient):
         return pd.DataFrame(predictions, columns=['Score'])
 ```
 
-#### Conclusion
+### Conclusion
 
 By implementing these advanced patterns, you can significantly speed up your model iteration process. This approach allows you to load pre-trained models for deployment or quick testing, while still maintaining the ability to perform full training when necessary.
 
@@ -480,23 +480,23 @@ This advanced build pattern enables you to specify parameters or parameter range
 
 Currently, JFrog ML supports training only on a single instance, whether CPU or GPU. As a result, all options described will apply to single-instance training.
 
-For efficient model development, especially when training sessions are lengthy, consider using this guide in conjunction with [Reusing Trained Artifacts](/docs/reusing-trained-artifacts "Reusing Trained Artifacts"). This approach allows for frequent iteration on model code without the need to retrain from scratch each time.
+For efficient model development, especially when training sessions are lengthy, consider using this guide in conjunction with <Anchor label="Reusing Trained Artifacts" title="Reusing Trained Artifacts" href="/docs/reusing-trained-artifacts">Reusing Trained Artifacts</Anchor>. This approach allows for frequent iteration on model code without the need to retrain from scratch each time.
 
-#### Key Concepts
+### Key Concepts
 
 * **Hyperparameters**: These are configuration variables that control the learning process of a model. In the JFrog ML context, these are the parameters you'll be adjusting and testing in your Build jobs.
 * **Hyperparameter Tuning**: The process of finding the optimal set of hyperparameters for a model. In JFrog ML, this is done through Build jobs, where different combinations of hyperparameters are tested.
 * **Build Jobs**: JFrog ML mechanism for training and building models. These jobs provide the environment where your hyperparameter tuning takes place.
 
-#### Passing Hyperparameters to Build Jobs
+### Passing Hyperparameters to Build Jobs
 
 In JFrog ML, there are two primary methods for passing hyperparameters to your Build jobs:
 
-1. ##### Via Configuration File
+1. #### Via Configuration File
 
    This method involves defining your hyperparameters in a JSON file within your project structure.
 
-   ##### Project Structure
+   #### Project Structure
 
    ```
    .
@@ -512,7 +512,7 @@ In JFrog ML, there are two primary methods for passing hyperparameters to your B
 
    The `hyperparameters.json` file is placed in the `main` directory, which ensures it will be automatically uploaded to the JFrog ML Build environment.
 
-   ##### Example JSON Configuration
+   #### Example JSON Configuration
 
    hyperparameters.json
 
@@ -526,7 +526,7 @@ In JFrog ML, there are two primary methods for passing hyperparameters to your B
 
    This JSON structure defines ranges for each hyperparameter, which JFrog ML will use to test different combinations.
 
-   ##### Reading the Configuration in Python
+   #### Reading the Configuration in Python
 
    In your `model.py` file, you can access these hyperparameters as follows:
 
@@ -544,11 +544,11 @@ In JFrog ML, there are two primary methods for passing hyperparameters to your B
    ```
 
    This method allows you to keep your hyperparameters separate from your code, making it easier to version and modify them.
-2. ##### Via Environment Variables or Build Parameters
+2. #### Via Environment Variables or Build Parameters
 
    This method involves passing hyperparameters directly through the command line interface (CLI) when initiating a build job.
 
-   ##### Using Environment Variables
+   #### Using Environment Variables
 
    ```
    frogml models builds --model-id sample_model \
@@ -560,7 +560,7 @@ In JFrog ML, there are two primary methods for passing hyperparameters to your B
 
    Here, the `-E` flag sets environment variables that will be available in your Build job.
 
-   ##### Using Build Parameters
+   #### Using Build Parameters
 
    ```
    frogml models builds --model-id sample_model \
@@ -572,7 +572,7 @@ In JFrog ML, there are two primary methods for passing hyperparameters to your B
 
    The `-P` flag sets JFrog ML Build parameters. These are logged to the JFrog ML Platform and can be compared between Builds, offering better traceability.
 
-   ##### Reading Parameters in Python
+   #### Reading Parameters in Python
 
    In your `model.py`, you can access these parameters:
 
@@ -596,11 +596,11 @@ In JFrog ML, there are two primary methods for passing hyperparameters to your B
 
    This method allows for more dynamic parameter setting and is useful for automated pipelines or when you need to change parameters frequently without modifying files.
 
-#### Implementing Hyperparameter Optimization
+### Implementing Hyperparameter Optimization
 
 Once you have your hyperparameters set up, you can implement various optimization techniques within your JFrog ML Build job. Here are examples of three common methods:
 
-1. ##### Grid Search Example
+1. #### Grid Search Example
 
    Grid Search exhaustively searches through a specified subset of the hyperparameter space.
 
@@ -634,7 +634,7 @@ Once you have your hyperparameters set up, you can implement various optimizatio
    ```
 
    In this example, GridSearchCV tries all possible combinations of the specified hyperparameters.
-2. ##### Random Search Example
+2. #### Random Search Example
 
    Random Search samples random combinations of hyperparameters, which can be more efficient than Grid Search for high-dimensional spaces.
 
@@ -679,7 +679,7 @@ Once you have your hyperparameters set up, you can implement various optimizatio
    * `n_estimators` and `learning_rate` are used as-is, allowing RandomizedSearchCV to sample from the provided lists. `max_depth` values are converted to integers, as this parameter requires integer values.
    * We run the random search for 100 iterations (`n_iter=100`), but this can be adjusted based on your specific needs and time constraints.
    * The best parameters and score are logged using JFrog ML logging functions.
-3. ##### Bayesian Optimization Example with Optuna
+3. #### Bayesian Optimization Example with Optuna
 
    Optuna uses Bayesian optimization to efficiently search the hyperparameter space.
 
@@ -735,7 +735,7 @@ Once you have your hyperparameters set up, you can implement various optimizatio
    * In the `build` method, we create an Optuna study and run the optimization for 100 trials.
    * The best parameters and score are logged using JFrog ML logging functions for easier comparisons later on.
 
-#### Considerations
+### Considerations
 
 * **Single Instance Training**: Currently, JFrog ML supports training only on a single instance and does not offer distributed training capabilities. When performing hyperparameter optimization (HPO), be aware of the potential length of the HPO task and resource consumption. This is especially important if you are exploring hyperparameters sequentially, as it may impact the overall training time and resource usage.
 * **Resource Management**: Monitor memory requirements to avoid running out of memory (OOM) during later stages of hyperparameter optimization. Implement checkpointing where appropriate. Use the **Resources** tab in JFrog ML to track instance resource consumption.
@@ -777,6 +777,6 @@ except FrogmlHTTPException as e:
     print(e.status_code)
 ```
 
-#### JFrog ML Analytics and custom HTTP statuses
+### JFrog ML Analytics and custom HTTP statuses
 
 If the model raises a `FrogmlHTTPException` (and the API analytics feature is enabled), the exception details will be logged in JFrog ML Analytics as columns: `interence_exception_status_code` and `inference_exception_message`.
