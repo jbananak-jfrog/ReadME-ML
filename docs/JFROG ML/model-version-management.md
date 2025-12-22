@@ -25,20 +25,23 @@ The _Versions_ tab in the Custom Models page shows a list of available versions 
 
 <Cards columns={4}>
   <Card title="Train Your Model" href="https://readme.com" icon="fa-home" target="_blank">
-    Train your machine learning model locally using your preferred frameworks and datasets.▶  
-</Card>
+    Train your machine learning model locally using your preferred frameworks and datasets.▶
+  </Card>
+▶
 
   <Card title="Log Your Model" icon="fa-user">
-    Using the FrogML SDK's log_model() function, specify your model and the target Artifactory repository. You can include metadata, such as dependencies and training metrics; properties, parameters, and metrics are optional. For custom inference logic, dependencies, predict_file, and code_dir are mandatory.▶ 
-</Card>
+    Using the FrogML SDK's log\_model() function, specify your model and the target Artifactory repository. You can include metadata, such as dependencies and training metrics; properties, parameters, and metrics are optional. For custom inference logic, dependencies, predict\_file, and code\_dir are mandatory.▶
+  </Card>
+▶
 
   <Card title="Secure Packaging" icon="fa-star">
-    The SDK automatically handles the work of packaging your model and all its associated files.▶  
-</Card>
+    The SDK automatically handles the work of packaging your model and all its associated files.▶
+  </Card>
+▶
 
   <Card title="Upload to Artifactory" icon="fa-question">
-    The packaged model is then uploaded to your designated ML repository in Artifactory, where it becomes a new, trackable Model Version. This gives you a single, centralized location for all your experiments and models.▶ 
-</Card>
+    The packaged model is then uploaded to your designated ML repository in Artifactory, where it becomes a new, trackable Model Version. This gives you a single, centralized location for all your experiments and models.▶
+  </Card>
 </Cards>
 
 | Train Your Model                                                                        | →  | Log Your Model                                                                                                                                                                                                                                                                                                    | →  | Secure Packaging                                                                             | →  | Upload to Artifactory                                                                                                                                                                                                    |
