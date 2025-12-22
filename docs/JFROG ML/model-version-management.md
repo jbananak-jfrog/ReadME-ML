@@ -24,26 +24,22 @@ The _Versions_ tab in the Custom Models page shows a list of available versions 
 * **Built Versions:** Versions of a model that have already undergone the necessary processing and compilation that makes them ready for deployment and integration into various applications. These model versions have the "**Rebuild Version**" button in the Build column.
 
 <Cards columns={4}>
-  <Card title="Train Your Model→" href="https://readme.com" target="_blank">
+  <Card title="Train Your Model →" href="https://readme.com" target="_blank">
     Train your machine learning model locally using your preferred frameworks and datasets.
   </Card>
 
-  <Card title="Log Your Model→" >
+  <Card title="Log Your Model →">
     Using the FrogML SDK's log\_model() function, specify your model and the target Artifactory repository. You can include metadata, such as dependencies and training metrics; properties, parameters, and metrics are optional. For custom inference logic, dependencies, predict\_file, and code\_dir are mandatory.
   </Card>
 
-  <Card title="Secure Packaging→" >
+  <Card title="Secure Packaging →">
     The SDK automatically handles the work of packaging your model and all its associated files.
   </Card>
 
-  <Card title="Upload to Artifactory→" >
+  <Card title="Upload to Artifactory →">
     The packaged model is then uploaded to your designated ML repository in Artifactory, where it becomes a new, trackable Model Version. This gives you a single, centralized location for all your experiments and models.
   </Card>
 </Cards>
-
-| Train Your Model                                                                        | →  | Log Your Model                                                                                                                                                                                                                                                                                                    | →  | Secure Packaging                                                                             | →  | Upload to Artifactory                                                                                                                                                                                                    |
-| :-------------------------------------------------------------------------------------- | :- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :- | :------------------------------------------------------------------------------------------- | :- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Train your machine learning model locally using your preferred frameworks and datasets. |    | Using the FrogML SDK's log_model() function, specify your model and the target Artifactory repository. You can include metadata, such as dependencies and training metrics; properties, parameters, and metrics are optional. For custom inference logic, dependencies, predict_file, and code_dir are mandatory. |    | The SDK automatically handles the work of packaging your model and all its associated files. |    | The packaged model is then uploaded to your designated ML repository in Artifactory, where it becomes a new, trackable Model Version. This gives you a single, centralized location for all your experiments and models. |
 
 <Callout icon="📘" theme="info">
   **Note**
