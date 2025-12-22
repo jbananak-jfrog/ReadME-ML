@@ -216,6 +216,9 @@ After executing the `build()` function in the model-building process, JFrog ML i
 2. **Dummy Request Handling**: The container, with its embedded webserver, is tested with a dummy request. This step confirms the container's operational status and its ability to handle incoming requests successfully.
 
 ![](UUID-4a40f754-534e-a799-7d35-701739673f86)
+
+<Image align="center" border={true} src="https://files.readme.io/5de0546d9c7b226e16be042d99dc8d7330a7945bdb57cca71298d10663402444-validating-server-artifact-jfrogml.png" className="border" />
+
 _JFrog ML Models Build Page_
 
 ### Running Integration Tests
