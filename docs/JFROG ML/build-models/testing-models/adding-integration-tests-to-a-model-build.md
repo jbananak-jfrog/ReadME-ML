@@ -5,6 +5,8 @@ hidden: false
 metadata:
   robots: index
 ---
+
+
 ## Validating Serving Artifact
 
 After executing the `build()` function in the model-building process, JFrog ML initiates a critical step - **Validating Serving Artifact**. This involves starting a Docker container encapsulating the newly built model. This container serves two primary purposes:
