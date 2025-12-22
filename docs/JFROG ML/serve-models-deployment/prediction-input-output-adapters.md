@@ -409,7 +409,7 @@ In this case, the `DataFrameInputAdapter` will try to automatically recognize th
 
 The following is a list of all input and output adapters provided by JFrog ML:
 
-| ## Output Adapters        | ## Input Adapters       |
+| Output Adapters           | Input Adapters          |
 | :------------------------ | :---------------------- |
 | `DataFrameOutputAdapter`  | `DataFrameInputAdapter` |
 | `DefaultOutputAdapter`    | `FileInputAdapter`      |
