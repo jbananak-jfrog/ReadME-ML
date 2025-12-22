@@ -101,7 +101,7 @@ First, download the file.
 
 Use the `boto3` client to get the file from S3. Note that, the FrogML secrets manager is used to pass the credentials. You can learn more about the secrets manager in the tutorial about credentials management.
 
-```
+```python
 import boto3
 from frogml.core.clients.secret_service import  SecretServiceClient
 
@@ -125,7 +125,7 @@ After downloading the file, load it in memory and start using it. The model load
 
 In the case of `catboost` it looks like this:
 
-```
+```python Python
 from frogml.sdk.model.base import BaseModel as FrogMlModel
 from catboost import CatBoostClassifier
 
@@ -140,14 +140,14 @@ class TitanicSurvivalPrediction(FrogMlModel):
 
 Note: If we were using Tensorflow, we would have to download all model files to a new directory and load it like this:
 
-```
+```python
 model_path = 'the directory with the pb file and the variables'
 self.model = keras.models.load_model(model_path)
 ```
 
 Right now, our entire class should look like this:
 
-```
+```python
 from frogml.sdk.model.base import BaseModel as FrogMlModel
 from frogml.core.clients.secret_service import  SecretServiceClient
 from catboost import CatBoostClassifier
