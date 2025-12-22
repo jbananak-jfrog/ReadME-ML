@@ -1,7 +1,7 @@
 - get-started-with-jfrog-ml-1
 - jfrog-ml-quickstart
-- build-models
 - model-version-management
+- build-models
 - serve-models-deployment
 - model-monitors
 - automate-jfrog-ml
