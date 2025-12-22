@@ -125,7 +125,7 @@ The `texts` variable will contain a list of string values. We can iterate over i
 
 For example, if we added the StringInputAdapter to our example Pytorch text classifier, it would look like this:
 
-```
+```python
 @frogml.api(analytics=False, input_adapter=StringInputAdapter())
 def predict(self, texts) -> pd.DataFrame:
     text_pipeline = lambda x: self.vocab(self.tokenizer(x))
@@ -146,7 +146,7 @@ If you want to use your model in a front-end application, you will probably send
 
 Import the adapter first and configure the `predict` function.
 
-```
+```python
 from frogml.model.adapters import JsonInputAdapter
 
 @frogml.api(analytics=False, input_adapter=JsonInputAdapter())
@@ -155,7 +155,7 @@ from frogml.model.adapters import JsonInputAdapter
 
 Then, iterate over the json_objects and pass the text to the model:
 
-```
+```python
 @frogml.api(analytics=False, input_adapter=JsonInputAdapter())
 def predict(self, json_objects) -> pd.DataFrame:
     text_pipeline = lambda x: self.vocab(self.tokenizer(x))
@@ -222,7 +222,7 @@ from .frogml.output_pb import ModelOutput
 
 Next, configure the input and output adapter as a decorator of the `predict` function:
 
-```
+```python
 @frogml.api(
    analytics=False,
    input_adapter=ProtoInputAdapter(ModelInput),
@@ -245,16 +245,16 @@ If we have all of the preprocessing code running as a separate service, we can p
 
 In this case, we import the adapter and configure the `predict` function's decorator:
 
-```
+```python
 from frogml.sdk.model.adapters import TfTensorInputAdapter
 
 @frogml.api(analytics=False, input_adapter=TfTensorInputAdapter())
 def predict(self, tensor) -> pd.DataFrame:
 ```
 
-To pass a tensor to a deployed model, we must send a JSON representation of the tensor. For example, if we used curl, the request would look like this:
+To pass a tensor to a deployed model, you must send a JSON representation of the tensor. For example, if you used curl, the request would look like this:
 
-```
+```shell
 curl -i –header "Content-Type: application/json" –request POST –data '{"instances": [1]}' jfrogml_rest_url
 ```
 
@@ -262,7 +262,7 @@ curl -i –header "Content-Type: application/json" –request POST –data '{"in
 
 The `MultiInputAdapter` supports Automatic input format detection.
 
-Sometimes we want to deploy a single model with multiple different input adapters. We could create a copy of the model, change the input adapter, and deploy multiple copies. However, we can also use a `MultiInputAdapter` to handle various input formats with a single model.
+Sometimes you want to deploy a single model with multiple different input adapters. You could create a copy of the model, change the input adapter, and deploy multiple copies. However, we can also use a `MultiInputAdapter` to handle various input formats with a single model.
 
 ```
 from frogml.sdk.model.adapters import DefaultOutputAdapter, DataFrameInputAdapter, ImageInputAdapter, MultiInputAdapter
@@ -274,9 +274,9 @@ from frogml.sdk.model.adapters import DefaultOutputAdapter, DataFrameInputAdapte
     )
 ```
 
-To use the `MultiInputAdapter` adapter, we must pass a list of adapters to its constructor. The `MultiInputAdapter` parses the data using the first compatible parser!
+To use the `MultiInputAdapter` adapter, you must pass a list of adapters to its constructor. The `MultiInputAdapter` parses the data using the first compatible parser!
 
-In our example, if a given input can be parsed as an Image, we will get an image in the predict function. If not, we will get a Pandas dataframe. If all parsers fail, the model returns an error.
+In this example, if a given input can be parsed as an Image, it will get an image in the predict function. If not, it will get a Pandas dataframe. If all parsers fail, the model returns an error.
 
 Be careful with the following adapter configuration:
 
@@ -288,7 +288,7 @@ The `JsonInputAdapter` will successfully parse a JSON representation of a DataFr
 
 ## Numpy
 
-A `NumpyInputAdapter` can automatically parse a JSON array as a Numpy array and reshape it to the desired structure. When we configure the `NumpyInputAdapter`, we have to specify the content type and its shape:
+A `NumpyInputAdapter` can automatically parse a JSON array as a Numpy array and reshape it to the desired structure. When configuring the `NumpyInputAdapter`, specify the content type and its shape:
 
 ```
 from frogml.sdk.model.adapters import NumpyInputAdapter, NumpyOutputAdapter
@@ -303,7 +303,7 @@ from frogml.sdk.model.adapters import NumpyInputAdapter, NumpyOutputAdapter
 def predict(self, input):
 ```
 
-If we configure the input adapter as in the example above, and send the following value to the model: `[[5,4,3,2]]`, we will get a result equivalent to running `np.array([[5, 4, 3, 2]], dtype=np.int32).reshape(2, 2)`.
+If the input adapter is configured as in the example above, and send the following value to the model: `[[5,4,3,2]]`, the result will be equivalent to running `np.array([[5, 4, 3, 2]], dtype=np.int32).reshape(2, 2)`.
 
 The `NumpyOutputAdapter` converts the returned output array directly to JSON without changing its structure. For example, if the model returns this Numpy array: `np.array([[5, 4, 3, 2]], dtype=np.int32).reshape(2, 2)`, it will get converted to: `[[5, 4], [3, 2]]`.
 
@@ -311,7 +311,7 @@ Starting from Sdk version 0.9.87 it will return numpy binary format .
 
 ## Default Output
 
-With `DefaultOutputAdapter` we can return multiple result formats from a single model. The adapter will automatically detect the type of the returned value.
+Using `DefaultOutputAdapter` multiple result formats can be returned from a single model. The adapter will automatically detect the type of the returned value.
 
 ```
 from frogml.sdk.model.adapters import DefaultOutputAdapter, ImageInputAdapter
@@ -328,7 +328,7 @@ Note that the DefaultOutputAdapter doesn't work with Protobuf objects! To automa
 
 ## Json Output
 
-With `JsonOutputAdapter` we can return `Dict` results, but **the result has to be iterable**
+When using JsonOutputAdapter to return Dict results, the output **must be iterable.**
 
 ```
 from frogml.sdk.model.adapters import ProtoInputAdapter, AutodetectOutputAdapter
@@ -366,7 +366,7 @@ from frogml.sdk.model.adapters import ProtoInputAdapter, AutodetectOutputAdapter
 
 Pandas Dataframe is supported with requested orient.
 
-```
+```python
 import pandas as pd
 from frogml.sdk.model.adapters import DataFrameInputAdapter, DataFrameOutputAdapter
 
@@ -386,7 +386,7 @@ from frogml.sdk.model.adapters import DataFrameInputAdapter, DataFrameOutputAdap
 
 Note that the you can just choose the data frame adapters with default value like below:
 
-```
+```python
 from frogml.sdk.model.adapters import DataFrameInputAdapter, DataFrameOutputAdapter
 
     @frogml.api(
@@ -410,6 +410,22 @@ In this case, the `DataFrameInputAdapter` will try to automatically recognize th
 The following is a list of all input and output adapters provided by JFrog ML:
 
 ## Output Adapters
+
+<Columns layout="auto">
+  <Columns layout="auto">
+  <Column>
+    <listItem>* `DataFrameOutputAdapter`</listItem>
+    <listItem>* `DefaultOutputAdapter`</listItem>
+    <listItem>* `AutodetectOutputAdapter`</listItem>
+    <listItem>* `JsonOutputAdapter`</listItem>
+  </Column>
+  <Column>
+    <listItem>* `ProtoOutputAdapter`</listItem>
+    <listItem>* `TfTensorOutputAdapter`</listItem>
+    <listItem>* `NumpyOutputAdapter`</listItem>
+  </Column>
+</Columns>
+</Columns>
 
 * `DataFrameOutputAdapter`
 * `DefaultOutputAdapter`
