@@ -4,46 +4,47 @@ deprecated: false
 hidden: false
 metadata:
   title: Real-Time Deployments
-  description: JFrog ML real time models deploy your ML models with a lightweight,
-    simple and scalable REST API wrapper.
-  robots: index
+  description: >-
+    JFrog ML real time models deploy your ML models with a lightweight, simple
+    and scalable REST API wrapper.
   legacyUUIDs:
-  - UUID-3c63c18f-5310-352e-82a2-2d3d5745f121
-  - UUID-e5bdcc6e-6e47-c694-4572-8cf8839a9f97
-  - UUID-4e73c999-bd0f-d756-06f3-0c4514774d77
-  - UUID-338bfea3-f623-f1fb-39b7-7a83c0f19e11
-  - UUID-dd1334a6-27b3-ba6a-76c9-c3b78de3977e
-  - UUID-d9751b8e-1a73-3551-d7e1-3bb6780fcd91
-  - UUID-4e421dfa-c842-f103-5df6-5bdc43943d32
-  - UUID-55dfd710-8227-8992-1a28-9e88b4a5dcfb
-  - UUID-fc130131-9381-e3ad-0936-4291d7036971
-  - UUID-197a0e24-0460-a3e9-92ea-dfa947ebb4fe
-  - UUID-84498bdf-d56a-182c-3bab-73108d55ec40
-  - UUID-5477e288-db59-3da4-1926-144155bfbf0e
-  - UUID-b46d4927-5000-bfe1-810c-28ee22695397
-  - UUID-b8554316-7a57-70e5-95c0-3684250ca875
-  - UUID-d550d373-13f6-b540-2347-abaeaaa9b19f
-  - UUID-356ba223-34d5-7de8-0e34-3fff4abc9ef3
-  - UUID-1f5286c5-1b85-e56e-1658-4fd1c4cffbb8
-  - UUID-39d33214-4ef6-635c-0589-2999c29e493d
-  - UUID-46bb01ad-e31c-ed1d-9f1f-60d1bef978bc
-  - UUID-66ff6dc6-8e6e-0638-52b5-83c9fb2e284c
-  - UUID-90ee98ef-d78b-b04f-d588-aad4e8e5cd26
-  - UUID-8f76ae49-10fe-19b7-e687-e6e2ed55d867
-  - UUID-a4778413-c6ba-0a65-76bc-7e2ea3e232b7
-  - UUID-9349a4d4-0bc3-9449-dce0-f3c4f573b618
+    - UUID-3c63c18f-5310-352e-82a2-2d3d5745f121
+    - UUID-e5bdcc6e-6e47-c694-4572-8cf8839a9f97
+    - UUID-4e73c999-bd0f-d756-06f3-0c4514774d77
+    - UUID-338bfea3-f623-f1fb-39b7-7a83c0f19e11
+    - UUID-dd1334a6-27b3-ba6a-76c9-c3b78de3977e
+    - UUID-d9751b8e-1a73-3551-d7e1-3bb6780fcd91
+    - UUID-4e421dfa-c842-f103-5df6-5bdc43943d32
+    - UUID-55dfd710-8227-8992-1a28-9e88b4a5dcfb
+    - UUID-fc130131-9381-e3ad-0936-4291d7036971
+    - UUID-197a0e24-0460-a3e9-92ea-dfa947ebb4fe
+    - UUID-84498bdf-d56a-182c-3bab-73108d55ec40
+    - UUID-5477e288-db59-3da4-1926-144155bfbf0e
+    - UUID-b46d4927-5000-bfe1-810c-28ee22695397
+    - UUID-b8554316-7a57-70e5-95c0-3684250ca875
+    - UUID-d550d373-13f6-b540-2347-abaeaaa9b19f
+    - UUID-356ba223-34d5-7de8-0e34-3fff4abc9ef3
+    - UUID-1f5286c5-1b85-e56e-1658-4fd1c4cffbb8
+    - UUID-39d33214-4ef6-635c-0589-2999c29e493d
+    - UUID-46bb01ad-e31c-ed1d-9f1f-60d1bef978bc
+    - UUID-66ff6dc6-8e6e-0638-52b5-83c9fb2e284c
+    - UUID-90ee98ef-d78b-b04f-d588-aad4e8e5cd26
+    - UUID-8f76ae49-10fe-19b7-e687-e6e2ed55d867
+    - UUID-a4778413-c6ba-0a65-76bc-7e2ea3e232b7
+    - UUID-9349a4d4-0bc3-9449-dce0-f3c4f573b618
+  robots: index
 ---
 JFrog ML real time models deploy your ML models with a lightweight, simple and scalable REST API wrapper.
 
 We set up the network requirements and deploy your model on a managed Kubernetes cluster, allowing you to leverage auto-scaling and security. JFrog ML also adds a suite of monitoring tools, simplifying the process of managing your model performance.
 
-![Real-time model deployment overview](https://files.readme.io/c22e14438f25fe2ee4e3b4a00a29a8e5206e9356f795e0290e3d6251393c2c4e-uuid-5a77810a-0d93-ea20-6692-73b7b87032e3.png)
+<Image alt="Real-time model deployment overview" border={false} src="https://files.readme.io/c22e14438f25fe2ee4e3b4a00a29a8e5206e9356f795e0290e3d6251393c2c4e-uuid-5a77810a-0d93-ea20-6692-73b7b87032e3.png" />
 
 ### Deploying Real-time Models from the UI
 
-![Deploying a real-time model from the UI](https://files.readme.io/c37504c48ecaf10085959181c6692b60a42ebe123e004704f8af89c3c79dff23-uuid-ba434fe8-6697-f02d-b1e0-c884dee29695.gif)
+<Image alt="Deploying a real-time model from the UI" border={false} src="https://files.readme.io/c37504c48ecaf10085959181c6692b60a42ebe123e004704f8af89c3c79dff23-uuid-ba434fe8-6697-f02d-b1e0-c884dee29695.gif" />
 
-To deploy a real-time model from the UI:
+▶ **To deploy a real-time model from the UI:**
 
 1. Select **Models** in the left navigation bar
 2. Select a project and a model.
@@ -69,7 +70,7 @@ frogml models deploy realtime \
     --daemon-mode <bool>
 ```
 
-For example, for the model built in the [Get Started with JFrog ML](/docs/get-started-with-jfrog-ml "Get Started with JFrog ML") section, the deployment command is:
+For example, for the model built in the <Anchor label="Get Started with JFrog ML" title="Get Started with JFrog ML" href="/docs/get-started-with-jfrog-ml">Get Started with JFrog ML</Anchor> section, the deployment command is:
 
 ```
 frogml models deploy realtime \
@@ -84,11 +85,10 @@ frogml models deploy realtime \
 ```
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-**Note:** The deployment command is executed asynchronously by default and does not wait for the deployment to complete. To execute the command synchronously use the `--sync` flag.
+  **Note:** The deployment command is executed asynchronously by default and does not wait for the deployment to complete. To execute the command synchronously use the `--sync` flag.
 </Callout>
-
 
 ### Deploying a Real-time Model Using GPUs
 
@@ -110,174 +110,29 @@ frogl models deploy realtime \
 
 The following table contains the possible parameters and variables for deploying real-time models.
 
-
-
-<Table>
-  <thead>
-    <tr>
-      <th>
-        Parameter
-      </th>
-      <th>
-        Description
-      </th>
-      <th>
-        Default
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        Model ID [**Required**]
-      </td>
-      <td>
-        The Model ID as displayed on the model header.
-      </td>
-      <td>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Build ID [**Required**]
-      </td>
-      <td>
-        The JFrog ML-assigned build ID.
-      </td>
-      <td>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Variation name
-      </td>
-      <td>
-        The name of the variation to deploy the build on.
-      </td>
-      <td>
-        default
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Initial number of replicas
-      </td>
-      <td>
-        The number of <Anchor label="k8s pods" href="https://kubernetes.io/docs/concepts/workloads/pods/" target="_blank">k8s pods</Anchor> to be used by the deployment. Each pod contains an HTTPS server, where a load balancer splits the traffic between them.
-      </td>
-      <td>
-        1
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Instance
-      </td>
-      <td>
-        The required instance to deploy the model, either a CPU based instance or a GPU based instance.
-      </td>
-      <td>
-        Small
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Timeout
-      </td>
-      <td>
-        The number of milliseconds required for an API server request to time out.
-      </td>
-      <td>
-        1000(ms)
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Concurrent workers
-      </td>
-      <td>
-        The number of <Anchor label="Gunicorn workers" href="https://docs.gunicorn.org/en/stable/settings.html#worker-processes" target="_blank">Gunicorn workers</Anchor> handling requests. A positive integer is generally in the 2-4 x $(NUM\_CORES) range. You may want to vary this a bit to find the optimal value for your particular application’s workload.
-      </td>
-      <td>
-        2
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Daemon mode
-      </td>
-      <td>
-        Whether or not to <Anchor label="Daemonize" href="https://docs.gunicorn.org/en/stable/settings.html#daemon" target="_blank">Daemonize</Anchor> the Gunicorn process. Detaches the server from the controlling terminal and enters the background.
-      </td>
-      <td>
-        Enabled
-      </td>
-    </tr>
-    <tr>
-      <td>
-        IAM role ARN
-      </td>
-      <td>
-        The user-provided AWS custom IAM role.
-      </td>
-      <td>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Max batch size
-      </td>
-      <td>
-        The maximal allowed batch size.
-      </td>
-      <td>
-        1
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Timeout
-      </td>
-      <td>
-        The prediction request timeout.
-      </td>
-      <td>
-        5000(ms)
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Service Account Key Secret Name
-      </td>
-      <td>
-        The service account key secret name to connect with Google cloud provider.
-      </td>
-      <td>
-        None
-      </td>
-    </tr>
-    <tr>
-      <td>
-        Purchase option
-      </td>
-      <td>
-        Rather to use spot/ondemand.
-      </td>
-      <td>
-        spot
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| Parameter                       | Description                                                                                                                                                                                                                                                                                                                                                  | Default  |
+| :------------------------------ | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
+| Model ID [**Required**]         | The Model ID as displayed on the model header.                                                                                                                                                                                                                                                                                                               |          |
+| Build ID [**Required**]         | The JFrog ML-assigned build ID.                                                                                                                                                                                                                                                                                                                              |          |
+| Variation name                  | The name of the variation to deploy the build on.                                                                                                                                                                                                                                                                                                            | default  |
+| Initial number of replicas      | The number of <Anchor label="k8s pods" target="_blank" href="https://kubernetes.io/docs/concepts/workloads/pods/">k8s pods</Anchor> to be used by the deployment. Each pod contains an HTTPS server, where a load balancer splits the traffic between them.                                                                                                  | 1        |
+| Instance                        | The required instance to deploy the model, either a CPU based instance or a GPU based instance.                                                                                                                                                                                                                                                              | Small    |
+| Timeout                         | The number of milliseconds required for an API server request to time out.                                                                                                                                                                                                                                                                                   | 1000(ms) |
+| Concurrent workers              | The number of <Anchor label="Gunicorn workers" target="_blank" href="https://docs.gunicorn.org/en/stable/settings.html#worker-processes">Gunicorn workers</Anchor> handling requests. A positive integer is generally in the 2-4 x $(NUM_CORES) range. You may want to vary this a bit to find the optimal value for your particular application’s workload. | 2        |
+| Daemon mode                     | Whether or not to <Anchor label="Daemonize" target="_blank" href="https://docs.gunicorn.org/en/stable/settings.html#daemon">Daemonize</Anchor> the Gunicorn process. Detaches the server from the controlling terminal and enters the background.                                                                                                            | Enabled  |
+| IAM role ARN                    | The user-provided AWS custom IAM role.                                                                                                                                                                                                                                                                                                                       |          |
+| Max batch size                  | The maximal allowed batch size.                                                                                                                                                                                                                                                                                                                              | 1        |
+| Timeout                         | The prediction request timeout.                                                                                                                                                                                                                                                                                                                              | 5000(ms) |
+| Service Account Key Secret Name | The service account key secret name to connect with Google cloud provider.                                                                                                                                                                                                                                                                                   | None     |
+| Purchase option                 | Rather to use spot/ondemand.                                                                                                                                                                                                                                                                                                                                 | spot     |
 
 <Callout icon="⚠️" theme="warning">
-**Warning**
+  **Warning**
 
-***Worker Memory Allocation***
+  _**Worker Memory Allocation**_
 
-When deploying workers through an HTTP web server, it's essential to understand that each worker operates in its isolated memory space. Consequently, every worker independently loads a model instance into memory. This characteristic should be carefully considered when determining the required memory capacity for your chosen instance type, ensuring sufficient resources are available for all worker models to load and function optimally.
+  When deploying workers through an HTTP web server, it's essential to understand that each worker operates in its isolated memory space. Consequently, every worker independently loads a model instance into memory. This characteristic should be carefully considered when determining the required memory capacity for your chosen instance type, ensuring sufficient resources are available for all worker models to load and function optimally.
 </Callout>
-
 
 ### Using Custom AWS IAM Role
 
@@ -332,17 +187,16 @@ frogml models deploy realtime \
 ```
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-**Note:** Deploying models locally is only available for locally generated builds using the `--no-remote` flag.
+  **Note:** Deploying models locally is only available for locally generated builds using the `--no-remote` flag.
 </Callout>
-
 
 ### Real-time Model Inference
 
 Once you have successfully deployed a real-time model, you can use the JFrog ML Inference SDK to perform invocations.
 
-In this example, we'll invoke a model via the [Python SDK](/docs/python-sdk "Python SDK"), which can be easily installed using:
+In this example, we'll invoke a model via the <Anchor label="Python SDK" title="Python SDK" href="/docs/python-sdk">Python SDK</Anchor>, which can be easily installed using:
 
 ```
 pip install frogml-inference
@@ -403,11 +257,11 @@ JFrog ML comes bundled with Grafana and Prometheus to provide monitoring dashboa
 
 The following health metrics appear in the model **Overview** tab:
 
-![Model health monitoring dashboard](https://files.readme.io/8de63ece4bf79ce77ad93a33db42bde236adfd2ca428c31b2264933be23e0a8f-uuid-3c1b994a-ff06-7bdc-d129-5bfce1b81001.png)
+<Image alt="Model health monitoring dashboard" border={false} src="https://files.readme.io/8de63ece4bf79ce77ad93a33db42bde236adfd2ca428c31b2264933be23e0a8f-uuid-3c1b994a-ff06-7bdc-d129-5bfce1b81001.png" />
 
 In addition, you can follow and search the applicable logs produced by your model in the **Logs** tab:
 
-![Model logs tab](https://files.readme.io/e3e6dc87c0d361da0419c49706cd4fc07c9d483534a7ddd2990f755ee8216a38-uuid-96057c91-dc54-213f-69da-34593108ce29.png)
+<Image alt="Model logs tab" border={false} src="https://files.readme.io/e3e6dc87c0d361da0419c49706cd4fc07c9d483534a7ddd2990f755ee8216a38-uuid-96057c91-dc54-213f-69da-34593108ce29.png" />
 
 ### Auto-scaling Real-time Models
 
@@ -442,121 +296,28 @@ frogml models autoscaling attach -f config.yaml
 
 ## Configuration
 
-
-
-<Table>
-  <thead>
-    <tr>
-      <th>
-        Parameter
-      </th>
-      <th>
-        Description
-      </th>
-      <th>
-        Default Value
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        min\_replica\_count (integer)
-      </td>
-      <td>
-        The minimum number of replicas will scale the resource down to
-      </td>
-      <td>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        max\_replica\_count (integer)
-      </td>
-      <td>
-        The maximum number of replicas of the target resource
-      </td>
-      <td>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        polling\_interval (integer)
-      </td>
-      <td>
-        This is the interval to check each trigger on
-      </td>
-      <td>
-        30 sec
-      </td>
-    </tr>
-    <tr>
-      <td>
-        cool\_down\_period (integer)
-      </td>
-      <td>
-        The period to wait after the last trigger reported active before scaling the resource back to 0
-      </td>
-      <td>
-        300 sec
-      </td>
-    </tr>
-    <tr>
-      <td>
-        metric\_type (prometheus\_trigger)
-      </td>
-      <td>
-        The type of the metric
-      </td>
-      <td>
-        cpu/gpu/memory/latency/error\_rate/throughput
-      </td>
-    </tr>
-    <tr>
-      <td>
-        aggregation\_type (prometheus\_trigger)
-      </td>
-      <td>
-        The type of the aggregation
-      </td>
-      <td>
-        min/max/avg/sum
-      </td>
-    </tr>
-    <tr>
-      <td>
-        time\_period (integer) (prometheus\_trigger)
-      </td>
-      <td>
-        The period to run the query - value in minutes
-      </td>
-      <td>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        threshold (integer) (prometheus\_trigger)
-      </td>
-      <td>
-        Value to start scaling for. cpu - usage in percentages, gpu - usage in percentages, memory - value in bytes, Latency - value in ms, Error Rate - usage in percentages, Throughput - usage in RPM
-      </td>
-      <td>
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| Parameter                                  | Description                                                                                                                                                                                      | Default Value                                |
+| :----------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------- |
+| min_replica_count (integer)                | The minimum number of replicas will scale the resource down to                                                                                                                                   |                                              |
+| max_replica_count (integer)                | The maximum number of replicas of the target resource                                                                                                                                            |                                              |
+| polling_interval (integer)                 | This is the interval to check each trigger on                                                                                                                                                    | 30 sec                                       |
+| cool_down_period (integer)                 | The period to wait after the last trigger reported active before scaling the resource back to 0                                                                                                  | 300 sec                                      |
+| metric_type (prometheus_trigger)           | The type of the metric                                                                                                                                                                           | cpu/gpu/memory/latency/error_rate/throughput |
+| aggregation_type (prometheus_trigger)      | The type of the aggregation                                                                                                                                                                      | min/max/avg/sum                              |
+| time_period (integer) (prometheus_trigger) | The period to run the query - value in minutes                                                                                                                                                   |                                              |
+| threshold (integer) (prometheus_trigger)   | Value to start scaling for. cpu - usage in percentages, gpu - usage in percentages, memory - value in bytes, Latency - value in ms, Error Rate - usage in percentages, Throughput - usage in RPM |                                              |
 
 ## Calling Model Endpoints
 
 In this section, you'll learn how to effectively interact with and call real-time model endpoints using various SDKs and our REST API.
 
-[JFrog ML Rest API](/docs/jfrog-ml-rest-api "JFrog ML Rest API")
+<Anchor label="JFrog ML Rest API" title="JFrog ML Rest API" href="/docs/jfrog-ml-rest-api">JFrog ML Rest API</Anchor>
 
-[Python SDK](/docs/python-sdk "Python SDK")
+<Anchor label="Python SDK" title="Python SDK" href="/docs/python-sdk">Python SDK</Anchor>
 
-[Java SDK](/docs/java-sdk "Java SDK")
+<Anchor label="Java SDK" title="Java SDK" href="/docs/java-sdk">Java SDK</Anchor>
 
-[Go SDK](/docs/go-sdk "Go SDK")
+<Anchor label="Go SDK" title="Go SDK" href="/docs/go-sdk">Go SDK</Anchor>
 
 ### JFrog ML Rest API
 
@@ -869,7 +630,7 @@ The first build automatically receives 100% of the traffic.
 
 #### Deploying an Additional Variation
 
-To deploy an additional variation first you must [create an audience](/docs/traffic-splitting-with-audiences-and-variations "Traffic Splitting with Audiences and Variations").
+To deploy an additional variation first you must <Anchor label="create an audience" title="Traffic Splitting with Audiences and Variations" href="/docs/traffic-splitting-with-audiences-and-variations">create an audience</Anchor>.
 
 Then you will be able to attach it to the model in the deployment process.
 
@@ -1014,11 +775,10 @@ Audiences are a powerful tool for categorizing traffic on predefined client-side
 By default, requests that do not meet any specific Audience criteria are routed to the `fallback` Audience.
 
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-Audience details must be included in the metadata or header fields at each inference request.
+  Audience details must be included in the metadata or header fields at each inference request.
 </Callout>
-
 
 ##### Creating an Audience
 
@@ -1098,13 +858,12 @@ frogml audiences get --audience-id <audience_id>
 ```
 
 <Callout icon="✅" theme="okay">
-**Tip**
+  **Tip**
 
-***Tip***
+  _**Tip**_
 
-For a full list of available options and parameters, use the command `frogml audiences --help`.
+  For a full list of available options and parameters, use the command `frogml audiences --help`.
 </Callout>
-
 
 ##### Directing Traffic to Audiences
 
@@ -1140,11 +899,10 @@ curl --location --request POST 'https://models.<your_env>.qwak.ai/v1/1_hour_mode
 ```
 
 <Callout icon="⚠️" theme="warning">
-**Warning**
+  **Warning**
 
-Audience information is not stored in the JFrog ML Analytics Lake. This means that audience information of requests cannot be tracked.
+  Audience information is not stored in the JFrog ML Analytics Lake. This means that audience information of requests cannot be tracked.
 </Callout>
-
 
 #### Splitting Traffic with Variations
 
@@ -1162,11 +920,11 @@ When deploying a model with multiple variations, audiences are assigned to speci
 
 When distributing traffic from an audience to multiple variations, the total percentage allocated must equal 100% of that audience's traffic.
 
-The only exception is the *Shadow Variation*, which can receive less than 100% of live traffic.
+The only exception is the _Shadow Variation_, which can receive less than 100% of live traffic.
 
 The currently deployed Variations appear under Traffic Control section in the model overview:
 
-![Traffic Control section in model overview](https://files.readme.io/19adae73594096b9ba655bd85c5e609764ce0abb8a4832d9bf205d4dc8b68177-uuid-518425b8-8751-e692-299c-d29cd5d3a2cb.png)
+<Image alt="Traffic Control section in model overview" border={false} src="https://files.readme.io/19adae73594096b9ba655bd85c5e609764ce0abb8a4832d9bf205d4dc8b68177-uuid-518425b8-8751-e692-299c-d29cd5d3a2cb.png" />
 
 **Fallback Variation:** Receives traffic that doesn't match any audience.
 
@@ -1198,11 +956,10 @@ To register this audience configuration, please refer to the Audiences section a
 The following is an example of a deployment request that incorporates traffic splitting. In this example, the variation named 'test-variation' is being deployed, with traffic split evenly—50% to the default variation and 50% to the test-variation.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-The 'default' variation must always be deployed before any other variations. Additionally, the combined percentage of all variations must total 100%.
+  The 'default' variation must always be deployed before any other variations. Additionally, the combined percentage of all variations must total 100%.
 </Callout>
-
 
 ```
 realtime:
@@ -1265,11 +1022,11 @@ If you use `--variation-name` in the CLI command, you don't have to pass the `va
 When undeploying from 2 variations to one, you don't have to pass any variation-related data -all the traffic will pass to the remaining variation.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-By default the undeploy command is executed asynchronously, which means that the command does not wait for the undeployment to complete.
+  By default the undeploy command is executed asynchronously, which means that the command does not wait for the undeployment to complete.
 
-To execute the command in sync, use the `--sync` flag.
+  To execute the command in sync, use the `--sync` flag.
 </Callout>
 
 ### Shadow Deployment
@@ -1285,17 +1042,16 @@ This kind of deployment is best for cases where you want to check how a model be
 Like a regular variation, you can configure the percentage of traffic that the deployment handles. For example, entering `20` in the percentage of the variation copies and routes every 5th request to the shadow deployment.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-Traffic for shadow deployments is routed from the general traffic and not from a specific variation.
+  Traffic for shadow deployments is routed from the general traffic and not from a specific variation.
 </Callout>
-
 
 ###### Shadow Deployment in the UI
 
 Every audience can have at most one shadow variation!
 
-![Shadow Deployment UI](https://files.readme.io/65b1f7404d63bf81a65fad4fd99dfb1d4639ef9da9e22ae553c480b84746398c-uuid-6186de32-84d8-fc3e-1a04-90bdfb4fe8ab.png)
+<Image alt="Shadow Deployment UI" border={false} src="https://files.readme.io/65b1f7404d63bf81a65fad4fd99dfb1d4639ef9da9e22ae553c480b84746398c-uuid-6186de32-84d8-fc3e-1a04-90bdfb4fe8ab.png" />
 
 To add a shadow deployment:
 
@@ -1327,9 +1083,9 @@ frogml models deploy realtime --model-id <model-identifier> --build-id <build-id
 ```
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-The percentage of all the variations must add up to 100, regardless of shadow deployments.
+  The percentage of all the variations must add up to 100, regardless of shadow deployments.
 </Callout>
 
 ### Protected Variations
@@ -1337,11 +1093,10 @@ The percentage of all the variations must add up to 100, regardless of shadow de
 Protected variations restrict sensitive model deployments to authorized users, ensuring only admins and maintainers can update or undeploy the model.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-Protected variations are supported for [Real-time model deployments](/docs/real-time-deployments "Real-Time Deployments") only on hybrid deployments.
+  Protected variations are supported for <Anchor label="Real-time model deployments" title="Real-Time Deployments" href="/docs/real-time-deployments">Real-time model deployments</Anchor> only on hybrid deployments.
 </Callout>
-
 
 #### Roles and Permissions
 
@@ -1372,15 +1127,14 @@ When deploying multiple model variations, it is possible to define some variatio
 The protected variations will be modified only by maintainers or admins, while the unprotected variations may be modified by all users.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-Updating traffic split configuration is allowed only for maintainers or admins when one of the deployed variations is protected.
+  Updating traffic split configuration is allowed only for maintainers or admins when one of the deployed variations is protected.
 </Callout>
-
 
 #### Multi-Environment Setup
 
-If a model is deployed across several environments within a single JFrog ML account, *Protected Variations* are implemented individually for each environment. For instance, consider having both *production* and *staging* environments, with a model deployable to each. It is possible to designate the protected variation exclusively to one of these environments. Consequently, only **Admins** and **Maintainers** would have the authority to modify the deployment in the production environment, whereas the staging environment remains accessible to all account **Members**.
+If a model is deployed across several environments within a single JFrog ML account, _Protected Variations_ are implemented individually for each environment. For instance, consider having both _production_ and _staging_ environments, with a model deployable to each. It is possible to designate the protected variation exclusively to one of these environments. Consequently, only **Admins** and **Maintainers** would have the authority to modify the deployment in the production environment, whereas the staging environment remains accessible to all account **Members**.
 
 ## Performance and Runtime Configuration
 
@@ -1417,14 +1171,14 @@ The load balancer splits the traffic between the number of replicas, the bigger 
 #### When should I increase the number of vCPUs?
 
 * If you want to use more workers and handle multiple requests in parallel.
+
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-***Don't waste vCPUs!***
+  _**Don't waste vCPUs!**_
 
-If you do not increase the number of workers, but increase vCPUs, you will waste resources! Those additional CPUs will not be used.
+  If you do not increase the number of workers, but increase vCPUs, you will waste resources! Those additional CPUs will not be used.
 </Callout>
-
 
 In general, ML inference is a CPU-bound process, so we should follow the rule of having **1 vCPU per two worker processes**. Of course, if you run a simple model, you may try increasing the number of workers per vCPU.
 
@@ -1441,14 +1195,14 @@ Every worker runs as a separate forked process, so there is no shared memory. In
 #### When should I use a GPU for inference?
 
 * When you have increased the max batch size per prediction request, you constantly send enough data to fill the entire batch and your CPUs don't keep up anymore.
+
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-***Do not waste GPUs!***
+  _**Do not waste GPUs!**_
 
-Don't deploy a GPU instance if you process requests one by one. GPUs exist to parallelize the computation. When you process a batch of size 1, a GPU won't give you any performance improvements.
+  Don't deploy a GPU instance if you process requests one by one. GPUs exist to parallelize the computation. When you process a batch of size 1, a GPU won't give you any performance improvements.
 </Callout>
-
 
 #### When should I increase the batch size?
 
@@ -1465,7 +1219,7 @@ Before proceeding with the local deployment, ensure you have the following requi
 
 **FrogML SDK Version**: Ensure your system has FrogML version 1.1.61 or later installed. This version introduces support for local realtime deployment.
 
-**Docker**: A running Docker daemon on your local machine is required. The local deployment process leverages Docker to create a containerized environment for the model. *In addition, the*`docker` *Python package is also required.*
+**Docker**: A running Docker daemon on your local machine is required. The local deployment process leverages Docker to create a containerized environment for the model. _In addition, the_`docker` _Python package is also required._
 
 #### Deploying Your Model Locally
 
@@ -1480,9 +1234,9 @@ frogml models deploy realtime --model-id "<YOUR_MODEL>" --build-id "<YOUR_BUILD_
 This command initiates the deployment process by creating a Docker container in which your model will be hosted.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-***Ensure Docker is Running***
+  _**Ensure Docker is Running**_
 
-The local deployment process requires an active Docker daemon. You can check Docker's status by running `docker info` or `docker ps` in a new terminal window. If Docker is not running, start it through your system's preferred method before attempting to deploy your model again.
+  The local deployment process requires an active Docker daemon. You can check Docker's status by running `docker info` or `docker ps` in a new terminal window. If Docker is not running, start it through your system's preferred method before attempting to deploy your model again.
 </Callout>
