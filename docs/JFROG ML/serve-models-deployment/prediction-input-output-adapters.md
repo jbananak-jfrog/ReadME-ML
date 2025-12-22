@@ -409,24 +409,16 @@ In this case, the `DataFrameInputAdapter` will try to automatically recognize th
 
 The following is a list of all input and output adapters provided by JFrog ML:
 
-## Output Adapters
+| ## Output Adapters        | ## Input Adapters       |
+| :------------------------ | :---------------------- |
+| `DataFrameOutputAdapter`  | `DataFrameInputAdapter` |
+| `DefaultOutputAdapter`    | `FileInputAdapter`      |
+| `AutodetectOutputAdapter` | `ImageInputAdapter`     |
+| `JsonOutputAdapter`       | `JsonInputAdapter`      |
+| `ProtoOutputAdapter`      | `ProtoInputAdapter`     |
+| `TfTensorOutputAdapter`   | `StringInputAdapter`    |
+| `NumpyOutputAdapter`      | `TfTensorInputAdapter`  |
+|                           | `NumpyInputAdapter`     |
+|                           | `MultiInputAdapter`     |
 
-* `DataFrameOutputAdapter`
-* `DefaultOutputAdapter`
-* `AutodetectOutputAdapter`
-* `JsonOutputAdapter`
-* `ProtoOutputAdapter`
-* `TfTensorOutputAdapter`
-* `NumpyOutputAdapter`
-
-## Input Adapters
-
-* `DataFrameInputAdapter`
-* `FileInputAdapter`
-* `ImageInputAdapter`
-* `JsonInputAdapter`
-* `ProtoInputAdapter`
-* `StringInputAdapter`
-* `TfTensorInputAdapter`
-* `NumpyInputAdapter`
-* `MultiInputAdapter`
+<br />
