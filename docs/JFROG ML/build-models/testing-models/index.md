@@ -18,7 +18,7 @@ This section reviews the following topics:
 
 <Anchor label="Local Testing" title="Local Testing" href="/docs/local-testing">Local Testing</Anchor>
 
-<Anchor label="Adding Integration Tests to a Model Build" title="Adding Integration Tests to a Model Build" href="/docs/adding-integration-tests-to-a-model-build">Adding Integration Tests to a Model Build</Anchor>
+[Adding Integration Tests to a Model Build](doc:adding-integration-tests-to-a-model-build)
 
 ## Local Testing
 
