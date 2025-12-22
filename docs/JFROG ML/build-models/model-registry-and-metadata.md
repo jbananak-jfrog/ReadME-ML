@@ -4,15 +4,19 @@ deprecated: false
 hidden: false
 metadata:
   title: Model Registry and Metadata
-  description: The JFrog ML platform enables you to log model metadata, artifacts, and DataFrames, as well as to track experiments effectively. To utilize this capability, integrate the utility functions described below into your FrogMlModel .
-  robots: index
+  description: >-
+    The JFrog ML platform enables you to log model metadata, artifacts, and
+    DataFrames, as well as to track experiments effectively. To utilize this
+    capability, integrate the utility functions described below into your
+    FrogMlModel .
   legacyUUIDs:
     - UUID-c563baaa-9871-cfe3-7e26-a613e4c0ca99
     - UUID-4e4da9cf-2977-d65c-3530-ff4bf7c15f4f
+  robots: index
 ---
 The JFrog ML platform enables you to log model metadata, artifacts, and DataFrames, as well as to track experiments effectively. To utilize this capability, integrate the utility functions described below into your `FrogMlModel`.
 
-### Log Build Metrics
+## Log Build Metrics
 
 When executing a build, you can choose to store the model metrics. You can log any **decimal number** as a model metric using the `log_metric` function:
 
@@ -30,7 +34,7 @@ from frogml.sdk.model.model_version_tracking import log_metric
 log_metric({"<key>": "<value>"})
 ```
 
-### Logging Training Metrics
+## Logging Training Metrics
 
 In the example below, the model F1 score is logged:
 
@@ -68,7 +72,7 @@ class IrisClassifier(FrogMlModel):
         return self.model.predict(df)
 ```
 
-### Logging Build Parameters
+## Logging Build Parameters
 
 When executing a build, you can log model parameters. The parameters can be logged in two ways:
 
@@ -128,7 +132,7 @@ class MyModel(FrogMlModel):
         return self.model.predict(df)
 ```
 
-### Using the CLI
+## Using the CLI
 
 You can add parameters to the build CLI command when you start a new build:
 
@@ -147,16 +151,15 @@ frogml models build \
 
 `<uri>` - The frogml-based model URI.
 
-### Logging Build Files
+## Logging Build Files
 
 When executing a build, you can explicitly log files and attach them to a tag for reference (they can also be downloaded later). You can use this method to share files between models and builds.
 
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-`model_id` must be provided when logging parameters to files.
+  `model_id` must be provided when logging parameters to files.
 </Callout>
-
 
 For example, you can persist the catboost classifier using pickle and add it to the logged files:
 
@@ -200,15 +203,14 @@ log_file(from_path='model.pkl', tag='catboost_model', model_id='some_model_id')
 ```
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-***Size Limitation***
+  _**Size Limitation**_
 
-Currently, `log_file` allows for the logging of files to JFrog ML Cloud with a maximum size limit of 5GB and the `tag` should contain underscores `_`, not dashes `-`.
+  Currently, `log_file` allows for the logging of files to JFrog ML Cloud with a maximum size limit of 5GB and the `tag` should contain underscores `_`, not dashes `-`.
 </Callout>
 
-
-### Versioning Build Data
+## Versioning Build Data
 
 When you execute a build, you can store the build data:
 
@@ -263,19 +265,18 @@ class IrisClassifier(FrogMlModel):
 The data is saved under the build, and attached to the given tag.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-***Supported Data Types***
+  _**Supported Data Types**_
 
-The Dataframe supported types are the : `['object', 'uint8', 'int64', 'float64', 'datetime64', 'datetime64[ns]', 'datetime64[ns, UTC]', 'bool']`
+  The Dataframe supported types are the : `['object', 'uint8', 'int64', 'float64', 'datetime64', 'datetime64[ns]', 'datetime64[ns, UTC]', 'bool']`
 
-To modify a column's data type you can use the following syntax:
+  To modify a column's data type you can use the following syntax:
 
-`validation_df['column1'] = validation_df['column1'].astype('float64')`
+  `validation_df['column1'] = validation_df['column1'].astype('float64')`
 </Callout>
 
-
-### Versioning Data Outside Build
+## Versioning Data Outside Build
 
 Similar to files, data can be logged without a specific build context. In order to do that, specify a `model_id` you'd like the `DataFrame` to be attached to:
 
@@ -287,7 +288,7 @@ df = DataFrame()
 log_data(df, tag="some-tag", model_id="your-model-id", build_id="your-build-id")
 ```
 
-### Loading Data from Builds
+## Loading Data from Builds
 
 To access data logged during the build process, utilize the following JFrog ML function for downloading based on your model ID, build ID, and the specified data tag. This code can be executed either locally on your machine or in a remote workspace, making it optional to run within the context of a FrogML model build.
 
@@ -297,22 +298,21 @@ from frogml.core.model_loggers.data_logger import load_data
 df = load_data(tag="some-tag", model_id="your-model-id", build_id="your-build-id")
 ```
 
-### Automatic Model Logging
+## Automatic Model Logging
 
 During every build, the JFrog ML platform automatically logs the model as an artifact.
 
 <Callout icon="⚠️" theme="warning">
-**Warning**
+  **Warning**
 
-**Objects must be pickled**
+  **Objects must be pickled**
 
-Models logs do not works when your objects cannot be pickled.
+  Models logs do not works when your objects cannot be pickled.
 
-The automatic model logging works only when the class that extends `FrogMlModel` can be pickled using the `pickle.dump` function.
+  The automatic model logging works only when the class that extends `FrogMlModel` can be pickled using the `pickle.dump` function.
 
-If the model cannot be pickled, the build log will contain a warning message "Failed to log model." This error won't stop the build, and the trained model can be deployed in the JFrog ML platform.
+  If the model cannot be pickled, the build log will contain a warning message "Failed to log model." This error won't stop the build, and the trained model can be deployed in the JFrog ML platform.
 </Callout>
-
 
 You can retrieve the model using the `load_model` function. The function accepts two arguments: a model id and the build identifier. It returns an instance of the `FrogMlModel` class.
 
@@ -325,14 +325,14 @@ loaded_model: BaseModel = load_model('<your_model_id>', '<your_build_id>')
 
 Remember that the current Python environment must contain all dependencies required to create a valid Python object from the pickled object. For example, if you logged a Tensorflow model, the Tensorflow library must be available (in the same version) when you call `load_model`.
 
-### Automatic Dependency Logging
+## Automatic Dependency Logging
 
 During every build, the JFrog ML platform runs `pip freeze` to log all of the dependencies used during the build.
 
 <Callout icon="⚠️" theme="warning">
-**Warning**
+  **Warning**
 
-**Do not include your file `requirements.lock` in the `jfrogml_artifacts` directory.**
+  **Do not include your file `requirements.lock` in the `jfrogml_artifacts` directory.**
 
-**It will be overwritten!**
+  **It will be overwritten!**
 </Callout>
