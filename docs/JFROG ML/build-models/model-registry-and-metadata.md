@@ -178,7 +178,7 @@ def build():
 
 Or, alternatively, import the `log_file` method directly:
 
-```
+```python
 from frogml.core.model_loggers.artifact_logger import log_file
 
 log_file(from_path='model.pkl', tag='catboost_model')
@@ -186,7 +186,7 @@ log_file(from_path='model.pkl', tag='catboost_model')
 
 Now, in order to load that file, you need the file identifier, the tag, and the model and build where the file was persisted:
 
-```
+```python
 from frogml.core.model_loggers.artifact_logger import load_file
 
 load_file(to_path='model.pkl', tag='catboost_model', model_id='some_model_id', build_id='some_build_id')
@@ -196,7 +196,7 @@ The `to_path` parameter defines the location where you want to write the file in
 
 Files can also be logged without a build context:
 
-```
+```python
 from frogml.core.model_loggers.artifact_logger import log_file
 
 log_file(from_path='model.pkl', tag='catboost_model', model_id='some_model_id')
