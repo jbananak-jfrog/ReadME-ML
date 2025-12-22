@@ -5,21 +5,20 @@ hidden: false
 metadata:
   title: Testing Models
   description: 'This section reviews the following topics:'
-  robots: index
   legacyUUIDs:
-  - UUID-3f6b1f22-6628-4c63-6db7-e64ea78d6c1b
-  - UUID-ffe71485-9537-405b-c058-fbda05aa7bc0
-  - UUID-9f7b5597-8b7e-4703-a74f-c069c5c31d8d
-  - UUID-24f22cba-a52d-263f-fc28-f968daf45e91
-  - UUID-b9135a8e-554b-6892-86cd-0df8ff58fe12
-  - UUID-3fb9d1f7-af13-c47d-5985-a26471b8b72b
+    - UUID-3f6b1f22-6628-4c63-6db7-e64ea78d6c1b
+    - UUID-ffe71485-9537-405b-c058-fbda05aa7bc0
+    - UUID-9f7b5597-8b7e-4703-a74f-c069c5c31d8d
+    - UUID-24f22cba-a52d-263f-fc28-f968daf45e91
+    - UUID-b9135a8e-554b-6892-86cd-0df8ff58fe12
+    - UUID-3fb9d1f7-af13-c47d-5985-a26471b8b72b
+  robots: index
 ---
-
 This section reviews the following topics:
 
-[Local Testing](/docs/local-testing "Local Testing")
+<Anchor label="Local Testing" title="Local Testing" href="/docs/local-testing">Local Testing</Anchor>
 
-[Adding Integration Tests to a Model Build](/docs/adding-integration-tests-to-a-model-build "Adding Integration Tests to a Model Build")
+<Anchor label="Adding Integration Tests to a Model Build" title="Adding Integration Tests to a Model Build" href="/docs/adding-integration-tests-to-a-model-build">Adding Integration Tests to a Model Build</Anchor>
 
 ## Local Testing
 
@@ -36,24 +35,22 @@ It is possible to easily run and debug your JFrog ML models locally.
 The example below contains a simple FLAN-T5 model loaded from HuggingFace. To test inference locally, and can simple run the code below.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-Please make sure to install the [**frogml-cli**](/docs/get-started-with-jfrog-ml "Get Started with JFrog ML") in your local environment.
+  Please make sure to install the <Anchor label="**frogml-cli**" title="Get Started with JFrog ML" href="/docs/get-started-with-jfrog-ml">**frogml-cli**</Anchor> in your local environment.
 </Callout>
-
 
 #### Running Models Locally
 
 We import `from frogml.sdk.model.tools import run_local` and call our local model via `run_local(m, input_vector)`, which invokes all the relevant model methods.
 
 <Callout icon="⚠️" theme="warning">
-**Warning**
+  **Warning**
 
-***Production Models***
+  _**Production Models**_
 
-Please do not leave `from frogml.sdk.model.tools import run_local` imports in production models, as it may affect model behavior. One option would be to create a separate file outside of your `main` directory where you have all the local testing code, including the `run_local` import.
+  Please do not leave `from frogml.sdk.model.tools import run_local` imports in production models, as it may affect model behavior. One option would be to create a separate file outside of your `main` directory where you have all the local testing code, including the `run_local` import.
 </Callout>
-
 
 This example will load a model `FLANT5Model` and run inference with a data frame vector of your choice:
 
@@ -97,15 +94,14 @@ class FLANT5Model(FrogMlModel):
 ```
 
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-Call `run_local` directly instead of the `model_object.predict()` , as it will not work locally.
+  Call `run_local` directly instead of the `model_object.predict()` , as it will not work locally.
 </Callout>
-
 
 To run local inference, add the following code to your model code file:
 
-test\_model\_locally.py
+test_model_locally.py
 
 ```
 from frogml.sdk.model.tools import run_local
@@ -129,11 +125,10 @@ if __name__ == '__main__':
 ```
 
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-For local testing, remember to import `run_local` at the start of your test file, before importing your `FrogMlModel` based class.
+  For local testing, remember to import `run_local` at the start of your test file, before importing your `FrogMlModel` based class.
 </Callout>
-
 
 #### Debugging the Model Life Cycle
 
@@ -146,13 +141,12 @@ Running the `run_local` method calls the following methods in a single command:
 The `build` and `initialize_model` functions are called during the first `run_local` run only.
 
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-***Debugging Input and Output Adapters***
+  _**Debugging Input and Output Adapters**_
 
-Calling the `predict` method locally doesn't trigger the input and output adapters. Please use `run_local` instead.
+  Calling the `predict` method locally doesn't trigger the input and output adapters. Please use `run_local` instead.
 </Callout>
-
 
 #### Using Proto Adapter
 
@@ -231,11 +225,13 @@ To facilitate this, you can execute test predictions using the following syntax:
 integration\_tests.py
 
 ```
+
 from frogml.core.testing.fixtures import real_time_client
 from frogml_inference.realtime_client.client import InferenceOutputFormat
 
 def test(real_time_client):
-    result = real_time_client.predict(feature_vector, InferenceOutputFormat.PANDAS)
+result = real_time_client.predict(feature_vector, InferenceOutputFormat.PANDAS)
+
 ```
 
 Here, `real_time_client` is configured with the local endpoint, allowing for efficient and practical test predictions.
@@ -268,10 +264,43 @@ While validating the serving artifact and conducting tests, it's essential to co
 To access files added with the `--dependency-required_folders` parameter in tests, use the `frogml_tests_additional_dependencies` fixture. For example:
 
 ```
+
 def test_print_content_from_variable(frogml_tests_additional_dependencies):
-    print(frogml_tests_additional_dependencies)
-    directories = os.listdir(frogml_tests_additional_dependencies)
-    print(directories)
+print(frogml_tests_additional_dependencies)
+directories = os.listdir(frogml_tests_additional_dependencies)
+print(directories)
+
 ```
 
 All `--dependency-required-folders` are **inside** the directory which path is passed as the `frogml_tests_additional_dependencies` parameter.
+```
+
+<br />
+
+## Adding Integration Tests to a Model Build
+
+### Validating Serving Artifact
+
+After executing the `build()` function in the model-building process, JFrog ML initiates a critical step - **Validating Serving Artifact**. This involves starting a Docker container encapsulating the newly built model. This container serves two primary purposes:
+
+1. **Initialization**: The `initialize_model()` function is executed to ensure the model serving is correctly set up and started within the container.
+2. **Dummy Request Handling**: The container, with its embedded webserver, is tested with a dummy request. This step confirms the container's operational status and its ability to handle incoming requests successfully.
+
+![](UUID-4a40f754-534e-a799-7d35-701739673f86)
+_JFrog ML Models Build Page_
+
+### Running Integration Tests
+
+The same container used in the validation phase is also operational in the **Running Tests** phase. This phase is crucial for treating the container as a live model and enables local endpoint predictions. This setup allows for more robust testing, ensuring that the model is fully functional and deploy-ready before it enters shadow or production environments.
+
+To facilitate this, you can execute test predictions using the following syntax:
+
+`integration_tests.py`
+
+```python
+from frogml.core.testing.fixtures import real_time_client
+from frogml_inference.realtime_client.client import InferenceOutputFormat
+
+def test(real_time_client):
+    result = real_time_client.predict(feature_vector, InferenceOutputFormat.PANDAS)
+```
