@@ -1,14 +1,14 @@
 ---
-title: "Prediction Input & Output Adapters"
+title: Prediction Input & Output Adapters
 deprecated: false
 hidden: false
 metadata:
-  title: "Prediction Input & Output Adapters"
+  title: Prediction Input & Output Adapters
   description: Adapters help you customize input and output formats of your ML models.
-  robots: index
   legacyUUIDs:
     - UUID-a562be07-2f8f-ae32-12d5-be5dbee4842a
     - UUID-fcb1409b-f141-035c-5562-252fc7a3cb1c
+  robots: index
 ---
 Adapters help you customize input and output formats of your ML models.
 
@@ -17,17 +17,16 @@ JFrog ML uses adapters validate the model input and output formats and perform r
 This document lists to wide variety of available input and output adapters.
 
 <Callout icon="⚠️" theme="warning">
-**Warning**
+  **Warning**
 
-***Adapters Support***
+  _**Adapters Support**_
 
-Please note that input and output adapters are currently supported only in real-time and streaming deployed models, and **not in Batch ones**. We're actively working to extend support for adapters across all deployment types.
+  Please note that input and output adapters are currently supported only in real-time and streaming deployed models, and **not in Batch-deployed models**. We are actively working to extend support for adapters across all deployment types.
 </Callout>
 
+## Adapter Types
 
-### Adapter Types
-
-#### Image
+### Image
 
 In the model file, we have to import the `ImageInputAdapter`.
 
@@ -64,7 +63,7 @@ def predict(self, input_data) -> pd.DataFrame:
     return pd.DataFrame(result)
 ```
 
-### File
+## File
 
 We can pass the image as a file data stream and load it as a file inside the `predict` function. Of course, sending a file works with any data format, not only images. In the following example, we will use the same model as in the ImageInputAdapter example, but with a file adapter.
 
@@ -77,7 +76,7 @@ from PIL import Image
 from frogml.model.adapters import FileInputAdapter
 ```
 
-Now, we can change the input\_adapter parameter in the `frogml.api` decorator:
+Now, we can change the input_adapter parameter in the `frogml.api` decorator:
 
 ```
 @frogml.api(analytics=False, input_adapter=FileInputAdapter())
@@ -105,7 +104,7 @@ for fs in file_streams:
 return pd.DataFrame(result)
 ```
 
-### String
+## String
 
 If we want to pass a single sentence to the ML model, we can use the `StringInputAdapter`.
 
@@ -141,7 +140,7 @@ def predict(self, texts) -> pd.DataFrame:
     return pd.DataFrame.from_dict({'label': responses, 'text': texts})
 ```
 
-### JSON
+## JSON
 
 If you want to use your model in a front-end application, you will probably send JSON to the server. You can handle the JSON automatically by using the `JsonInputAdapter`.
 
@@ -154,7 +153,7 @@ from frogml.model.adapters import JsonInputAdapter
     def predict(self, json_objects) -> pd.DataFrame:
 ```
 
-Then, iterate over the json\_objects and pass the text to the model:
+Then, iterate over the json_objects and pass the text to the model:
 
 ```
 @frogml.api(analytics=False, input_adapter=JsonInputAdapter())
@@ -173,7 +172,7 @@ def predict(self, json_objects) -> pd.DataFrame:
 
 When sending a request to the deployed model, remember to specify the `Content-Type: application/json`.
 
-### Proto
+## Proto
 
 If you use the protobuf library in your software, you may also want to use it for communication with your ML model. It is common to use protobuf for both input and output formats, so our example will show both.
 
@@ -240,7 +239,7 @@ In our implementation, we use the `ParseFromString` function to read a protobuf 
 message = ModelInput(f1=1, f2=2).SerializeToString()
 ```
 
-### TF Tensor
+## TF Tensor
 
 If we have all of the preprocessing code running as a separate service, we can pass a Tensorflow tensor directly to the model using a `TfTensorInputAdapter`.
 
@@ -259,7 +258,7 @@ To pass a tensor to a deployed model, we must send a JSON representation of the 
 curl -i –header "Content-Type: application/json" –request POST –data '{"instances": [1]}' jfrogml_rest_url
 ```
 
-### Multi Input
+## Multi Input
 
 The `MultiInputAdapter` supports Automatic input format detection.
 
@@ -287,7 +286,7 @@ input_adapter=MultiInputAdapter([JsonInputAdapter, DataFrameInputAdapter]),
 
 The `JsonInputAdapter` will successfully parse a JSON representation of a DataFrame!
 
-### Numpy
+## Numpy
 
 A `NumpyInputAdapter` can automatically parse a JSON array as a Numpy array and reshape it to the desired structure. When we configure the `NumpyInputAdapter`, we have to specify the content type and its shape:
 
@@ -310,7 +309,7 @@ The `NumpyOutputAdapter` converts the returned output array directly to JSON wit
 
 Starting from Sdk version 0.9.87 it will return numpy binary format .
 
-### Default Output
+## Default Output
 
 With `DefaultOutputAdapter` we can return multiple result formats from a single model. The adapter will automatically detect the type of the returned value.
 
@@ -327,7 +326,7 @@ def predict(self, input):
 
 Note that the DefaultOutputAdapter doesn't work with Protobuf objects! To automatically detect the output type when your code returns DataFrames, JSONs, and Protobuf objects, you need to use the `AutodetectOutputAdapter`.
 
-### Json Output
+## Json Output
 
 With `JsonOutputAdapter` we can return `Dict` results, but **the result has to be iterable**
 
@@ -344,7 +343,7 @@ from frogml.sdk.model.adapters import ProtoInputAdapter, AutodetectOutputAdapter
         return [{"result": ...}]
 ```
 
-### Auto Detect Output
+## Auto Detect Output
 
 Automatic output format detection with Protobuf support
 
@@ -363,7 +362,7 @@ from frogml.sdk.model.adapters import ProtoInputAdapter, AutodetectOutputAdapter
         return [ModelOutput(prediction=result)]
 ```
 
-### Data Frame Based Adapters
+## Data Frame Based Adapters
 
 Pandas Dataframe is supported with requested orient.
 
@@ -406,11 +405,11 @@ from frogml.sdk.model.adapters import DataFrameInputAdapter, DataFrameOutputAdap
 
 In this case, the `DataFrameInputAdapter` will try to automatically recognize the type of the input. For `DataFrameOutputAdapter` the output will be oriented by **records**.
 
-### All Supported Adapters
+## All Supported Adapters
 
 The following is a list of all input and output adapters provided by JFrog ML:
 
-### Output Adapters
+## Output Adapters
 
 * `DataFrameOutputAdapter`
 * `DefaultOutputAdapter`
@@ -420,7 +419,7 @@ The following is a list of all input and output adapters provided by JFrog ML:
 * `TfTensorOutputAdapter`
 * `NumpyOutputAdapter`
 
-### Input Adapters
+## Input Adapters
 
 * `DataFrameInputAdapter`
 * `FileInputAdapter`
