@@ -20,7 +20,7 @@ The JFrog ML platform enables you to log model metadata, artifacts, and DataFram
 
 When executing a build, you can choose to store the model metrics. You can log any **decimal number** as a model metric using the `log_metric` function:
 
-```
+```python
 import frogml
 
 frogml.log_metric({"<key>": "<value>"})
@@ -28,7 +28,7 @@ frogml.log_metric({"<key>": "<value>"})
 
 Alternatively, import the `log_metric` method directly:
 
-```
+```python
 from frogml.sdk.model.model_version_tracking import log_metric
 
 log_metric({"<key>": "<value>"})
@@ -38,7 +38,7 @@ log_metric({"<key>": "<value>"})
 
 In the example below, the model F1 score is logged:
 
-```
+```python
 from frogml import FrogMlModel
 from sklearn import svm, datasets
 from sklearn.metrics import f1_score
@@ -78,7 +78,7 @@ When executing a build, you can log model parameters. The parameters can be logg
 
 Using `log_param` **- **an API which can be used from FrogML-based models:****,
 
-```
+```python
 import frogml
 
 frogml.log_param({"<key>": "<value>"})
@@ -86,7 +86,7 @@ frogml.log_param({"<key>": "<value>"})
 
 Or, alternatively, i**mport the `log_param` method directly**:
 
-```
+```python
 from frogml.sdk.model.model_version_tracking import log_param
 
 log_param({"<key>": "<value>"})
@@ -104,7 +104,7 @@ The supported data types for logging are:
 
 For example:
 
-```
+```python
 import frogml
 from frogml import FrogMlModel
 from sklearn import svm, datasets
@@ -163,7 +163,7 @@ When executing a build, you can explicitly log files and attach them to a tag fo
 
 For example, you can persist the catboost classifier using pickle and add it to the logged files:
 
-```
+```python
 import frogml.sdk.model.model_version_tracking
 import pickle
 
@@ -232,7 +232,7 @@ The data is exposed in the JFrog ML UI, and you can query the data and view the 
 
 For example:
 
-```
+```python
 import frogml
 from frogml import FrogMlModel
 from sklearn import svm
@@ -280,7 +280,7 @@ The data is saved under the build, and attached to the given tag.
 
 Similar to files, data can be logged without a specific build context. In order to do that, specify a `model_id` you'd like the `DataFrame` to be attached to:
 
-```
+```python
 from frogml.core.model_loggers.data_logger import log_data
 from pandas import DataFrame
 
@@ -292,7 +292,7 @@ log_data(df, tag="some-tag", model_id="your-model-id", build_id="your-build-id")
 
 To access data logged during the build process, utilize the following JFrog ML function for downloading based on your model ID, build ID, and the specified data tag. This code can be executed either locally on your machine or in a remote workspace, making it optional to run within the context of a FrogML model build.
 
-```
+```python
 from frogml.core.model_loggers.data_logger import load_data
 
 df = load_data(tag="some-tag", model_id="your-model-id", build_id="your-build-id")
@@ -316,7 +316,7 @@ During every build, the JFrog ML platform automatically logs the model as an art
 
 You can retrieve the model using the `load_model` function. The function accepts two arguments: a model id and the build identifier. It returns an instance of the `FrogMlModel` class.
 
-```
+```python
 from frogml.sdk.model_loggers.model_logger import load_model
 from frogml.sdk.model.base import BaseModel
 
