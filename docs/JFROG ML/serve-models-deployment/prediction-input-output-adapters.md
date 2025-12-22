@@ -412,20 +412,19 @@ The following is a list of all input and output adapters provided by JFrog ML:
 ## Output Adapters
 
 <Columns layout="auto">
-    <Column>
-      <listItem>\* `DataFrameOutputAdapter`</listItem>
-      <listItem>\* `DefaultOutputAdapter`</listItem>
-      <listItem>\* `AutodetectOutputAdapter`</listItem>
-      <listItem>\* `JsonOutputAdapter`</listItem>
-    </Column>
+  <Column>
+    <listItem>\`DataFrameOutputAdapter`</listItem>
+    <listItem>\`DefaultOutputAdapter`</listItem>
+    <listItem>\`AutodetectOutputAdapter`</listItem>
+    <listItem>\`JsonOutputAdapter`</listItem>
+  </Column>
 
-    <Column>
-      <listItem>\* `ProtoOutputAdapter`</listItem>
-      <listItem>\* `TfTensorOutputAdapter`</listItem>
-      <listItem>\* `NumpyOutputAdapter`</listItem>
-    </Column>
-  </Columns>
-
+  <Column>
+    <listItem>\`ProtoOutputAdapter`</listItem>
+    <listItem>\`TfTensorOutputAdapter`</listItem>
+    <listItem>\`NumpyOutputAdapter`</listItem>
+  </Column>
+</Columns>
 
 * `DataFrameOutputAdapter`
 * `DefaultOutputAdapter`
