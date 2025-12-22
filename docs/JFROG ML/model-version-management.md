@@ -224,5 +224,5 @@ The FrogML platform enables efficient movement of successful experiments from de
 2. Select the custom model for which you want to create a build, and select the **Versions** tab.
 3. Create a build according to the following guidelines:
 
-   * To create a build of an unbuilt version: Click the "**Build version**" button adjacent to the required version.
-   * To create a new build of a built version: Click the "**Rebuild version**" button adjacent to the required version. The "**Rebuild Version**" option offers the functionality to recompile or update a built model to incorporate new changes or improvements. For example, if you want to add different tags, or use different resources.
+   * To create a build of an unbuilt version: Click the **Build version** button adjacent to the required version.
+   * To create a new build of a built version: Click the **Rebuild version** button adjacent to the required version. The **Rebuild Version** option offers the functionality to recompile or update a built model to incorporate new changes or improvements. For example, if you want to add different tags, or use different resources.
