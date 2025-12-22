@@ -400,17 +400,17 @@ When training in the `build` stage of the Build pipeline, sometimes we'd like to
 
    After a successful training build, tag it in the JFrog ML UI:
 
-   1. Navigate to the individual Build
-   2. Click on the three dots in the upper-right corner
-   3. Select "**Add Tags**"
-   4. Add a tag called `training`![](https://files.readme.io/d9f41e2b7d9a46695c588e30e8a1279006e1c5d2f8993cbd5ebcbdb63d5cfe19-uuid-b939238b-861d-a278-25d6-69ba965e27b7.png)
+   1. Navigate to the individual Build.
+   2. Click on the three dots in the upper-right corner.
+   3. Select "**Add Tags**".
+   4. Add a tag called `training`.![](https://files.readme.io/d9f41e2b7d9a46695c588e30e8a1279006e1c5d2f8993cbd5ebcbdb63d5cfe19-uuid-b939238b-861d-a278-25d6-69ba965e27b7.png)
 4. #### Retrieve and Load the Pre-trained Artifact
 
    Use the `initialize_model()` method to load the pre-trained model during deployment:
 
    model.py
 
-   ```
+   ```python
    def initialize_model(self):
        FrogML_Client = frogml.FrogMLClient()
        jfrogml_model_id = os.getenv('FROGML_MODEL_ID')
@@ -446,7 +446,7 @@ Here's how the complete `XGBoostModel` class might look:
 
 model.py
 
-```
+```python
 class XGBoostModel(FrogMLClient):
     def __init__(self):
         self.model = XGBClassifier()
@@ -578,7 +578,7 @@ In JFrog ML, there are two primary methods for passing hyperparameters to your B
 
    model.py
 
-   ```
+   ```python
    import os
 
    class SampleModel(FrogMLClient):
@@ -606,7 +606,7 @@ Once you have your hyperparameters set up, you can implement various optimizatio
 
    model.py
 
-   ```
+   ```python
    import xgboost as xgb
    from sklearn.model_selection import GridSearchCV
    from frogml import FrogMlModel
@@ -640,7 +640,7 @@ Once you have your hyperparameters set up, you can implement various optimizatio
 
    model.py
 
-   ```
+   ```python
    from sklearn.model_selection import RandomizedSearchCV
    from frogml import FrogMlModel
    import frogml
@@ -685,7 +685,7 @@ Once you have your hyperparameters set up, you can implement various optimizatio
 
    model.py
 
-   ```
+   ```python
    import optuna
    import xgboost as xgb
    from sklearn.model_selection import cross_val_score
@@ -756,7 +756,7 @@ If an unsupported HTTP status is used, it will be replaced with the status `500`
 
 An example server-side code:
 
-```
+```python
 @frogml.api()
 def predict(self, df):
     ...
@@ -768,7 +768,7 @@ In case of a `4xx` or `5xx` response from the deployed model, the `RealTimeClien
 
 An example of the client code:
 
-```
+```python
 client = RealTimeClient(model_id="YOUR_MODEL")
 try:
     client.predict(feature_vector)
