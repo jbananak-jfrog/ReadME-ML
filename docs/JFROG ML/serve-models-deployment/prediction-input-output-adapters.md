@@ -411,16 +411,6 @@ The following is a list of all input and output adapters provided by JFrog ML:
 
 ## Output Adapters
 
-<Columns layout="auto">
-  <Column>
-    <listItem>\*`DataFrameOutputAdapter`</listItem>     <listItem>\*`DataFrameOutputAdapter`</listItem>     <listItem>\*`DataFrameOutputAdapter`</listItem> 		<listItem>\*`DataFrameOutputAdapter\`</listItem>
-  </Column>
-
-  <Column>
-    <listItem>\`DataFrameOutputAdapter`</listItem>     <listItem>\`DataFrameOutputAdapter`</listItem> 		<listItem>\`DataFrameOutputAdapter\`</listItem>
-  </Column>
-</Columns>
-
 * `DataFrameOutputAdapter`
 * `DefaultOutputAdapter`
 * `AutodetectOutputAdapter`
