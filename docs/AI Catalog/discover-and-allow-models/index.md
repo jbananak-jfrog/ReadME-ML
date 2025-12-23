@@ -103,9 +103,20 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
   <li>In the *Allow Model Usage* pane, select the project from the drop-down list.</li>
 </ol>
 
-<Image align="center" border={false} src="https://files.readme.io/e73cbbf0c2846f2fc367e9ac00cdb1177d0aade0042618ff1bf4b0b884697575-allowmodelusage_ext_long_1.png" />
 
-<Image align="center" border={false} src="https://files.readme.io/e08fab9f0ac1560ef5488679ae2323bf6c7c266d0d6b9c74e3845c3bff833f86-opensource_projects_dropdown.png" />
+<Columns layout="auto">
+  <Column>
+
+    <Image align="center" border={false} src="https://files.readme.io/e73cbbf0c2846f2fc367e9ac00cdb1177d0aade0042618ff1bf4b0b884697575-allowmodelusage_ext_long_1.png" />
+
+  </Column>
+
+  <Column>
+
+    <Image align="center" border={false} src="https://files.readme.io/e08fab9f0ac1560ef5488679ae2323bf6c7c266d0d6b9c74e3845c3bff833f86-opensource_projects_dropdown.png" />
+
+  </Column>
+</Columns>
 
 |                                                     Select Project for an External Model                                                    |                                                   Select Project for an Open Source Model                                                   |
 | :-----------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: |
