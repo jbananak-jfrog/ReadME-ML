@@ -110,7 +110,7 @@ Shadow AI Detection integrates tightly with JFrog’s security components:
 
 1. In the AI Catalog, open the ​**Discovery**​​ tab.
 2. Select (click) the model to be blocked.
-3. Click the ​**...** button In the top right corner, and click ​**Block**​​.
+3. Click the ​... button In the top right corner, and click ​**Block**​​.
 
 <Columns layout="auto">
   <Column>
