@@ -72,7 +72,7 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
 1. **Select a model**:
 
    1. From the JFrog platform menu, select **AI/ML** > **Models**. The Models page opens. If this is your first model, the **Allowed models** tab is empty.
-   2. Select the **Discovery** tab to view all available models.  
+   2. Select the **Discovery** tab to view all available models.
 
       <Image align="center" border={false} src="https://files.readme.io/39d8b9879eea0216b3cd7a4d7029bdfd9555763f187956da114ec53ae5593b6b-models_page2.png" />
    3. Browse through the catalog to find the model you want. You can [search and filter](/docs/discover-and-allow-models) to locate a specific model or model type.
@@ -83,9 +83,35 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
 
       * **For External models:** Click **Connect & allow**
       * **For Open-source models:** Click **Allow**
+      * <Image align="center" border={false} src="https://files.readme.io/cddc7e7d7c2e3d3b051adb8bd02872a99157f4bd662a1bc0ecbe0ec0d6a33a8f-opensource_model_information.png" />
 
-| ![](https://files.readme.io/d080a4d055e4b7984f2571fda016b71cf159742f3a5b7912dc9ee59d3cb5e150-uuid-8831faf2-28ba-a271-cae0-7600ca750219.png) | ![](https://files.readme.io/fbf64abb2989205a4d9245714e8d40c37876ecaaa6f43cb6f3e8edc11b81df9a-uuid-8b6ad253-c7ff-9e1d-601d-9faa5087e539.png) |
-| :------------------------------------------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------ |
+        <Image align="center" border={false} src="https://files.readme.io/513cdd35e9df27f27749dc64a821f4c63ba471edf10f0b50852376e4ec0c4286-connectandallow_1.png" />
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        <br />
+      </th>
+
+      <th>
+        <br />
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 <Callout icon="📘" theme="info">
   **Note**
