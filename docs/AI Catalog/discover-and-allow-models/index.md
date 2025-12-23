@@ -83,7 +83,7 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
 
       * **For External models:** Click **Connect & allow**
 
-      * **For Open-source models:** Click **Allow**
+      * **For Model packages:** Click **Allow**
 
 <Columns layout="auto">
   <Column>
@@ -117,13 +117,9 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
   </Column>
 </Columns>
 
-|                                                     Select Project for an External Model                                                    |                                                   Select Project for an Open Source Model                                                   |
-| :-----------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------: |
-| ![](https://files.readme.io/66ad1650cfba4bc4ae88cdf7ea6e7478eade8744b48b5a9582eace551a8b3021-uuid-fe2ab1f2-b02d-cd83-c4b5-72ff9459cd58.png) | ![](https://files.readme.io/f9fffb90ecedbcfedcf936fbeb77dbaeaaf8e8bc0d658889051cd2e6ac9dec6a-uuid-7a3f611c-65bb-095e-22f3-d950608454b9.png) |
-
 3. Based on your model type, perform the required configuration and complete the approval (allowance):
 
-   * **For Open-source Models only:** Click **Allow**. The Allowed models tab is displayed.
+   * **For Model Packages only:** Click **Allow**. The Allowed models tab is displayed.
    * **For External API Models only:**  First <Anchor label="create a new connection" title="Create a New Model Provider Connection" href="/docs/create-a-new-model-provider-connection">create a new connection</Anchor>¹² for the project, and then click **Allow**.
 4. To Use the Model: See instructions how to <Anchor label="Integrate Models in Your Code" title="Integrate Models in Your Code" href="/docs/integrate-models-in-your-code">Integrate Models in Your Code</Anchor>.
 
