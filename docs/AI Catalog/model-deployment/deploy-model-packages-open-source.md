@@ -56,7 +56,7 @@ Deploying a model means actually setting up servers, often GPUs, and getting the
   While the deployment is in process, a **Cancel deployment** button appears on the right-hand side of the page.
 </Callout>
 
-After the deployment has completed successfully you can see the model dashboard and.can integrate the model in your code, using the instructions below:
+After the deployment has completed successfully you can see the model dashboard and can integrate the model in your code, using the instructions below:
 
 1. In the **Configure** tab, enter your JFrog account password and click **Generate Token & create Instructions**.
 
