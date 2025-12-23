@@ -83,19 +83,29 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
 
       * **For External models:** Click **Connect & allow**
       * **For Open-source models:** Click **Allow**
-      * <Image align="center" border={false} src="https://files.readme.io/cddc7e7d7c2e3d3b051adb8bd02872a99157f4bd662a1bc0ecbe0ec0d6a33a8f-opensource_model_information.png" />
+      * 
 
-        <Image align="center" border={false} src="https://files.readme.io/513cdd35e9df27f27749dc64a821f4c63ba471edf10f0b50852376e4ec0c4286-connectandallow_1.png" />
+        
 
-|     |     |
-| :-- | :-- |
-| ![](https://files.readme.io/513cdd35e9df27f27749dc64a821f4c63ba471edf10f0b50852376e4ec0c4286-connectandallow_1.png)  | ![](https://files.readme.io/cddc7e7d7c2e3d3b051adb8bd02872a99157f4bd662a1bc0ecbe0ec0d6a33a8f-opensource_model_information.png)      |
+<Columns layout="auto">
+  <Column>
+    
+<Image align="center" border={false} src="https://files.readme.io/513cdd35e9df27f27749dc64a821f4c63ba471edf10f0b50852376e4ec0c4286-connectandallow_1.png" />
 
-<Callout icon="📘" theme="info">
-  **Note**
+  </Column>
 
-  The Allow/Connect & allow buttons appear twice on the page and you can use either.
-</Callout>
+  <Column>
+
+    <Image align="center" border={false} src="https://files.readme.io/cddc7e7d7c2e3d3b051adb8bd02872a99157f4bd662a1bc0ecbe0ec0d6a33a8f-opensource_model_information.png" />
+
+  </Column>
+
+  
+</Columns>
+
+**Note**
+
+The Allow/Connect & allow buttons appear twice on the page and you can use either.
 
 2. In the _Allow Model Usage_ pane, select the project from the drop-down list.
 
