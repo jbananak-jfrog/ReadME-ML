@@ -87,31 +87,9 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
 
         <Image align="center" border={false} src="https://files.readme.io/513cdd35e9df27f27749dc64a821f4c63ba471edf10f0b50852376e4ec0c4286-connectandallow_1.png" />
 
-<Table align={["left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        <br />
-      </th>
-
-      <th>
-        <br />
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-
-      </td>
-
-      <td>
-
-      </td>
-    </tr>
-  </tbody>
-</Table>
+|     |    |
+| :-- | :- |
+| hhh |    |
 
 <Callout icon="📘" theme="info">
   **Note**
