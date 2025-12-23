@@ -1,6 +1,6 @@
 ---
 title: Getting Started with AI/ML in JFrog
-excerpt: This page will help you get started with JFrog's ML and AI assets management.
+excerpt: Start your journey to deliver trusted AI/ML with JFrog.
 hidden: false
 link:
   new_tab: false
@@ -13,13 +13,15 @@ next:
       title: Get Started with JFrog ML
       type: basic
 ---
-JFrog ML is a unified platform designed to streamline the entire machine learning lifecycle by integrating MLOps, security, and DevOps into a single system of record. It provides a robust, scalable, and secure foundation for building, deploying, and monitoring your models in production.
+JFrog ML is the single system of record for your enterprise AI supply chain. It acts as a centralized hub that proactively secures every AI workload — from third-party downloads and Model Context Protocol (MCP) servers to custom in-house models — giving you the visibility needed to eliminate Shadow AI. 
+
+With security and compliance enforced proactively at the gate, your teams can safely accelerate the development of trusted AI applications without compromising control.
 
 ***
 
 <Image align="center" border={true} src="https://files.readme.io/24416c14ed7f479f1e433d68050b3ff4e7a64b08318759636b35055ec0cec97c-AI_ML_Diagram_for_JFrog_ML.png" className="border" />
 
-You're looking at a map of how JFrog can help you govern and manage all your AI and ML assets. Read on to understand how JFrog secures your system, and helps prevent the entry of malicious or unvetted assets into your software environment.
+The diagram above illustrates this secure AI supply chain in action. It maps the flow of AI assets through the JFrog Platform, how malicious and non-compliant models are detected and blocked at the perimeter, while trusted assets are cataloged and made available for rapid development.
 
 ## How Does it Work
 
@@ -238,13 +240,13 @@ Start by searching for what you need - your JFrog AI ML guide walks you through 
 
 <div class="green-shadow-cards">
   <Cards columns={2}>
-    <Card title="Setting Up JFrog ML" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/setting-up-jfrog-ml" target="_self">
-      <small>*How to set up your JFrog ML*</small>
+    <Card title="JFrog ML" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/setting-up-jfrog-ml" target="_self">
+      <small>*Your dedicated solution to build, fine-tune, and serve models from experimentation to production.*</small>
     </Card>
 
     <Card title="AI Catalog" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog" target="_self">
       (Including Shadow AI Detection)<br />
-      <small>*Manage your AI Assets in a centralized hub for AI model discovery, governance, and deployment*</small>
+      <small>*Your centralized hub to govern, secure, and manage all AI assets across the organization.*</small>
     </Card>
   </Cards>
 </div>
