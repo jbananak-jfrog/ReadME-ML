@@ -83,7 +83,7 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
 
       * **For External models:** Click **Connect & allow**
       * **For Open-source models:** Click **Allow**
-      * 
+      
 
         
 
