@@ -106,15 +106,12 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
 
 <Columns layout="auto">
   <Column>
-
+    <div style={{ textAlign: 'center' }}>ABC</div>
     <Image align="center" border={false} src="https://files.readme.io/e73cbbf0c2846f2fc367e9ac00cdb1177d0aade0042618ff1bf4b0b884697575-allowmodelusage_ext_long_1.png" />
-
   </Column>
-
   <Column>
-
+    <div style={{ textAlign: 'center' }}>DEF</div>
     <Image align="center" border={false} src="https://files.readme.io/e08fab9f0ac1560ef5488679ae2323bf6c7c266d0d6b9c74e3845c3bff833f86-opensource_projects_dropdown.png" />
-
   </Column>
 </Columns>
 
