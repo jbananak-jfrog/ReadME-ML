@@ -85,7 +85,7 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
 
       * **For Model packages:** Click **Allow**
 
-<div style={{ marginLeft: '100px' }}>
+<div style={{ marginLeft: '40px' }}>
 <Columns layout="auto">
   <Column>
     <Image align="center" src="https://files.readme.io/513cdd35e9df27f27749dc64a821f4c63ba471edf10f0b50852376e4ec0c4286-connectandallow_1.png" />
@@ -105,7 +105,7 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
   <li>In the *Allow Model Usage* pane, select the project from the drop-down list.</li>
 </ol>
 
-<div style={{ marginLeft: '20px' }}>
+<div style={{ marginLeft: '40px' }}>
 <Columns layout="auto">
   <Column>
     <div style={{ textAlign: 'center' }}>Select Project for an External Model</div>
