@@ -85,6 +85,7 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
 
       * **For Model packages:** Click **Allow**
 
+<div style={{ marginLeft: '20px' }}>
 <Columns layout="auto">
   <Column>
     <Image align="center" src="https://files.readme.io/513cdd35e9df27f27749dc64a821f4c63ba471edf10f0b50852376e4ec0c4286-connectandallow_1.png" />
@@ -94,6 +95,7 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
     <Image align="center" src="https://files.readme.io/cddc7e7d7c2e3d3b051adb8bd02872a99157f4bd662a1bc0ecbe0ec0d6a33a8f-opensource_model_information.png" />
   </Column>
 </Columns>
+</div>
 
 <Callout icon="📘" theme="info">
   The Allow/Connect & allow buttons appear twice on the page and you can use either.
@@ -103,6 +105,7 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
   <li>In the *Allow Model Usage* pane, select the project from the drop-down list.</li>
 </ol>
 
+<div style={{ marginLeft: '20px' }}>
 <Columns layout="auto">
   <Column>
     <div style={{ textAlign: 'center' }}>Select Project for an External Model</div>
@@ -116,6 +119,7 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
     <Image align="center" src="https://files.readme.io/e08fab9f0ac1560ef5488679ae2323bf6c7c266d0d6b9c74e3845c3bff833f86-opensource_projects_dropdown.png" />
   </Column>
 </Columns>
+</div>
 
 3. Based on your model type, perform the required configuration and complete the approval (allowance):
 
