@@ -113,20 +113,13 @@ Shadow AI Detection integrates tightly with JFrog’s security components:
 3. Click the ​**...** button In the top right corner, and click ​**Block**​​.
 
 <Columns layout="auto">
-
   <Column>
-
-   <Image align="center" border={false} src="https://files.readme.io/0a3555597d708fb70c447447228e5c0468e9be38c7823d98f8f43d1d36c4dccb-block____.png" />
+    <Image align="center" src="https://files.readme.io/0a3555597d708fb70c447447228e5c0468e9be38c7823d98f8f43d1d36c4dccb-block____.png" />
   </Column>
 
   <Column>
-
-   <Image align="center" border={false} src="https://files.readme.io/9171d507a944ca4cc9721ffcd8bdd8b5f0bb70a84629321f878928d35ec35605-blockbutton_1.png" />
-
+    <Image align="center" src="https://files.readme.io/9171d507a944ca4cc9721ffcd8bdd8b5f0bb70a84629321f878928d35ec35605-blockbutton_1.png" />
   </Column>
-
 </Columns>
 
-
-
-
+4. Select the project for which the model is blocked, and click **Block**.
