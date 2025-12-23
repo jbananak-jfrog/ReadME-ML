@@ -72,9 +72,9 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
 1. **Select a model**:
 
    1. From the JFrog platform menu, select **AI/ML** > **Models**. The Models page opens. If this is your first model, the **Allowed models** tab is empty.
-   2. Select the **Discover AI Catalog** tab to view all available models.
+   2. Select the **Discovery** tab to view all available models.  
 
-      <Image alt="models_page.png" border={false} src="https://files.readme.io/526d6c2fdf3acb6835f76cb07164185627c7525b33c5080bcacbb9696726c708-uuid-b96e380e-cfad-f41a-319f-d151e7836fd0.png" />
+      <Image align="center" border={false} src="https://files.readme.io/39d8b9879eea0216b3cd7a4d7029bdfd9555763f187956da114ec53ae5593b6b-models_page2.png" />
    3. Browse through the catalog to find the model you want. You can [search and filter](/docs/discover-and-allow-models) to locate a specific model or model type.
    4. Click the model you wish to allow. The model details are displayed. To enable your developers to use this model, assign it to a project, connect it (for external models), and allow it.
 2. **Select the project and configure model allowance:**
