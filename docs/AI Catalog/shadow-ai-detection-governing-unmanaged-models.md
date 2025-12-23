@@ -16,6 +16,8 @@ By scanning all artifacts across the JFrog Platform, we identify what models are
 
 <Image align="center" border={false} src="https://files.readme.io/8c4b168abc8ffa36c8195a41ffde5a70502868211958ba783d647a2aca768938-shadow_ai_introduction.png" />
 
+Shadow AI detection gives you the ability to manage and prevent the entry of unvetted ai assets into your system.
+
 <Callout icon="📘" theme="info">
   Shadow AI Detection is available to all organizations with an active AI Catalog subscription.
 </Callout>
