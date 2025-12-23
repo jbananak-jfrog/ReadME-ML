@@ -100,7 +100,7 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
 </Callout>
 
 
-<ol style={{ listStyleType: 'lower-alpha', marginLeft: '20px' }} start="2">
+<ol style={{ listStyleType: 'lower-roman', marginLeft: '20px' }} start="2">
 <li>In the _Allow Model Usage_ pane, select the project from the drop-down list.</li>
 </ol>
 <br />
