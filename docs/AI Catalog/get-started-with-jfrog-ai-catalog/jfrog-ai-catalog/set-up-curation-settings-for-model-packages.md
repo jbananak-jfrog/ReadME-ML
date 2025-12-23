@@ -27,7 +27,7 @@ This procedure outlines the **prerequisite steps** to enable the use of **model 
 
 6. Make sure all the repositories in the package type are also enabled. If any are not enabled, a notification is shown at the top, for example, "_Connect package type status: Partially Connected_".
 
-The prerequisite Curation Settings setup is now complete. If required, you can now return to your model page in the AI Catalog, and continue to enable use of your open source model.
+The prerequisite Curation Settings setup is now complete. If required, you can now return to your model page in the AI Catalog, and continue to enable use of your model package.
 
 <Callout icon="❗️" theme="error">
   **Important**
@@ -35,7 +35,6 @@ The prerequisite Curation Settings setup is now complete. If required, you can n
   Failure to activate these curation settings may result in the following error when attempting to add a model package. To resolve this error, ensure both settings are activated as described.
 
   <Image align="center" border={false} src="https://files.readme.io/fdffe986a5c30bdae494dda9a1b005fa52e7ce7fbb312cfc4e5f3d9e7cef81e9-curationerror_copy.png" />
-
 </Callout>
 
 <br />
