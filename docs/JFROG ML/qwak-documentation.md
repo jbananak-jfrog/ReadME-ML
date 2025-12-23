@@ -7,10 +7,4 @@ metadata:
 ---
 For Qwak documentation, see:
 
- 
-
-<Embed typeOfEmbed="pdf" url="" />
-
-<Embed typeOfEmbed="pdf" url="" />
-
 <br />
