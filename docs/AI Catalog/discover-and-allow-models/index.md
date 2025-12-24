@@ -20,11 +20,11 @@ metadata:
 ---
 ## Exploring the AI Catalog
 
-When you enter the AI Catalog, you can explore various models available for use in your projects. In addition, you can detect any AI assets that are used in your system, but are unmanaged by AI catalog, and possibly even unvetted by your organization. For more information about detecting unmanaged AI assets, see [Detect Shadow AI]()​ [→Shadow AI Detection Intro]​​.
+When you enter the AI Catalog, you can explore various models available for use in your projects. In addition, you can detect any AI assets that are used in your system, but are unmanaged by AI catalog, and possibly even unvetted by your organization. For more information about detecting unmanaged AI assets, see [Detect Shadow AI](/docs/shadow-ai-detection-governing-unmanaged-models)​​​.
 
 ## Managing Allowed Models
 
-After you have allowed your first model, you will see that the allowed models all appear in the **Allowed Models** tab.
+After you have allowed your first model, you will see that the allowed models all appear in the **Registry** tab.
 
 * For instructions how to allow your first model, see <Anchor label="**Allowing Your First Model**" title="Allow Your First Model" href="#allow-your-first-model">**Allowing Your First Model**</Anchor>.
 * To allow additional models, the same instructions can be followed. Note, however, that if the **model provider is already associated with the project** (meaning that another model from the same provider is associated with the project), the **connection is already set up** and does not need to be re-selected.
@@ -46,7 +46,7 @@ For model packages, the AI Catalog streamlines the path to production:
 
 ## Searching and Filtering AI Models
 
-In order to help you find the best model for your project in the AI Catalog, in the _Models_ page you can search for and filter models by:
+In order to help you find the best model for your project in the AI Catalog, in the **Discovery** tab on the _Models_ page you can search for and filter models by:
 
 * **Free text**: Either in the filter panel or the search bar, enter text to search.
 * **Allowed status**: Select to display only allowed models.
