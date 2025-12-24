@@ -52,7 +52,7 @@ Since the **Registry** tab is empty on first use, your first action is to switch
 
 Use the [**Filter & Search**](/docs/discover-and-allow-models) functionality to quickly pinpoint the most suitable models.
 
-The JFrog platform automatically scans each model for vulnerabilities, and offers transparent license information to help you avoid compliance issues.".
+The JFrog platform automatically scans each model for vulnerabilities, and offers transparent license information to help you avoid compliance issues.
 
 <Image alt="modeldetails.png" border={false} src="https://files.readme.io/c338827ad0a4936b782d2feda9208535d8cb7c173f768d837198d11500e1040f-uuid-e38f6c34-b8b8-e8ea-f30b-5ce210887d4f.png" />
 
@@ -64,7 +64,7 @@ The JFrog platform automatically scans each model for vulnerabilities, and offer
 
 ### Allow Models
 
-Next, governance becomes straightforward and effective. Admin users can easily allow models (from the <Anchor label="Discovery" title="Discover and Allow Models" href="/docs/discover-and-allow-models">Discovery</Anchor> tab) for secure use within your organization. Models can be approved on a per-project basis, with a comprehensive list of allowed models available on the _<Anchor label="Registry (allowed models)" title="Discover and Allow Models" href="/docs/discover-and-allow-models">Registry (allowed models)</Anchor>_ tab.
+Next, governance becomes straightforward and effective. Admin users can easily allow models (from the <Anchor label="Discovery" title="Discover and Allow Models" href="/docs/discover-and-allow-models">Discovery</Anchor> tab) for secure use within your organization. Models can be approved on a per-project basis, with a comprehensive list of allowed models available on the _[Registry](/docs/discover-and-allow-models)_ _(allowed models)_ tab.
 
 <Image alt="registry.png" border={false} src="https://files.readme.io/5f29ba39c68182a139f14e7386eff2f7d44bd9b1d9da029b51129c754526036f-uuid-9a9ffa87-6cb7-5559-4d09-332db660a3dc.png" />
 
