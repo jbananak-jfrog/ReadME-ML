@@ -14,7 +14,11 @@ This section reviews the following topics:
 
 <Anchor label="Performance Issues" title="Performance Issues" href="/docs/performance-issues">Performance Issues</Anchor>
 
+<br />
+
 <Anchor label="Installation Issues" title="Installation Issues" href="/docs/installation-issues">Installation Issues</Anchor>
+
+<br />
 
 <Anchor label="Network and Connectivity Issues" title="Network and Connectivity Issues" href="/docs/network-and-connectivity-issues">Network and Connectivity Issues</Anchor>
 
