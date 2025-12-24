@@ -1,5 +1,5 @@
 ---
-title: 'Get Started with the AI Catalog '
+title: 'Quick Start with the AI Catalog '
 deprecated: false
 hidden: false
 metadata:
