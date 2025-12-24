@@ -20,7 +20,7 @@ metadata:
 ---
 ## Exploring the AI Catalog
 
-When you enter the AI Catalog, you can explore various models available for use in your projects.
+When you enter the AI Catalog, you can explore various models available for use in your projects. In addition, you can detect any AI assets that are used in your system, but are unmanaged by AI catalog, and possibly even unvetted by your organization. For more information about detecting unmanaged AI assets, see [Detect Shadow AI]()​ [→Shadow AI Detection Intro]​​.
 
 ## Managing Allowed Models
 
@@ -86,15 +86,15 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
       * **For Model packages:** Click **Allow**
 
 <div style={{ marginLeft: '36px' }}>
-<Columns layout="auto">
-  <Column>
-    <Image align="center" src="https://files.readme.io/513cdd35e9df27f27749dc64a821f4c63ba471edf10f0b50852376e4ec0c4286-connectandallow_1.png" />
-  </Column>
+  <Columns layout="auto">
+    <Column>
+      <Image align="center" src="https://files.readme.io/513cdd35e9df27f27749dc64a821f4c63ba471edf10f0b50852376e4ec0c4286-connectandallow_1.png" />
+    </Column>
 
-  <Column>
-    <Image align="center" src="https://files.readme.io/cddc7e7d7c2e3d3b051adb8bd02872a99157f4bd662a1bc0ecbe0ec0d6a33a8f-opensource_model_information.png" />
-  </Column>
-</Columns>
+    <Column>
+      <Image align="center" src="https://files.readme.io/cddc7e7d7c2e3d3b051adb8bd02872a99157f4bd662a1bc0ecbe0ec0d6a33a8f-opensource_model_information.png" />
+    </Column>
+  </Columns>
 </div>
 
 <Callout icon="📘" theme="info">
@@ -106,19 +106,19 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
 </ol>
 
 <div style={{ marginLeft: '36px' }}>
-<Columns layout="auto">
-  <Column>
-    <div style={{ textAlign: 'center' }}>Select Project for an External Model</div>
+  <Columns layout="auto">
+    <Column>
+      <div style={{ textAlign: 'center' }}>Select Project for an External Model</div>
 
-    <Image align="center" src="https://files.readme.io/e73cbbf0c2846f2fc367e9ac00cdb1177d0aade0042618ff1bf4b0b884697575-allowmodelusage_ext_long_1.png" />
-  </Column>
+      <Image align="center" src="https://files.readme.io/e73cbbf0c2846f2fc367e9ac00cdb1177d0aade0042618ff1bf4b0b884697575-allowmodelusage_ext_long_1.png" />
+    </Column>
 
-  <Column>
-    <div style={{ textAlign: 'center' }}>Select Project for a Model Package</div>
+    <Column>
+      <div style={{ textAlign: 'center' }}>Select Project for a Model Package</div>
 
-    <Image align="center" src="https://files.readme.io/e08fab9f0ac1560ef5488679ae2323bf6c7c266d0d6b9c74e3845c3bff833f86-opensource_projects_dropdown.png" />
-  </Column>
-</Columns>
+      <Image align="center" src="https://files.readme.io/e08fab9f0ac1560ef5488679ae2323bf6c7c266d0d6b9c74e3845c3bff833f86-opensource_projects_dropdown.png" />
+    </Column>
+  </Columns>
 </div>
 
 3. Based on your model type, perform the required configuration and complete the approval (allowance):
