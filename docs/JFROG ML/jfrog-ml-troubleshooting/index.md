@@ -22,6 +22,8 @@ This section reviews the following topics:
 
 <Anchor label="Network and Connectivity Issues" title="Network and Connectivity Issues" href="/docs/network-and-connectivity-issues">Network and Connectivity Issues</Anchor>
 
+<br />
+
 <Callout icon="📘" theme="info">
   Make sure you are always working with the latest version of Frog ML SDK, or run the command:
 
