@@ -295,7 +295,7 @@ curl --location --request POST 'https://models.<your_env>.qwak.ai/v1/1_hour_mode
   Audience information is not stored in the JFrog ML Analytics Lake. This means that audience information of requests cannot be tracked.
 </Callout>
 
-#### Splitting Traffic with Variations
+### Splitting Traffic with Variations
 
 Variations are used for traffic splitting, operating above the Audience level. They have the following key characteristics:
 
@@ -305,7 +305,7 @@ Variations are used for traffic splitting, operating above the Audience level. T
 * Each Variation can direct traffic to only one deployed Build at a time.
 * The Variation assigned to a request is recorded in Analytics under the column `variation_name`.
 
-#### Assigning Traffic to Variations
+### Assigning Traffic to Variations
 
 When deploying a model with multiple variations, audiences are assigned to specific variations, including the fallback audience and a fallback variation.
 
@@ -321,12 +321,12 @@ The currently deployed Variations appear under Traffic Control section in the mo
 
 **Connecting Audiences to Variations:** Audiences can be linked to one or more variations, with traffic between variations distributed randomly based on defined percentages.
 
-To modify traffic configuration:
+**▶ To modify traffic configuration:**
 
 1. Edit the deployment of the desired build.
 2. Adjust the percentage of traffic for each variation.
 
-#### Enabling Variations with the `default` Audience
+### Enabling Variations with the `default` Audience
 
 In certain scenarios, you may not require the traditional traffic categorization provided by audience conditions. For such cases, JFrog ML offers support for a default audience, which lacks conditions but enables the utilization of variations for all requests.
 
@@ -342,7 +342,7 @@ spec:
 
 To register this audience configuration, please refer to the Audiences section above.
 
-#### Example Deployment Request with Traffic Splitting
+### Example Deployment Request with Traffic Splitting
 
 The following is an example of a deployment request that incorporates traffic splitting. In this example, the variation named 'test-variation' is being deployed, with traffic split evenly—50% to the default variation and 50% to the test-variation.
 
@@ -368,20 +368,20 @@ realtime:
   fallback_variation: default
 ```
 
-#### Undeploying a Multi-variation Realtime Model
+### Undeploying a Multi-variation Realtime Model
 
 Once you have more than one build deployed, when you undeploy an existing build, you must specify how to split the traffic after the undeployment.
 
-###### Undeploying Models Using the UI
+#### Undeploying Models Using the UI
 
-To undeploy a variation:
+**▶ To undeploy a variation:**
 
 1. In the build view, click the options icon next to a deployed build and select **Undeploy**.
 2. Redistribute the traffic between the remaining variations and then click **Undeploy**.
 
 ###### Undeploying Models Using the CLI
 
-To undeploy a model with variation from the CLI, run the following command:
+**▶ To undeploy a model with variation from the CLI, run the following command:**
 
 ```
 frogml models undeploy \
@@ -420,15 +420,15 @@ When undeploying from 2 variations to one, you don't have to pass any variation-
   To execute the command in sync, use the `--sync` flag.
 </Callout>
 
-### Shadow Deployment
+## Shadow Deployment
 
-#### What is Shadow Deployment?
+### What is Shadow Deployment?
 
 Shadow deployment is a special kind of deployment. The traffic is not divided between the deployments but instead multiplied. The shadow deployment itself does not respond to the request but processes it and logs the output.
 
 This kind of deployment is best for cases where you want to check how a model behaves without affecting the actual production traffic.
 
-#### Technical Considerations
+### Technical Considerations
 
 Like a regular variation, you can configure the percentage of traffic that the deployment handles. For example, entering `20` in the percentage of the variation copies and routes every 5th request to the shadow deployment.
 
@@ -438,13 +438,13 @@ Like a regular variation, you can configure the percentage of traffic that the d
   Traffic for shadow deployments is routed from the general traffic and not from a specific variation.
 </Callout>
 
-###### Shadow Deployment in the UI
+#### Shadow Deployment in the UI
 
 Every audience can have at most one shadow variation!
 
 <Image alt="Shadow Deployment UI" border={false} src="https://files.readme.io/65b1f7404d63bf81a65fad4fd99dfb1d4639ef9da9e22ae553c480b84746398c-uuid-6186de32-84d8-fc3e-1a04-90bdfb4fe8ab.png" />
 
-To add a shadow deployment:
+**▶ To add a shadow deployment:**
 
 1. Select **Traffic Control** button and check the ghost icon next to the wanted variation in the tab.
 2. Specify the percentage of traffic handled by the shadow deployment model.
@@ -479,7 +479,7 @@ frogml models deploy realtime --model-id <model-identifier> --build-id <build-id
   The percentage of all the variations must add up to 100, regardless of shadow deployments.
 </Callout>
 
-### Protected Variations
+## Protected Variations
 
 Protected variations restrict sensitive model deployments to authorized users, ensuring only admins and maintainers can update or undeploy the model.
 
@@ -489,7 +489,7 @@ Protected variations restrict sensitive model deployments to authorized users, e
   Protected variations are supported for <Anchor label="Real-time model deployments" title="Real-Time Deployments" href="/docs/real-time-deployments">Real-time model deployments</Anchor> only on hybrid deployments.
 </Callout>
 
-#### Roles and Permissions
+### Roles and Permissions
 
 JFrog ML supports three user roles: **Administrators**, **Maintainers** and **Members**.
 
@@ -497,13 +497,13 @@ By setting a model variation as protected, you ensure that both **admins** and *
 
 **Members** will only be able to view deployment details, without modifying any deployments.
 
-#### Defining Protected Variations Via UI
+### Defining Protected Variations Via UI
 
 When deploying a real time mode you may set the model variation as protected by using the `Protected Variation` checkbox.
 
 By setting a deployment as protected, you can make sure only admins and maintainers will be able to modify it.
 
-#### Defining Protected Variations Via SDK
+### Defining Protected Variations Via SDK
 
 Starting `frogml-cli 1.1`, you may use the `--protected` flag when deploying a real time model to set the model variation as protected.
 
@@ -511,7 +511,7 @@ Starting `frogml-cli 1.1`, you may use the `--protected` flag when deploying a r
 frogml models deploy realtime --model-id "my-model-id" --variation-name "default" --protected
 ```
 
-#### Deploying Multiple Variations
+### Deploying Multiple Variations
 
 When deploying multiple model variations, it is possible to define some variations as protected and some as unprotected.
 
@@ -523,6 +523,6 @@ The protected variations will be modified only by maintainers or admins, while t
   Updating traffic split configuration is allowed only for maintainers or admins when one of the deployed variations is protected.
 </Callout>
 
-#### Multi-Environment Setup
+### Multi-Environment Setup
 
 If a model is deployed across several environments within a single JFrog ML account, _Protected Variations_ are implemented individually for each environment. For instance, consider having both _production_ and _staging_ environments, with a model deployable to each. It is possible to designate the protected variation exclusively to one of these environments. Consequently, only **Admins** and **Maintainers** would have the authority to modify the deployment in the production environment, whereas the staging environment remains accessible to all account **Members**.
