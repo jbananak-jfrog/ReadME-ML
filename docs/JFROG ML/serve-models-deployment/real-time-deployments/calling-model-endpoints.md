@@ -7,8 +7,6 @@ metadata:
 ---
 <br />
 
-## Calling Model Endpoints
-
 In this section, you'll learn how to effectively interact with and call real-time model endpoints using various SDKs and our REST API.
 
 <Anchor label="JFrog ML Rest API" title="JFrog ML Rest API" href="/docs/jfrog-ml-rest-api">JFrog ML Rest API</Anchor>
