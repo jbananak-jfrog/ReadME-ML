@@ -123,3 +123,7 @@ Shadow AI Detection integrates tightly with JFrog’s security components:
 </Columns>
 
 4. Select the project for which the model is blocked, and click **Block**.
+
+<br />
+
+See []()
