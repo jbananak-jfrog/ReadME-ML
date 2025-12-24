@@ -61,8 +61,6 @@ A table of detected models is displayed showing:
 
 You can click on a model to open the model pane on the right, where you can see in which artifacts and repositories the model can be found and status of the model for all projects.
 
-<Image align="center" border={false} src="https://files.readme.io/ec3018275d5ee4a5bac90bb8fe20bc258bd9f5c71b8c2e9b83ec05f4783b7cd1-detection_tab_callouts.png" />
-
 ## How to Allow Unmanaged or Partially Managed Models
 
 Allowing a model will bring an unmanaged or partially managed model under governance in the AI catalog.
