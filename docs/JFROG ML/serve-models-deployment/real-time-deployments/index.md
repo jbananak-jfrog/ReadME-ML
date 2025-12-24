@@ -575,6 +575,43 @@ go get github.com/qwak-ai/go-sdk/qwak
 The following example invokes the model `test_model` which accepts one feature vector which contains three fields and produces one output field named "score".
 
 ```
+package main
+
+import (
+    "fmt"
+    "github.com/qwak-ai/go-sdk/qwak"
+)
+
+
+func main() {
+    client, err := qwak.NewRealTimeClient(qwak.RealTimeClientConfig{
+        ApiKey:      "api-key",
+        Environment: "env-name",
+    })
+
+    if err != nil {
+        fmt.Println("Errors occurred, Error: ", err)
+    }
+
+    predictionRequest := qwak.NewPredictionRequest("test_model").AddFeatureVector(
+        qwak.NewFeatureVector().
+            WithFeature("feature_a", "feature_value").
+            WithFeature("feature_b", 1).
+            WithFeature("feature_c", 0.5),
+    )
+
+    response, err := client.Predict(predictionRequest)
+    if err != nil {
+        fmt.Println("Errors occurred, Error: ", err)
+    }
+
+    val , err := response.GetSinglePrediction().GetValueAsInt("score")
+    if err != nil {
+        fmt.Println("Errors occurred, Error: ", err)
+    }
+
+    fmt.Println(val)
+}
 ```
 
 <br />
