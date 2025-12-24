@@ -40,7 +40,7 @@ We set up the network requirements and deploy your model on a managed Kubernetes
 
 <Image alt="Real-time model deployment overview" border={false} src="https://files.readme.io/c22e14438f25fe2ee4e3b4a00a29a8e5206e9356f795e0290e3d6251393c2c4e-uuid-5a77810a-0d93-ea20-6692-73b7b87032e3.png" />
 
-### Deploying Real-time Models from the UI
+## Deploying Real-time Models from the UI
 
 <Image alt="Deploying a real-time model from the UI" border={false} src="https://files.readme.io/c37504c48ecaf10085959181c6692b60a42ebe123e004704f8af89c3c79dff23-uuid-ba434fe8-6697-f02d-b1e0-c884dee29695.gif" />
 
@@ -54,7 +54,7 @@ We set up the network requirements and deploy your model on a managed Kubernetes
 6. Configure your real-time deployment by selecting the instance type and the initial number of replicas.
 7. The **Advanced settings** configuration include additional options such as environment variables, invocation timeouts, and more.
 
-### Deploying Real-time Models from the CLI
+## Deploying Real-time Models from the CLI
 
 To deploy a model in real-time mode from the CLI, populate the following command template:
 
@@ -90,7 +90,7 @@ frogml models deploy realtime \
   **Note:** The deployment command is executed asynchronously by default and does not wait for the deployment to complete. To execute the command synchronously use the `--sync` flag.
 </Callout>
 
-### Deploying a Real-time Model Using GPUs
+## Deploying a Real-time Model Using GPUs
 
 Realtime models can be deployed on GPU instances, simply by selecting a [GPU Instance](/docs/instance-sizes-ml-credits#gpu-instances) from the available options.
 
@@ -106,7 +106,7 @@ frogl models deploy realtime \
     --daemon-mode false
 ```
 
-### Configuring Real-time Models
+## Configuring Real-time Models
 
 The following table contains the possible parameters and variables for deploying real-time models.
 
@@ -134,13 +134,13 @@ The following table contains the possible parameters and variables for deploying
   When deploying workers through an HTTP web server, it's essential to understand that each worker operates in its isolated memory space. Consequently, every worker independently loads a model instance into memory. This characteristic should be carefully considered when determining the required memory capacity for your chosen instance type, ensuring sufficient resources are available for all worker models to load and function optimally.
 </Callout>
 
-### Using Custom AWS IAM Role
+## Using Custom AWS IAM Role
 
 In some cases, a model needs to access external services during the runtime. If your model requires access to AWS resources, a custom AWS IAM role can be passed during the deployment process.
 
 The IAM role should be created with the following trust policy:
 
-```
+```python
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -162,7 +162,7 @@ The IAM role should be created with the following trust policy:
 
 The IAM role ARN can be passed directly to a deployment using the `--iam-role-arn` flag. For example:
 
-```
+```python
 frogml models deploy realtime \
     --model-id churn_model \
     --build-id 7121b796-5027-11ec-b97c-367dda8b746f \
@@ -175,7 +175,7 @@ frogml models deploy realtime \
     --iam-role-arn arn:aws:iam::<account-id>:role/<role-name>
 ```
 
-### Deploying Real-time Models Locally
+## Deploying Real-time Models Locally
 
 To run the deployment locally using a local Docker engine, use the `--local` flag. For example:
 
@@ -192,7 +192,7 @@ frogml models deploy realtime \
   **Note:** Deploying models locally is only available for locally generated builds using the `--no-remote` flag.
 </Callout>
 
-### Real-time Model Inference
+## Real-time Model Inference
 
 Once you have successfully deployed a real-time model, you can use the JFrog ML Inference SDK to perform invocations.
 
@@ -206,7 +206,7 @@ Model inference parameters are model specific.
 
 For the below model, assuming it was built and deployed successfully as a real-time endpoint, with the model ID `iris_classifier`:
 
-```
+```python
 from frogml import api, FrogMlModel
 from sklearn import svm, datasets
 import pandas as pd
@@ -233,7 +233,7 @@ class IrisClassifier(FrogMlModel):
 
 A prediction call from the JFrog ML Python SDK is:
 
-```
+```python
 from frogml_inference import RealTimeClient
 
 model_id = "iris_classifier"
@@ -249,7 +249,7 @@ client = RealTimeClient(model_id=model_id)
 response = client.predict(feature_vector)
 ```
 
-### Monitoring Real-time Endpoints
+## Monitoring Real-time Endpoints
 
 JFrog ML endpoints are deployed on Kubernetes, coupled with advanced monitoring tools for production-grade readiness.
 
@@ -263,13 +263,13 @@ In addition, you can follow and search the applicable logs produced by your mode
 
 <Image alt="Model logs tab" border={false} src="https://files.readme.io/e3e6dc87c0d361da0419c49706cd4fc07c9d483534a7ddd2990f755ee8216a38-uuid-96057c91-dc54-213f-69da-34593108ce29.png" />
 
-### Auto-scaling Real-time Models
+## Auto-scaling Real-time Models
 
 To attach a new auto scaling to a running model:
 
-#### 1. Create a config file:
+### 1. Create a config file:
 
-```
+```python
 api_version: v1
 spec:
   model_id: <model-id>
@@ -288,7 +288,7 @@ spec:
           threshold: 60
 ```
 
-#### 2. Run the following command:
+### 2. Run the following command:
 
 ```
 frogml models autoscaling attach -f config.yaml
