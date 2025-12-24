@@ -9,7 +9,7 @@ metadata:
 
 See that various commands that help you manage and track the execution status of your batch models.
 
-#### Getting Batch Execution Status
+## Getting Batch Execution Status
 
 To check the current status of an execution, use the following command:
 
@@ -28,7 +28,7 @@ status = status_response.status
 
 The `execution_id` is returned when an execution is created, and is also visible in the UI.
 
-#### Cancelling a Batch Execution
+## Cancelling a Batch Execution
 
 To cancel an execution, use the following command:
 
@@ -43,13 +43,13 @@ batch_job_manager_client = BatchJobManagerClient()
 batch_job_manager_client.cancel_execution("<execution-id>")
 ```
 
-#### Using Warmup
+## Using Warmup
 
 In some cases, the execution is a single step in a larger workflow orchestration. If the speed of execution is critical, use the warmup option.
 
 The warmup option allows you to allocate the resources for execution before the execution starts. The resources are raised and kept running until the execution itself starts. This is especially relevant when a lot of resources are needed, or when reducing the running time by even 5 minutes is critical.
 
-Low-level API
+### Low-level API
 
 ```
 from frogml.core.clients.batch_job_management.client import BatchJobManagerClient
@@ -78,7 +78,7 @@ batch_job_manager_client = BatchJobManagerClient()
 batch_job_manager_client.start_warmup_job(execution_config)
 ```
 
-DF API
+### DF API
 
 ```
 from frogml_inference.batch_client.batch_client import BatchInferenceClient
@@ -94,7 +94,7 @@ batch_inference_client.warmup(
     build_id=<alternate-build-id>)
 ```
 
-#### Troubleshooting
+## Troubleshooting
 
 For each execution there are two types of logs.
 
