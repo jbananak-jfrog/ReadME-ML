@@ -1,5 +1,5 @@
 ---
-title: Set Up Curation Settings for Model Packages
+title: 'Prerequisite: Set Up Curation Settings for Model Packages'
 deprecated: false
 hidden: false
 metadata:
