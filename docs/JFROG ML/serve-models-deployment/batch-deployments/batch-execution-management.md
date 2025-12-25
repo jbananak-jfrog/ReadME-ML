@@ -7,7 +7,7 @@ metadata:
 ---
 <br />
 
-See that various commands that help you manage and track the execution status of your batch models.
+Understand the00 various commands that help you manage and track the execution status of your batch models.
 
 ## Getting Batch Execution Status
 
