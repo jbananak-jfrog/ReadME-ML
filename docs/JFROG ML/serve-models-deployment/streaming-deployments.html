@@ -55,6 +55,20 @@ stream:
 
 <br />
 
+```bash
+frogml models deploy stream \
+    --model-id <model-id> \
+    --build-id <build-id> \
+    --instance <instance-type> \
+    --replicas <number-of-replicas> \
+    --consumer-bootstrap-server <bootstrap-server> \
+    --consumer-topic <consumer-topic-name> \
+    --producer-bootstrap-server <bootstrap-server> \
+    --producer-topic <producer-topic-name>
+```
+
+<br />
+
 # Streaming Deployments
 
 Streaming deployments enable you to connect Kafka streams with your models for real-time inference. Leveraging this architecture simplifies the process of processing large amounts of distributed data by eliminating the need for complex triggering and scheduling as fresh data arrives.
