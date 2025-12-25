@@ -1,3 +1,6 @@
+---
+title: Streaming Deployments
+---
 <HTMLBlock>{`
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -49,3 +52,49 @@ stream:
   kafka.producer.sasl_plain_username=&lt;username&gt; \
   kafka.producer.sasl_plain_password=&lt;password&gt;</pre><div dir="ltr" class="note"><h3 class="title">Note</h3><p>These environment variables are only required if your Kafka server is configured to use SASL authentication. Replace the placeholders <code class="code">&lt;username&gt;</code> and <code class="code">&lt;password&gt;</code> with your actual credentials.</p></div><h4 id="UUID-4782bd14-1f12-34e0-80e3-2b754261f4c1_bridgehead-id235246609864741" class="bridgehead">Summary</h4><p>Configuring your streaming deployments with an understanding of replicas, partitions, and their parameters will help you achieve efficient and scalable real-time inference for your applications. Tailor these settings to meet your specific needs for optimal performance and reliability.</p></section><div class="footer-content"><div class="glossary-definitions"></div></div></div></body></html>
 `}</HTMLBlock>
+
+<br />
+
+# Streaming Deployments
+
+Streaming deployments enable you to connect Kafka streams with your models for real-time inference. Leveraging this architecture simplifies the process of processing large amounts of distributed data by eliminating the need for complex triggering and scheduling as fresh data arrives.
+
+### Streaming Use Cases
+
+Consider using streaming deployments in the following scenarios:
+
+1. **Event-driven applications:** Respond to specific events or triggers in real-time.
+2. **Real-time decision-making:** Process data 'as it arrives' for time-sensitive systems.
+3. **Scalable processing:** Efficiently handle large data volumes from multiple sources.
+
+### Deploying Streaming Models
+
+To use streaming inference on JFrog ML, use the following examples:
+
+#### Option 1: Deploying via UI
+
+1. Build a new model.
+2. Click **Deploy** and choose **Streaming**.
+3. Choose the **instance type** and configure the **Kafka server** and **topics**.
+
+> **Note**
+>
+> Make sure you select the number of replicas and instance type to achieve a balance with the number of partitions from your Kafka broker. The partitions will be divided across all the replicas from your deployment.
+
+4. Click **Deploy** to make your model live.
+
+#### Option 2: Deploying via CLI
+
+You can also deploy your streaming model using the command line interface (CLI). Here’s a general command structure:
+
+```bash
+frogml models deploy stream \
+    --model-id <model-id> \
+    --build-id <build-id> \
+    --instance <instance-type> \
+    --replicas <number-of-replicas> \
+    --consumer-bootstrap-server <bootstrap-server> \
+    --consumer-topic <consumer-topic-name> \
+    --producer-bootstrap-server <bootstrap-server> \
+    --producer-topic <producer-topic-name>
+```
