@@ -369,3 +369,200 @@ JFrog ML streaming deployments enable granular control through multiple consumer
     </tr>
   </tbody>
 </Table>
+
+<br />
+
+#### Offset Behavior in Redeployments
+
+When you redeploy a streaming model using the **same consumer group**, the new deployment resumes consumption **from the last committed offset** for that group.
+
+It does **not** start consuming messages based on the **deployment timestamp**. This ensures message continuity—no data is skipped or reprocessed unnecessarily.
+
+If the consumer group does n**ot have a previously committed offset** (for example, on the first deployment), the consumer starts from the offset defined by `auto.offset.reset:
+
+* `earliest:` consumes all available messages from the beginning of the topic.
+* `latest:` consumes only new messages that arrive after deployment.
+
+*Required
+
+### Producer Configuration
+
+<br />
+
+<Table align={["left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Parameter
+      </th>
+
+      <th>
+        Description
+      </th>
+
+      <th>
+
+      </th>
+
+      <th>
+
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Producer Bootstrap Servers (Required)
+      </td>
+
+      <td>
+        A list of Kafka bootstrap servers to produce model inference outputs.
+      </td>
+
+      <td>
+        -
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Producer Topic*
+      </td>
+
+      <td>
+        The Kafka topic to which the model will produce messages.
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Compression Type
+      </td>
+
+      <td>
+        Determines how messages are compressed before being stored in Kafka.
+
+        Default: uncompressed
+      </td>
+
+      <td>
+        Compressing messages can significantly reduce the amount of data transmitted over the network and storage requirements in Kafka. Options:
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+
+      </td>
+
+      <td>
+        Compression Type
+      </td>
+
+      <td>
+        Description
+      </td>
+
+      <td>
+        Best Use
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+
+      </td>
+
+      <td>
+        None (`none`)
+      </td>
+
+      <td>
+        No compression applied.
+      </td>
+
+      <td>
+        When message size isn’t important, or data is already compressed or optimized.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+
+      </td>
+
+      <td>
+        Gzip ( `gzip`)
+      </td>
+
+      <td>
+        Compresses messages with the gzip algorithm.
+      </td>
+
+      <td>
+        Provides a good balance between compression ratio and CPU overhead.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+
+      </td>
+
+      <td>
+        Snappy ( ` snappy`)
+      </td>
+
+      <td>
+        Compresses messages with the Snappy algorithm.
+      </td>
+
+      <td>
+        Faster than gzip but with a lower compression ratio.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ++
+      </td>
+
+      <td>
+        LZ4 (`lz4`)
+      </td>
+
+      <td>
+        Compresses messages with the LZ4 algorithm.
+      </td>
+
+      <td>
+        Fastest option; slightly lower compression ratio than gzip or Snappy.
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+<br />
+
+<br />
+
+|    | None |    |    |
+| :- | :--- | :- | :- |
+| ++ | Gzip |    |    |
