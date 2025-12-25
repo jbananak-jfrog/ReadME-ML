@@ -585,19 +585,6 @@ Ensure the header is enclosed in double quotes (") when passing the `JFROG_TOKEN
 
 <br />
 
-```
-import os
-import frogml
-import pandas as pd
-
-@frogml.api()
-def predict(self, df):
-    attribute = os.getenv("attribute", "default_customer"))
-
-    df = df.drop([attribute], axis=1)
-    return pd.DataFrame(self.catboost.predict_proba(df)[:, 1], columns=['Churn_Probability'])
-```
-
 <br />
 
 <br />
