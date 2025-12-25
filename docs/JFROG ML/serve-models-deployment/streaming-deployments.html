@@ -249,9 +249,123 @@ Under the Model Overview tab, you can view the following metrics for your deploy
   * A positive value indicates that more messages are produced than consumed.
   * 0 indicates that more messages are consumed than are produced, or they are equal.
   * A stable or decreasing chart indicates stable performance.
-  
-  ![Streaming Models Dashboard](/image/uuid-2e209388-db46-5a09-eade-7a620a6ee018.png)
 
-Configuring Streaming Models Overview
+  <Image align="center" alt="Streaming Models Dashboard" border={false} src="https://files.readme.io/0a71b11e5344ae648c1571edca2f245174eeca2d83ca68dc0a1b1d3f5fc9de19-streaming_deployment.png" />
+
+### Configuring Streaming Models Overview
 
 JFrog ML streaming deployments enable granular control through multiple consumer and producer specifications. Below is an overview of the key parameters and configurations you can set to tailor your streaming deployment.
+
+| Configuration          | Description                                                                                 |
+| :--------------------- | :------------------------------------------------------------------------------------------ |
+| Consumer Configuration | Settings relating to how your model consumes messages from Kafka.                           |
+| Producer Configuration | Settings for how your model produces messages to Kafka.                                     |
+| Custom Configurations  | Use environment variables to customize consumer and producer settings for advanced control. |
+
+### Consumer Configuration
+
+<br />
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Parameter
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        Consumer Bootstrap Servers (Required)
+      </td>
+
+      <td>
+        A list of Kafka bootstrap serverS to consume messages for model inference.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Consumer Topic*
+      </td>
+
+      <td>
+        A list of Kafka bootstrap serverS to consume messages for model inference.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Consumer Group*
+      </td>
+
+      <td>
+        The name of the consumer group the model inference is attached to.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Group ID
+      </td>
+
+      <td>
+        Identifies a group of consumers that belong to the same consumer group. (Each message in a partition is delivered to only one consumer within the same group, enabling load balancing and parallel processing.)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Auto offset reset
+      </td>
+
+      <td>
+        Defines behavior when a consumer first joins a group or cannot find a valid offset. (For example, when the offset does not exist, or has been deleted.) Defines whether the consumer should start reading messages from the earliest available offset ("earliest") or from the latest offset ("latest") in the topic.  
+
+        Default: Earliest 
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Consumer timeout
+      </td>
+
+      <td>
+        Maximum time a consumer can be inactive before being considered dead or no longer part of the consumer group. If a consumer does not send a heartbeat to Kafka within this timeout period, it may be removed from the group, and its partitions will be reassigned to other consumers.
+
+        Default: 60000 ms
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Max batch
+      </td>
+
+      <td>
+        Maximum number of records the consumer will attempt to fetch in a single poll request to Kafka. This can affect throughput and latency.
+
+        Default: 1
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Max polling latency
+      </td>
+
+      <td>
+        Maximum time the consumer will wait for new records to be available in a poll request (for new records to be available in the topic). If no new records are available within this time limit, the poll request will return empty.
+
+        Default: 1000 ms
+      </td>
+    </tr>
+  </tbody>
+</Table>
