@@ -20,7 +20,7 @@ This process is useful when you're predicting inside a notebook or as part of an
   The order of the results DataFrame is not guaranteed to be in the order of the input DataFrame. If the ordering is critical, consider adding a column you can sort on in the results DataFrame.
 </Callout>
 
-#### Installing the `frogml-inference` SDK
+## Installing the `frogml-inference` SDK
 
 To enable batch processing of data from your local computer using Python Dataframes with the `frogml-inference` client, you need to install additional libraries that are not included by default in the client. Therefore, it is necessary to install the `[batch]` version of the package to ensure the successful execution of data batches.
 
@@ -28,7 +28,7 @@ To enable batch processing of data from your local computer using Python Datafra
 pip install frogml-inference[batch]
 ```
 
-#### Execution Example
+## Execution Example
 
 ```
 from frogml_inference import BatchInferenceClient
@@ -46,7 +46,7 @@ result_df = batch_inference_client.run(
     parameters=<parameters>)
 ```
 
-#### Batch Job Parallelism
+## Batch Job Parallelism
 
 Behind the scenes, JFrog ML's batch processing <Anchor label="low level" title="Storage-Based Execution" href="/docs/storage-based-execution">low level</Anchor> API is used.
 
