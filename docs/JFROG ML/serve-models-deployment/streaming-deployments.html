@@ -326,9 +326,9 @@ JFrog ML streaming deployments enable granular control through multiple consumer
       </td>
 
       <td>
-        Defines behavior when a consumer first joins a group or cannot find a valid offset. (For example, when the offset does not exist, or has been deleted.) Defines whether the consumer should start reading messages from the earliest available offset ("earliest") or from the latest offset ("latest") in the topic.  
+        Defines behavior when a consumer first joins a group or cannot find a valid offset. (For example, when the offset does not exist, or has been deleted.) Defines whether the consumer should start reading messages from the earliest available offset ("earliest") or from the latest offset ("latest") in the topic.
 
-        Default: Earliest 
+        Default: Earliest
       </td>
     </tr>
 
@@ -396,11 +396,17 @@ If the consumer group does n**ot have a previously committed offset** (for examp
         Parameter
       </th>
 
-      <th colspan="3">
+      <th>
         Description
       </th>
 
-      
+      <th>
+
+      </th>
+
+      <th>
+
+      </th>
     </tr>
   </thead>
 
@@ -410,10 +416,17 @@ If the consumer group does n**ot have a previously committed offset** (for examp
         Producer Bootstrap Servers (Required)
       </td>
 
-      <td colspan="3">
+      <td>
         A list of Kafka bootstrap servers to produce model inference outputs.
       </td>
 
+      <td>
+
+      </td>
+
+      <td>
+
+      </td>
     </tr>
 
     <tr>
@@ -421,10 +434,17 @@ If the consumer group does n**ot have a previously committed offset** (for examp
         Producer Topic*
       </td>
 
-      <td colspan="3">
+      <td>
         The Kafka topic to which the model will produce messages.
       </td>
 
+      <td>
+
+      </td>
+
+      <td>
+
+      </td>
     </tr>
 
     <tr>
@@ -432,15 +452,22 @@ If the consumer group does n**ot have a previously committed offset** (for examp
         Compression Type
       </td>
 
-      <td colspan="3">
+      <td>
         Determines how messages are compressed before being stored in Kafka.
 
         Default: uncompressed
-      
+
         Compressing messages can significantly reduce the amount of data transmitted over the network and storage requirements in Kafka. Options:
       </td>
 
-         </tr>
+      <td>
+
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
 
     <tr>
       <td>
@@ -448,15 +475,15 @@ If the consumer group does n**ot have a previously committed offset** (for examp
       </td>
 
       <td>
-        Compression Type
+        **Compression Type**
       </td>
 
       <td>
-        Description
+        **Description**
       </td>
 
       <td>
-        Best Use
+        **Best Use**
       </td>
     </tr>
 
