@@ -1,14 +1,11 @@
 ---
 title: Batch Execution Management
+excerpt: '  Understand the various commands that help you manage and track the execution status of your batch models.'
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-<br />
-
-Understand the00 various commands that help you manage and track the execution status of your batch models.
-
 ## Getting Batch Execution Status
 
 To check the current status of an execution, use the following command:
