@@ -136,8 +136,6 @@ To use streaming inference on JFrog ML, use the following examples:
 3. Choose the **instance type** and configure the **Kafka server** and **topics**.
 
 <Callout icon="📘" theme="info">
-
-
   > Make sure you select the number of replicas and instance type to achieve a balance with the number of partitions from your Kafka broker. The partitions will be divided across all the replicas from your deployment.
 </Callout>
 
@@ -250,7 +248,8 @@ Under the Model Overview tab, you can view the following metrics for your deploy
   * A positive value indicates that more messages are produced than consumed.
   * 0 indicates that more messages are consumed than are produced, or they are equal.
   * A stable or decreasing chart indicates stable performance.
-  * <Image border={false} />
+  
+  <Image alt="aicatalog-3tabs.png" border={false} src="https://files.readme.io/f5e029c75c89b00944b07ace34c59ed7d51141ff0bd03ae0d7ae4c7ad68bc612-uuid-4b05e20a-fe7a-0158-0a85-f7c89b95f7b8.png" />
 
 Configuring Streaming Models Overview
 
