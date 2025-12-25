@@ -1,5 +1,6 @@
 ---
 title: Batch Deployments
+excerpt: Given a successful build, you can deploy your model as a batch application.
 deprecated: false
 hidden: false
 metadata:
@@ -16,8 +17,6 @@ metadata:
     - UUID-38aa3c57-6473-a6a8-ed98-84a92a2332fc
   robots: index
 ---
-Given a successful build, you can deploy your model as a batch application.
-
 This deployment type enables you to run batch inference executions in the system, and handle data files from an online cloud storage provider.
 
 ## Deployment Configuration
@@ -25,15 +24,15 @@ This deployment type enables you to run batch inference executions in the system
 <Table align={["left","left","left"]}>
   <thead>
     <tr>
-      <th>
+      <th style={{ textAlign: "left" }}>
         Parameter
       </th>
 
-      <th>
+      <th style={{ textAlign: "left" }}>
         Description
       </th>
 
-      <th>
+      <th style={{ textAlign: "left" }}>
         Default Value
       </th>
     </tr>
@@ -41,53 +40,53 @@ This deployment type enables you to run batch inference executions in the system
 
   <tbody>
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         Model ID [**Required**]
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         The Model ID, as displayed on the model header.
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
 
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         Build ID [**Required**]
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         The JFrog ML-assigned build ID.
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
 
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         Initial number of pods
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         The number of <Anchor label="k8s pods" target="_blank" href="https://kubernetes.io/docs/concepts/workloads/pods/">k8s pods</Anchor> to be used by the deployment. Each pod handles one or more files/tasks.
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         1
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         CPU fraction
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         The CPU fraction allocated to each pod. The CPU resource is measured in CPU units. One CPU, in JFrog ML, is equivalent to:
 
         1 AWS vCPU
@@ -99,93 +98,93 @@ This deployment type enables you to run batch inference executions in the system
         1 Hyperthread on a bare-metal Intel processor with Hyperthreading
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         2
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         Memory
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         The RAM memory (in MB) to allocate to each pod.
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         512
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         IAM role ARN
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         The user-provided AWS custom IAM role.
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         None
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         GPU Type
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         The GPU Type to use in the model deployment. Supported options are, NVIDIA K80, NVIDIA Tesla V100, NVIDIA T4 and NVIDIA A10.
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         None
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         GPU Amount
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         The number of GPUs available for the model deployment.
 
         Varies based on the selected GPU type.
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Based on GPU Type
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         Purchase Option
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         Choose between `on-demand` or `spot` instances for the batch executions.
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         None (spot)
       </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ textAlign: "left" }}>
         Service Account Key Secret Name
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         The service account key secret name to reach Google cloud services.
       </td>
 
-      <td>
+      <td style={{ textAlign: "left" }}>
         None
       </td>
     </tr>
@@ -196,7 +195,7 @@ This deployment type enables you to run batch inference executions in the system
 
 To deploy a batch model from the UI:
 
-1. In the left navigation bar in the JFrog ML UI, select **Models** and select a model to deploy.
+1. In the JFrog Platform, select **Models** and select a model to deploy.
 2. Select the **Builds** tab. Find a build to deploy and click the deployment toggle. The **Deploy** dialog box appears.
 3. Select **Batch** and then select **Next**.
 
