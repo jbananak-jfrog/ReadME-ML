@@ -196,8 +196,6 @@ frogml models deploy stream \
   To use the above examples, do not forget to replace the parameter values with your own values.
 </Callout>
 
-<br />
-
 ### Option 3: Configuring Streaming Models via YAML
 
 You can also configure your streaming model with a YAML file.
@@ -244,20 +242,15 @@ Under the Model Overview tab, you can view the following metrics for your deploy
 
 * **Average message throughput:** Evaluates how many messages are being processed over a specific period.
 * **Total consumed messages:** Tracks the total number of messages your model has consumed over a given minute.
-* Total produced messages: Measures the total number of output messages.
-* Consumer lag: Measures the number of messages (requests) that have been produced but remain unconsumed in a consumer group at a given time. High consumer lag indicates that the rate at which messages are being consumed is slower than the rate at which new messages are being generated. This can signal performance issues.
-
-Error rate over time: Monitors any issues encountered processing messages.
-
-Memory, CPU and GPU utilization: Analyzes resource usage to optimize performance and scaling.
-
-Processing lag: Shows the difference between the number of responses produced and the number of requests consumed by the model runtime in a given minute.
-
-A positive value indicates that more messages are produced than consumed.
-
-0 indicates that more messages are consumed than are produced, or they are equal.
-
-A stable or decreasing chart indicates stable performance.
+* **Total produced messages:** Measures the total number of output messages.
+* **Consumer lag:** Measures the number of messages (requests) that have been produced but remain unconsumed in a consumer group at a given time. High consumer lag indicates that the rate at which messages are being consumed is slower than the rate at which new messages are being generated. This can signal performance issues.
+* **Error rate over time:** Monitors any issues encountered processing messages.
+* **Memory, CPU and GPU utilization:** Analyzes resource usage to optimize performance and scaling.
+* **Processing lag:** Shows the difference between the number of responses produced and the number of requests consumed by the model runtime in a given minute.
+  * A positive value indicates that more messages are produced than consumed.
+  * 0 indicates that more messages are consumed than are produced, or they are equal.
+  * A stable or decreasing chart indicates stable performance.
+  * <Image border={false} />
 
 Configuring Streaming Models Overview
 
