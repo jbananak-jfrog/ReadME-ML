@@ -22,7 +22,7 @@ Each file in the input path is translated to a single unit of processing (a JFro
   Where batch predictions are resource-heavy, consider splitting the input dataset into multiple smaller files.
 </Callout>
 
-#### Execution Configuration
+## Execution Configuration
 
 | Parameter                         | Description                                                                                                                                                                                                                                                                                                                                                            | Default Value                                           |
 | :-------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------ |
@@ -45,7 +45,7 @@ Each file in the input path is translated to a single unit of processing (a JFro
 | Parameters                        | A list of parameters expressed as key-value pairs which will be passed to the execution request. The parameters are passed to the inference container as **environment variables**.                                                                                                                                                                                    |                                                         |
 | service account key secret name   | Gcp service account key name to reach google cloud provider.                                                                                                                                                                                                                                                                                                           | None                                                    |
 
-#### Running Batch Execution Using S3 Buckets
+## Running Batch Execution Using S3 Buckets
 
 Currently, only **S3** buckets situated in the region configured for your JFrog ML environment are compatible as sources for input / output paths.
 
@@ -76,7 +76,7 @@ If you intend to employ a different IAM Role ARN to grant permissions to an S3 l
 }
 ```
 
-#### Using Custom AWS IAM Role
+## Using Custom AWS IAM Role
 
 Custom IAM Role allow access to both private buckets and source / destination folders. Provide the custom IAM role name when calling a batch execution.
 
@@ -102,7 +102,7 @@ The IAM role should be created with the following trust policy:
 }
 ```
 
-#### Batch Execution
+## Batch Execution
 
 To start an execution from the SDK, use the following command:
 
@@ -193,7 +193,7 @@ frogml models execution start \                                                 
     --access-secret-name <buckets-access-secret-secret-name>
 ```
 
-#### Batch Job Parallelism
+## Batch Job Parallelism
 
 Note that every file in the given input path is considered a task. A task is the main unit of parallelism for a batch execution job.
 
@@ -218,7 +218,7 @@ For this reason, there is no point in requesting more pods than the number of fi
   The assumption is that running two executions with the same parameters, is redundant.
 </Callout>
 
-#### Switching Between On-demand and Spot Instances
+## Switching Between On-demand and Spot Instances
 
 It is possible to choose a specific instance type per batch execution, overriding the configuration stated at the currently deployed models.
 
@@ -246,11 +246,11 @@ execution_spec = ExecutionConfig.Execution(
 )
 ```
 
-#### Local File Mode
+## Local File Mode
 
 It's also possible to run a batch execution using files stored locally.
 
-#### SDK
+## SDK
 
 The local file mode can be started by either using the `local_file_run` function from the `BatchInferenceClient`:
 
@@ -310,7 +310,7 @@ It's also required to provide the input file type that will be used to select fi
   If the destination directory exists and contains files with the same names as the ones created by the batch job, those files **WILL BE OVERWRITTEN**!
 </Callout>
 
-#### CLI
+## CLI
 
 Alternatively, we can run the same local file mode using the CLI.
 
@@ -320,7 +320,7 @@ The meaning of other parameters is the same as in the execution configuration ab
 
 Example: `frogml models execution start --model-id the_model_id --source-folder file://path_to_a_directory --destination-folder file://path_to_output_directory --input-file-type csv` .
 
-#### REST API
+## REST API
 
 Use the following curl command template to send requests to the Batch Job Manager. Replace `<your-environment>` with the name of your account, which can be found in the bottom left corner of the JFrog ML Dashboard, and fill in the batch job details as per your needs.
 
