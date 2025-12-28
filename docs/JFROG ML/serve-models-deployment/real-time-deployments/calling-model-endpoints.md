@@ -9,7 +9,7 @@ metadata:
 
 In this section, you'll learn how to effectively interact with and call real-time model endpoints using various SDKs and our REST API.
 
-<Anchor label="JFrog ML Rest API" title="JFrog ML Rest API" href="/docs/jfrog-ml-rest-api">JFrog ML Rest API</Anchor> | <Anchor label="Python SDK" title="Python SDK" href="/docs/python-sdk">Python SDK</Anchor> | <Anchor label="Java SDK" title="Java SDK" href="/docs/java-sdk">Java SDK</Anchor> | <Anchor label="Go SDK" title="Go SDK" href="/docs/go-sdk">Go SDK</Anchor>
+[JFrog ML Rest API](/docs/calling-model-endpoints#jfrog-ml-rest-api) | [Python SDK](/docs/calling-model-endpoints#python-sdk)| [Java SDK](/docs/calling-model-endpoints#java-sdk) | [Go SDK](/docs/calling-model-endpoints#go-sdk)
 
 ## JFrog ML Rest API
 
