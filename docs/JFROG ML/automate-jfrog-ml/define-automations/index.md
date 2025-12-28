@@ -285,7 +285,7 @@ When not using the default folder structure, in which `main` is the models folde
 
 ##### Custom Resources
 
-In the build specification, you may control the number of CPUs, amount of memory or use GPUs [Instance Sizes](/docs/doc:instance-sizes)
+In the build specification, you may control the number of CPUs, amount of memory or use GPUs [Instance Sizes](/docs/instance-sizes-ml-credits)
 
 **Defining CPU resources:**
 
