@@ -78,20 +78,20 @@ frogml automations register --environment environment_name -p .
 
 ## Monitoring Batch Execution Failures
 
-This documentation should guide you through setting up a monitoring solution that checks for failed batch executions on JFrog ML and sends notifications to Slack using an AWS Lambda. Feel free to adjust the scripts as needed to fit your specific infrastructure and notification requirements.
+This guide demonstrates how to configure a monitoring solution that detects failed batch executions on JFrog ML and sends notifications to Slack using AWS Lambda. The scripts provided below are flexible and can be adapted to fit specific infrastructure or notification requirements.
 
-#### Requirements:
+### Prerequisites:
 
-To set up this batch monitoring automation, you'll need the following:
+To set up this batch monitoring automation, the following components are required:
 
-* **Cron job infrastructure**: We will use AWS Lambda to schedule and run the script periodically.
-* **Notification platform**: We will use Slack to receive notifications about any batch job failures.
+* **Cron job infrastructure**: This example uses AWS Lambda to schedule and run the script periodically.
+* **Notification platform**: This example uses Slack to receive notifications regarding batch job failures.
 
-#### 1. Check the batch executions that finished in the last N minutes/hours
+#### 1. Check for recent batch executions and identify failures
 
-We need a Python script to checks for batch executions that have finished within a specified time window and identifies any failures. This helps us monitor the status of our jobs and react promptly to any issues.
+The first step is to implement a Python script that checks for batch executions that finished within a specified time window (e.g., the last N minutes or hours). This identifies any failures within the timeframe, allowing for prompt reaction to issues.
 
-```
+```python
 # check_and_retrieve_failed_executions.py
 import os
 from frogml import FrogMLClient
@@ -137,7 +137,9 @@ def check_and_retrieve_failed_executions(minutes_to_search_back):
         return None
 ```
 
-#### 2. Sending a notification to Slack with all the failed alerts for the last N minutes
+#### 2. Send Slack notifications for failed executions
+
+Once the failed executions are identified, the next step is to format the data and send an alert. The following script accepts the list of failures identified in the previous step and sends a formatted message to the configured Slack Webhook.
 
 ```
 # notify_on_slack.py
@@ -157,9 +159,11 @@ def send_message_to_slack(message, webhook_url):
         print('Message posted successfully.')
 ```
 
-#### 3. Calling everything in the Lambda Handler
+#### 3. Run the workflow with the Lambda Handler
 
-```
+The Lambda Handler serves as the main entry point for the automation. It runs the process by invoking the check script and, if failures are found, triggering the notification script.
+
+```python
 # lambda_handler.py
 import os
 from check_and_retrieve_failed_executions import check_and_retrieve_failed_executions
@@ -181,9 +185,11 @@ def monitor_executions(event, context):
         send_message_to_slack(failed_executions_message, webhook_url)
 ```
 
-#### Putting It All Together
+#### Deploying the Automation on AWS Lambda
 
-Steps to Deploy the automation on AWS Lambda:
+To finalize the setup, deploy the scripts to the AWS cloud environment.  
+
+**Steps to deploy:**
 
 1. **Create a new Lambda function** in the AWS Lambda console.
 2. **Set the runtime** to Python 3.x.
@@ -191,9 +197,9 @@ Steps to Deploy the automation on AWS Lambda:
 
    * `JFROG_API_KEY`: Your JFrog API key.
    * `SLACK_WEBHOOK_URL`: Your Slack webhook URL.
-   * `MINUTES_TO_SEARCH_BACK`: The number of minutes to check back for failed executions. Defaults to 60 if not set.
+   * `MINUTES_TO_SEARCH_BACK`: The period (in minutes) to checking back for failed executions. Defaults to 60 if not set.
 4. **Upload the three Python scripts** (`check_and_retrieve_failed_executions.py`, `notify_on_slack.py`, `lambda_handler.py`) as a Lambda deployment package (zip file).
 5. **Configure the function handler** in the Lambda console to `lambda_handler.monitor_executions`.
-6. **Set up a CloudWatch event rule** to trigger the Lambda function periodically according to your preferred schedule (e.g., every hour).
+6. **Set up a CloudWatch event rule** to trigger the Lambda function periodically according to your preferred schedule (for example, every hour).
 
-By following these steps, you will be able to monitor JFrog ML batch executions for failures and receive alerts via Slack, enriching the functionality already existent on the platform.
+By following these steps, the system will actively monitor JFrog ML batch executions for failures and deliver immediate alerts via Slack, extending the platform's native monitoring capabilities.
