@@ -16,7 +16,7 @@ metadata:
 ---
 This section reviews the following topics:
 
-[Scheduled Training and Deployment](/docs/scheduled-training-and-deployment)
+[Scheduled Training and Deployment](/docs/automation-tutorials#scheduled-training-and-deployment)
 
 <Anchor label="Monitoring Batch Execution Failures" title="Monitoring Batch Execution Failures" href="/docs/monitoring-batch-execution-failures">Monitoring Batch Execution Failures</Anchor>
 
