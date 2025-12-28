@@ -589,7 +589,7 @@ Defining a batch execution automation includes two parts:
 1. `BatchJobDataSpecifications` - Telling the automation where to fetch data from.
 2. Optional `BatchJobExecutionSpecifications` - Defining custom deployment resources for the batch model. When not provided, the default deployed parameters will be used.
 
-For more details on all available parameters for configuring batch model executions, please refer to [Storage-Based Execution](/docs/doc:executions) page.
+For more details on all available parameters for configuring batch model executions, please refer to [Storage-Based Execution](/docs/storage-based-execution) page.
 
 ```
 from frogml.core.automations import Automation, ScheduledTrigger, \
