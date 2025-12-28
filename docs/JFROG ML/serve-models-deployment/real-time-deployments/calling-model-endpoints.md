@@ -62,10 +62,10 @@ After deploying a real time model, your Python client applications can use this 
 
 ### Installation
 
-The Python inference clients is a more lightweight part of `frogml-inference` package which contains only the modules that are required for inference. To install, run:
+The Python inference client is a more lightweight part of `frogml-inference` package which contains only the modules that are required for inference. To install, run:
 
 ```
-pip install frog        ml-inference
+pip install frogml-inference
 ```
 
 ### Inference Examples
