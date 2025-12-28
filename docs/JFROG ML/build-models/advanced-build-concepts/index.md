@@ -22,11 +22,17 @@ This section reviews the following topics:
 
 [Build Configurations](/docs/advanced-build-concepts#build-configurations)
 
+<br />
+
 <Anchor label="Reusing Trained Artifacts" title="Reusing Trained Artifacts" href="/docs/reusing-trained-artifacts">Reusing Trained Artifacts</Anchor>
+
+<br />
 
 <Anchor label="Hyperparameter Optimization (HPO)" title="Hyperparameter Optimization (HPO)" href="/docs/hyperparameter-optimization--hpo-">Hyperparameter Optimization (HPO)</Anchor>
 
-<Anchor label="Custom HTTP Status Codes" title="Custom HTTP Status Codes" href="/docs/custom-http-status-codes">Custom HTTP Status Codes</Anchor>
+<br />
+
+[Custom HTTP Status Codes](/docs/advanced-build-concepts#custom-http-status-codes)
 
 ***
 
