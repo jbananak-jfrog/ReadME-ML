@@ -20,17 +20,11 @@ metadata:
 ---
 This section reviews the following topics:
 
-[Build Configurations](/docs/advanced-build-concepts#build-configurations) 
+[Build Configurations](/docs/advanced-build-concepts#build-configurations)
 
-<br />
+[Reusing Trained Artifacts](/docs/reusing-trained-artifacts)
 
-[Reusing Trained Artifacts](/docs/reusing-trained-artifacts) 
-
-<br />
-
-[Hyperparameter Optimization (HPO)](/docs/hyperparameter-optimization--hpo-) 
-
-<br />
+[Hyperparameter Optimization (HPO)](/docs/hyperparameter-optimization--hpo-)
 
 [Custom HTTP Status Codes](/docs/advanced-build-concepts#custom-http-status-codes)
 
