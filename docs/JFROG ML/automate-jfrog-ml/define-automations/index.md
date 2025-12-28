@@ -4,19 +4,19 @@ deprecated: false
 hidden: false
 metadata:
   title: Define Automations
-  description: JFrog ML offers built-in automations for various recurring actions
-    in the model lifecycle. These automations are meant to replace external orchestration
-    tools such as Airflow for example.
-  robots: index
+  description: >-
+    JFrog ML offers built-in automations for various recurring actions in the
+    model lifecycle. These automations are meant to replace external
+    orchestration tools such as Airflow for example.
   legacyUUIDs:
-  - UUID-3a3c5b36-c56b-5548-3ee9-cef050ab3f11
-  - UUID-f73624e7-87b1-757a-8375-f9d27d65866a
-  - UUID-a754760a-e389-76c8-8f9b-8425f9cd175b
-  - UUID-87a44d4a-1b0d-26a1-45b9-b1370882dfb5
-  - UUID-eb4aba0f-96eb-246b-b5e4-eb4a2fefefba
-  - UUID-6a588ad0-3058-5bad-a7a0-0e86bdb543af
+    - UUID-3a3c5b36-c56b-5548-3ee9-cef050ab3f11
+    - UUID-f73624e7-87b1-757a-8375-f9d27d65866a
+    - UUID-a754760a-e389-76c8-8f9b-8425f9cd175b
+    - UUID-87a44d4a-1b0d-26a1-45b9-b1370882dfb5
+    - UUID-eb4aba0f-96eb-246b-b5e4-eb4a2fefefba
+    - UUID-6a588ad0-3058-5bad-a7a0-0e86bdb543af
+  robots: index
 ---
-
 JFrog ML offers built-in automations for various recurring actions in the model lifecycle. These automations are meant to replace external orchestration tools such as Airflow for example.
 
 In the JFrog ML platform, you can easily define automations for model retraining or batch model executions on either time based or trigger based.
@@ -24,11 +24,10 @@ In the JFrog ML platform, you can easily define automations for model retraining
 ## Configuring Automations
 
 <Callout icon="⚠️" theme="warning">
-**Warning**
+  **Warning**
 
-The automation name must be unique throughout your models within the JFrog ML environment.
+  The automation name must be unique throughout your models within the JFrog ML environment.
 </Callout>
-
 
 We now create an instance of the Automation class and configure it:
 
@@ -59,13 +58,12 @@ test_automation = Automation(
 ```
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-***Scheduler Timezone***
+  _**Scheduler Timezone**_
 
-The default timezone for the cron scheduler is UTC.
+  The default timezone for the cron scheduler is UTC.
 </Callout>
-
 
 ### Selecting an Instance Type
 
@@ -125,7 +123,7 @@ MetricBasedTrigger(
 
 ## Notifications
 
-JFrog ML supports configuring notifications in case of an error or success using either <Anchor label="Slack Webhooks" href="https://api.slack.com/messaging/webhooks" target="_blank">Slack Webhooks</Anchor> or a custom webhook configuration.
+JFrog ML supports configuring notifications in case of an error or success using either <Anchor label="Slack Webhooks" target="_blank" href="https://api.slack.com/messaging/webhooks">Slack Webhooks</Anchor> or a custom webhook configuration.
 
 ### Slack Webhook
 
@@ -150,11 +148,10 @@ test_automation = Automation(
 It will send a slack message when the automation is finished - containing the execution time, the model, the automation name, and the final status of the automation.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-You can define alerting notifications for either one of the `on_error` and `on_success` triggers, or for both. `on_success` will trigger after a successful Build, if the deployment threshold was not met and after a successful Build and Deploy, if the threshold was met.
+  You can define alerting notifications for either one of the `on_error` and `on_success` triggers, or for both. `on_success` will trigger after a successful Build, if the deployment threshold was not met and after a successful Build and Deploy, if the threshold was met.
 </Callout>
-
 
 ### Custom Webhook
 
@@ -204,17 +201,16 @@ You can also define a deployment conditions to verify that the new build passes 
 #### Automation Example
 
 <Callout icon="⚠️" theme="warning">
-**Warning**
+  **Warning**
 
-**Before Setting Up Automation**
+  **Before Setting Up Automation**
 
-Prior to configuring automation, it's essential to have your model's code stored in a Git repository. It's recommended to confirm that all necessary Git repository access is correctly configured via CLI model builds. Ensure the JFrog ML model can successfully build from Git before proceeding with automation.
+  Prior to configuring automation, it's essential to have your model's code stored in a Git repository. It's recommended to confirm that all necessary Git repository access is correctly configured via CLI model builds. Ensure the JFrog ML model can successfully build from Git before proceeding with automation.
 
-For additional details on building models from Git, refer to our [Build Configurations](/docs/build-configurations "Build Configurations") page.
+  For additional details on building models from Git, refer to our <Anchor label="Build Configurations" title="Build Configurations" href="/docs/build-configurations">Build Configurations</Anchor> page.
 </Callout>
 
-
-The automation will fetch the model's code during the training process. In the case of using a private repository, it is necessary to generate a Git access token and securely store the key in the [Secret Manager](/docs/secret-management "Secret Management").
+The automation will fetch the model's code during the training process. In the case of using a private repository, it is necessary to generate a Git access token and securely store the key in the <Anchor label="Secret Manager" title="Secret Management" href="/docs/secret-management">Secret Manager</Anchor>.
 
 ```
 from frogml.core.automations import Automation, ScheduledTrigger, FrogmlBuildDeploy,\
@@ -243,13 +239,12 @@ test_automation = Automation(
 ```
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-***Scheduler Timezone***
+  _**Scheduler Timezone**_
 
-The default timezone for the cron scheduler is UTC.
+  The default timezone for the cron scheduler is UTC.
 </Callout>
-
 
 #### Build & Deploy Configuration
 
@@ -258,12 +253,12 @@ The `FrogmlBuildDeploy` action has three configuration parameters:
 1. `build_spec` defines the location of the model code that we will build in the JFrog ML platform.
 2. `deployment_condition` defines the metrics used to determine when to deploy the model after the training.
 3. `deployment_spec` specifies the runtime environment parameters for model deployment.
+
 <Callout icon="⚠️" theme="warning">
-**Warning**
+  **Warning**
 
-Metrics used to trigger build or deploy automations must be logged during the model build phase.
+  Metrics used to trigger build or deploy automations must be logged during the model build phase.
 </Callout>
-
 
 ##### `BuildSpecifications`
 
@@ -320,7 +315,7 @@ It is possible specify the IAM role used in production (`assumed_iam_role`) or a
 
 Additionally, we can specify the environment variables to configure in the build environment.
 
-he environment variables should be specified with the *env\_vars* field (list), and the value as the following:
+he environment variables should be specified with the _env_vars_ field (list), and the value as the following:
 
 `key=value`.
 
@@ -338,15 +333,15 @@ For each metric, it is possible to define whether the value should be above or b
 
 The `BuildMetric` object has three parameters:
 
-1. **metric\_name**: The metric name we logged during the build phase
+1. **metric_name**: The metric name we logged during the build phase
 2. **direction**: Show the value be below or above the threshold, where the valid values are `ThresholdDirection.ABOVE`, `ThresholdDirection.BELOW`
 3. **threshold**: The threshold used for comparison
+
 <Callout icon="⚠️" theme="warning">
-**Warning**
+  **Warning**
 
-The threshold must always be a string, where `threshold="0.65"` is a valid threshold and `threshold=0.65` is invalid!
+  The threshold must always be a string, where `threshold="0.65"` is a valid threshold and `threshold=0.65` is invalid!
 </Callout>
-
 
 ##### Dynamic Threshold
 
@@ -362,166 +357,197 @@ After we build the model, compared its performance with the threshold, and concl
 
 We may specify:
 
-
-
 <Table>
   <thead>
     <tr>
       <th>
         Parameter
       </th>
+
       <th>
         Details
       </th>
     </tr>
   </thead>
+
   <tbody>
     <tr>
       <td>
-        number\_of\_http\_server\_workers
+        number_of_http_server_workers
       </td>
+
       <td>
         The number of threads used by the HTTP server.
       </td>
     </tr>
+
     <tr>
       <td>
-        http\_request\_timeout\_ms
+        http_request_timeout_ms
       </td>
+
       <td>
         The request timeout.
       </td>
     </tr>
+
     <tr>
       <td>
-        daemon\_mode
+        daemon_mode
       </td>
+
       <td>
         Should gunicorn process be daemonized, which makes the workers work in the background.
       </td>
     </tr>
+
     <tr>
       <td>
-        custom\_iam\_role\_arn
+        custom_iam_role_arn
       </td>
+
       <td>
         The IAM role used in production.
       </td>
     </tr>
+
     <tr>
       <td>
-        max\_batch\_size
+        max_batch_size
       </td>
+
       <td>
         Max batch size of record.
       </td>
     </tr>
+
     <tr>
       <td>
-        deployment\_process\_timeout\_limit
+        deployment_process_timeout_limit
       </td>
+
       <td>
         The timeout for the deployment (in seconds).
       </td>
     </tr>
+
     <tr>
       <td>
-        number\_of\_pods
+        number_of_pods
       </td>
+
       <td>
         The number of instances to be deployed.
       </td>
     </tr>
+
     <tr>
       <td>
-        cpu\_fraction
+        cpu_fraction
       </td>
+
       <td>
         The CPU cores for Kubernetes.
       </td>
     </tr>
+
     <tr>
       <td>
         memory
       </td>
+
       <td>
         The amount of RAM.
       </td>
     </tr>
+
     <tr>
       <td>
-        variation\_name
+        variation_name
       </td>
+
       <td>
         The variant name if we run an A/B test.
       </td>
     </tr>
+
     <tr>
       <td>
-        auto\_scale\_config
+        auto_scale_config
       </td>
+
       <td>
         The autoscaling configuration for Kubernetes.
       </td>
     </tr>
+
     <tr>
       <td>
-        min\_replica\_count
+        min_replica_count
       </td>
+
       <td>
         The minimum number of replicas the resource will be scaled down to.
       </td>
     </tr>
+
     <tr>
       <td>
-        max\_replica\_count
+        max_replica_count
       </td>
+
       <td>
         The maximum number of replicas of the target resource.
       </td>
     </tr>
+
     <tr>
       <td>
-        polling\_interval
+        polling_interval
       </td>
+
       <td>
         This is the interval for which to check each trigger. By default, it's every 30 seconds.
       </td>
     </tr>
+
     <tr>
       <td>
-        cool\_down\_period
+        cool_down_period
       </td>
+
       <td>
         The period to wait after the last trigger reported active before scaling the resource back to 0. By default it's 5 minutes (300 seconds).
       </td>
     </tr>
+
     <tr>
       <td>
-        prometheus\_trigger
+        prometheus_trigger
       </td>
+
       <td>
-        metric\_type: The type of the metric - cpu/gpu/memory/latency
-        
-        aggregation\_type: The type of the aggregation - min/max/avg/sum
-        
-        time\_period: The period to run the query based on
-        
+        metric_type: The type of the metric - cpu/gpu/memory/latency
+
+        aggregation_type: The type of the aggregation - min/max/avg/sum
+
+        time_period: The period to run the query based on
+
         threshold: Value to start scaling for
       </td>
     </tr>
+
     <tr>
       <td>
         Environments
       </td>
+
       <td>
         List of environment names to deploy to.
       </td>
     </tr>
   </tbody>
 </Table>
-
-
 
 #### Defining Auto-Scaling
 
@@ -552,11 +578,11 @@ You can set up scheduled executions to dynamically process data and ensure regul
 
 ###### Configuring `BatchExecution`
 
-Batch model execution runs a [storage-based execution](/docs/doc:executions) for batch deployed model.
+Batch model execution runs a [storage-based execution](/docs/storage-based-execution) for batch deployed model.
 
-> ❗️
->
-> A model must be deployed as **batch** before running the automation, otherwise the automation will fail.
+<Callout icon="❗️" theme="error">
+  A model must be deployed as **batch** before running the automation, otherwise the automation will fail.
+</Callout>
 
 Defining a batch execution automation includes two parts:
 
@@ -598,13 +624,12 @@ batch_execution_automation = Automation(
 ```
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-***Scheduler Timezone***
+  _**Scheduler Timezone**_
 
-The default timezone for the cron scheduler is UTC.
+  The default timezone for the cron scheduler is UTC.
 </Callout>
-
 
 #### Dynamic Folder Paths
 
@@ -613,11 +638,10 @@ When configuring the source and destination folders to read and write data, we m
 The dynamic path may include a timestamp template, which will be injected when the automation runs.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-he timestamp format should follow <Anchor label="**Python strftime**" href="https://strftime.org/" target="_blank">**Python strftime**</Anchor> formatting, and wrapped with curly brackets, i.e.: `{%d-%m-%Y}`
+  he timestamp format should follow <Anchor label="**Python strftime**" target="_blank" href="https://strftime.org/">**Python strftime**</Anchor> formatting, and wrapped with curly brackets, i.e.: `{%d-%m-%Y}`
 </Callout>
-
 
 #### Example Path Template
 
