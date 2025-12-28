@@ -114,7 +114,7 @@ class MyCustomModel(FrogMlModel):
         pass
 ```
 
-When initiating this build using the JFrog ML SDK, please include the necessary environment variables by utilizing the `-E` flag, as outlined in the [Build Configurations](/docs/advanced-build-concepts#build-configurations)documentation page.
+When initiating this build using the JFrog ML SDK, please include the necessary environment variables by utilizing the `-E` flag, as outlined in the [Build Configurations](/docs/advanced-build-concepts#build-configurations) documentation page.
 
 ## Conclusion
 
