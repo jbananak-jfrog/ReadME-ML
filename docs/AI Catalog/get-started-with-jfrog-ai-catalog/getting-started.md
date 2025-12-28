@@ -76,7 +76,7 @@ Once a model has been successfully allowed in a project, it moves into the **Reg
 
 <Image alt="usinganallowedmodel_new.png" border={false} src="https://files.readme.io/843add4b7c3092c4accbe46accb7d3ee4172ab7c75d2bb1bf6e0392c63b2a718-uuid-97c3e7f7-146f-bd6f-6b8f-bf743f340714.png" />
 
-See: [Allow Your First Model](/docs/allow-your-first-model) | <Anchor label="Discover and Allow Models" title="Discover and Allow Models" href="/docs/discover-and-allow-models">Discover and Allow Models</Anchor> | <Anchor label="Get Started with JFrog ML" title="Get Started with JFrog ML" href="/docs/get-started-with-jfrog-ml">Get Started with JFrog ML</Anchor>
+See: [Allow Your First Model](/docs/discover-and-allow-models#allow-your-first-model) | <Anchor label="Discover and Allow Models" title="Discover and Allow Models" href="/docs/discover-and-allow-models">Discover and Allow Models</Anchor> | <Anchor label="Get Started with JFrog ML" title="Get Started with JFrog ML" href="/docs/get-started-with-jfrog-ml">Get Started with JFrog ML</Anchor>
 
 ## Prerequisite: Set Up Curation Settings for Model Packages
 
