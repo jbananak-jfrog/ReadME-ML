@@ -30,11 +30,9 @@ Make sure to replace `<Auth Token>` with the actual token you generated. After t
 
 ### Inference Example
 
-The following example demonstrates how to invoke the model `test_model`. This model accepts a feature vector containing three fields, and it returns a single output field called "score."
+The following example demonstrates how to invoke the model `test_model`. This model accepts a feature vector with three fields and returns a single output field called "score".
 
-To illustrate this, we will use a `curl` command as a REST client.
-
-Once a token is generated, invoke the model as follows:
+Using`curl`as the REST client, invoke the model with your generated token:
 
 ```
 export TOKEN=""
