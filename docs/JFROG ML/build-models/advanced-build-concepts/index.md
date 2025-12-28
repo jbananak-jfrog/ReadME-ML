@@ -20,13 +20,15 @@ metadata:
 ---
 This section reviews the following topics:
 
-[Build Configurations](/docs/advanced-build-concepts#build-configurations)
-
-<Anchor label="Reusing Trained Artifacts" title="Reusing Trained Artifacts" href="/docs/reusing-trained-artifacts">Reusing Trained Artifacts</Anchor>
+[Build Configurations](/docs/advanced-build-concepts#build-configurations) 
 
 <br />
 
-<Anchor label="Hyperparameter Optimization (HPO)" title="Hyperparameter Optimization (HPO)" href="/docs/hyperparameter-optimization--hpo-">Hyperparameter Optimization (HPO)</Anchor>
+[Reusing Trained Artifacts](/docs/reusing-trained-artifacts) 
+
+<br />
+
+[Hyperparameter Optimization (HPO)](/docs/hyperparameter-optimization--hpo-) 
 
 <br />
 
