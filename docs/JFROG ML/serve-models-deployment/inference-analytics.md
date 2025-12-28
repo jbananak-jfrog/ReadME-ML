@@ -4,11 +4,13 @@ deprecated: false
 hidden: false
 metadata:
   title: Inference Analytics
-  description: The model Analytics tab provides an interface to the JFrog ML Lake, which is an automated log collection system for models.
-  robots: index
+  description: >-
+    The model Analytics tab provides an interface to the JFrog ML Lake, which is
+    an automated log collection system for models.
   legacyUUIDs:
     - UUID-4329f6d0-1b0e-6c54-5de5-fccbed8e5ad4
     - UUID-c4f65a48-4d19-5702-8eec-d4727c2b16e2
+  robots: index
 ---
 The model Analytics tab provides an interface to the JFrog ML Lake, which is an automated log collection system for models.
 
@@ -16,7 +18,7 @@ In addition to performance data, you can also find all the predictions that were
 
 The data is stored as parquet files in your object storage, and you can also load it into your favorite BI tool and analyze the model data with your tools.
 
-### Enabling JFrog ML Lake Analytics
+## Enabling JFrog ML Lake Analytics
 
 JFrog ML Analytics collection is enabled by default when using the `api` decorator.
 
@@ -35,13 +37,12 @@ def predict(self, df):
 ```
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-Analytics columns are defined based on the naming conventions of input variables within the `predict()` method. When utilizing the default `df` parameters, these columns commence with `input_`. Conversely, if you've specified custom parameters, the columns will initiate with the name of your parameter.
+  Analytics columns are defined based on the naming conventions of input variables within the `predict()` method. When utilizing the default `df` parameters, these columns commence with `input_`. Conversely, if you've specified custom parameters, the columns will initiate with the name of your parameter.
 
-For instance, if your predict signature reads as follows: `def predict(self, request) -> String`, then your analytics input columns will begin with `request_`.
+  For instance, if your predict signature reads as follows: `def predict(self, request) -> String`, then your analytics input columns will begin with `request_`.
 </Callout>
-
 
 You can also configure columns to be excluded from analytics. To do that, you should configure the decorator with the column names:
 
@@ -49,21 +50,21 @@ You can also configure columns to be excluded from analytics. To do that, you sh
 @frogml.api(analytics_exclude_columns=['col_1', 'col_2'])
 ```
 
-### Querying Analytics in the UI
+## Querying Analytics in the UI
 
 In the Analytics view, you can write SQL queries to analyze the model requests and predictions:
 
-![Analytics Query UI](https://files.readme.io/5300ec7c021f3e6a87a5cbd83d5f93b6f1c00b35c9ba32c7aa9678fc5f235184-uuid-87b31a63-b24c-ccef-01e5-472902acd5d0.png) 
+<Image alt="Analytics Query UI" border={false} src="https://files.readme.io/5300ec7c021f3e6a87a5cbd83d5f93b6f1c00b35c9ba32c7aa9678fc5f235184-uuid-87b31a63-b24c-ccef-01e5-472902acd5d0.png" />
+
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-***Leveraging Partitions in Queries***
+  _**Leveraging Partitions in Queries**_
 
-Model Inference data is partitioned daily according to the `date` column. To improve query performance and avoid scanning through all the data which can be significantly slower (and costlier), please leverage this partitioning scheme in your analytics queries.
+  Model Inference data is partitioned daily according to the `date` column. To improve query performance and avoid scanning through all the data which can be significantly slower (and costlier), please leverage this partitioning scheme in your analytics queries.
 </Callout>
 
-
-### Retrieving Analytics Programmatically
+## Retrieving Analytics Programmatically
 
 To retrieve data from JFrog ML Analytics Engine into a Pandas `Dataframe` use the `run_analytics_query` function of the `FrogMLClient`:
 
@@ -86,7 +87,7 @@ client = FrogMlClient()
 df = client.run_analytics_query("select * from your_table", timeout=timedelta(seconds=123))
 ```
 
-### Logging Custom Values
+## Logging Custom Values
 
 A model's predict function can log custom data during the inference request. To use the custom data logger, we need to add the `analytics_logger` parameter to the predict function. Important: The parameter MUST be called `analytics_logger`!
 
@@ -118,7 +119,7 @@ Note that we use different function when we log multiple values (`log_multi` ins
 
 If you log different values with the same column name, only the last logged value will be logged (it overwrites previous logs).
 
-### Retrieving Custom Values
+## Retrieving Custom Values
 
 The JFrog ML Analytics view in the JFrog ML UI will display all the logged values with the column prefix `logger_`.
 
