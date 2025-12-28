@@ -62,7 +62,7 @@ After deploying a real time model, your Python client applications can use this 
 
 ### Installation
 
-The Python inference client is a more lightweight part of `frogml-inference` package which contains only the modules that are required for inference. To install, run:
+The Python inference client is a lightweight part of `frogml-inference` package, containing only the modules required for inference. To install, run:
 
 ```
 pip install frogml-inference
@@ -134,34 +134,11 @@ response = client.predict(feature_vector)
 
 After you deploy a FrogML-based model, your JVM-based client applications can use this module to get inferences from the model hosted as a real-time endpoint.
 
-### Inference Example
-
-The following example invokes the model `test_model`. The model accepts one feature vector which contains three fields and produces one output field named "score".
-
-```
-RealtimeClient client = RealtimeClient.builder()
-          .environment("env_name")
-          .apiKey(API_KEY)
-          .build();
-
-PredictionResponse response = client.predict(PredictionRequest.builder()
-          .modelId("test_model")
-          .featureVector(FeatureVector.builder()
-                .feature("feature_a", "feature_value")
-                .feature("feature_b", 1)
-                .feature("feature_c", 0.5)
-                .build())
-          .build());
-
-Optional<PredictionResult> singlePrediction = response.getSinglePrediction();
-double score = singlePrediction.get().getValueAsDouble("score");
-```
-
 ### Installation
 
 The Java Inference SDK is hosted on JFrog ML's internal maven repository.
 
-### Maven Configuration
+#### Maven Configuration
 
 To set up a Maven-based application that uses the Java Inference SDK, add the following sections to the projects `pom.xml`:
 
@@ -191,6 +168,29 @@ To set up a Maven-based application that uses the Java Inference SDK, add the fo
 </project>
 ```
 
+### Inference Example
+
+The following example invokes the model `test_model`. The model accepts one feature vector which contains three fields and produces one output field named "score".
+
+```
+RealtimeClient client = RealtimeClient.builder()
+          .environment("env_name")
+          .apiKey(API_KEY)
+          .build();
+
+PredictionResponse response = client.predict(PredictionRequest.builder()
+          .modelId("test_model")
+          .featureVector(FeatureVector.builder()
+                .feature("feature_a", "feature_value")
+                .feature("feature_b", 1)
+                .feature("feature_c", 0.5)
+                .build())
+          .build());
+
+Optional<PredictionResult> singlePrediction = response.getSinglePrediction();
+double score = singlePrediction.get().getValueAsDouble("score");
+```
+
 ### Gradle Configuration
 
 To set up a Gradle-based application that uses the Java Inference SDK, add the following sections to the projects `build.gradle`:
@@ -212,7 +212,9 @@ dependencies {
 
 ### Scala SBT Configuration
 
-Please note, JFrog ML does not distribute `javadoc` or `sources` JAR files. To ensure seamless integration and prevent potential issues within your Scala IDE or sbt environment, it is recommended to proactively disable the automatic fetching or inclusion of these artifacts in your project settings.
+<Callout icon="📘" theme="info">
+  The JFrog ML SDK does not distribute`javadoc` or `sources` JARs. You must configure your project to skip downloading these artifacts (proactively disabling automatic fetching) to prevent build errors.
+</Callout>
 
 ```
 resolvers += "Qwak Maven Repository" at "https://qwak.jfrog.io/artifactory/qwak-mvn"
