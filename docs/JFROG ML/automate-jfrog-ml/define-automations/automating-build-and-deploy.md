@@ -99,7 +99,7 @@ As the JFrog ML platform doesn't allow the usage of plain text token, we must st
 
 When not using the default folder structure, in which `main` is the models folder, we must also specify the git branch and the directory containing the ML model.
 
-##### Custom Resources
+### Custom Resources
 
 In the build specification, you may control the number of CPUs, amount of memory or use GPUs [Instance Sizes](/docs/instance-sizes-ml-credits)
 
@@ -127,7 +127,7 @@ resources=ClientResources(instance='medium')  #CPU
 
 It is possible specify the IAM role used in production (`assumed_iam_role`) or a custom docker image (`base_image`).
 
-#### Environment Variables
+## Environment Variables
 
 Additionally, we can specify the environment variables to configure in the build environment.
 
@@ -137,11 +137,11 @@ he environment variables should be specified with the _env_vars_ field (list), a
 
 The model's code must log the metric that describes the model's performance. We will use the metric in the deployment condition. If you don't know how to do it, look at our Logging and Monitoring Guide.
 
-#### Disable Push Image
+## Disable Push Image
 
 It is possible to disable the push image phase in cases you don't want the final build saved to the docker repository. You can do that by adding `push_image=False` to the BuildSpecification
 
-###### `BuildMetric`
+### `BuildMetric`
 
 During the build process, it is common to log metrics such as accuracy, F1 score, or loss. When executing the automation, these logged values may be compared against a specified threshold.
 
@@ -159,7 +159,7 @@ The `BuildMetric` object has three parameters:
   The threshold must always be a string, where `threshold="0.65"` is a valid threshold and `threshold=0.65` is invalid!
 </Callout>
 
-##### Dynamic Threshold
+### Dynamic Threshold
 
 To use a dynamic threshold, we can use a SQL expression as the threshold value.
 
@@ -167,7 +167,7 @@ In this case, the JFrog ML platform will run the SQL query in JFrog ML Model Ana
 
 The query must return a single row containing only one column.
 
-##### `DeploymentSpecifications`
+### `DeploymentSpecifications`
 
 After we build the model, compared its performance with the threshold, and concluded that the model is ready to be deployed, the platform will use the deployment specification to configure the model's runtime environment.
 
@@ -365,7 +365,7 @@ We may specify:
   </tbody>
 </Table>
 
-#### Defining Auto-Scaling
+## Defining Auto-Scaling
 
 When we want to define an auto-scaling policy for our deployment, we have to use the following pattern:
 
