@@ -9,19 +9,13 @@ metadata:
 
 In this section, you'll learn how to effectively interact with and call real-time model endpoints using various SDKs and our REST API.
 
-<Anchor label="JFrog ML Rest API" title="JFrog ML Rest API" href="/docs/jfrog-ml-rest-api">JFrog ML Rest API</Anchor>
+<Anchor label="JFrog ML Rest API" title="JFrog ML Rest API" href="/docs/jfrog-ml-rest-api">JFrog ML Rest API</Anchor> | <Anchor label="Python SDK" title="Python SDK" href="/docs/python-sdk">Python SDK</Anchor> | <Anchor label="Java SDK" title="Java SDK" href="/docs/java-sdk">Java SDK</Anchor> | <Anchor label="Go SDK" title="Go SDK" href="/docs/go-sdk">Go SDK</Anchor>
 
-<Anchor label="Python SDK" title="Python SDK" href="/docs/python-sdk">Python SDK</Anchor>
-
-<Anchor label="Java SDK" title="Java SDK" href="/docs/java-sdk">Java SDK</Anchor>
-
-<Anchor label="Go SDK" title="Go SDK" href="/docs/go-sdk">Go SDK</Anchor>
-
-### JFrog ML Rest API
+## JFrog ML Rest API
 
 After deploying a FrogML-based model, you can use a REST client to request inferences from the model, which is hosted as a real-time endpoint.
 
-#### Authentication Process
+### Authentication Process
 
 To access the REST client, you first need to generate an access token.
 
@@ -34,7 +28,7 @@ export TOKEN="<Auth Token>"
 
 Make sure to replace `<Auth Token>` with the actual token you generated. After this, you will be able to use the REST client with your access token for authentication.
 
-#### Inference Example
+### Inference Example
 
 The following example demonstrates how to invoke the model `test_model`. This model accepts a feature vector containing three fields, and it returns a single output field called "score."
 
@@ -52,7 +46,7 @@ curl --location --request POST 'https://models.<environment_name>.qwak.ai/v1/tes
     --data '{"columns":["feature_a","feature_b","feature_c"],"index":[0],"data":[["feature_value",1,0.5]]}'
 ```
 
-##### Inference for a Specific Variation
+#### Inference for a Specific Variation
 
 When working with variations, you can create an inference for a specific variation (endpoint) by appending the variation name to the URL as shown below:
 
@@ -64,11 +58,11 @@ curl --location --request POST 'https://models.<environment_name>.qwak.ai/v1/tes
     --data '{"columns":["feature_a","feature_b","feature_c"],"index":[0],"data":[["feature_value",1,0.5]]}'
 ```
 
-### Python SDK
+## Python SDK
 
 After deploying a real time model, your Python client applications can use this module to get inferences from the model hosted as a real-time endpoint.
 
-#### Installation
+### Installation
 
 The Python inference clients is a more lightweight part of `frogml-inference` package which contains only the modules that are required for inference. To install, run:
 
@@ -76,7 +70,7 @@ The Python inference clients is a more lightweight part of `frogml-inference` pa
 pip install frog        ml-inference
 ```
 
-#### Inference Examples
+### Inference Examples
 
 The following example invokes the model `test_model`. The model accepts one feature vector which contains three fields and produces one output field named "score".
 
@@ -95,7 +89,7 @@ client = RealTimeClient(model_id=model_id)
 response = client.predict(feature_vector)
 ```
 
-##### Testing Inference for a Specific Variation
+#### Testing Inference for a Specific Variation
 
 You can optionally specify a variation name when working with the `RealtimeClient`.
 
@@ -115,7 +109,7 @@ client = RealTimeClient(model_id=model_id,
 response = client.predict(feature_vector)
 ```
 
-##### Running Inference for a Different FrogML Environment
+#### Running Inference for a Different FrogML Environment
 
 When working in a multi environment account, you need to specify a environment name when sending an inference to a non-default account using the `RealtimeClient`.
 
@@ -138,11 +132,11 @@ client = RealTimeClient(model_id=model_id,
 response = client.predict(feature_vector)
 ```
 
-### Java SDK
+## Java SDK
 
 After you deploy a FrogML-based model, your JVM-based client applications can use this module to get inferences from the model hosted as a real-time endpoint.
 
-#### Inference Example
+### Inference Example
 
 The following example invokes the model `test_model`. The model accepts one feature vector which contains three fields and produces one output field named "score".
 
@@ -165,11 +159,11 @@ Optional<PredictionResult> singlePrediction = response.getSinglePrediction();
 double score = singlePrediction.get().getValueAsDouble("score");
 ```
 
-#### Installation
+### Installation
 
 The Java Inference SDK is hosted on JFrog ML's internal maven repository.
 
-#### Maven Configuration
+### Maven Configuration
 
 To set up a Maven-based application that uses the Java Inference SDK, add the following sections to the projects `pom.xml`:
 
@@ -199,7 +193,7 @@ To set up a Maven-based application that uses the Java Inference SDK, add the fo
 </project>
 ```
 
-#### Gradle Configuration
+### Gradle Configuration
 
 To set up a Gradle-based application that uses the Java Inference SDK, add the following sections to the projects `build.gradle`:
 
@@ -218,7 +212,7 @@ dependencies {
 }
 ```
 
-#### Scala SBT Configuration
+### Scala SBT Configuration
 
 Please note, JFrog ML does not distribute `javadoc` or `sources` JAR files. To ensure seamless integration and prevent potential issues within your Scala IDE or sbt environment, it is recommended to proactively disable the automatic fetching or inclusion of these artifacts in your project settings.
 
@@ -232,7 +226,7 @@ libraryDependencies ++= Seq(
 )
 ```
 
-#### Model metadata
+### Model metadata
 
 To retrieve the model metadata, use the `ModelMetadataClient`:
 
@@ -256,11 +250,11 @@ public Map<String, Map<String, Object>> getAudienceRoutesByEnvironment() # audie
 public List<Map<String, Object>> getBuilds() # data about the DEPLOYED builds
 ```
 
-### Go SDK
+## Go SDK
 
 After you deploy a FrogML-based model, your Go-based client applications can use this module to get inferences from the model hosted as a real-time endpoint.
 
-#### Installation
+### Installation
 
 To install the SDK and its dependencies, run the following Go command:
 
@@ -268,7 +262,7 @@ To install the SDK and its dependencies, run the following Go command:
 go get github.com/qwak-ai/go-sdk/qwak
 ```
 
-#### Inference examples
+### Inference examples
 
 The following example invokes the model `test_model` which accepts one feature vector which contains three fields and produces one output field named "score".
 
