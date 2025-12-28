@@ -22,27 +22,23 @@ This section reviews the following topics:
 
 ## Scheduled Training and Deployment
 
-To retrain an ML model and deploy the new version periodically, we'll need a schedule-based automation.
+In this tutorial, we will show you how to configure schedule-based automation to periodically retrain and deploy your new model version.
 
-In this tutorial, we show how to configure the scheduled automation.
+When to use this (scheduled-based) automation?
 
-When does it make sense to use the scheduled-based automation?
-
-It won't help to retrain the model when using the same training data every time.
-
-Because of that, the model's `build` function should retrieve the up-to-date training data from <Anchor label="the Feature Store" target="_blank" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/">the Feature Store</Anchor>.
+It provides no benefit to retrain the model if you are using the same training data every time. Because of this, your model's `build` function should be configured to retrieve up-to-date training data from <Anchor label="the Feature Store" target="_blank" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/">the Feature Store</Anchor>.
 
 If you aren't familiar with the JFrog ML Feature Store, check out our <Anchor label="QuickStart" title="Feature Store Quick Start Guide" href="/docs/feature-store-quick-start-guide">QuickStart</Anchor> guide.
 
-#### Pre-requisites
+### Pre-requisites
 
 Make sure you store the model code in a Git. We will need the repository URL and the access token later on.
 
-#### Configuration
+### Configuration
 
 First, we create an empty Python script and define the import the dependencies and create an instance of the Automation class and configure it:
 
-```
+```python
 from frogml.core.automations  import Automation, ScheduledTrigger, \
       FrogmlBuildDeploy,BuildSpecifications, BuildMetric, \
         ThresholdDirection, DeploymentSpecifications
@@ -72,9 +68,9 @@ test_automation = Automation(
 
 We have described the configuration parameters in our <Anchor label="Automating Build and Deploy" title="Automating Build and Deploy" href="/docs/automating-build-and-deploy">Automating Build and Deploy</Anchor> page.
 
-#### Publishing the Automation
+### Publishing the Automation
 
-Finally, we can use the JFrog ML CLI to publish the automation. We specify the name of the JFrog ML environment `--environment` and the directory containing the automation definitions`-p`,  In this case, the current working directory.
+Finally, use the JFrog ML CLI to publish (`register`) the automation. You must specify the target `--environment` and the directory containing your automation definitions using `-p`. In this example, we use `.` to indicate the current working directory.
 
 ```
 frogml automations register --environment environment_name -p .
