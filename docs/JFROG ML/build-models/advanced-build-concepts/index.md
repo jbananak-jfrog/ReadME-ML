@@ -20,7 +20,7 @@ metadata:
 ---
 This section reviews the following topics:
 
-<Anchor label="Build Configurations" title="Build Configurations" href="/docs/build-configurations">Build Configurations</Anchor>
+[Build Configurations](/docs/advanced-build-concepts#build-configurations)
 
 <Anchor label="Reusing Trained Artifacts" title="Reusing Trained Artifacts" href="/docs/reusing-trained-artifacts">Reusing Trained Artifacts</Anchor>
 
