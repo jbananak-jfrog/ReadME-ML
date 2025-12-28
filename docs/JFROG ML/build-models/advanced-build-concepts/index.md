@@ -22,8 +22,6 @@ This section reviews the following topics:
 
 [Build Configurations](/docs/advanced-build-concepts#build-configurations)
 
-<br />
-
 <Anchor label="Reusing Trained Artifacts" title="Reusing Trained Artifacts" href="/docs/reusing-trained-artifacts">Reusing Trained Artifacts</Anchor>
 
 <br />
