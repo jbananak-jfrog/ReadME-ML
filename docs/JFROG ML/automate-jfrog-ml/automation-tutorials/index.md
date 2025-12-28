@@ -5,21 +5,20 @@ hidden: false
 metadata:
   title: Automation Tutorials
   description: 'This section reviews the following topics:'
-  robots: index
   legacyUUIDs:
-  - UUID-2b7e111b-a22a-ed97-c020-22f89890b44e
-  - UUID-843d1909-0802-5c3c-b8bb-6490d6e89739
-  - UUID-292e25f5-4adb-fd5b-5df5-83ee263cdea0
-  - UUID-675c1c56-8cc0-b0f9-6b7f-102c5ed27d3a
-  - UUID-6dc2106c-0b63-227f-de25-f28fd01f9b8f
-  - UUID-1cf01102-eee8-2e84-6770-93da84a68ad4
+    - UUID-2b7e111b-a22a-ed97-c020-22f89890b44e
+    - UUID-843d1909-0802-5c3c-b8bb-6490d6e89739
+    - UUID-292e25f5-4adb-fd5b-5df5-83ee263cdea0
+    - UUID-675c1c56-8cc0-b0f9-6b7f-102c5ed27d3a
+    - UUID-6dc2106c-0b63-227f-de25-f28fd01f9b8f
+    - UUID-1cf01102-eee8-2e84-6770-93da84a68ad4
+  robots: index
 ---
-
 This section reviews the following topics:
 
-[Scheduled Training and Deployment](/docs/scheduled-training-and-deployment "Scheduled Training and Deployment")
+[Scheduled Training and Deployment](/docs/scheduled-training-and-deployment)
 
-[Monitoring Batch Execution Failures](/docs/monitoring-batch-execution-failures "Monitoring Batch Execution Failures")
+<Anchor label="Monitoring Batch Execution Failures" title="Monitoring Batch Execution Failures" href="/docs/monitoring-batch-execution-failures">Monitoring Batch Execution Failures</Anchor>
 
 ## Scheduled Training and Deployment
 
@@ -31,9 +30,9 @@ When does it make sense to use the scheduled-based automation?
 
 It won't help to retrain the model when using the same training data every time.
 
-Because of that, the model's `build` function should retrieve the up-to-date training data from <Anchor label="the Feature Store" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/" target="_blank">the Feature Store</Anchor>.
+Because of that, the model's `build` function should retrieve the up-to-date training data from <Anchor label="the Feature Store" target="_blank" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/">the Feature Store</Anchor>.
 
-If you aren't familiar with the JFrog ML Feature Store, check out our [QuickStart](/docs/feature-store-quick-start-guide "Feature Store Quick Start Guide") guide.
+If you aren't familiar with the JFrog ML Feature Store, check out our <Anchor label="QuickStart" title="Feature Store Quick Start Guide" href="/docs/feature-store-quick-start-guide">QuickStart</Anchor> guide.
 
 #### Pre-requisites
 
@@ -71,7 +70,7 @@ test_automation = Automation(
 )
 ```
 
-We have described the configuration parameters in our [Automating Build and Deploy](/docs/automating-build-and-deploy "Automating Build and Deploy") page.
+We have described the configuration parameters in our <Anchor label="Automating Build and Deploy" title="Automating Build and Deploy" href="/docs/automating-build-and-deploy">Automating Build and Deploy</Anchor> page.
 
 #### Publishing the Automation
 
