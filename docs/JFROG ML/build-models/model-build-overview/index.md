@@ -147,7 +147,7 @@ frogml models build  --model-id <model-id> --instance gpu.t4.xl .
 
   _**Choosing the Correct GPU**_
 
-  Visit the JFrog ML [_GPU Resources_](/docs/instance-sizes-ml-credits) page to select the resources that best fit your use-case.
+  Visit the JFrog ML [_GPU Resources_](/docs/instance-sizes-ml-credits#instances-sizes-in-the-ui) page to select the resources that best fit your use-case.
 
   Each GPU type has its own configuration of pre-defined memory and number of CPUs.
 </Callout>
