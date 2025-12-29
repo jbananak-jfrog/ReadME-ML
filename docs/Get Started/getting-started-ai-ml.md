@@ -251,4 +251,4 @@ The JFrog AI ML guide walks you through key concepts, tutorials, or best practic
   </Cards>
 </div>
 
-<br />
+<InjectContentHeadHeroStyles />
