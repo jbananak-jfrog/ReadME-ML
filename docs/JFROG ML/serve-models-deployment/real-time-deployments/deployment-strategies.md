@@ -21,7 +21,7 @@ The first build automatically receives 100% of the traffic.
 
 ## Deploying an Additional Variation
 
-To deploy an additional variation first you must <Anchor label="create an audience" title="Traffic Splitting with Audiences and Variations" href="/docs/traffic-splitting-with-audiences-and-variations">create an audience</Anchor>.
+To deploy an additional variation first you must [create an audience](/docs/deployment-strategies#traffic-splitting-with-audiences-and-variations).
 
 Then you will be able to attach it to the model in the deployment process.
 
