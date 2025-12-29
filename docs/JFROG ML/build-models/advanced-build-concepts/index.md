@@ -22,7 +22,7 @@ This section reviews the following topics:
 
 [Build Configurations](/docs/advanced-build-concepts#build-configurations)
 
-[Reusing Trained Artifacts](/docs/reusing-trained-artifacts)
+[Reusing Trained Artifacts](/docs/advanced-build-concepts#reusing-trained-artifacts)
 
 [Hyperparameter Optimization (HPO)](docs/advanced-build-concepts#hyperparameter-optimization-hpo)
 
