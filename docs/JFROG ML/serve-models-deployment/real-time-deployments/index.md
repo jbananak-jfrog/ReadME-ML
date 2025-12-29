@@ -196,7 +196,7 @@ frogml models deploy realtime \
 
 Once you have successfully deployed a real-time model, you can use the JFrog ML Inference SDK to perform invocations.
 
-In this example, we'll invoke a model via the <Anchor label="Python SDK" title="Python SDK" href="/docs/python-sdk">Python SDK</Anchor>, which can be easily installed using:
+In this example, we'll invoke a model via the [Python SDK](/docs/calling-model-endpoints#python-sdk), which can be easily installed using:
 
 ```
 pip install frogml-inference
