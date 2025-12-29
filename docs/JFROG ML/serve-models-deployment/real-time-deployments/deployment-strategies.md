@@ -21,9 +21,9 @@ The first build automatically receives 100% of the traffic.
 
 ## Deploying an Additional Variation
 
-To deploy an additional variation first you must [create an audience](/docs/deployment-strategies#traffic-splitting-with-audiences-and-variations).
+**Prerequisite:** To deploy an additional variation first you must [create an audience](/docs/deployment-strategies#traffic-splitting-with-audiences-and-variations).
 
-Then you will be able to attach it to the model in the deployment process.
+Then you can attach it to the model in the deployment process.
 
 When deploying an additional variation you are prompted to enter a variation name. Choose a name that adheres to the following rules:
 
@@ -32,7 +32,7 @@ When deploying an additional variation you are prompted to enter a variation nam
 * Starts with an alphanumeric character.
 * Ends with an alphanumeric character.
 
-To deploy an additional variation:
+▶ **To deploy an additional variation:**
 
 1. Click the deploy button next to the build you want to deploy.
 2. In the deployment popup, enter a new variation name and click **create new variation** in the select.
@@ -43,14 +43,14 @@ To deploy an additional variation:
 
 ## Replacing an Existing Variation
 
-To replace an existing variation:
+▶ **To replace an existing variation:**
 
 1. In the deployment popup, choose the variation you want to replace.
 2. Modify the deployed model. You can replace any variation, including the default variation. The next tab of **Traffic Control** also allows you to modify the percentage of traffic.
 
 ## Deployment via the CLI
 
-To deploy a model with variations via the CLI, use this command:
+▶ **To deploy a model with variations via the CLI, use this command:**
 
 ```
 frogml models deploy realtime --from-file <config-file-path>
@@ -379,7 +379,7 @@ Once you have more than one build deployed, when you undeploy an existing build,
 1. In the build view, click the options icon next to a deployed build and select **Undeploy**.
 2. Redistribute the traffic between the remaining variations and then click **Undeploy**.
 
-###### Undeploying Models Using the CLI
+#### Undeploying Models Using the CLI
 
 **▶ To undeploy a model with variation from the CLI, run the following command:**
 
@@ -422,7 +422,7 @@ When undeploying from 2 variations to one, you don't have to pass any variation-
 
 ## Shadow Deployment
 
-### What is Shadow Deployment?
+**What is Shadow Deployment?**
 
 Shadow deployment is a special kind of deployment. The traffic is not divided between the deployments but instead multiplied. The shadow deployment itself does not respond to the request but processes it and logs the output.
 
@@ -438,7 +438,7 @@ Like a regular variation, you can configure the percentage of traffic that the d
   Traffic for shadow deployments is routed from the general traffic and not from a specific variation.
 </Callout>
 
-#### Shadow Deployment in the UI
+## Shadow Deployment in the UI
 
 Every audience can have at most one shadow variation!
 
@@ -449,7 +449,7 @@ Every audience can have at most one shadow variation!
 1. Select **Traffic Control** button and check the ghost icon next to the wanted variation in the tab.
 2. Specify the percentage of traffic handled by the shadow deployment model.
 
-#### Shadow Variation using the CLI
+## Shadow Variation using the CLI
 
 Making the variation a shadow variation is simple. In the deployment config just add the shadow flag:
 
