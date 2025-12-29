@@ -41,7 +41,7 @@ Deploying a model means actually setting up servers, often GPUs, and getting the
 
 1. Verify that the model name at the top of the _Deploy model_ pane is the model you want to deploy, and also that the project associated with the deployment is the correct project.
 
-2. Select the **Instance type** from the dropdown menu. Refer to <Anchor label="Instance Sizes & ML Credits" title="Instance Sizes & ML Credits" href="/docs/instance-sizes---ml-credits">Instance Sizes & ML Credits</Anchor> for detailed information on the available sizes and credits.
+2. Select the **Instance type** from the dropdown menu. Refer to [Instance Sizes & ML Credits](/docs/instance-sizes-ml-credits) for detailed information on the available sizes and credits.
 
 3. Select the **Scaling policy** and number of **replicas**:
 
