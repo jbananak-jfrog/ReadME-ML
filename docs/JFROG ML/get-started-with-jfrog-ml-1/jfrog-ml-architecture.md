@@ -1,5 +1,8 @@
 ---
 title: JFrog ML Architecture
+excerpt: >-
+  Explore the architecture that makes JFrog ML a single, trusted platform for
+  MLOps.
 deprecated: false
 hidden: false
 metadata:
@@ -12,8 +15,6 @@ metadata:
     - UUID-fc07ad7d-464d-f2b8-86de-ea25304abbf8
   robots: index
 ---
-Explore the architecture that makes JFrog ML a single, trusted platform for MLOps.
-
 At its core, the architecture leverages the power of the JFrog platform. JFrog Artifactory serves as the central, immutable model registry, providing versioning, traceability, and governance for all ML models and their dependencies. Security is embedded at every stage, with JFrog Xray performing deep scanning of models, containers, and artifacts to proactively identify vulnerabilities and license compliance issues.
 
 Seamlessly integrating with the JFrog platform, JFrog ML enables you to use JFrog Artifactory as a trusted model registry while leveraging JFrog Security products to secure your entire model development lifecycle.
