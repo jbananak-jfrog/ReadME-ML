@@ -1225,7 +1225,7 @@ def predict(self, df: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(data=self._model.predict(df), columns=['species'])
 ```
 
-Notice that in this case we use pandas `DataFrame` for both the input and the output. For other options, see <Anchor label="Prediction Input & Output Adapters" title="Prediction Input & Output Adapters" href="/docs/prediction-input---output-adapters">Prediction Input & Output Adapters</Anchor>.
+Notice that in this case we use pandas `DataFrame` for both the input and the output. For other options, see [Prediction Input & Output Adapters](/docs/prediction-input---output-adapters).
 
 <Callout icon="📘" theme="info">
   **Note**
