@@ -24,7 +24,7 @@ This section reviews the following topics:
 
 [Reusing Trained Artifacts](/docs/reusing-trained-artifacts)
 
-[Hyperparameter Optimization (HPO)](/docs/hyperparameter-optimization--hpo-)
+[Hyperparameter Optimization (HPO)](docs/advanced-build-concepts#hyperparameter-optimization-hpo)
 
 [Custom HTTP Status Codes](/docs/advanced-build-concepts#custom-http-status-codes)
 
