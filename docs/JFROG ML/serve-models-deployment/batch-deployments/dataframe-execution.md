@@ -46,7 +46,7 @@ result_df = batch_inference_client.run(
 
 ## Batch Job Parallelism
 
-Behind the scenes, JFrog ML's batch processing <Anchor label="low level" title="Storage-Based Execution" href="/docs/storage-based-execution">low level</Anchor> API is used.
+Behind the scenes, JFrog ML's batch processing [low level](/docs/storage-based-execution) API is used.
 
 JFrog ML splits the requested `df` into tasks according to the batch size, and the size of the requested `df`. For example, if the requested `df` has **1000** rows, and the requested batch size is **50**, then **20** FrogML tasks are executed as part of the batch job.
 
