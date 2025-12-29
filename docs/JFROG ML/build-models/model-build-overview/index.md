@@ -134,7 +134,7 @@ frogml models builds logs -b <build-id> --follow
 
 ### Building Models with GPUs
 
-JFrog ML [_GPU Instances_](/docs/instance-sizes-ml-credits) provide high-performance computing resources that can significantly accelerate the model build process. Easily customize your build resources to achieve faster training times and better results.
+JFrog ML [_GPU Instances_](/docs/instance-sizes-ml-credits#deploy-models-on-gpu-instances) provide high-performance computing resources that can significantly accelerate the model build process. Easily customize your build resources to achieve faster training times and better results.
 
 To build a model on a GPU instance, specify the following additional arguments in the model build command:
 
@@ -1241,12 +1241,12 @@ Notice that in this case we use pandas `DataFrame` for both the input and the ou
 
 JFrogML's API decorator adds additional functionality to the `predict` method. There are currently 4 options:
 
-| Parameter           | Type                | Description                                                                                                                                                                                   | Default Value            |
+| Parameter            | Type                | Description                                                                                                                                                                                   | Default Value            |
 | :------------------- | :------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------- |
-| `analytics`         | `bool`              | Whether to activate JFrogML's built-in inference data collection mechanism, which streams all inference requests to the [FrogML Lake](/inference-analytics#enabling-jfrog-ml-lake-analytics).  | `True`                   |
-| `feature_extraction`| `bool`              | Whether to activate the automatic feature extraction mechanism, pulling features from JFrog ML's feature store. For more info see  [Features in Inference](doc:feature-consumption) .          | `False`                  |
-| `Input Adapter`     | `BaseInputAdapter`  | To which format should the input request be serialized. For a list of supported adapters see [Input & Output Adapters](/docs/prediction-input-output-adapters)  .                              | `DataframeInputAdapter`  |
-| `Output Adapter`    | `BaseOutputAdapter` | To which format should the output of the `predict` function be serialized. For a list of supported adapters see [Input & Output Adapters](/docs/prediction-input-output-adapters).             | `DataframeOutputAdapter` |
+| `analytics`          | `bool`              | Whether to activate JFrogML's built-in inference data collection mechanism, which streams all inference requests to the [FrogML Lake](/inference-analytics#enabling-jfrog-ml-lake-analytics). | `True`                   |
+| `feature_extraction` | `bool`              | Whether to activate the automatic feature extraction mechanism, pulling features from JFrog ML's feature store. For more info see  [Features in Inference](doc:feature-consumption) .         | `False`                  |
+| `Input Adapter`      | `BaseInputAdapter`  | To which format should the input request be serialized. For a list of supported adapters see [Input & Output Adapters](/docs/prediction-input-output-adapters)  .                             | `DataframeInputAdapter`  |
+| `Output Adapter`     | `BaseOutputAdapter` | To which format should the output of the `predict` function be serialized. For a list of supported adapters see [Input & Output Adapters](/docs/prediction-input-output-adapters).            | `DataframeOutputAdapter` |
 
 ### Schema
 
