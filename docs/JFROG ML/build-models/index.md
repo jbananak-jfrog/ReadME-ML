@@ -23,4 +23,4 @@ This section comprises the following topics:
 * <Anchor label="Testing Models" title="Testing Models" href="/docs/testing-models">Testing Models</Anchor>
 * <Anchor label="Loading Pre-built Models" title="Loading Pre-built Models" href="/docs/loading-pre-built-models">Loading Pre-built Models</Anchor>
 * <Anchor label="Model Registry and Metadata" title="Model Registry and Metadata" href="/docs/model-registry-and-metadata">Model Registry and Metadata</Anchor>
-* <Anchor label="Advanced Build Concepts" title="Advanced Build Concepts" href="/docs/advanced-build-concepts">Advanced Build Concepts</Anchor>
+* [Advanced Build Concepts](/docs/advanced-build-concepts)
