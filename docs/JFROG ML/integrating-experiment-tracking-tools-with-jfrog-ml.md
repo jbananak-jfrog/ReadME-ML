@@ -30,7 +30,7 @@ Before you begin, ensure you have a Weights & Biases account. Follow these steps
    * Go to your wandb profile settings and create a new API key.
 2. **Save the API Key as a JFrog ML Secret:**
 
-   Using the SDK as below, [or using the UI](/docs/secret-management).
+   Using the SDK as below, [or using the UI](/docs/secret-management#creating-secrets-via-ui).
 
    ```shell
    frogml secrets set --name 'wandb-api-key' --value "<YOUR_WANDB_API_KEY>"
