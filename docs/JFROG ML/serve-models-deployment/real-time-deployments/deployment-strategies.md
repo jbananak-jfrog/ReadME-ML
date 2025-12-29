@@ -486,7 +486,7 @@ Protected variations restrict sensitive model deployments to authorized users, e
 <Callout icon="📘" theme="info">
   **Note**
 
-  Protected variations are supported for <Anchor label="Real-time model deployments" title="Real-Time Deployments" href="/docs/real-time-deployments">Real-time model deployments</Anchor> only on hybrid deployments.
+  Protected variations are supported for [Real-time model deployments](/docs/real-time-deployments) only on hybrid deployments.
 </Callout>
 
 ### Roles and Permissions
