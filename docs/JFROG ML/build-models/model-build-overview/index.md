@@ -1241,7 +1241,7 @@ Notice that in this case we use pandas `DataFrame` for both the input and the ou
 
 JFrogML's API decorator adds additional functionality to the `predict` method. There are currently 4 options:
 
-| Paramater            | Type                | Description                                                                                                                                                                                   | Default Value            |
+| Parameter            | Type                | Description                                                                                                                                                                                   | Default Value            |
 | :------------------- | :------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------- |
 | `analytics`          | `bool`              | Whether to activate JFrogML's built-in inference data collection mechanism, which streams all inference requests to the [FrogML Lake](/inference-analytics#enabling-jfrog-ml-lake-analytics). | `True`                   |
 | `feature_extraction` | `bool`              | Whether to activate the automatic feature extraction mechanism, pulling features from JFrog ML's feature store. For more info see  [Features in Inference](doc:feature-consumption) .         | `False`                  |
