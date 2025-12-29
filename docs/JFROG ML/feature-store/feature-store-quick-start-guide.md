@@ -4,129 +4,53 @@ deprecated: false
 hidden: false
 metadata:
   title: Feature Store Quick Start Guide
-  description: "This practical guide walks you through the complete, sequential workflow for integrating and using the JFrog ML Feature Store. The table below outlines the full procedure, and the list of links below allows you to quickly navigate to any step in the process:"
-  robots: index
+  description: >-
+    This practical guide walks you through the complete, sequential workflow for
+    integrating and using the JFrog ML Feature Store. The table below outlines
+    the full procedure, and the list of links below allows you to quickly
+    navigate to any step in the process:
   legacyUUIDs:
     - UUID-b50d67cd-7f33-ccdc-814b-74d15bf7f3f6
     - UUID-9646ae25-1a65-e02d-7a9b-7f4e55a60d2c
+  robots: index
 ---
 This practical guide walks you through the complete, sequential workflow for integrating and using the JFrog ML Feature Store. The table below outlines the full procedure, and the list of links below allows you to quickly navigate to any step in the process:
 
-
-
-<Table>
-  <thead>
-    <tr>
-      <th>
-        Step
-      </th>
-      <th>
-        Procedure
-      </th>
-      <th>
-        Goal
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        1
-      </td>
-      <td>
-        Set Up Prerequisites
-      </td>
-      <td>
-        Install and configure the necessary tools, including the FrogML CLI.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        2
-      </td>
-      <td>
-        Define and Register Features
-      </td>
-      <td>
-        Extract and process features by defining a `DataSource` and creating a `FeatureSet` with transformations, then register it using the FrogML CLI.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        3
-      </td>
-      <td>
-        Consume Features for Batch Training
-      </td>
-      <td>
-        Retrieve feature data for model training and batch predictions using the `OfflineClientV2` within your model's build process.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        4
-      </td>
-      <td>
-        Consume Features for Real-Time Inference
-      </td>
-      <td>
-        Enable low-latency feature lookups from the Online Store by defining a `ModelSchema`** and using the `@frogml.api(feature_extraction=True)` decorator.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        5
-      </td>
-      <td>
-        Test Your Model
-      </td>
-      <td>
-        Validate your model and its feature integrations through both local testing and live endpoint queries.
-      </td>
-    </tr>
-    <tr>
-      <td>
-        6
-      </td>
-      <td>
-        Troubleshoot the Pipeline
-      </td>
-      <td>
-        Resolve common issues by consulting Feature Set Jobs logs and querying the Feature Store UI.
-      </td>
-    </tr>
-  </tbody>
-</Table>
-
-
+| Step | Procedure                                | Goal                                                                                                                                                   |
+| :--- | :--------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1    | Set Up Prerequisites                     | Install and configure the necessary tools, including the FrogML CLI.                                                                                   |
+| 2    | Define and Register Features             | Extract and process features by defining a `DataSource` and creating a `FeatureSet` with transformations, then register it using the FrogML CLI.       |
+| 3    | Consume Features for Batch Training      | Retrieve feature data for model training and batch predictions using the `OfflineClientV2` within your model's build process.                          |
+| 4    | Consume Features for Real-Time Inference | Enable low-latency feature lookups from the Online Store by defining a `ModelSchema`** and using the `@frogml.api(feature_extraction=True)` decorator. |
+| 5    | Test Your Model                          | Validate your model and its feature integrations through both local testing and live endpoint queries.                                                 |
+| 6    | Troubleshoot the Pipeline                | Resolve common issues by consulting Feature Set Jobs logs and querying the Feature Store UI.                                                           |
 
 For this guide you can use the showcased Credit Risk Machine Learning model and our sample data is stored in CSV file format in a public S3 bucket.
 
 ### 1 Prerequisites
 
-* Install and configure the [FrogML CLI](/docs/setting-up-jfrog-ml#install-frogml-cli).
-* It is recommended to create a <Anchor label="Conda" href="https://docs.conda.io/en/latest/" target="_blank">Conda</Anchor> environment starting from the `conda.yaml` file from the <Anchor label="Guide's Github Gist" href="https://github.com/jfrog/JFrogMLExamples/tree/main/feature_store_quickstart_guide" target="_blank">Guide's Github Gist</Anchor>.
+* Install and configure the [FrogML CLI](/docs/setting-up-jfrog-ml#configuring-frogml-sdk-and-cli).
+* It is recommended to create a <Anchor label="Conda" target="_blank" href="https://docs.conda.io/en/latest/">Conda</Anchor> environment starting from the `conda.yaml` file from the <Anchor label="Guide's Github Gist" target="_blank" href="https://github.com/jfrog/JFrogMLExamples/tree/main/feature_store_quickstart_guide">Guide's Github Gist</Anchor>.
 * Basic Python programming knowledge.
 
 This tutorial does not assume any prior knowledge of the JFrog ML platform, all the concepts will be explained along the way, and how they build up the end result.
 
 <Callout icon="✅" theme="okay">
-**Tip**
+  **Tip**
 
-***Clone or download this guide's code snippets from the Github Gist.*** <Anchor label="JFrog ML Examples Github Gist" href="https://github.com/jfrog/JFrogMLExamples/tree/main/feature_store_quickstart_guide" target="_blank">JFrog ML Examples Github Gist</Anchor>.
+  _**Clone or download this guide's code snippets from the Github Gist.**_ <Anchor label="JFrog ML Examples Github Gist" target="_blank" href="https://github.com/jfrog/JFrogMLExamples/tree/main/feature_store_quickstart_guide">JFrog ML Examples Github Gist</Anchor>.
 </Callout>
-
 
 ### 2 Extract and Process Features
 
-Feature extraction begins by defining a **Data Source**, which is a configuration object that tells JFrog ML how to connect to your raw data storage (for example, S3, Snowflake). A Feature Set then uses this Data Source to apply transformations. For a detailed guide on available Data Sources and configuration options, see the [Data Sources](/docs/data-sources "Data Sources") documentation.
+Feature extraction begins by defining a **Data Source**, which is a configuration object that tells JFrog ML how to connect to your raw data storage (for example, S3, Snowflake). A Feature Set then uses this Data Source to apply transformations. For a detailed guide on available Data Sources and configuration options, see the <Anchor label="Data Sources" title="Data Sources" href="/docs/data-sources">Data Sources</Anchor> documentation.
 
 #### Define the Batch Data Source
 
 Batch Data Sources can be defined using one of two methods:
 
 * **SDK/CLI (Recommended for automation):** Define the soruce programmatically using a Python class and register to via the CLI.
-* **UI:** Create the data source directly through the JFrog ML dashboard (see [Data Sources](/docs/data-sources "Data Sources") for details.
+* **UI:** Create the data source directly through the JFrog ML dashboard (see <Anchor label="Data Sources" title="Data Sources" href="/docs/data-sources">Data Sources</Anchor> for details.
 
 For this quick start guide, we will use the SDK to connect to a CSV file stored in a public S3 bucket, defining a `CsvSource` object with the required configuration.
 
@@ -151,20 +75,19 @@ csv_source = CsvSource(
 
 This code snippet instructs the JFrog ML platform how to access the CSV file, locate its path, and correctly read its content.
 
-If CSV files do not cover your use case, please refer to other [Data Sources](/docs/data-sources "Data Sources") and then continue with this guide for the next steps.
+If CSV files do not cover your use case, please refer to other <Anchor label="Data Sources" title="Data Sources" href="/docs/data-sources">Data Sources</Anchor> and then continue with this guide for the next steps.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-The `date_created_column` tells JFrog ML which column to use as a timestamp when filtering through data later on. This column is mandatory to contain the date or datetime type in the file or table registered as a Data Source and should be monotonically increasing. Learn more about SCD Type 2.
+  The `date_created_column` tells JFrog ML which column to use as a timestamp when filtering through data later on. This column is mandatory to contain the date or datetime type in the file or table registered as a Data Source and should be monotonically increasing. Learn more about SCD Type 2.
 </Callout>
 
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-Default timestamp format for `date_created_column` in CSV files should be `yyyy-MM-dd'T'HH:mm:ss`, optionally with `[.SSS][XXX]`. For example `2020-01-01T00:00:00`.
+  Default timestamp format for `date_created_column` in CSV files should be `yyyy-MM-dd'T'HH:mm:ss`, optionally with `[.SSS][XXX]`. For example `2020-01-01T00:00:00`.
 </Callout>
-
 
 Before proceeding to the next step, ensure you have the necessary data manipulation library installed: install a version of
 
@@ -187,7 +110,7 @@ print(pandas_df)
 
 The output should look like the following:
 
-   age     sex  job housing saving\_account checking\_account  credit\_amount  duration                purpose  risk                                  user\_id   date\_created
+   age     sex  job housing saving_account checking_account  credit_amount  duration                purpose  risk                                  user_id   date_created
 
 0   67    male    2     own           None           little           1169         6               radio/TV  good  baf1aed9-b16a-46f1-803b-e2b08c8b47de  1609459200000
 
@@ -269,17 +192,16 @@ def user_features():
 ```
 
 <Callout icon="✅" theme="okay">
-**Tip**
+  **Tip**
 
-The function that returns the SQL transformations for the Feature Set can have any name, provided it includes the `@batch` decorators.
+  The function that returns the SQL transformations for the Feature Set can have any name, provided it includes the `@batch` decorators.
 </Callout>
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-Before registering the Feature Set, please make sure you copy-pasted all the code snippets above in the same Python file.
+  Before registering the Feature Set, please make sure you copy-pasted all the code snippets above in the same Python file.
 </Callout>
-
 
 #### Test the Feature Set Locally
 
@@ -295,16 +217,15 @@ print(user_features.get_sample())
 
 The output should be the following:
 
-                                  user\_id  age     sex  job housing saving\_account checking\_account  credit\_amount  duration                purpose   date\_created 0  baf1aed9-b16a-46f1-803b-e2b08c8b47de   67    male    2     own           None           little           1169         6               radio/TV  1609459200000 1  574a2cb7-f3ae-48e7-bd32-b44015bf9dd4   22  female    2     own         little         moderate           5951        48               radio/TV  1609459200000 2  1b044db3-3bd1-4b71-a4e9-336210d6503f   49    male    1     own         little             None           2096        12              education  1609459200000 3  ac8ec869-1a05-4df9-9805-7866ca42b31c   45    male    2    free         little           little           7882        42  furniture/equipment  1609459200000 4  aa974eeb-ed0e-450b-90d0-4fe4592081c1   53    male    2    free         little           little           4870        24                  car  1609459200000 5  7b3d019c-82a7-42d9-beb8-2c57a246ff16   35    male    1    free           None             None           9055        36              education  1609459200000 6  6bc1fd70-897e-49f4-ae25-960d490cb74e   53    male    2     own     quite rich             None           2835        24  furniture/equipment  1609459200000 7  193158eb-5552-4ce5-92a4-2a966895bec5   35    male    3    rent         little         moderate           6948        36                  car  1609459200000 8  759b5b46-dbe9-40ef-a315-107ddddc64b5   61    male    1     own           rich             None           3059        12               radio/TV  1609459200000 9  e703c351-41a8-43ea-9615-8605da7ee718   28    male    3     own         little         moderate           5234        30                  car  1609459200000
+                                  user_id  age     sex  job housing saving_account checking_account  credit_amount  duration                purpose   date_created 0  baf1aed9-b16a-46f1-803b-e2b08c8b47de   67    male    2     own           None           little           1169         6               radio/TV  1609459200000 1  574a2cb7-f3ae-48e7-bd32-b44015bf9dd4   22  female    2     own         little         moderate           5951        48               radio/TV  1609459200000 2  1b044db3-3bd1-4b71-a4e9-336210d6503f   49    male    1     own         little             None           2096        12              education  1609459200000 3  ac8ec869-1a05-4df9-9805-7866ca42b31c   45    male    2    free         little           little           7882        42  furniture/equipment  1609459200000 4  aa974eeb-ed0e-450b-90d0-4fe4592081c1   53    male    2    free         little           little           4870        24                  car  1609459200000 5  7b3d019c-82a7-42d9-beb8-2c57a246ff16   35    male    1    free           None             None           9055        36              education  1609459200000 6  6bc1fd70-897e-49f4-ae25-960d490cb74e   53    male    2     own     quite rich             None           2835        24  furniture/equipment  1609459200000 7  193158eb-5552-4ce5-92a4-2a966895bec5   35    male    3    rent         little         moderate           6948        36                  car  1609459200000 8  759b5b46-dbe9-40ef-a315-107ddddc64b5   61    male    1     own           rich             None           3059        12               radio/TV  1609459200000 9  e703c351-41a8-43ea-9615-8605da7ee718   28    male    3     own         little         moderate           5234        30                  car  1609459200000
 
 ### Register the Feature Set
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-If you've defined your `Feature Set` via the JFrog ML UI, please skip this step as your feature set is already registered in the platform.
+  If you've defined your `Feature Set` via the JFrog ML UI, please skip this step as your feature set is already registered in the platform.
 </Callout>
-
 
 To register the FeatureSet you just defined, you can use the **JFrog ML CLI** by running the following command in the same directory where your `feature_set.py` file is located.
 
@@ -315,15 +236,15 @@ frogml features register
 * An optional `-p` parameter enables you to define the path of your working directory. By default, the JFrog ML CLI takes the current working directory.
 * The CLI recursively reads all Python files in this directory (or the path defined by `-p` ) to find `Feature Set` definitions. To speed up the process, it is recommended to separate feature configuration folders from the rest of your code.
 
-During the registration process, you will be prompted with requests to create the *credit\_risk\_data* data source and *user-credit-risk-features* feature set.
+During the registration process, you will be prompted with requests to create the _credit_risk_data_ data source and _user-credit-risk-features_ feature set.
 
-![registering-the-feature-set.png](https://files.readme.io/788e0c18e211e59323341cc1a005c8509ba1326767be9f4b2eef5214806be808-uuid-344a79d8-be26-b2da-f407-be1b27f15e2f.png)
+<Image alt="registering-the-feature-set.png" border={false} src="https://files.readme.io/788e0c18e211e59323341cc1a005c8509ba1326767be9f4b2eef5214806be808-uuid-344a79d8-be26-b2da-f407-be1b27f15e2f.png" />
 
 After successful registration, you should see your new Feature Set in the JFrog ML UI.
 
 You can also manage the Feature Set in the JFrog ML UI, checking the status of processing jobs, querying the data, and exploring feature distributions.
 
-![credit-risk-features.png](https://files.readme.io/0413ad79c79603ad46eba81f6a361c91b66e58eedecb64386a0c7b0d38beb8a8-uuid-a67af581-d766-e81d-52be-6765f7f8e5c3.png)
+<Image alt="credit-risk-features.png" border={false} src="https://files.readme.io/0413ad79c79603ad46eba81f6a361c91b66e58eedecb64386a0c7b0d38beb8a8-uuid-a67af581-d766-e81d-52be-6765f7f8e5c3.png" />
 
 ### Consume Features for Batch Model Training
 
@@ -432,7 +353,7 @@ def predict(self, df: pd.DataFrame, extracted_df: pd.DataFrame) -> pd.DataFrame:
     < \..prediction - logic.. >
 ```
 
-To learn more about building and deploying models with JFrog ML, please check out our other [Getting Started](/docs/get-started-with-jfrog-ml "Get Started with JFrog ML") Guide.
+To learn more about building and deploying models with JFrog ML, please check out our other <Anchor label="Getting Started" title="Get Started with JFrog ML" href="/docs/get-started-with-jfrog-ml">Getting Started</Anchor> Guide.
 
 ### Consuming Features for Real-Time Predictions
 
@@ -466,7 +387,7 @@ def predict(self, df: pd.DataFrame, extracted_df: pd.DataFrame) -> pd.DataFrame:
   return prediction
 ```
 
-To put things in context, here's a generic `FrogMlModel` class using the <Anchor label="Online Feature Store" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/" target="_blank">Online Feature Store</Anchor> to enrich its predictions.
+To put things in context, here's a generic `FrogMlModel` class using the <Anchor label="Online Feature Store" target="_blank" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/">Online Feature Store</Anchor> to enrich its predictions.
 
 ```
 class CreditRiskModel(FrogMlModel):
@@ -528,11 +449,10 @@ def predict(self, df: pd.DataFrame, extracted_df: pd.DataFrame) -> pd.DataFrame:
 ```
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-For the full `FrogMlModel` example please consult the Github Gist Repository.
+  For the full `FrogMlModel` example please consult the Github Gist Repository.
 </Callout>
-
 
 ### Testing your Model
 
@@ -562,7 +482,7 @@ This section could address common issues that you might encounter and how to res
 
 If your data ingestion pipeline fails, the first step is to consult the logs for clues about the failure. Navigate to the 'Feature Set Jobs' section in the JFrog ML Dashboard, as shown below.
 
-![user-features-batch.png](https://files.readme.io/129ecd58c2fa72287e8cf37a3c9923ec318bee8995ff41d5e9250f7eb0d567a9-uuid-87d98165-f7d5-6152-6904-2b2814cb508b.png)
+<Image alt="user-features-batch.png" border={false} src="https://files.readme.io/129ecd58c2fa72287e8cf37a3c9923ec318bee8995ff41d5e9250f7eb0d567a9-uuid-87d98165-f7d5-6152-6904-2b2814cb508b.png" />
 
 #### FeatureSet Querying
 
@@ -570,7 +490,7 @@ If you find that the Offline or Online client isn't retrieving any rows for a gi
 
 Note: When constructing your query, make sure to enclose column names in double quotes and prefix them with `feature-store.feature`, as shown in the example below.
 
-![featureset-querying.png](https://files.readme.io/6349a2bae2f4a48e7a1901952906ddd8c3396b3a299a23faa338cf3cbb6126c1-uuid-3728680a-855d-09cc-b7c3-3432a700ef70.png)
+<Image alt="featureset-querying.png" border={false} src="https://files.readme.io/6349a2bae2f4a48e7a1901952906ddd8c3396b3a299a23faa338cf3cbb6126c1-uuid-3728680a-855d-09cc-b7c3-3432a700ef70.png" />
 
 ### Conclusion
 
