@@ -38,7 +38,7 @@ Gain complete control and visibility of your machine learning production environ
 
 ## Automated Feature Pipelines
 
-Simplify the process of building feature pipelines with JFrog ML <Anchor label="Feature Store Overview" title="Feature Store Overview" href="/docs/feature-store-overview">Feature Store Overview</Anchor>.
+Simplify the process of building feature pipelines with JFrog ML [Feature Store Overview](/docs/feature-store-overview).
 
 Create batch, streaming and real-time feature transformations with end-to-end pipeline visibility. Seamlessly integrate these pipelines with JFrog ML-based models using the platform's powerful and automatic feature extraction mechanism.
 
