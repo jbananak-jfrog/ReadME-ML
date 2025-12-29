@@ -4,11 +4,15 @@ deprecated: false
 hidden: false
 metadata:
   title: Streaming Feature Set
-  description: A Streaming Feature Set is identical to a Batch Feature Set in terms of its use (retrieving online/offline features), but instead of reading data from a Batch Source, it reads from an infinite Stream Source - For example, Apache Kafka.
-  robots: index
+  description: >-
+    A Streaming Feature Set is identical to a Batch Feature Set in terms of its
+    use (retrieving online/offline features), but instead of reading data from a
+    Batch Source, it reads from an infinite Stream Source - For example, Apache
+    Kafka.
   legacyUUIDs:
     - UUID-51a4a590-394b-678b-cbe1-6ddb634d8c63
     - UUID-21752cae-37fa-d69c-fbd0-e845653a3f7f
+  robots: index
 ---
 A Streaming Feature Set is identical to a Batch Feature Set in terms of its use (retrieving online/offline features), but instead of reading data from a Batch Source, it reads from an infinite Stream Source - For example, Apache Kafka.
 
@@ -17,17 +21,16 @@ The 2 basic building blocks that define a Streaming Feature Set are its Streamin
 See Streaming Sources section for more details regarding the available Streaming Sources.
 
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-*Python Version*
+  _Python Version_
 
-Please note that Python 3.8 is required for all Streaming capabilities.
+  Please note that Python 3.8 is required for all Streaming capabilities.
 </Callout>
-
 
 ### Streaming Feature Set Creation
 
-To create a streaming feature set in JFrog ML, follow these steps, which involve defining a [feature transformation](/docs/streaming-feature-set) function and utilizing the `@streaming.feature_set` decorator along with the specified parameters:
+To create a streaming feature set in JFrog ML, follow these steps, which involve defining a [feature transformation](/docs/streaming-feature-set#transformations) function and utilizing the `@streaming.feature_set` decorator along with the specified parameters:
 
 1. **Feature Transformation Function:**
 
@@ -38,7 +41,7 @@ To create a streaming feature set in JFrog ML, follow these steps, which involve
 
      * `name`: If not explicitly defined, the decorated function's name is used. The name field is restricted to **alphanumeric** and **hyphen** characters, with a maximum length of 40 characters.
      * `key`: Specify the key for which to calculate the features in the feature set.
-     * `data_sources`: Provide a list containing the names of relevant [data sources](/docs/streaming-data-sources "Streaming Data Sources") that the feature set data will be ingested from. **Currently streaming feature sets support only a single data source configuration.**
+     * `data_sources`: Provide a list containing the names of relevant <Anchor label="data sources" title="Streaming Data Sources" href="/docs/streaming-data-sources">data sources</Anchor> that the feature set data will be ingested from. **Currently streaming feature sets support only a single data source configuration.**
      * `timestamp_column_name`:The name of the column in the data source that contains timestamp information. This is used to order the data chronologically and ensure that the feature values are updated in the correct order.
      * `offline_scheduling_policy`: A crontab definition of the the offline ingestion policy - which affects the data freshness of the offline store. defaults to `*/30 * * * *` (every 30 minutes)
      * `online_trigger_interval`: Defines the online ingestion policy - which affects the data freshness of the online store. Defaults to 5 seconds.
@@ -75,7 +78,7 @@ This example:
 * Creates a transformed feature vector with the fields: `user_id`,
 
   `registration_country` and `registration_device`
-* Ingests the feature vector into the <Anchor label="Frog ML Feature Store" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/" target="_blank">Frog ML Feature Store</Anchor>
+* Ingests the feature vector into the <Anchor label="Frog ML Feature Store" target="_blank" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/">Frog ML Feature Store</Anchor>
 
 #### Adding Metadata
 
@@ -118,13 +121,12 @@ def user_features():
 At JFrog ML, the allocation of resources is crucial for streaming execution jobs, often termed as the `cluster template`. This template determines resources like CPU, memory, and temporary storage - all essential for executing user-defined transformations and facilitating feature ingestion into designated stores.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-***Cluster Template***
+  _**Cluster Template**_
 
-The default size for the cluster template is `MEDIUM` if none is explicitly specified.
+  The default size for the cluster template is `MEDIUM` if none is explicitly specified.
 </Callout>
-
 
 For streaming feature sets, two different resource specifications are provided:
 
@@ -343,24 +345,24 @@ the example below will result in 4 features: `avg_transaction_amount_1m`, `avg_t
 
 ### Event-time Aggregations Backfill
 
-For streaming aggregation featuresets, adding backfill spec will populate historical features values from *batch* data sources before deploying the actual streaming featureset
+For streaming aggregation featuresets, adding backfill spec will populate historical features values from _batch_ data sources before deploying the actual streaming featureset
 
 The StreamingBackfill parameters are:
 
-* **start\_datetime**: Datetime to start fetching values from
-* **end\_datetime**: Datetime to end fetching values from
+* **start_datetime**: Datetime to start fetching values from
+* **end_datetime**: Datetime to end fetching values from
+
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-**end\_datetime** must be divisible by slice size/
+  **end_datetime** must be divisible by slice size/
 </Callout>
-
 
 * **transform**: An SQL transformation that select the relevant features from the batch sources,
 
   and it's output schema must include the **raw** streaming source schema
-* **data\_source\_specs**: List of existing batch data source names to fetch from
-* **execution\_spec**: [optional] resource template for backfill step
+* **data_source_specs**: List of existing batch data source names to fetch from
+* **execution_spec**: [optional] resource template for backfill step
 
 ```
 from datetime import datetime
@@ -412,11 +414,10 @@ The data will be between 1/1/2020 and 1/9/2022.
 If it is needed to specify specific datetime filter for each batch source (i.e. selecting from different sub start and end time for each source), we need to pass `BackfillBatchDataSourceSpec`:
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-Filtering per data source is optional, but keep in mind that the general start and end time filter set for the backfill will be lower and upper limits for any sub specific backfill source filter
+  Filtering per data source is optional, but keep in mind that the general start and end time filter set for the backfill will be lower and upper limits for any sub specific backfill source filter
 </Callout>
-
 
 ```
 data_source_specs = [
@@ -431,11 +432,10 @@ data_source_specs = [
 ### Specifying Auxiliary Sinks
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-Auxiliary Sinks are available for streaming featuresets without any aggregations
+  Auxiliary Sinks are available for streaming featuresets without any aggregations
 </Callout>
-
 
 Remember that Featuresets ingest data from data sources and produce features that are then stored in the online store and the offline store. but what happens if we'd like the features to also be sent to a destination of our choice? That's where auxiliary sinks come in.
 
@@ -453,12 +453,12 @@ When defining auxiliary sinks, we can select the **attachment point** - which si
 
 * If selecting an **online attachment point**, the features will be written into the sink when they are written into the online store - this means the sink will have high data freshness, but will add an overhead to the online ingestion program, possibly lowering its data freshness.
 * Conversely, if selecting an **Offline Attachment Point**, the features will be written to the sink whenever they are written to the offline store. This ensures the data freshness in the online store remains unchanged, but yields a lower data freshness for the sink itself.
+
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-Auxiliary Sinks are guaranteed At-Least-Once semantics.
+  Auxiliary Sinks are guaranteed At-Least-Once semantics.
 </Callout>
-
 
 #### Auxiliary Sink Types
 
@@ -466,7 +466,7 @@ Auxiliary Sinks are guaranteed At-Least-Once semantics.
 
 Example showing how two different auxiliary sinks are created:
 
-* The first one uses a kafka topic called "online\_topic" and uses an Online Streaming Attachment Point.
+* The first one uses a kafka topic called "online_topic" and uses an Online Streaming Attachment Point.
 * The second one uses another topic and uses an Offline Streaming Attachment Point.
 
 ```
@@ -531,7 +531,7 @@ def user_streaming_features():
 
 When selecting JSON, the features are written into the the topic according to the following format:
 
-* Message Key: the key of the feature vector (e.g., the value of "user\_id" in the above example).
+* Message Key: the key of the feature vector (e.g., the value of "user_id" in the above example).
 * Message Value: a JSON string according to the following specification:
 
 ```
