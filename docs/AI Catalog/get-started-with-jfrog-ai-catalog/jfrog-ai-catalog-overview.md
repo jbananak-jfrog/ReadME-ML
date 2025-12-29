@@ -25,9 +25,7 @@ metadata:
 ---
 Welcome to the JFrog AI Catalog – your centralized hub for AI model discovery, governance, and deployment. Here you can view and manage all AI models in your organization, including both those you are currently using, and those you want to use.
 
-<br />
-
-<Image alt="aicatalog-3tabs.png" border={false} src="https://files.readme.io/f5e029c75c89b00944b07ace34c59ed7d51141ff0bd03ae0d7ae4c7ad68bc612-uuid-4b05e20a-fe7a-0158-0a85-f7c89b95f7b8.png" />
+<Image align="center" border={false} src="https://files.readme.io/13fd2fa88b522d1925286c4f005188ff317292d616c56369421cff1136d15a1d-Registry.png" />
 
 ## AI Challenges
 
