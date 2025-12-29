@@ -12,7 +12,7 @@ metadata:
 ---
 This section reviews the following topics:
 
-<Anchor label="Performance Issues" title="Performance Issues" href="/docs/performance-issues">Performance Issues</Anchor>
+[Performance Issues](/docs/performance-issues)
 
 <br />
 
