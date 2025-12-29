@@ -4,24 +4,24 @@ deprecated: false
 hidden: false
 metadata:
   title: Batch Feature Set
-  description: A Feature Set is a fundamental component of a machine learning feature
-    store. It is a structured and organized collection of features, also known as
-    attributes or characteristics, that describe various aspects of data instances
-    or entities in a consistent and standardized manner. Feature sets play a crucial
-    role in enabling the development, training, and deployment of machine learning
-    models.
-  robots: index
+  description: >-
+    A Feature Set is a fundamental component of a machine learning feature
+    store. It is a structured and organized collection of features, also known
+    as attributes or characteristics, that describe various aspects of data
+    instances or entities in a consistent and standardized manner. Feature sets
+    play a crucial role in enabling the development, training, and deployment of
+    machine learning models.
   legacyUUIDs:
-  - UUID-e55c23de-3e87-2e74-7547-0c8ede045052
-  - UUID-5175bb10-9f71-217a-8784-0b39c6112d1b
-  - UUID-a35f1fba-deb1-2c98-f85d-0bd8bb4343aa
-  - UUID-c51e4b35-61fb-6706-66da-9c15eef94446
-  - UUID-7c0d42f5-d8f9-c084-7415-8eb55f760054
-  - UUID-d7d4e27e-6497-b19e-80b4-1eddedd517ae
-  - UUID-6aa7995c-0f31-1b5b-99a7-9b5ffc6895f2
-  - UUID-fba3370f-f4f2-ce87-37f8-2fe94b1936d6
+    - UUID-e55c23de-3e87-2e74-7547-0c8ede045052
+    - UUID-5175bb10-9f71-217a-8784-0b39c6112d1b
+    - UUID-a35f1fba-deb1-2c98-f85d-0bd8bb4343aa
+    - UUID-c51e4b35-61fb-6706-66da-9c15eef94446
+    - UUID-7c0d42f5-d8f9-c084-7415-8eb55f760054
+    - UUID-d7d4e27e-6497-b19e-80b4-1eddedd517ae
+    - UUID-6aa7995c-0f31-1b5b-99a7-9b5ffc6895f2
+    - UUID-fba3370f-f4f2-ce87-37f8-2fe94b1936d6
+  robots: index
 ---
-
 ## What is a Feature Set?
 
 A **Feature Set** is a fundamental component of a machine learning feature store. It is a structured and organized collection of features, also known as attributes or characteristics, that describe various aspects of data instances or entities in a consistent and standardized manner. Feature sets play a crucial role in enabling the development, training, and deployment of machine learning models.
@@ -46,7 +46,7 @@ Batch Feature Sets in JFrog ML empower users to derive machine learning (ML) fea
    * The Offline Store acts as your "data warehouse," a secure and organized place where feature data is stored after being processed by the batch or stream engines. It's designed to handle large volumes of data and is optimized for batch analytics.
    * The Online Store is designed for low-latency access to feature data. It's optimized for quick reads and is the go-to place for real-time applications.
    * Both layers serve as a unified hub for both online inference and the generation of training sets, facilitating seamless integration into ML workflows.
-![batch-data-sources.png](https://files.readme.io/84ec81abb887b1fba1aa13631d9e3fa1bfdee0a85633d7580dacf2aa9bd3b8f5-uuid-bd24e1b7-8b34-8390-7901-8af3af0d6b40.png)
+     ![](https://files.readme.io/84ec81abb887b1fba1aa13631d9e3fa1bfdee0a85633d7580dacf2aa9bd3b8f5-uuid-bd24e1b7-8b34-8390-7901-8af3af0d6b40.png)
 
 ### **Common Use Cases**
 
@@ -76,7 +76,7 @@ To create a batch feature set in JFrog ML, follow these steps, which involve def
 
      * `name`: If not explicitly defined, the decorated function's name is used. The name field is restricted to **alphanumeric** and **hyphen** characters, with a maximum length of 40 characters.
      * `key`: Specify the key for which to calculate the features in the feature set.
-     * `data_sources`: Provide a dictionary containing the names of relevant [data sources](/docs/batch-data-sources "Batch Data Sources") that the feature set data will be ingested from.
+     * `data_sources`: Provide a dictionary containing the names of relevant [data sources](/docs/batch-data-sources) that the feature set data will be ingested from.
 3. **Ingestion Job Frequency:**
 
    * By default, ingestion jobs are triggered every 4 hours. However, users have the flexibility to explicitly define a different frequency based on their specific requirements.
@@ -144,9 +144,9 @@ def user_features():
 
 ### Configuring Data Sources
 
-When setting up the feature set data ingestion, carefully assign the [Batch Data Sources](/docs/batch-data-sources "Batch Data Sources") to be utilized. Ensure that each data source name is explicitly mapped to its intended [Read Policy](/docs/read-policies "Read Policies").
+When setting up the feature set data ingestion, carefully assign the <Anchor label="Batch Data Sources" title="Batch Data Sources" href="/docs/batch-data-sources">Batch Data Sources</Anchor> to be utilized. Ensure that each data source name is explicitly mapped to its intended <Anchor label="Read Policy" title="Read Policies" href="/docs/read-policies">Read Policy</Anchor>.
 
-If a read policy is not explicitly defined, the default policy is set to [New Only](/docs/read-policies "Read Policies"), which instructs the system to read only records added since the last ingestion job. This approach optimizes efficiency by focusing on new data, enhancing the overall performance of the feature set.
+If a read policy is not explicitly defined, the default policy is set to <Anchor label="New Only" title="Read Policies" href="/docs/read-policies">New Only</Anchor>, which instructs the system to read only records added since the last ingestion job. This approach optimizes efficiency by focusing on new data, enhancing the overall performance of the feature set.
 
 ```
 from frogml.core.feature_store.feature_sets.read_policies import ReadPolicy
@@ -190,24 +190,22 @@ A timestamp column name represents the timestamp in which the feature vector eve
 In the case of a single data source, the `date_created_column` specified in the data source settings is utilized for timestamp identification.
 
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-**When using multiple data sources you must explicitly define the timestamp column.**
+  **When using multiple data sources you must explicitly define the timestamp column.**
 </Callout>
-
 
 ## Managing the Scheduling Policy
 
-To regulate the timing of ETL (Extract, Transform, Load) operations for batch features, scheduling policies play a pivotal role. Once a feature is deployed, the system calculates new feature values at intervals determined by the scheduling policy, which adheres to the <Anchor label="crontab" href="https://crontab.guru/" target="_blank">crontab</Anchor> format.
+To regulate the timing of ETL (Extract, Transform, Load) operations for batch features, scheduling policies play a pivotal role. Once a feature is deployed, the system calculates new feature values at intervals determined by the scheduling policy, which adheres to the <Anchor label="crontab" target="_blank" href="https://crontab.guru/">crontab</Anchor> format.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-***Default Scheduling Policy***
+  _**Default Scheduling Policy**_
 
-The default scheduling is every **4 hours** if no explicit policy is set.
+  The default scheduling is every **4 hours** if no explicit policy is set.
 </Callout>
-
 
 ```
 from frogml.feature_store.feature_sets import batch
@@ -369,19 +367,19 @@ There are two options for registering new features:
    ```
    frogml features register -p ./user_project/features/feature_set.py
    ```
-2. Letting *frogml cli* recursively search through all python files in the current directory, and all directories below. We will search through all **.py** files and look for feature set definitinos.
+2. Letting _frogml cli_ recursively search through all python files in the current directory, and all directories below. We will search through all **.py** files and look for feature set definitinos.
 
    ```
    frogml features register
    ```
+
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-***Function Naming Conventions***
+  _**Function Naming Conventions**_
 
-Same feature set transformation function name, cannot be defined more than once per .py file.
+  Same feature set transformation function name, cannot be defined more than once per .py file.
 </Callout>
-
 
 ```
 ✅ Recursively looking for python files in input dir (0:00:00.61)
@@ -401,17 +399,16 @@ To view the status in the UI, go to Feature Store -> Feature Sets -> Batch Featu
 Feature set configuration may be updated, except for the following limitations
 
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-***Recreating Feature Sets***
+  _**Recreating Feature Sets**_
 
-Changing any of the parameters above requires deleting and recreating a feature set:
+  Changing any of the parameters above requires deleting and recreating a feature set:
 
-* Backfill Start Date
-* Read Policy
-* Scheduling Policy
+  * Backfill Start Date
+  * Read Policy
+  * Scheduling Policy
 </Callout>
-
 
 ## Deleting a Feature Set
 
@@ -455,11 +452,10 @@ When pausing a Batch Feature Set, future ingestion jobs will not be scheduled (r
 Upon resuming a batch feature set, it is re-scheduled, and ingestion jobs will continue ingesting data from where they have last left off.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-When resuming a feature set, the ingestion jobs will continue as scheduled - meaning feature sets jobs will start "catching up" on jobs that were skipped during the time it was paused.
+  When resuming a feature set, the ingestion jobs will continue as scheduled - meaning feature sets jobs will start "catching up" on jobs that were skipped during the time it was paused.
 </Callout>
-
 
 For example, if an hourly feature set we paused for 3 days - after resuming it, those hourly jobs will be executed immediately one after the other until the data is all caught up.
 
@@ -484,11 +480,10 @@ The section describes the various transformations supported by JFrog ML.
 #### SQL
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-JFrog ML runs Spark SQL in the background. Please comply with <Anchor label="Spark Standards" href="https://spark.apache.org/docs/latest/sql-ref.html" target="_blank">Spark Standards</Anchor>.
+  JFrog ML runs Spark SQL in the background. Please comply with <Anchor label="Spark Standards" target="_blank" href="https://spark.apache.org/docs/latest/sql-ref.html">Spark Standards</Anchor>.
 </Callout>
-
 
 The following is an implementation of creating a transformation using a SQL:
 
@@ -527,15 +522,15 @@ When creating transformations, keep the following guidelines in mind:
 
    * For read policies such as `NewOnly` and `FullRead`, it is imperative to include the timestamp column in the returned feature vector.
 3. Use the data source as the table name in the FROM clause.
-4. Make sure the column names resulting from the SQL has no special characters. The allowed characters are: **a-z, A-Z, 0-9, \_.**
+4. Make sure the column names resulting from the SQL has no special characters. The allowed characters are: **a-z, A-Z, 0-9, _.**
+
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-***Logging***
+  _**Logging**_
 
-JFrog supports the default Python logger, which you can import from the standard python logging library.
+  JFrog supports the default Python logger, which you can import from the standard python logging library.
 </Callout>
-
 
 #### PySpark
 
@@ -547,7 +542,7 @@ pip install -U "frogml-sdk[feature-store]"
 
 PySpark transformation is defined by creating a UDF which is responsible for the transformation logic.
 
-***UDF Definition:***
+_**UDF Definition:**_
 
 * Arguments:
 
@@ -562,13 +557,12 @@ PySpark transformation is defined by creating a UDF which is responsible for the
 The returned df (PySpark DataFrame) must contain a column representing the configured key. The df column names must not include whitespaces or special characters.
 
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-**Python and Dependency Restrictions**T
+  **Python and Dependency Restrictions**T
 
-To ensure compatibility and stability, it is mandatory to use **Python 3.8** when registering a feature set with a Koalas transformation. Additionally, ensure that `cloudpickle` version is locked to `2.2.1`.
+  To ensure compatibility and stability, it is mandatory to use **Python 3.8** when registering a feature set with a Koalas transformation. Additionally, ensure that `cloudpickle` version is locked to `2.2.1`.
 </Callout>
-
 
 ```
 from typing import Dict, Any
@@ -598,23 +592,22 @@ def transform():
 ```
 
 <Callout icon="⚠️" theme="warning">
-**Warning**
+  **Warning**
 
-***Function Scope and Dependencies***
+  _**Function Scope and Dependencies**_
 
-PySpark function scope and variables must be defined under the transform function, as shown in the code snippet above.
+  PySpark function scope and variables must be defined under the transform function, as shown in the code snippet above.
 
-At runtime, only PySpark and python native library, are available.
+  At runtime, only PySpark and python native library, are available.
 </Callout>
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-***Logging***
+  _**Logging**_
 
-JFrog supports the default Python logger, which you can import from the standard python logging library.
+  JFrog supports the default Python logger, which you can import from the standard python logging library.
 </Callout>
-
 
 ##### Warnings about PySpark Usage Patterns
 
@@ -622,15 +615,15 @@ Avoid using `DataFrame.localCheckpoint`, even though local checkpointing might 
 
 #### Pandas On Spark
 
-Pandas On Spark is a pandas implementation using Spark. Please ensure your code is <Anchor label="Pandas On Spark Library" href="https://spark.apache.org/pandas-on-spark/" target="_blank">Pandas On Spark Library</Anchor> compliant.
+Pandas On Spark is a pandas implementation using Spark. Please ensure your code is <Anchor label="Pandas On Spark Library" target="_blank" href="https://spark.apache.org/pandas-on-spark/">Pandas On Spark Library</Anchor> compliant.
 
 The User Defined Function (UDF) receives a dictionary in the form of `{'<batch_source_name>': pyspark.pandas.DataFrame ...}` as input.
 
-The returned pyspark.pandas.DataFrame (Pandas On Spark DataFrame) must contain a column representing the configured key and timestamp column. The *psdf* **must not include** complex columns, such as multi-index, and the name **must not include** whitespaces or special characters.
+The returned pyspark.pandas.DataFrame (Pandas On Spark DataFrame) must contain a column representing the configured key and timestamp column. The _psdf_ **must not include** complex columns, such as multi-index, and the name **must not include** whitespaces or special characters.
 
 Make sure that column names returned from the UDF do **not** contain special characters.
 
-The allowed characters are: **a-z, A-Z, 0-9, \_.**.
+The allowed characters are: **a-z, A-Z, 0-9, _.**.
 
 > 🚧 Restrictions
 >
@@ -663,49 +656,46 @@ def transform():
 ```
 
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-***Function Scope and Dependencies***
+  _**Function Scope and Dependencies**_
 
-Pandas On Spark function scope and variables must be defined under the transform function, as shown in the code snippet above.
+  Pandas On Spark function scope and variables must be defined under the transform function, as shown in the code snippet above.
 </Callout>
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-***Logging***
+  _**Logging**_
 
-We support the default Python logger, which you can import from the standard python logging library.
+  We support the default Python logger, which you can import from the standard python logging library.
 </Callout>
-
 
 #### Koalas (deprecated)
 
 <Callout icon="⚠️" theme="warning">
-**Warning**
+  **Warning**
 
-Koalas support end-of-life is planned for 25 November 2025.
+  Koalas support end-of-life is planned for 25 November 2025.
 </Callout>
 
-
-Koalas is a pandas implementation using Spark. Ensure your code complies with <Anchor label="Databricks Koalas library" href="https://koalas.readthedocs.io/en/latest/user_guide/index.html" target="_blank">Databricks Koalas library</Anchor>.
+Koalas is a pandas implementation using Spark. Ensure your code complies with <Anchor label="Databricks Koalas library" target="_blank" href="https://koalas.readthedocs.io/en/latest/user_guide/index.html">Databricks Koalas library</Anchor>.
 
 The UDF receives as input a dictionary in the form of `{'<batch_sourcename>': kdf ...}`.
 
-The returned *kdf* (Koalas DataFrame) must contain a column representing the configured key. The *kdf* must not include complex columns, such as multi index, and the name must not include whitespaces or special characters.
+The returned _kdf_ (Koalas DataFrame) must contain a column representing the configured key. The _kdf_ must not include complex columns, such as multi index, and the name must not include whitespaces or special characters.
 
 Make sure that column names returned from the UDF has no special characters.
 
-The allowed characters are: **a-z,A-Z,0-9,\_.**
+The allowed characters are: **a-z,A-Z,0-9,_.**
 
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-***Python and Dependency Restrictions***
+  _**Python and Dependency Restrictions**_
 
-To ensure compatibility and stability, it is mandatory to use **Python 3.8** when registering a feature set with a Koalas transformation. Additionally, ensure that `cloudpickle` version is locked to `2.2.1`.
+  To ensure compatibility and stability, it is mandatory to use **Python 3.8** when registering a feature set with a Koalas transformation. Additionally, ensure that `cloudpickle` version is locked to `2.2.1`.
 </Callout>
-
 
 ```
 from frogml.feature_store.feature_sets import batch
@@ -731,23 +721,22 @@ def transform():
 ```
 
 <Callout icon="⚠️" theme="warning">
-**Warning**
+  **Warning**
 
-***Function Scope and Dependencies***
+  _**Function Scope and Dependencies**_
 
-Koalas function scope and variables must be defined under the transform function, as shown in the code snippet above.
+  Koalas function scope and variables must be defined under the transform function, as shown in the code snippet above.
 
-At runtime, only pandas and koalas and python native library, are available.
+  At runtime, only pandas and koalas and python native library, are available.
 </Callout>
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-***Logging***
+  _**Logging**_
 
-We support the default Python logger, which you can import from the standard python logging library.
+  We support the default Python logger, which you can import from the standard python logging library.
 </Callout>
-
 
 ##### Supported Spark Column Types
 
@@ -756,17 +745,16 @@ We support the default Python logger, which you can import from the standard pyt
 `ArrayType` column may include any of the above column types, except for another `ArrayType` column.
 
 <Callout icon="⚠️" theme="warning">
-**Warning**
+  **Warning**
 
-Batch cannot insert rows with an older timestamp than the current oldest timestamp in the offline feature store.
+  Batch cannot insert rows with an older timestamp than the current oldest timestamp in the offline feature store.
 
-Each batch must produce a timestamp equal to or larger than the last batch.
+  Each batch must produce a timestamp equal to or larger than the last batch.
 </Callout>
-
 
 ##### Warnings about Koalas Usage Patterns
 
-Avoid using kdf.spark.local\_checkpoint(), even though local checkpointing might improve performance of some workloads, local checkpoints are ephemeral, have limited disk space and can lead to execution failures. Regular checkpoints are recommended to use instead for most other cases.
+Avoid using kdf.spark.local_checkpoint(), even though local checkpointing might improve performance of some workloads, local checkpoints are ephemeral, have limited disk space and can lead to execution failures. Regular checkpoints are recommended to use instead for most other cases.
 
 ## Read Policies
 
@@ -777,13 +765,12 @@ The selection of a Read Policy significantly influences how data is ingested int
 This document provides an overview of the diverse read policies accessible within JFrog ML.
 
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-***Default Read Policy***
+  _**Default Read Policy**_
 
-If **no** read policy is set, `NewOnly` is the default read policy.
+  If **no** read policy is set, `NewOnly` is the default read policy.
 </Callout>
-
 
 #### New Only
 
@@ -864,7 +851,7 @@ The "Full Read" policy, when applied to a single data source, involves consuming
 
 * **Batch Feature Sets Constraints:**
 
-  * It's important to note that batch feature sets cannot insert rows with timestamps older than the current oldest timestamp in the <Anchor label="offline feature store" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/" target="_blank">offline feature store</Anchor>. Each batch must produce a timestamp equal to or larger than the timestamp of the last batch.
+  * It's important to note that batch feature sets cannot insert rows with timestamps older than the current oldest timestamp in the <Anchor label="offline feature store" target="_blank" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/">offline feature store</Anchor>. Each batch must produce a timestamp equal to or larger than the timestamp of the last batch.
 * **Handling Timestamps:**
 
   * To utilize the Full Read policy and manage timestamps, JFrog ML feature set transformations support parameters like `qwak_ingestion_start_timestamp` and `qwak_ingestion_end_timestamp`. These parameters can be employed to define timestamp columns in transformations.
@@ -892,17 +879,16 @@ The "Full Read" policy, when applied to a single data source, involves consuming
 Each batch reads records within a specified time frame, starting from the job execution time until a defined period in the past.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-***Example***
+  _**Example**_
 
-We want to track the total number of transactions a user made in the past 7 days.
+  We want to track the total number of transactions a user made in the past 7 days.
 
-We can use a `TimeFrame` read policy to show the aggregated data over sliding window.
+  We can use a `TimeFrame` read policy to show the aggregated data over sliding window.
 
-This read policy allows us to read only the newly added records in the last 7 days, and transfer the updated information to the feature store.
+  This read policy allows us to read only the newly added records in the last 7 days, and transfer the updated information to the feature store.
 </Callout>
-
 
 ```
 from frogml.core.feature_store.feature_sets.read_policies import ReadPolicy
@@ -953,11 +939,10 @@ def transform():
 Using the `Aggregations.Population` flavor of the `TimeFrame` read policy will result in Keys that belonged to a previous window, but are not present at the current current window, having **null**  feature values.
 
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-The [Backfill](/docs/backfill "Backfill") feature is currently not supported for Feature Sets defined with Aggregations.Population flavor.
+  The <Anchor label="Backfill" title="Backfill" href="/docs/backfill">Backfill</Anchor> feature is currently not supported for Feature Sets defined with Aggregations.Population flavor.
 </Callout>
-
 
 ### Using Multiple Read Policies
 
@@ -971,7 +956,7 @@ Backfill can be triggered via the JFrog platform UI or via CLI command options.
 
 There are three types of backfill:
 
-* **Initial Backfill:**  Triggered once only on feature set creation if a backfill\_spec is defined to fill an empty feature set.
+* **Initial Backfill:**  Triggered once only on feature set creation if a backfill_spec is defined to fill an empty feature set.
 * **Interval Backfill:** Use this to replace data within a **specific time interval**: you can specify a time interval within which data should be replaced in the feature set. Use, for example, for a different transformation, or updated data source etc.
 
   Data outside backfill boundaries remains unaffected and available at all times.
@@ -989,12 +974,12 @@ To run backfill:
 2. Select an existing feature set, and click the three dots button in the top-right corner.
 3. From the drop down menu that displays, select Run backfill.
 4. Enter the details in the backfill window and run the backfill.
+
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-You can select different cluster-template sizes for backfill executions. We recommend that for large backfills you select a cluster-template size larger than the size defined for the feature set to handle the increased processing load.
+  You can select different cluster-template sizes for backfill executions. We recommend that for large backfills you select a cluster-template size larger than the size defined for the feature set to handle the increased processing load.
 </Callout>
-
 
 #### Backfill via a CLI Command
 
@@ -1017,11 +1002,10 @@ frogml features backfill --reset-backfill [--cluster-template <cluster_template>
 ```
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-For reset backfills, you can either use `--reset-backfill` or `--reset`.
+  For reset backfills, you can either use `--reset-backfill` or `--reset`.
 </Callout>
-
 
 **Command Options Summary:**
 
