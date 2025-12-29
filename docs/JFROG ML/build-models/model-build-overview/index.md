@@ -1225,7 +1225,7 @@ def predict(self, df: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(data=self._model.predict(df), columns=['species'])
 ```
 
-Notice that in this case we use pandas `DataFrame` for both the input and the output. For other options, see [Prediction Input & Output Adapters](/docs/prediction-input---output-adapters).
+Notice that in this case we use pandas `DataFrame` for both the input and the output. For other options, see [Prediction Input & Output Adapters](/docs/prediction-input-output-adapters).
 
 <Callout icon="📘" theme="info">
   **Note**
@@ -1245,8 +1245,8 @@ JFrogML's API decorator adds additional functionality to the `predict` method. T
 | :------------------- | :------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :----------------------- |
 | `analytics`          | `bool`              | Whether to activate JFrogML's built-in inference data collection mechanism, which streams all inference requests to the [FrogML Lake](/docs/inference-analytics).                     | `True`                   |
 | `feature_extraction` | `bool`              | Whether to activate the automatic feature extraction mechanism, pulling features from JFrog ML's feature store. For more info see  [Features in Inference](doc:feature-consumption) . | `False`                  |
-| `Input Adapter`      | `BaseInputAdapter`  | To which format should the input request be serialized. For a list of supported adapters see [Input & Output Adapters](/docs/prediction-input---output-adapters)  .                   | `DataframeInputAdapter`  |
-| `Output Adapter`     | `BaseOutputAdapter` | To which format should the output of the `predict` function be serialized. For a list of supported adapters see [Input & Output Adapters](/docs/prediction-input---output-adapters).  | `DataframeOutputAdapter` |
+| `Input Adapter`      | `BaseInputAdapter`  | To which format should the input request be serialized. For a list of supported adapters see [Input & Output Adapters](/docs/prediction-input-output-adapters)  .                     | `DataframeInputAdapter`  |
+| `Output Adapter`     | `BaseOutputAdapter` | To which format should the output of the `predict` function be serialized. For a list of supported adapters see [Input & Output Adapters](/docs/prediction-input-output-adapters).    | `DataframeOutputAdapter` |
 
 ### Schema
 
