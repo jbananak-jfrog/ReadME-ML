@@ -183,7 +183,7 @@ A timestamp column name represents the timestamp in which the feature vector eve
 **Notes**
 
 * When defining multiple data sources you must explicitly set the timestamp column.
-* If the read policy is configured as [Time Frame](/docs/batch-feature-set), an extra timestamp column named `QWAK_WINDOW_END_TS` is introduced, serving as the designated timestamp column for the feature set.
+* If the read policy is configured as [Time Frame](/docs/batch-feature-set#time-frame), an extra timestamp column named `QWAK_WINDOW_END_TS` is introduced, serving as the designated timestamp column for the feature set.
 
 #### Implicit Timestamp Definition
 
