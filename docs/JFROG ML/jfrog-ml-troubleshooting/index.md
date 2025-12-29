@@ -12,25 +12,11 @@ metadata:
 ---
 This section reviews the following topics:
 
-<Cards>
-  <Card title="Performance Issues" href="#">
-     New to our platform? Follow this guide to get started.
-  </Card>
-
-  <Card title="API Reference" href="#" icon="fa-code">
-    Explore our interactive API reference.
-  </Card>
-
-  <Card title="Support & Community" href="#" icon="fa-comments" target="_blank">
-    Join our community or checkout our FAQ.
-  </Card>
-</Cards>
-
 [Performance Issues](/docs/performance-issues)
 
 <br />
 
-<Anchor label="Installation Issues" title="Installation Issues" href="/docs/installation-issues">Installation Issues</Anchor>
+[Installation Issues](/docs/installation-issues)
 
 <br />
 
