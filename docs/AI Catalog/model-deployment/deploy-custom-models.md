@@ -12,6 +12,8 @@ metadata:
     - UUID-47b39353-8a29-3a5a-b630-1135d4650930
   robots: index
 ---
-To learn about managing deployment of custom models, see <Anchor label="Serve Models (Deployment)" title="Serve Models (Deployment)" href="/docs/serve-models--deployment-">Serve Models (Deployment)</Anchor>.
+To learn about managing deployment of custom models, see [Serve Models (Deployment)](/docs/serve-models-deployment).
 
-Note: From the AI Catalog, you can also [deploy model packages](/docs/deploy-model-packages--open-source-).
+Note: From the AI Catalog, you can also [deploy model packages](/docs/deploy-model-packages).
+
+<br />
