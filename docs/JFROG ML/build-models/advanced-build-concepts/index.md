@@ -480,7 +480,7 @@ This advanced build pattern enables you to specify parameters or parameter range
 
 Currently, JFrog ML supports training only on a single instance, whether CPU or GPU. As a result, all options described will apply to single-instance training.
 
-For efficient model development, especially when training sessions are lengthy, consider using this guide in conjunction with <Anchor label="Reusing Trained Artifacts" title="Reusing Trained Artifacts" href="/docs/reusing-trained-artifacts">Reusing Trained Artifacts</Anchor>. This approach allows for frequent iteration on model code without the need to retrain from scratch each time.
+For efficient model development, especially when training sessions are lengthy, consider using this guide in conjunction with [Reusing Trained Artifacts](/docs/advanced-build-concepts#reusing-trained-artifacts). This approach allows for frequent iteration on model code without the need to retrain from scratch each time.
 
 ### Key Concepts
 
