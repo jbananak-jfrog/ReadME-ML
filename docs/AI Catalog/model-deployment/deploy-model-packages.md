@@ -34,7 +34,7 @@ Deploying a model means actually setting up servers, often GPUs, and getting the
 <Callout icon="📘" theme="info">
   **Note**
 
-  If you are deploying a Hugging Face gated model, see the _**[Deploying Gated Models](/docs/deploy-model-packages-open-source#deploying-gated-models)**_ section below.
+  If you are deploying a Hugging Face gated model, see the _**[Deploying Gated Models](/docs/deploy-model-packages#deploying-gated-models)**_ section below.
 </Callout>
 
 <Image align="left" alt="deploymodel1.png" border={true} width="80% " src="https://files.readme.io/e8cc1e7b7049184a0c104b6dcc740308cf97d3abddd30c4fee0cc2424aa2510c-uuid-9391de17-3f66-eecd-8b78-77617e80c98b.png" className="border" />
