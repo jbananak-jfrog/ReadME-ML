@@ -70,7 +70,7 @@ frogml models deploy realtime \
     --daemon-mode <bool>
 ```
 
-For example, for the model built in the <Anchor label="Get Started with JFrog ML" title="Get Started with JFrog ML" href="/docs/get-started-with-jfrog-ml">Get Started with JFrog ML</Anchor> section, the deployment command is:
+For example, for the model built in the [JFrog ML Quick Start](/docs/get-started-with-jfrog-ml)section, the deployment command is:
 
 ```
 frogml models deploy realtime \
