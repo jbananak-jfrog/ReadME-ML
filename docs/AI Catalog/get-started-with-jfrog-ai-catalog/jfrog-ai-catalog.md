@@ -84,6 +84,8 @@ All these models need governance, have many versions, and may have issues. The A
 > See also:
 
 * <Anchor label="JFrog AI Catalog Architecture" title="JFrog AI Catalog Architecture" href="/docs/jfrog-ai-catalog-architecture">JFrog AI Catalog Architecture</Anchor>
-* [Getting Started](/docs/getting-started)
+* [AI Catalog Quick Start](/docs/ai-catalog-quick-start)
 * <Anchor label="Discover and Allow Models" title="Discover and Allow Models" href="/docs/discover-and-allow-models">Discover and Allow Models</Anchor>
 * <Anchor label="Connect AI Providers" title="Connect AI Providers" href="/docs/connect-ai-providers">Connect AI Providers</Anchor>
+
+<br />
