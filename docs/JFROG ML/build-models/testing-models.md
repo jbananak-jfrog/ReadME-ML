@@ -232,3 +232,13 @@ from frogml_inference.realtime_client.client import InferenceOutputFormat
 def test(real_time_client):
     result = real_time_client.predict(feature_vector, InferenceOutputFormat.PANDAS)
 ```
+
+<br />
+
+The `real_time_client` is configured with the local endpoint to enable efficient, practical test predictions. This approach enhances your testing practices by ensuring early issue detection and confirming deployment readiness. It is a proactive strategy that aligns with Continuous Integration (CI) workflows to maintain high-quality standards.
+
+<Callout icon="📘" theme="info">
+  **Structuring the Tests Directory**
+
+  Please place your integration tests under an `it` directory in the `tests` folder, adhering to the model build directory structure.
+</Callout>
