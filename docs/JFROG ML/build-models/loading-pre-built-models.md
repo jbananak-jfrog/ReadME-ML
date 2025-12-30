@@ -21,6 +21,7 @@ This guide assumes that you have already trained the model and stored it in S3. 
 1. [Create a New Model](/docs/loading-pre-built-models#create-a-new-model)
 2. [Add Dependencies](/docs/loading-pre-built-models#add-dependencies)
 3. [Load Model Code](/docs/loading-pre-built-models#load-model-code)
+4. [Load Model Files](/docs/loading-pre-built-models#load-model-files)
 
 ## Create a New Model
 
@@ -144,7 +145,7 @@ class TitanicSurvivalPrediction(FrogMlModel):
         self.model.load_model('model_file.cbm')
 ```
 
-Note: If we were using Tensorflow, we would have to download all model files to a new directory and load it like this:
+**Note:** If we were using Tensorflow, we would have to download all model files to a new directory and load it like this:
 
 ```python
 model_path = 'the directory with the pb file and the variables'
@@ -183,7 +184,7 @@ class TitanicSurvivalPrediction(FrogMlModel):
         self.model.load_model('model_file.cbm')
 ```
 
-## Loading Models from Pickle
+### Loading Models from Pickle
 
 If you have your model in a pickle file, you can put it in the main directory and use the `initialize_model` method to load it.
 
