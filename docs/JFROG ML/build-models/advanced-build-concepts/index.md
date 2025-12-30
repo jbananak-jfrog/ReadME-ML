@@ -82,7 +82,7 @@ frogml models build \
     --model-id test_model \
     -T tag_1 -T tag_2 \
     -E OS=WINDOWS \
-    -E VERSION=3.9 \
+    -E VERSION=3.11 \
     ~/model
 ```
 
@@ -95,7 +95,7 @@ build_env:
   docker:
     base_image: qwak-base:0.0.18-cpu
     build_args: {}
-    env_vars: ["OS=WINDOWS", "VERSION=3.9"]
+    env_vars: ["OS=WINDOWS", "VERSION=3.11"]
     no_cache: true
     params: []
   local:
