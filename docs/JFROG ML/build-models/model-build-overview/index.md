@@ -717,7 +717,7 @@ channels:
   - defaults
   - conda-forge
 dependencies:
-  - python=3.9
+  - python=3.11
   - pip:
     - "/frogml/model_dir/dep/pandas-2.2.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
 ```
@@ -734,7 +734,7 @@ description = "Example project for production and development"
 authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.11"
 scipy = "^1.7"
 scikit-learn = "^0.24"
 catboost = "^1.0"
@@ -935,7 +935,7 @@ channels:
   - defaults
   - conda-forge
 dependencies:
-  - python=3.8
+- python=3.10
   - pip=20.0.3
   - scikit-learn=1.0.1
 ```
@@ -962,7 +962,7 @@ description = ""
 authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.10"
 scikit-learn = "1.0.1"
 
 [tool.poetry.dev-dependencies]
