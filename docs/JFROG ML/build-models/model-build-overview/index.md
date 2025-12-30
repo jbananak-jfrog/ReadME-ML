@@ -212,19 +212,19 @@ JFrog ML provides the Build Model SDK to address this need, simplifying the tran
 
 ### Key Features
 
-##### 1. Build Models from Workspaces
+#### 1. Build Models from Workspaces
 
 JFrog ML Build SDK simplifies the registration of locally or Jupyter notebook-based model training. It ensures precise versioning, tracking, and effortless transition from research to deployment in production.
 
-##### 2. Python-driven Model Builds
+#### 2. Python-driven Model Builds
 
 Automate model builds using Python and seamlessly integrate with continuous integration/continuous deployment (CI/CD) pipelines and various automation workflows.
 
-##### 3. Streamlined Versioning for Pre-built Models
+#### 3. Streamlined Versioning for Pre-built Models
 
 Build and register pre-trained models from any Python environment by supplying existing trained model instances, skipping remote build phases.
 
-#### Using Build SDK
+### Using Build SDK
 
 This document will explore the various options available when using the Build SDK.
 
@@ -257,7 +257,7 @@ client.build_model(
 )
 ```
 
-#### Folder Structure
+### Folder Structure
 
 <Callout icon="⚠️" theme="warning">
   **Warning**
@@ -288,11 +288,11 @@ Make sure to place your model files in the `main` directory.
 
 It is possible to change the uploaded directory by providing an explicit path as will be described in this document.
 
-#### Building Pre-trained Models
+### Building Pre-trained Models
 
 Use the Build SDK to build models with an existing instance of a trained model to upload the pre-trained model artifact. This flexibility empowers data scientists to train or fine-tune models within notebooks, effortlessly incorporate the trained versions into the model registry, and deploy them to production environments.
 
-#### Creating a Model Instance
+### Creating a Model Instance
 
 In this example, we'll use the Titanic model, which can be found on the <Anchor label="FrogML Examples repository" target="_blank" href="https://github.com/jfrog/JFrogMLExamples">FrogML Examples repository</Anchor>.
 
@@ -313,7 +313,7 @@ titanic
   Make sure to import `from frogml.sdk.model.tools import run_local` when using the build SDK. The build command cannot complete without it.
 </Callout>
 
-###### requirements.txt
+##### requirements.txt
 
 ```
 pandas
@@ -321,7 +321,7 @@ scikit-learn
 catboost
 ```
 
-###### titanic/main/**init**.py
+##### titanic/main/**init**.py
 
 ```python
 from .model import TitanicSurvivalPrediction
@@ -330,7 +330,7 @@ def load_model():
     return TitanicSurvivalPrediction()
 ```
 
-###### titanic/main/model.py
+##### titanic/main/model.py
 
 ```python
 import os
@@ -397,7 +397,7 @@ class TitanicSurvivalPrediction(FrogMlModel):
         )
 ```
 
-#### Training the Model
+### Training the Model
 
 Let's create a new model instance and run the build method to train it.
 
@@ -422,7 +422,7 @@ Learning rate set to 0.029583
 2:	learn: 0.6427410	test: 0.6427901	best: 0.6427901 (2)	total: 72.5ms	remaining: 24.1s
 ```
 
-#### Registering the Trained Model
+### Registering the Trained Model
 
 Now that we have trained a model locally, we want to register this model version and save in the in FrogML model register as a new build, so we can later deploy it to production.
 
@@ -472,7 +472,7 @@ To follow build logs using frogml platform:
 https://mydemo.jfrog.io/ui/ml/models/credit_risk_frogml/build/116a6385-8bbf-41bb-b30f-d6528869fac9
 ```
 
-#### Build SDK configuration
+### Build SDK Configuration
 
 The Build SDK supports a multitude of parameters which users may configure
 
@@ -519,7 +519,7 @@ client.build_model(
 )
 ```
 
-#### Unsupported Parameters in Build SDK
+### Unsupported Parameters in Build SDK
 
 The Build SDK support most of the parameters that are supported in the FrogML CLI under `frogml models build`
 
@@ -575,7 +575,7 @@ Both files `pyproject.toml` and `poetry.lock` will be used by Poetry while execu
 
 #### Example Project Setup
 
-pyproject.toml
+**pyproject.tom**l
 
 ```toml
 [tool.poetry]
@@ -1001,7 +1001,7 @@ def load_model():
     return TestModel
 ```
 
-#### `tests` Directory
+## # `tests` Directory
 
 The directory `tests` is where tests of each component in the model reside.
 
