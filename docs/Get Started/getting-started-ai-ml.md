@@ -238,7 +238,7 @@ The diagram above illustrates this secure AI supply chain in action. It maps the
 
 The JFrog AI ML guide walks you through key concepts, tutorials, or best practices. Either use the search bar or select from the options below.
 
-<div class="green-shadow-cards">
+<div>
   <Cards columns={2}>
     <Card title="JFrog ML" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/setting-up-jfrog-ml" target="_self">
       <small>*Your dedicated solution to build, fine-tune, and serve models from experimentation to production.*</small>
