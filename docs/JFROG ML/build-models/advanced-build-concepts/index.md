@@ -532,7 +532,7 @@ In JFrog ML, there are two primary methods for passing hyperparameters to your B
 
    This method involves passing hyperparameters directly through the command line interface (CLI) when initiating a build job.
 
-   #### Using Environment Variables
+   ##### Using Environment Variables
 
    ```
    frogml models builds --model-id sample_model \
