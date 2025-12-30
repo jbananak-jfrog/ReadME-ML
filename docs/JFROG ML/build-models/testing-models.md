@@ -246,7 +246,7 @@ The `real_time_client` is configured with the local endpoint to enable efficient
 <Callout icon="📘" theme="info">
   **Naming Test Files**
 
-  Please ensure that all test files are named with a `test_` prefix followed by the rest of the file name. 
+  Please ensure that all test files are named with a `test_` prefix followed by the rest of the file name.
 
   **Files not adhering to this naming convention will not be detected by JFrog ML during the testing phase.**
 </Callout>
@@ -257,10 +257,11 @@ You must ensure your environment meets the model's resource needs during validat
 
 ### Additional Directories in Tests
 
-
 To access files added with the `--dependency-required_folders` parameter in tests, use the `frogml_tests_additional_dependencies` fixture. For example:
 
-```
+<br />
+
+```python
 def test_print_content_from_variable(frogml_tests_additional_dependencies):
     print(frogml_tests_additional_dependencies)
     directories = os.listdir(frogml_tests_additional_dependencies)
