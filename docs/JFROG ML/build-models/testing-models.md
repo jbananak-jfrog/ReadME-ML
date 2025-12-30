@@ -140,7 +140,7 @@ Running the `run_local` method calls the following methods in a single command:
 * `initialize_model()`
 * `predict()`
 
-The `build` and `initialize_model` functions are called during the first `run_local` run only.
+**Note: The `build` and `initialize_model` functions are called during the first `run_local` run only.**
 
 <Callout icon="❗️" theme="error">
   **Important**
@@ -221,11 +221,9 @@ _JFrog ML Models Build Page_
 
 ### Running Integration Tests
 
-The same container used in the validation phase is also operational in the **Running Tests** phase. This phase is crucial for treating the container as a live model and enables local endpoint predictions. This setup allows for more robust testing, ensuring that the model is fully functional and deploy-ready before it enters shadow or production environments.
+The **Running Tests** phase keeps the exact container from the Validation Phase operational. This step is critical: by treating the container as a live model, it enables local endpoint predictions to guarantee the model is fully functional and deploy-ready before entering shadow or production.
 
-To facilitate this, you can execute test predictions using the following syntax:
-
-`integration_tests.py`
+Execute test predictions using:`integration_tests.py`
 
 ```python
 from frogml.core.testing.fixtures import real_time_client
