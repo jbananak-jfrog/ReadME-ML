@@ -107,15 +107,15 @@ The supported data types for logging are:
     * `int64`
   </Column>
 
+<Column>
+    * `float64`
+  </Column>
 </Columns>
 
 <br />
 
 <Columns layout="auto">
-  <Column>
-    * `float64`
-  </Column>
-
+  
   <Column>
     * `datetime64`
   </Column>
