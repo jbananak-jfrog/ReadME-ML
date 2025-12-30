@@ -10,25 +10,23 @@ metadata:
     - UUID-fcb1409b-f141-035c-5562-252fc7a3cb1c
   robots: index
 ---
-Adapters help you customize input and output formats of your ML models.
+Adapters help customize the input and output formats of machine learning models. JFrog ML uses adapters to validate the formats of model inputs and outputs and to perform relevant type conversions. 
 
-JFrog ML uses adapters validate the model input and output formats and perform relevant type conversions.
-
-This document lists to wide variety of available input and output adapters.
+This document provides a comprehensive list of the available input and output adapters.
 
 <Callout icon="⚠️" theme="warning">
   **Warning**
 
   _**Adapters Support**_
 
-  Please note that input and output adapters are currently supported only in real-time and streaming deployed models, and **not in Batch-deployed models**. We are actively working to extend support for adapters across all deployment types.
+  Input and output adapters are currently supported only in real-time and streaming deployed models, and **not in Batch-deployed models**. Efforts are ongoing to extend support for adapters across all deployment types.
 </Callout>
 
 ## Adapter Types
 
 ### Image
 
-In the model file, we have to import the `ImageInputAdapter`.
+In the model file, import the `ImageInputAdapter`.
 
 ```python
 import frogml
@@ -40,9 +38,9 @@ from frogml.sdk.model.adapters import ImageInputAdapter
 def predict(self, input_data) -> pd.DataFrame:
 ```
 
-Now, the `predict` function, gets a list of arrays containing the RGB properties of the image pixels. If, for example, we pass a 28px x 28px image, we get an array with shape (28, 28, 3). Of course, if we pass a grayscale image, we will get a (28, 28, 1) array.
+The `predict` function receives a list of arrays containing the RGB properties of the image pixels. For example, passing a 28px x 28px image results in an array with shape (28, 28, 3). If a grayscale image is passed, the result will be a (28, 28, 1) array.
 
-If you trained your model using grayscale pictures but pass RGB values in production, remember to convert the input to grayscale. For example like this:
+If the model is trained using grayscale images, but RGB values are passed in production,  it is necessary to convert the input to grayscale. For example:
 
 ```python
 @frogml.api(analytics=False, input_adapter=ImageInputAdapter())
@@ -65,9 +63,9 @@ def predict(self, input_data) -> pd.DataFrame:
 
 ## File
 
-We can pass the image as a file data stream and load it as a file inside the `predict` function. Of course, sending a file works with any data format, not only images. In the following example, we will use the same model as in the ImageInputAdapter example, but with a file adapter.
+Images can be passed as a file data stream and loaded (as a file) inside the `predict` function. This method works with any data format, not just images. The following example uses the same model as in the `ImageInputAdapter `example, but with a file adapter.
 
-Before we start, we have to add the `Pillow` library to the model dependencies and import the `Image` class and the input adapter
+First you must add the `Pillow` library to the model dependencies and import the `Image` class and the input adapter:
 
 ```python
 import numpy as np
@@ -76,21 +74,21 @@ from PIL import Image
 from frogml.model.adapters import FileInputAdapter
 ```
 
-Now, we can change the input_adapter parameter in the `frogml.api` decorator:
+Then, change the `input_adapter` parameter in the `frogml.api` decorator:
 
 ```python
 @frogml.api(analytics=False, input_adapter=FileInputAdapter())
 def predict(self, file_streams) -> pd.DataFrame:
 ```
 
-In the `predict` function, we will:
+In the `predict` function:
 
 * iterate over the files in the `file_stream`,
 * load them as images,
 * convert them to grayscale, and
 * resize them to the size required by the trained model.
 
-After that, we need to pass the image data to the model to get the prediction.
+After that, pass the image data to the model for predictions:
 
 ```python
 result = []
@@ -106,24 +104,24 @@ return pd.DataFrame(result)
 
 ## String
 
-If we want to pass a single sentence to the ML model, we can use the `StringInputAdapter`.
+To pass a single sentence to the ML model,  use the `StringInputAdapter`.
 
-First, import the StringInputAdapter.
+First, import the `StringInputAdapter`:
 
 ```python
 from frogml.sdk.model.adapters import StringInputAdapter
 ```
 
-Now, configure the predict function to use the input adapter:
+Then, configure the `predict` function to use the input adapter:
 
 ```python
 @frogml.api(analytics=False, input_adapter=StringInputAdapter())
 def predict(self, texts) -> pd.DataFrame:
 ```
 
-The `texts` variable will contain a list of string values. We can iterate over it and pass them to the model.
+The `texts` variable contains a list of string values. Iterate over it and pass them to the model.
 
-For example, if we added the StringInputAdapter to our example Pytorch text classifier, it would look like this:
+For example, if the `StringInputAdapter` was added to our example Pytorch text classifier:
 
 ```python
 @frogml.api(analytics=False, input_adapter=StringInputAdapter())
@@ -142,9 +140,9 @@ def predict(self, texts) -> pd.DataFrame:
 
 ## JSON
 
-If you want to use your model in a front-end application, you will probably send JSON to the server. You can handle the JSON automatically by using the `JsonInputAdapter`.
+For use in a front-end application, JSON can be sent to the server. Handle JSON automatically with the `JsonInputAdapter`.
 
-Import the adapter first and configure the `predict` function.
+First, import the adapter and configure the `predict` function:
 
 ```python
 from frogml.model.adapters import JsonInputAdapter
@@ -153,7 +151,7 @@ from frogml.model.adapters import JsonInputAdapter
     def predict(self, json_objects) -> pd.DataFrame:
 ```
 
-Then, iterate over the json_objects and pass the text to the model:
+Then, iterate over the `json_objects `and pass the text to the model:
 
 ```python
 @frogml.api(analytics=False, input_adapter=JsonInputAdapter())
@@ -170,13 +168,13 @@ def predict(self, json_objects) -> pd.DataFrame:
     return pd.DataFrame.from_dict({'label': responses, 'text': json_objects})
 ```
 
-When sending a request to the deployed model, remember to specify the `Content-Type: application/json`.
+When sending a request to the deployed model, remember to specify  `Content-Type: application/json`.
 
 ## Proto
 
-If you use the protobuf library in your software, you may also want to use it for communication with your ML model. It is common to use protobuf for both input and output formats, so our example will show both.
+If you are using the protobuf library in your software, it may also be beneficial for communication with an ML model. It is common to use protobuf for both input and output formats and our example shows both.
 
-Let's assume that we have the following protobuf definition of the input data
+Assuming a protobuf definition for input data:
 
 ```
 syntax = "proto3";
@@ -194,7 +192,7 @@ message ModelInput {
 }
 ```
 
-and the output data:
+and output data:
 
 ```
 syntax = "proto3";
@@ -210,9 +208,9 @@ message ModelOutput {
 }
 ```
 
-We have to generate the protobuf classes for both the client application and the ML code. Of course, the ML code uses Python implementation. We will store the Python files in the `input_pb` and the `output_pb` files in the `frogml_proto_demo` directory.
+Generate the protobuf classes for both the client application and the ML code. The ML code uses Python implementation. Store the Python files in the `input_pb` and the `output_pb` files in the `frogml_proto_demo` directory.
 
-In the model class, we will have to import the protobuf class and the input adapter:
+In the model class, import the protobuf class and the input adapter:
 
 ```
 from frogml.sdk.model.adapters import ProtoInputAdapter, ProtoOutputAdapter
@@ -220,7 +218,7 @@ from .frogml_proto_demo.input_pb import ModelInput
 from .frogml.output_pb import ModelOutput
 ```
 
-Next, configure the input and output adapter as a decorator of the `predict` function:
+Next, configure the input and output adapters as decorators of the `predict` function:
 
 ```python
 @frogml.api(
@@ -233,7 +231,7 @@ def predict(self, input) -> ModelOutput:
     return ModelOutput(prediction=prediction_from_the_model)
 ```
 
-In our implementation, we use the `ParseFromString` function to read a protobuf message, so remember to serialize your classes using the `SerializeToString` function.
+In the implementation, use the `ParseFromString` function to read a protobuf message, and remember to serialize  classes using the `SerializeToString` function.
 
 ```
 message = ModelInput(f1=1, f2=2).SerializeToString()
@@ -241,9 +239,7 @@ message = ModelInput(f1=1, f2=2).SerializeToString()
 
 ## TF Tensor
 
-If we have all of the preprocessing code running as a separate service, we can pass a Tensorflow tensor directly to the model using a `TfTensorInputAdapter`.
-
-In this case, we import the adapter and configure the `predict` function's decorator:
+If the preprocessing code runs as a separate service, pass a Tensorflow tensor directly to the model using a `TfTensorInputAdapter`; import the adapter and configure the `predict` function's decorator:
 
 ```python
 from frogml.sdk.model.adapters import TfTensorInputAdapter
@@ -252,7 +248,7 @@ from frogml.sdk.model.adapters import TfTensorInputAdapter
 def predict(self, tensor) -> pd.DataFrame:
 ```
 
-To pass a tensor to a deployed model, you must send a JSON representation of the tensor. For example, if you used curl, the request would look like this:
+To pass a tensor to a deployed model, send a JSON representation of the tensor. For example, using curl, the request would look like this:
 
 ```shell
 curl -i –header "Content-Type: application/json" –request POST –data '{"instances": [1]}' jfrogml_rest_url
@@ -260,9 +256,7 @@ curl -i –header "Content-Type: application/json" –request POST –data '{"in
 
 ## Multi Input
 
-The `MultiInputAdapter` supports Automatic input format detection.
-
-Sometimes you want to deploy a single model with multiple different input adapters. You could create a copy of the model, change the input adapter, and deploy multiple copies. However, we can also use a `MultiInputAdapter` to handle various input formats with a single model.
+The `MultiInputAdapter` supports automatic input format detection. To deploy a single model with **multiple different input adapters**, use a `MultiInputAdapter`to handle various input formats with a single model. 
 
 ```
 from frogml.sdk.model.adapters import DefaultOutputAdapter, DataFrameInputAdapter, ImageInputAdapter, MultiInputAdapter
@@ -274,11 +268,11 @@ from frogml.sdk.model.adapters import DefaultOutputAdapter, DataFrameInputAdapte
     )
 ```
 
-To use the `MultiInputAdapter` adapter, you must pass a list of adapters to its constructor. The `MultiInputAdapter` parses the data using the first compatible parser!
+(The alternative would be to create a copy of the model, change the input adapter, and deploy multiple copies.)
 
-In this example, if a given input can be parsed as an Image, it will get an image in the predict function. If not, it will get a Pandas dataframe. If all parsers fail, the model returns an error.
+To use the `MultiInputAdapter` adapter, pass a list of adapters to its constructor. The `MultiInputAdapter` parses the data using the first compatible parser. In this example, if the input can be parsed as an image, ian image  will be received in the `predict` function. If not, a Pandas DataFrame will be received. If all parsers fail, the model returns an error.
 
-Be careful with the following adapter configuration:
+Be cautious with the following adapter configuration:
 
 ```
 input_adapter=MultiInputAdapter([JsonInputAdapter, DataFrameInputAdapter]),
