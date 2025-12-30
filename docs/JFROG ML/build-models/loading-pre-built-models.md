@@ -1,5 +1,8 @@
 ---
 title: Loading Pre-built Models
+excerpt: >-
+  The fastest way to start using FrogML is to deploy a model that was previously
+  trained as a FrogML service.
 deprecated: false
 hidden: false
 metadata:
@@ -12,8 +15,6 @@ metadata:
     - UUID-d26067a2-57d8-a583-a496-641ef0b53c24
   robots: index
 ---
-The fastest way to start using FrogML is to deploy a model that was previously trained as a FrogML service.
-
 This guide assumes that you have already trained the model and stored it in S3. However, the specific storage mechanism itself does not matter, provided you can download the artifact using Python code.
 
 ▶ **To load pre-built models:**
