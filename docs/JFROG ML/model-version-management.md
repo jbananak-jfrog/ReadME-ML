@@ -143,21 +143,31 @@ frogml.huggingface.log_model(
     <thead>
       <tr>
         <th>
-          **Local Structure:**
+
         </th>
 
         <th>
+          Description
+        </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>
+          **Local Structure:**
+        </td>
+
+        <td>
           ```
           .
           └── serving_code/
               ├── __init__.py
               └── predict.py  (contains YourModelClass)
           ```
-        </th>
+        </td>
       </tr>
-    </thead>
 
-    <tbody>
       <tr>
         <td>
           **Serving Code:**
@@ -192,8 +202,9 @@ frogml.huggingface.log_model(
 
   **Recommended Solution:**  Log the parent directory that contains your package.
 
-  | **Serving Code:**  | `code_dir="."` (assuming that your script is in the parent folder).                                         |
+  |                    | Description                                                                                                 |
   | :----------------- | :---------------------------------------------------------------------------------------------------------- |
+  | **Serving Code:**  | `code_dir="."` (assuming that your script is in the parent folder).                                         |
   | **Remote Result:** | The `serving_code` folder is correctly copied. The remote structure becomes `main/serving_code/predict.py`. |
   | **The Solution:**  | The unpickler can now successfully import `serving_code.predict` and load your model.                       |
 </Callout>
