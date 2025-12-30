@@ -97,24 +97,26 @@ The supported data types for logging are:
 <Columns layout="auto">
   <Column>
     * `bool`
- 
+
     * `object`
 
+  </Column>
+<Column>
     * `int64`
-  
+
     * `float64`
   </Column>
-
   <Column>
     * `datetime64`
- 
-    * `datetime64[ns]`
-  
-    * `datetime64[ns, UTC]`
- </Column>
-</Columns>
 
-* <br />
+    * `datetime64[ns]`
+
+  </Column>
+<Column>
+  * `datetime64[ns, UTC]`
+
+  </Column>
+</Columns>
 
 For example:
 
