@@ -242,3 +242,15 @@ The `real_time_client` is configured with the local endpoint to enable efficient
 
   Please place your integration tests under an `it` directory in the `tests` folder, adhering to the model build directory [structure](/docs/model-build-overview#4-tracking-build-progress).
 </Callout>
+
+<Callout icon="📘" theme="info">
+  **Naming Test Files**
+
+  Please ensure that all test files are named with a `test_` prefix followed by the rest of the file name. 
+
+  **Files not adhering to this naming convention will not be detected by JFrog ML during the testing phase.**
+</Callout>
+
+### Resource Requirements
+
+You must ensure your environment meets the model's resource needs during validation and testing. For example, if you build on a `small` instance using the `--gpu-compatible` flag for a GPU target, you may face constraints; the `small` instance might lack the resources to initialize the model locally. Therefore, this testing step is most beneficial when your build resources mirror your deployment hardware requirements.
