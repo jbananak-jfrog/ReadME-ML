@@ -254,3 +254,17 @@ The `real_time_client` is configured with the local endpoint to enable efficient
 ### Resource Requirements
 
 You must ensure your environment meets the model's resource needs during validation and testing. For example, if you build on a `small` instance using the `--gpu-compatible` flag for a GPU target, you may face constraints; the `small` instance might lack the resources to initialize the model locally. Therefore, this testing step is most beneficial when your build resources mirror your deployment hardware requirements.
+
+### Additional Directories in Tests
+
+
+To access files added with the `--dependency-required_folders` parameter in tests, use the `frogml_tests_additional_dependencies` fixture. For example:
+
+```
+def test_print_content_from_variable(frogml_tests_additional_dependencies):
+    print(frogml_tests_additional_dependencies)
+    directories = os.listdir(frogml_tests_additional_dependencies)
+    print(directories)
+```
+
+All `--dependency-required-folders` are inside the directory which path is passed as the `frogml_tests_additional_dependencies` parameter.
