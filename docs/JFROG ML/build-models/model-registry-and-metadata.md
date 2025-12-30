@@ -100,32 +100,36 @@ The supported data types for logging are:
   </Column>
 
   <Column>
-   * `object`
+    * `object`
   </Column>
 
   <Column>
-   * `int64`
+    * `int64`
   </Column>
- <Column>
+
+  <Column>
     * `bool`
   </Column>
 
   <Column>
-   * `float64`
+    * `float64`
   </Column>
 
   <Column>
-   * `int64`
+    * `datetime64`
+  </Column>
+
+ <Column>
+    * `datetime64[ns]`
+  </Column>
+
+  <Column>
+   * `datetime64[ns, UTC]`
   </Column>
 </Columns>
 
 * <br />
 * <br />
-* <br />
-* <br />
-* `datetime64`
-* `datetime64[ns]`
-* `datetime64[ns, UTC]`
 
 For example:
 
