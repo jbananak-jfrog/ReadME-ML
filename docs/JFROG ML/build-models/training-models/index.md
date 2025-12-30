@@ -67,7 +67,7 @@ channels:
   - huggingface
   - pytorch
 dependencies:
-  - python=3.9
+  - python=3.11
   - pip
   - pandas=1.1.5
   - transformers
@@ -555,7 +555,7 @@ channels:
   - conda-forge
   - huggingface
 dependencies:
-  - python=3.9
+  - python=3.11
   - pip:
     - --extra-index-url https://download.pytorch.org/whl/cu121
     - torch
