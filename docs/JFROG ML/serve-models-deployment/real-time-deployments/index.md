@@ -36,7 +36,7 @@ metadata:
 ---
 JFrog ML real time models deploy your ML models with a lightweight, simple and scalable REST API wrapper.
 
-We set up the network requirements and deploy your model on a managed Kubernetes cluster, allowing you to leverage auto-scaling and security. JFrog ML also adds a suite of monitoring tools, simplifying the process of managing your model performance.
+JFrog sets up the network requirements and deploys your model on a managed Kubernetes cluster, allowing you to leverage auto-scaling and security. JFrog ML also adds a suite of monitoring tools, simplifying the process of managing your model performance.
 
 <Image alt="Real-time model deployment overview" border={false} src="https://files.readme.io/c22e14438f25fe2ee4e3b4a00a29a8e5206e9356f795e0290e3d6251393c2c4e-uuid-5a77810a-0d93-ea20-6692-73b7b87032e3.png" />
 
@@ -87,7 +87,7 @@ frogml models deploy realtime \
 <Callout icon="📘" theme="info">
   **Note**
 
-  **Note:** The deployment command is executed asynchronously by default and does not wait for the deployment to complete. To execute the command synchronously use the `--sync` flag.
+  The deployment command is executed asynchronously by default and does not wait for the deployment to complete. To execute the command synchronously use the `--sync` flag.
 </Callout>
 
 ## Deploying a Real-time Model Using GPUs
@@ -189,22 +189,22 @@ frogml models deploy realtime \
 <Callout icon="📘" theme="info">
   **Note**
 
-  **Note:** Deploying models locally is only available for locally generated builds using the `--no-remote` flag.
+  Deploying models locally is only available for locally generated builds using the `--no-remote` flag.
 </Callout>
 
 ## Real-time Model Inference
 
-Once you have successfully deployed a real-time model, you can use the JFrog ML Inference SDK to perform invocations.
+Once you have successfully deployed a real-time model, you can use the JFrog ML Inference SDK to make predictions with it.
 
-In this example, we'll invoke a model via the [Python SDK](/docs/calling-model-endpoints#python-sdk), which can be easily installed using:
+This example shows to invoke a model using the [Python SDK](/docs/calling-model-endpoints#python-sdk). You can install the SDK with the following command:
 
 ```
 pip install frogml-inference
 ```
 
-Model inference parameters are model specific.
+Note that the model inference parameters are specific to the model you are using.
 
-For the below model, assuming it was built and deployed successfully as a real-time endpoint, with the model ID `iris_classifier`:
+In the following example, we assume that the model has already been built and deployed successfully as a real-time endpoint, and its model ID is`iris_classifier`:
 
 ```python
 from frogml import api, FrogMlModel
@@ -230,6 +230,13 @@ class IrisClassifier(FrogMlModel):
     def predict(self, df: pd.DataFrame) -> pd.DataFrame:
         return pd.DataFrame(data=self._model.predict(df), columns=['species'])
 ```
+
+**Summary of code components:**
+
+* **Model Class:** `IrisClassifier` is created by inheriting from `FrogMlModel`.
+* **Initialization:** The **init** method sets the `gamma` parameter for the SVM and initializes the model variable to `None`.
+* **Build Method:** The `build` method loads the iris dataset, trains the SVM model using the data, and stores the trained model.
+* **Predict Method:** The `predict` method takes a DataFrame as input and uses the trained model to generate predictions, returning these in a new DataFrame format.
 
 A prediction call from the JFrog ML Python SDK is:
 
@@ -265,7 +272,7 @@ In addition, you can follow and search the applicable logs produced by your mode
 
 ## Auto-scaling Real-time Models
 
-To attach a new auto scaling to a running model:
+To attach a new auto-scaling to a running model:
 
 ### 1. Create a config file:
 
