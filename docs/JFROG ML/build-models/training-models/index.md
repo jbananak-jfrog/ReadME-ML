@@ -389,15 +389,15 @@ def test_realtime_api(real_time_client):
 
 It's now time to build the model!
 
-Run the commands below in the terminal to build the model we created remotely.
+▶ **To build the model:** Run the commands below in the terminal to build the model we created remotely.
 
-#### Creating a Model on FrogML
+#### Create a Model on FrogML
 
 ```
 frogml models create "Hugging Face Tokenizer Model" --project-key "examples"
 ```
 
-### Building Your Models on GPUs
+#### Build Your Models on GPUs
 
 Our model is quite large, so we need to ask for a large GPU-based machine that has enough memory.
 
@@ -417,7 +417,7 @@ Visit the JFrog [GPU Instance Sizes](doc:instance-sizes-ml-credits) page to choo
   As a result, it may take slightly longer for a GPU Spot Instance to become available.
 </Callout>
 
-### Building for GPU Deployments
+#### Build for GPU Deployments
 
 When deploying a model on a GPU instance, we must verify that the model was build using a GPU compatible image. Build a model using a GPU compatible image installs additional dependencies and drivers.
 
@@ -427,9 +427,9 @@ Creating a GPU compatible image is simply done by adding the `--gpu-compatible` 
 frogml models build --model-id <model-id> --gpu-compatible .
 ```
 
-### Discovering GPU Cores
+### Discover GPU Cores
 
-To see which GPUs were provided on your build machine, print the number of available GPUs:
+▶ **To see which GPUs were provided on your build machine, print the number of available GPUs:**
 
 ```
 # catboost
@@ -447,7 +447,7 @@ print(f'{torch.cuda.device_count()} GPU devices')
 
 Running the above command will build your model on a regular CPU instance, but will allow you to later deploy it on a GPU instance.
 
-### Deploying GPU-trained Models on CPU
+### Deploy GPU-trained Models on CPU
 
 To facilitate the deployment of models trained on GPU environments onto CPU-based infrastructure, it is advised to adapt the model loading process within the `initialize_model()` method. Specifically, when employing `Torch` for model training, ensure the model is loaded to target the CPU explicitly:
 
@@ -519,7 +519,7 @@ Currently the JFrog ML GPU instances are provisioned with CUDA version 12.1 and 
 
 To align PyTorch with the CUDA version on your instance, use the following index URL when adding the `pytorch` library to your dependencies configuration file, whether it's Conda, Pip (`requirements.txt`), or Poetry.
 
-### In Workspaces
+#### In Workspaces
 
 Use this command in your workspace environment:
 
@@ -527,7 +527,7 @@ Use this command in your workspace environment:
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
 ```
 
-### In Model Builds
+#### In Model Builds
 
 For `requirements.txt`, your file should look like this:
 
@@ -599,8 +599,8 @@ Exception: Error in importing module libGL.so.1: cannot open shared object file:
 
 This issue occurs because the base Docker image does not include the necessary dependencies for OpenCV. To resolve this, you need to use a Docker image that supports OpenCV.
 
-* For CPU instances: `public.ecr.aws/w8k8y6b6/qwak-base:0.0.29-cpu-opencv`
-* For GPU instances: `public.ecr.aws/w8k8y6b6/qwak-base:0.0.14-gpu-opencv`
+* **For CPU instances:** `public.ecr.aws/w8k8y6b6/qwak-base:0.0.29-cpu-opencv`
+* **For GPU instances:** `public.ecr.aws/w8k8y6b6/qwak-base:0.0.14-gpu-opencv`
 
 You can update the base image in one of two ways:
 
