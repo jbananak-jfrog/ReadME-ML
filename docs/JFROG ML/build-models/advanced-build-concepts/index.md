@@ -206,9 +206,7 @@ To implement this, you need to supply the environment variable value in the spec
 
 For instance, if you have an API token stored under a JFrog ML secret named `cloud_token` and wish to pass it in the build under the environment variable `APP_TOKEN`, you would utilize the following command as an example:
 
-`Shell`
-
-```
+```shell
 frogml models build --model-id <model>  -E APP_TOKEN=secret.cloud_token <dest>
 ```
 
@@ -222,9 +220,7 @@ frogml models build --model-id <model>  -E APP_TOKEN=secret.cloud_token <dest>
 
 Given the following FrogML-based model directory structure:
 
-`Shell`
-
-```
+```shell
 jfrogml_based_model/
 ├── main/
 ├── tests/
