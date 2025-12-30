@@ -104,11 +104,7 @@ The supported data types for logging are:
   
     * `float64`
   </Column>
-</Columns>
 
-<br />
-
-<Columns layout="auto">
   <Column>
     * `datetime64`
  
