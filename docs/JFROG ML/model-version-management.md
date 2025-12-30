@@ -202,7 +202,7 @@ frogml.huggingface.log_model(
 
   **Recommended Solution:**  Log the parent directory that contains your package.
 
-  
+  |                    | Description                                                                                              |
   | :----------------- | :---------------------------------------------------------------------------------------------------------- |
   | **Serving Code:**  | `code_dir="."` (assuming that your script is in the parent folder).                                         |
   | **Remote Result:** | The `serving_code` folder is correctly copied. The remote structure becomes `main/serving_code/predict.py`. |
