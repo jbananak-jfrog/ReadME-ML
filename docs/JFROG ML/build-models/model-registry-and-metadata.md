@@ -127,6 +127,9 @@ The supported data types for logging are:
   <Column>
     * `datetime64[ns, UTC]`
   </Column>
+ <Column>
+    
+  </Column>
 </Columns>
 
 * <br />
