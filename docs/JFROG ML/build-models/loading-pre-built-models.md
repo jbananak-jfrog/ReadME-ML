@@ -22,6 +22,8 @@ This guide assumes that you have already trained the model and stored it in S3. 
 2. [Add Dependencies](/docs/loading-pre-built-models#add-dependencies)
 3. [Load Model Code](/docs/loading-pre-built-models#load-model-code)
 4. [Load Model Files](/docs/loading-pre-built-models#load-model-files)
+5. [Add Preprocessing](/docs/loading-pre-built-models#adding-preprocessing)
+6. <br />
 
 ## Create a New Model
 
@@ -226,7 +228,7 @@ That is also the place where we call the model to obtain the predictions:
         return pd.DataFrame(self.model.predict_proba(df)[:, 1], columns=['Survived_Probability'])
 ```
 
-## Building the Model
+## Build the Model
 
 Now you have everything you need to deploy your pre-trained model as a FrogML model.
 
