@@ -167,7 +167,7 @@ frogml models build \
 
 `<uri>` - The frogml-based model URI.
 
-## Logging Build Files
+## Log Build Files
 
 When executing a build, you can explicitly log files and attach them to a tag for reference (they can also be downloaded later). You can use this method to share files between models and builds.
 
