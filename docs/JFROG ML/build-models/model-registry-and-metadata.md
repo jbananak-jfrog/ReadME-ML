@@ -343,7 +343,7 @@ Remember that the current Python environment must contain all dependencies requi
 
 ## Automatic Dependency Logging
 
-During every build, the JFrog ML platform runs `pip freeze` to log all of the dependencies used during the build.
+During every build, the JFrog ML platform runs `pip freeze` to capture the environment state, and log all of the dependencies used during the build.
 
 <Callout icon="⚠️" theme="warning">
   **Warning**
