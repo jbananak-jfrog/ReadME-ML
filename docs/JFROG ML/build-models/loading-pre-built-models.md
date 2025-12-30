@@ -14,11 +14,13 @@ metadata:
 ---
 The fastest way to start using FrogML is to deploy a model that was previously trained as a FrogML service.
 
-This guide assumes that you have already trained the model and stored it in S3. However, the specific storage mechanism itself does not matter, provided you can download the artifact using Python code.  
+This guide assumes that you have already trained the model and stored it in S3. However, the specific storage mechanism itself does not matter, provided you can download the artifact using Python code.
 
 ▶ **To load pre-built models:**
 
-1. <br />
+1. [Create a New Model](/docs/loading-pre-built-models#create-a-new-model)
+2. [Add Dependencies](/docs/loading-pre-built-models#add-dependencies)
+3. [Load Model Code](/docs/loading-pre-built-models#load-model-code)
 
 ## Create a New Model
 
