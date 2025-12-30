@@ -23,7 +23,7 @@ This guide assumes that you have already trained the model and stored it in S3. 
 3. [Load Model Code](/docs/loading-pre-built-models#load-model-code)
 4. [Load Model Files](/docs/loading-pre-built-models#load-model-files)
 5. [Add Preprocessing](/docs/loading-pre-built-models#adding-preprocessing)
-6. <br />
+6. [Build the Model](/docs/loading-pre-built-models#build-the-model)
 
 ## Create a New Model
 
