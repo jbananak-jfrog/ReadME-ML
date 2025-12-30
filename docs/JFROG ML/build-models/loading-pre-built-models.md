@@ -92,7 +92,7 @@ On the other hand, using the `initialize_model` function lets you skip additiona
 
 In the following sections, we will show you how to load the model from a file stored S3 in the `build` function and load a model from a pickle file included in the project directory.
 
-## Loading Model Files
+## Load Model Files
 
 Let's see two ways for loading pre-trained models:
 
