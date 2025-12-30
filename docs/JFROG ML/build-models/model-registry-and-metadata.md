@@ -34,7 +34,7 @@ from frogml.sdk.model.model_version_tracking import log_metric
 log_metric({"<key>": "<value>"})
 ```
 
-## Logging Training Metrics
+## Log Training Metrics
 
 In the example below, the model F1 score is logged:
 
@@ -72,7 +72,7 @@ class IrisClassifier(FrogMlModel):
         return self.model.predict(df)
 ```
 
-## Logging Build Parameters
+## Log Build Parameters
 
 When executing a build, you can log model parameters. The parameters can be logged in two ways:
 
@@ -94,10 +94,35 @@ log_param({"<key>": "<value>"})
 
 The supported data types for logging are:
 
-* `bool`
-* `object`
-* `int64`
-* `float64`
+<Columns layout="auto">
+  <Column>
+    * `bool`
+  </Column>
+
+  <Column>
+   * `object`
+  </Column>
+
+  <Column>
+   * `int64`
+  </Column>
+ <Column>
+    * `bool`
+  </Column>
+
+  <Column>
+   * `float64`
+  </Column>
+
+  <Column>
+   * `int64`
+  </Column>
+</Columns>
+
+* <br />
+* <br />
+* <br />
+* <br />
 * `datetime64`
 * `datetime64[ns]`
 * `datetime64[ns, UTC]`
