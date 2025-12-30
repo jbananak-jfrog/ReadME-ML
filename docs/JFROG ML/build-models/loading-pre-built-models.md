@@ -17,7 +17,7 @@ metadata:
 ---
 This guide assumes that you have already trained the model and stored it in S3. However, the specific storage mechanism itself does not matter, provided you can download the artifact using Python code.
 
-▶ **To load pre-built models:**
+▶ **To load pre-built models (to start using FrogML):**
 
 1. [Create a New Model](/docs/loading-pre-built-models#create-a-new-model)
 2. [Add Dependencies](/docs/loading-pre-built-models#add-dependencies)
