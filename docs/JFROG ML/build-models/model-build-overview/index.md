@@ -549,9 +549,9 @@ JFrog ML supports a variety of Python frameworks to manage model dependencies.
 
 When building and managing your Python projects, different tools have varying levels of support for Python versions. Below is a summary of the supported Python versions for each tool:
 
-* **Poetry** supports Python versions: 3.8 - 3.11
-* **Conda** supports Python versions: 3.8 - 3.11
-* **requirements.txt (pip)** supports only Python 3.9
+* **Poetry** supports Python versions: 3.10 - 3.13
+* **Conda** supports Python versions: 3.10 - 3.13
+* **requirements.txt (pip)** supports Python versions: 3.10 - 3.13
 
 ### Using Poetry with JFrogML
 
