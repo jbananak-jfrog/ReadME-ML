@@ -259,8 +259,6 @@ You must ensure your environment meets the model's resource needs during validat
 
 To access files added with the `--dependency-required_folders` parameter in tests, use the `frogml_tests_additional_dependencies` fixture. For example:
 
-<br />
-
 ```python
 def test_print_content_from_variable(frogml_tests_additional_dependencies):
     print(frogml_tests_additional_dependencies)
