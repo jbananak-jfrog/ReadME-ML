@@ -297,15 +297,19 @@ from frogml.sdk.model.adapters import NumpyInputAdapter, NumpyOutputAdapter
 def predict(self, input):
 ```
 
-If the input adapter is configured as in the example above, and send the following value to the model: `[[5,4,3,2]]`, the result will be equivalent to running `np.array([[5, 4, 3, 2]], dtype=np.int32).reshape(2, 2)`.
+When the input adapter is configured as shown (in the above example), if the model receives the value `[[5,4,3,2]]`, the output will be equivalent to running `np.array([[5, 4, 3, 2]], dtype=np.int32).reshape(2, 2)`.
 
-The `NumpyOutputAdapter` converts the returned output array directly to JSON without changing its structure. For example, if the model returns this Numpy array: `np.array([[5, 4, 3, 2]], dtype=np.int32).reshape(2, 2)`, it will get converted to: `[[5, 4], [3, 2]]`.
+The `NumpyOutputAdapter` converts the returned output array directly to JSON without changing its structure. For example, if the model returns this Numpy array: 
 
-Starting from Sdk version 0.9.87 it will return numpy binary format .
+`np.array([[5, 4, 3, 2]], dtype=np.int32).reshape(2, 2)`, 
+
+it will be converted to: `[[5, 4], [3, 2]]`.
+
+Starting from SDK version 0.9.87 it will return Numpy binary format .
 
 ## Default Output
 
-Using `DefaultOutputAdapter` multiple result formats can be returned from a single model. The adapter will automatically detect the type of the returned value.
+The `DefaultOutputAdapter` enables returning multiple result formats from a single model. The adapter  automatically detects the type of the returned value.
 
 ```
 from frogml.sdk.model.adapters import DefaultOutputAdapter, ImageInputAdapter
@@ -318,7 +322,7 @@ from frogml.sdk.model.adapters import DefaultOutputAdapter, ImageInputAdapter
 def predict(self, input):
 ```
 
-Note that the DefaultOutputAdapter doesn't work with Protobuf objects! To automatically detect the output type when your code returns DataFrames, JSONs, and Protobuf objects, you need to use the `AutodetectOutputAdapter`.
+Note that the `DefaultOutputAdapter` doesn't work with Protobuf objects! To automatically detect the output type when returning DataFrames, JSONs, and Protobuf objects, the `AutodetectOutputAdapter` should be used.
 
 ## Json Output
 
@@ -339,9 +343,7 @@ from frogml.sdk.model.adapters import ProtoInputAdapter, AutodetectOutputAdapter
 
 ## Auto Detect Output
 
-Automatic output format detection with Protobuf support
-
-This adapter works like the `DefaultOutputAdapter`, but it can also handle Protobuf classes:
+Automatic output format detection with Protobuf support operates like the `DefaultOutputAdapter`, but it can also handle Protobuf classes:
 
 ```
 from frogml.sdk.model.adapters import ProtoInputAdapter, AutodetectOutputAdapter
@@ -358,7 +360,7 @@ from frogml.sdk.model.adapters import ProtoInputAdapter, AutodetectOutputAdapter
 
 ## Data Frame Based Adapters
 
-Pandas Dataframe is supported with requested orient.
+Pandas DataFrame is supported with the requested orientation.
 
 ```python
 import pandas as pd
@@ -378,7 +380,7 @@ from frogml.sdk.model.adapters import DataFrameInputAdapter, DataFrameOutputAdap
       return predictions_df
 ```
 
-Note that the you can just choose the data frame adapters with default value like below:
+You can also just choose the data frame adapters with default values:
 
 ```python
 from frogml.sdk.model.adapters import DataFrameInputAdapter, DataFrameOutputAdapter
@@ -397,7 +399,7 @@ from frogml.sdk.model.adapters import DataFrameInputAdapter, DataFrameOutputAdap
       return predictions_df
 ```
 
-In this case, the `DataFrameInputAdapter` will try to automatically recognize the type of the input. For `DataFrameOutputAdapter` the output will be oriented by **records**.
+In this case, the `DataFrameInputAdapter` attempt to automatically recognize the type of the input. For `DataFrameOutputAdapter` the output will be oriented by **records**.
 
 ## All Supported Adapters
 
