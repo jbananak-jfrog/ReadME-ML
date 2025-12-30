@@ -228,9 +228,7 @@ jfrogml_based_model/
 
 You can change the `main/`directory’s name. For example, changing its name to `iris_classifier/`:
 
-Shell
-
-```
+```shell
 jfrogml_based_model/
 ├── iris_classifier/
 ├── tests/
@@ -238,9 +236,7 @@ jfrogml_based_model/
 
 To configure the name in the main directory, use a build config as follows:
 
-`YAML`
-
-```
+```yaml
 build_properties:
   model_uri:
     main_dir: iris-classifier
@@ -252,18 +248,14 @@ During the build process you can download and use packages from private reposito
 
 Create an environment variable PIP_EXTRA_INDEX_URL .
 
-`Shell`
-
-```
+```shell
 frogml models build --env-vars 
 PIP_EXTRA_INDEX_URL=https://USERNAME:PASSWORD@JFROG_ARTIFACTORY_URL
 ```
 
 You can also send this data not in clear text, by creating local environment variables:
 
-`Shell`
-
-```
+```shell
 export JFROG_USERNAME=<USERNAME>
 export JFROG_PASSWORD=<PASSWORD>
 
@@ -284,18 +276,14 @@ You can fetch model code from a private Git repository using either the `--git-
 
    * Use the format `USERNAME:ACCESS_TOKEN` to create a new JFrog ML secret.
 
-     `Shell`
-
-     ```
+     ```shell
      frogml secrets set --name '<your-jfrogml-secret>' --value "<username>:<access_token>"
      ```
 3. Build the Model:
 
    * Use the `--git-credentials-secret` flag to specify the name of this secret when building your model.
 
-   `Shell`
-
-   ```
+   ```shell
    frogml models build \
      git@github.com:<git_user>/model-test.git#models/model/churn \
      --git-credentials-secret '<your-jfrogml-secret>' \
@@ -320,25 +308,25 @@ You can fetch model code from a private Git repository using either the `--git-
 
    * Copy your private SSH key to your clipboard:
 
-     Shell
+     <br />
 
-     ```
+     ```shell
      pbcopy < ~/.ssh/<your-private-key-file>
      ```
    * Create a new JFrog ML secret with the content of the copied private key.
 
-     `Shell`
+     <br />
 
-     ```
+     ```shell
      frogml secrets set --name '<your-jfrog-secret>' --value "$(pbpaste)"
      ```
 4. Build the Model:
 
    * Use the `--git-secret-ssh` flag to specify the name of this secret when building your model.
 
-     `Shell`
+     <br />
 
-     ```
+     ```shell
      frogml models build \
        git@github.com:<git_user>/model-test.git#models/model/churn \
        --git-secret-ssh '<your-jfrogml-secret>' \
