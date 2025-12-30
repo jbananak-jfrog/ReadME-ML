@@ -240,5 +240,5 @@ The `real_time_client` is configured with the local endpoint to enable efficient
 <Callout icon="📘" theme="info">
   **Structuring the Tests Directory**
 
-  Please place your integration tests under an `it` directory in the `tests` folder, adhering to the model build directory structure.
+  Please place your integration tests under an `it` directory in the `tests` folder, adhering to the model build directory [structure](/docs/model-build-overview#4-tracking-build-progress).
 </Callout>
