@@ -47,7 +47,7 @@ After your Admin has setup the JFrog ML on your account (SAAS or self-managed), 
 <Callout icon="❗️" theme="error">
   **Important**
 
-  `frogml-sdk` supports Python versions 3.9 to 3.11. Make sure you install it using a compatible Python version.
+  `frogml-sdk` supports Python versions 3.10 to 3.13. Make sure you install it using a compatible Python version.
 </Callout>
 
 **To install frogml-cli:**
