@@ -761,6 +761,6 @@ except FrogmlHTTPException as e:
     print(e.status_code)
 ```
 
-### JFrog ML Analytics and custom HTTP statuses
+### JFrog ML Analytics and Custom HTTP Statuses
 
 If the model raises a `FrogmlHTTPException` (and the API analytics feature is enabled), the exception details will be logged in JFrog ML Analytics as columns: `interence_exception_status_code` and `inference_exception_message`.
