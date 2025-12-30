@@ -12,13 +12,17 @@ metadata:
     - UUID-d26067a2-57d8-a583-a496-641ef0b53c24
   robots: index
 ---
-The fastest way to start using FrogML is to deploy a model you have trained in the past as a FrogML service.
+The fastest way to start using FrogML is to deploy a model that was previously trained as a FrogML service.
 
-Let's assume that you have already trained the model and stored it in S3. The storage mechanism doesn't matter as long as you can download it using Python code.
+This guide assumes that you have already trained the model and stored it in S3. However, the specific storage mechanism itself does not matter, provided you can download the artifact using Python code.  
 
-## Creating a New Model
+▶ **To load pre-built models:**
 
-First, we have to create a new FrogML project and models:
+1. <br />
+
+## Create a New Model
+
+First, create a new FrogML project and models:
 
 ```
 frogml models create "Pre Trained Model" --project-key "examples"
@@ -30,7 +34,7 @@ Then we want to create an empty project template:
 frogml models init .
 ```
 
-## Adding Dependencies
+## Add Dependencies
 
 In this example, we will use `conda` so we have to edit the `conda.yml` file and put the required libraries into the dependency list.
 
@@ -61,14 +65,14 @@ dependencies:
   - boto3
 ```
 
-## Loading Model Code
+## Load Model Code
 
 JFrog ML offers two ways of loading an existing model:
 
 1. Use the `build()` function.
 2. Use the `initialize_model()` function.
 
-## Models in `build()`
+### Models in `build()`
 
 The `build` function is more flexible. You can load not only the model but also run additional fine-tuning training. You can preprocess the training data for fine-tuning.
 
@@ -76,7 +80,7 @@ In general, you can do whatever you want. The only difference between full train
 
 When the build method finishes running, all model class fields will be pickled. Those fields are loaded at the model serving stage and are available in the `predict` function.
 
-## Models in `initialize_model()`
+### Models in `initialize_model()`
 
 If you use the `initialize_model` function, we will load the model while starting the inference service.
 
