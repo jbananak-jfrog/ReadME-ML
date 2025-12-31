@@ -7,7 +7,7 @@ metadata:
 ---
 <br />
 
-ML models deployed as a real-time service support an advanced traffic management tool called variations. The tool allows you to perform a canary release of a new model or to shadow deploy a model.
+ML models deployed as a real-time service support an advanced traffic management tool called variations. The tool enables you to perform a canary release of a new model or to shadow deploy a model.
 
 A variation is an additional identifier through which you can manage the amount of traffic routed to a specific deployed build. You can deploy multiple builds per model by assigning builds to different variations.
 
@@ -15,7 +15,7 @@ Shadow deployment lets you test a model using production data without returning 
 
 ## Deploying a Real-Time Model with Variations
 
-When you deploy your first model, by default the variation name will be "default".
+When you deploy your first model, the default variation name will be "default".
 
 The first build automatically receives 100% of the traffic.
 
@@ -25,21 +25,24 @@ The first build automatically receives 100% of the traffic.
 
 Then you can attach it to the model in the deployment process.
 
-When deploying an additional variation you are prompted to enter a variation name. Choose a name that adheres to the following rules:
-
-* Contains no more than 36 characters.
-* Contains only lowercase alphanumeric characters, dashes or periods.
-* Starts with an alphanumeric character.
-* Ends with an alphanumeric character.
-
 ▶ **To deploy an additional variation:**
 
 1. Click the deploy button next to the build you want to deploy.
 2. In the deployment popup, enter a new variation name and click **create new variation** in the select.
-3. In the tab **Traffic Control** attach the new or the existing variations to the audience.
-4. Ensure that the total traffic percentages add up to 100% in each audience.
-5. Select a fallback variation. (can be either the new one or the existing one).
-6. Click **Deploy**.
+
+<Callout icon="📘" theme="info">
+  Choose a name that adheres to the following rules:
+
+  * Contains no more than 36 characters.
+  * Contains only lowercase alphanumeric characters, dashes or periods.
+  * Starts with an alphanumeric character.
+  * Ends with an alphanumeric character.
+</Callout>
+
+1. In the tab **Traffic Control** attach the new or the existing variations to the audience.
+2. Ensure that the total traffic percentages add up to 100% in each audience.
+3. Select a fallback variation. (can be either the new one or the existing one).
+4. Click **Deploy**.
 
 ## Replacing an Existing Variation
 
