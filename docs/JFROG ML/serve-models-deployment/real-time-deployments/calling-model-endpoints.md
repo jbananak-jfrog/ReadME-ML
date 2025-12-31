@@ -226,7 +226,7 @@ libraryDependencies ++= Seq(
 )
 ```
 
-### Model metadata
+### Model Metadata
 
 To retrieve the model metadata, use the `ModelMetadataClient`:
 
@@ -262,7 +262,7 @@ To install the SDK and its dependencies, run the following Go command:
 go get github.com/qwak-ai/go-sdk/qwak
 ```
 
-### Inference examples
+### Inference Examples
 
 The following example invokes the model `test_model` which accepts one feature vector which contains three fields and produces one output field named "score".
 
