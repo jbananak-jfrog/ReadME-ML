@@ -1,5 +1,5 @@
 ---
-title: Getting Started with AI/ML in JFrog
+title: Get Started with AI/ML in JFrog
 excerpt: The system of record for your enterprise AI supply chain.
 hidden: false
 link:
