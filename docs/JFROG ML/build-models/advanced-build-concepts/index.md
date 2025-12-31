@@ -496,7 +496,7 @@ In JFrog ML, there are two primary methods for passing hyperparameters to your B
 
    The `hyperparameters.json` file is placed in the `main` directory, which ensures it will be automatically uploaded to the JFrog ML Build environment.
 
-   #### Example JSON Configuration
+   ##### Example JSON Configuration
 
    hyperparameters.json
 
@@ -510,7 +510,7 @@ In JFrog ML, there are two primary methods for passing hyperparameters to your B
 
    This JSON structure defines ranges for each hyperparameter, which JFrog ML will use to test different combinations.
 
-   #### Reading the Configuration in Python
+   ##### Reading the Configuration in Python
 
    In your `model.py` file, you can access these hyperparameters as follows:
 
@@ -544,7 +544,7 @@ In JFrog ML, there are two primary methods for passing hyperparameters to your B
 
    Here, the `-E` flag sets environment variables that will be available in your Build job.
 
-   #### Using Build Parameters
+   ##### Using Build Parameters
 
    ```
    frogml models builds --model-id sample_model \
@@ -556,7 +556,7 @@ In JFrog ML, there are two primary methods for passing hyperparameters to your B
 
    The `-P` flag sets JFrog ML Build parameters. These are logged to the JFrog ML Platform and can be compared between Builds, offering better traceability.
 
-   #### Reading Parameters in Python
+   ##### Reading Parameters in Python
 
    In your `model.py`, you can access these parameters:
 
@@ -727,18 +727,18 @@ Once you have your hyperparameters set up, you can implement various optimizatio
 
 ## Custom HTTP Status Codes
 
-It's possible to return a custom HTTP status from the `predict` function. Note that, only `4xx` and `5xx` statuses are supported.
+Custom HTTP statuses can be returned from the `predict` function. Note that only `4xx` and `5xx` statuses are supported.
 
-To use the feature, you have to raise a `FrogmlHTTPException` inside the `predict` function. The exception accepts two parameters:
+To use this feature, you must raise a `FrogmlHTTPException` inside the `predict` function. The exception accepts two parameters:
 
 * HTTP status code (as a number)
-* The message to be returned (string or a dictionary)
+* The message to be returned (a string or a dictionary)
 
 If the message is a string, it will be returned as a JSON object in this format: `{"message": "YOUR_MESSAGE"}`. If it's a dictionary, the JFrog ML platform will return the entire dictionary as a JSON object.
 
 If an unsupported HTTP status is used, it will be replaced with the status `500` and a `jfrogml_backend_message` will be added to the response body with a message: "Invalid status code. Given value: `{status\_code}`. Supported: 4xx, 5xx".
 
-An example server-side code:
+An example of the server-side code:
 
 ```python
 @frogml.api()
@@ -748,7 +748,7 @@ def predict(self, df):
         raise FrogmlHTTPException(500, "Not implemented")
 ```
 
-In case of a `4xx` or `5xx` response from the deployed model, the `RealTimeClient` will raise a `FrogmlHTTPException` with the status code and the returned message.
+In the case that a `4xx` or `5xx` response is received from the deployed model, the `RealTimeClient` will raise a `FrogmlHTTPException` with the status code and the returned message.
 
 An example of the client code:
 
