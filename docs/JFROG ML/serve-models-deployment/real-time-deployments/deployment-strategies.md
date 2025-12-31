@@ -6,7 +6,7 @@ metadata:
   robots: index
 ---
 [Overview of Deployment Strategies](): General explanation of variations and deployment strategies.
-**Deployment Strategies:** [Deploying a Real-Time Model with Variations]() | Deploying an Additional Variation | Replacing an Existing Variation | Deployment via the CLI | Inference on a Specific Variation | Methods for running inferences on specific variations using different clients (Python SDK, Java SDK, REST API) | Targeting A Specific Audience | Traffic Splitting with Audiences and Variation | Shadow Deployment | Protected Variations
+**Deployment Strategies:** [Deploying a Real-Time Model with Variations]() | [Deploying an Additional Variation](/docs/deployment-strategies#deploying-an-additional-variation) | [Replacing an Existing Variation](/docs/deployment-strategies#replacing-an-existing-variation) | [Deployment via the CLI](/docs/deployment-strategies#deployment-via-the-cli) | [Inference on a Specific Variation - for using different clients (Python SDK, Java SDK, REST API)](/docs/deployment-strategies#inference-on-a-specific-variation) | [Targeting A Specific Audience](/docs/deployment-strategies#targeting-a-specific-audience) | [Traffic Splitting with Audiences and Variation](/docs/deployment-strategies#traffic-splitting-with-audiences-and-variations) | [Shadow Deployment](/docs/deployment-strategies#shadow-deployment) | [Protected Variations](/docs/deployment-strategies#protected-variations)
 
 ## Overview of Deployment Strategies
 
