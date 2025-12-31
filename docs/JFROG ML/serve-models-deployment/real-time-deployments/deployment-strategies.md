@@ -28,15 +28,15 @@ Then you can attach it to the model in the deployment process.
 ▶ **To deploy an additional variation:**
 
 1. Click the deploy button next to the build you want to deploy.
-2. In the deployment popup, enter a new variation name and click **create new variation** in the selecttext.
+2. In the deployment popup, enter a new variation name and click **create new variation** in the select.
+<Callout icon="📘" theme="info">
+  Choose a name that adheres to the following rules:
 
-   - <Callout icon="📘" theme="info">
-     Choose a name that adheres to the following rules:
-     * Contains no more than 36 characters.
-     * Contains only lowercase alphanumeric characters, dashes or periods.
-     * Starts with an alphanumeric character.
-     * Ends with an alphanumeric character.
-     </Callout>
+  * Contains no more than 36 characters.
+  * Contains only lowercase alphanumeric characters, dashes or periods.
+  * Starts with an alphanumeric character.
+  * Ends with an alphanumeric character.
+</Callout>
 
 1. In the tab **Traffic Control** attach the new or the existing variations to the audience.
 2. Ensure that the total traffic percentages add up to 100% in each audience.
