@@ -61,7 +61,7 @@ session = boto3.Session(profile_name='user-provided-role')
 s3 = session.client('s3')
 ```
 
-For additional information on how to configure an AWS IAM role to allow JFrog ML runtime to access your resources, please also visit the [AWS Resources access dedicated page](/docs/accessing-aws-resources-with-iam-role).
+For additional information on how to configure an AWS IAM role to allow JFrog ML runtime to access your resources, please also visit the [AWS Resources access](/docs/accessing-aws-resources-with-iam-role) dedicated page.
 
 <Callout icon="📘" theme="info">
   **Note**
