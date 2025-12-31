@@ -38,11 +38,11 @@ Learn how to adjust and configure the build for some advanced use-cases.
 
 ### Using a Custom AWS IAM Role ARN
 
-In some cases, a model needs to access external services during its build process.
+Sometimes, a model needs to access external services during its build process.
 
 If a build needs to access external AWS resources, a custom AWS IAM role can be passed to the FrogML build process.
 
-The IAM role ARN can be passed directly to a build using the --iam-role-arn flag. For example:
+The IAM role ARN can be passed directly to a build using the `--iam-role-arn` flag. For example:
 
 ```
 frogml models build \
@@ -61,7 +61,7 @@ session = boto3.Session(profile_name='user-provided-role')
 s3 = session.client('s3')
 ```
 
-For additional information on how to configure an AWS IAM role to allow JFrog ML runtime to access your resources, please also visit the <Anchor label="AWS Resources access dedicated page" title="Accessing AWS Resources with IAM Role" href="/docs/accessing-aws-resources-with-iam-role">AWS Resources access dedicated page</Anchor>.
+For additional information on how to configure an AWS IAM role to allow JFrog ML runtime to access your resources, please also visit the [AWS Resources access dedicated page](/docs/accessing-aws-resources-with-iam-role).
 
 <Callout icon="📘" theme="info">
   **Note**
