@@ -432,7 +432,7 @@ When undeploying from 2 variations to one, you don't have to pass any variation-
 
 **What is Shadow Deployment?**
 
-Shadow deployment is a special kind of deployment. The traffic is not divided between the deployments but instead multiplied. The shadow deployment itself does not respond to the request but processes it and logs the output.
+When using Shadow deployment, the traffic is not divided between the deployments but instead multiplied. The shadow deployment itself does not respond to the request but processes it and logs the output.
 
 This kind of deployment is best for cases where you want to check how a model behaves without affecting the actual production traffic.
 
@@ -446,7 +446,7 @@ Like a regular variation, you can configure the percentage of traffic that the d
   Traffic for shadow deployments is routed from the general traffic and not from a specific variation.
 </Callout>
 
-## Shadow Deployment in the UI
+### Shadow Deployment in the UI
 
 Every audience can have at most one shadow variation!
 
@@ -457,11 +457,11 @@ Every audience can have at most one shadow variation!
 1. Select **Traffic Control** button and check the ghost icon next to the wanted variation in the tab.
 2. Specify the percentage of traffic handled by the shadow deployment model.
 
-## Shadow Variation using the CLI
+### Shadow Variation using the CLI
 
 Making the variation a shadow variation is simple. In the deployment config just add the shadow flag:
 
-```
+```yaml
 realtime:
   variation_name: <shadow variation name>
   audiences:
@@ -477,7 +477,7 @@ realtime:
   fallback_variation: <variation>
 ```
 
-```
+```shell
 frogml models deploy realtime --model-id <model-identifier> --build-id <build-id> --variation-name <shadow variation name> --from-file <config-file-path>
 ```
 
