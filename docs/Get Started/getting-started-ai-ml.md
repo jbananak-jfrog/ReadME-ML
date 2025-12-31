@@ -1,6 +1,6 @@
 ---
 title: Getting Started with AI/ML in JFrog
-excerpt: Start your journey to deliver trusted AI/ML with JFrog.
+excerpt: The system of record for your enterprise AI supply chain.
 hidden: false
 link:
   new_tab: false
@@ -13,7 +13,7 @@ next:
       title: Get Started with JFrog ML
       type: basic
 ---
-JFrog ML is the single system of record for your enterprise AI supply chain. It acts as a centralized hub that proactively secures every AI workload — from third-party downloads and Model Context Protocol (MCP) servers to custom in-house models — giving you the visibility needed to eliminate Shadow AI.
+JFrog ML acts as a centralized hub that proactively secures every AI workload — from third-party downloads and Model Context Protocol (MCP) servers to custom in-house models — giving you the visibility needed to eliminate Shadow AI.
 
 With security and compliance enforced proactively at the gate, your teams can safely accelerate the development of trusted AI applications without compromising control.
 
