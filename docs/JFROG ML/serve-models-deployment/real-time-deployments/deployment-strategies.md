@@ -5,7 +5,12 @@ hidden: false
 metadata:
   robots: index
 ---
-<br />
+[Overview of Deployment Strategies]()
+Traffic Splitting with Audiences and Variations
+Shadow Deployment
+Protected Variations
+
+## Overview of Deployment Strategies
 
 ML models deployed as a real-time service support an advanced traffic management tool called variations. The tool enables you to perform a canary release of a new model or to shadow deploy a model.
 
