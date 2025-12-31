@@ -36,7 +36,7 @@ metadata:
 ---
 JFrog ML real time models deploy your ML models with a lightweight, simple and scalable REST API wrapper.
 
-JFrog sets up the network requirements and deploys your model on a managed Kubernetes cluster, allowing you to leverage auto-scaling and security. JFrog ML also adds a suite of monitoring tools, simplifying the process of managing your model performance.
+JFrog sets up the network requirements and deploys your model on a managed Kubernetes cluster, enabling you to leverage auto-scaling and security. JFrog ML also adds a suite of monitoring tools, simplifying the process of managing your model performance.
 
 <Image alt="Real-time model deployment overview" border={false} src="https://files.readme.io/c22e14438f25fe2ee4e3b4a00a29a8e5206e9356f795e0290e3d6251393c2c4e-uuid-5a77810a-0d93-ea20-6692-73b7b87032e3.png" />
 
@@ -58,7 +58,7 @@ JFrog sets up the network requirements and deploys your model on a managed Kuber
 
 To deploy a model in real-time mode from the CLI, populate the following command template:
 
-```
+```shell
 frogml models deploy realtime \
     --model-id <model-id> \
     --build-id <build-id> \
@@ -72,7 +72,7 @@ frogml models deploy realtime \
 
 For example, for the model built in the [JFrog ML Quick Start](/docs/get-started-with-jfrog-ml) section, the deployment command is:
 
-```
+```shell
 frogml models deploy realtime \
     --model-id churn_model \
     --build-id 7121b796-5027-11ec-b97c-367dda8b746f \
@@ -94,7 +94,7 @@ frogml models deploy realtime \
 
 Realtime models can be deployed on GPU instances, simply by selecting a [GPU Instance](/docs/instance-sizes-ml-credits#instances-sizes-in-the-ui) from the available options.
 
-```
+```shell
 frogl models deploy realtime \
     --model-id churn_model \
     --build-id 7121b796-5027-11ec-b97c-367dda8b746f \
@@ -162,7 +162,7 @@ The IAM role should be created with the following trust policy:
 
 The IAM role ARN can be passed directly to a deployment using the `--iam-role-arn` flag. For example:
 
-```python
+```shell
 frogml models deploy realtime \
     --model-id churn_model \
     --build-id 7121b796-5027-11ec-b97c-367dda8b746f \
@@ -179,7 +179,7 @@ frogml models deploy realtime \
 
 To run the deployment locally using a local Docker engine, use the `--local` flag. For example:
 
-```
+```shell
 frogml models deploy realtime \
     --model-id churn_model \
     --build-id 7121b796-5027-11ec-b97c-367dda8b746f \
@@ -198,7 +198,7 @@ Once you have successfully deployed a real-time model, you can use the JFrog ML 
 
 This example shows to invoke a model using the [Python SDK](/docs/calling-model-endpoints#python-sdk). You can install the SDK with the following command:
 
-```
+```shell
 pip install frogml-inference
 ```
 
