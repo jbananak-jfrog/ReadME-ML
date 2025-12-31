@@ -34,7 +34,7 @@ The following example demonstrates how to invoke the model `test_model`. This mo
 
 Using`curl`as the REST client, invoke the model with your generated token:
 
-```
+```shell
 export TOKEN=""
 
 curl --location --request POST 'https://models.<environment_name>.qwak.ai/v1/test_model/predict' 
@@ -48,7 +48,7 @@ curl --location --request POST 'https://models.<environment_name>.qwak.ai/v1/tes
 
 When working with variations, you can create an inference for a specific variation (endpoint) by appending the variation name to the URL as shown below:
 
-```
+```shell
 curl --location --request POST 'https://models.<environment_name>.qwak.ai/v1/test_model/variation_name/predict' \
     --header 'Content-Type: application/json' \
     --header 'Authorization: Bearer '$TOKEN'' \
@@ -64,7 +64,7 @@ After deploying a real time model, your Python client applications can use this 
 
 The Python inference client is a lightweight part of `frogml-inference` package, containing only the modules required for inference. To install, run:
 
-```
+```shell
 pip install frogml-inference
 ```
 
@@ -72,7 +72,7 @@ pip install frogml-inference
 
 The following example invokes the model `test_model`. The model accepts one feature vector which contains three fields and produces one output field named "score".
 
-```
+```python
 from frogml_inference import RealTimeClient
 
 model_id = "test_model"
