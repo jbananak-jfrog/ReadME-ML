@@ -10,7 +10,7 @@ Leveraging this architecture simplifies the process of processing large amounts 
 
 ### Streaming Use Cases
 
-Consider using streaming deployments in the following scenarios:
+You can use streaming deployments in the following scenarios:
 
 1. **Event-driven applications:** Respond to specific events or triggers in real-time.
 2. **Real-time decision-making:** Process data 'as it arrives' for time-sensitive systems.
@@ -18,13 +18,13 @@ Consider using streaming deployments in the following scenarios:
 
 ### Deploying Streaming Models
 
-To use streaming inference on JFrog ML, use the following examples:
+▶ **To use streaming inference on JFrog ML, use one of the following options:**
 
-#### Option 1: Deploying via UI
+#### Option 1: Deploy via UI
 
 1. Build a new model.
-2. Click **Deploy** and choose **Streaming**.
-3. Choose the **instance type** and configure the **Kafka server** and **topics**.
+2. Click **Deploy** and select **Streaming**.
+3. Select the **instance type** and configure the **Kafka server** and **topics**.
 
 > **Note**
 >
@@ -32,9 +32,9 @@ To use streaming inference on JFrog ML, use the following examples:
 
 4. Click **Deploy** to make your model live.
 
-#### Option 2: Deploying via CLI
+#### Option 2: Deploy via CLI
 
-You can also deploy your streaming model using the command line interface (CLI). Here’s a general command structure:
+You can also deploy your streaming model using the command line interface (CLI). The following shows the general command structure:
 
 ```bash
 frogml models deploy stream \
@@ -47,10 +47,6 @@ frogml models deploy stream \
     --producer-bootstrap-server <bootstrap-server> \
     --producer-topic <producer-topic-name>
 ```
-
-<br />
-
-Streaming deployments enable you to connect Kafka streams with your models for real-time inference. Leveraging this architecture simplifies the process of processing large amounts of distributed data by eliminating the need for complex triggering and scheduling as fresh data arrives.
 
 ## Streaming Use Cases
 
@@ -129,7 +125,7 @@ frogml models deploy stream \
   To use the above examples, do not forget to replace the parameter values with your own values.
 </Callout>
 
-### Option 3: Configuring Streaming Models via YAML
+### Option 3: Configure Streaming Models via YAML
 
 You can also configure your streaming model with a YAML file.
 
@@ -157,15 +153,13 @@ frogml models deploy stream --from-file stream_deploy_config.yaml
 
 #### Mixing Command Line and Configuration File
 
-Additionally, you can mix and match between command line arguments and configuration file. In this case, command line arguments will take precedence and override the values specified in the YAML file.
+Additionally, you can mix and match between using command line arguments and a configuration file. In this case, command line arguments will take precedence and override the values specified in the YAML file.
 
 #### Example Command
 
 ```
 frogml models deploy stream --replicas 5 --from-file stream_deploy_config.yaml
 ```
-
-<br />
 
 ### Monitoring Your Streaming Deployment
 
