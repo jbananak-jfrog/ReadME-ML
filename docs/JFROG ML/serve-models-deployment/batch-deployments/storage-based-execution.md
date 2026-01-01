@@ -11,9 +11,7 @@ metadata:
 Each file in the input path is translated to a single unit of processing (a JFrog ML task). Each input file is read and passed as a single chunk to the model `predict` function.
 
 <Callout icon="⚠️" theme="warning">
-  **Warning**
-
-  _**Task Processing**_
+  **Warning** - _**Task Processing**_
 
   As the file is transformed to a single prediction request, you must ensure that the model is deployed on an instance with sufficient resources to handle the batch request.
 
