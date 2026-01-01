@@ -15,7 +15,7 @@ metadata:
 ---
 The FrogML client is a wrapper and a single entry point for different JFrog ML clients such as the `BatchClient`, `DeploymentClient`, and more.
 
-##### JFrog ML Configuration File
+**JFrog ML Configuration File**
 
 If the frogml-cli is already configured, the method fetches the token from the pre-configured conf file.
 
