@@ -57,9 +57,7 @@ In the Analytics view, you can write SQL queries to analyze the model requests a
 <Image alt="Analytics Query UI" border={false} src="https://files.readme.io/5300ec7c021f3e6a87a5cbd83d5f93b6f1c00b35c9ba32c7aa9678fc5f235184-uuid-87b31a63-b24c-ccef-01e5-472902acd5d0.png" />
 
 <Callout icon="❗️" theme="error">
-  **Important**
-
-  _**Leveraging Partitions in Queries**_
+  **Important** - _**Leveraging Partitions in Queries**_
 
   Model Inference data is partitioned daily according to the `date` column. To improve query performance and avoid scanning through all the data which can be significantly slower (and costlier), please leverage this partitioning scheme in your analytics queries.
 </Callout>
