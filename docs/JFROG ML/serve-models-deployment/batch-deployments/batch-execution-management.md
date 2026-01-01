@@ -1,14 +1,14 @@
 ---
 title: Batch Execution Management
-excerpt: '  Understand the various commands that help you manage and track the execution status of your batch models.'
+excerpt: ' Understand the various commands that help you manage and track the execution status of your batch models.'
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-## Getting Batch Execution Status
+## Batch Execution Status
 
-To check the current status of an execution, use the following command:
+**▶ To check the current status of a batch execution:**
 
 ```
 frogml models execution status --execution-id <execution-id>
@@ -25,9 +25,9 @@ status = status_response.status
 
 The `execution_id` is returned when an execution is created, and is also visible in the UI.
 
-## Cancelling a Batch Execution
+## Cancel a Batch Execution
 
-To cancel an execution, use the following command:
+▶ **To cancel a batch execution:**
 
 ```
 frogml models execution cancel --execution-id <execution-id>
@@ -40,11 +40,11 @@ batch_job_manager_client = BatchJobManagerClient()
 batch_job_manager_client.cancel_execution("<execution-id>")
 ```
 
-## Using Warmup
+## &#x20;Warmup
 
-In some cases, the execution is a single step in a larger workflow orchestration. If the speed of execution is critical, use the warmup option.
+Use the **warmup** option when the speed of execution is critical, and the execution is a single step in a larger workflow orchestration. 
 
-The warmup option allows you to allocate the resources for execution before the execution starts. The resources are raised and kept running until the execution itself starts. This is especially relevant when a lot of resources are needed, or when reducing the running time by even 5 minutes is critical.
+The warmup option enables you to allocate the resources for execution before the execution starts. The resources are raised and kept running until the execution itself starts. This is especially relevant when a lot of resources are required, or when reducing the running time by even 5 minutes is critical.
 
 ### Low-level API
 
@@ -91,7 +91,7 @@ batch_inference_client.warmup(
     build_id=<alternate-build-id>)
 ```
 
-## Troubleshooting
+## Troubleshooting Executions
 
 For each execution there are two types of logs.
 
