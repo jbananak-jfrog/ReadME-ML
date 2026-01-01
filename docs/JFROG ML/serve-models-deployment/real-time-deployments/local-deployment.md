@@ -5,8 +5,6 @@ hidden: false
 metadata:
   robots: index
 ---
-<br />
-
 Starting with SDK version 0.5.63, JFrog ML now supports local realtime deployment of models. This feature allows developers to deploy models directly on their local machine for testing and development purposes, offering an immediate and practical way to interact with the model in a realtime environment. This documentation provides a step-by-step guide on how to deploy your model locally.
 
 ## Prerequisites
