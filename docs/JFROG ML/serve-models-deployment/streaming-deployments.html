@@ -151,7 +151,7 @@ Then run the deployment command:
 frogml models deploy stream --from-file stream_deploy_config.yaml
 ```
 
-#### Mixing Command Line and Configuration File
+#### Mix Command Line and Configuration File
 
 Additionally, you can mix and match between using command line arguments and a configuration file. In this case, command line arguments will take precedence and override the values specified in the YAML file.
 
@@ -161,11 +161,11 @@ Additionally, you can mix and match between using command line arguments and a c
 frogml models deploy stream --replicas 5 --from-file stream_deploy_config.yaml
 ```
 
-### Monitoring Your Streaming Deployment
+### Monitor Your Streaming Deployment
 
 JFrog ML models run on Kubernetes, where we automatically install advanced production-grade monitoring tools. This setup provides a robust platform for deploying and managing your models efficiently.
 
-Under the Model Overview tab, you can view the following metrics for your deployed build:
+Under the **Model Overview **tab, you can view the following metrics for your deployed build:
 
 * **Average message throughput:** Evaluates how many messages are being processed over a specific period.
 * **Total consumed messages:** Tracks the total number of messages your model has consumed over a given minute.
