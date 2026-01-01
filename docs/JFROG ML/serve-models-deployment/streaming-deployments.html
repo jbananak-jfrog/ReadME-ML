@@ -387,93 +387,82 @@ If the consumer group does n**ot have a previously committed offset** (for examp
     </tr>
 
     <tr>
-      <td>
+      <td style={{ verticalAlign: 'top' }}>
         **Compression Type**
       </td>
 
-      <td>
+      <td style={{ verticalAlign: 'top' }}>
         **Description**
       </td>
 
-      <td>
+      <td style={{ verticalAlign: 'top' }}>
         **Best Use**
       </td>
 
-      <td>
-
-      </td>
     </tr>
 
     <tr>
-      <td>
+      <td style={{ verticalAlign: 'top' }}>
         None (`none`)
       </td>
 
-      <td>
+      <td style={{ verticalAlign: 'top' }}>
         No compression applied.
       </td>
 
-      <td>
+      <td style={{ verticalAlign: 'top' }}>
         When message size isn’t important, or data is already compressed or optimized.
       </td>
 
-      <td>
-
-      </td>
-    </tr>
-
-    <tr style={{ verticalAlign: 'top' }}>
-      <td>
-        Gzip ( `gzip`)
-      </td>
-
-      <td>
-        Compresses messages with the gzip algorithm.
-      </td>
-
-      <td>
-        Provides a good balance between compression ratio and CPU overhead.
-      </td>
-
-      <td>
-
-      </td>
-    </tr>
-
-    <tr style={{ verticalAlign: 'top' }}>
-      <td>
-        Snappy ( ` snappy`)
-      </td>
-
-      <td>
-        Compresses messages with the Snappy algorithm.
-      </td>
-
-      <td>
-        Faster than gzip but with a lower compression ratio.
-      </td>
-
-      <td>
-
-      </td>
+   
     </tr>
 
     <tr>
-      <td>
+      <td style={{ verticalAlign: 'top' }}>
+        Gzip ( `gzip`)
+      </td>
+
+      <td style={{ verticalAlign: 'top' }}>
+        Compresses messages with the gzip algorithm.
+      </td>
+
+      <td style={{ verticalAlign: 'top' }}>
+        Provides a good balance between compression ratio and CPU overhead.
+      </td>
+
+     
+    </tr>
+
+    <tr>
+      <td style={{ verticalAlign: 'top' }}>
+        Snappy ( ` snappy`)
+      </td>
+
+      <td style={{ verticalAlign: 'top' }}>
+        Compresses messages with the Snappy algorithm.
+      </td>
+
+      <td style={{ verticalAlign: 'top' }}>
+        Faster than gzip but with a lower compression ratio.
+      </td>
+
+      
+    </tr>
+
+    <tr>
+      <td style={{ verticalAlign: 'top' }}>
         LZ4 (`lz4`)
       </td>
 
-      <td>
+      <td style={{ verticalAlign: 'top' }}>
         Compresses messages with the LZ4 algorithm.
       </td>
 
-      <td>
+      <td style={{ verticalAlign: 'top' }}>
         Fastest option; slightly lower compression ratio than gzip or Snappy.
       </td>
 
-      <td>
-
-      </td>
+      
     </tr>
   </tbody>
 </Table>
