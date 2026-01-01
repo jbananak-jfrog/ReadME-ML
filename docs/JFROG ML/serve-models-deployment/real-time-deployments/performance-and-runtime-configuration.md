@@ -40,31 +40,31 @@ The load balancer splits the traffic between the number of replicas, the bigger 
 </Accordion>
 
 <Accordion title="When should I increase the number of vCPUs?" icon="fa-info-circle">
-If you want to use more workers and handle multiple requests in parallel.
+  If you want to use more workers and handle multiple requests in parallel.
 
   <Callout icon="❗️" theme="error">
     **Important**
 
     ***Don't waste vCPUs!***
 
-If you do not increase the number of workers, but increase vCPUs, you will waste resources! Those additional CPUs will not be used.
+    If you do not increase the number of workers, but increase vCPUs, you will waste resources! Those additional CPUs will not be used.
   </Callout>
 
   In general, ML inference is a CPU-bound process, so we should follow the rule of having **1 vCPU per two worker processes**. Of course, if you run a simple model, you may try increasing the number of workers per vCPU.
 </Accordion>
 
 <Accordion title="When should I increase the number of workers?" icon="fa-info-circle">
-Increase the number of workers if you need to handle more traffic and your pods still have some unused CPU capacity and RAM.
+  Increase the number of workers if you need to handle more traffic and your pods still have some unused CPU capacity and RAM.
 </Accordion>
 
 <Accordion title="When should I increase the amount of RAM?" icon="fa-info-circle">
-When increasing the number of workers on each pod.
+  When increasing the number of workers on each pod.
 
   Every worker runs as a separate forked process, so there is no shared memory. In every worker, you have to load the inference service and the model.
 </Accordion>
 
 <Accordion title=" When should I use a GPU for inference?" icon="fa-info-circle">
-When you have increased the max batch size per prediction request, you constantly send enough data to fill the entire batch and your CPUs don't keep up anymore.
+  When you have increased the max batch size per prediction request, you constantly send enough data to fill the entire batch and your CPUs don't keep up anymore.
 
   <Callout icon="❗️" theme="error">
     **Important**
@@ -80,49 +80,4 @@ When you have increased the max batch size per prediction request, you constantl
   * If you can group requests into batches (you have enough data to send and the client application can handle that).
 </Accordion>
 
-**When Should I Increase the Number of Replicas?**
-
-* When expecting a spike in traffic increasing the number of replicas temporarily
-* When using a large number of cheaper pods.
-* When modifying configuration in for a single replica doesn't increase performance when traffic increases
-
-**When should I increase the number of vCPUs?**
-
-* If you want to use more workers and handle multiple requests in parallel.
-
-<Callout icon="❗️" theme="error">
-  **Important**
-
-  _**Don't waste vCPUs!**_
-
-  If you do not increase the number of workers, but increase vCPUs, you will waste resources! Those additional CPUs will not be used.
-</Callout>
-
-In general, ML inference is a CPU-bound process, so we should follow the rule of having **1 vCPU per two worker processes**. Of course, if you run a simple model, you may try increasing the number of workers per vCPU.
-
-**When should I increase the number of workers?**
-
-Increase the number of workers if you need to handle more traffic and your pods still have some unused CPU capacity and RAM.
-
-**When should I increase the amount of RAM?**
-
-* When increasing the number of workers on each pod.
-
-Every worker runs as a separate forked process, so there is no shared memory. In every worker, you have to load the inference service and the model.
-
-**When should I use a GPU for inference?**
-
-* When you have increased the max batch size per prediction request, you constantly send enough data to fill the entire batch and your CPUs don't keep up anymore.
-
-<Callout icon="❗️" theme="error">
-  **Important**
-
-  _**Do not waste GPUs!**_
-
-  Don't deploy a GPU instance if you process requests one by one. GPUs exist to parallelize the computation. When you process a batch of size 1, a GPU won't give you any performance improvements.
-</Callout>
-
-**When should I increase the batch size?**
-
-* If your code in the predict function and the model can handle more than one value (preferably without iterating over them in the predict function).
-* If you can group requests into batches (you have enough data to send and the client application can handle that).
+<br />
