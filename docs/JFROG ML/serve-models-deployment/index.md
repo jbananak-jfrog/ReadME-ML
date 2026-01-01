@@ -18,6 +18,6 @@ This section reviews the following topics:
 
 <Anchor label="Batch Deployments" title="Batch Deployments" href="/docs/batch-deployments">Batch Deployments</Anchor>
 
-[Streaming Deployments](/docs/streaming-deployments)
+<Anchor label="Streaming Deployments" title="Batch Deployments" href="/docs/streaming-deployments">Streaming Deployments</Anchor>
 
 <Anchor label="Inference Analytics" title="Inference Analytics" href="/docs/inference-analytics">Inference Analytics</Anchor>
