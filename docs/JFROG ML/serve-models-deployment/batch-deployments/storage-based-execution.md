@@ -47,7 +47,7 @@ Currently, only **S3** buckets situated in the region configured for your JFrog 
 
 If you intend to employ a different IAM Role ARN to grant permissions to an S3 location, you must include the provided trust policy. For customized parameters, please reach out to our support team.
 
-```
+```json
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -78,7 +78,7 @@ Custom IAM Role allow access to both private buckets and source / destination fo
 
 The IAM role should be created with the following trust policy:
 
-```
+```json
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -191,27 +191,21 @@ frogml models execution start \                                                 
 
 ## Batch Job Parallelism
 
-Note that every file in the given input path is considered a task. A task is the main unit of parallelism for a batch execution job.
+Each file in the input path is treated as a single task, which is the main unit of parallelism.
 
-For example, if five pods are requested during the batch execution (whether specified by the deployment or in the batch execution job itself), and 10 files need to processed, five files (or tasks) are executed in parallel, out of the 10 tasks that comprise the batch job.
-
-For this reason, there is no point in requesting more pods than the number of files which need to be processed.
+For example, if you request five pods (whether specified by the deployment or the job itself) to process 10 files, five files (or tasks) will run in parallel. Consequently, requesting more pods than the total number of input files is unnecessary.
 
 <Callout icon="📘" theme="info">
-  **Note**
+  **Note** - _**Concurrent Executions**_
 
-  _**Concurrent Executions**_
+  You can run multiple executions concurrently, with one **limitation**: To prevent redundancy, you cannot run executions with identical values for the following parameters:
 
-  You can run multiple executions, concurrently. The only limitation is not running executions with identical values for the following parameters:
-
-  1. Model ID
-  2. Build ID
-  3. Source Bucket
-  4. Source Folder
-  5. Destination Bucket
-  6. Destination Folder
-
-  The assumption is that running two executions with the same parameters, is redundant.
+  * Model ID 
+  * Build ID 
+  * Source Bucket
+  * Source Folder
+  * Destination Bucket
+  * Destination Folder
 </Callout>
 
 ## Switching Between On-demand and Spot Instances
