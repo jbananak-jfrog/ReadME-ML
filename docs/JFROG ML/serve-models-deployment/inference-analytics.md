@@ -114,7 +114,7 @@ Now, in the predict function, we can log any scalar value, lists, dictionaries, 
    )
    ```
 
-Note that we use different function when we log multiple values (`log_multi` instead of `log`)!
+Note that adifferent function is used when we log multiple values (`log_multi` instead of `log`).
 
 If you log different values with the same column name, only the last logged value will be logged (it overwrites previous logs).
 
