@@ -28,7 +28,7 @@ token = client.get_token()
 
 ## Builds
 
-### get_latest_build
+#### get_latest_build
 
 Returns the latest build by its model ID.
 
