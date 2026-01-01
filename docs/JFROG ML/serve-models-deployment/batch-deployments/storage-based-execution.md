@@ -8,8 +8,6 @@ hidden: false
 metadata:
   robots: index
 ---
-<br />
-
 Each file in the input path is translated to a single unit of processing (a JFrog ML task). Each input file is read and passed as a single chunk to the model `predict` function.
 
 <Callout icon="⚠️" theme="warning">
