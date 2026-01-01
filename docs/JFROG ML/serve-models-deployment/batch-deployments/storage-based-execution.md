@@ -100,7 +100,7 @@ The IAM role should be created with the following trust policy:
 
 ## Batch Execution
 
-To start an execution from the SDK, use the following command:
+▶ **To start an execution from the SDK:**
 
 ```
 from frogml.core.clients.batch_job_management.client import BatchJobManagerClient
@@ -236,7 +236,7 @@ execution_spec = ExecutionConfig.Execution(
 
 ## Local File Mode
 
-It's also possible to run a batch execution using files stored locally.
+It is also possible to run a batch execution using files stored locally.
 
 ## SDK
 
@@ -266,12 +266,10 @@ client.local_file_run(
 
 Parameters have the same meaning as in the execution configuration above. The source folder and the destination folder must start with `file://` prefix.
 
-It's also required to provide the input file type that will be used to select files from the source folder (by file extension).
+You must also provide the input file type that will be used to select files from the source folder (by file extension).
 
 <Callout icon="❗️" theme="error">
-  **Important**
-
-  _**Local File Mode Parameters**_
+  **Important** - _**Local File Mode Parameters**_
 
   Remember that the source and destination folder paths MUST start with the `file://` prefix.
 
@@ -279,9 +277,7 @@ It's also required to provide the input file type that will be used to select fi
 </Callout>
 
 <Callout icon="❗️" theme="error">
-  **Important**
-
-  _**Dependencies**_
+  **Important** - _**Dependencies**_
 
   The local file mode requires additional dependencies that can be installed using `pip install "frogml-inference[batch,feedback]"`
 
@@ -289,9 +285,7 @@ It's also required to provide the input file type that will be used to select fi
 </Callout>
 
 <Callout icon="⚠️" theme="warning">
-  **Warning**
-
-  _**Output Directory**_
+  **Warning** - _**Output Directory**_
 
   If the destination directory doesn't exist, it will be created.
 
@@ -300,11 +294,11 @@ It's also required to provide the input file type that will be used to select fi
 
 ## CLI
 
-Alternatively, we can run the same local file mode using the CLI.
+Alternatively, the same local file mode can be run using the CLI.
 
-In this case, we run the `frogml models execution start` command with the source folder and destination folder beginning with the `file://` prefix.
+In this case, the `frogml models execution start` command is run with the source folder and destination folder beginning with the `file://` prefix.
 
-The meaning of other parameters is the same as in the execution configuration above. The local file mode started with CLI requires the same parameters and dependencies as the local file mode started with an SDK. See the warnings above.
+The meaning of other parameters is the same as in the execution configuration above. The local file mode started with CLI requires the same parameters and dependencies as the local file mode started with an SDK. (See the warnings above.)
 
 Example: `frogml models execution start --model-id the_model_id --source-folder file://path_to_a_directory --destination-folder file://path_to_output_directory --input-file-type csv` .
 
