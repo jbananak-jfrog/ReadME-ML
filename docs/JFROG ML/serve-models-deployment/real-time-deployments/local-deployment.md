@@ -30,9 +30,11 @@ frogml models deploy realtime --model-id "<YOUR_MODEL>" --build-id "<YOUR_BUILD_
 This command initiates the deployment process by creating a Docker container in which your model will be hosted.
 
 <Callout icon="📘" theme="info">
-  **Note**
-
   _**Ensure Docker is Running**_
 
-  The local deployment process requires an active Docker daemon. You can check Docker's status by running `docker info` or `docker ps` in a new terminal window. If Docker is not running, start it through your system's preferred method before attempting to deploy your model again.
+  The local deployment process requires an active Docker daemon. You can check Docker's status by running `docker info` or `docker ps` in a new terminal window. 
+
+  If Docker is not running, start it through your system's preferred method before attempting to deploy your model again.
 </Callout>
+
+<br />
