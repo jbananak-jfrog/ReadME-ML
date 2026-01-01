@@ -33,7 +33,7 @@ The load balancer splits the traffic between the number of replicas, the bigger 
 
 ## FAQs
 
-<Accordion title="When Should I Increase the Number of Replicas?" icon="fa-info-circle">
+<Accordion title="When Should I increase the number of replicas?" icon="fa-info-circle">
   * When expecting a spike in traffic increasing the number of replicas temporarily
   * When using a large number of cheaper pods.
   * When modifying configuration in for a single replica doesn't increase performance when traffic increases
@@ -60,19 +60,24 @@ The load balancer splits the traffic between the number of replicas, the bigger 
 <Accordion title="When should I increase the amount of RAM?" icon="fa-info-circle">
   * When increasing the number of workers on each pod.
 
-Every worker runs as a separate forked process, so there is no shared memory. In every worker, you have to load the inference service and the model.
+  Every worker runs as a separate forked process, so there is no shared memory. In every worker, you have to load the inference service and the model.
 </Accordion>
 
 <Accordion title=" When should I use a GPU for inference?" icon="fa-info-circle">
-* When you have increased the max batch size per prediction request, you constantly send enough data to fill the entire batch and your CPUs don't keep up anymore.
+  * When you have increased the max batch size per prediction request, you constantly send enough data to fill the entire batch and your CPUs don't keep up anymore.
 
-<Callout icon="❗️" theme="error">
-  **Important**
+  <Callout icon="❗️" theme="error">
+    **Important**
 
-  _**Do not waste GPUs!**_
+    ***Do not waste GPUs!***
 
-  Don't deploy a GPU instance if you process requests one by one. GPUs exist to parallelize the computation. When you process a batch of size 1, a GPU won't give you any performance improvements.
-</Callout>
+    Don't deploy a GPU instance if you process requests one by one. GPUs exist to parallelize the computation. When you process a batch of size 1, a GPU won't give you any performance improvements.
+  </Callout>
+</Accordion>
+
+<Accordion title="When should I increase the batch size?" icon="fa-info-circle">
+* If your code in the predict function and the model can handle more than one value (preferably without iterating over them in the predict function).
+* If you can group requests into batches (you have enough data to send and the client application can handle that).
 </Accordion>
 
 **When Should I Increase the Number of Replicas?**
