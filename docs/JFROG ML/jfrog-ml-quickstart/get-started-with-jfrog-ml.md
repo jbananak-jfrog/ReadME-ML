@@ -13,9 +13,7 @@ metadata:
 Deploy your first model on JFrog ML in minutes!
 
 <Callout icon="📘" theme="info">
-  **Note**
-
-  _**Installation**_
+  **Installation**
 
   Follow the [Set Up JFrog ML](doc:setting-up-jfrog-ml) guide prior to completing this guide.
 </Callout>
