@@ -9,7 +9,7 @@ metadata:
 
 Optimize real-time models for performance and maximal efficiency.
 
-## Optimizing real-time models
+## Optimizing Real-time Models
 
 When deploying real-time models to JFrog ML, we receive many questions regarding performance and optimization:
 
@@ -19,25 +19,33 @@ When deploying real-time models to JFrog ML, we receive many questions regarding
 
 We summarized in this document some of the common issues and topics to help you answer these pressing questions. 🤔
 
-## Cluster configuration
+## Cluster Configuration
 
 **Number of replicas** is the number of instances deployed in Kubernetes.
 
 The load balancer splits the traffic between the number of replicas, the bigger the number, the more live replicas are deployed.
 
-## Pod configuration
+## Pod Configuration
 
 * **Instance size** determines the number of vCPUs, RAM memory and GPU specifications of each replica.
 * **Number of workers** determines the number of forked processes within each replica.
 * **Maximal batch size** is the number of rows in the `DataFrame` received in the model's predict function.
 
-## When should I increase the number of replicas?
+## FAQs
+
+<Accordion title="When Should I Increase the Number of Replicas?" icon="fa-info-circle">
+* When expecting a spike in traffic increasing the number of replicas temporarily
+* When using a large number of cheaper pods.
+* When modifying configuration in for a single replica doesn't increase performance when traffic increases
+</Accordion>
+
+**When Should I Increase the Number of Replicas?**
 
 * When expecting a spike in traffic increasing the number of replicas temporarily
 * When using a large number of cheaper pods.
 * When modifying configuration in for a single replica doesn't increase performance when traffic increases
 
-## When should I increase the number of vCPUs?
+**When should I increase the number of vCPUs?**
 
 * If you want to use more workers and handle multiple requests in parallel.
 
@@ -51,11 +59,11 @@ The load balancer splits the traffic between the number of replicas, the bigger 
 
 In general, ML inference is a CPU-bound process, so we should follow the rule of having **1 vCPU per two worker processes**. Of course, if you run a simple model, you may try increasing the number of workers per vCPU.
 
-## When should I increase the number of workers?
+**When should I increase the number of workers?**
 
 Increase the number of workers if you need to handle more traffic and your pods still have some unused CPU capacity and RAM.
 
-## When should I increase the amount of RAM?
+**When should I increase the amount of RAM?**
 
 * When increasing the number of workers on each pod.
 
