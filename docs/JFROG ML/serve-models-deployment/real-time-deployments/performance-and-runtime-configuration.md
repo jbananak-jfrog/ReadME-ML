@@ -34,9 +34,23 @@ The load balancer splits the traffic between the number of replicas, the bigger 
 ## FAQs
 
 <Accordion title="When Should I Increase the Number of Replicas?" icon="fa-info-circle">
-* When expecting a spike in traffic increasing the number of replicas temporarily
-* When using a large number of cheaper pods.
-* When modifying configuration in for a single replica doesn't increase performance when traffic increases
+  * When expecting a spike in traffic increasing the number of replicas temporarily
+  * When using a large number of cheaper pods.
+  * When modifying configuration in for a single replica doesn't increase performance when traffic increases
+</Accordion>
+
+<Accordion title="When should I increase the number of vCPUs?" icon="fa-info-circle">
+  * If you want to use more workers and handle multiple requests in parallel.
+
+<Callout icon="❗️" theme="error">
+  **Important**
+
+  _**Don't waste vCPUs!**_
+
+  If you do not increase the number of workers, but increase vCPUs, you will waste resources! Those additional CPUs will not be used.
+</Callout>
+
+In general, ML inference is a CPU-bound process, so we should follow the rule of having **1 vCPU per two worker processes**. Of course, if you run a simple model, you may try increasing the number of workers per vCPU.
 </Accordion>
 
 **When Should I Increase the Number of Replicas?**
