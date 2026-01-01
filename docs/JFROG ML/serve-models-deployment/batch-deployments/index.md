@@ -1,6 +1,6 @@
 ---
 title: Batch Deployments
-excerpt: Given a successful build, you can deploy your model as a batch application.
+excerpt: After a successful build, you can deploy your model as a batch application.
 deprecated: false
 hidden: false
 metadata:
@@ -89,13 +89,10 @@ This deployment type enables you to run batch inference executions in the system
       <td style={{ textAlign: "left" }}>
         The CPU fraction allocated to each pod. The CPU resource is measured in CPU units. One CPU, in JFrog ML, is equivalent to:
 
-        1 AWS vCPU
-
-        1 GCP Core
-
-        1 Azure vCore
-
-        1 Hyperthread on a bare-metal Intel processor with Hyperthreading
+        * 1 AWS vCPU
+        * 1 GCP Core
+        * 1 Azure vCore
+        * 1 Hyperthread on a bare-metal Intel processor with Hyperthreading
       </td>
 
       <td style={{ textAlign: "left" }}>
@@ -193,7 +190,7 @@ This deployment type enables you to run batch inference executions in the system
 
 ## Batch Deployment from the UI
 
-To deploy a batch model from the UI:
+▶**To deploy a batch model from the UI:**
 
 1. In the JFrog Platform, select **Models** and select a model to deploy.
 2. Select the **Builds** tab. Find a build to deploy and click the deployment toggle. The **Deploy** dialog box appears.
@@ -201,9 +198,11 @@ To deploy a batch model from the UI:
 
 ## Batch Deployment from the CLI
 
-To deploy a model in batch mode from the CLI, populate the following command template:
+▶ **To deploy a model in batch mode from the CLI:**
 
-```
+1. Populate the following command template:
+
+```shell
 frogml models deploy batch \
     --model-id <model-id> \
     --build-id <build-id> \
@@ -214,7 +213,7 @@ frogml models deploy batch \
 
 For example, for the model built in the [JFrog ML Quick Start](/docs/get-started-with-jfrog-ml) section, the deployment command is:
 
-```
+```shell
 frogml models deploy batch \
     --model-id churn_model \
     --build-id 7121b796-5027-11ec-b97c-367dda8b746f \
