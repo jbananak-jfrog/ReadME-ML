@@ -1,9 +1,12 @@
 ---
 title: 'Streaming Deployments '
+excerpt: >-
+  Streaming deployments enable you to connect Kafka streams with your models for
+  real-time inference.
 ---
 # Streaming Deployments
 
-Streaming deployments enable you to connect Kafka streams with your models for real-time inference. Leveraging this architecture simplifies the process of processing large amounts of distributed data by eliminating the need for complex triggering and scheduling as fresh data arrives.
+Leveraging this architecture simplifies the process of processing large amounts of distributed data by eliminating the need for complex triggering and scheduling as fresh data arrives.
 
 ### Streaming Use Cases
 
@@ -344,10 +347,17 @@ If the consumer group does n**ot have a previously committed offset** (for examp
         Producer Bootstrap Servers (Required)
       </td>
 
-      <td colspan="3">
+      <td>
         A list of Kafka bootstrap servers to produce model inference outputs.
       </td>
-    
+
+      <td>
+
+      </td>
+
+      <td>
+
+      </td>
     </tr>
 
     <tr>
@@ -355,19 +365,25 @@ If the consumer group does n**ot have a previously committed offset** (for examp
         Producer Topic*
       </td>
 
-      <td colspan="3">
+      <td>
         The Kafka topic to which the model will produce messages.
       </td>
 
-      
+      <td>
+
+      </td>
+
+      <td>
+
+      </td>
     </tr>
 
     <tr>
-      <td rowspan="6">
+      <td>
         Compression Type
       </td>
 
-      <td colspan="3">
+      <td>
         Determines how messages are compressed before being stored in Kafka.
 
         Default: uncompressed
@@ -375,11 +391,16 @@ If the consumer group does n**ot have a previously committed offset** (for examp
         Compressing messages can significantly reduce the amount of data transmitted over the network and storage requirements in Kafka. Options:
       </td>
 
-     
+      <td>
+
+      </td>
+
+      <td>
+
+      </td>
     </tr>
 
     <tr>
-     
       <td>
         **Compression Type**
       </td>
@@ -391,11 +412,13 @@ If the consumer group does n**ot have a previously committed offset** (for examp
       <td>
         **Best Use**
       </td>
+
+      <td>
+
+      </td>
     </tr>
 
     <tr>
-  
-
       <td>
         None (`none`)
       </td>
@@ -407,10 +430,13 @@ If the consumer group does n**ot have a previously committed offset** (for examp
       <td>
         When message size isn’t important, or data is already compressed or optimized.
       </td>
+
+      <td>
+
+      </td>
     </tr>
 
     <tr>
-  
       <td>
         Gzip ( `gzip`)
       </td>
@@ -422,11 +448,13 @@ If the consumer group does n**ot have a previously committed offset** (for examp
       <td>
         Provides a good balance between compression ratio and CPU overhead.
       </td>
+
+      <td>
+
+      </td>
     </tr>
 
     <tr>
-  
-
       <td>
         Snappy ( ` snappy`)
       </td>
@@ -438,11 +466,13 @@ If the consumer group does n**ot have a previously committed offset** (for examp
       <td>
         Faster than gzip but with a lower compression ratio.
       </td>
+
+      <td>
+
+      </td>
     </tr>
 
     <tr>
-   
-
       <td>
         LZ4 (`lz4`)
       </td>
@@ -453,6 +483,10 @@ If the consumer group does n**ot have a previously committed offset** (for examp
 
       <td>
         Fastest option; slightly lower compression ratio than gzip or Snappy.
+      </td>
+
+      <td>
+
       </td>
     </tr>
   </tbody>
