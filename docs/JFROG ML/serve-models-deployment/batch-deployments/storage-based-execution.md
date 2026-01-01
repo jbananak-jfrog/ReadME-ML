@@ -13,7 +13,7 @@ Each file in the input path is translated to a single unit of processing (a JFro
 <Callout icon="⚠️" theme="warning">
   **Warning** - _**Task Processing**_
 
-  As the file is transformed to a single prediction request, you must ensure that the model is deployed on an instance with sufficient resources to handle the batch request.
+  As the file is transformed to a single prediction request, ensure that the model is deployed on an instance with sufficient resources to handle the batch request.
 
   Where batch predictions are resource-heavy, consider splitting the input dataset into multiple smaller files.
 </Callout>
