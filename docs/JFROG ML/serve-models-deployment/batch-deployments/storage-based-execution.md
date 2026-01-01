@@ -45,7 +45,7 @@ Each file in the input path is translated to a single unit of processing (a JFro
 
 Currently, only **S3** buckets situated in the region configured for your JFrog ML environment are compatible as sources for input / output paths.
 
-If you intend to employ a different IAM Role ARN to grant permissions to an S3 location, you must include the provided trust policy. For customized parameters, please reach out to our support team.
+To employ a different IAM Role ARN to grant permissions to an S3 location, include the provided trust policy. For customized parameters, please reach out to our support team.
 
 ```json
 {
