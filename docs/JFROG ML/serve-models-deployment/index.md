@@ -14,7 +14,7 @@ This section reviews the following topics:
 
 <Anchor label="Prediction Input & Output Adapters" title="Prediction Input & Output Adapters" href="/docs/prediction-input---output-adapters">Prediction Input & Output Adapters</Anchor>
 
-<Anchor label="Real-Time Deployments" title="Real-Time Deployments" href="/docs/real-time-deployments">Real-Time Deployments</Anchor>
+[Real-Time Deployments](/docs/real-time-deployments)
 
 <Anchor label="Batch Deployments" title="Batch Deployments" href="/docs/batch-deployments">Batch Deployments</Anchor>
 
