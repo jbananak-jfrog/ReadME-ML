@@ -200,8 +200,8 @@ For example, if you request five pods (whether specified by the deployment or th
 
   You can run multiple executions concurrently, with one **limitation**: To prevent redundancy, you cannot run executions with identical values for the following parameters:
 
-  * Model ID 
-  * Build ID 
+  * Model ID
+  * Build ID
   * Source Bucket
   * Source Folder
   * Destination Bucket
@@ -210,11 +210,9 @@ For example, if you request five pods (whether specified by the deployment or th
 
 ## Switching Between On-demand and Spot Instances
 
-It is possible to choose a specific instance type per batch execution, overriding the configuration stated at the currently deployed models.
+To override the instance type for a specific batch execution, specify the purchase_option (either "on-demand" or "spot") within advanced_options.
 
-By providing the purchase option as advanced options, you may choose the instance type for a specific batch execution.
-
-When not providing a specific option, the option stated in the currently deployed build will be taken.
+If you do not specify this option, the execution defaults to the configuration defined in the currently deployed model.
 
 ```
 from frogml.core.clients.batch_job_management.executions_config import ExecutionConfig
