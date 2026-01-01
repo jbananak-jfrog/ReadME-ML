@@ -26,6 +26,4 @@ This section reviews the following topics:
 
 [Streaming Deployments](/docs/streaming-deployments)
 
-<br />
-
 <Anchor label="Inference Analytics" title="Inference Analytics" href="/docs/inference-analytics">Inference Analytics</Anchor>
