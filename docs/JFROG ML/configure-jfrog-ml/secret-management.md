@@ -1,5 +1,8 @@
 ---
 title: Secret Management
+excerpt: >-
+  Use secrets to avoid revealing confidential information in model deployments
+  and data source connections.
 deprecated: false
 hidden: false
 metadata:
@@ -16,16 +19,12 @@ metadata:
 
 Securely managing sensitive data and credentials in complex data projects is crucial.
 
-Use secrets to avoid revealing confidential information in model deployments and data source connections.
-
 In traditional approaches, using credentials in an ML build involved including them in the Python code or using environment variables. Both options pose significant security risks.
 
 Using the JFrog ML Secret Service, you can easily and securely store your credentials and pass them to your Python code with full confidentiality. For example, secrets are used for securely saving API keys. See also [How to Get API Keys for External Providers](/docs/connect-ai-providers#how-to-get-api-keys-for-external-providers).
 
 <Callout icon="❗️" theme="error">
-  **Important**
-
-  _**Secret Naming Conventions**_
+  **Important** - _**Secret Naming Conventions**_
 
   * Secret names may be up to 36 characters and must start with a letter. They may contain letters, numbers, and hyphens (`-`), but **not** underscores (`_`). All letters must be in lowercase. Secret names must be a minimum of 3 characters.
   * Secret names may be up to 36 characters, may contain letters, numbers and dash ("-"), and must start with a letter.
@@ -43,10 +42,10 @@ Using the JFrog ML Secret Service, you can easily and securely store your creden
 **To create secrets via the UI:**
 
 1. In the JFrog Platform, select the **Administration** module.
-2. Scroll down the left menu and select **AI/ML Settings** > **Secrets**. The Secrets page displays a list of all your current secrets.
-3. Click **Create new secret**.
-4. Enter **Secret name** and **Secret value**.
-5. Click **Save**. The "Successfully created new secret message" appears, and the secret now appears in the _Secrets_ page.
+2. In the left menu navigate to5 **AI/ML Settings** > **Secrets**. The Secrets page displays a list of all your current secrets.
+   1. Click **Create new secret**.
+3. Enter **Secret name** and **Secret value**.
+4. Click **Save**. The "Successfully created new secret message" appears, and the secret now appears in the _Secrets_ page.
    ![](https://files.readme.io/a1fe5c0ddac3e880dc578b4f1547eee985148506d9d88864b932a30b7bc528f1-uuid-c362639b-120f-a177-ed14-24006a530530.png)
 
 ### The Secrets Page
@@ -74,7 +73,7 @@ frogml secrets set --name <aws-api-secret> --value <the_value_of_the_secret>
 
 You may need the credentials during a build process. For example, retrieving a pre-trained model or data that was not stored in JFrog ML Feature Store. To retrieve the credentials, import the `SecretServiceClient` and use it to retrieve the secret:
 
-```
+```python
 from frogml import FrogMlModel
 from frogml.core.clients.secret_service import  SecretServiceClient
 
@@ -107,7 +106,7 @@ JFrog ML <Anchor label="Feature Store" title="Feature Store" href="/docs/feature
    ```
 2. Define a Snowflake data source using the secret names:
 
-   ```
+   ```python
    from frogml.feature_store.data_sources import SnowflakeSource
 
    # The secret name stored in the Secret Service
@@ -132,3 +131,5 @@ JFrog ML <Anchor label="Feature Store" title="Feature Store" href="/docs/feature
        warehouse=WAREHOUSE
    )
    ```
+
+<br />
