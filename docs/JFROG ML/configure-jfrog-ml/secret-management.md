@@ -20,7 +20,7 @@ Use secrets to avoid revealing confidential information in model deployments and
 
 In traditional approaches, using credentials in an ML build involved including them in the Python code or using environment variables. Both options pose significant security risks.
 
-Using the JFrog ML Secret Service, you can easily and securely store your credentials and pass them to your Python code with full confidentiality. For example, secrets are used for securely saving API keys. See also [How to Get API Keys for External Providers](/docs/how-to-get-api-keys-for-external-providers).
+Using the JFrog ML Secret Service, you can easily and securely store your credentials and pass them to your Python code with full confidentiality. For example, secrets are used for securely saving API keys. See also [How to Get API Keys for External Providers](/docs/connect-ai-providers#how-to-get-api-keys-for-external-providers).
 
 <Callout icon="❗️" theme="error">
   **Important**
