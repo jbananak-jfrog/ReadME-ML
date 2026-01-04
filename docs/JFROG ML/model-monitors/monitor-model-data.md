@@ -109,7 +109,7 @@ Under the _Advanced Configuration_ menu are some additional parameters you may c
 <Callout icon="📘" theme="info">
   **Note** - _**Channels Integrations**_
 
-  Prior to setting up alerts, please make sure that the relevant integrations and channels are configured. For more information, please see the <Anchor label="Alert Integrations" target="_blank" href="https://jfrog.info/help/r/jfrog-ml-documentation/alerts">Alert Integrations</Anchor> guide.
+  Prior to setting up alerts, please make sure that the relevant integrations and channels are configured. For more information, please see the <Anchor label="Alert Integrations" target="_blank" href="https://jfrog.info/help/r/jfrog-ml-documentation/jfrog-ml-alerts">Alert Integrations</Anchor> guide.
 </Callout>
 
 Alerts help you stay up-to-date with your model in real time. After configuring your model monitor details, choose the adequate threshold and alerting condition, whether above or below the threshold value.
