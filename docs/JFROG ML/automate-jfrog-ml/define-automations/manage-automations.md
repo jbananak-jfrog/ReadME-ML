@@ -10,6 +10,8 @@ metadata:
     - UUID-f01784db-26eb-7cdf-7716-b8b87915fae7
   robots: index
 ---
+This section describes how to list your defined automations, or executions of a specific automation. It also provides the instruction for deleting an automation.**
+
 ## List Automations
 
 To list the automations using the Frogml CLI:
@@ -33,3 +35,5 @@ To list the executions of specific automation:
 ```
 frogml automations executions list --automation-id <your-automation-id>
 ```
+
+<br />
