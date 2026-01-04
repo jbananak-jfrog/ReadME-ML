@@ -72,30 +72,28 @@ The `FrogmlBuildDeploy` action has three configuration parameters:
 
 ### `BuildSpecifications`
 
-To configure the automation build specification, we need a link to the git repository.
+To configure the automation build specification, link to the git repository.
 
 Note that the link consists of two parts delimited by hashtag `#`:
 
 * The repository URL
 * The path within the repository
 
-For example, when we use this link: `https://github.com/org_id/repository_name.git#dir_1/dir2` .
-
-The platform will clone the `https://github.com/org_id/repository_name.git` repository and change the working directory to `dir_1/dir_2` before starting the build.
+For example, when using this link: `https://github.com/org_id/repository_name.git#dir_1/dir2` , the platform will clone the `https://github.com/org_id/repository_name.git` repository and change the working directory to `dir_1/dir_2` before starting the build.
 
 In this example, `dir_1/dir_2` should be the directory containing the `main` and `tests` folders.
 
 ### Using Private Repositories
 
-When using private repositories, we must also specify the access token or private key.
+When using private repositories,  the access token or private key must also be specified.
 
-As the JFrog ML platform doesn't allow the usage of plain text token, we must store the access tokens in the [JFrog ML Secret Manager](/docs/doc:secret-management#model-build-credentials), and specify only the secret name.
+As the JFrog ML platform does not allow the usage of plain text token, the access tokens must be stored in the [JFrog ML Secret Manager](/docs/doc:secret-management#model-build-credentials), and only the secret name should be specified.
 
-When not using the default folder structure, in which `main` is the models folder, we must also specify the git branch and the directory containing the ML model.
+If the default folder structure (in which `main` is the models folder) is **not** used, you must also specify the git branch and the directory containing the ML model.
 
 ### Custom Resources
 
-In the build specification, you may control the number of CPUs, amount of memory or use GPUs [Instance Sizes](/docs/instance-sizes-ml-credits)
+In the build specification, you can control the number of CPUs, amount of memory or use GPUs [Instance Sizes](/docs/instance-sizes-ml-credits)
 
 **Defining CPU resources:**
 
@@ -109,7 +107,7 @@ resources=CpuResources(cpu_fraction=2, memory="2Gi"))
 resources=GpuResources(gpu_type="NVIDIA_K80", gpu_amount=1)
 ```
 
-Alternatively, you can specify the instance type as opposed to fractions of resources. For example:
+Alternatively, you can specify the instance type instead of fractions of resources. For example:
 
 ```
 resources=ClientResources(instance='gpu.a10.8xl') #GPU
@@ -119,32 +117,30 @@ resources=ClientResources(instance='gpu.a10.8xl') #GPU
 resources=ClientResources(instance='medium')  #CPU
 ```
 
-It is possible specify the IAM role used in production (`assumed_iam_role`) or a custom docker image (`base_image`).
+You can specify the IAM role used in production (`assumed_iam_role`) or a custom docker image (`base_image`).
 
 ## Environment Variables
 
-Additionally, we can specify the environment variables to configure in the build environment.
-
-he environment variables should be specified with the _env_vars_ field (list), and the value as the following:
+Additionally, you can specify the environment variables to configure in the build environment. These should be specified with the _env_vars_ field (list), and the value as the following:
 
 `key=value`.
 
-The model's code must log the metric that describes the model's performance. We will use the metric in the deployment condition. If you don't know how to do it, look at our Logging and Monitoring Guide.
+The model's code must log the metric that describes the model's performance. Use the metric in the deployment condition. If you don't know how to do it, look at our Logging and Monitoring Guide.
 
 ## Disable Push Image
 
-It is possible to disable the push image phase in cases you don't want the final build saved to the docker repository. You can do that by adding `push_image=False` to the BuildSpecification
+If you do not want the final build saved to the docker repository, disable the push image phase. You can do that by adding `push_image=False` to the `BuildSpecification.`
 
 ### `BuildMetric`
 
 During the build process, it is common to log metrics such as accuracy, F1 score, or loss. When executing the automation, these logged values may be compared against a specified threshold.
 
-For each metric, it is possible to define whether the value should be above or below the threshold. Once this condition is met, the JFrog ML platform will proceed to deploy the model.
+For each metric, you can define whether the value should be above or below the threshold. Once this condition is met, the JFrog ML platform will proceed to deploy the model.
 
 The `BuildMetric` object has three parameters:
 
-1. **metric_name**: The metric name we logged during the build phase
-2. **direction**: Show the value be below or above the threshold, where the valid values are `ThresholdDirection.ABOVE`, `ThresholdDirection.BELOW`
+1. **metric_name**: The metric name you logged during the build phase
+2. **direction**: Shows the value below or above the threshold, where the valid values are `ThresholdDirection.ABOVE`, `ThresholdDirection.BELOW`
 3. **threshold**: The threshold used for comparison
 
 <Callout icon="⚠️" theme="warning">
@@ -155,17 +151,17 @@ The `BuildMetric` object has three parameters:
 
 ### Dynamic Threshold
 
-To use a dynamic threshold, we can use a SQL expression as the threshold value.
+To use a dynamic threshold, use an SQL expression as the threshold value. 
 
-In this case, the JFrog ML platform will run the SQL query in JFrog ML Model Analytics and compare the model's metric with the threshold produced by the SQL query.
+In this case, the JFrog ML platform runs the SQL query in JFrog ML Model Analytics and compares the model's metric with the threshold produced by the SQL query.
 
 The query must return a single row containing only one column.
 
 ### `DeploymentSpecifications`
 
-After we build the model, compared its performance with the threshold, and concluded that the model is ready to be deployed, the platform will use the deployment specification to configure the model's runtime environment.
+After the model has been built, its performance compared with the threshold, and it has been concluded that the model is ready to be deployed, the platform uses the deployment specification to configure the model's runtime environment.
 
-We may specify:
+You can specify:
 
 <Table>
   <thead>
@@ -361,7 +357,7 @@ We may specify:
 
 ## Defining Auto-Scaling
 
-When we want to define an auto-scaling policy for our deployment, we have to use the following pattern:
+To define an auto-scaling policy for the deployment, use the following pattern:
 
 ```
 auto_scale_config = AutoScalingConfig(min_replica_count=1,
