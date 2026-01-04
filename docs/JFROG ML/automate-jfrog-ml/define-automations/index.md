@@ -25,7 +25,7 @@ metadata:
 
 In the JFrog ML platform, you can easily define either time-based or trigger-based automations for model retraining or batch model executions.
 
-## Configuring Automations
+## Configure Automations
 
 <Callout icon="⚠️" theme="warning">
   **Warning**
@@ -33,7 +33,7 @@ In the JFrog ML platform, you can easily define either time-based or trigger-bas
   The automation name must be unique throughout your models within the JFrog ML environment.
 </Callout>
 
-We now create an instance of the Automation class and configure it:
+To configure an automation, create an instance of the Automation class and configure it:
 
 ```
 from frogml.core.automations import Automation, ScheduledTrigger, FrogmlBuildDeploy,\
@@ -62,14 +62,12 @@ test_automation = Automation(
 ```
 
 <Callout icon="📘" theme="info">
-  **Note**
-
-  _**Scheduler Timezone**_
+  **Note** - _**Scheduler Timezone**_
 
   The default timezone for the cron scheduler is UTC.
 </Callout>
 
-### Selecting an Instance Type
+### Select an Instance Type
 
 You can specify the `purchase_option` parameter of the `BuildSpecifications` to select between on-demand and spot instances. Available values: `spot` and `ondemand`. For example:
 
@@ -89,15 +87,13 @@ build_spec=BuildSpecifications(
 
 `spot` is the default value if you don't specify anything.
 
-## Triggering Automations
+## How to Triggering Automations
 
-Automations may be configured to either compare the model's performance with a pre-defined threshold and deploy the model when the evaluation results pass.
-
-We can trigger the automation in two ways:
+Automations can be configured to either compare the model's performance with a pre-defined threshold and deploy the model when the evaluation results pass. The automations can be triggered in two ways:
 
 ### Schedule-based Triggers
 
-Triggering an automation based on an interval name or a cron expression.
+Automations are triggered based on an interval name or a cron expression.
 
 In the case of an interval configuration, the trigger configuration would look like this:
 
@@ -110,9 +106,9 @@ ScheduledTrigger(interval="Daily")
 
 ### Metric-based Triggers
 
-To retrain the model based on production performance metrics, we can use the `MetricBasedTrigger`.
+To retrain the model based on production performance metrics, use the `MetricBasedTrigger`.
 
-In this case, we need to specify a SQL query which should return the metric value from JFrog ML model Analytics:
+In this case, specify a SQL query which should return the metric value from JFrog ML model Analytics:
 
 ```
 from frogml.core.automations import MetricBasedTrigger, ThresholdDirection, SqlMetric
