@@ -26,22 +26,14 @@ Get started:
 2. Enter your connection information: 
    * Opsgenie region
    * Opsgenie API key
-3. Click `Connect`.
-   * Validating your credentials will trigger a test alert and close it right away.
-   * JFrog ML creates automatically a new channels to send alerts in.
-
-Once the validation succeeds, your Opsgenie Integration will be marked as connected.
 
 ### PagerDuty
 
-* Go to <Anchor label="PagerDuty Integration" target="_blank" href="https://app.qwak.ai/qwak-admin/integrations/pagerduty">PagerDuty Integration</Anchor> page
+* Go to PagerDuty Integration page
 * JFrog ML supports 2 types of PagerDuty integrations:
 
   * Events V1 integration using your `Service Key`.
   * Events V2 integration using your `Routing Key`.
-* Validating your credentials will trigger a test alert and close it right away.
-* JFrog ML creates automatically a new channels to send alerts in.
-* Once the validation succeeds, your Pagerduty Integration will be marked as connected.
 
 ### Configuring Channels
 
