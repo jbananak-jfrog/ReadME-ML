@@ -1,9 +1,5 @@
 ---
 title: Automations
-excerpt: >-
-  JFrog ML offers built-in automations for various recurring actions in the
-  model lifecycle. These automations are meant to replace external orchestration
-  tools such as Airflow for example.
 deprecated: false
 hidden: false
 metadata:
