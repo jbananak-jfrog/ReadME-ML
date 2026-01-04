@@ -8,23 +8,21 @@ hidden: false
 metadata:
   robots: index
 ---
-This action streamlines the build and deployment workflows. It keeps your model accurate by automatically re-training and deploying based on a cron expression, defined time interval, or metric base triggers.
+Use this option to streamline the build and deployment workflows. It keeps your model accurate by automatically re-training and deploying based on a cron expression, defined time interval, or metric base triggers.
 
 You can also define a deployment conditions to verify that the new build passes acceptance criteria within the desired parameters before replacing a currently deployed model.
 
 ## Automation Example
 
 <Callout icon="⚠️" theme="warning">
-  **Warning**
+  **Warning** - **Before Setting Up Automation**
 
-  **Before Setting Up Automation**
+  Prior to configuring automation, it is essential to have your model's code stored in a Git repository. It is recommended to confirm that all necessary Git repository access is correctly configured via CLI model builds. Ensure the JFrog ML model can successfully build from Git before proceeding with automation.
 
-  Prior to configuring automation, it's essential to have your model's code stored in a Git repository. It's recommended to confirm that all necessary Git repository access is correctly configured via CLI model builds. Ensure the JFrog ML model can successfully build from Git before proceeding with automation.
-
-  For additional details on building models from Git, refer to our [Build Configurations](/docs/advanced-build-concepts#build-configurations) page.
+  For additional details on building models from Git, refer to the [Build Configurations](/docs/advanced-build-concepts#build-configurations) page.
 </Callout>
 
-The automation will fetch the model's code during the training process. In the case of using a private repository, it is necessary to generate a Git access token and securely store the key in the <Anchor label="Secret Manager" title="Secret Management" href="/docs/secret-management">Secret Manager</Anchor>.
+The automation fetches the model's code during the training process. When using a private repository, you must generate a Git access token and securely store the key in the <Anchor label="Secret Manager" title="Secret Management" href="/docs/secret-management">Secret Manager</Anchor>.
 
 ```
 from frogml.core.automations import Automation, ScheduledTrigger, FrogmlBuildDeploy,\
