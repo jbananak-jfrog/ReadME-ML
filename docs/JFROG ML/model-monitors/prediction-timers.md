@@ -1,14 +1,19 @@
 ---
 title: Prediction Timers
+excerpt: >-
+  JFrog ML prediction timers help troubleshoot model prediction latency, measure
+  prediction times, find bottlenecks, and optimize performance.
 deprecated: false
 hidden: false
 metadata:
   title: Prediction Timers
-  description: JFrog ML prediction timers help troubleshoot model prediction latency, measure prediction times, find bottlenecks, and optimize performance.
-  robots: index
+  description: >-
+    JFrog ML prediction timers help troubleshoot model prediction latency,
+    measure prediction times, find bottlenecks, and optimize performance.
   legacyUUIDs:
     - UUID-16a31696-1031-c64c-d52a-c5a4b98aade3
     - UUID-bead09cb-9188-06f9-d932-a08b7968b012
+  robots: index
 ---
 JFrog ML prediction timers help troubleshoot model prediction latency, measure prediction times, find bottlenecks, and optimize performance.
 
