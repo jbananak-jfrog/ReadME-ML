@@ -20,14 +20,6 @@ To list the automations using the Frogml CLI:
 frogml automations list
 ```
 
-## Delete Automations
-
-To delete an automation using the Frogml CLI (using automation id as a parameter):
-
-```
-frogml automations delete --automation-id <your-automation-id>
-```
-
 ## List Automation Executions
 
 To list the executions of specific automation:
@@ -36,4 +28,10 @@ To list the executions of specific automation:
 frogml automations executions list --automation-id <your-automation-id>
 ```
 
-<br />
+## Delete Automations
+
+To delete an automation using the Frogml CLI (using automation id as a parameter):
+
+```
+frogml automations delete --automation-id <your-automation-id>
+```
