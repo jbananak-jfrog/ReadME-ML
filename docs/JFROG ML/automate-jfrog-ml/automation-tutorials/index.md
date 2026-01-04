@@ -22,7 +22,7 @@ This section reviews the following topics:
 
 ## Scheduled Training and Deployment
 
-In this tutorial, we will show you how to configure schedule-based automation to periodically retrain and deploy your new model version.
+This tutorial, shows you how to configure schedule-based automation to periodically retrain and deploy your new model version.
 
 When to use this (scheduled-based) automation?
 
@@ -36,7 +36,7 @@ Make sure you store the model code in a Git. We will need the repository URL and
 
 ### Configuration
 
-First, we create an empty Python script and define the import the dependencies and create an instance of the Automation class and configure it:
+First, create an empty Python script and define the import the dependencies and create an instance of the Automation class and configure it:
 
 ```python
 from frogml.core.automations  import Automation, ScheduledTrigger, \
@@ -66,11 +66,11 @@ test_automation = Automation(
 )
 ```
 
-We have described the configuration parameters in our <Anchor label="Automating Build and Deploy" title="Automating Build and Deploy" href="/docs/automating-build-and-deploy">Automating Build and Deploy</Anchor> page.
+The configuration parameters are described in the <Anchor label="Automating Build and Deploy" title="Automating Build and Deploy" href="/docs/automating-build-and-deploy">Automating Build and Deploy</Anchor> page.
 
 ### Publishing the Automation
 
-Finally, use the JFrog ML CLI to publish (`register`) the automation. You must specify the target `--environment` and the directory containing your automation definitions using `-p`. In this example, we use `.` to indicate the current working directory.
+Finally, use the JFrog ML CLI to publish (`register`) the automation. You must specify the target `--environment` and the directory containing your automation definitions using `-p`. In this example, `.` is used to indicate the current working directory.
 
 ```
 frogml automations register --environment environment_name -p .
@@ -78,7 +78,7 @@ frogml automations register --environment environment_name -p .
 
 ## Monitoring Batch Execution Failures
 
-This guide demonstrates how to configure a monitoring solution that detects failed batch executions on JFrog ML and sends notifications to Slack using AWS Lambda. The scripts provided below are flexible and can be adapted to fit specific infrastructure or notification requirements.
+This section demonstrates how to configure a monitoring solution that detects failed batch executions on JFrog ML and sends notifications to Slack using AWS Lambda. The scripts below are flexible and can be adapted to fit a specific infrastructure or notification requirement.
 
 ### Prerequisites:
 
@@ -187,7 +187,7 @@ def monitor_executions(event, context):
 
 #### Deploying the Automation on AWS Lambda
 
-To finalize the setup, deploy the scripts to the AWS cloud environment.  
+To finalize the setup, deploy the scripts to the AWS cloud environment.
 
 **Steps to deploy:**
 
