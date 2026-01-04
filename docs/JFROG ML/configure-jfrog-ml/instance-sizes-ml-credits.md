@@ -27,6 +27,8 @@ On this page, you will find detailed information about the different instance si
 
 ## Build & Deploy Models
 
+JFrog ML offers a wide range of instance size to build and deploy models.
+
 <Callout icon="📘" theme="info">
   **Note**
 
@@ -35,9 +37,9 @@ On this page, you will find detailed information about the different instance si
 
 ### General Purpose Instances
 
-JFrog ML offers a wide range of instance size to build and deploy models. Our general-purpose instances provide varying levels of CPU and memory resources, allowing you to optimize efficiency and performance.
+Our general-purpose instances provide varying levels of CPU and memory resources, allowing you to optimize efficiency and performance.
 
-Choose the instance size that best matches your requirements from the table below:
+Select the instance size that best matches your requirements from the table below:
 
 | Instance | CPUs | Memory (GB) | ML Credits (per hour) |
 | :------- | :--- | :---------- | :-------------------- |
@@ -77,9 +79,9 @@ Build and deploy models on GPU-based machines from the selection available in th
 
 ### Data Cluster Sizes
 
-Our Feature Store offers a variety of sizes to accommodate your needs. Select the appropriate data cluster size to ensure scalability and efficiency in handling your data ingestion jobs.
+Our Feature Store offers a variety of data cluster sizes to accommodate your needs. Select the appropriate size to ensure scalability and efficiency in handling your data ingestion jobs.
 
-Take a look at the table below to explore the available data cluster sizes:
+The table below explores the available data cluster sizes:
 
 | Size     | ML Credits (per hour) | Notes                            |
 | :------- | :-------------------- | :------------------------------- |
@@ -94,7 +96,7 @@ Take a look at the table below to explore the available data cluster sizes:
 
 Using the `frogml-cli` provides you with flexibility in choosing instance sizes for building and deploying models.
 
-Take a look at the examples below to understand how to specify the desired instance size.
+See the examples below to understand how to specify the required instance size.
 
 ### Build Models on CPU Instances
 
@@ -123,12 +125,12 @@ frogml models deploy realtime --model-id "example-model-id" --instance "gpu.a10.
 <Callout icon="📘" theme="info">
   **Note**
 
-  Existing resource configuration flags are supported as well: `--memory`, `--cpus`, `--gpu-type`, `--gpu-amount`.
+  Existing resource configuration flags are also supported: `--memory`, `--cpus`, `--gpu-type`, `--gpu-amount`.
 </Callout>
 
-## Instances Sizes in the UI
+## Instance Sizes in the UI
 
-In the JFrog ML UI, you can easily select and configure instance sizes for your models. Whether you need CPU or GPU instances, our UI offers intuitive options to choose the right size for your workload.
+In the JFrog ML UI, you can easily select and configure instance sizes for your models. Whether you need CPU or GPU instances, the JFrog ML UI offers intuitive options to choose the correct size for your workload.
 
 During the deployment process, use the dropdown to specify the instance size for optimal performance.
 
@@ -136,7 +138,7 @@ During the deployment process, use the dropdown to specify the instance size for
 
 ## Setting Custom Configuration
 
-JFrog ML allows you to manually set custom instance configuration sizes for building and deploying your models, regardless of the default instance type options.
+JFrog ML enables you to manually set custom instance configuration sizes for building and deploying your models, regardless of the default instance type options.
 
 Custom instance type configuration is currently available for CPU deployments only.
 
