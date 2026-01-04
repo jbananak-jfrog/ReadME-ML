@@ -25,10 +25,10 @@ Use the analytics in this section to validate that your deployed model is operat
 
 This guide helps you navigate the following distinct analysis workflows:
 
-* [Requirements](inference-distribution-analytics#requirements)Requirements: Prerequisites for setting up distribution monitoring
-* [Inference Data vs. Training Baselines](/inference-distribution-analytics#inference-data-vs.-training-baselines)Inference Data vs Training Baselines: Direct comparison to spot deviations from the original benchmark.
-* [Inference-only Data](/inference-distribution-analytics#inference-only-data) Inference-only Data: Analyzing production trends when baseline data is unavailable
-* [Available Statistics](available-statistics)Available Statistics: The specific metrics used to quantify distribution changes.
+* [Requirements](/docs/inference-distribution-analytics#requirements)Requirements: Prerequisites for setting up distribution monitoring
+* [Inference Data vs. Training Baselines](/docs/inference-distribution-analytics#inference-data-vs-training-baselines)Inference Data vs Training Baselines: Direct comparison to spot deviations from the original benchmark.
+* [Inference-only Data](/docs/inference-distribution-analytics#inference-only-data) Inference-only Data: Analyzing production trends when baseline data is unavailable
+* [Available Statistics](/docs/inference-distribution-analytics#available-statistics)Available Statistics: The specific metrics used to quantify distribution changes.
 
 ### Requirements
 
