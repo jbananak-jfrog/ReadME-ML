@@ -23,7 +23,7 @@ metadata:
 ---
 <br />
 
-In the JFrog ML platform, you can easily define automations for model retraining or batch model executions on either time based or trigger based.
+In the JFrog ML platform, you can easily define either time-based or trigger-based automations for model retraining or batch model executions.
 
 ## Configuring Automations
 
