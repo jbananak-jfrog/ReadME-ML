@@ -4,13 +4,15 @@ deprecated: false
 hidden: false
 metadata:
   title: Secret Management
-  description: Securely managing sensitive data and credentials in complex data projects is crucial.
-  robots: index
+  description: >-
+    Securely managing sensitive data and credentials in complex data projects is
+    crucial.
   legacyUUIDs:
     - UUID-c6a6ce65-bdf5-d04a-0aee-6e9c00997f94
     - UUID-a4668689-7538-26cf-966a-7f7a0ab28ead
+  robots: index
 ---
-### Manage Credentials by Creating Secrets
+## Manage Credentials by Creating Secrets
 
 Securely managing sensitive data and credentials in complex data projects is crucial.
 
@@ -18,26 +20,25 @@ Use secrets to avoid confidential information in model deployments and data sour
 
 In traditional approaches, using credentials in an ML build involved including them in the Python code or using environment variables. Both options pose significant security risks.
 
-Using the JFrog ML Secret Service, you can easily and securely store your credentials and pass them to your Python code with full confidentiality. For example, secrets are used for securely saving API keys. See also [How to Get API Keys for External Providers](/docs/how-to-get-api-keys-for-external-providers "How to Get API Keys for External Providers").
+Using the JFrog ML Secret Service, you can easily and securely store your credentials and pass them to your Python code with full confidentiality. For example, secrets are used for securely saving API keys. See also <Anchor label="How to Get API Keys for External Providers" title="How to Get API Keys for External Providers" href="/docs/how-to-get-api-keys-for-external-providers">How to Get API Keys for External Providers</Anchor>.
 
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-***Secret Naming Conventions***
+  _**Secret Naming Conventions**_
 
-* Secret names may be up to 36 characters and must start with a letter. They may contain letters, numbers, and hyphens (`-`), but **not** underscores (`_`). All letters must be in lowercase. Secret names must be a minimum of 3 characters.
-* Secret names may be up to 36 characters, may contain letters, numbers and dash ("-"), and must start with a letter.
-* Use a logical name that will enable you to remember the value of the secret later.
+  * Secret names may be up to 36 characters and must start with a letter. They may contain letters, numbers, and hyphens (`-`), but **not** underscores (`_`). All letters must be in lowercase. Secret names must be a minimum of 3 characters.
+  * Secret names may be up to 36 characters, may contain letters, numbers and dash ("-"), and must start with a letter.
+  * Use a logical name that will enable you to remember the value of the secret later.
 </Callout>
 
 <Callout icon="⚠️" theme="warning">
-**Warning**
+  **Warning**
 
-After the secret is created, only the secret name is displayed, not the value.
+  After the secret is created, only the secret name is displayed, not the value.
 </Callout>
 
-
-### Creating Secrets via UI
+## Creating Secrets via UI
 
 **To create secrets via the UI:**
 
@@ -45,18 +46,18 @@ After the secret is created, only the secret name is displayed, not the value.
 2. Scroll down the left menu and select **AI/ML Settings** > **Secrets**. The Secrets page displays a list of all your current secrets.
 3. Click **Create new secret**.
 4. Enter **Secret name** and **Secret value**.
-5. Click **Save**. The "Successfully created new secret message" appears, and the secret now appears in the *Secrets* page.
-![Access Secrets from AI/ML Settings](https://files.readme.io/a1fe5c0ddac3e880dc578b4f1547eee985148506d9d88864b932a30b7bc528f1-uuid-c362639b-120f-a177-ed14-24006a530530.png)
+5. Click **Save**. The "Successfully created new secret message" appears, and the secret now appears in the _Secrets_ page.
+   ![](https://files.readme.io/a1fe5c0ddac3e880dc578b4f1547eee985148506d9d88864b932a30b7bc528f1-uuid-c362639b-120f-a177-ed14-24006a530530.png)
 
-#### The Secrets Page
+### The Secrets Page
 
-In the *Secrets* page, you can:
+In the _Secrets_ page, you can:
 
 * Sort ascending/descending by Secret name, Environment, or time of creation.
 * Create a new secret.
 * Delete a secret.
 
-### Creating Secrets via CLI
+## Creating Secrets via CLI
 
 Secrets may be created directly using the JFrog ML CLI.
 
@@ -69,7 +70,7 @@ frogml secrets set --name <aws-api-key> --value <the_value_of_the_key>
 frogml secrets set --name <aws-api-secret> --value <the_value_of_the_secret>
 ```
 
-### Model Build Credentials
+## Model Build Credentials
 
 You may need the credentials during a build process. For example, retrieving a pre-trained model or data that was not stored in JFrog ML Feature Store. To retrieve the credentials, import the `SecretServiceClient` and use it to retrieve the secret:
 
@@ -87,17 +88,16 @@ class TestModel(FrogMlModel)
 ```
 
 <Callout icon="⚠️" theme="warning">
-**Warning**
+  **Warning**
 
-Avoid printing or logging secret values as the model `stdout` is visible on the build logs.
+  Avoid printing or logging secret values as the model `stdout` is visible on the build logs.
 </Callout>
 
+## Feature Store Credentials
 
-### Feature Store Credentials
+JFrog ML <Anchor label="Feature Store" title="Feature Store" href="/docs/feature-store">Feature Store</Anchor> integrates with the Secret Service to enable secure access to data sources. Use your secrets in the data source definition to ensure secure authorized access.
 
-JFrog ML [Feature Store](/docs/feature-store "Feature Store") integrates with the Secret Service to enable secure access to data sources. Use your secrets in the data source definition to ensure secure authorized access.
-
-#### Connecting to Snowflake
+### Connecting to Snowflake
 
 1. Create new secrets with the user name and password:
 
