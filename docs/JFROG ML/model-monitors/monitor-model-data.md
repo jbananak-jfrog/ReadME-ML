@@ -118,7 +118,7 @@ Alerts help you stay up-to-date with your model in real time. After configuring 
 
 Tags and priority help you organize model monitor alerts. Tags let you categorize alerts, while priority helps in sorting alerts as they occur.
 
-<Image alt="Configuring tags and priority for alerts" border={false} src="https://files.readme.io/abf39544e7a2a9183c7dac3a7159542e84e0e690d203867f323b245c78c11942-uuid-12133894-5bcf-191d-fa4e-db5423db87cd.png" />
+<Image align="center" border={false} src="https://files.readme.io/e0f5d28b857a78ac9a39791167d213cb4ef9190a267c729752fdd499522e90fc-tags_and_priority.png" />
 
 ### Priority
 
