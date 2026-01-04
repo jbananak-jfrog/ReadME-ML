@@ -15,26 +15,23 @@ metadata:
     - UUID-bead09cb-9188-06f9-d932-a08b7968b012
   robots: index
 ---
-JFrog ML prediction timers help troubleshoot model prediction latency, measure prediction times, find bottlenecks, and optimize performance.
-
 Configure multiple timers with custom names for clear visibility using either a context manager or a decorator.
 
 After building, deploying and sending inference requests to your model, you can view these timers on the Latency breakdown graph.
 
-![See the Qwak prediction timer in the Model Overview](https://files.readme.io/7d5d9d764abbadd5142a14b9c4caa744b9e1cf934809920571cdaa25a60873c8-uuid-b4fc091d-9e12-c102-6abe-0fcecf365f79.png)
+<Image alt="See the Qwak prediction timer in the Model Overview" border={false} src="https://files.readme.io/7d5d9d764abbadd5142a14b9c4caa744b9e1cf934809920571cdaa25a60873c8-uuid-b4fc091d-9e12-c102-6abe-0fcecf365f79.png" />
 
 See the JFrog ML prediction timer in the Model Overview
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-The prediction timer graph may display up to 5 timers including the default `overall` and `predict` timers. This leave room for additional 3 custom timers.
+  The prediction timer graph may display up to five (5) timers including the default `overall` and `predict` timers. This leaves room for an additional three (3) custom timers.
 </Callout>
-
 
 ### Configure Timers via Decorators
 
-JFrog ML timers may be configured via a function decorates manager, to easily wrap different methods that are called during the prediction process.
+Frog ML timers can be configured using function decorators, enabling you to easily wrap and time specific methods executed during the prediction process.
 
 ```
 from frogml import frogml_timer
@@ -56,7 +53,7 @@ class MyModel(FrogMlModel):
 
 ### Configure Timers via Context Managers
 
-JFrog ML timers may be configured via a context manager, to easily wrap parts of your code that need measurements.
+Use the context manager to (configure JFrog ML timers and) measure specific logic blocks within your code without defining a separate function.
 
 ```
 from frogml import frogml_timer
@@ -74,45 +71,45 @@ class MyModel(FrogMlModel):
         return df
 ```
 
-### Default Timers
+### Monitor Default Timers
 
-#### Overall Timer
+JFrog ML automatically tracks these two metrics for every request:
 
-Measure the end to end inference time, starting at the moment a request arrived, until the inference output.
+**Overall Timer**: Measure the end-to-end inference time, starting from the moment a request arrives until the inference output is sent.
 
-#### Queue Timer
-
-Measures the the time it takes requests to leave the input queue before reaching the model.
+**Queue Timer**: Measures the time requests wait in the input queue before reaching the model.
 
 ### Understanding Latency Metrics
 
-When analyzing your model runtime latency charts, it's important to distinguish between two key metrics we track: `Overall` and `Predict` latency.
+When analyzing model runtime latency charts, distinguish between the two key metrics, `Overall` and `Predict` latency to identify where bottlenecks occur.
 
-**Overall Latency**: This metric provides a comprehensive view of the request lifecycle, measuring the time elapsed from when a request reaches our load balancer to the moment a response is sent back to the user. This includes several infrastructure-level processes, such as:
+**Overall Latency** (Infrastructure view): This metric measures the full request lifecycle, the time elapsed from when a request reaches load balancer to the moment a response is sent back to the user. This includes several infrastructure-level processes, largely outside of your control, such as:
 
 * Request routing mechanisms
 * Authentication and authorization procedures
 * Network communication between containers
 
-**Predict Latency**: In contrast, the "Predict" metric offers a more granular perspective, specifically focusing on the execution time of your Python `predict` method.
+**Predict Latency** (Code view): This is the granular perspective, specifically focusing on the execution time of your specific Python `predict` method.
 
-While the "Overall Latency" encompasses factors largely outside your direct control, several components within it can be influenced by your configuration:
+**Factors Inflencing Overall Latency**
 
-* **Webserver Queueing**: The duration requests spend waiting in the webserver before processing begins.
-* **Serialization/Deserialization**: The time taken to convert data into and out of formats suitable for transmission and your model (heavily influenced by your chosen adapter and the size of the data).
-* **Context Switching**: The overhead associated with switching between different workers and threads within your deployment.
-* **Model Loading**: The time required to load your model into the memory of your worker processes (particularly significant when the number of workers exceeds available threads).
+While "Overall Latency" is infrastructure-heavy, you can influence these specific components via configuration:
 
-**Optimizing Overall Latency**:
+* **Webserver Queueing**: The duration requests spend waiting in the webserver before processing begins (waiting for a worker to become free).
+* **Serialization/Deserialization**: The time taken to convert data into and out of suitable formats (for transmission and your model). (Dependent on adapter choice and data size).
+* **Context Switching**: The overhead from switching between differet workers/threads within your deployment.
+* **Model Loading**: The time required to load your model into the memory of your worker (critical when number of workers > available threads).
 
-You can generally improve these controllable latency factors by adjusting your resource allocation strategy. Key parameters to consider include:
+**Optimize  Overall Latency**:
 
-* **Instance Type**: Selecting an instance type with appropriate CPU, memory, and network capabilities.
-* **Instance Count**: Scaling the number of deployed instances to handle the incoming request volume.
-* **Workers per Instance**: Configuring the number of worker processes allocated to each instance.
+To reduce latency caused by the factors above, adjust your resource allocation strategy:
 
-*Note*: Increasing the number of workers does not always result in better performance. It may lead to increased latency due to more frequent model loading operations and overload from excessive context switching.
+* **Instance Type**: Select an instance type with appropriate CPU, memory, and network capabilities.
+* **Instance Count**: Scale the number of deployed instances to match the request volume.
+* **Workers per Instance**: Tune the worker-to-instance ratio.
+
+_Note_: Increasing the number of workers does not guarentee better performance. It may increase latency due to  frequent model loading and context switching overhead.
 
 **Conclusion**
 
-By understanding the factors affecting latency and implementing strategic resource allocation, you can optimize the performance of your systems and improve overall responsiveness.
+By understanding these latency factors and implementing strategic resource allocation, you can optimize system performance and responsiveness.
