@@ -51,9 +51,7 @@ test_automation = Automation(
 ```
 
 <Callout icon="📘" theme="info">
-  **Note**
-
-  _**Scheduler Timezone**_
+  **Note** - _**Scheduler Timezone**_
 
   The default timezone for the cron scheduler is UTC.
 </Callout>
