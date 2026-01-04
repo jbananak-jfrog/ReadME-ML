@@ -67,7 +67,7 @@ batch_execution_automation = Automation(
 
 ## Dynamic Folder Paths
 
-When configuring the source and destination folders to read and write data, we may define folder paths based on the runtime timestamp.
+When configuring the source and destination folders to read and write data, you can define folder paths based on the runtime timestamp.
 
 The dynamic path may include a timestamp template, which will be injected when the automation runs.
 
