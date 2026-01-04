@@ -1,5 +1,5 @@
 ---
-title: Automating Build and Deploy
+title: Automate Build and Deploy
 excerpt: >-
   Automating model build and deployment helps maintaining models accurate in
   production.
@@ -8,8 +8,6 @@ hidden: false
 metadata:
   robots: index
 ---
-<br />
-
 This action streamlines the build and deployment workflows. It keeps your model accurate by automatically re-training and deploying based on a cron expression, defined time interval, or metric base triggers.
 
 You can also define a deployment conditions to verify that the new build passes acceptance criteria within the desired parameters before replacing a currently deployed model.
