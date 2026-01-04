@@ -20,30 +20,30 @@ IAM roles provide a more secure and flexible way to grant permissions to your AW
 
 Overall, IAM roles offer a robust mechanism for adhering to the principle of least privilege, thereby enhancing the security posture of your AWS environment.
 
-### Prerequisites
+## Prerequisites
 
 * **An AWS account:** You must have an AWS account with sufficient permissions to create IAM roles.
 * **An S3 Bucket containing your data:** Make sure you have an S3 Bucket set up and your data stored within it.
 
-### Define the IAM Role
+## Define the IAM Role
 
 In this tutorial, the IAM role will be assumed by JFrog ML AWS account, eliminating the need to distribute or embed long-term AWS credentials. IAM roles use temporary security tokens, making them a more secure and auditable way to manage access to AWS resources.
 
-#### Step 1. Access the IAM Dashboard
+### Step 1. Access the IAM Dashboard
 
 1. In the AWS Management Console, type "`IAM`" in the search bar or find "IAM" under the "_Security, Identity, & Compliance_" section.
 2. Click **IAM** to open the IAM dashboard.
 
-#### Step 2. Navigate to Roles
+### Step 2. Navigate to Roles
 
 1. In the IAM dashboard, locate the left sidebar.
 2. Click **Roles** to access the roles management page.
 
-#### Step 3. Create a New Role
+### Step 3. Create a New Role
 
 Click the **Create role** button to start defining a new IAM role.
 
-#### Step 4. Add the Trust Policy
+### Step 4. Add the Trust Policy
 
 Select the Type to be _**Custom trust policy**_ and paste the following policy:
 
@@ -93,7 +93,7 @@ Your dashboard should look something like this:
 
 <Image alt="select-trusted-entity.png" border={false} src="https://files.readme.io/1ac836e651d8af387e961cd56b5ad61f2cef2687c7ecb4647c62fd80b107bafa-uuid-10fea49e-5548-df31-fbb0-2d96ba7a11f3.png" />
 
-#### Step 5. Add Permissions
+### Step 5. Add Permissions
 
 1. Click **Add inline policy**, then go to the JSON tab and paste your custom policy.
 
@@ -122,12 +122,12 @@ Your dashboard should look something like this:
 
 Essentially, this Permissions Policy allows this IAM role to read and list files from your bucket.
 
-#### Step 6. Review and Create
+### Step 6. Review and Create
 
 1. Fill in a name, for example `jfrogml-access-role` and a description for the new role.
 2. Click **Create role**.
 
-### Using your IAM Role ARN in JFrog ML
+## Using your IAM Role ARN in JFrog ML
 
 Now that you created your IAM role you can use it to read data for CSV and Parquet <Anchor label="Data Sources" title="Batch Data Sources" href="/docs/batch-data-sources">Data Sources</Anchor>, access S3 files for <Anchor label="Build Configurations" title="Build Configurations" href="/docs/build-configurations">Build Configurations</Anchor> or <Anchor label="Batch Executions" title="Automating Batch Execution" href="/docs/automating-batch-execution">Batch Executions</Anchor> just by referring the IAM Role ARN in the JFrog ML SDK or via the JFrog ML UI.
 
