@@ -10,6 +10,6 @@ metadata:
     - UUID-bbf0a390-239e-c3df-f0c7-803f5de83be6
   robots: index
 ---
-"Use the settings in this section to secure and optimize your environment, including managing secret keys, defining IAM roles, and setting up alert channels for model monitoring."
+Use the settings in this section to secure and optimize your environment, including managing secret keys, defining IAM roles, and setting up alert channels for model monitoring.
 
 <Anchor label="JFrog ML Alerts" title="JFrog ML Alerts" href="/docs/jfrog-ml-alerts">JFrog ML Alerts</Anchor> | <Anchor label="Instance Sizes & ML Credits" title="Instance Sizes & ML Credits" href="/docs/instance-sizes---ml-credits">Instance Sizes & ML Credits</Anchor> | <Anchor label="Secret Management" title="Secret Management" href="/docs/secret-management">Secret Management</Anchor> | <Anchor label="Accessing AWS Resources with IAM Role" title="Accessing AWS Resources with IAM Role" href="/docs/accessing-aws-resources-with-iam-role">Accessing AWS Resources with IAM Role</Anchor>
