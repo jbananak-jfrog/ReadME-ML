@@ -83,7 +83,7 @@ Sliding window is measured in minutes, and specifies the length of the sliding w
 The default sliding window size is 60 minutes.
 
 
-<Image align="left" border={false} src="https://files.readme.io/cdf96a8e80397134cdcb279284827ae74004474bdca017de9ec50ff2b2977098-usingslidingwindowbaseline.png" />
+<Image align="center" border={false} src="https://files.readme.io/cdf96a8e80397134cdcb279284827ae74004474bdca017de9ec50ff2b2977098-usingslidingwindowbaseline.png" />
 
 <br />
 
