@@ -114,7 +114,9 @@ Under the _Advanced Configuration_ menu are some additional parameters you may c
 
 Alerts help you stay up-to-date with your model in real time. After configuring your model monitor details, choose the adequate threshold and alerting condition, whether above or below the threshold value.
 
-<Image alt="Configuring alert parameters" border={false} src="https://files.readme.io/f61050e2754ed260053b8e6909425852b11cad4187ed98ca8d49f948f33b9f37-uuid-5d91396d-3eb4-f170-96c5-98a19fa972c3.png" />
+<Image align="center" border={false} src="https://files.readme.io/870f9e78b7412dccd756db2d5bed0649f5da5d8f31c61133869f376c3d504154-configuringalerts.png" />
+
+<Image align="center" border={false} src="https://files.readme.io/84a508294fab6274e0e20c5f2b39f1dac158fcc7bc33ed249e6ac771cb4b7a06-configuringalerts.png" />
 
 ### Tags and Priority
 
