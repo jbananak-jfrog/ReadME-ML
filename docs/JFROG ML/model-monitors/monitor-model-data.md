@@ -74,7 +74,7 @@ Creating a new model monitor can be done in several simple steps:
 
 A static baseline defines the timeframe with which KL divergence data will be calculated. The system takes as reference all the received values during this time period and will calculate KL divergence against it.
 
-<Image align="left" alt="Selecting a static baseline" border={false} width="50% " src="https://files.readme.io/1c8e19a7187f8482fd217c0113e754827b1201f2bdca616bcb5c5ba2b2dbb0ca-uuid-fdab6159-0b57-6856-8e4f-df1f93d809e0.png" />
+<Image alt="Selecting a static baseline" border={false} width="50% " src="https://files.readme.io/1c8e19a7187f8482fd217c0113e754827b1201f2bdca616bcb5c5ba2b2dbb0ca-uuid-fdab6159-0b57-6856-8e4f-df1f93d809e0.png" />
 
 ### Using Sliding Window Baseline
 
