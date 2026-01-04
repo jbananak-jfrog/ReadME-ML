@@ -18,7 +18,7 @@ metadata:
     - UUID-613d4616-9c5e-92d1-582b-161a455cbb58
   robots: index
 ---
- Use your JFrog ML integrated alerting system to effortlessly track key metrics and receive realtime notifications. Seamlessly integrate with your preferred communication and incident management tools, such as Slack, OpsGenie or PagerDuty.
+Use your JFrog ML integrated alerting system to effortlessly track key metrics and receive realtime notifications. Seamlessly integrate with your preferred communication and incident management tools, such as Slack, OpsGenie or PagerDuty.
 
 ### Configure Infrastructure Monitors
 
@@ -34,6 +34,7 @@ metadata:
 4. In the **Aggregation** you can select what aggregation is relevant for the monitoring metric.
 5. **Variation** is the model version that you'd like to get alerted on. Generally Default when the model is deployed under one variation only.
 6. Under the **Alerting** tab you will find the Condition, Threshold and the Duration which is the aggregation interval.
+
    <Image alt="create-new-monitor.png" border={false} src="https://files.readme.io/438db3826dff69b8be373a34a34bc694288d67caea92ade27d52ab3141217eaf-uuid-f563a35d-660e-8ddb-4cce-97c7c6c5bdba.png" />
 7. From the **Channels** dropdown, select a channel to receive the notifications. If you don't see your channel there, follow the instructions below to add a new channel.
 8. Pick which model variant should be tracked or choose "All variations".
@@ -42,7 +43,7 @@ metadata:
 
 ### Tags and Priority
 
-<Image alt="tags-and-priorities.png" border={false} src="https://files.readme.io/abf39544e7a2a9183c7dac3a7159542e84e0e690d203867f323b245c78c11942-uuid-12133894-5bcf-191d-fa4e-db5423db87cd.png" />
+<Image align="center" border={false} src="https://files.readme.io/b553bfd6a07e4b3dfa7e9206ae5b1be4d6e30bdadb35274915898cb9932b808c-tagsandpriority-performancemonitors.png" />
 
 ### Priority
 
@@ -68,4 +69,6 @@ You can define up to 20 text tags for your Opsgenie alerts, with each tag having
 
 ### Configuring Channels
 
-For channels integrations you can follow the next instruction: <Anchor label="JFrog ML Alerts" title="JFrog ML Alerts" href="/docs/jfrog-ml-alerts">JFrog ML Alerts</Anchor>.
+For channels integrations you can follow the next instruction: [JFrog ML Alerts](/docs/jfrog-ml-alerts).
+
+<br />
