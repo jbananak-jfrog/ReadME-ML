@@ -82,7 +82,7 @@ Sliding window is measured in minutes, and specifies the length of the sliding w
 
 The default sliding window size is 60 minutes.
 
-<Image align="left" alt="Selecting a sliding window baseline" border={false} width="50% " src="https://files.readme.io/8881991d286109f8ebabcdc4b82866f7a4e1dcb2b344694fce4ae271c2f33711-uuid-2f47b69a-9e60-2373-c5f3-136fead37d04.png" />
+<Image alt="Selecting a sliding window baseline" border={false} width="50% " src="https://files.readme.io/8881991d286109f8ebabcdc4b82866f7a4e1dcb2b344694fce4ae271c2f33711-uuid-2f47b69a-9e60-2373-c5f3-136fead37d04.png" />
 
 ### Monitoring Null Percentage
 
