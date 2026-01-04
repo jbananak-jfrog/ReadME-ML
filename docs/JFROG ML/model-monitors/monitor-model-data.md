@@ -74,7 +74,7 @@ Creating a new model monitor can be done in several simple steps:
 
 A static baseline defines the timeframe with which KL divergence data will be calculated. The system takes as reference all the received values during this time period and will calculate KL divergence against it.
 
-<Image alt="Selecting a static baseline" border={false} width="50% " src="https://files.readme.io/1c8e19a7187f8482fd217c0113e754827b1201f2bdca616bcb5c5ba2b2dbb0ca-uuid-fdab6159-0b57-6856-8e4f-df1f93d809e0.png" />
+<Image align="center" alt="Selecting a static baseline" border={false} width="50% " src="https://files.readme.io/1c8e19a7187f8482fd217c0113e754827b1201f2bdca616bcb5c5ba2b2dbb0ca-uuid-fdab6159-0b57-6856-8e4f-df1f93d809e0.png" />
 
 ### Using Sliding Window Baseline
 
@@ -82,7 +82,9 @@ Sliding window is measured in minutes, and specifies the length of the sliding w
 
 The default sliding window size is 60 minutes.
 
-<Image align="left" alt="Selecting a sliding window baseline" border={false} width="50% " src="https://files.readme.io/8881991d286109f8ebabcdc4b82866f7a4e1dcb2b344694fce4ae271c2f33711-uuid-2f47b69a-9e60-2373-c5f3-136fead37d04.png" />
+<Image align="center" border={false} src="https://files.readme.io/cdf96a8e80397134cdcb279284827ae74004474bdca017de9ec50ff2b2977098-usingslidingwindowbaseline.png" />
+
+<br />
 
 ### Monitoring Null Percentage
 
