@@ -1,5 +1,5 @@
 ---
-title: Automating Batch Execution
+title: Automate Batch Execution
 excerpt: >-
   Automating batch model inference simplifies running batch tasks on a periodic
   basis.
@@ -10,11 +10,11 @@ metadata:
 ---
 <br />
 
-You can set up scheduled executions to dynamically process data and ensure regular updates without manual intervention, or a need to setup external scheduling tools such as Airflow.
+You can set up scheduled executions to dynamically process data and ensure regular updates without manual intervention or a need to setup external scheduling tools such as Airflow.
 
-## Configuring `BatchExecution`
+## Configure a `BatchExecution`
 
-Batch model execution runs a [storage-based execution](/docs/storage-based-execution) for batch deployed model.
+Batch model execution runs a [storage-based execution](/docs/storage-based-execution) for a batch deployed model.
 
 <Callout icon="❗️" theme="error">
   A model must be deployed as **batch** before running the automation, otherwise the automation will fail.
