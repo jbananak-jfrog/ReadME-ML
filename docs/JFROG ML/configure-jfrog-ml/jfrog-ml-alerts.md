@@ -4,36 +4,37 @@ deprecated: false
 hidden: false
 metadata:
   title: JFrog ML Alerts
-  description: Frog ML allows seamless integration with your preferred monitoring tools for instant notifications on ongoing issues both for models and feature sets.
-  robots: index
+  description: >-
+    Frog ML allows seamless integration with your preferred monitoring tools for
+    instant notifications on ongoing issues both for models and feature sets.
   legacyUUIDs:
     - UUID-dcabea39-0c71-bfcb-f91e-6c8d677eb6d8
     - UUID-eeda75f4-0f5d-0ce6-d509-b7c3c9c52601
+  robots: index
 ---
 Frog ML allows seamless integration with your preferred monitoring tools for instant notifications on ongoing issues both for models and feature sets.
 
-Get started by simply:
+Get started:
 
-1. Navigating to <Anchor label="App Integrations" href="https://app.qwak.ai/qwak-admin/integrations" target="_blank">App Integrations</Anchor> under `Settings` → `Integrations`
-2. Connecting an alerting provider
-3. Setting up alerts with your chosen channel
+1. In the **Administration** module, navigate to **AI/ML Settings** > **Integrations**.
+2. Connect an alerting provider.
+3. Set up alerts with your chosen channel.
 
-### Opsgenie
+## Opsgenie
 
-* Go to <Anchor label="Opsgenie Integration" href="https://app.qwak.ai/qwak-admin/integrations/opsgenie" target="_blank">Opsgenie Integration</Anchor> page
-* Enter your connection information
+1. Go to the Opsgenie integration page.
+2. Enter your connection information: 
+   * Opsgenie region
+   * Opsgenie API key
+3. Click `Connect`.
+   * Validating your credentials will trigger a test alert and close it right away.
+   * JFrog ML creates automatically a new channels to send alerts in.
 
-  * Your Opsgenie region
-  * Your Opsgenie API key
-* Click `Connect`
-
-  * Validating your credentials will trigger a test alert and close it right away.
-  * JFrog ML creates automatically a new channels to send alerts in.
-* Once the validation succeeds, your Opsgenie Integration will be marked as connected.
+Once the validation succeeds, your Opsgenie Integration will be marked as connected.
 
 ### PagerDuty
 
-* Go to <Anchor label="PagerDuty Integration" href="https://app.qwak.ai/qwak-admin/integrations/pagerduty" target="_blank">PagerDuty Integration</Anchor> page
+* Go to <Anchor label="PagerDuty Integration" target="_blank" href="https://app.qwak.ai/qwak-admin/integrations/pagerduty">PagerDuty Integration</Anchor> page
 * JFrog ML supports 2 types of PagerDuty integrations:
 
   * Events V1 integration using your `Service Key`
