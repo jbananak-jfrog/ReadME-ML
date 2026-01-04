@@ -123,9 +123,11 @@ MetricBasedTrigger(
 
 ## Notifications
 
-JFrog ML supports configuring notifications in case of an error or success using either <Anchor label="Slack Webhooks" target="_blank" href="https://api.slack.com/messaging/webhooks">Slack Webhooks</Anchor> or a custom webhook configuration.
+JFrog ML supports configuring notifications in case of an error or success using either <Anchor label="Slack Webhooks" target="_blank" href="https://api.slack.com/messaging/webhooks">Slack Webhooks</Anchor> or a [custom webhook](/docs/define-automations#custom-webhook) configuration.
 
 ### Slack Webhook
+
+This option sends a Slack message when the automation is finished - containing the execution time, the model, the automation name, and the final status of the automation.
 
 ```
 from frogml.core.automations import SlackNotification, ScheduledTrigger,FrogmlBuildDeploy,\
@@ -145,17 +147,17 @@ test_automation = Automation(
 )
 ```
 
-It will send a slack message when the automation is finished - containing the execution time, the model, the automation name, and the final status of the automation.
+***
 
 <Callout icon="📘" theme="info">
   **Note**
 
-  You can define alerting notifications for either one of the `on_error` and `on_success` triggers, or for both. `on_success` will trigger after a successful Build, if the deployment threshold was not met and after a successful Build and Deploy, if the threshold was met.
+  You can define alerting notifications for either one of the `on_error` and `on_success` triggers, or for both. `on_success` will trigger after a successful build if the deployment threshold was not met, and after a successful Build and Deploy if the threshold was met.
 </Callout>
 
 ### Custom Webhook
 
-Another option is to be notified to a custom webhook, using the following configuration:
+The alternative notification option is to be notified to a custom webhook, using the following configuration:
 
 ```
 from frogml.core.automations import CustomWebhook
@@ -178,16 +180,16 @@ The definition above will call the API (defined by the url) above with the follo
 
 In addition to the fields explicitly defined in the `data` field.
 
-If the HTTP method defined is `GET` - the `data` field plus the JFrog ML parameters above will be embedded as request parameters. In all other methods - in the body to attached to the request.
+If the HTTP method defined is `GET` - the `data` field plus the JFrog ML parameters above will be embedded as request parameters. In all other methods, in the body to attached to the request.
 
-## Registering the Automation
+## Register the Automation
 
-Now, we can register the automation using the JFrog ML CLI:
+Once configured and notification is set up, register the automation using the JFrog ML CLI:
 
 ```
 frogml automations register -p .
 ```
 
-In the command above, we specified the directory containing the automation definitions (`-p`). In this case, the current working directory.
+In the command above, the directory containing the automation definitions (`-p`) is specified; in this case, the current working directory.
 
 <br />
