@@ -1,17 +1,21 @@
 ---
 title: Accessing AWS Resources with IAM Role
+excerpt: >-
+  A step-by-step guide to accessing data from your AWS private S3 bucket by
+  assuming an IAM role via the JFrog ML platform.
 deprecated: false
 hidden: false
 metadata:
   title: Accessing AWS Resources with IAM Role
-  description: This article provides you with a step-by-step guide on accessing data from your AWS private S3 bucket by assuming an IAM role via the JFrog ML platform.
-  robots: index
+  description: >-
+    This article provides you with a step-by-step guide on accessing data from
+    your AWS private S3 bucket by assuming an IAM role via the JFrog ML
+    platform.
   legacyUUIDs:
     - UUID-54287516-3df6-967b-fb41-8003d5324fc7
     - UUID-80efd48e-34da-0ecc-1ac2-b12987f1f503
+  robots: index
 ---
-This article provides you with a step-by-step guide on accessing data from your AWS private S3 bucket by assuming an IAM role via the JFrog ML platform.
-
 IAM roles provide a more secure and flexible way to grant permissions to your AWS resources, as opposed to passing AWS credentials directly. Instead of using static keys, an IAM role allows you to delegate permissions that enable specific actions on specific AWS resources.
 
 Overall, IAM roles offer a robust mechanism for adhering to the principle of least privilege, thereby enhancing the security posture of your AWS environment.
@@ -27,7 +31,7 @@ In this tutorial, the IAM role will be assumed by JFrog ML AWS account, eliminat
 
 #### Step 1. Access the IAM Dashboard
 
-1. In the AWS Management Console, type "`IAM`" in the search bar or find "IAM" under the "*Security, Identity, & Compliance*" section.
+1. In the AWS Management Console, type "`IAM`" in the search bar or find "IAM" under the "_Security, Identity, & Compliance_" section.
 2. Click **IAM** to open the IAM dashboard.
 
 #### Step 2. Navigate to Roles
@@ -41,7 +45,7 @@ Click the **Create role** button to start defining a new IAM role.
 
 #### Step 4. Add the Trust Policy
 
-Select the Type to be ***Custom trust policy*** and paste the following policy:
+Select the Type to be _**Custom trust policy**_ and paste the following policy:
 
 ```
 {
@@ -78,17 +82,16 @@ Select the Type to be ***Custom trust policy*** and paste the following policy:
 This policy allows the AWS account with ID `<ACCOUNT-ID>` to assume this role, but only if the calling JFrog ML Service ARN (Amazon Resource Name) matches the pattern `arn:aws:iam::<ACCOUNT-ID>:role/qwak-eks-base*`.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-***Account ID***
+  _**Account ID**_
 
-If your JFrog ML deployment is running on JFrog ML Cloud, use `377488441568` as the `<ACCOUNT-ID>`.
+  If your JFrog ML deployment is running on JFrog ML Cloud, use `377488441568` as the `<ACCOUNT-ID>`.
 </Callout>
-
 
 Your dashboard should look something like this:
 
-![select-trusted-entity.png](https://files.readme.io/1ac836e651d8af387e961cd56b5ad61f2cef2687c7ecb4647c62fd80b107bafa-uuid-10fea49e-5548-df31-fbb0-2d96ba7a11f3.png)
+<Image alt="select-trusted-entity.png" border={false} src="https://files.readme.io/1ac836e651d8af387e961cd56b5ad61f2cef2687c7ecb4647c62fd80b107bafa-uuid-10fea49e-5548-df31-fbb0-2d96ba7a11f3.png" />
 
 #### Step 5. Add Permissions
 
@@ -126,8 +129,8 @@ Essentially, this Permissions Policy allows this IAM role to read and list files
 
 ### Using your IAM Role ARN in JFrog ML
 
-Now that you created your IAM role you can use it to read data for CSV and Parquet [Data Sources](/docs/batch-data-sources "Batch Data Sources"), access S3 files for [Build Configurations](/docs/build-configurations "Build Configurations") or [Batch Executions](/docs/automating-batch-execution "Automating Batch Execution") just by referring the IAM Role ARN in the JFrog ML SDK or via the JFrog ML UI.
+Now that you created your IAM role you can use it to read data for CSV and Parquet <Anchor label="Data Sources" title="Batch Data Sources" href="/docs/batch-data-sources">Data Sources</Anchor>, access S3 files for <Anchor label="Build Configurations" title="Build Configurations" href="/docs/build-configurations">Build Configurations</Anchor> or <Anchor label="Batch Executions" title="Automating Batch Execution" href="/docs/automating-batch-execution">Batch Executions</Anchor> just by referring the IAM Role ARN in the JFrog ML SDK or via the JFrog ML UI.
 
-![iam-role-arn.png](https://files.readme.io/72014fd05470d92e3c03347eff4cf0b7efeaa26c80aeb127f4cd4ce9713db2db-uuid-6bfcbb65-6f0e-2f20-007a-de01bca8e342.png)
+<Image alt="iam-role-arn.png" border={false} src="https://files.readme.io/72014fd05470d92e3c03347eff4cf0b7efeaa26c80aeb127f4cd4ce9713db2db-uuid-6bfcbb65-6f0e-2f20-007a-de01bca8e342.png" />
 
 For more information on using IAM Role ARN please refer to the documentation page for your specific use case.
