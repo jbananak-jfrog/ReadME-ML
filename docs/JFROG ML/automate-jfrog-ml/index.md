@@ -1,5 +1,5 @@
 ---
-title: Automate JFrog ML
+title: Automations
 excerpt: >-
   JFrog ML offers built-in automations for various recurring actions in the
   model lifecycle. These automations are meant to replace external orchestration
