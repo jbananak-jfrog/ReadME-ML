@@ -1,20 +1,34 @@
 ---
 title: Inference Distribution (Analytics)
+excerpt: >-
+  Evaluate model stability and detect drift by comparing production data against
+  training baselines.
 deprecated: false
 hidden: false
 metadata:
   title: Inference Distribution (Analytics)
-  description: This section outlines the process of comparing the distribution of inference data against the baseline established by training data. Understanding these distributions is essential for assessing model performance and identifying potential drifts or biases that may impact prediction accuracy.
-  robots: index
+  description: >-
+    This section outlines the process of comparing the distribution of inference
+    data against the baseline established by training data. Understanding these
+    distributions is essential for assessing model performance and identifying
+    potential drifts or biases that may impact prediction accuracy.
   legacyUUIDs:
     - UUID-0c6cbe4c-7d9f-1f95-fe0b-22948b28817a
     - UUID-8a9bfb66-4435-0ada-2e50-a7532c5442ba
+  robots: index
 ---
-This section outlines the process of comparing the distribution of inference data against the baseline established by training data. Understanding these distributions is essential for assessing model performance and identifying potential drifts or biases that may impact prediction accuracy.
+Use the analytics in this section to validate that your deployed model is operating on data consistent with what it learned during training. By analyzing these distributions, you can proactively identify **data drift**, spot emerging **biases**, and assess whether shifts in input data are negatively impacting **prediction accuracy**.
 
 **Inference Data**: Data used by the model to make predictions post-deployment, combined with the outputs for each of the processed predictions.
 
 **Training Data Baseline**: The original dataset upon which the model was trained, serving as a benchmark for expected data distributions.
+
+This guide helps you navigate the following distinct analysis workflows:
+
+* [Requirements](inference-distribution-analytics#requirements)Requirements: Prerequisites for setting up distribution monitoring
+* [Inference Data vs. Training Baselines](/inference-distribution-analytics#inference-data-vs.-training-baselines)Inference Data vs Training Baselines: Direct comparison to spot deviations from the original benchmark.
+* [Inference-only Data](/inference-distribution-analytics#inference-only-data) Inference-only Data: Analyzing production trends when baseline data is unavailable
+* [Available Statistics](available-statistics)Available Statistics: The specific metrics used to quantify distribution changes.
 
 ### Requirements
 
@@ -29,17 +43,17 @@ Distribution is being charted both on inference-only data, as well as comparing 
 
 In order to compare **inference** data with **training** data please select the relevant build from `Build ID` in the UI and the relevant Dataframe that was previously logged and tagged, under the`Data tag` dropdown.
 
-![UI for selecting build and data tag for comparison.](https://files.readme.io/830e833fbc6f40e146111ee266f3c79a3272dae24f0fabd507cfa72eca7c2960-uuid-e4526ebd-2416-2638-3df5-4fde40c0b7c5.png)
+<Image alt="UI for selecting build and data tag for comparison." border={false} src="https://files.readme.io/830e833fbc6f40e146111ee266f3c79a3272dae24f0fabd507cfa72eca7c2960-uuid-e4526ebd-2416-2638-3df5-4fde40c0b7c5.png" />
 
 **Example Dashboard:**
 
-![real-time-churn-model.png](https://files.readme.io/309e3cbb9fc60efc0143aa48cd4a2952e9eaec6ec54cbb3155c0ed054a59cd4a-uuid-a2247c18-8207-3f93-4d7f-8673676976f7.png)
+<Image alt="real-time-churn-model.png" border={false} src="https://files.readme.io/309e3cbb9fc60efc0143aa48cd4a2952e9eaec6ec54cbb3155c0ed054a59cd4a-uuid-a2247c18-8207-3f93-4d7f-8673676976f7.png" />
 
 ### Inference-Only Data
 
 **Example Dashboard:**
 
-![inference-only-data.png](https://files.readme.io/40d6f6054d42dfee83ebca181da432858e7ddb04bc3a6cdbe3f5da37169c32b3-uuid-870a011b-ff84-e58c-9a8d-99f9117e1947.png)
+<Image alt="inference-only-data.png" border={false} src="https://files.readme.io/40d6f6054d42dfee83ebca181da432858e7ddb04bc3a6cdbe3f5da37169c32b3-uuid-870a011b-ff84-e58c-9a8d-99f9117e1947.png" />
 
 ### Available Statistics
 
@@ -72,7 +86,7 @@ The 75th percentile (also known as the third quartile) is the value below which 
 The maximum is the largest number in a dataset. It provides the upper boundary of the data distribution, allowing for the assessment of the data range and the detection of outliers.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-Please note that the inference distribution charts do not incorporate data from `FeatureStoreInput`. To view this data, please refer to the Feature Set page where your model retrieves its inference data.
+  Please note that the inference distribution charts do not incorporate data from `FeatureStoreInput`. To view this data, please refer to the Feature Set page where your model retrieves its inference data.
 </Callout>
