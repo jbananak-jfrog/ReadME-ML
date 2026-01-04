@@ -22,8 +22,8 @@ Batch model execution runs a [storage-based execution](/docs/storage-based-execu
 
 Defining a batch execution automation includes two parts:
 
-1. `BatchJobDataSpecifications` - Telling the automation where to fetch data from.
-2. Optional `BatchJobExecutionSpecifications` - Defining custom deployment resources for the batch model. When not provided, the default deployed parameters will be used.
+1. `BatchJobDataSpecifications` - Tells the automation where to fetch data from.
+2. Optional `BatchJobExecutionSpecifications` - Defines custom deployment resources for the batch model. When not provided, the default deployed parameters will be used.
 
 For more details on all available parameters for configuring batch model executions, please refer to [Storage-Based Execution](/docs/storage-based-execution) page.
 
@@ -60,9 +60,7 @@ batch_execution_automation = Automation(
 ```
 
 <Callout icon="📘" theme="info">
-  **Note**
-
-  _**Scheduler Timezone**_
+  **Note** - _**Scheduler Timezone**_
 
   The default timezone for the cron scheduler is UTC.
 </Callout>
