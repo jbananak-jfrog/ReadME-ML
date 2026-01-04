@@ -84,6 +84,6 @@ There are two input parameters which support the dynamic timestamp template:
 * `destination_folder`
 * `source_folder`
 
-Defining `source_folder="input_folder/{%d-%m-%Y}"` will format the path based on the current timestamp:
+Defining `source_folder="input_folder/{%d-%m-%Y}"` formats the path based on the current timestamp:
 
 `source_folder="input_folder/23-05-2023"`
