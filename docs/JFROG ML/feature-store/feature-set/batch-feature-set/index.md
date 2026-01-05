@@ -146,7 +146,7 @@ def user_features():
 
 When setting up the feature set data ingestion, carefully assign the [Batch Data Sources](/docs/data-sources#batch-data-sources) to be utilized. Ensure that each data source name is explicitly mapped to its intended <Anchor label="Read Policy" title="Read Policies" href="/docs/read-policies">Read Policy</Anchor>.
 
-If a read policy is not explicitly defined, the default policy is set to <Anchor label="New Only" title="Read Policies" href="/docs/read-policies">New Only</Anchor>, which instructs the system to read only records added since the last ingestion job. This approach optimizes efficiency by focusing on new data, enhancing the overall performance of the feature set.
+If a read policy is not explicitly defined, the default policy is set to [New Only](/docs/batch-feature-set#new-only), which instructs the system to read only records added since the last ingestion job. This approach optimizes efficiency by focusing on new data, enhancing the overall performance of the feature set.
 
 ```python
 from frogml.core.feature_store.feature_sets.read_policies import ReadPolicy
