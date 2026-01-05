@@ -655,7 +655,7 @@ def transform():
 
 ## Read Policies
 
-#### Read Policies in Feature Set Data Ingestion
+### Read Policies in Feature Set Data Ingestion
 
 The selection of a Read Policy significantly influences how data is ingested into a feature set. When defining a data source in the feature set definition, careful consideration of the chosen Read Policy is crucial.
 
@@ -669,7 +669,7 @@ This document provides an overview of the diverse read policies accessible withi
   If **no** read policy is set, `NewOnly` is the default read policy.
 </Callout>
 
-#### New Only
+### New Only
 
 When employing the "New Only" read policy, each batch execution exclusively processes newly added records, encompassing the timeframe from the last batch execution to the current job execution.
 
@@ -679,7 +679,7 @@ When consuming data under the "new only" read policy, JFrog ML defines "new data
 
 For instance, consider a scenario with a "New Only" read policy. If the initial job triggered on 20/11/2023 at 00:00:00 ingested data with a maximum timestamp of 19/11/2023 at 23:55:00, subsequent executions will consider data as new if it arrived after 19/11/2023 at 23:55:00, extending up to and including the present moment.
 
-```
+```python
 from datetime import datetime
 from frogml.feature_store.feature_sets import batch
 from frogml.core.feature_store.feature_sets.transformations import SparkSqlTransformation
@@ -706,11 +706,11 @@ FROM snowflake_datasource
 """)
 ```
 
-#### Full Read
+### Full Read
 
 The "Full Read" policy, when applied to a single data source, involves consuming all available data from that source up to the scheduled batch time. This essentially means that the defined query or data retrieval process will run against the specified data source (e.g., Snowflake) and retrieve records based on the conditions defined by the timestamp column, up until the scheduled batch time.
 
-##### Use Cases
+#### Use Cases
 
 1. Snapshot of Data Source:
 
@@ -744,7 +744,7 @@ The "Full Read" policy, when applied to a single data source, involves consuming
             )
       ```
 
-##### Timestamp Considerations:
+#### Timestamp Considerations:
 
 * **Batch Feature Sets Constraints:**
 
@@ -753,7 +753,7 @@ The "Full Read" policy, when applied to a single data source, involves consuming
 
   * To utilize the Full Read policy and manage timestamps, JFrog ML feature set transformations support parameters like `qwak_ingestion_start_timestamp` and `qwak_ingestion_end_timestamp`. These parameters can be employed to define timestamp columns in transformations.
 
-1. ```
+1. ```python
    from frogml.core.feature_store.feature_sets.read_policies import ReadPolicy
    from frogml.feature_store.feature_sets import batch
 
@@ -776,8 +776,6 @@ The "Full Read" policy, when applied to a single data source, involves consuming
 Each batch reads records within a specified time frame, starting from the job execution time until a defined period in the past.
 
 <Callout icon="📘" theme="info">
-  **Note**
-
   _**Example**_
 
   We want to track the total number of transactions a user made in the past 7 days.
@@ -787,7 +785,7 @@ Each batch reads records within a specified time frame, starting from the job ex
   This read policy allows us to read only the newly added records in the last 7 days, and transfer the updated information to the feature store.
 </Callout>
 
-```
+```python
 from frogml.core.feature_store.feature_sets.read_policies import ReadPolicy
 from frogml.feature_store.feature_sets import batch
 from frogml.core.feature_store.feature_sets.transformations import SparkSqlTransformation
@@ -809,7 +807,7 @@ def transform():
 
 #### TimeFrame Aggregations.Population Flavor
 
-```
+```python
 from frogml.core.feature_store.feature_sets.read_policies import ReadPolicy
 from frogml.feature_store.feature_sets import batch
 from frogml.core.feature_store.feature_sets.transformations import SparkSqlTransformation
@@ -863,7 +861,7 @@ All the backfill processes support different data sources and transforms; the da
 
 The backfill command can be run via the UI or using the CLI, as described below.
 
-#### Backfill via the UI
+### Backfill via the UI
 
 To run backfill:
 
@@ -878,7 +876,7 @@ To run backfill:
   You can select different cluster-template sizes for backfill executions. We recommend that for large backfills you select a cluster-template size larger than the size defined for the feature set to handle the increased processing load.
 </Callout>
 
-#### Backfill via a CLI Command
+### Backfill via a CLI Command
 
 The CLI command to trigger the backfill process is different according to the type of backfill required, as follows:
 
