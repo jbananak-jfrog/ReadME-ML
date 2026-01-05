@@ -21,7 +21,7 @@ JFrog ML data sources are used to configure connections to your data. Data sourc
 There are two main types of data sources:
 
 * [**Batch**](/docs/data-sources#batch-data-sources): Data-at-rest sources of data, such as Athena, Snowflake, and Redshift.
-* **<Anchor label="Streaming" title="Streaming Data Sources" href="/docs/streaming-data-sources">Streaming</Anchor>**: Data in motion sources, such as Kafka and Kinesis.
+* **[Streaming](/docs/data-sources#streaming-data-sources)**: Data in motion sources, such as Kafka and Kinesis.
 
 **To connect to a data source:**
 
@@ -105,7 +105,7 @@ To define a batch data source, create a configuration object that connects to th
 
 Batch data sources share three common parameters:
 
-* **name**: A unique data source identifier used to address it from a feature set object, may contain only characters, numbers and \_.
+* **name**: A unique data source identifier used to address it from a feature set object, may contain only characters, numbers and _.
 * **description**: A general description.
 * **date_created_column**: Used to filter the data by the batch's start time/end time. date_created_column must be present in the database. This column must hold the timestamp which represents each records time.
 
