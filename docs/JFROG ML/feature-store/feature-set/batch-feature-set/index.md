@@ -1,5 +1,5 @@
 ---
-title: Batch Feature Set
+title: Batch Feature Sets
 deprecated: false
 hidden: false
 metadata:
