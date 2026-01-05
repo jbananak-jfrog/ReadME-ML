@@ -26,11 +26,11 @@ metadata:
 
 A **Feature Set** is a fundamental component of a machine learning feature store. It is a structured and organized collection of features, also known as attributes or characteristics, that describe various aspects of data instances or entities in a consistent and standardized manner. Feature sets play a crucial role in enabling the development, training, and deployment of machine learning models.
 
-## **Batch Feature Set Overview**
+## Batch Feature Set Overview
 
 Batch Feature Sets in JFrog ML empower users to derive machine learning (ML) features efficiently by seamlessly extracting data from diverse batch sources such as Snowflake, BigQuery, S3, and more. This feature set methodology is designed to streamline the process of transforming raw data, provided by users, into structured features that can be utilized for various ML applications.
 
-### **Workflow Overview**
+### Workflow Overview
 
 1. **Data Ingestion:**
 
@@ -83,7 +83,7 @@ To create a batch feature set in JFrog ML, follow these steps, which involve def
 
 These steps ensure the seamless creation of a batch feature set, allowing users to define the transformation logic and specify the essential parameters for efficient feature extraction and processing within the JFrog ML ecosystem.
 
-### Batch Feature Set Example
+#### Batch Feature Set Example
 
 ```
 # Python
@@ -112,7 +112,7 @@ This example:
 * Creates a transformed feature vector with the fields: `user_id, registration_country, registration_device`
 * Ingests the feature vector into the JFrog ML Feature Store
 
-### Adding Metadata
+#### Adding Metadata
 
 An optional decorator for defining feature set metadata information of:
 
@@ -144,7 +144,7 @@ def user_features():
 
 ### Configuring Data Sources
 
-When setting up the feature set data ingestion, carefully assign the <Anchor label="Batch Data Sources" title="Batch Data Sources" href="/docs/batch-data-sources">Batch Data Sources</Anchor> to be utilized. Ensure that each data source name is explicitly mapped to its intended <Anchor label="Read Policy" title="Read Policies" href="/docs/read-policies">Read Policy</Anchor>.
+When setting up the feature set data ingestion, carefully assign the [Batch Data Sources](/docs/data-sources#batch-data-sources) to be utilized. Ensure that each data source name is explicitly mapped to its intended <Anchor label="Read Policy" title="Read Policies" href="/docs/read-policies">Read Policy</Anchor>.
 
 If a read policy is not explicitly defined, the default policy is set to <Anchor label="New Only" title="Read Policies" href="/docs/read-policies">New Only</Anchor>, which instructs the system to read only records added since the last ingestion job. This approach optimizes efficiency by focusing on new data, enhancing the overall performance of the feature set.
 
