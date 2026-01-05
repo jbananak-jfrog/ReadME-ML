@@ -21,16 +21,16 @@ JFrog ML data sources are used to configure connections to your data. Data sourc
 There are two main types of data sources:
 
 <Cards>
-  <Card title="Batch" href="/docs/data-sources#batch-data-sources" >
+  <Card title="Batch" href="/docs/data-sources#batch-data-sources">
     Data-at-rest sources of data, such as Athena, Snowflake, and Redshift.
   </Card>
 
-  <Card title="Streaming" href="/docs/data-sources#streaming-data-sources" >
+  <Card title="Streaming" href="/docs/data-sources#streaming-data-sources">
     Data in motion sources, such as Kafka and Kinesis.
   </Card>
 </Cards>
 
-* [**Batch**](/docs/data-sources#batch-data-sources): Data-at-rest sources of data, such as Athena, Snowflake, and Redshift.
+* [**Batch**](/docs/data-sources#batch-data-sources): [Data-at-rest sources of data, such as Athena, Snowflake, and Redshift](/docs/data-sources#batch-data-sources)
 * **[Streaming](/docs/data-sources#streaming-data-sources)**: Data in motion sources, such as Kafka and Kinesis.
 
 ▶ **To connect to a data source:**
