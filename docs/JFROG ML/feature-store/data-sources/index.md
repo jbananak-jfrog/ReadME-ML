@@ -59,8 +59,6 @@ csv_source = CsvSource(
 ```
 
 <Callout icon="📘" theme="info">
-  **Note**
-
   You must run the `frogml features register` command for that object to register **Data Sources** defined with the FrogML SDK in the cloud platform.
 </Callout>
 
