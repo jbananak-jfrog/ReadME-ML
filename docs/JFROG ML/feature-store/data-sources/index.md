@@ -23,7 +23,7 @@ There are two main types of data sources:
 * [**Batch**](/docs/data-sources#batch-data-sources): Data-at-rest sources of data, such as Athena, Snowflake, and Redshift.
 * **[Streaming](/docs/data-sources#streaming-data-sources)**: Data in motion sources, such as Kafka and Kinesis.
 
-**To connect to a data source:**
+▶ **To connect to a data source:**
 
 1. Enable network connectivity between the data sources and JFrog ML cluster if they are not publicly accessible.
 2. Grant JFrog ML access to your data lake components by creating read-only service accounts and/or IAM roles.
@@ -67,9 +67,9 @@ csv_source = CsvSource(
 ### Via the UI:
 
 1. From the JFrog Platform menu, select **AI/ML** > **Data Sources**.
-2. Click **Create new data source**. 
+2. Click **Create new data source**.
    <Callout icon="📘" theme="info">
-     You must have a data source group set up before you can set up a data source. 
+     You must have a data source group set up before you can set up a data source.
    </Callout>
 3. Select the required data source type from the list.
 4. Fill in the form (mandatory fields are marked with an asterisk).
