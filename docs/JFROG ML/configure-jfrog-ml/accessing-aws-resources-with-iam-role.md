@@ -127,7 +127,7 @@ Essentially, this Permissions Policy allows this IAM role to read and list files
 
 ## Using your IAM Role ARN in JFrog ML
 
-Now that you created your IAM role you can use it to read data for CSV and Parquet [Data Sources](/docs/batch-data-sources), access S3 files for <Anchor label="Build Configurations" title="Build Configurations" href="/docs/build-configurations">Build Configurations</Anchor> or <Anchor label="Batch Executions" title="Automating Batch Execution" href="/docs/automating-batch-execution">Batch Executions</Anchor> just by referring the IAM Role ARN in the JFrog ML SDK or via the JFrog ML UI.
+Now that you created your IAM role you can use it to read data for CSV and Parquet [Data Sources](/docs/data-sources#batch-data-sources), access S3 files for <Anchor label="Build Configurations" title="Build Configurations" href="/docs/build-configurations">Build Configurations</Anchor> or <Anchor label="Batch Executions" title="Automating Batch Execution" href="/docs/automating-batch-execution">Batch Executions</Anchor> just by referring the IAM Role ARN in the JFrog ML SDK or via the JFrog ML UI.
 
 <Image alt="iam-role-arn.png" border={false} src="https://files.readme.io/72014fd05470d92e3c03347eff4cf0b7efeaa26c80aeb127f4cd4ce9713db2db-uuid-6bfcbb65-6f0e-2f20-007a-de01bca8e342.png" />
 
