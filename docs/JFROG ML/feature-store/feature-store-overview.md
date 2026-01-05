@@ -66,11 +66,7 @@ The JFrog ML <Anchor label="Feature Store" target="_blank" href="https://jfrog.c
 
         * **Real Time Feature Sets:** Features based on data provided directly at the time of an inference request and are not pre-computed.
 
-        <Callout icon="📘" theme="info">
-          **Note**
-
-          JFrog ML Cloud (SaaS) supports [Batch Feature Sets](/docs/batch-feature-set) only. To use real-time and streaming features, please opt for JFrog ML hybrid deployments.
-        </Callout>
+        **NOTE:** JFrog ML Cloud (SaaS) supports [Batch Feature Sets](/docs/batch-feature-set)  only. To use real-time and streaming features, please opt for JFrog ML hybrid deployments.
       </td>
     </tr>
   </tbody>
