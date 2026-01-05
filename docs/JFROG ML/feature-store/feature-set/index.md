@@ -1,5 +1,5 @@
 ---
-title: Feature Set
+title: Feature Sets
 deprecated: false
 hidden: false
 metadata:
