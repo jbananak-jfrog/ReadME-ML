@@ -21,7 +21,7 @@ JFrog ML data sources are used to configure connections to your data. Data sourc
 There are two main types of data sources:
 
 <Cards>
-  <Card title="Batch" href="/docs/data-sources#batch-data-sources">
+  <Card title="[Batch](/docs/data-sources#batch-data-sources)" href="/docs/data-sources#batch-data-sources">
     [Data-at-rest sources of data, such as Athena, Snowflake, and Redshift](/docs/data-sources#batch-data-sources)
   </Card>
 
