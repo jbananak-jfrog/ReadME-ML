@@ -76,7 +76,7 @@ To create a batch feature set in JFrog ML, follow these steps, which involve def
 
      * `name`: If not explicitly defined, the decorated function's name is used. The name field is restricted to **alphanumeric** and **hyphen** characters, with a maximum length of 40 characters.
      * `key`: Specify the key for which to calculate the features in the feature set.
-     * `data_sources`: Provide a dictionary containing the names of relevant [data sources](/docs/batch-data-sources) that the feature set data will be ingested from.
+     * `data_sources`: Provide a dictionary containing the names of relevant [data sources](/docs/data-sources#batch-data-sources) that the feature set data will be ingested from.
 3. **Ingestion Job Frequency:**
 
    * By default, ingestion jobs are triggered every 4 hours. However, users have the flexibility to explicitly define a different frequency based on their specific requirements.
