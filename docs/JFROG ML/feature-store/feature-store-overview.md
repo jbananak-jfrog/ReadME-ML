@@ -22,7 +22,7 @@ The Feature Store serves the following main purposes:
 * **Feature collaboration**: A mechanism that enables data scientists and machine learning engineers to share features between projects.
 * **Ensures Consistency (Prevents Training/serving skew)**: Systematically ensures features generated for training (offline) and inference (online) are identical.
 
-### Feature Store Concepts
+## Feature Store Concepts
 
 The JFrog ML <Anchor label="Feature Store" target="_blank" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/">Feature Store</Anchor> follows three main concepts:
 
@@ -72,7 +72,7 @@ The JFrog ML <Anchor label="Feature Store" target="_blank" href="https://jfrog.c
   </tbody>
 </Table>
 
-### Feature Consumption
+## Feature Consumption
 
 With the JFrog ML Feature Store you can **define** features once, **calculate** them once, and **reuse** them at any time.
 
