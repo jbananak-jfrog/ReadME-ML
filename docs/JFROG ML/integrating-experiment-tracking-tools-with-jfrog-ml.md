@@ -44,7 +44,7 @@ To use wandb in your JFrog ML model, you'll need to:
 * Log in to wandb using the API key stored in JFrog ML Secrets.
 * Retrieve and log model artifacts, metrics, and parameters.
 
-Here's a practical example of how to use wandb in your JFrog ML model :
+Here's a practical example of how to use wandb in your JFrog ML model:
 
 ```python
 from frogml import FrogMlModel
