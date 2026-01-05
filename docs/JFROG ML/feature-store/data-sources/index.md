@@ -112,12 +112,6 @@ Batch data sources share three common parameters:
 | **description**:         | A general description.                                                                                                                                                                   |
 | **date_created_column**: | Used to filter the data by the batch's start time/end time. date_created_column must be present in the database. This column must hold the timestamp which represents each records time. |
 
-<br />
-
-* **name**: A unique data source identifier used to address it from a feature set object, may contain only characters, numbers and _.
-* **description**: A general description.
-* **date_created_column**: Used to filter the data by the batch's start time/end time. date_created_column must be present in the database. This column must hold the timestamp which represents each records time.
-
 <Callout icon="⚠️" theme="warning">
   **Warning** - `date_created_column`:
 
@@ -132,7 +126,7 @@ Batch data sources share three common parameters:
 
 ### Registering New Data Sources
 
-When registering a batch data source, the JFrog ML System will try to validate it, meaning it will try to fetch a sample to verify that the system can query the data source.
+When registering a batch data source, the JFrog ML System will try to validate it, meaning it will attempt to fetch a sample to verify that the system can query the data source.
 
 Additionally, batch data sources support the following validation function:
 
@@ -156,9 +150,9 @@ parquet_source = ParquetSource(
 pandas_df = parquet_source.get_sample()
 ```
 
-When invoking this function the FrogML System will validate the data source before returning a Pandas DataFrame, meaning that if an error occurred while trying to fetch a sample, the system indicates at which stage it failed.
+When invoking this function, the FrogML System will validate the data source before returning a Pandas DataFrame, meaning that if an error occurred while trying to fetch a sample, the system indicates at which stage it failed.
 
-For example it can fail:
+For example, it can fail:
 
 * When connecting to the specified bucket.
 * When the date_created_column is not the right type or does not exist.
