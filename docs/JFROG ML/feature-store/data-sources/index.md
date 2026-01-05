@@ -61,7 +61,7 @@ csv_source = CsvSource(
 <Callout icon="📘" theme="info">
   **Note**
 
-  The **Data Sources** defined with the FrogML SDK are ONLY REGISTERED IN THE CLOUD PLATFORM when the `frogml features register` command is run for that object.
+  You must run the `frogml features register` command for that object to register **Data Sources** defined with the FrogML SDK in the cloud platform.
 </Callout>
 
 ### Via the UI:
@@ -100,11 +100,19 @@ frogml features delete --data-source <data-source-name>
 
 ## Batch Data Sources
 
-Batch data sources allow you to configure connections to **data-at-rest** sources of data.
+Batch data sources enable you to configure connections to **data-at-rest** sources of data.
 
 To define a batch data source, create a configuration object that connects to the raw data source.
 
 Batch data sources share three common parameters:
+
+| Parameter                | Description                                                                                                                                                                              |
+| :----------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **name**:                | A unique data source identifier used to address it from a feature set object, may contain only characters, numbers and _.                                                                |
+| **description**:         | A general description.                                                                                                                                                                   |
+| **date_created_column**: | Used to filter the data by the batch's start time/end time. date_created_column must be present in the database. This column must hold the timestamp which represents each records time. |
+
+<br />
 
 * **name**: A unique data source identifier used to address it from a feature set object, may contain only characters, numbers and _.
 * **description**: A general description.
