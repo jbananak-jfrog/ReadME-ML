@@ -21,14 +21,12 @@ The 2 basic building blocks that define a Streaming Feature Set are its Streamin
 See Streaming Sources section for more details regarding the available Streaming Sources.
 
 <Callout icon="❗️" theme="error">
-  **Important**
-
-  _Python Version_
+  **Important** - **_Python Version_**
 
   Please note that Python 3.8 is required for all Streaming capabilities.
 </Callout>
 
-### Streaming Feature Set Creation
+## Streaming Feature Set Creation
 
 To create a streaming feature set in JFrog ML, follow these steps, which involve defining a [feature transformation](/docs/streaming-feature-set#transformations) function and utilizing the `@streaming.feature_set` decorator along with the specified parameters:
 
@@ -41,16 +39,16 @@ To create a streaming feature set in JFrog ML, follow these steps, which involve
 
      * `name`: If not explicitly defined, the decorated function's name is used. The name field is restricted to **alphanumeric** and **hyphen** characters, with a maximum length of 40 characters.
      * `key`: Specify the key for which to calculate the features in the feature set.
-     * `data_sources`: Provide a list containing the names of relevant <Anchor label="data sources" title="Streaming Data Sources" href="/docs/streaming-data-sources">data sources</Anchor> that the feature set data will be ingested from. **Currently streaming feature sets support only a single data source configuration.**
+     * `data_sources`: Provide a list containing the names of relevant [streaming data sources](/docs/data-sources#streaming-data-sources) that the feature set data will be ingested from. **Currently streaming feature sets support only a single data source configuration.**
      * `timestamp_column_name`:The name of the column in the data source that contains timestamp information. This is used to order the data chronologically and ensure that the feature values are updated in the correct order.
      * `offline_scheduling_policy`: A crontab definition of the the offline ingestion policy - which affects the data freshness of the offline store. defaults to `*/30 * * * *` (every 30 minutes)
      * `online_trigger_interval`: Defines the online ingestion policy - which affects the data freshness of the online store. Defaults to 5 seconds.
 
 These steps ensure the seamless creation of a batch feature set, allowing users to define the transformation logic and specify the essential parameters for efficient feature extraction and processing within the JFrog ML ecosystem.
 
-#### Streaming Feature Set Example
+### Streaming Feature Set Example
 
-```
+```python
 from frogml.feature_store.feature_sets import streaming
 from frogml.core.feature_store.feature_sets.transformations import SparkSqlTransformation
 
@@ -80,7 +78,7 @@ This example:
   `registration_country` and `registration_device`
 * Ingests the feature vector into the <Anchor label="Frog ML Feature Store" target="_blank" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/">Frog ML Feature Store</Anchor>
 
-#### Adding Metadata
+### Adding Metadata
 
 An optional decorator for defining feature set metadata information of:
 
@@ -90,7 +88,7 @@ An optional decorator for defining feature set metadata information of:
 
 `display_name` - Alternative feature set name for UI display
 
-```
+```python
 from frogml.feature_store.feature_sets import streaming
 from frogml.core.feature_store.feature_sets.transformations import SparkSqlTransformation
 
@@ -116,13 +114,11 @@ def user_features():
         FROM my_kafka_source""")
 ```
 
-### Specifying Execution Resources
+## Specifying Execution Resources
 
 At JFrog ML, the allocation of resources is crucial for streaming execution jobs, often termed as the `cluster template`. This template determines resources like CPU, memory, and temporary storage - all essential for executing user-defined transformations and facilitating feature ingestion into designated stores.
 
 <Callout icon="📘" theme="info">
-  **Note**
-
   _**Cluster Template**_
 
   The default size for the cluster template is `MEDIUM` if none is explicitly specified.
@@ -133,7 +129,7 @@ For streaming feature sets, two different resource specifications are provided:
 * `online_cluster_template`**online** feature store ingestion job resources
 * `offline_cluster_template`**offline** feature store ingestion job resources
 
-```
+```python
 # Python
 from frogml.feature_store.feature_sets import streaming
 from frogml.core.feature_store.feature_sets.execution_spec import ClusterTemplate
@@ -161,15 +157,15 @@ def user_features():
         FROM my_kafka_source""")
 ```
 
-### Transformations
+## Transformations
 
 Row-Level transformations that are applied to the data (in a streaming fashion) - these transformations produce the actual features.
 
-#### SQL Transformations
+### SQL Transformations
 
 Row-Level arbitrary SQL, with support for PySpark Pandas UDFs, leverages Vectorized computation using PyArrow.
 
-```
+```python
 from frogml.feature_store.feature_sets import streaming
 from frogml.core.feature_store.feature_sets.transformations import SparkSqlTransformation
 
@@ -222,11 +218,11 @@ def transform():
     )
 ```
 
-#### Full-DataFrame Pandas UDF Transforms
+### Full-DataFrame Pandas UDF Transforms
 
 Just like the Pandas UDFs supported in SQL Transforms, but defined on the entire DataFrame (no need to write any SQL):
 
-```
+```python
 import pandas as pd
 from frogml.feature_store.feature_sets import streaming
 from frogml.core.feature_store.feature_sets.transformations import (
@@ -265,7 +261,7 @@ def user_features():
     return UdfTransformation(function=func)
 ```
 
-##### Event-time Aggregations
+#### Event-time Aggregations
 
 In addition to row-level operations, event-time aggregations are also supported, with **EXACTLY ONCE** semantics.
 
@@ -312,7 +308,7 @@ At the moment, we also need to select 3 Kafka metadata columns (offset, topic, p
 1. Declarative aggregates: we add each aggregation in a chaining fashion, in the above example we had `avg`, `sum`, and `boolean_or`.
 2. time windows: define the time windows on which we aggregate - in that case we had 3 aggregates and 5 time windows - meaning the resulting `Featureset` will have 15 features.
 
-We currently support the following aggregates:
+JFrog currently supports the following aggregates:
 
 1. SUM - a sum of column, for example, `FrogmlAggregation.sum("transaction_amount")`
 2. COUNT - count (not distinct), a column is specified for API uniformity. for example, `FrogmlAggregation.count("transaction_amount")`
@@ -343,7 +339,7 @@ in the above sample, we've aliased the `boolean_or` aggregate, so it's now calle
 
 the example below will result in 4 features: `avg_transaction_amount_1m`, `avg_transaction_amount_1h`, `had_remote_transactions_1m`, `had_remote_transactions_1h`
 
-### Event-time Aggregations Backfill
+## Event-time Aggregations Backfill
 
 For streaming aggregation featuresets, adding backfill spec will populate historical features values from _batch_ data sources before deploying the actual streaming featureset
 
@@ -364,7 +360,7 @@ The StreamingBackfill parameters are:
 * **data_source_specs**: List of existing batch data source names to fetch from
 * **execution_spec**: [optional] resource template for backfill step
 
-```
+```python
 from datetime import datetime
 
 from frogml.feature_store.feature_sets import streaming
@@ -414,8 +410,6 @@ The data will be between 1/1/2020 and 1/9/2022.
 If it is needed to specify specific datetime filter for each batch source (i.e. selecting from different sub start and end time for each source), we need to pass `BackfillBatchDataSourceSpec`:
 
 <Callout icon="📘" theme="info">
-  **Note**
-
   Filtering per data source is optional, but keep in mind that the general start and end time filter set for the backfill will be lower and upper limits for any sub specific backfill source filter
 </Callout>
 
@@ -432,8 +426,6 @@ data_source_specs = [
 ### Specifying Auxiliary Sinks
 
 <Callout icon="📘" theme="info">
-  **Note**
-
   Auxiliary Sinks are available for streaming featuresets without any aggregations
 </Callout>
 
@@ -443,7 +435,7 @@ An auxiliary sink is simply another destination for computed feature values - fo
 
 Another strong usecase for auxiliary sinks is for creating dependencies between streaming feature sets - if we have a featureset X and we'd like to have another featureset Y that consumes whatever X is producing, we can configure X with an auxiliary sink (for example - a kafka sink), then use the sink (i.e., topic) as a data source for featureset Y.
 
-#### Attachment Points
+### Attachment Points
 
 Remember that a streaming featureset ingests data using 2 separate Spark cluster - one ingests into the online store (constantly running) while the other periodically ingests into the offline store. This architecture maximizes the data freshness in the online store while still controls the cost and ensures consistency, preventing training-serving skew.
 
@@ -455,21 +447,19 @@ When defining auxiliary sinks, we can select the **attachment point** - which si
 * Conversely, if selecting an **Offline Attachment Point**, the features will be written to the sink whenever they are written to the offline store. This ensures the data freshness in the online store remains unchanged, but yields a lower data freshness for the sink itself.
 
 <Callout icon="📘" theme="info">
-  **Note**
-
   Auxiliary Sinks are guaranteed At-Least-Once semantics.
 </Callout>
 
-#### Auxiliary Sink Types
+### Auxiliary Sink Types
 
-##### Kafka Sinks
+#### Kafka Sinks
 
 Example showing how two different auxiliary sinks are created:
 
 * The first one uses a kafka topic called "online_topic" and uses an Online Streaming Attachment Point.
 * The second one uses another topic and uses an Offline Streaming Attachment Point.
 
-```
+```python
 # python
 from frogml.feature_store.data_sources import SslAuthentication, SaslAuthentication, SaslMechanism, \
     SecurityProtocol
@@ -525,9 +515,9 @@ def user_streaming_features():
     )
 ```
 
-##### Output Formats for Kafka Auxiliary Sinks
+#### Output Formats for Kafka Auxiliary Sinks
 
-###### JSON
+##### JSON
 
 When selecting JSON, the features are written into the the topic according to the following format:
 
