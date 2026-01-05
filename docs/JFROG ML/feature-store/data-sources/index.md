@@ -122,7 +122,7 @@ Batch data sources share three common parameters:
   Default timestamp format for `date_created_column` should be `yyyy-MM-dd'T'HH:mm:ss`, optionally with `[.SSS][XXX]`. For example: `2020-01-01T00:00:00`.
 </Callout>
 
-#### Registering New Data Sources
+### Registering New Data Sources
 
 When registering a batch data source, the JFrog ML System will try to validate it, meaning it will try to fetch a sample to verify that the system can query the data source.
 
@@ -155,14 +155,14 @@ For example it can fail:
 * When connecting to the specified bucket.
 * When the date_created_column is not the right type or does not exist.
 
-#### Available Data Source Types
+### Available Data Source Types
 
 | [Snowflake](/docs/data-sources#snowflake) | [BigQuery](/docs/data-sources#bigquery)     | [MongoDB](/docs/data-sources#mongodb)             | [Amazon S3 Stored Files](/docs/data-sources#amazon-s3-stored-files) |
 | :---------------------------------------- | :------------------------------------------ | :------------------------------------------------ | :------------------------------------------------------------------ |
 | [Redshift](/docs/data-sources#redshift)   | [MySQL](/docs/data-sources#mysql)           | [Postgres](/docs/data-sources#postgres)           | [Clickhouse](/docs/data-sources#clickhouse)                         |
 | [Vertica](/docs/data-sources#vertica)     | [AWS Athena](/docs/data-sources#aws-athena) | [Unity Catalog](/docs/data-sources#unity-catalog) |                                                                     |
 
-##### Snowflake
+#### Snowflake
 
 In order to create a Snowflake connection, before creating a connector make sure you have the following:
 
@@ -214,11 +214,11 @@ In order to create a Snowflake connection, before creating a connector make sure
   JFrog ML only supports **unencrypted** private keys without the key delimiters (begin and end). See <Anchor label="key-pair authentication" target="_blank" href="https://docs.snowflake.com/en/user-guide/key-pair-auth">key-pair authentication</Anchor>.
 </Callout>
 
-##### BigQuery
+#### BigQuery
 
 To access a BigQuery source, please download the _credentials.json_ file from GCP to your the local file system.
 
-###### Permissions
+##### Permissions
 
 The following permissions **must be applied** to the provided credentials in the _credentials.json_ file.
 
@@ -229,7 +229,7 @@ bigquery.tables.get
 bigquery.readsessions.* bigquery.jobs.create
 ```
 
-###### Uploading Credentials
+##### Uploading Credentials
 
 Once you've downloaded _credentials.json_, encode it with base64 and set it as a JFrog ML secret using the JFrog ML Secret Service.
 
@@ -247,11 +247,11 @@ secrets_service = SecretServiceClient()
 secrets_service.set_secret(name='qwak_secret_big_query_creds', value=creds64)
 ```
 
-###### Connecting to BigQuery
+##### Connecting to BigQuery
 
 There are two distinct ways to use the BigQuery connector:
 
-###### 1. Providing `dataset` and `table`
+##### 1. Providing `dataset` and `table`
 
 ```
 from frogml.feature_store.data_sources import BigQuerySource
@@ -270,7 +270,7 @@ some_bigquery_source = BigQuerySource(
 )
 ```
 
-###### 2. Providing `sql`
+##### 2. Providing `sql`
 
 ```
 from frogml.feature_store.data_sources import BigQuerySource
@@ -294,7 +294,7 @@ big_query_source = BigquerySource(
 )
 ```
 
-##### MongoDB
+#### MongoDB
 
 ```
 from frogml.feature_store.data_sources.batch.mongodb import MongoDbSource 
@@ -312,9 +312,9 @@ mongo_source = MongoDbSource(
 )
 ```
 
-##### Amazon S3 Stored Files
+#### Amazon S3 Stored Files
 
-###### Ingesting Data from Parquet Files
+##### Ingesting Data from Parquet Files
 
 AWS S3 filesystem data sources support explicit credentials for a custom bucket (default: frogml bucket).
 
@@ -339,9 +339,7 @@ parquet_source = ParquetSource(
 ```
 
 <Callout icon="❗️" theme="error">
-  **Important**
-
-  _**Timestamp Column**_
+  **Important** - _**Timestamp Column**_
 
   Ensure that the timestamp column in your Parquet file(s) is represented using the appropriate PyArrow timestamp data type with microsecond precision.
 
@@ -356,7 +354,7 @@ parquet_source = ParquetSource(
   Using Pandas timestamp data types, like `datetime[ns]` or `int64` will result in an error when fetching data from the Parquet source.
 </Callout>
 
-###### Ingesting Data from CSV Files
+##### Ingesting Data from CSV Files
 
 CSV access works like reading a Parquet file from S3. We either specify the AWS access keys as environment variables or access a public object.
 
@@ -375,9 +373,7 @@ csv_source = CsvSource(
 ```
 
 <Callout icon="📘" theme="info">
-  **Note**
-
-  _**Public S3 bucket access**_
+  **Note** - _**Public S3 bucket access**_
 
   When using public any bucket such as `jfrogml-public`, `nyc-tlc` , etc.. , use the `AnonymousS3Configuration` to access without credentials as shown in the example.
 </Callout>
@@ -390,7 +386,7 @@ csv_source = CsvSource(
   For example `2020-01-01T00:00:00`
 </Callout>
 
-###### Accessing Private Amazon S3 Buckets in Data Sources
+##### Accessing Private Amazon S3 Buckets in Data Sources
 
 To securely leverage data stored in Amazon S3 buckets within the JFrog ML feature store, we support two robust authentication methods. This guide provides a comprehensive overview of setting up access to private S3 buckets, ensuring that your data remains secure while being fully accessible for your data operations.
 
@@ -431,7 +427,7 @@ csv_source = CsvSource(
 )
 ```
 
-##### Redshift
+#### Redshift
 
 In order to connect to Redshift source, you will need to grant access either using AWS Access Key & Secret Key or using IAM Role.
 
@@ -450,7 +446,7 @@ redshift_source = RedshiftSource(
 )
 ```
 
-##### MySQL
+#### MySQL
 
 ```
 from frogml.feature_store.data_sources import MysqlSource
@@ -484,7 +480,7 @@ postgres_source = ProtoPostgresqlSource(
 )
 ```
 
-##### Clickhouse
+#### Clickhouse
 
 ```
 from frogml.feature_store.data_sources import ClickhouseSource
@@ -501,7 +497,7 @@ clickhouse_source = ClickhouseSource(
 )
 ```
 
-##### Vertica
+#### Vertica
 
 ```
 from frogml.feature_store.data_sources import VerticaSource
@@ -520,7 +516,7 @@ vertica_source = VerticaSource(
 )
 ```
 
-##### AWS Athena
+#### AWS Athena
 
 The Athena source is used to connect JFrog ML to Amazon Athena, allowing users to query and ingest data seamlessly
 
@@ -543,14 +539,12 @@ athena_source = AthenaSource(
 ```
 
 <Callout icon="📘" theme="info">
-  **Note**
-
-  _**Workgroups**_
+  **Note** - _**Workgroups**_
 
   By default, your default workgroup in Athena is called `primary`. However, for optimal organization and resource management, it's recommended to establish a dedicated workgroup specifically for handling FeatureSet-related queries. This separation ensures that queries related to the JFrog ML FeatureSets are isolated from other users or applications utilizing AWS Athena, allowing for better debugging, query prioritization, and enhanced governance.
 </Callout>
 
-###### The data source configuration supports 2 ways of authenticating to AWS Athena
+##### The data source configuration supports 2 ways of authenticating to AWS Athena
 
 `aws_authentication: AwsAuthentication`
 
@@ -587,7 +581,7 @@ athena_source = AthenaSource(
                                                         secret_key_secret_name='your-secret-key-frogml-secret')
       ```
 
-###### Define Date Partition Columns (Optional)
+##### Define Date Partition Columns (Optional)
 
 `time_partition_columns: TimePartitionColumns`
 
@@ -651,7 +645,7 @@ athena_source = AthenaSource(
         )
         ```
 
-##### Unity Catalog
+#### Unity Catalog
 
 An example of how to use the SDK for a Unity Catalog source:
 
@@ -697,7 +691,7 @@ unitycatalog_source = UnityCatalogSource(
 
 ## Streaming Data Sources
 
-#### Kafka Source
+### Kafka Source
 
 ```
 from frogml.feature_store.data_sources import KafkaSource
@@ -723,11 +717,11 @@ The acceptable parameters for KafkaSource are:
 | description         | str            | Description of the source                                                                                                                                                                                                                                                               | empty string                                                                         |
 | name                | str            | name of the source. this is the View Name with which this data source will appear in the Transformation definition (see below)                                                                                                                                                          | This parameter is mandatory                                                          |
 
-#### Deserialization
+### Deserialization
 
 The Kafka streaming data source currently supports 2 types of message deserializer:
 
-##### Generic Deserializer
+#### Generic Deserializer
 
 <Callout icon="📘" theme="info">
   **Note**
@@ -739,7 +733,7 @@ The Kafka streaming data source currently supports 2 types of message deserializ
   * compatible data types are in accordance to spark data types
 </Callout>
 
-##### Using JSON
+#### Using JSON
 
 When using JSON the schema is in the Spark-proprietary JSON schema definition (**NOT JSON Schema**):
 
@@ -784,9 +778,7 @@ kafka_source = KafkaSource(name="sample_source",
 ```
 
 <Callout icon="❗️" theme="error">
-  **Important**
-
-  _**Behavior for Invalid Messages**_
+  **Important** - _**Behavior for Invalid Messages**_
 
   When using `GenericDeserializer` for JSON, a message can be invalid when:
 
@@ -797,7 +789,7 @@ kafka_source = KafkaSource(name="sample_source",
   When a message is invalid it might cause an entire record to have null values, or just specific fields of the record to have a null value. Invalid messages will always create a record in the Data Source and will fail silently.
 </Callout>
 
-##### Using Avro
+#### Using Avro
 
 When using Avro the schema is an <Anchor label="Avro schema" target="_blank" href="https://avro.apache.org/docs/1.12.0/specification/">Avro schema</Anchor> :
 
@@ -816,19 +808,15 @@ kafka_source = KafkaSource(name="sample_source",
 ```
 
 <Callout icon="❗️" theme="error">
-  **Important**
-
-  _**Behavior for Invalid Messages**_
+  **Important** - _**Behavior for Invalid Messages**_
 
   When working with Avro it is important to validate the input to your topic properly. When using `GenericDeserializer` for Avro, invalid Avro messages can cause unexpected results. Unlike the behavior for JSON - some failures are not silent and may cause the entire Feature Set ingestion to fail. Even when the failure is silent it may cause bad data.
 </Callout>
 
-##### Custom Deserializer
+#### Custom Deserializer
 
 <Callout icon="📘" theme="info">
-  **Note**
-
-  Custom Deserializer
+  **Note** - **_Custom Deserializer_**
 
   Specifies how messages should be deserialized - in our case, the messages were in JSON format, and contained 3 fields: `timestamp`, `full_name` and `address` and were stored in the `value` field.
 
@@ -839,7 +827,7 @@ kafka_source = KafkaSource(name="sample_source",
   3. The schema of the input `DataFrame` will always be the same, regardless of any other kafka configuration, see table below.
 </Callout>
 
-```
+```python
 from frogml.feature_store.data_sources import KafkaSource, CustomDeserializer
 from pyspark.sql.functions import *
 from pyspark.sql.types import *
