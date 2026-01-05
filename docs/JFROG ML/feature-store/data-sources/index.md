@@ -66,8 +66,11 @@ csv_source = CsvSource(
 
 ### Via the UI:
 
-1. Select **AI/ML** > **Data Sources** from the JFrog side menu.
-2. Click **Create New Data Source**.
+1. From the JFrog Platform menu, select **AI/ML** > **Data Sources**.
+2. Click **Create new data source**. 
+   <Callout icon="📘" theme="info">
+     You must have a data source group set up before you can set up a data source. 
+   </Callout>
 3. Select the required data source type from the list.
 4. Fill in the form (mandatory fields are marked with an asterisk).
 5. Test the connection to the data source to verify it is operating (Click **Test connection**).
@@ -90,9 +93,7 @@ frogml features delete --data-source <data-source-name>
 ```
 
 <Callout icon="⚠️" theme="warning">
-  **Warning**
-
-  _**Deleting Data Sources In Use**_
+  **Warning** - _**Deleting Data Sources In Use**_
 
   Before you can delete a data source that is linked to one or more Feature Sets, you must either remove those Feature Sets or reassign them to a different data source.
 </Callout>
@@ -110,9 +111,7 @@ Batch data sources share three common parameters:
 * **date_created_column**: Used to filter the data by the batch's start time/end time. date_created_column must be present in the database. This column must hold the timestamp which represents each records time.
 
 <Callout icon="⚠️" theme="warning">
-  **Warning**
-
-  `date_created_column`:
+  **Warning** - `date_created_column`:
 
   Values in this column must be increasing chronologically. If the date_created is prior to the previous date, the event will not be ingested. Missed data can be added using the <Anchor label="Backfill" title="Backfill" href="/docs/backfill">Backfill</Anchor>.
 </Callout>
