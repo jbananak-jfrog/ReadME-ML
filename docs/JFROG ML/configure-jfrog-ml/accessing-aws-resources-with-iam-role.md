@@ -47,7 +47,7 @@ Click the **Create role** button to start defining a new IAM role.
 
 Select the Type to be _**Custom trust policy**_ and paste the following policy:
 
-```
+```json
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -82,9 +82,7 @@ Select the Type to be _**Custom trust policy**_ and paste the following policy:
 This policy allows the AWS account with ID `<ACCOUNT-ID>` to assume this role, but only if the calling JFrog ML Service ARN (Amazon Resource Name) matches the pattern `arn:aws:iam::<ACCOUNT-ID>:role/qwak-eks-base*`.
 
 <Callout icon="📘" theme="info">
-  **Note**
-
-  _**Account ID**_
+  **Note** - _**Account ID**_
 
   If your JFrog ML deployment is running on JFrog ML Cloud, use `377488441568` as the `<ACCOUNT-ID>`.
 </Callout>
@@ -99,7 +97,7 @@ Your dashboard should look something like this:
 
    For example, to grant access to an S3 Bucket you can use the following JSON, just replace `BUCKET_NAME` with your specific bucket name:
 
-   ```
+   ```json
    {
      "Version": "2012-10-17",
      "Statement": [
