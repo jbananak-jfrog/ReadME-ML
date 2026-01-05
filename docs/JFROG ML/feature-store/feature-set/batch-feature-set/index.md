@@ -144,7 +144,7 @@ def user_features():
 
 ### Configuring Data Sources
 
-When setting up the feature set data ingestion, carefully assign the [Batch Data Sources](/docs/data-sources#batch-data-sources) to be utilized. Ensure that each data source name is explicitly mapped to its intended <Anchor label="Read Policy" title="Read Policies" href="/docs/read-policies">Read Policy</Anchor>.
+When setting up the feature set data ingestion, carefully assign the [Batch Data Sources](/docs/data-sources#batch-data-sources) to be utilized. Ensure that each data source name is explicitly mapped to its intended [Read Policy](/docs/batch-feature-set#read-policies).
 
 If a read policy is not explicitly defined, the default policy is set to [New Only](/docs/batch-feature-set#new-only), which instructs the system to read only records added since the last ingestion job. This approach optimizes efficiency by focusing on new data, enhancing the overall performance of the feature set.
 
