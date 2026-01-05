@@ -16,7 +16,7 @@ metadata:
 ---
 A Streaming Feature Set is identical to a Batch Feature Set in terms of its use (retrieving online/offline features), but instead of reading data from a Batch Source, it reads from an infinite Stream Source - For example, Apache Kafka.
 
-The 2 basic building blocks that define a Streaming Feature Set are its Streaming Source (e.g., Kafka) and a Transformation.
+The 2 basic building blocks that define a Streaming Feature Set are its [Streaming Source](/docs/data-sources#streaming-data-sources) (e.g., Kafka) and a Transformation.
 
 See Streaming Sources section for more details regarding the available Streaming Sources.
 
