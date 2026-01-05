@@ -1,10 +1,10 @@
 - feature-store-overview
 - feature-store-quick-start-guide
 - data-sources
+- feature-set
 - batch-feature-set
 - streaming-feature-set
 - feature-consumption
 - feature-set-alerts
 - use-cases
 - cross-environment-online-serving-replication
-- feature-set
