@@ -4,24 +4,24 @@ deprecated: false
 hidden: false
 metadata:
   title: Data Sources
-  description: JFrog ML data sources are used to configure connections to your data.
-    Data sources are used in order to create feature sets.
-  robots: index
+  description: >-
+    JFrog ML data sources are used to configure connections to your data. Data
+    sources are used in order to create feature sets.
   legacyUUIDs:
-  - UUID-b1e8dbca-38d1-8de3-592d-03bc66a9b81c
-  - UUID-b1e28037-f8c2-43b6-79bc-53a94599b691
-  - UUID-f911515c-6ed1-5336-4ae4-0e23eab4e366
-  - UUID-0124c656-b550-2d83-b4a7-bb3bae2ca04c
-  - UUID-ffb348a1-3557-cdb5-5e19-7ca647688aa0
-  - UUID-766c9d8f-defa-5fcc-8488-0e14847ae833
+    - UUID-b1e8dbca-38d1-8de3-592d-03bc66a9b81c
+    - UUID-b1e28037-f8c2-43b6-79bc-53a94599b691
+    - UUID-f911515c-6ed1-5336-4ae4-0e23eab4e366
+    - UUID-0124c656-b550-2d83-b4a7-bb3bae2ca04c
+    - UUID-ffb348a1-3557-cdb5-5e19-7ca647688aa0
+    - UUID-766c9d8f-defa-5fcc-8488-0e14847ae833
+  robots: index
 ---
-
 JFrog ML data sources are used to configure connections to your data. Data sources are used in order to create feature sets.
 
 There are two main types of data sources:
 
-* [**Batch**](/docs/batch-data-sources "Batch Data Sources"): Data-at-rest sources of data, such as Athena, Snowflake, and Redshift.
-* **[Streaming](/docs/streaming-data-sources "Streaming Data Sources")**: Data in motion sources, such as Kafka and Kinesis.
+* [**Batch**](/docs/data-sources#batch-data-sources): Data-at-rest sources of data, such as Athena, Snowflake, and Redshift.
+* **<Anchor label="Streaming" title="Streaming Data Sources" href="/docs/streaming-data-sources">Streaming</Anchor>**: Data in motion sources, such as Kafka and Kinesis.
 
 **To connect to a data source:**
 
@@ -59,11 +59,10 @@ csv_source = CsvSource(
 ```
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-The **Data Sources** defined with the FrogML SDK are ONLY REGISTERED IN THE CLOUD PLATFORM when the `frogml features register` command is run for that object.
+  The **Data Sources** defined with the FrogML SDK are ONLY REGISTERED IN THE CLOUD PLATFORM when the `frogml features register` command is run for that object.
 </Callout>
-
 
 ### Via the UI:
 
@@ -91,11 +90,11 @@ frogml features delete --data-source <data-source-name>
 ```
 
 <Callout icon="⚠️" theme="warning">
-**Warning**
+  **Warning**
 
-***Deleting Data Sources In Use***
+  _**Deleting Data Sources In Use**_
 
-Before you can delete a data source that is linked to one or more Feature Sets, you must either remove those Feature Sets or reassign them to a different data source.
+  Before you can delete a data source that is linked to one or more Feature Sets, you must either remove those Feature Sets or reassign them to a different data source.
 </Callout>
 
 ## Batch Data Sources
@@ -106,23 +105,23 @@ To define a batch data source, create a configuration object that connects to th
 
 Batch data sources share three common parameters:
 
-* **name**: A unique data source identifier used to address it from a feature set object, may contain only characters, numbers and \\_.
+* **name**: A unique data source identifier used to address it from a feature set object, may contain only characters, numbers and \_.
 * **description**: A general description.
-* **date\_created\_column**: Used to filter the data by the batch's start time/end time. date\_created\_column must be present in the database. This column must hold the timestamp which represents each records time.
+* **date_created_column**: Used to filter the data by the batch's start time/end time. date_created_column must be present in the database. This column must hold the timestamp which represents each records time.
+
 <Callout icon="⚠️" theme="warning">
-**Warning**
+  **Warning**
 
-`date_created_column`:
+  `date_created_column`:
 
-Values in this column must be increasing chronologically. If the date\_created is prior to the previous date, the event will not be ingested. Missed data can be added using the [Backfill](/docs/backfill "Backfill").
+  Values in this column must be increasing chronologically. If the date_created is prior to the previous date, the event will not be ingested. Missed data can be added using the <Anchor label="Backfill" title="Backfill" href="/docs/backfill">Backfill</Anchor>.
 </Callout>
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-Default timestamp format for `date_created_column` should be `yyyy-MM-dd'T'HH:mm:ss`, optionally with `[.SSS][XXX]`. For example: `2020-01-01T00:00:00`.
+  Default timestamp format for `date_created_column` should be `yyyy-MM-dd'T'HH:mm:ss`, optionally with `[.SSS][XXX]`. For example: `2020-01-01T00:00:00`.
 </Callout>
-
 
 #### Registering New Data Sources
 
@@ -155,65 +154,20 @@ When invoking this function the FrogML System will validate the data source befo
 For example it can fail:
 
 * When connecting to the specified bucket.
-* When the date\_created\_column is not the right type or does not exist.
+* When the date_created_column is not the right type or does not exist.
 
 #### Available Data Source Types
 
-
-
-<Table>
-  <tbody>
-    <tr>
-      <td>
-        [Snowflake](/docs/data-sources#snowflake)
-      </td>
-      <td>
-        [BigQuery](/docs/data-sources#bigquery)
-      </td>
-      <td>
-        [MongoDB](/docs/data-sources#mongodb)
-      </td>
-      <td>
-        [Amazon S3 Stored Files](/docs/data-sources#amazon-s3-stored-files)
-      </td>
-    </tr>
-    <tr>
-      <td>
-        [Redshift](/docs/data-sources#redshift)
-      </td>
-      <td>
-        [MySQL](/docs/data-sources#mysql)
-      </td>
-      <td>
-        [Postgres](/docs/data-sources#postgres)
-      </td>
-      <td>
-        [Clickhouse](/docs/data-sources#clickhouse)
-      </td>
-    </tr>
-    <tr>
-      <td>
-        [Vertica](/docs/data-sources#vertica)
-      </td>
-      <td>
-        [AWS Athena](/docs/data-sources#aws-athena)
-      </td>
-      <td>
-        [Unity Catalog](/docs/data-sources#unity-catalog)
-      </td>
-      <td>
-      </td>
-    </tr>
-  </tbody>
-</Table>
-
-
+| [Snowflake](/docs/data-sources#snowflake) | [BigQuery](/docs/data-sources#bigquery)     | [MongoDB](/docs/data-sources#mongodb)             | [Amazon S3 Stored Files](/docs/data-sources#amazon-s3-stored-files) |
+| :---------------------------------------- | :------------------------------------------ | :------------------------------------------------ | :------------------------------------------------------------------ |
+| [Redshift](/docs/data-sources#redshift)   | [MySQL](/docs/data-sources#mysql)           | [Postgres](/docs/data-sources#postgres)           | [Clickhouse](/docs/data-sources#clickhouse)                         |
+| [Vertica](/docs/data-sources#vertica)     | [AWS Athena](/docs/data-sources#aws-athena) | [Unity Catalog](/docs/data-sources#unity-catalog) |                                                                     |
 
 ##### Snowflake
 
 In order to create a Snowflake connection, before creating a connector make sure you have the following:
 
-1. Snowflake User configured to unencrypted <Anchor label="key-pair authentication" href="https://docs.snowflake.com/en/user-guide/key-pair-auth" target="_blank">key-pair authentication</Anchor> (Read-Only access required).
+1. Snowflake User configured to unencrypted <Anchor label="key-pair authentication" target="_blank" href="https://docs.snowflake.com/en/user-guide/key-pair-auth">key-pair authentication</Anchor> (Read-Only access required).
 2. Connectivity between JFrog ML environment and Snowflake host.
 
    There are two distinct ways to use the Snowflake connector:
@@ -254,20 +208,20 @@ In order to create a Snowflake connection, before creating a connector make sure
           query='select feature1, feature2 from snowflake_table'
       )
       ```
+
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-JFrog ML only supports **unencrypted** private keys without the key delimiters (begin and end). See <Anchor label="key-pair authentication" href="https://docs.snowflake.com/en/user-guide/key-pair-auth" target="_blank">key-pair authentication</Anchor>.
+  JFrog ML only supports **unencrypted** private keys without the key delimiters (begin and end). See <Anchor label="key-pair authentication" target="_blank" href="https://docs.snowflake.com/en/user-guide/key-pair-auth">key-pair authentication</Anchor>.
 </Callout>
-
 
 ##### BigQuery
 
-To access a BigQuery source, please download the *credentials.json* file from GCP to your the local file system.
+To access a BigQuery source, please download the _credentials.json_ file from GCP to your the local file system.
 
 ###### Permissions
 
-The following permissions **must be applied** to the provided credentials in the *credentials.json* file.
+The following permissions **must be applied** to the provided credentials in the _credentials.json_ file.
 
 ```
 bigquery.tables.create
@@ -278,7 +232,7 @@ bigquery.readsessions.* bigquery.jobs.create
 
 ###### Uploading Credentials
 
-Once you've downloaded *credentials.json*, encode it with base64 and set it as a JFrog ML secret using the JFrog ML Secret Service.
+Once you've downloaded _credentials.json_, encode it with base64 and set it as a JFrog ML secret using the JFrog ML Secret Service.
 
 ```
 import json
@@ -386,23 +340,22 @@ parquet_source = ParquetSource(
 ```
 
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-***Timestamp Column***
+  _**Timestamp Column**_
 
-Ensure that the timestamp column in your Parquet file(s) is represented using the appropriate PyArrow timestamp data type with microsecond precision.
+  Ensure that the timestamp column in your Parquet file(s) is represented using the appropriate PyArrow timestamp data type with microsecond precision.
 
-You can achieve this by casting the timestamp column to the desired precision. Here's an example:
+  You can achieve this by casting the timestamp column to the desired precision. Here's an example:
 
-```
-timestamp_column_microseconds = timestamp_column.cast('timestamp[us]')
-```
+  ```
+  timestamp_column_microseconds = timestamp_column.cast('timestamp[us]')
+  ```
 
-In the above code snippet, `timestamp_column_microseconds` refers to the modified timestamp column with microsecond precision. This column represents information like the date and time that a record was created, denoted as `date_created`.
+  In the above code snippet, `timestamp_column_microseconds` refers to the modified timestamp column with microsecond precision. This column represents information like the date and time that a record was created, denoted as `date_created`.
 
-Using Pandas timestamp data types, like `datetime[ns]` or `int64` will result in an error when fetching data from the Parquet source.
+  Using Pandas timestamp data types, like `datetime[ns]` or `int64` will result in an error when fetching data from the Parquet source.
 </Callout>
-
 
 ###### Ingesting Data from CSV Files
 
@@ -423,21 +376,20 @@ csv_source = CsvSource(
 ```
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-***Public S3 bucket access***
+  _**Public S3 bucket access**_
 
-When using public any bucket such as `jfrogml-public`, `nyc-tlc` , etc.. , use the `AnonymousS3Configuration` to access without credentials as shown in the example.
+  When using public any bucket such as `jfrogml-public`, `nyc-tlc` , etc.. , use the `AnonymousS3Configuration` to access without credentials as shown in the example.
 </Callout>
 
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-Default timestamp format for `date_created_column` in CSV files should be `yyyy-MM-dd'T'HH:mm:ss`, optionally with `[.SSS][XXX]`.
+  Default timestamp format for `date_created_column` in CSV files should be `yyyy-MM-dd'T'HH:mm:ss`, optionally with `[.SSS][XXX]`.
 
-For example `2020-01-01T00:00:00`
+  For example `2020-01-01T00:00:00`
 </Callout>
-
 
 ###### Accessing Private Amazon S3 Buckets in Data Sources
 
@@ -445,7 +397,7 @@ To securely leverage data stored in Amazon S3 buckets within the JFrog ML featur
 
 1. **IAM Role ARN Based Authentication**
 
-   This method allows JFrog ML to assume an IAM role with permissions to access your S3 bucket. Create an IAM role in AWS with the necessary permissions to access the S3 bucket. For a step-by-step guide, refer to [Configuring IAM Roles for S3 Access](/docs/accessing-aws-resources-with-iam-role "Accessing AWS Resources with IAM Role").
+   This method allows JFrog ML to assume an IAM role with permissions to access your S3 bucket. Create an IAM role in AWS with the necessary permissions to access the S3 bucket. For a step-by-step guide, refer to <Anchor label="Configuring IAM Roles for S3 Access" title="Accessing AWS Resources with IAM Role" href="/docs/accessing-aws-resources-with-iam-role">Configuring IAM Roles for S3 Access</Anchor>.
 
    ```
    from frogml.core.feature_store.data_sources.source_authentication import AwsAssumeRoleAuthentication
@@ -454,7 +406,7 @@ To securely leverage data stored in Amazon S3 buckets within the JFrog ML featur
    ```
 2. **Credentials Based Authentication**
 
-   For scenarios where IAM role-based access isn't preferred, use your AWS access and secret keys, stored securely in the JFrog ML Secrets Management Service. Save your AWS `access_key` and `secret_key` in [JFrog ML Secret Management](/docs/secret-management "Secret Management").
+   For scenarios where IAM role-based access isn't preferred, use your AWS access and secret keys, stored securely in the JFrog ML Secrets Management Service. Save your AWS `access_key` and `secret_key` in <Anchor label="JFrog ML Secret Management" title="Secret Management" href="/docs/secret-management">JFrog ML Secret Management</Anchor>.
 
    ```
    from frogml.core.feature_store.data_sources.source_authentication import AwsCredentialsAuthentication
@@ -592,13 +544,12 @@ athena_source = AthenaSource(
 ```
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-***Workgroups***
+  _**Workgroups**_
 
-By default, your default workgroup in Athena is called `primary`. However, for optimal organization and resource management, it's recommended to establish a dedicated workgroup specifically for handling FeatureSet-related queries. This separation ensures that queries related to the JFrog ML FeatureSets are isolated from other users or applications utilizing AWS Athena, allowing for better debugging, query prioritization, and enhanced governance.
+  By default, your default workgroup in Athena is called `primary`. However, for optimal organization and resource management, it's recommended to establish a dedicated workgroup specifically for handling FeatureSet-related queries. This separation ensures that queries related to the JFrog ML FeatureSets are isolated from other users or applications utilizing AWS Athena, allowing for better debugging, query prioritization, and enhanced governance.
 </Callout>
-
 
 ###### The data source configuration supports 2 ways of authenticating to AWS Athena
 
@@ -707,9 +658,9 @@ An example of how to use the SDK for a Unity Catalog source:
 
 In order to create a Unity Catalog connection, before creating a connector make sure you have the following:
 
-* Personal access token. See <Anchor label="How to create a personal access token" href="https://learn.microsoft.com/en-us/azure/databricks/dev-tools/auth/pat" target="_blank">How to create a personal access token</Anchor>.
+* Personal access token. See <Anchor label="How to create a personal access token" target="_blank" href="https://learn.microsoft.com/en-us/azure/databricks/dev-tools/auth/pat">How to create a personal access token</Anchor>.
 * Connectivity between JFrog ML environment and Unity Catalog host.
-* <Anchor label="Configure access using the endpoint /api/2.1/unity-catalog" href="https://learn.microsoft.com/en-us/azure/databricks/external-access/unity-rest" target="_blank">Configure access using the endpoint /api/2.1/unity-catalog</Anchor>.
+* <Anchor label="Configure access using the endpoint /api/2.1/unity-catalog" target="_blank" href="https://learn.microsoft.com/en-us/azure/databricks/external-access/unity-rest">Configure access using the endpoint /api/2.1/unity-catalog</Anchor>.
 
 There are two distinct ways to use the Unity Catalog connector:
 
@@ -761,156 +712,17 @@ kafka_source = KafkaSource(name="sample_source",
 
 The acceptable parameters for KafkaSource are:
 
-
-
-<Table>
-  <thead>
-    <tr>
-      <th>
-        parameter
-      </th>
-      <th>
-        type
-      </th>
-      <th>
-        description
-      </th>
-      <th>
-        default value
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        bootstrap\_servers
-      </td>
-      <td>
-        str
-      </td>
-      <td>
-        comma-separated sequence of host:port entries
-      </td>
-      <td>
-        This parameter is mandatory
-      </td>
-    </tr>
-    <tr>
-      <td>
-        deserialization
-      </td>
-      <td>
-        Deserializer
-      </td>
-      <td>
-        Deserializer to use
-      </td>
-      <td>
-        This parameter is mandatory
-      </td>
-    </tr>
-    <tr>
-      <td>
-        secret\_configs
-      </td>
-      <td>
-        Dict[str, str]
-      </td>
-      <td>
-        Configurations that will be injected to the reader, where the value will be resolved from a JFrog ML Secret with the same name, that is, k:v will be resolved to k:get\_secret(V) before using this for credentials, see other mechanisms (SASL/SCRAM) that are supported out-of-the-box
-      </td>
-      <td>
-        `{}`
-      </td>
-    </tr>
-    <tr>
-      <td>
-        passthrough\_configs
-      </td>
-      <td>
-        Dict[str, str]
-      </td>
-      <td>
-        Configurations that will be injected to the reader w/o resolving to a JFrog ML Secret. DO NOT PLACE CREDENTIALS HERE!
-      </td>
-      <td>
-        `{}`
-      </td>
-    </tr>
-    <tr>
-      <td>
-        subscribe
-      </td>
-      <td>
-        str
-      </td>
-      <td>
-        comma separated list of 1 or more topics
-      </td>
-      <td>
-        No default value, exactly one `{subscribe, assign, subscribe\_pattern}` is to be set
-      </td>
-    </tr>
-    <tr>
-      <td>
-        assign
-      </td>
-      <td>
-        str
-      </td>
-      <td>
-        JSON string, where each key is a topic name and the value is an array of partition numbers to subscribe to
-      </td>
-      <td>
-        No default value, exactly one `{subscribe, assign, subscribe\_pattern}` is to be set
-      </td>
-    </tr>
-    <tr>
-      <td>
-        subscribe\_pattern
-      </td>
-      <td>
-        str
-      </td>
-      <td>
-        Java regex that matches the topics to read from
-      </td>
-      <td>
-        No default value, exactly one `{subscribe, assign, subscribe\_pattern}` is to be set
-      </td>
-    </tr>
-    <tr>
-      <td>
-        description
-      </td>
-      <td>
-        str
-      </td>
-      <td>
-        Description of the source
-      </td>
-      <td>
-        empty string
-      </td>
-    </tr>
-    <tr>
-      <td>
-        name
-      </td>
-      <td>
-        str
-      </td>
-      <td>
-        name of the source. this is the View Name with which this data source will appear in the Transformation definition (see below)
-      </td>
-      <td>
-        This parameter is mandatory
-      </td>
-    </tr>
-  </tbody>
-</Table>
-
-
+| parameter           | type           | description                                                                                                                                                                                                                                                                             | default value                                                                        |
+| :------------------ | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------- |
+| bootstrap_servers   | str            | comma-separated sequence of host:port entries                                                                                                                                                                                                                                           | This parameter is mandatory                                                          |
+| deserialization     | Deserializer   | Deserializer to use                                                                                                                                                                                                                                                                     | This parameter is mandatory                                                          |
+| secret_configs      | Dict[str, str] | Configurations that will be injected to the reader, where the value will be resolved from a JFrog ML Secret with the same name, that is, k:v will be resolved to k:get_secret(V) before using this for credentials, see other mechanisms (SASL/SCRAM) that are supported out-of-the-box | `{}`                                                                                 |
+| passthrough_configs | Dict[str, str] | Configurations that will be injected to the reader w/o resolving to a JFrog ML Secret. DO NOT PLACE CREDENTIALS HERE!                                                                                                                                                                   | `{}`                                                                                 |
+| subscribe           | str            | comma separated list of 1 or more topics                                                                                                                                                                                                                                                | No default value, exactly one `{subscribe, assign, subscribe\_pattern}` is to be set |
+| assign              | str            | JSON string, where each key is a topic name and the value is an array of partition numbers to subscribe to                                                                                                                                                                              | No default value, exactly one `{subscribe, assign, subscribe\_pattern}` is to be set |
+| subscribe_pattern   | str            | Java regex that matches the topics to read from                                                                                                                                                                                                                                         | No default value, exactly one `{subscribe, assign, subscribe\_pattern}` is to be set |
+| description         | str            | Description of the source                                                                                                                                                                                                                                                               | empty string                                                                         |
+| name                | str            | name of the source. this is the View Name with which this data source will appear in the Transformation definition (see below)                                                                                                                                                          | This parameter is mandatory                                                          |
 
 #### Deserialization
 
@@ -919,15 +731,14 @@ The Kafka streaming data source currently supports 2 types of message deserializ
 ##### Generic Deserializer
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-Generic Deserializer
+  Generic Deserializer
 
-* Supports `AVRO` and `JSON` formats.
-* Assumes the message data is stored under `value` field
-* compatible data types are in accordance to spark data types
+  * Supports `AVRO` and `JSON` formats.
+  * Assumes the message data is stored under `value` field
+  * compatible data types are in accordance to spark data types
 </Callout>
-
 
 ##### Using JSON
 
@@ -974,23 +785,22 @@ kafka_source = KafkaSource(name="sample_source",
 ```
 
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-***Behavior for Invalid Messages***
+  _**Behavior for Invalid Messages**_
 
-When using `GenericDeserializer` for JSON, a message can be invalid when:
+  When using `GenericDeserializer` for JSON, a message can be invalid when:
 
-* The value of the message in Kafka is not a UTF8 string.
-* The value of the message in Kafka is a UTF8 string but is not a valid JSON string.
-* The value of the message in Kafka is a valid JSON string but does not follow the schema in one or more of its fields.
+  * The value of the message in Kafka is not a UTF8 string.
+  * The value of the message in Kafka is a UTF8 string but is not a valid JSON string.
+  * The value of the message in Kafka is a valid JSON string but does not follow the schema in one or more of its fields.
 
-When a message is invalid it might cause an entire record to have null values, or just specific fields of the record to have a null value. Invalid messages will always create a record in the Data Source and will fail silently.
+  When a message is invalid it might cause an entire record to have null values, or just specific fields of the record to have a null value. Invalid messages will always create a record in the Data Source and will fail silently.
 </Callout>
-
 
 ##### Using Avro
 
-When using Avro the schema is an <Anchor label="Avro schema" href="https://avro.apache.org/docs/1.12.0/specification/" target="_blank">Avro schema</Anchor> :
+When using Avro the schema is an <Anchor label="Avro schema" target="_blank" href="https://avro.apache.org/docs/1.12.0/specification/">Avro schema</Anchor> :
 
 ```
 from frogml.feature_store.data_sources import KafkaSource, MessageFormat, GenericDeserializer
@@ -1007,30 +817,28 @@ kafka_source = KafkaSource(name="sample_source",
 ```
 
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-***Behavior for Invalid Messages***
+  _**Behavior for Invalid Messages**_
 
-When working with Avro it is important to validate the input to your topic properly. When using `GenericDeserializer` for Avro, invalid Avro messages can cause unexpected results. Unlike the behavior for JSON - some failures are not silent and may cause the entire Feature Set ingestion to fail. Even when the failure is silent it may cause bad data.
+  When working with Avro it is important to validate the input to your topic properly. When using `GenericDeserializer` for Avro, invalid Avro messages can cause unexpected results. Unlike the behavior for JSON - some failures are not silent and may cause the entire Feature Set ingestion to fail. Even when the failure is silent it may cause bad data.
 </Callout>
-
 
 ##### Custom Deserializer
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-Custom Deserializer
+  Custom Deserializer
 
-Specifies how messages should be deserialized - in our case, the messages were in JSON format, and contained 3 fields: `timestamp`, `full_name` and `address` and were stored in the `value` field.
+  Specifies how messages should be deserialized - in our case, the messages were in JSON format, and contained 3 fields: `timestamp`, `full_name` and `address` and were stored in the `value` field.
 
-When specifying a deserializer, any arbitrary python function that accepts a PySpark `DataFrame` and returns a `DataFrame` can be specified, under several conditions:
+  When specifying a deserializer, any arbitrary python function that accepts a PySpark `DataFrame` and returns a `DataFrame` can be specified, under several conditions:
 
-1. Row-Level transformations only.
-2. Must not return an input that is detached from the original `DataFrame` (e.g., do not use the rdd, do not create a new `DataFrame` etc.) - this will break the streaming graph.
-3. The schema of the input `DataFrame` will always be the same, regardless of any other kafka configuration, see table below.
+  1. Row-Level transformations only.
+  2. Must not return an input that is detached from the original `DataFrame` (e.g., do not use the rdd, do not create a new `DataFrame` etc.) - this will break the streaming graph.
+  3. The schema of the input `DataFrame` will always be the same, regardless of any other kafka configuration, see table below.
 </Callout>
-
 
 ```
 from frogml.feature_store.data_sources import KafkaSource, CustomDeserializer
@@ -1065,83 +873,13 @@ kafka_source = KafkaSource(name="sample_source",
 
 Built-in Columns when accessing a Kafka Topic:
 
-
-
-<Table>
-  <thead>
-    <tr>
-      <th>
-        Column Name
-      </th>
-      <th>
-        Type
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        key
-      </td>
-      <td>
-        binary
-      </td>
-    </tr>
-    <tr>
-      <td>
-        value
-      </td>
-      <td>
-        binary
-      </td>
-    </tr>
-    <tr>
-      <td>
-        topic
-      </td>
-      <td>
-        string
-      </td>
-    </tr>
-    <tr>
-      <td>
-        partition
-      </td>
-      <td>
-        int
-      </td>
-    </tr>
-    <tr>
-      <td>
-        offset
-      </td>
-      <td>
-        long
-      </td>
-    </tr>
-    <tr>
-      <td>
-        timestamp
-      </td>
-      <td>
-        timestamp
-      </td>
-    </tr>
-    <tr>
-      <td>
-        timestampType
-      </td>
-      <td>
-        int
-      </td>
-    </tr>
-    <tr>
-      <td>
-        headers (optional)
-      </td>
-      <td>
-        array
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| Column Name        | Type      |
+| ------------------ | --------- |
+| key                | binary    |
+| value              | binary    |
+| topic              | string    |
+| partition          | int       |
+| offset             | long      |
+| timestamp          | timestamp |
+| timestampType      | int       |
+| headers (optional) | array     |
