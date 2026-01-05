@@ -85,7 +85,7 @@ These steps ensure the seamless creation of a batch feature set, allowing users 
 
 #### Batch Feature Set Example
 
-```
+```python
 # Python
 from frogml.feature_store.feature_sets import batch
 from frogml.core.feature_store.feature_sets.transformations import SparkSqlTransformation
@@ -122,7 +122,7 @@ An optional decorator for defining feature set metadata information of:
 
 `display_name` - Alternative feature set name for UI display
 
-```
+```python
 # Python
 from frogml.feature_store.feature_sets import batch
 from frogml.core.feature_store.feature_sets.transformations import SparkSqlTransformation
@@ -148,7 +148,7 @@ When setting up the feature set data ingestion, carefully assign the [Batch Data
 
 If a read policy is not explicitly defined, the default policy is set to <Anchor label="New Only" title="Read Policies" href="/docs/read-policies">New Only</Anchor>, which instructs the system to read only records added since the last ingestion job. This approach optimizes efficiency by focusing on new data, enhancing the overall performance of the feature set.
 
-```
+```python
 from frogml.core.feature_store.feature_sets.read_policies import ReadPolicy
 from frogml.feature_store.feature_sets import batch
 from frogml.core.feature_store.feature_sets.transformations import SparkSqlTransformation
@@ -200,14 +200,12 @@ In the case of a single data source, the `date_created_column` specified in the 
 To regulate the timing of ETL (Extract, Transform, Load) operations for batch features, scheduling policies play a pivotal role. Once a feature is deployed, the system calculates new feature values at intervals determined by the scheduling policy, which adheres to the <Anchor label="crontab" target="_blank" href="https://crontab.guru/">crontab</Anchor> format.
 
 <Callout icon="📘" theme="info">
-  **Note**
-
   _**Default Scheduling Policy**_
 
   The default scheduling is every **4 hours** if no explicit policy is set.
 </Callout>
 
-```
+```python
 from frogml.feature_store.feature_sets import batch
 from frogml.core.feature_store.feature_sets.transformations import SparkSqlTransformation
 
@@ -232,9 +230,9 @@ The definition above means that the feature ingestion job will be triggered on a
 
 When `None` or `“”` is passed to the scheduling decorator during feature set creation, it results in the deployment of a feature set exclusively designed for manual initiation.
 
-It's important to note that setting `None` will deactivate the automatic feature ingestion, requiring users to manually trigger the feature set when needed.
+Important: Setting `None` will deactivate the automatic feature ingestion, requiring users to manually trigger the feature set when needed.
 
-```
+```python
 from frogml.core.feature_store.feature_sets.read_policies import ReadPolicy
 from frogml.feature_store.feature_sets import batch
 from frogml.core.feature_store.feature_sets.transformations import SparkSqlTransformation
@@ -262,7 +260,7 @@ def user_features():
 
 The backfill policy dictates the method, along with the specific date and time, for populating historical feature values in the newly created feature set.
 
-```
+```python
 from frogml.core.feature_store.feature_sets.read_policies import ReadPolicy
 from frogml.feature_store.feature_sets import batch
 from frogml.core.feature_store.feature_sets.transformations import SparkSqlTransformation
@@ -290,7 +288,7 @@ In JFrog ML, the allocation of resources crucial for batch execution jobs, often
 
 The default size for the cluster template initiates at `MEDIUM` if none is explicitly specified.
 
-```
+```python
 # Python
 from frogml.feature_store.feature_sets import batch
 from frogml.core.feature_store.feature_sets.execution_spec import ClusterTemplate
@@ -316,7 +314,7 @@ To make sure the generated feature set matches your expectation, even before the
 
 This function computes a sample feature vectors using the defined transformation applied on a sample data from your defined data source and returns a pandas DataFrame.
 
-```
+```python
     @batch.feature_set(
         name="user-transaction-aggregations",
         key="user_id",
@@ -374,11 +372,9 @@ There are two options for registering new features:
    ```
 
 <Callout icon="📘" theme="info">
-  **Note**
-
   _**Function Naming Conventions**_
 
-  Same feature set transformation function name, cannot be defined more than once per .py file.
+  The same feature set transformation function name, cannot be defined more than once per .py file.
 </Callout>
 
 ```
@@ -392,16 +388,14 @@ There are two options for registering new features:
 
 The pipeline execution status will be visible in the UI under the list of registered feature sets.
 
-To view the status in the UI, go to Feature Store -> Feature Sets -> Batch Feature Set Name.
+To view the status in the UI, navigate to **Feature Store** > **Feature Sets** > **Batch Feature Set Name**.
 
 ## Updating a Feature Set
 
-Feature set configuration may be updated, except for the following limitations
+Feature set configuration may be updated, except for the following limitations:
 
 <Callout icon="❗️" theme="error">
-  **Important**
-
-  _**Recreating Feature Sets**_
+  **Important** - _**Recreating Feature Sets**_
 
   Changing any of the parameters above requires deleting and recreating a feature set:
 
