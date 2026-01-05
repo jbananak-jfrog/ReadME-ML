@@ -446,21 +446,19 @@ When pausing a Batch Feature Set, future ingestion jobs will not be scheduled (r
 Upon resuming a batch feature set, it is re-scheduled, and ingestion jobs will continue ingesting data from where they have last left off.
 
 <Callout icon="📘" theme="info">
-  **Note**
-
   When resuming a feature set, the ingestion jobs will continue as scheduled - meaning feature sets jobs will start "catching up" on jobs that were skipped during the time it was paused.
 </Callout>
 
 For example, if an hourly feature set we paused for 3 days - after resuming it, those hourly jobs will be executed immediately one after the other until the data is all caught up.
 
-To pause a Batch Feature Set, use the JFrog ML CLI:
+▶ **To pause a batch feature set**:  Use the JFrog ML CLI:
 
 ```
 # CLI
 frogml features pause user-features
 ```
 
-Accordingly, to resume:
+▶ **To resume the batch feature set:**
 
 ```
 # CLI
@@ -471,7 +469,7 @@ frogml features resume user-features
 
 The section describes the various transformations supported by JFrog ML.
 
-#### SQL
+### SQL
 
 <Callout icon="📘" theme="info">
   **Note**
@@ -481,7 +479,7 @@ The section describes the various transformations supported by JFrog ML.
 
 The following is an implementation of creating a transformation using a SQL:
 
-```
+```python
 from frogml.core.feature_store.feature_sets.read_policies import ReadPolicy
 from frogml.feature_store.feature_sets import batch
 from frogml.core.feature_store.feature_sets.transformations import SparkSqlTransformation
@@ -505,7 +503,7 @@ def user_features():
         Group By user_id""")
 ```
 
-##### Creating Transformations
+#### Creating Transformations
 
 When creating transformations, keep the following guidelines in mind:
 
@@ -519,14 +517,12 @@ When creating transformations, keep the following guidelines in mind:
 4. Make sure the column names resulting from the SQL has no special characters. The allowed characters are: **a-z, A-Z, 0-9, _.**
 
 <Callout icon="📘" theme="info">
-  **Note**
-
   _**Logging**_
 
   JFrog supports the default Python logger, which you can import from the standard python logging library.
 </Callout>
 
-#### PySpark
+### PySpark
 
 To use this feature, ensure that you have installed the `frogml-cli` with the feature-store extra.
 
@@ -551,14 +547,12 @@ _**UDF Definition:**_
 The returned df (PySpark DataFrame) must contain a column representing the configured key. The df column names must not include whitespaces or special characters.
 
 <Callout icon="❗️" theme="error">
-  **Important**
-
-  **Python and Dependency Restrictions**T
+  **Important** - **Python and Dependency Restrictions**T
 
   To ensure compatibility and stability, it is mandatory to use **Python 3.8** when registering a feature set with a Koalas transformation. Additionally, ensure that `cloudpickle` version is locked to `2.2.1`.
 </Callout>
 
-```
+```python
 from typing import Dict, Any
 
 import pyspark.sql as spark
@@ -586,9 +580,7 @@ def transform():
 ```
 
 <Callout icon="⚠️" theme="warning">
-  **Warning**
-
-  _**Function Scope and Dependencies**_
+  **Warning** - _**Function Scope and Dependencies**_
 
   PySpark function scope and variables must be defined under the transform function, as shown in the code snippet above.
 
@@ -596,18 +588,16 @@ def transform():
 </Callout>
 
 <Callout icon="📘" theme="info">
-  **Note**
-
   _**Logging**_
 
   JFrog supports the default Python logger, which you can import from the standard python logging library.
 </Callout>
 
-##### Warnings about PySpark Usage Patterns
+#### Warnings about PySpark Usage Patterns
 
 Avoid using `DataFrame.localCheckpoint`, even though local checkpointing might improve performance of some workloads, local checkpoints are ephemeral, have limited disk space and can lead to execution failures. Regular checkpoints are recommended to use instead for most other cases.
 
-#### Pandas On Spark
+### Pandas On Spark
 
 Pandas On Spark is a pandas implementation using Spark. Please ensure your code is <Anchor label="Pandas On Spark Library" target="_blank" href="https://spark.apache.org/pandas-on-spark/">Pandas On Spark Library</Anchor> compliant.
 
@@ -625,7 +615,7 @@ The allowed characters are: **a-z, A-Z, 0-9, _.**.
 >
 > **Dependencies** - to ensure compatibility and stability, it is mandatory to use **Python 3.8** when registering a Feature Set with a Pandas On Spark transformation.
 
-```
+```python
 from typing import Dict, Any
 from frogml.feature_store.feature_sets import batch
 from frogml.core.feature_store.feature_sets.read_policies import ReadPolicy
@@ -650,16 +640,12 @@ def transform():
 ```
 
 <Callout icon="❗️" theme="error">
-  **Important**
-
-  _**Function Scope and Dependencies**_
+  **Important** - _**Function Scope and Dependencies**_
 
   Pandas On Spark function scope and variables must be defined under the transform function, as shown in the code snippet above.
 </Callout>
 
 <Callout icon="📘" theme="info">
-  **Note**
-
   _**Logging**_
 
   We support the default Python logger, which you can import from the standard python logging library.
