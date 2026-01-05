@@ -124,8 +124,6 @@ Batch data sources share three common parameters:
 </Callout>
 
 <Callout icon="📘" theme="info">
-  **Note**
-
   Default timestamp format for `date_created_column` should be `yyyy-MM-dd'T'HH:mm:ss`, optionally with `[.SSS][XXX]`. For example: `2020-01-01T00:00:00`.
 </Callout>
 
@@ -216,8 +214,6 @@ In order to create a Snowflake connection, before creating a connector make sure
       ```
 
 <Callout icon="📘" theme="info">
-  **Note**
-
   JFrog ML only supports **unencrypted** private keys without the key delimiters (begin and end). See <Anchor label="key-pair authentication" target="_blank" href="https://docs.snowflake.com/en/user-guide/key-pair-auth">key-pair authentication</Anchor>.
 </Callout>
 
@@ -470,7 +466,7 @@ mysql_source = MysqlSource(
 )
 ```
 
-##### Postgres
+#### Postgres
 
 ```
 from frogml.feature_store.data_sources.batch.postgres import ProtoPostgresqlSource
@@ -546,12 +542,12 @@ athena_source = AthenaSource(
 ```
 
 <Callout icon="📘" theme="info">
-  **Note** - _**Workgroups**_
+  _**Workgroups**_
 
   By default, your default workgroup in Athena is called `primary`. However, for optimal organization and resource management, it's recommended to establish a dedicated workgroup specifically for handling FeatureSet-related queries. This separation ensures that queries related to the JFrog ML FeatureSets are isolated from other users or applications utilizing AWS Athena, allowing for better debugging, query prioritization, and enhanced governance.
 </Callout>
 
-##### The data source configuration supports 2 ways of authenticating to AWS Athena
+**The data source configuration supports 2 ways of authenticating to AWS Athena**
 
 `aws_authentication: AwsAuthentication`
 
@@ -712,7 +708,7 @@ kafka_source = KafkaSource(name="sample_source",
 
 The acceptable parameters for KafkaSource are:
 
-| parameter           | type           | description                                                                                                                                                                                                                                                                             | default value                                                                        |
+| Parameter           | Type           | Description                                                                                                                                                                                                                                                                             | Default Value                                                                        |
 | :------------------ | :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------------------------------------------- |
 | bootstrap_servers   | str            | comma-separated sequence of host:port entries                                                                                                                                                                                                                                           | This parameter is mandatory                                                          |
 | deserialization     | Deserializer   | Deserializer to use                                                                                                                                                                                                                                                                     | This parameter is mandatory                                                          |
@@ -731,9 +727,7 @@ The Kafka streaming data source currently supports 2 types of message deserializ
 #### Generic Deserializer
 
 <Callout icon="📘" theme="info">
-  **Note**
-
-  Generic Deserializer
+  **Generic Deserializer**
 
   * Supports `AVRO` and `JSON` formats.
   * Assumes the message data is stored under `value` field
@@ -823,7 +817,7 @@ kafka_source = KafkaSource(name="sample_source",
 #### Custom Deserializer
 
 <Callout icon="📘" theme="info">
-  **Note** - **_Custom Deserializer_**
+  **_Custom Deserializer_**
 
   Specifies how messages should be deserialized - in our case, the messages were in JSON format, and contained 3 fields: `timestamp`, `full_name` and `address` and were stored in the `value` field.
 
