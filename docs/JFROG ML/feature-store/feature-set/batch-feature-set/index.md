@@ -395,7 +395,7 @@ To view the status in the UI, navigate to **Feature Store** > **Feature Sets** >
 Feature set configuration may be updated, except for the following limitations:
 
 <Callout icon="❗️" theme="error">
-  **Important** - _**Recreating Feature Sets**_
+  **Important** - _**Updating/Recreating Feature Sets**_
 
   Changing any of the parameters below requires deleting and recreating a feature set:
 
