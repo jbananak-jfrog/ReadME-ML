@@ -22,7 +22,7 @@ There are two main types of data sources:
 
 <Cards>
   <Card title="Batch" href="/docs/data-sources#batch-data-sources">
-    Data-at-rest sources of data, such as Athena, Snowflake, and Redshift.
+    [Data-at-rest sources of data, such as Athena, Snowflake, and Redshift](/docs/data-sources#batch-data-sources)
   </Card>
 
   <Card title="Streaming" href="/docs/data-sources#streaming-data-sources">
