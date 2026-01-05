@@ -353,7 +353,7 @@ def predict(self, df: pd.DataFrame, extracted_df: pd.DataFrame) -> pd.DataFrame:
     < \..prediction - logic.. >
 ```
 
-To learn more about building and deploying models with JFrog ML, please check out our other <Anchor label="Getting Started" title="Get Started with JFrog ML" href="/docs/get-started-with-jfrog-ml">Getting Started</Anchor> Guide.
+To learn more about building and deploying models with JFrog ML, please check out our other [QuickStart Guide](/docs/get-started-with-jfrog-ml) Guide.
 
 ## Consuming Features for Real-Time Predictions
 
