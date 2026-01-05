@@ -1,5 +1,5 @@
 ---
-title: Streaming Feature Set
+title: Streaming Feature Sets
 deprecated: false
 hidden: false
 metadata:
