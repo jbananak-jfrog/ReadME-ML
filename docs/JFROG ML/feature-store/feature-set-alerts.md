@@ -18,11 +18,9 @@ metadata:
 Currently, only alerts for batch feature set failures are supported. These alerts notify you when a batch feature set ingestion fails, enabling you to take immediate action.
 
 <Callout icon="📘" theme="info">
-  **Note**
-
   _**Monitoring Integrations**_
 
-  Before setting up alerts, please make sure that the relevant integrations and channels are configured. For more information, please see the <Anchor label="Alert Integrations" title="JFrog ML Alerts" href="/docs/jfrog-ml-alerts">Alert Integrations</Anchor> guide.
+  Before setting up alerts, please make sure that the relevant integrations and channels are configured. For more information, please see the [Alert Integrations](/docs/jfrog-ml-alerts) guide.
 </Callout>
 
 ### Creating Feature Set Alerts
