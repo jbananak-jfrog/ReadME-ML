@@ -76,7 +76,7 @@ df = client.run_analytics_query("select * from your_table")
 
 When you call the code as shown below, the function will wait until the result is ready (or until the query fails for whatever reason).
 
-However, you can also control how long you want to wait for the result by passing the `timeout` parameter to the `get_analytics_data` function. If the JFrog ML Analytics Engine won't return a response within a given time window, the client will raise a `TimeoutError`.
+However, you can also control how long you want to wait for the result by passing the `timeout` parameter to the `run_analytics_query` function. If the JFrog ML Analytics Engine won't return a response within a given time window, the client will raise a `TimeoutError`.
 
 ```
 from datetime import timedelta
