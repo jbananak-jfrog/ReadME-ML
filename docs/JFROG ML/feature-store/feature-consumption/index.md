@@ -5,21 +5,20 @@ hidden: false
 metadata:
   title: Feature Consumption
   description: 'This section reviews the following topics:'
-  robots: index
   legacyUUIDs:
-  - UUID-cbe48041-bfd5-9782-afe0-540667a114cf
-  - UUID-274f8721-4a82-207b-e78c-e6b4b1ba10be
-  - UUID-76b162d9-b9e2-2015-c662-cb32235ccd09
-  - UUID-e2f8d6c0-67f0-17c6-3db0-e3d8653ba85b
-  - UUID-ff123923-0891-b9ea-849b-edc90c509ac0
-  - UUID-3f348dc3-c491-5ce1-2a80-8242a2db41a3
+    - UUID-cbe48041-bfd5-9782-afe0-540667a114cf
+    - UUID-274f8721-4a82-207b-e78c-e6b4b1ba10be
+    - UUID-76b162d9-b9e2-2015-c662-cb32235ccd09
+    - UUID-e2f8d6c0-67f0-17c6-3db0-e3d8653ba85b
+    - UUID-ff123923-0891-b9ea-849b-edc90c509ac0
+    - UUID-3f348dc3-c491-5ce1-2a80-8242a2db41a3
+  robots: index
 ---
-
 This section reviews the following topics:
 
-[Features in Inference](/docs/features-in-inference "Features in Inference")
+[Features in Inference](/docs/features-in-inference)
 
-[Features in Training](/docs/features-in-training "Features in Training")
+<Anchor label="Features in Training" title="Features in Training" href="/docs/features-in-training">Features in Training</Anchor>
 
 ## Features in Inference
 
@@ -31,7 +30,7 @@ In the predict function, we create an instance of the `OnlineClient`.
 
 After that, we create a `ModelSchema` containing all of the features we want to retrieve.
 
-We create a DataFrame containing the entities identifiers and pass it to <Anchor label="the Feature Store" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/" target="_blank">the Feature Store</Anchor>. As a response, we get a Pandas DataFrame with the requested features.
+We create a DataFrame containing the entities identifiers and pass it to <Anchor label="the Feature Store" target="_blank" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/">the Feature Store</Anchor>. As a response, we get a Pandas DataFrame with the requested features.
 
 ```
 import pandas as pd
@@ -66,7 +65,7 @@ print(user_features)
 
 #### Using the `frogml.api()` Decorator
 
-Alternatively, we could use the features\_extraction parameter and get the features automatically extracted when the Entity is being sent in your prediction input Dataframe . As with the `OnlineClient`, the `ModelSchema` is required to define what features are to be extracted from the Online Store.
+Alternatively, we could use the features_extraction parameter and get the features automatically extracted when the Entity is being sent in your prediction input Dataframe . As with the `OnlineClient`, the `ModelSchema` is required to define what features are to be extracted from the Online Store.
 
 ```
 # model.py
@@ -137,19 +136,18 @@ curl --location 'https://grpc.<YOUR-ACCOUNT>.qwak.ai/api/v1/rest-serving/multiFe
 ```
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-When referencing feature sets in SDK or REST calls, use hyphens `-` instead of underscores `_`. This is a common notation in the JFrog ML platform to ensure consistency and avoid errors during calls.
+  When referencing feature sets in SDK or REST calls, use hyphens `-` instead of underscores `_`. This is a common notation in the JFrog ML platform to ensure consistency and avoid errors during calls.
 </Callout>
 
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-If you're on a SaaS account, use `batchV1Feature` as suggested in the example above.
+  If you're on a SaaS account, use `batchV1Feature` as suggested in the example above.
 
-For [hybrid](/docs/jfrog-ml-architecture "JFrog ML Architecture") accounts, switch to using `batchFeature` in the REST data JSON payload.
+  For <Anchor label="hybrid" title="JFrog ML Architecture" href="/docs/jfrog-ml-architecture">hybrid</Anchor> accounts, switch to using `batchFeature` in the REST data JSON payload.
 </Callout>
-
 
 Example JSON Response:
 
@@ -163,7 +161,7 @@ These examples are using `curl` for REST calls but any other REST client will wo
 
 ## Features in Training
 
-This documentation provides examples and usage patterns for interacting with the <Anchor label="Offline Feature Store" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/" target="_blank">Offline Feature Store</Anchor> using the `OfflineClientV2` in Python (available from SDK version 0.5.61 and higher). It covers how to retrieve feature values for machine learning model training and analysis.
+This documentation provides examples and usage patterns for interacting with the <Anchor label="Offline Feature Store" target="_blank" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/">Offline Feature Store</Anchor> using the `OfflineClientV2` in Python (available from SDK version 0.5.61 and higher). It covers how to retrieve feature values for machine learning model training and analysis.
 
 #### Prerequisites:
 
@@ -239,7 +237,7 @@ print(train_df.head())
 # 1       2               200       2021-04-24 12:00:00       0                    86                                          5                                1.548000
 ```
 
-In this example, the `label` serves as an enhancement to the dataset, rather than a criterion for data selection. This approach is particularly useful when you possess a comprehensive list of keys along with their respective timestamps. The Feature Store API is designed to cater to scenarios requiring data amalgamation from multiple feature sets, ensuring that, for each row in population\_df, no more than one corresponding record is returned. Leveraging JFrog ML time-series based feature store, which organizes data within `start_timestamp` and `end_timestamp` bounds for each feature vector (key), guarantees that a singular, most relevant result is retrieved for every unique key-timestamp combination.
+In this example, the `label` serves as an enhancement to the dataset, rather than a criterion for data selection. This approach is particularly useful when you possess a comprehensive list of keys along with their respective timestamps. The Feature Store API is designed to cater to scenarios requiring data amalgamation from multiple feature sets, ensuring that, for each row in population_df, no more than one corresponding record is returned. Leveraging JFrog ML time-series based feature store, which organizes data within `start_timestamp` and `end_timestamp` bounds for each feature vector (key), guarantees that a singular, most relevant result is retrieved for every unique key-timestamp combination.
 
 ##### Get Feature Range Values
 
@@ -303,9 +301,9 @@ print(train_df.head())
 ```
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-***Current Limitations***
+  _**Current Limitations**_
 
-The get\_feature\_range\_values API call is currently not available for Streaming Aggregations feature sets and not available to fetch data for multiple feature sets at the same time (join data).
+  The get_feature_range_values API call is currently not available for Streaming Aggregations feature sets and not available to fetch data for multiple feature sets at the same time (join data).
 </Callout>
