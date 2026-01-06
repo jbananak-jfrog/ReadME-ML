@@ -136,8 +136,6 @@ curl --location 'https://grpc.<YOUR-ACCOUNT>.qwak.ai/api/v1/rest-serving/multiFe
 ```
 
 <Callout icon="📘" theme="info">
-  **Note**
-
   When referencing feature sets in SDK or REST calls, use hyphens `-` instead of underscores `_`. This is a common notation in the JFrog ML platform to ensure consistency and avoid errors during calls.
 </Callout>
 
@@ -146,7 +144,7 @@ curl --location 'https://grpc.<YOUR-ACCOUNT>.qwak.ai/api/v1/rest-serving/multiFe
 
   If you're on a SaaS account, use `batchV1Feature` as suggested in the example above.
 
-  For <Anchor label="hybrid" title="JFrog ML Architecture" href="/docs/jfrog-ml-architecture">hybrid</Anchor> accounts, switch to using `batchFeature` in the REST data JSON payload.
+  For [hybrid](/docs/jfrog-ml-architecture) accounts, switch to using `batchFeature` in the REST data JSON payload.
 </Callout>
 
 Example JSON Response:
