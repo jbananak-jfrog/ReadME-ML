@@ -23,7 +23,7 @@ Currently, only alerts for batch feature set failures are supported. These alert
   Before setting up alerts, please make sure that the relevant integrations and channels are configured. For more information, please see the [Alert Integrations](/docs/jfrog-ml-alerts) guide.
 </Callout>
 
-### Creating Feature Set Alerts
+## Creating Feature Set Alerts
 
 1. Navigate to <Anchor label="JFrog ML" target="_blank" href="https://app.qwak.ai/">JFrog ML</Anchor> → **Feature Sets**.
 2. Select a Feature Set.
@@ -47,11 +47,11 @@ Currently, only alerts for batch feature set failures are supported. These alert
   * Alert channels may not be deleted if an alert is connected to them.
 </Callout>
 
-### Tags and Priority
+## Tags and Priority
 
 <Image alt="tags-and-priority.png" border={false} src="https://files.readme.io/e589ebcff4550ef707e21e1917c920d256f3600f5f56ddd3b1953575c333e0e9-uuid-55930c08-5034-1652-bb02-306bc7ff6ea3.png" />
 
-#### Priority
+### Priority
 
 You can assign an alert priority to your channel. Each priority level will be mapped appropriately to the corresponding integration.
 
@@ -63,7 +63,7 @@ You can assign an alert priority to your channel. Each priority level will be ma
 | Low      | P4       | info      | Low      |
 | Info     | P5       | info      | Info     |
 
-#### Tags
+### Tags
 
 You can define up to 20 text tags for your Opsgenie alerts, with each tag having a maximum length of 50 characters.
 
