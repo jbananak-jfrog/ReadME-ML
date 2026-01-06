@@ -1,37 +1,37 @@
 ---
 title: Cross-environment Online Serving Replication
+excerpt: To enable fast access to inference across different regions
 deprecated: false
 hidden: false
 metadata:
   title: Cross-environment Online Serving Replication
-  description: To enable fast access to inference across different regions, we are introducing the Cross-Environment Online Serving Replication feature.
-  robots: index
+  description: >-
+    To enable fast access to inference across different regions, we are
+    introducing the Cross-Environment Online Serving Replication feature.
   legacyUUIDs:
     - UUID-ae2f849d-6970-70a4-fc11-a423878c2df4
     - UUID-8106f706-76f4-79d7-1705-1514ee1b6cd8
+  robots: index
 ---
-### Motivation
+The **Cross-Environment Online Serving Replication** feature enables fast access to inference across different regions.
 
-To enable fast access to inference across different regions, we are introducing the **Cross-Environment Online Serving Replication** feature.
-
-### How It Works
+## How It Works
 
 To leverage this feature, two environments must be created in the desired regions. When a user creates a feature set in the default environment, the inference data is automatically replicated to the other region.
 
 To access the feature set from either region, the user simply needs to add the environment name qualifier to the feature set name.
 
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-This capability is only available for Hybrid environments.
+  This capability is only available for hybrid environments.
 </Callout>
 
+ **Example**
 
-#### Example
+For this example, assume the user attempts to access a feature set originally defined in environment A (`env.a`) from environment B:
 
-Assume the user attempts to access a feature set originally defined in environment A (`env.a`) from environment B. Here’s an example:
-
-```
+```python
 import pandas as pd
 from frogml.feature_store.online.client import OnlineClient
 from frogml.sdk.model.schema_entities import FeatureStoreInput, Entity
@@ -70,6 +70,6 @@ user_features = online_client.get_feature_values(model_schema, df)
 print(user_features)
 ```
 
-### Model Inference
+## Model Inference
 
 To ensure that the model accesses the replicated region and achieves high performance, the model must be deployed in the other environment. Once deployed, it will automatically access the replicated data in the corresponding region, ensuring optimal inference performance without additional configuration.
