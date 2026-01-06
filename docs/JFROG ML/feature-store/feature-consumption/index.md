@@ -144,7 +144,7 @@ curl --location 'https://grpc.<YOUR-ACCOUNT>.qwak.ai/api/v1/rest-serving/multiFe
 
   If you're on a SaaS account, use `batchV1Feature` as suggested in the example above.
 
-  For [hybrid](/docs/jfrog-ai-catalog-architecture) accounts, switch to using `batchFeature` in the REST data JSON payload.
+  For [hybrid](/docs/jfrog-ml-architecture) accounts, switch to using `batchFeature` in the REST data JSON payload.
 </Callout>
 
 Example JSON Response:
