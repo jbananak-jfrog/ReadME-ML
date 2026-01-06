@@ -16,9 +16,9 @@ metadata:
 ---
 A Streaming Feature Set is identical to a Batch Feature Set in terms of its use (retrieving online/offline features), but instead of reading data from a Batch Source, it reads from an infinite Stream Source - For example, Apache Kafka.
 
-The 2 basic building blocks that define a Streaming Feature Set are its [Streaming Source](/docs/data-sources#streaming-data-sources) (e.g., Kafka) and a Transformation.
+The 2 basic building blocks that define a Streaming Feature Set are its [Streaming Source](/docs/data-sources#streaming-data-sources) (for example, Kafka) and a Transformation.
 
-See Streaming Sources section for more details regarding the available Streaming Sources.
+See the Streaming Sources section for more details regarding the available Streaming Sources.
 
 <Callout icon="❗️" theme="error">
   **Important** - **_Python Version_**
@@ -303,23 +303,23 @@ The example above configures calculations for the average transaction amount, su
 
 1. **Row-level transform:** Define the regular row-level transform for streaming - using either an SQL transform (with or without pandas UDFs) or a full-dataframe pandas udf.
    * **Note:** All aggregations target the output columns of this transform. Perform any necessary row-level modifications (string manipulation, currency conversion, boolean conditions, etc.) prior to aggregation.\
-   * Required Metadata: Currently, three Kafka metadata columns (`offset`, `topic`,  and `partition`) must be selected. These are used internally by JFrog ML to guarantee compliance with **EXACTLY ONCE** semantics.
+   * **Required Metadata:** Currently, three Kafka metadata columns (`offset`, `topic`,  and `partition`) must be selected. These are used internally by JFrog ML to guarantee compliance with **EXACTLY ONCE** semantics.
 2. **Declarative aggregates:** Add aggregations. sequentially in a chained fashion; the above example utilizes `avg`, `sum`, and `boolean_or`.
 3. **Time windows:** Define the time windows for aggregation. The combination of aggregations and windows determines the total feature count. In this example, 3 aggregates multiplied by 5 time windows results in a `Featureset` containing 15 features.
 
 JFrog currently supports the following aggregates:
 
-1. **SUM** - a sum of column, for example, `FrogmlAggregation.sum("transaction_amount")`
-2. **COUNT** - count (not distinct), a column is specified for API uniformity. for example, `FrogmlAggregation.count("transaction_amount")`
-3. **AVERAGE** - mean value, for example `FrogmlAggregation.avg("transaction_amount")`
-4. **MIN** - minimum value, for example `FrogmlAggregation.min("transaction_amount")`
-5. **MAX** - maximum value, for example `FrogmlAggregation.max("transaction_amount")`
-6. **BOOLEAN OR** - boolean or, defined over a boolean column, for example `FrogmlAggregation.boolean_or("is_remote")`
-7. **BOOLEAN AND** - boolean and, defined over a boolean column, for example `FrogmlAggregation.boolean_and("is_remote")`
-8. **Sample Variance** - `FrogmlAggregation.sample_variance("transaction_amount")`
-9. **Sample STDEV** - `FrogmlAggregation.sample_stdev("transaction_amount")`
-10. **Population Variance** - `FrogmlAggregation.population_variance("transaction_amount")`
-11. **Population STDEV** - `FrogmlAggregation.population_stdev("transaction_amount")`
+* **SUM** - a sum of column, for example, `FrogmlAggregation.sum("transaction_amount")`
+* **COUNT** - count (not distinct), a column is specified for API uniformity. for example, `FrogmlAggregation.count("transaction_amount")`
+* **AVERAGE** - mean value, for example `FrogmlAggregation.avg("transaction_amount")`
+* **MIN** - minimum value, for example `FrogmlAggregation.min("transaction_amount")`
+* **MAX** - maximum value, for example `FrogmlAggregation.max("transaction_amount")`
+* **BOOLEAN OR** - boolean or, defined over a boolean column, for example `FrogmlAggregation.boolean_or("is_remote")`
+* **BOOLEAN AND** - boolean and, defined over a boolean column, for example `FrogmlAggregation.boolean_and("is_remote")`
+* **Sample Variance** - `FrogmlAggregation.sample_variance("transaction_amount")`
+* **Sample STDEV** - `FrogmlAggregation.sample_stdev("transaction_amount")`
+* **Population Variance** - `FrogmlAggregation.population_variance("transaction_amount")`
+* **Population STDEV** - `FrogmlAggregation.population_stdev("transaction_amount")`
 
 In addition, it's also possible to add an Alias - a prefix for the result feature name.
 
