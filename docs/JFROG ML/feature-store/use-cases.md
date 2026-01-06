@@ -1,24 +1,31 @@
 ---
-title: Use-cases
+title: Use Cases
 deprecated: false
 hidden: false
 metadata:
   title: Use-cases
-  description: This featureset is engineered to conduct comprehensive data analysis by fetching data from the entire data source up to the last ingestion window during each ingestion job. In this process, all available data from the source is consumed up to the scheduled batch time. Essentially, the defined query or data retrieval process is executed against the specified data source (e.g., Snowflake), retrieving records based on conditions defined by the timestamp column until reaching the scheduled batch time.
-  robots: index
+  description: >-
+    This featureset is engineered to conduct comprehensive data analysis by
+    fetching data from the entire data source up to the last ingestion window
+    during each ingestion job. In this process, all available data from the
+    source is consumed up to the scheduled batch time. Essentially, the defined
+    query or data retrieval process is executed against the specified data
+    source (e.g., Snowflake), retrieving records based on conditions defined by
+    the timestamp column until reaching the scheduled batch time.
   legacyUUIDs:
     - UUID-403f1168-3048-8445-c98d-a6a4881a6601
     - UUID-6f4e40f8-908e-6ea8-7bd6-8968b9632d9b
+  robots: index
 ---
-### Complete Snapshot of the Data Source
+## Complete Snapshot of the Data Source
 
-#### Objective
+### Objective
 
 This featureset is engineered to conduct comprehensive data analysis by fetching data from the entire data source up to the last ingestion window during each ingestion job. In this process, all available data from the source is consumed up to the scheduled batch time. Essentially, the defined query or data retrieval process is executed against the specified data source (e.g., Snowflake), retrieving records based on conditions defined by the timestamp column until reaching the scheduled batch time.
 
 In this example, we’ll look at joining a dimension table with another data source. The Full Read policy ensures that all relevant records are considered.
 
-#### Definition
+### Definition
 
 This featureset will use two data sources as input - a dimension table and a fact table - both will be set to Full Read.
 
@@ -52,15 +59,15 @@ def transform():
         )
 ```
 
-### Timeframe-Based Data Retrieval
+## Timeframe-Based Data Retrieval
 
-#### Objective
+### Objective
 
 The purpose of this featureset is to analyze data within a designated time period, utilizing the TimeFrame read policy akin to a sliding window mechanism. This policy ensures that only the latest data additions are retrieved, while keys or entities with no data within the specified timeframe are returned as null values. Specifically, our focus is on data accumulated over the past 365 days.
 
-#### Definition
+### Definition
 
-##### Data Source
+#### Data Source
 
 Before defining the featureset, we aim to establish a data source with a query designed to filter and compute data. Upon utilization of this data source, the query will be executed within the data source itself before fetching the data. This approach facilitates the incorporation of feature store-specific logic that can be shared across multiple featuresets.
 
@@ -88,7 +95,7 @@ LIMIT 1000;
 )
 ```
 
-##### Featureset
+#### Featureset
 
 This featureset will use the data source defined above, and will use the TimeFrame Read Policy.
 
