@@ -897,8 +897,6 @@ frogml features backfill --reset-backfill [--cluster-template <cluster_template>
 ```
 
 <Callout icon="📘" theme="info">
-  **Note**
-
   For reset backfills, you can either use `--reset-backfill` or `--reset`.
 </Callout>
 
