@@ -325,7 +325,7 @@ In addition, it's also possible to add an Alias - a prefix for the result featur
 
 By default, an aggregate results in a feature named `<aggregate_name>_<column_name>_<window_size>`, for each window defined.
 
-In some cases, it may be better to a have different prefix rather than `<aggregate_name>_<column_name>`- in these cases, specify an alias:
+In some cases, it may be better to a have different prefix rather than `<aggregate_name>_<column_name>`- in these cases, specify an alias. For example:
 
 ```
 SparkSqlTransformation(sql)\
@@ -334,9 +334,7 @@ SparkSqlTransformation(sql)\
     .by_windows("1 minute, 1 hour")
 ```
 
-In the above sample, the `boolean_or` is aggregated, so it's now called `had_remote_transactions_<window>`, where `<window>` is the time window.
-
-The example below will result in 4 features: `avg_transaction_amount_1m`, `avg_transaction_amount_1h`, `had_remote_transactions_1m`, `had_remote_transactions_1h`
+In the above sample, the `boolean_or` is aggregated, so it's now called `had_remote_transactions_<window>`, where `<window>` is the time window.  It will result in 4 features: `avg_transaction_amount_1m`, `avg_transaction_amount_1h`, `had_remote_transactions_1m`, `had_remote_transactions_1h`
 
 ## Event-time Aggregations Backfill
 
@@ -344,7 +342,7 @@ For streaming aggregation feature sets, adding backfill spec will populate histo
 
 The Streaming Backfill parameters are:
 
-* **start_datetime**: Date & time from which to start fetching values. 
+* **start_datetime**: Date & time from which to start fetching values.
 * **end_datetime**: Date & time from which to end fetching values.
 
 <Callout icon="❗️" theme="error">
