@@ -21,21 +21,21 @@ metadata:
 
 ### Objective
 
-This featureset is engineered to conduct comprehensive data analysis by fetching data from the entire data source up to the last ingestion window during each ingestion job. In this process, all available data from the source is consumed up to the scheduled batch time. Essentially, the defined query or data retrieval process is executed against the specified data source (e.g., Snowflake), retrieving records based on conditions defined by the timestamp column until reaching the scheduled batch time.
+This feature set is engineered to conduct comprehensive data analysis by fetching data from the entire data source up to the last ingestion window during each ingestion job. In this process, all available data from the source is consumed up to the scheduled batch time. Essentially, the defined query or data retrieval process is executed against the specified data source (for example, Snowflake), retrieving records based on conditions defined by the timestamp column until reaching the scheduled batch time.
 
-In this example, we’ll look at joining a dimension table with another data source. The Full Read policy ensures that all relevant records are considered.
+This example, looks at joining a dimension table with another data source. The Full Read policy ensures that all relevant records are considered.
 
 ### Definition
 
-This featureset will use two data sources as input - a dimension table and a fact table - both will be set to Full Read.
+This feature set uses two data sources as input - a dimension table and a fact table - both will be set to Full Read.
 
-In addition, given that there are multiple data sources, a `timestamp_column_name` must be provided and existing in all data sources.
+In addition, given that there are multiple data sources, a `timestamp_column_name` must be provided and exist in all data sources.
 
-It’s important to note that the Feature Store always progresses with time - meaning that even though the entire data is read (input), the transformation result has to progress in time.
+It’s important to note that the Feature Store always progresses with time, meaning that even though the entire data is read (input), the transformation result must progress in time.
 
-For this purpose, we expose two variables - `qwak_ingestion_start_timestamp` and `qwak_ingestion_end_timestamp`.
+For this purpose, two variables are exposed - `qwak_ingestion_start_timestamp` and `qwak_ingestion_end_timestamp`.
 
-```
+```python
 @batch.feature_set(
     name = "full_read_featureset",
     key = "account_id",
@@ -63,13 +63,13 @@ def transform():
 
 ### Objective
 
-The purpose of this featureset is to analyze data within a designated time period, utilizing the TimeFrame read policy akin to a sliding window mechanism. This policy ensures that only the latest data additions are retrieved, while keys or entities with no data within the specified timeframe are returned as null values. Specifically, our focus is on data accumulated over the past 365 days.
+The purpose of this feature set is to analyze data within a designated time period, utilizing the TimeFrame read policy akin to a sliding window mechanism. This policy ensures that only the latest data additions are retrieved, while keys or entities with no data within the specified timeframe are returned as null values. Specifically, the system focuses on data accumulated over the past 365 days.
 
 ### Definition
 
 #### Data Source
 
-Before defining the featureset, we aim to establish a data source with a query designed to filter and compute data. Upon utilization of this data source, the query will be executed within the data source itself before fetching the data. This approach facilitates the incorporation of feature store-specific logic that can be shared across multiple featuresets.
+The process begins by establishing a data source with a query designed to filter and compute data before the feature set is defined. When this data source is utilized, the query executes within the source itself before fetching the data. This approach facilitates the incorporation of feature store-specific logic that can be shared across multiple feature sets.
 
 ```
 from frogml.feature_store.sources.data_sources import AthenaSource
@@ -95,11 +95,11 @@ LIMIT 1000;
 )
 ```
 
-#### Featureset
+#### Feature Set
 
-This featureset will use the data source defined above, and will use the TimeFrame Read Policy.
+This feature set uses the data source defined above, and uses the TimeFrame Read Policy.
 
-```
+```python
 @batch.feature_set(
     name = "time_frame_featureset",
     key = "user_id",
