@@ -23,28 +23,26 @@ Currently, only alerts for batch feature set failures are supported. These alert
   Before setting up alerts, please make sure that the relevant integrations and channels are configured. For more information, please see the [Alert Integrations](/docs/jfrog-ml-alerts) guide.
 </Callout>
 
-## Creating Feature Set Alerts
+## Create Feature Set Alerts
 
-1. Navigate to <Anchor label="JFrog ML" target="_blank" href="https://app.qwak.ai/">JFrog ML</Anchor> → **Feature Sets**.
+1. In the JFrog platform, navigate to **AI/ML** > **Feature Sets**.
 2. Select a Feature Set.
-3. Go to `Alerts` tab.
-4. Click `Create new alert`.
-5. Select `Failure` to be notified of failed feature set ingestions.
-6. Choose the relevant alert channels to receive notifications. (If no channels appear, go to <Anchor label="Alert Integrations" title="JFrog ML Alerts" href="/docs/jfrog-ml-alerts">Alert Integrations</Anchor> to add them.)
+3. Select the **Alerts** tab.
+4. Click  **Create new alert**.
+5. Select **Failure** to be notified of failed feature set ingestions.
+6. Choose the relevant alert channels to receive notifications. (If no channels appear, go to [Alert Integrations](/docs/jfrog-ml-alerts) to add them.)
 
    <Image alt="feature-set-alert-dashboard.png" border={false} src="https://files.readme.io/6c28c289c4568a78fc0e54c8d50ed4ef64048d88080f6b98f5142f91e9e4322e-uuid-755425ea-ff3e-5cdb-b588-b925ddb2e129.png" />
-7. Optionally, add a description for the alert, which will be included in the notification body.
+7. Optional: Add a description for the alert, which will be included in the notification body.
 
    <Image alt="description.png" border={false} src="https://files.readme.io/5bc052217636a4025499a3f9c9c7c4255aa67f52ea0c3e0992c92fd2e4692808-uuid-7ae4ba74-4bd6-10fd-c855-86cc0bbc1e75.png" />
-8. Save the Alert.
+8. Save the alert.
 
 <Callout icon="❗️" theme="error">
-  **Important**
-
-  General constraints
+  **Important** - **General Constraints**
 
   * Alerts must be connected to at least one channel.
-  * Alert channels may not be deleted if an alert is connected to them.
+  * Alert channels can't be deleted if an alert is connected to them.
 </Callout>
 
 ## Tags and Priority
@@ -70,5 +68,5 @@ You can define up to 20 text tags for your Opsgenie alerts, with each tag having
 <Callout icon="❗️" theme="error">
   **Important**
 
-  Can be used **only** for the Opsgenie integration.
+  Can **only** be used for the Opsgenie integration.
 </Callout>
