@@ -882,7 +882,7 @@ The CLI command to trigger the backfill process differs according to the type of
 
 **Initial Backfill**
 
-See Creating a Feature set. [Feature Store Quick Start Guide](/docs/feature-store-overview)
+See Defining a Feature set. [Feature Store Quick Start Guide](/docs/feature-store-quick-start-guide#define-a-feature-set)
 
 **Interval Backfill**
 
