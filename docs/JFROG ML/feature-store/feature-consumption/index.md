@@ -22,7 +22,7 @@ This section reviews the following topics:
 
 ## Features in Inference
 
-This tutorial shows how to access data stored in the JFrThis tutorial shows how to access data stored in the JFrog ML Feature Store online store during the inference.
+This tutorial shows how to access data stored in the JFrog ML Feature Store online store during the inference.
 
 ### Using `OnlineClient`
 
