@@ -863,7 +863,7 @@ The backfill command can be run via the UI or using the CLI, as described below.
 
 ### Backfill via the UI
 
-To run backfill:
+▶ **To run backfill:**
 
 1. In the JFrog platform, navigate to **AI/ML** > **Feature Sets**.
 2. Select an existing feature set, and click the three dots button in the top-right corner.
@@ -873,16 +873,16 @@ To run backfill:
 <Callout icon="📘" theme="info">
   **Note**
 
-  You can select different cluster-template sizes for backfill executions. We recommend that for large backfills you select a cluster-template size larger than the size defined for the feature set to handle the increased processing load.
+  You can select different cluster-template sizes for backfill executions. JFrog recommends that for large backfills you select a cluster-template size larger than the size defined for the feature set to handle the increased processing load.
 </Callout>
 
 ### Backfill via a CLI Command
 
-The CLI command to trigger the backfill process is different according to the type of backfill required, as follows:
+The CLI command to trigger the backfill process differs according to the type of backfill required, as follows:
 
 **Initial Backfill**
 
-See Creating a Feature set. (Feature Store Quickstart guide)
+See Creating a Feature set. [Feature Store Quick Start Guide](/docs/feature-store-overview)
 
 **Interval Backfill**
 
