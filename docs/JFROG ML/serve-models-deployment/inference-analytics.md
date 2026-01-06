@@ -37,11 +37,12 @@ def predict(self, df):
 ```
 
 <Callout icon="📘" theme="info">
-  **Note**
+  **Notes**
 
-  Analytics columns are defined based on the naming conventions of input variables within the `predict()` method. When utilizing the default `df` parameters, these columns commence with `input_`. Conversely, if you've specified custom parameters, the columns will initiate with the name of your parameter.
+  * Analytics columns are defined based on the naming conventions of input variables within the `predict()` method. When utilizing the default `df` parameters, these columns commence with `input_`. Conversely, if you've specified custom parameters, the columns will initiate with the name of your parameter.
 
-  For instance, if your predict signature reads as follows: `def predict(self, request) -> String`, then your analytics input columns will begin with `request_`.
+    For instance, if your predict signature reads as follows: `def predict(self, request) -> String`, then your analytics input columns will begin with `request_`.
+  * To re-enable the ML lake analytics after disabling, rerun the `api decorator` as described above.
 </Callout>
 
 ▶ **To configure columns to be excluded from analytics**, configure the decorator with the column names:
@@ -87,7 +88,7 @@ df = client.run_analytics_query("select * from your_table", timeout=timedelta(se
 
 ## Logging Custom Values
 
-A model's predict function can log custom data during the inference request. To use the custom data logger, we need to add the `analytics_logger` parameter to the predict function.   
+A model's predict function can log custom data during the inference request. To use the custom data logger, we need to add the `analytics_logger` parameter to the predict function.  
 **Important:** The parameter MUST be called `analytics_logger`!
 
 ```
