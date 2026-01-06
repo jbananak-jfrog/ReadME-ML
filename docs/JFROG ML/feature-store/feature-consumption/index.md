@@ -159,7 +159,7 @@ These examples are using `curl` for REST calls but any other REST client will wo
 
 ## Features in Training
 
-This documentation provides examples and usage patterns for interacting with the <Anchor label="Offline Feature Store" target="_blank" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/">Offline Feature Store</Anchor> using the `OfflineClientV2` in Python (available from SDK version 0.5.61 and higher). It covers how to retrieve feature values for machine learning model training and analysis.
+This documentation provides examples and usage patterns for interacting with the <Anchor label="Offline Feature Store" target="_blank" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/">Offline Feature Store</Anchor> -  using the `OfflineClientV2` in Python (available from SDK version 0.5.61 and higher). It covers how to retrieve feature values for machine learning model training and analysis.
 
 ### Prerequisites:
 
@@ -299,8 +299,6 @@ print(train_df.head())
 ```
 
 <Callout icon="📘" theme="info">
-  **Note**
-
   _**Current Limitations**_
 
   The get_feature_range_values API call is currently not available for Streaming Aggregations feature sets and not available to fetch data for multiple feature sets at the same time (join data).
