@@ -28,7 +28,9 @@ See Streaming Sources section for more details regarding the available Streaming
 
 ## Streaming Feature Set Creation
 
-To create a streaming feature set in JFrog ML, follow these steps, which involve defining a [feature transformation](/docs/streaming-feature-set#transformations) function and utilizing the `@streaming.feature_set` decorator along with the specified parameters:
+Creating a streaming feature set involves defining a [feature transformation](/docs/streaming-feature-set#transformations) function and utilizing the `@streaming.feature_set` decorator along with the specified parameters:
+
+▶ **To create a streaming feature set:**
 
 1. **Feature Transformation Function:**
 
@@ -44,9 +46,18 @@ To create a streaming feature set in JFrog ML, follow these steps, which involve
      * `offline_scheduling_policy`: A crontab definition of the the offline ingestion policy - which affects the data freshness of the offline store. defaults to `*/30 * * * *` (every 30 minutes)
      * `online_trigger_interval`: Defines the online ingestion policy - which affects the data freshness of the online store. Defaults to 5 seconds.
 
-These steps ensure the seamless creation of a batch feature set, allowing users to define the transformation logic and specify the essential parameters for efficient feature extraction and processing within the JFrog ML ecosystem.
+These steps ensure the seamless creation of a batch feature set, enabling you to define the transformation logic and specify the essential parameters for efficient feature extraction and processing within the JFrog ML ecosystem.
 
 ### Streaming Feature Set Example
+
+This example:
+
+* Creates a streaming feature set, with online store freshness of 30 seconds and an hourly offline store freshness
+* Ingests data from the `my_kafka_source` source.
+* Creates a transformed feature vector with the fields: `user_id`,
+
+  `registration_country` and `registration_device`
+* Ingests the feature vector into the <Anchor label="Frog ML Feature Store" target="_blank" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/">Frog ML Feature Store</Anchor>
 
 ```python
 from frogml.feature_store.feature_sets import streaming
@@ -68,15 +79,6 @@ def user_features():
                date_created
         FROM my_kafka_source""")
 ```
-
-This example:
-
-* Creates a streaming feature set, with online store freshness of 30 seconds and an hourly offline store freshness
-* Ingests data from the `my_kafka_source` source.
-* Creates a transformed feature vector with the fields: `user_id`,
-
-  `registration_country` and `registration_device`
-* Ingests the feature vector into the <Anchor label="Frog ML Feature Store" target="_blank" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/">Frog ML Feature Store</Anchor>
 
 ### Adding Metadata
 
@@ -116,7 +118,7 @@ def user_features():
 
 ## Specifying Execution Resources
 
-At JFrog ML, the allocation of resources is crucial for streaming execution jobs, often termed as the `cluster template`. This template determines resources like CPU, memory, and temporary storage - all essential for executing user-defined transformations and facilitating feature ingestion into designated stores.
+In JFrog ML, the allocation of resources is crucial for streaming execution jobs, often termed as the `cluster template`. This template determines resources like CPU, memory, and temporary storage - all essential for executing user-defined transformations and facilitating feature ingestion into designated stores.
 
 <Callout icon="📘" theme="info">
   _**Cluster Template**_
@@ -159,11 +161,11 @@ def user_features():
 
 ## Transformations
 
-Row-Level transformations that are applied to the data (in a streaming fashion) - these transformations produce the actual features.
+Row-level transformations that are applied to the data (in a streaming fashion) - these transformations produce the actual features.
 
 ### SQL Transformations
 
-Row-Level arbitrary SQL, with support for PySpark Pandas UDFs, leverages Vectorized computation using PyArrow.
+Row-level arbitrary SQL, with support for PySpark Pandas UDFs, leverages vectorized computation using PyArrow.
 
 ```python
 from frogml.feature_store.feature_sets import streaming
@@ -183,7 +185,7 @@ def transform():
 
 Or, when using a Pandas UDF:
 
-```
+```python
 import pandas as pd
 from frogml.feature_store.feature_sets import streaming
 from frogml.core.feature_store.feature_sets.transformations import (
@@ -265,13 +267,11 @@ def user_features():
 
 In addition to row-level operations, event-time aggregations are also supported, with **EXACTLY ONCE** semantics.
 
-Internally, we employ our highly-optimized proprietary implementation, partially based on open source Apache Spark ™.
+The system employs a highly optimized proprietary implementation, partially based on open source Apache Spark ™. This implementation is designed to optimize for data freshness, low serving latency, and high throughput. It handles multiple overlapping time windows (long and short) and out-of-order data (late arrivals) without the intense resource consumption often incurred in these cases.
 
-This implementation is designed to optimize for data freshness, low serving latency and high throughput, while handling multiple long and short, overlapping time windows and out-of-order data (late arrivals) without the intense resource consumption that is often incurred in these cases.
+Enable aggregations by adding them on top of the row-level transform. For example:
 
-Enabling Aggregations is done by adding them on top of the row-level transform, for example:
-
-```
+```python
 from frogml.feature_store.feature_sets import streaming
 from frogml.core.feature_store.feature_sets.transformations import (
     FrogmlAggregation,
@@ -297,36 +297,35 @@ def transform():
     )
 ```
 
-In the above example, we declare that we are interested in the average transaction amount, sum of transaction amounts and whether there was only remote transaction, all computed on 5 time windows, from 1 minute to 7 days.
+The example above configures calculations for the average transaction amount, sum of transaction amounts, and a boolean check for remote transactions. These metrics are computed across 5 time windows, ranging from 1 minute to 7 days.
 
-Let's break this example into pieces:
+**Configuration breakdown:**
 
-1. Row-level transform: the regular row-level transform is defined for row-level streaming - this can either be an SQL transform (with or without pandas UDFs) or a full-dataframe pandas udf. All aggregations are defined on columns that belong to the output of this transform. All row-level modifications prior to aggregation (string manipulation, currency conversion, boolean conditions etc.)
-
-At the moment, we also need to select 3 Kafka metadata columns (offset, topic, partition) - these are internally used by JFrog ML to guarantee compliance with EXACTLY ONCE semantics.
-
-1. Declarative aggregates: we add each aggregation in a chaining fashion, in the above example we had `avg`, `sum`, and `boolean_or`.
-2. time windows: define the time windows on which we aggregate - in that case we had 3 aggregates and 5 time windows - meaning the resulting `Featureset` will have 15 features.
+1. **Row-level transform:** Define the regular row-level transform for streaming - using either an SQL transform (with or without pandas UDFs) or a full-dataframe pandas udf.
+   * **Note:** All aggregations target the output columns of this transform. Perform any necessary row-level modifications (string manipulation, currency conversion, boolean conditions, etc.) prior to aggregation.\
+   * Required Metadata: Currently, three Kafka metadata columns (`offset`, `topic`,  and `partition`) must be selected. These are used internally by JFrog ML to guarantee compliance with **EXACTLY ONCE** semantics.
+2. **Declarative aggregates:** Add aggregations. sequentially in a chained fashion; the above example utilizes `avg`, `sum`, and `boolean_or`.
+3. **Time windows:** Define the time windows for aggregation. The combination of aggregations and windows determines the total feature count. In this example, 3 aggregates multiplied by 5 time windows results in a `Featureset` containing 15 features.
 
 JFrog currently supports the following aggregates:
 
-1. SUM - a sum of column, for example, `FrogmlAggregation.sum("transaction_amount")`
-2. COUNT - count (not distinct), a column is specified for API uniformity. for example, `FrogmlAggregation.count("transaction_amount")`
-3. AVERAGE - mean value, for example `FrogmlAggregation.avg("transaction_amount")`
-4. MIN - minimum value, for example `FrogmlAggregation.min("transaction_amount")`
-5. MAX - maximum value, for example `FrogmlAggregation.max("transaction_amount")`
-6. BOOLEAN OR - boolean or, defined over a boolean column, for example `FrogmlAggregation.boolean_or("is_remote")`
-7. BOOLEAN AND - boolean and, defined over a boolean column, for example `FrogmlAggregation.boolean_and("is_remote")`
-8. Sample Variance - `FrogmlAggregation.sample_variance("transaction_amount")`
-9. Sample STDEV - `FrogmlAggregation.sample_stdev("transaction_amount")`
-10. Population Variance - `FrogmlAggregation.population_variance("transaction_amount")`
-11. Population STDEV - `FrogmlAggregation.population_stdev("transaction_amount")`
+1. **SUM** - a sum of column, for example, `FrogmlAggregation.sum("transaction_amount")`
+2. **COUNT** - count (not distinct), a column is specified for API uniformity. for example, `FrogmlAggregation.count("transaction_amount")`
+3. **AVERAGE** - mean value, for example `FrogmlAggregation.avg("transaction_amount")`
+4. **MIN** - minimum value, for example `FrogmlAggregation.min("transaction_amount")`
+5. **MAX** - maximum value, for example `FrogmlAggregation.max("transaction_amount")`
+6. **BOOLEAN OR** - boolean or, defined over a boolean column, for example `FrogmlAggregation.boolean_or("is_remote")`
+7. **BOOLEAN AND** - boolean and, defined over a boolean column, for example `FrogmlAggregation.boolean_and("is_remote")`
+8. **Sample Variance** - `FrogmlAggregation.sample_variance("transaction_amount")`
+9. **Sample STDEV** - `FrogmlAggregation.sample_stdev("transaction_amount")`
+10. **Population Variance** - `FrogmlAggregation.population_variance("transaction_amount")`
+11. **Population STDEV** - `FrogmlAggregation.population_stdev("transaction_amount")`
 
 In addition, it's also possible to add an Alias - a prefix for the result feature name.
 
-by default, an aggregate results in a feature named `<aggregate_name>_<column_name>_<window_size>`, for each window defined.
+By default, an aggregate results in a feature named `<aggregate_name>_<column_name>_<window_size>`, for each window defined.
 
-In some cases, it may be desired to a have different prefix rather than `<aggregate_name>_<column_name>`- in these cases, we simply specify an alias:
+In some cases, it may be better to a have different prefix rather than `<aggregate_name>_<column_name>`- in these cases, specify an alias:
 
 ```
 SparkSqlTransformation(sql)\
@@ -335,18 +334,18 @@ SparkSqlTransformation(sql)\
     .by_windows("1 minute, 1 hour")
 ```
 
-in the above sample, we've aliased the `boolean_or` aggregate, so it's now called `had_remote_transactions_<window>`, where `<window>` is the time window.
+In the above sample, the `boolean_or` is aggregated, so it's now called `had_remote_transactions_<window>`, where `<window>` is the time window.
 
-the example below will result in 4 features: `avg_transaction_amount_1m`, `avg_transaction_amount_1h`, `had_remote_transactions_1m`, `had_remote_transactions_1h`
+The example below will result in 4 features: `avg_transaction_amount_1m`, `avg_transaction_amount_1h`, `had_remote_transactions_1m`, `had_remote_transactions_1h`
 
 ## Event-time Aggregations Backfill
 
-For streaming aggregation featuresets, adding backfill spec will populate historical features values from _batch_ data sources before deploying the actual streaming featureset
+For streaming aggregation feature sets, adding backfill spec will populate historical features values from _batch_ data sources before deploying the actual streaming `featureset`
 
-The StreamingBackfill parameters are:
+The Streaming Backfill parameters are:
 
-* **start_datetime**: Datetime to start fetching values from
-* **end_datetime**: Datetime to end fetching values from
+* **start_datetime**: Date & time from which to start fetching values. 
+* **end_datetime**: Date & time from which to end fetching values.
 
 <Callout icon="❗️" theme="error">
   **Important**
@@ -354,11 +353,9 @@ The StreamingBackfill parameters are:
   **end_datetime** must be divisible by slice size/
 </Callout>
 
-* **transform**: An SQL transformation that select the relevant features from the batch sources,
-
-  and it's output schema must include the **raw** streaming source schema
-* **data_source_specs**: List of existing batch data source names to fetch from
-* **execution_spec**: [optional] resource template for backfill step
+* **transform**: An SQL transformation that selects the relevant features from the batch sources. **Note:** it's output schema must include the **raw** streaming source schema.
+* **data_source_specs**: List of existing batch data source names from whichto fetch.
+* **execution_spec**: [Optional] resource template for backfill step.
 
 ```python
 from datetime import datetime
@@ -403,11 +400,11 @@ def user_streaming_features():
     )
 ```
 
-In the example above we are extracting from `batch_backfill_source_name` (which is an existing batch data source), the `user_id` and `amount` features and renaming them to match the desired feature name of the **raw** stream source column names.
+The example above extracts the `user_id` and `amount` features from `batch_backfill_source_name` (which is an existing batch data source), and renames them to match the desired feature name of the **raw** stream source column names.
 
-The data will be between 1/1/2020 and 1/9/2022.
+The data is between 1/1/2020 and 1/9/2022.
 
-If it is needed to specify specific datetime filter for each batch source (i.e. selecting from different sub start and end time for each source), we need to pass `BackfillBatchDataSourceSpec`:
+If it's required to specify a specific datetime filter for each batch source (meaning selecting from different sub start and end times for each source), `BackfillBatchDataSourceSpec` needs to be passed.
 
 <Callout icon="📘" theme="info">
   Filtering per data source is optional, but keep in mind that the general start and end time filter set for the backfill will be lower and upper limits for any sub specific backfill source filter
@@ -426,28 +423,28 @@ data_source_specs = [
 ### Specifying Auxiliary Sinks
 
 <Callout icon="📘" theme="info">
-  Auxiliary Sinks are available for streaming featuresets without any aggregations
+  Auxiliary sinks are available for streaming feature sets without any aggregations
 </Callout>
 
-Remember that Featuresets ingest data from data sources and produce features that are then stored in the online store and the offline store. but what happens if we'd like the features to also be sent to a destination of our choice? That's where auxiliary sinks come in.
+Remember that Feature sets ingest data from data sources and produce features that are then stored in the online store and the offline store. but what happens if we'd like the features to also be sent to a destination of our choice? That's where auxiliary sinks come in.
 
-An auxiliary sink is simply another destination for computed feature values - for example, we may want the feature values to also be published into a Kafka Topic from which we may consume them for various purposes.
+An auxiliary sink is simply another destination for computed feature values. For example, you may want the feature values to also be published into a Kafka Topic from which you can consume them for various purposes.
 
-Another strong usecase for auxiliary sinks is for creating dependencies between streaming feature sets - if we have a featureset X and we'd like to have another featureset Y that consumes whatever X is producing, we can configure X with an auxiliary sink (for example - a kafka sink), then use the sink (i.e., topic) as a data source for featureset Y.
+Another strong use case for auxiliary sinks, is for creating dependencies between streaming feature sets. If you have a feature set X and you'd like to have another feature set Y that consumes whatever X is producing, you can configure X with an auxiliary sink (for example - a Kafka sink), then use the sink (i.e., topic) as a data source for feature set Y.
 
 ### Attachment Points
 
-Remember that a streaming featureset ingests data using 2 separate Spark cluster - one ingests into the online store (constantly running) while the other periodically ingests into the offline store. This architecture maximizes the data freshness in the online store while still controls the cost and ensures consistency, preventing training-serving skew.
+Remember that a streaming feature set ingests data using 2 separate Spark clusters - one ingests into the online store (constantly running) while the other periodically ingests into the offline store. This architecture maximizes the data freshness in the online store,  while simultaneously controlling the cost and ensuring consistency, preventing training-serving skew.
 
 Eventually, all data is ingested in exactly the same way into both online and offline - the only difference is that the ingestion into the online store is continuous while ingestion into the offline store is periodic.
 
-When defining auxiliary sinks, we can select the **attachment point** - which simply means when will the features be written to the sink:
+When defining auxiliary sinks, select the **attachment point** - meaning when the features will be written to the sink:
 
-* If selecting an **online attachment point**, the features will be written into the sink when they are written into the online store - this means the sink will have high data freshness, but will add an overhead to the online ingestion program, possibly lowering its data freshness.
-* Conversely, if selecting an **Offline Attachment Point**, the features will be written to the sink whenever they are written to the offline store. This ensures the data freshness in the online store remains unchanged, but yields a lower data freshness for the sink itself.
+* If selecting an **online attachment point**, the features are written into the sink when they are written into the online store - meaning that the sink will have high data freshness, but will add an overhead to the online ingestion program, possibly lowering its data freshness.
+* Conversely, if selecting an **offline attachment point**, the features are written to the sink whenever they are written to the offline store. This ensures that the data freshness in the online store remains unchanged, but yields a lower data freshness for the sink itself.
 
 <Callout icon="📘" theme="info">
-  Auxiliary Sinks are guaranteed At-Least-Once semantics.
+  Auxiliary sinks are guaranteed **At-Least-Once** semantics.
 </Callout>
 
 ### Auxiliary Sink Types
@@ -521,8 +518,8 @@ def user_streaming_features():
 
 When selecting JSON, the features are written into the the topic according to the following format:
 
-* Message Key: the key of the feature vector (e.g., the value of "user_id" in the above example).
-* Message Value: a JSON string according to the following specification:
+* **Message Key:** the key of the feature vector (for example, the value of "user_id" in the above example).
+* **Message Value:** a JSON string according to the following specification:
 
 ```
 {
