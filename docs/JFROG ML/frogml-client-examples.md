@@ -142,11 +142,85 @@ builds_list = client.list_builds(model_id='your-model-id')
 
 List file tags by its model ID.
 
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Args
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        **model_id**
+      </td>
+
+      <td>
+        (_str_) - The model ID.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **build_id**
+      </td>
+
+      <td>
+        (_str, optional, default=""_) - The build ID - If not specified, returns all model file tags.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **filters**
+      </td>
+
+      <td>
+        (_FileTagFilter, optional, default=None_) - Filter the returning list.  
+
+        * * If not specified, returns all model file tags
+          * When provided:* * * * <br />
+          *         * **value** (_str_) - Filter value
+                    * **type** (_enum_) - Filter type
+          *           * `FILE_TAG_FILTER_TYPE_CONTAINS`
+                      * `FILE_TAG_FILTER_TYPE_PREFIX`
+          *     <br />
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+* * <br />
+  * If not specified, returns all model file tags
+  * When provided:
+
+    * * If not specified, returns all model file tags
+      * When provided:
+
+        * **value** (_str_) - Filter value
+        * **type** (_enum_) - Filter type
+
+          * `FILE_TAG_FILTER_TYPE_CONTAINS`
+          * `FILE_TAG_FILTER_TYPE_PREFIX`
+
+    **value** (_str_) - Filter value
+
+    * **type** (_enum_) - Filter type
+
+      * `FILE_TAG_FILTER_TYPE_CONTAINS`
+      * `FILE_TAG_FILTER_TYPE_PREFIX`
+
 #### Args:
 
 * **model_id** (_str_) - The model ID
-* **build_id** (_str, optional, default=""_) - The build ID - If not specified, returns all model file tags
-* **filter** (_FileTagFilter, optional, default=None_) - Filter the returning list
+* **build_id** 
+* **filter** 
 
   * If not specified, returns all model file tags
   * When provided:
