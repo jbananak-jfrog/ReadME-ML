@@ -390,7 +390,7 @@ The pipeline execution status will be visible in the UI under the list of regist
 
 To view the status in the UI, navigate to **Feature Store** > **Feature Sets** > **Batch Feature Set Name**.
 
-## Updating a Feature Set
+## How to Update a Feature Set
 
 Feature set configuration may be updated, except for the following limitations:
 
@@ -404,7 +404,7 @@ Feature set configuration may be updated, except for the following limitations:
   * Scheduling Policy
 </Callout>
 
-## Deleting a Feature Set
+## How to Delete a Feature Set
 
 Feature sets may be deleted using a JFrog ML CLI command.
 
