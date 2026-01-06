@@ -34,12 +34,43 @@ Returns the latest build by its model ID.
 
 Optionally gets a build_status, by default filters on 'SUCCESSFUL'.
 
-#### Args:
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Args
+      </th>
 
-* **model_id** (_str_) - The model ID.
-* **build_status** (_str_) - Build statuses to filter on. Valid values are 'SUCCESSFUL', 'IN_PROGRESS', 'FAILED'.
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
 
-#### Returns:
+  <tbody>
+    <tr>
+      <td>
+        **model_id**
+      </td>
+
+      <td>
+        * (_str_) - The model ID.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **build_status**
+      </td>
+
+      <td>
+        (_str_) - Build statuses to filter on. Valid values are 'SUCCESSFUL', 'IN_PROGRESS', 'FAILED'.
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+**Returns:**
 
 * `str` - The build ID of the latest build according to the build status. None if no builds match the filter.
 
@@ -56,14 +87,14 @@ Returns a list of builds by a given model ID, filtered by a list of build tags.
 
 Note that the method has several options of filtering builds by tags.
 
-#### Args:
+| Args                   | Description                                                                                                                                                                                                                              |
+| :--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **model_id**           | (_str_) - The model ID.                                                                                                                                                                                                                  |
+| **tags**               | (_List[str]_) - List of tags to filter by.                                                                                                                                                                                               |
+| **match_any**          | (_boolean, optional, default=True_) - Setting this to True will return builds with at least one tag from the given filter list of tags. Setting it to False will only return builds where all the tags in the provided list are present. |
+| **include_extra_tags** | (_boolean, optional, default=True_) - Setting it to True will return builds that match exactly or more tags from the provided list of tags. Setting it to False will return exactly the list of tags included.                           |
 
-* **model_id** (_str_) - The model ID.
-* **tags** (_List[str]_) - List of tags to filter by.
-* **match_any** (_boolean, optional, default=True_) - Setting this to True will return builds with at least one tag from the given filter list of tags. Setting it to False will only return builds where all the tags in the provided list are present.
-* **include_extra_tags** (_boolean, optional, default=True_) - Setting it to True will return builds that match exactly or more tags from the provided list of tags. Setting it to False will return exactly the list of tags included.
-
-#### Returns:
+**Returns:**
 
 * `List[Build]` - Returns a list of builds that contain the requested tags.
 
@@ -90,13 +121,13 @@ client.get_builds_by_tags(model_id="model_id", tags=['tag1', 'tag2'], include_ex
 
 List builds by its model ID and explicit filters.
 
-#### Args
+| Args         | Description                                           |
+| :----------- | :---------------------------------------------------- |
+| **model_id** | (_str_) - The model ID.                               |
+| **tags**     | (_List[str]_) - List of tags to filter by.            |
+| **filters**  | (_List[str]_) - List of metric and parameter filters. |
 
-* **model_id** (_str_) - The model ID
-* **tags** (_List[str]_) - List of tags to filter by
-* **filters** (_List[str]_) - List of metric and parameter filters
-
-#### Returns
+**Returns:**
 
 * `List[Build]` - List of builds that contains the requested filters.
 
