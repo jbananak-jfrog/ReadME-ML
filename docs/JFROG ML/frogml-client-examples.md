@@ -195,42 +195,7 @@ List file tags by its model ID.
   </tbody>
 </Table>
 
-* * <br />
-  * If not specified, returns all model file tags
-  * When provided:
-
-    * * If not specified, returns all model file tags
-      * When provided:
-
-        * **value** (_str_) - Filter value
-        * **type** (_enum_) - Filter type
-
-          * `FILE_TAG_FILTER_TYPE_CONTAINS`
-          * `FILE_TAG_FILTER_TYPE_PREFIX`
-
-    **value** (_str_) - Filter value
-
-    * **type** (_enum_) - Filter type
-
-      * `FILE_TAG_FILTER_TYPE_CONTAINS`
-      * `FILE_TAG_FILTER_TYPE_PREFIX`
-
-#### Args:
-
-* **model_id** (_str_) - The model ID
-* **build_id**
-* **filter**
-
-  * If not specified, returns all model file tags
-  * When provided:
-
-    * **value** (_str_) - Filter value
-    * **type** (_enum_) - Filter type
-
-      * `FILE_TAG_FILTER_TYPE_CONTAINS`
-      * `FILE_TAG_FILTER_TYPE_PREFIX`
-
-#### Returns:
+**Returns:**
 
 * `List[FileTag]` - List of file tags with their specifications.
 
