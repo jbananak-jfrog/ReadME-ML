@@ -182,15 +182,14 @@ List file tags by its model ID.
       </td>
 
       <td>
-        (_FileTagFilter, optional, default=None_) - Filter the returning list.  
+        (_FileTagFilter, optional, default=None_) - Filter the returning list.
 
         * * If not specified, returns all model file tags
           * When provided:* * * * <br />
-          *         * **value** (_str_) - Filter value
-                    * **type** (_enum_) - Filter type
-          *           * `FILE_TAG_FILTER_TYPE_CONTAINS`
-                      * `FILE_TAG_FILTER_TYPE_PREFIX`
-          *     <br />
+            * **value** (_str_) - Filter value
+            * **type** (_enum_) - Filter type 
+              * `FILE_TAG_FILTER_TYPE_CONTAINS`
+              * `FILE_TAG_FILTER_TYPE_PREFIX`
       </td>
     </tr>
   </tbody>
@@ -219,8 +218,8 @@ List file tags by its model ID.
 #### Args:
 
 * **model_id** (_str_) - The model ID
-* **build_id** 
-* **filter** 
+* **build_id**
+* **filter**
 
   * If not specified, returns all model file tags
   * When provided:
