@@ -16,15 +16,15 @@ metadata:
 ---
 This section reviews the following topics:
 
-[Features in Inference](/docs/features-in-inference)
+[Features in Inference](/docs/feature-consumption#features-in-inference)
 
-<Anchor label="Features in Training" title="Features in Training" href="/docs/features-in-training">Features in Training</Anchor>
+[Features in Training](/docs/feature-consumption#features-in-training)
 
 ## Features in Inference
 
 This tutorial shows how to access data stored in the JFrThis tutorial shows how to access data stored in the JFrog ML Feature Store online store during the inference.
 
-#### Using `OnlineClient`
+### Using `OnlineClient`
 
 In the predict function, we create an instance of the `OnlineClient`.
 
@@ -63,7 +63,7 @@ user_features = online_client.get_feature_values(model_schema, df)
 print(user_features)
 ```
 
-#### Using the `frogml.api()` Decorator
+### Using the `frogml.api()` Decorator
 
 Alternatively, we could use the features_extraction parameter and get the features automatically extracted when the Entity is being sent in your prediction input Dataframe . As with the `OnlineClient`, the `ModelSchema` is required to define what features are to be extracted from the Online Store.
 
@@ -83,11 +83,11 @@ In the predict function, use the `frogml.api()`decorator with the parameter `fea
 
 The `df` Dataframe will contain your inference call inputs and the `extracted_df` Dataframe will contain the latest feature vectors from the Online store for the queried entities.
 
-#### Using the REST API
+### Using the REST API
 
 The JFrog ML Online Store can also be queried via REST calls as shown in the example below:
 
-##### Generate a JFrog ML Token for Authentication
+#### Generate a JFrog ML Token for Authentication
 
 Use the following command to obtain a token, valid for 24 hours:
 
@@ -103,7 +103,7 @@ Optionally, store the token in an environment variable:
 export JFROG_TOKEN="<OUTPUT_FROM_AUTHENTICATION_CURL_CALL>"
 ```
 
-##### Retrieve Online Features
+#### Retrieve Online Features
 
 With the fresh JFrog ML token, use the following command to extract features:
 
@@ -163,7 +163,7 @@ These examples are using `curl` for REST calls but any other REST client will wo
 
 This documentation provides examples and usage patterns for interacting with the <Anchor label="Offline Feature Store" target="_blank" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/">Offline Feature Store</Anchor> using the `OfflineClientV2` in Python (available from SDK version 0.5.61 and higher). It covers how to retrieve feature values for machine learning model training and analysis.
 
-#### Prerequisites:
+### Prerequisites:
 
 Before using these examples, ensure you have the following Python packages installed:
 
@@ -171,9 +171,9 @@ Before using these examples, ensure you have the following Python packages insta
 pip install pyathena pyarrow
 ```
 
-#### APIs:
+### APIs:
 
-##### Get Feature Values
+#### Get Feature Values
 
 This API retrieves features from an offline feature store for one or more feature sets, given a `population` DataFrame. The resulting DataFrame will include the `population` DataFrame enriched with the requested feature values as of the `point_in_time` specified.
 
@@ -239,7 +239,7 @@ print(train_df.head())
 
 In this example, the `label` serves as an enhancement to the dataset, rather than a criterion for data selection. This approach is particularly useful when you possess a comprehensive list of keys along with their respective timestamps. The Feature Store API is designed to cater to scenarios requiring data amalgamation from multiple feature sets, ensuring that, for each row in population_df, no more than one corresponding record is returned. Leveraging JFrog ML time-series based feature store, which organizes data within `start_timestamp` and `end_timestamp` bounds for each feature vector (key), guarantees that a singular, most relevant result is retrieved for every unique key-timestamp combination.
 
-##### Get Feature Range Values
+#### Get Feature Range Values
 
 Retrieve features from an offline feature-set for a given time range. The result data-frame will contain all data points of the given feature-set in the given time range. If `population` is provided, then the result will be filtered by the key values it contains.
 
