@@ -187,7 +187,7 @@ List file tags by its model ID.
         * * If not specified, returns all model file tags
           * When provided:* * * * <br />
             * **value** (_str_) - Filter value
-            * **type** (_enum_) - Filter type 
+            * **type** (_enum_) - Filter type
               * `FILE_TAG_FILTER_TYPE_CONTAINS`
               * `FILE_TAG_FILTER_TYPE_PREFIX`
       </td>
@@ -219,22 +219,60 @@ output = client.list_file_tags(
 
 List data tags by its model ID.
 
-#### Args:
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Args
+      </th>
 
-* **model_id** (_str_) - The model ID
-* **build_id** (_str, optional, default=""_) - The build ID - If not specified, returns all model data tags
-* **filter** (_DataTagFilter, optional, default=None_) - Filter the returning list
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
 
-  * If not specified, returns all model file tags
-  * When provided:
+  <tbody>
+    <tr>
+      <td>
+        **model_id**
+      </td>
 
-    * **value** (_str_) - Filter value
-    * **type** (_enum_) - Filter type
+      <td>
+        (_str_) - The model ID.
+      </td>
+    </tr>
 
-      * `DATA_TAG_FILTER_TYPE_CONTAINS`
-      * `DATA_TAG_FILTER_TYPE_PREFIX`
+    <tr>
+      <td>
+        **build_id**
+      </td>
 
-#### Returns:
+      <td>
+        (_str, optional, default=""_) - The build ID - If not specified, returns all model file tags.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **filters**
+      </td>
+
+      <td>
+        (_DataTagFilter, optional, default=None_) - Filter the returning list.
+
+        * * If not specified, returns all model file tags
+          * When provided:* * * * <br />
+            * **value** (_str_) - Filter value
+            * **type** (_enum_) - Filter type
+              * `DATA_TAG_FILTER_TYPE_CONTAINS`
+              * `DATA_TAG_FILTER_TYPE_PREFIX`
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+**Returns:**
 
 * `List[DataTag]` - List of data tags with their specifications.
 
@@ -260,12 +298,14 @@ output = client.list_data_tags(
 
 Assign a tag to an existing build.
 
-#### Args:
+<br />
 
-* **build_id** (_str_) - The build ID
-* **tag** (_str_) - The tag to assign
+| Args         | Description                 |
+| :----------- | :-------------------------- |
+| **build_id** | (_str_) - The build ID.     |
+| **tag**      | (_str_) - The tag to assign |
 
-#### Returns:
+**Returns:**
 
 * `List[Build]` - List of builds that contains the requested filters.
 
@@ -281,12 +321,12 @@ client.set_tag(build_id="build_id", tag="tag")
 
 Assign a list of tags to an existing build.
 
-#### Args:
+| Args         | Description                            |
+| :----------- | :------------------------------------- |
+| **build_id** | (_str_) - The build ID.                |
+| **tags**     | (_List[str]_) - List of tags to assign |
 
-* **build_id** (_str_) - The build ID
-* **tags** (_List[str]_) - List of tags to assign
-
-#### Returns:
+**Returns:**
 
 * `List[Build]` - List of builds that contains the requested filters.
 
@@ -304,10 +344,10 @@ client.set_tags(build_id="build_id", tags=["tag_1", "tag_2"])
 
 Create a new project.
 
-#### Args:
-
-* **project_name** (_str_) - The requested name
-* **project_description** (_str_) - The requested description
+| Args                    | Description                         |
+| :---------------------- | :---------------------------------- |
+| **project_name**        | (_str_) - The requested name        |
+| **project_description** | (_str_) - The requested description |
 
 #### Returns:
 
@@ -317,11 +357,11 @@ Create a new project.
 
 Get model by its project ID.
 
-#### Args:
+| Args           | Description              |
+| :------------- | :----------------------- |
+| **project_id** | (_str_) - The project ID |
 
-* **project_id** (_str_) - The project ID
-
-#### Returns:
+**Returns:**
 
 * `Optional[Project]` - Project by ID.
 
@@ -345,9 +385,9 @@ client.list_projects()
 
 Delete project by its project ID.
 
-#### Args:
-
-* **project_id** (_str_) - The project ID
+| Args           | Description              |
+| :------------- | :----------------------- |
+| **project_id** | (_str_) - The project ID |
 
 ## Models
 
@@ -355,13 +395,13 @@ Delete project by its project ID.
 
 Create a new model.
 
-#### Args:
+| Args                  | Description                         |
+| :-------------------- | :---------------------------------- |
+| **project_id**        | (_str_) - The project ID            |
+| **model_name**        | (_str_) - The requested name        |
+| **model_description** | (_str_) - The requested description |
 
-* **project_id** (_str_) - The project ID to associate the model
-* **model_name** (_str_) - The requested name
-* **model_description** (_str_) - The requested description
-
-#### Returns:
+**Returns:**
 
 * `str` - The model ID of the newly created project.
 
@@ -377,11 +417,11 @@ client.create_model(project_id="project_id", model_name="model_name", model_desc
 
 Get model by its model ID.
 
-#### Args:
+| Args         | Description            |
+| :----------- | :--------------------- |
+| **model_id** | (_str_) - The model ID |
 
-* **model_id** (_str_) - The model ID
-
-#### Returns:
+**Returns:**
 
 * `Optional[Model]` - Model by ID.
 
@@ -397,11 +437,11 @@ client.get_model(model_id="model_id")
 
 Get model metadata by its model ID.
 
-#### Args:
+| Args         | Description            |
+| :----------- | :--------------------- |
+| **model_id** | (_str_) - The model ID |
 
-* **model_id** (_str_) - The model ID
-
-#### Returns:
+**Returns:**
 
 * `Optional[ModelMetadata]` - Model metadata by ID.
 
@@ -417,10 +457,12 @@ client.get_model_metadata(model_id="model_id")
 
 Delete model by its project & model ID's.
 
-#### Args:
+| Args           | Description              |
+| :------------- | :----------------------- |
+| **project_id** | (_str_) - The project ID |
+| **model_id**   | (_str_) - The model ID   |
 
-* **project_id** (_str_) - The project ID
-* **model_id** (_str_) - The model ID
+<br />
 
 ```python
 from frogml.sdk.frogml_client.client import FrogMLClient
@@ -434,9 +476,11 @@ client.delete_model(project_id="project_id", model_id="model_name")
 
 Retrieves all models that belong to the project with the given ID.
 
-#### Args:
+| Args           | Description              |
+| :------------- | :----------------------- |
+| **project_id** | (_str_) - The project ID |
 
-* **project_id** (_str_) - the project ID
+<br />
 
 ```python
 from frogml import FrogMLClient
@@ -450,9 +494,11 @@ client.list_models(project_id="project_id")
 
 Retrieves the metadata of all models that belong to the project with a given ID
 
-#### Args:
+| Args           | Description              |
+| :------------- | :----------------------- |
+| **project_id** | (_str_) - The project ID |
 
-* **project_id** (_str_) - the project ID
+<br />
 
 ```python
 from frogml import FrogMLClient
@@ -468,11 +514,11 @@ client.list_model_metadata(project_id="project_id")
 
 Get deployed build ID per environment by its model ID.
 
-#### Args:
+| Args         | Description            |
+| :----------- | :--------------------- |
+| **model_id** | (_str_) - The model ID |
 
-* **model_id** (_str_) - The model ID
-
-#### Returns:
+**Returns:**
 
 * `Dict[str, str]` - Map environment to deployed build ID. None if the model is not deployed.
 
@@ -490,12 +536,12 @@ client.get_deployed_build_id_per_environment(model_id="your_model_id")
 
 List batch executions by model ID
 
-#### Args:
+| Args         | Description                                                                                   |
+| :----------- | :-------------------------------------------------------------------------------------------- |
+| **model_id** | (_str_) - The model ID.                                                                       |
+| **build_id** | (_str, optional, default=""_) - The build ID - If not specified, returns all batch executions |
 
-* **model_id** (_str_) - The model ID
-* **build_id** (_str, optional, default=""_) - The build ID - If not specified, returns all batch executions
-
-#### Returns:
+**Returns:**
 
 * `List[Execution]` - List of executions with their specifications.
 
@@ -511,11 +557,11 @@ client.list_executions(model_id="your_model_id", build_id="build_id")
 
 List batch executions tasks by its job ID
 
-#### Args:
+| Args             | Description                 |
+| :--------------- | :-------------------------- |
+| **execution_id** | (_str_) - The execution ID. |
 
-* **execution_id** (_str_) - The execution ID
-
-#### Returns:
+**Returns:**
 
 * `List[Task]` - List of execution tasks with their specifications.
 
