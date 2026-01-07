@@ -1,5 +1,5 @@
 ---
-title: Get Started with JFrog AI Catalog
+title: Welcome to JFrog's AI Catalog
 deprecated: false
 hidden: false
 metadata:
