@@ -4,21 +4,24 @@ deprecated: false
 hidden: false
 metadata:
   title: Network and Connectivity Issues
-  description: If you're using a VPN or a proxy, you may encounter issues when running JFrog ML commands. This section provides guidance on how to resolve common errors related to SSL certificate verification when behind a VPN or proxy.
-  robots: index
+  description: >-
+    If you're using a VPN or a proxy, you may encounter issues when running
+    JFrog ML commands. This section provides guidance on how to resolve common
+    errors related to SSL certificate verification when behind a VPN or proxy.
   legacyUUIDs:
     - UUID-4159744a-ed3a-82c2-cafb-46ffda3a0701
     - UUID-0a8d18ec-415a-fd20-73ac-9b0110f72848
+  robots: index
 ---
-### Accessing JFrog ML over VPN/Proxy
+## Accessing JFrog ML over VPN/Proxy
 
 If you're using a VPN or a proxy, you may encounter issues when running JFrog ML commands. This section provides guidance on how to resolve common errors related to SSL certificate verification when behind a VPN or proxy.
 
-#### Certificate Validation Errors
+### Certificate Validation Errors
 
 #### Symptom
 
-If your VPN/Proxy encrypts traffic from with additional certificates, they should be added to the CA certificate file. Typical certificate issues are appearing when [configuring](/docs/setting-up-jfrog-ml "Setting Up JFrog ML") your JFrog ML CLI:
+If your VPN/Proxy encrypts traffic from with additional certificates, they should be added to the CA certificate file. Typical certificate issues are appearing when <Anchor label="configuring" title="Setting Up JFrog ML" href="/docs/setting-up-jfrog-ml">configuring</Anchor> your JFrog ML CLI:
 
 ```
 Caused by SSLError(SSLCertVerificationError(1, 
@@ -52,7 +55,7 @@ Check the output for a line that says `Verify return code: 0 (ok)`. This indicat
 
 ### Connecting to Cloud Resources Behind Private Networks
 
-When your cloud resources are behind a private network or VPC, you may need to whitelist specific IP addresses to allow the JFrog ML platform to access them. For example when connecting to a new BigQuery or S3 based [Data Source](/docs/data-sources "Data Sources") you might get a timeout error.
+When your cloud resources are behind a private network or VPC, you may need to whitelist specific IP addresses to allow the JFrog ML platform to access them. For example when connecting to a new BigQuery or S3 based <Anchor label="Data Source" title="Data Sources" href="/docs/data-sources">Data Source</Anchor> you might get a timeout error.
 
 #### Symptoms
 
@@ -72,9 +75,9 @@ To ensure seamless connectivity, please add the following range of JFrog ML IP a
 ```
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-***Need assistance?***
+  _**Need assistance?**_
 
-For more information and questions, feel free to reach out to JFrog ML support using the in-platform chat.
+  For more information and questions, feel free to reach out to JFrog ML support using the in-platform chat.
 </Callout>
