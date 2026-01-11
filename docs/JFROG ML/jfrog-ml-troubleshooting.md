@@ -142,8 +142,6 @@ This section reviews the following topics:
 
 If you're using a VPN or a proxy, you may encounter issues when running JFrog ML commands. This section provides guidance on how to resolve common errors related to SSL certificate verification when behind a VPN or proxy.
 
-<br />
-
 <Table align={["left"]}>
   <thead>
     <tr>
@@ -156,9 +154,11 @@ If you're using a VPN or a proxy, you may encounter issues when running JFrog ML
   <tbody>
     <tr>
       <td>
-        ##### Symptom: If your VPN/Proxy encrypts traffic with additional certificates, they should be added to the CA certificate file. 
+        ##### Symptom: Your VPN/Proxy encrypts traffic with additional certificates.  
 
-        Typical certificate issues are appearing when <Anchor label="configuring" title="Setting Up JFrog ML" href="/docs/setting-up-jfrog-ml">configuring</Anchor> your JFrog ML CLI:    
+
+        The certificates should be added to the CA certificate file. Typical certificate issues are appearing when <Anchor label="configuring" title="Setting Up JFrog ML" href="/docs/setting-up-jfrog-ml">configuring</Anchor> your JFrog ML CLI:
+
         ```Caused by SSLError(SSLCertVerificationError(1, 
         '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1129)')
         ```
@@ -167,10 +167,18 @@ If you're using a VPN or a proxy, you may encounter issues when running JFrog ML
 
     <tr>
       <td>
-          
-        ##### Solution
+        ##### Solution  
 
-        This is
+        **1. Add the CA Certificate to `certifi'`s Bundle**JFrog ML SDK relies on Python's `certifi` library for server certificate validation. To identify the location of your certificate validation file, run the following Python snippet:
+
+        ```
+        import certifi
+        print(certifi.where())
+        ```
+
+        ```
+        openssl s_client -connect dev-qwak.us.auth0.com:443 -CAfile /path/to/your/cacert.pem
+        ```
       </td>
     </tr>
   </tbody>
