@@ -68,6 +68,8 @@ Do the following:
 
 `ARCHFLAGS="-arch arm64" pip install dependency\_injector --compile --no-cache-dir`
 
+Back to top [:fa-arrow-circle-up: Back to Top](#top)
+
 ## Network and Connectivity Issues
 
 <br />
