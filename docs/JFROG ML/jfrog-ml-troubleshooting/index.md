@@ -50,7 +50,25 @@ To scale out, try adding additional nodes or machines to your infrastructure to 
 
 ## Installation Issues
 
-<br />
+**I can't install FrogML SDK**
+
+* Python SDK deployment on M1 - make sure you are not running with rosetta.
+
+**I'm getting grpc errors (have 'x86_64', need 'arm64')**
+
+When using`conda`and running on Mac M1 CPU, simply run the following command:
+
+`conda install -c conda-forge grpcio`
+
+If the issue is
+
+_dependency_injector/providers.cpython-39-darwin.so' (mach-o file, but is an incompatible architecture (have 'x86_64', need 'arm64'))_
+
+Do the following:
+
+`pip uninstall dependency\_injector`
+
+`ARCHFLAGS="-arch arm64" pip install dependency\_injector --compile --no-cache-dir`
 
 ## Network and Connectivity Issues
 
