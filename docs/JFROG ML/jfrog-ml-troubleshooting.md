@@ -142,7 +142,37 @@ This section reviews the following topics:
 
 If you're using a VPN or a proxy, you may encounter issues when running JFrog ML commands. This section provides guidance on how to resolve common errors related to SSL certificate verification when behind a VPN or proxy.
 
-#### Certificate Validation Errors
+<br />
+
+<Table align={["left"]}>
+  <thead>
+    <tr>
+      <th>
+        #### Certificate Validation Errors
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        ##### Symptom: If your VPN/Proxy encrypts traffic with additional certificates, they should be added to the CA certificate file. 
+
+        Typical certificate issues are appearing when <Anchor label="configuring" title="Setting Up JFrog ML" href="/docs/setting-up-jfrog-ml">configuring</Anchor> your JFrog ML CLI:
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ##### Solution
+
+        This is
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+<br />
 
 ##### Symptom:
 
