@@ -20,8 +20,6 @@ This section reviews the following topics:
 
 <br />
 
-<br />
-
 <Callout icon="📘" theme="info">
   Make sure you are always working with the latest version of Frog ML SDK, or run the command:
 
@@ -29,5 +27,31 @@ This section reviews the following topics:
   pip install --upgrade frogml frogml-cli
   ```
 </Callout>
+
+## Performance Issues
+
+**I see an increase in 429 errors**
+
+A high error rate due to`429 error`(too many requests) is caused by a shortage of resources. This issue can be solved by either scaling vertically or horizontally.
+
+**Vertical scaling**
+
+To scale up, try adding more compute power to your current machines.
+
+* Add more resources (CPU / RAM).
+* If CPU / memory aren't fully utilized, increase the number of concurrent workers.
+
+**Horizontal scaling**
+
+To scale out, try adding additional nodes or machines to your infrastructure to cope with the new demand.
+
+* Manually add more pods (increase from 4 to a higher number).
+* Use Autoscaling based on CPU / Memory / Latency.
+
+## Installation Issues
+
+<br />
+
+## Network and Connectivity Issues
 
 <br />
