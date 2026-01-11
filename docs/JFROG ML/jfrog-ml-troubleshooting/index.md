@@ -68,7 +68,7 @@ Do the following:
 
 `ARCHFLAGS="-arch arm64" pip install dependency\_injector --compile --no-cache-dir`
 
-[ Back to Top](#top)
+[ Back to Top](/docs/jfrog-ml-troubleshooting)
 
 ## Network and Connectivity Issues
 
