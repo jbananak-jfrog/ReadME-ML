@@ -73,8 +73,6 @@ This section reviews the following topics:
 
 ## Installation Issues
 
-<br />
-
 <Table align={["left"]}>
   <thead>
     <tr>
