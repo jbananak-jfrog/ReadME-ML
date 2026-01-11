@@ -69,7 +69,6 @@ Do the following:
 
 `ARCHFLAGS="-arch arm64" pip install dependency\_injector --compile --no-cache-dir`
 
-[ Back to Top](/docs/jfrog-ml-troubleshooting#title)
 
 ## Network and Connectivity Issues
 
@@ -144,4 +143,3 @@ To ensure seamless connectivity, please add the following range of JFrog ML IP a
   For more information and questions, feel free to reach out to JFrog ML support using the in-platform chat.
 </Callout>
 
-[ Back to Top](/docs/jfrog-ml-troubleshooting#top)
