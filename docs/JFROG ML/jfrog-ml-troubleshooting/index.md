@@ -32,7 +32,7 @@ This section reviews the following topics:
 
 **Increase in 429 errors**
 
-A high error rate due to`429 error`(too many requests) is caused by a shortage of resources. 
+A high error rate due to`429 error`(too many requests) is caused by a shortage of resources.
 
 ##### Solution
 
@@ -54,17 +54,27 @@ To scale out, try adding additional nodes or machines to your infrastructure to 
 
 ## Installation Issues
 
+##### Symptom
+
 **I can't install FrogML SDK**
 
-* Python SDK deployment on M1 - make sure you are not running with rosetta.
+* Python SDK deployment on M1
 
-**I'm getting grpc errors (have 'x86_64', need 'arm64')**
+##### Solution
+
+* Make sure you are not running with rosetta.
+
+##### Symptom
+
+**Getting grpc errors (have 'x86_64', need 'arm64')**
+
+##### Solution
 
 When using`conda`and running on Mac M1 CPU, simply run the following command:
 
 `conda install -c conda-forge grpcio`
 
-If the issue is
+If the issue is:
 
 _dependency_injector/providers.cpython-39-darwin.so' (mach-o file, but is an incompatible architecture (have 'x86_64', need 'arm64'))_
 
