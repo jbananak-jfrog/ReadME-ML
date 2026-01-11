@@ -143,4 +143,4 @@ To ensure seamless connectivity, please add the following range of JFrog ML IP a
   For more information and questions, feel free to reach out to JFrog ML support using the in-platform chat.
 </Callout>
 
-<br />
+[ Back to Top](/docs/jfrog-ml-troubleshooting)
