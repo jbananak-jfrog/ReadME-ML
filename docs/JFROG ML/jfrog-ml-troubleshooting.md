@@ -158,12 +158,16 @@ If you're using a VPN or a proxy, you may encounter issues when running JFrog ML
       <td>
         ##### Symptom: If your VPN/Proxy encrypts traffic with additional certificates, they should be added to the CA certificate file. 
 
-        Typical certificate issues are appearing when <Anchor label="configuring" title="Setting Up JFrog ML" href="/docs/setting-up-jfrog-ml">configuring</Anchor> your JFrog ML CLI:
+        Typical certificate issues are appearing when <Anchor label="configuring" title="Setting Up JFrog ML" href="/docs/setting-up-jfrog-ml">configuring</Anchor> your JFrog ML CLI:    
+        ```Caused by SSLError(SSLCertVerificationError(1, 
+        '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1129)')
+        ```
       </td>
     </tr>
 
     <tr>
       <td>
+          
         ##### Solution
 
         This is
