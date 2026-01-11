@@ -28,6 +28,61 @@ This section reviews the following topics:
 
 ## Performance Issues
 
+<br />
+
+<Table align={["left","left"]}>
+  <thead>
+    <tr>
+      <th>
+
+      </th>
+
+      <th>
+
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        ##### Symptom: **Increase in 429 errors**
+
+        A high error rate due to`429 error`(too many requests) is caused by a shortage of resources.
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ##### Solution
+
+        This issue can be solved by either scaling vertically or horizontally.
+
+        * **Vertical scaling**
+
+          To scale up, try adding more compute power to your current machines.
+
+          * Add more resources (CPU / RAM).
+          * If CPU / memory aren't fully utilized, increase the number of concurrent workers.
+        * **Horizontal scaling**
+
+          To scale out, try adding additional nodes or machines to your infrastructure to cope with the new demand.
+
+          * Manually add more pods (increase from 4 to a higher number).
+          * Use Autoscaling based on CPU / Memory / Latency.
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
 ##### Symptom:
 
 **Increase in 429 errors**
@@ -41,11 +96,13 @@ This issue can be solved by either scaling vertically or horizontally.
 * **Vertical scaling**
 
   To scale up, try adding more compute power to your current machines.
+
   * Add more resources (CPU / RAM).
   * If CPU / memory aren't fully utilized, increase the number of concurrent workers.
 * **Horizontal scaling**
 
   To scale out, try adding additional nodes or machines to your infrastructure to cope with the new demand.
+
   * Manually add more pods (increase from 4 to a higher number).
   * Use Autoscaling based on CPU / Memory / Latency.
 
