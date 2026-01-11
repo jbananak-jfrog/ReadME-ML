@@ -30,13 +30,9 @@ This section reviews the following topics:
 
 <br />
 
-<Table align={["left","left"]}>
+<Table align={["left"]}>
   <thead>
     <tr>
-      <th>
-
-      </th>
-
       <th>
 
       </th>
@@ -49,10 +45,6 @@ This section reviews the following topics:
         ##### Symptom: Increase in 429 errors
 
         A high error rate due to`429 error`(too many requests) is caused by a shortage of resources.
-      </td>
-
-      <td>
-
       </td>
     </tr>
 
@@ -74,10 +66,6 @@ This section reviews the following topics:
 
           * Manually add more pods (increase from 4 to a higher number).
           * Use Autoscaling based on CPU / Memory / Latency.
-      </td>
-
-      <td>
-
       </td>
     </tr>
   </tbody>
@@ -110,13 +98,9 @@ This issue can be solved by either scaling vertically or horizontally.
 
 <br />
 
-<Table align={["left","left"]}>
+<Table align={["left"]}>
   <thead>
     <tr>
-      <th>
-
-      </th>
-
       <th>
 
       </th>
@@ -130,10 +114,6 @@ This issue can be solved by either scaling vertically or horizontally.
 
         Python SDK deployment on M1.
       </td>
-
-      <td>
-
-      </td>
     </tr>
 
     <tr>
@@ -142,23 +122,15 @@ This issue can be solved by either scaling vertically or horizontally.
 
         Make sure you are not running with rosetta.
       </td>
-
-      <td>
-
-      </td>
     </tr>
   </tbody>
 </Table>
 
 <br />
 
-<Table align={["left","left"]}>
+<Table align={["left"]}>
   <thead>
     <tr>
-      <th>
-
-      </th>
-
       <th>
 
       </th>
@@ -170,10 +142,6 @@ This issue can be solved by either scaling vertically or horizontally.
       <td>
         ##### Symptom: Getting grpc errors (have 'x86_64', need 'arm64')
       </td>
-
-      <td>
-
-      </td>
     </tr>
 
     <tr>
@@ -181,21 +149,13 @@ This issue can be solved by either scaling vertically or horizontally.
         ##### Solution
 
         When using`conda`and running on Mac M1 CPU, simply run the following command:  
-        `conda install -c conda-forge grpcio`  
+        `conda install -c conda-forge grpcio`
 
-        <br />
-
-        If the issue is:_dependency_injector/providers.cpython-39-darwin.so' (mach-o file, but is an incompatible architecture (have 'x86_64', need 'arm64'))_    
-
-        <br />
+        If the issue is:_dependency_injector/providers.cpython-39-darwin.so' (mach-o file, but is an incompatible architecture (have 'x86_64', need 'arm64'))_
 
         Do the following:  
         `pip uninstall dependency\_injector`  
         `ARCHFLAGS="-arch arm64" pip install dependency\_injector --compile --no-cache-dir`
-      </td>
-
-      <td>
-
       </td>
     </tr>
   </tbody>
