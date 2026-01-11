@@ -168,7 +168,7 @@ This issue can be solved by either scaling vertically or horizontally.
   <tbody>
     <tr>
       <td>
-        ##### Symptom: Getting grpc errors (have 'x86_64', need 'arm64')  
+        ##### Symptom: Getting grpc errors (have 'x86_64', need 'arm64')
       </td>
 
       <td>
@@ -182,7 +182,13 @@ This issue can be solved by either scaling vertically or horizontally.
 
         When using`conda`and running on Mac M1 CPU, simply run the following command:  
         `conda install -c conda-forge grpcio`  
-        If the issue is:_dependency_injector/providers.cpython-39-darwin.so' (mach-o file, but is an incompatible architecture (have 'x86_64', need 'arm64'))_  
+
+        <br />
+
+        If the issue is:_dependency_injector/providers.cpython-39-darwin.so' (mach-o file, but is an incompatible architecture (have 'x86_64', need 'arm64'))_    
+
+        <br />
+
         Do the following:  
         `pip uninstall dependency\_injector`  
         `ARCHFLAGS="-arch arm64" pip install dependency\_injector --compile --no-cache-dir`
