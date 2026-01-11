@@ -176,6 +176,8 @@ If you're using a VPN or a proxy, you may encounter issues when running JFrog ML
         print(certifi.where())
         ```
 
+abcdefg
+
         ```
         openssl s_client -connect dev-qwak.us.auth0.com:443 -CAfile /path/to/your/cacert.pem
         ```
