@@ -46,7 +46,7 @@ This section reviews the following topics:
   <tbody>
     <tr>
       <td>
-        ##### Symptom: **Increase in 429 errors**
+        ##### Symptom: Increase in 429 errors
 
         A high error rate due to`429 error`(too many requests) is caused by a shortage of resources.
       </td>
