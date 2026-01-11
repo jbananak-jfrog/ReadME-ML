@@ -202,7 +202,7 @@ Caused by SSLError(SSLCertVerificationError(1, 
 
 ##### Solution
 
-**1. Add the CA Certificate to `certifi'`s Bundle**
+**1. Add the CA Certificate to `certifi` 's Bundle**
 
 JFrog ML SDK relies on Python's `certifi` library for server certificate validation. To identify the location of your certificate validation file, run the following Python snippet:
 
