@@ -58,11 +58,11 @@ To scale out, try adding additional nodes or machines to your infrastructure to 
 
 **I can't install FrogML SDK**
 
-* Python SDK deployment on M1
+Python SDK deployment on M1
 
 ##### Solution
 
-* Make sure you are not running with rosetta.
+Make sure you are not running with rosetta.
 
 ##### Symptom
 
