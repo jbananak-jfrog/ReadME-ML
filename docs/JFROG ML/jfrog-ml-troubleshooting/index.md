@@ -10,7 +10,6 @@ metadata:
     - UUID-838f4093-5a4e-51e4-4a15-59c48a4997cf
   robots: index
 ---
-
 This section reviews the following topics:
 
 [Performance Issues](/docs/jfrog-ml-troubleshooting#performance-issues)
@@ -29,9 +28,15 @@ This section reviews the following topics:
 
 ## Performance Issues
 
-**I see an increase in 429 errors**
+##### Symptom
 
-A high error rate due to`429 error`(too many requests) is caused by a shortage of resources. This issue can be solved by either scaling vertically or horizontally.
+**Increase in 429 errors**
+
+A high error rate due to`429 error`(too many requests) is caused by a shortage of resources. 
+
+##### Solution
+
+This issue can be solved by either scaling vertically or horizontally.
 
 **Vertical scaling**
 
@@ -68,7 +73,6 @@ Do the following:
 `pip uninstall dependency\_injector`
 
 `ARCHFLAGS="-arch arm64" pip install dependency\_injector --compile --no-cache-dir`
-
 
 ## Network and Connectivity Issues
 
@@ -142,4 +146,3 @@ To ensure seamless connectivity, please add the following range of JFrog ML IP a
 
   For more information and questions, feel free to reach out to JFrog ML support using the in-platform chat.
 </Callout>
-
