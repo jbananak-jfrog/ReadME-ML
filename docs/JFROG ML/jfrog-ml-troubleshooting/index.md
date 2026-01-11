@@ -28,7 +28,9 @@ This section reviews the following topics:
 
 ## Performance Issues
 
-##### Symptom: Increase in 429 errors
+##### Symptom: 
+
+**Increase in 429 errors**
 
 A high error rate due to`429 error`(too many requests) is caused by a shortage of resources.
 
@@ -52,7 +54,9 @@ To scale out, try adding additional nodes or machines to your infrastructure to 
 
 ## Installation Issues
 
-##### Symptom: I can't install FrogML SDK
+##### Symptom: 
+
+**I can't install FrogML SDK**
 
 Python SDK deployment on M1
 
@@ -60,7 +64,9 @@ Python SDK deployment on M1
 
 Make sure you are not running with rosetta.
 
-##### Symptom: Getting grpc errors (have 'x86_64', need 'arm64')
+##### Symptom: 
+
+**Getting grpc errors (have 'x86_64', need 'arm64')**
 
 ##### Solution
 
@@ -80,15 +86,13 @@ Do the following:
 
 ## Network and Connectivity Issues
 
-<br />
-
 ### Accessing JFrog ML over VPN/Proxy
 
 If you're using a VPN or a proxy, you may encounter issues when running JFrog ML commands. This section provides guidance on how to resolve common errors related to SSL certificate verification when behind a VPN or proxy.
 
 #### Certificate Validation Errors
 
-##### Symptom: 
+##### Symptom:
 
 **If your VPN/Proxy encrypts traffic with additional certificates, they should be added to the CA certificate file. Typical certificate issues are appearing when <Anchor label="configuring" title="Setting Up JFrog ML" href="/docs/setting-up-jfrog-ml">configuring</Anchor> your JFrog ML CLI:**
 
