@@ -194,4 +194,4 @@ The same behavior occurs when you're running Python code that calls the FrogML S
 
 ## Additional Troubleshooting
 
-_For any other issues with installing and configuring your FrogML SDK/CLI please refer to_  <Anchor label="Installation Issues" title="Installation Issues" href="/docs/installation-issues">Installation Issues</Anchor>  _or_  <Anchor label="Performance Issues" title="Performance Issues" href="/docs/performance-issues">Performance Issues</Anchor>  _pages._
+_For any other issues with installing and configuring your FrogML SDK/CLI please refer to_  [Installation Issues](/docs/jfrog-ml-troubleshooting#installation-issues)  _or_  <Anchor label="Performance Issues" title="Performance Issues" href="/docs/performance-issues">Performance Issues</Anchor>  _pages._
