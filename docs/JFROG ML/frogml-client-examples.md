@@ -301,9 +301,9 @@ Assign a tag to an existing build.
 <br />
 
 | Args         | Description                 |
-| :----------- | :-------------------------- |
-| **build_id** | (_str_) - The build ID.     |
-| **tag**      | (_str_) - The tag to assign |
+| :----------- | :---------------------------------------------------- |
+| **build_id** | (_str_) - The build ID.                               |
+| **tag**      | (_str_) - The tag to assign                           |
 
 **Returns:**
 
@@ -321,10 +321,10 @@ client.set_tag(build_id="build_id", tag="tag")
 
 Assign a list of tags to an existing build.
 
-| Args         | Description                            |
-| :----------- | :------------------------------------- |
-| **build_id** | (_str_) - The build ID.                |
-| **tags**     | (_List[str]_) - List of tags to assign |
+| Args         | Description                                           |
+| :----------- | :---------------------------------------------------- |
+| **build_id** | (_str_) - The build ID.                               |
+| **tags**     | (_List[str]_) - List of tags to assign                |
 
 **Returns:**
 
@@ -344,10 +344,10 @@ client.set_tags(build_id="build_id", tags=["tag_1", "tag_2"])
 
 Create a new project.
 
-| Args                    | Description                         |
-| :---------------------- | :---------------------------------- |
-| **project_name**        | (_str_) - The requested name        |
-| **project_description** | (_str_) - The requested description |
+| Args         | Description                                           |
+| :----------- | :---------------------------------------------------- | 
+| **project_name**        | (_str_) - The requested name               |
+| **project_description** | (_str_) - The requested description        |
 
 #### Returns:
 
