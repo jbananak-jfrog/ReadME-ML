@@ -12,11 +12,11 @@ metadata:
 ---
 This section reviews the following topics:
 
-[Performance Issues](/docs/performance-issues)
+[Performance Issues](/docs/jfrog-ml-troubleshooting#performance-issues)
 
-[Installation Issues](/docs/installation-issues)
+[Installation Issues](/docs/jfrog-ml-troubleshooting#installation-issues)
 
-<Anchor label="Network and Connectivity Issues" title="Network and Connectivity Issues" href="/docs/network-and-connectivity-issues">Network and Connectivity Issues</Anchor>
+[Network and Connectivity Issues](/docs/jfrog-ml-troubleshooting#network-and-connectivity-issues)
 
 <br />
 
