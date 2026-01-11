@@ -10,6 +10,7 @@ metadata:
     - UUID-838f4093-5a4e-51e4-4a15-59c48a4997cf
   robots: index
 ---
+<div id="top"></div>
 This section reviews the following topics:
 
 [Performance Issues](/docs/jfrog-ml-troubleshooting#performance-issues)
