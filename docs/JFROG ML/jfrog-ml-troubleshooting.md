@@ -228,8 +228,6 @@ Check the output for a line that says `Verify return code: 0 (ok)`. This indicat
 
         `23.21.54.216  
 
-        <br />
-
         44.212.137.42`
       </td>
     </tr>
