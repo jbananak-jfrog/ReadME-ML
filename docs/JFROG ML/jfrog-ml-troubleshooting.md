@@ -235,7 +235,7 @@ Check the output for a line that says `Verify return code: 0 (ok)`. This indicat
 </Table>
 
 <Callout icon="📘" theme="info">
-  **Note - _Need assistance?**_
+  _**Need assistance?**_
 
   For more information and questions, feel free to reach out to JFrog ML support using the in-platform chat.
 </Callout>
