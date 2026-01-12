@@ -175,7 +175,7 @@ If you're using a VPN or a proxy, you may encounter issues when running JFrog ML
         print(certifi.where()
         ```
 
-        This will output the path to your certificate validation file. 
+        This will output the path to your certificate validation file.
         Next, append your VPN's or Proxy's CA certificate to this `cacert.pem` file. Open the file in a text editor with administrative privileges and add the certificate at the end.
 
         **2. Verifying the new Certificate CA with OpenSSL**
@@ -194,22 +194,44 @@ Check the output for a line that says `Verify return code: 0 (ok)`. This indicat
 
 #### Connecting to Cloud Resources Behind Private Networks
 
-##### Symptoms
+<br />
 
-* You receive timeout errors when JFrog ML tries to access your cloud resources.
-* Your cloud resource logs show unauthorized or blocked access attempts from the JFrog ML IP addresses.
-* Data transfers or API calls between JFrog ML and your cloud resources are failing without a clear error message.
+<Table align={["left"]}>
+  <thead>
+    <tr>
+      <th>
 
-##### Solution
+      </th>
+    </tr>
+  </thead>
 
-You may get these symptoms if your cloud resources are behind a private network or VPC, you may need to whitelist specific IP addresses to allow the JFrog ML platform to access them. For example when connecting to a new BigQuery or S3 based <Anchor label="Data Source" title="Data Sources" href="/docs/data-sources">Data Source</Anchor> you might get a timeout error.
+  <tbody>
+    <tr>
+      <td>
+        ##### Symptom:  
 
-To ensure seamless connectivity, please add the following range of JFrog ML IP addresses to your network's whitelist:
+        When your cloud resources are behind a private network or VPC, you may need to whitelist specific IP addresses to allow the JFrog ML platform to access them. For example when connecting to a new BigQuery or S3 based Data Source you might get a timeout error.
 
-```
-23.21.54.216  
-44.212.137.42
-```
+        * You receive timeout errors when JFrog ML tries to access your cloud resources.
+        * Your cloud resource logs show unauthorized or blocked access attempts from the JFrog ML IP addresses.
+        * Data transfers or API calls between JFrog ML and your cloud resources are failing without a clear error message.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ##### Solution
+
+        You may get these symptoms if your cloud resources are behind a private network or VPC, you may need to whitelist specific IP addresses to allow the JFrog ML platform to access them. For example when connecting to a new BigQuery or S3 based  <Anchor label="Data Source" title="Data Sources" href="/docs/data-sources">Data Source</Anchor> you might get a timeout error.  
+
+        To ensure seamless connectivity, please add the following range of JFrog ML IP addresses to your network's whitelist:    
+
+        `23.21.54.216  
+        44.212.137.42`
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 <Callout icon="📘" theme="info">
   **Note**
