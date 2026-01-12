@@ -19,7 +19,8 @@ This section reviews the following topics:
 [Network and Connectivity Issues](/docs/jfrog-ml-troubleshooting#network-and-connectivity-issues)
 
 <Callout icon="📘" theme="info">
-  Make sure you are always working with the latest version of Frog ML SDK, or run the command:
+  Make sure you are always working with the latest version of Frog ML SDK, or run the command:  
+
 
   ```
   pip install --upgrade frogml frogml-cli
