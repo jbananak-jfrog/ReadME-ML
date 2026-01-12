@@ -154,7 +154,7 @@ If you're using a VPN or a proxy, you may encounter issues when running JFrog ML
       <td>
         ##### Symptom: Your VPN/Proxy encrypts traffic with additional certificates.
 
-        The certificates should be added to the CA certificate file. Typical certificate issues are appearing when <Anchor label="configuring" title="Setting Up JFrog ML" href="/docs/setting-up-jfrog-ml">configuring</Anchor> your JFrog ML CLI:
+            The certificates should be added to the CA certificate file. Typical certificate issues are appearing when <Anchor label="configuring" title="Setting Up JFrog ML" href="/docs/setting-up-jfrog-ml">configuring</Anchor> your JFrog ML CLI:
 
         ```Caused
         Caused by SSLError(SSLCertVerificationError(1, 
@@ -167,17 +167,14 @@ If you're using a VPN or a proxy, you may encounter issues when running JFrog ML
       <td>
         ##### Solution  
 
-        1. **Add the CA Certificate to `certifi` 's Bundle**
-        2. **Verifying the new Certificate CA with OpenSSL**
-
-           JFrog ML SDK relies on Python's `certifi` library for server certificate validation. To identify the location of your certificate validation file, run the following Python snippet:
+        1. **Add the CA Certificate to `certifi` 's Bundle** <br/>
+        JFrog ML SDK relies on Python's `certifi` library for server certificate validation. To identify the location of your certificate validation file, run the following Python snippet: <br/>
 
         ```
         import certifi
         print(certifi.where()
         ```
-
-           This will output the path to your certificate validation file.  
+        <br/>This will output the path to your certificate validation file. <br/> 
            Next, append your VPN's or Proxy's CA certificate to this `cacert.pem` file. Open the file in a text editor with administrative privileges and add the certificate at the end.
 
         **2. Verifying the new Certificate CA with OpenSSL**
