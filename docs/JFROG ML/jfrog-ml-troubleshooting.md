@@ -158,7 +158,8 @@ If you're using a VPN or a proxy, you may encounter issues when running JFrog ML
 
         The certificates should be added to the CA certificate file. Typical certificate issues are appearing when <Anchor label="configuring" title="Setting Up JFrog ML" href="/docs/setting-up-jfrog-ml">configuring</Anchor> your JFrog ML CLI:
 
-        ```Caused by SSLError(SSLCertVerificationError(1, 
+        ```Caused
+        Caused by SSLError(SSLCertVerificationError(1, 
         '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1129)')
         ```
       </td>
@@ -168,21 +169,21 @@ If you're using a VPN or a proxy, you may encounter issues when running JFrog ML
       <td>
         ##### Solution
 
-        **1. Add the CA Certificate to `certifi`'s Bundle**  
+        **1. Add the CA Certificate to `certifi`'s Bundle**
 
-           JFrog ML SDK relies on Python's `certifi` library for server certificate validation. To identify the location of your certificate validation file, run the following Python snippet:
+        JFrog ML SDK relies on Python's `certifi` library for server certificate validation. To identify the location of your certificate validation file, run the following Python snippet:
 
         ```
         import certifi
         print(certifi.where()
         ```
 
-           This will output the path to your certificate validation file.  
-           Next, append your VPN's or Proxy's CA certificate to this `cacert.pem` file. Open the file in a text editor with administrative privileges and add the certificate at the end.
+        This will output the path to your certificate validation file.  
+        Next, append your VPN's or Proxy's CA certificate to this `cacert.pem` file. Open the file in a text editor with administrative privileges and add the certificate at the end.
 
         **2. Verifying the new Certificate CA with OpenSSL**
 
-           After adding your custom certificate, you can validate the connection using OpenSSL with the following command:
+        After adding your custom certificate, you can validate the connection using OpenSSL with the following command:
 
         ```
         openssl s_client -connect dev-qwak.us.auth0.com:443 -CAfile /path/to/your/cacert.pem
