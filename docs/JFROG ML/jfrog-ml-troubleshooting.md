@@ -208,7 +208,7 @@ Check the output for a line that says `Verify return code: 0 (ok)`. This indicat
   <tbody>
     <tr>
       <td>
-        ##### Symptom:  
+        ##### Symptom:
 
         When your cloud resources are behind a private network or VPC, you may need to whitelist specific IP addresses to allow the JFrog ML platform to access them. For example when connecting to a new BigQuery or S3 based Data Source you might get a timeout error.
 
@@ -222,11 +222,14 @@ Check the output for a line that says `Verify return code: 0 (ok)`. This indicat
       <td>
         ##### Solution
 
-        You may get these symptoms if your cloud resources are behind a private network or VPC, you may need to whitelist specific IP addresses to allow the JFrog ML platform to access them. For example when connecting to a new BigQuery or S3 based  <Anchor label="Data Source" title="Data Sources" href="/docs/data-sources">Data Source</Anchor> you might get a timeout error.  
+        You may get these symptoms if your cloud resources are behind a private network or VPC, you may need to whitelist specific IP addresses to allow the JFrog ML platform to access them. For example when connecting to a new BigQuery or S3 based  <Anchor label="Data Source" title="Data Sources" href="/docs/data-sources">Data Source</Anchor> you might get a timeout error.
 
-        To ensure seamless connectivity, please add the following range of JFrog ML IP addresses to your network's whitelist:    
+        To ensure seamless connectivity, please add the following range of JFrog ML IP addresses to your network's whitelist:
 
         `23.21.54.216  
+
+        <br />
+
         44.212.137.42`
       </td>
     </tr>
