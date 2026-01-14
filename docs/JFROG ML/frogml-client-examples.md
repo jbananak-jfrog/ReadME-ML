@@ -19,7 +19,7 @@ The FrogML client is a wrapper and a single entry point for different JFrog ML c
 
 ### get_token
 
-If the frogml-cli is already configured, the method fetches the token from the pre-configured conf file.
+If the frogml-cli is already configured, this method fetches the token from the pre-configured conf file.
 
 ```python
 from frogml import FrogMLClient
