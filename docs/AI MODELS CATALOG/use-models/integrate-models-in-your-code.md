@@ -1,5 +1,5 @@
 ---
-title: Integrate Models in Your Code
+title: Use Models in Your Code
 deprecated: false
 hidden: false
 metadata:
