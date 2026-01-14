@@ -23,7 +23,15 @@ To _**onboard a remote endpoint/Connect a Cloud Service/Register a Web Address ?
 2. Click **Add Custom Server**. ???? ???? ????
 3. Select **Remote Endpoint** (or External Service) as the source type.
 4. Enter the connection details:
-   * Server Name: A unique identifier for the catalog (e.g., acme-cloud-mcp).
-   * Endpoint URL: The secure URL (https://...) where the MCP server is running (must support Server-Sent Events/SSE).
+   * **Server Name:** A unique identifier for the catalog (e.g., `acme-cloud-mcp`).
+   * **Endpoint URL:** The secure URL (https://...) where the MCP server is running (must support `Server-Sent Events/SSE`).
 5. **Validation:** Click **Test Connection**. The platform will perform a handshake to verify the server speaks the MCP protocol.
-   Click Save.
+6. Click **Save**.
+
+<Callout icon="📘" theme="info">
+  Unlike local packages, you do not control the versioning of a remote server, but you still maintain full control over security via **Tool Policies**.
+</Callout>
+
+Task: Add a new Server URL and Secret in **Admin** > **AI Settings**. is this step 7?
+
+### this is from the prd integrations sections. need to rewrite it correctly.
