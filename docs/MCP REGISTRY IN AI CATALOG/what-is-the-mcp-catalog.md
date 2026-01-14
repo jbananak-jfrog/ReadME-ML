@@ -5,6 +5,8 @@ excerpt: >-
   control over actions like "read_file" or "query_db".
 deprecated: false
 hidden: false
+link:
+  new_tab: false
 metadata:
   robots: index
 ---
