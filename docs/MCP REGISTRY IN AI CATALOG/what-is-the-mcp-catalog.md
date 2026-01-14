@@ -28,42 +28,4 @@ Without a central catalog, developers might download unverified MCP servers from
 
 <br />
 
-<Columns layout="1-2">
-  <Column>
-    **Problem**
-  </Column>
 
-  <Column>
-    **JFrog’s Solution**
-  </Column>
-</Columns>
-
-<Columns layout="1-2">
-  <Column>
-    Unknown Risks
-  </Column>
-
-  <Column>
-    **Single Source of Truth:** Platform teams can curate a trusted list of approved MCP servers, ensuring every tool is known and accounted for.
-  </Column>
-</Columns>
-
-<Columns layout="1-2">
-  <Column>
-    Security Gaps
-  </Column>
-
-  <Column>
-    **Vulnerability Scanning:** Just like any other software package, MCP servers are scanned for security vulnerabilities and license compliance before they are approved.
-  </Column>
-</Columns>
-
-<Columns layout="1-2">
-  <Column>
-    Over-Privileged AI
-  </Column>
-
-  <Column>
-    **Granular Control:** Instead of giving an AI tool total access, you can enforce **Project-Based Policies**. You can allow an AI to read from a database but strictly block it from deleting data.
-  </Column>
-</Columns>
