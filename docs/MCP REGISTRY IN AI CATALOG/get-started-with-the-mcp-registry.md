@@ -1,5 +1,6 @@
 ---
-title: Get Started with the MCP Registry
+title: 'Get Started '
+excerpt: How to get started using your MCP Registry
 deprecated: false
 hidden: false
 metadata:
