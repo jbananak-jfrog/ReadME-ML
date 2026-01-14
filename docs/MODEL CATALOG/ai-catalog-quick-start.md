@@ -1,5 +1,5 @@
 ---
-title: 'AI Catalog Quick Start  '
+title: 'Quick Start  '
 excerpt: Follow these steps to start managing your AI assets.
 deprecated: false
 hidden: false
