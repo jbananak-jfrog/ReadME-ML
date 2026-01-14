@@ -19,8 +19,7 @@ This section reviews the following topics:
 [Network and Connectivity Issues](/docs/jfrog-ml-troubleshooting#network-and-connectivity-issues)
 
 <Callout icon="📘" theme="info">
-  Make sure you are always working with the latest version of Frog ML SDK, or run the command:  
-
+  Make sure you are always working with the latest version of Frog ML SDK, or run the command:
 
   ```
   pip install --upgrade frogml frogml-cli
@@ -194,8 +193,6 @@ If you're using a VPN or a proxy, you may encounter issues when running JFrog ML
 Check the output for a line that says `Verify return code: 0 (ok)`. This indicates that the certificate has been successfully verified. If the verification fails, you will see a different return code along with a description of the failure.
 
 #### Connecting to Cloud Resources Behind Private Networks
-
-<br />
 
 <Table align={["left"]}>
   <thead>
