@@ -59,14 +59,14 @@ The JFrog platform automatically scans each model for vulnerabilities, and offer
 <Callout icon="📘" theme="info">
   **Note**
 
-  Even if your AI Catalog is empty, that does not mean your organization is not using any models. It maybe be using unmanaged models. Using the Shadow AI detection feature, which uses Xray to scan your JFrog artifacts, you can detect which models are already being used, and manage them in the AI Catalog.
+  Even if your AI Catalog is empty, that does not mean your organization is not using any models. It maybe be using unmanaged models. Using the [Shadow AI detection](/docs/shadow-ai-detection-governing-unmanaged-models) feature, which uses Xray to scan your JFrog artifacts, you can detect which models are already being used, and manage them in the AI Catalog.
 </Callout>
 
 ### Allow Models
 
 Next, governance becomes straightforward and effective. Admin users can easily allow models (from the <Anchor label="Discovery" title="Discover and Allow Models" href="/docs/discover-and-allow-models">Discovery</Anchor> page) for secure use within your organization. Models can be approved on a per-project basis, with a comprehensive list of allowed models available on the _[Registry](/docs/discover-and-allow-models)_ _(allowed models)_ page.
 
-<Image alt="registry.png" border={false} src="https://files.readme.io/5f29ba39c68182a139f14e7386eff2f7d44bd9b1d9da029b51129c754526036f-uuid-9a9ffa87-6cb7-5559-4d09-332db660a3dc.png" />
+<Image align="center" border={false} src="https://files.readme.io/fe8845cc6d3a1ebe53f85881e00794db2fecd68f716b3db518d397d01e7a53e1-Models_in_registry.png" />
 
 You can create an allow-list of models, ensuring that if a model is not on the list, it cannot be used, thereby preventing unvetted models from entering your supply chain.
 
@@ -104,5 +104,3 @@ The prerequisite Curation Settings setup is now complete. If required, you can n
 
   <Image alt="curationerror.png" border={false} src="https://files.readme.io/929da6052201da6b2a2360dc7233c3ca3b0f803e03de5732edb9a209664a5b69-uuid-96821bba-e102-d87a-fa81-0d0dc9df5e09.png" />
 </Callout>
-
-<br />
