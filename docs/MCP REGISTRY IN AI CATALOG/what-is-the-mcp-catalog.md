@@ -18,7 +18,7 @@ As developers rapidly adopt these tools to make their AI assistants smarter, it 
 
 Without a central catalog, developers might download unverified MCP servers from the internet, giving AI agents unchecked access to sensitive company environments. The JFrog MCP Catalog solves this by acting as your organization's secure marketplace and control plane.
 
-<Columns layout="auto">
+<Columns layout="1-2">
   <Column>
     **Problem**
   </Column>
@@ -28,7 +28,7 @@ Without a central catalog, developers might download unverified MCP servers from
   </Column>
 </Columns>
 
-<Columns layout="auto">
+<Columns layout="1-2">
   <Column>
     Unknown Risks
   </Column>
@@ -38,7 +38,7 @@ Without a central catalog, developers might download unverified MCP servers from
   </Column>
 </Columns>
 
-<Columns layout="auto">
+<Columns layout="1-2">
   <Column>
     Security Gaps
   </Column>
@@ -48,7 +48,7 @@ Without a central catalog, developers might download unverified MCP servers from
   </Column>
 </Columns>
 
-<Columns layout="auto">
+<Columns layout="1-2">
   <Column>
     Over-Privileged AI
   </Column>
