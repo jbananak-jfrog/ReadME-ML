@@ -15,7 +15,9 @@ metadata:
 ---
 The FrogML client is a wrapper and a single entry point for different JFrog ML clients such as the `BatchClient`, `DeploymentClient`, and more.
 
-**JFrog ML Configuration File**
+## Get a Token from a Pre-Configured Client
+
+### get_token
 
 If the frogml-cli is already configured, the method fetches the token from the pre-configured conf file.
 
@@ -87,11 +89,11 @@ Returns a list of builds by a given model ID, filtered by a list of build tags.
 
 Note that the method has several options of filtering builds by tags.
 
-| Args              | Description                                                                                                                                                                                                                              |
-| :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **model_id**      | (_str_) - The model ID.                                                                                                                                                                                                                  |
-| **tags**          | (_List[str]_) - List of tags to filter by.                                                                                                                                                                                               |
-| **match_any**     | (_boolean, optional, default=True_) - Setting this to True will return builds with at least one tag from the given filter list of tags. Setting it to False will only return builds where all the tags in the provided list are present. |
+| Args                   | Description                                                                                                                                                                                                                              |
+| :--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **model_id**           | (_str_) - The model ID.                                                                                                                                                                                                                  |
+| **tags**               | (_List[str]_) - List of tags to filter by.                                                                                                                                                                                               |
+| **match_any**          | (_boolean, optional, default=True_) - Setting this to True will return builds with at least one tag from the given filter list of tags. Setting it to False will only return builds where all the tags in the provided list are present. |
 | **include_extra_tags** | (_boolean, optional, default=True_) - Setting it to True will return builds that match exactly or more tags from the provided list of tags. Setting it to False will return exactly the list of tags included.                           |
 
 **Returns:**
@@ -301,9 +303,9 @@ Assign a tag to an existing build.
 <br />
 
 | Args         | Description                 |
-| :----------- | :---------------------------------------------------- |
-| **build_id** | (_str_) - The build ID.                               |
-| **tag**      | (_str_) - The tag to assign                           |
+| :----------- | :-------------------------- |
+| **build_id** | (_str_) - The build ID.     |
+| **tag**      | (_str_) - The tag to assign |
 
 **Returns:**
 
@@ -321,10 +323,10 @@ client.set_tag(build_id="build_id", tag="tag")
 
 Assign a list of tags to an existing build.
 
-| Args         | Description                                           |
-| :----------- | :---------------------------------------------------- |
-| **build_id** | (_str_) - The build ID.                               |
-| **tags**     | (_List[str]_) - List of tags to assign                |
+| Args         | Description                            |
+| :----------- | :------------------------------------- |
+| **build_id** | (_str_) - The build ID.                |
+| **tags**     | (_List[str]_) - List of tags to assign |
 
 **Returns:**
 
@@ -344,10 +346,10 @@ client.set_tags(build_id="build_id", tags=["tag_1", "tag_2"])
 
 Create a new project.
 
-| Args         | Description                                           |
-| :----------- | :---------------------------------------------------- | 
-| **project_name**        | (_str_) - The requested name               |
-| **project_description** | (_str_) - The requested description        |
+| Args                    | Description                         |
+| :---------------------- | :---------------------------------- |
+| **project_name**        | (_str_) - The requested name        |
+| **project_description** | (_str_) - The requested description |
 
 #### Returns:
 
