@@ -29,13 +29,13 @@ Once you have set up your JFrog ML account and your AI catalog entitlement, all 
 
 From the JFrog Platform menu, navigate to **AI/ML** > **Models** to open the AI Catalog.
 
-The AI Catalog has three main tabs:
+The AI Catalog has three main pages:
 
-* **Registry:** This is the default view. It lists the models approved for use in your organization. If you are a new user, this tab is empty until models are approved.
+* **Registry:** This is the default view. It lists the models approved for use in your organization. If you are a new user, this page is empty until models are approved.
 * **Discovery:** Explore all available models provided by approved (supported) providers that you can review and approve for use.
 * **Detection:** View and manage all package* type models found in your organization’s artifacts as scanned by JFrog Xray.
 
-To explore all available models, switch to the **Discovery** tab. This tab displays the full list of models that can be reviewed and allowed for use within your organization.
+To explore all available models, switch to the **Discovery** page. This page displays the full list of models that can be reviewed and allowed for use within your organization.
 
 <Image alt="discovery_callouts_new.png" border={false} src="https://files.readme.io/b5d1f24f9cfdd91ccd1975576539062b1a510ba5f3e4f550188d27a6da8e81f1-uuid-b8bdfc28-e136-b233-92ad-7dc8947fb882.png" />
 
@@ -48,7 +48,7 @@ To explore all available models, switch to the **Discovery** tab. This tab displ
 
 ### Finding Your First Model
 
-Since the **Registry** tab is empty on first use, your first action is to switch to the **Discovery** tab. Browse the comprehensive catalog of external APIs, model packages, and your own custom models to discover the best fits for your project requirements.
+Since the **Registry** page is empty on first use, your first action is to switch to the **Discovery** page. Browse the comprehensive catalog of external APIs, model packages, and your own custom models to discover the best fits for your project requirements.
 
 Use the [**Filter & Search**](/docs/discover-and-allow-models#searching-and-filtering-ai-models) functionality to quickly pinpoint the most suitable models.
 
@@ -64,7 +64,7 @@ The JFrog platform automatically scans each model for vulnerabilities, and offer
 
 ### Allow Models
 
-Next, governance becomes straightforward and effective. Admin users can easily allow models (from the <Anchor label="Discovery" title="Discover and Allow Models" href="/docs/discover-and-allow-models">Discovery</Anchor> tab) for secure use within your organization. Models can be approved on a per-project basis, with a comprehensive list of allowed models available on the _[Registry](/docs/discover-and-allow-models)_ _(allowed models)_ tab.
+Next, governance becomes straightforward and effective. Admin users can easily allow models (from the <Anchor label="Discovery" title="Discover and Allow Models" href="/docs/discover-and-allow-models">Discovery</Anchor> page) for secure use within your organization. Models can be approved on a per-project basis, with a comprehensive list of allowed models available on the _[Registry](/docs/discover-and-allow-models)_ _(allowed models)_ page.
 
 <Image alt="registry.png" border={false} src="https://files.readme.io/5f29ba39c68182a139f14e7386eff2f7d44bd9b1d9da029b51129c754526036f-uuid-9a9ffa87-6cb7-5559-4d09-332db660a3dc.png" />
 
@@ -72,7 +72,7 @@ You can create an allow-list of models, ensuring that if a model is not on the l
 
 ### Using an Allowed Model
 
-Once a model has been successfully allowed in a project, it moves into the **Registry** tab and is ready for use. The steps for model consumption vary depending on the model type (Package or External API).
+Once a model has been successfully allowed in a project, it moves into the **Registry** page and is ready for use. The steps for model consumption vary depending on the model type (Package or External API).
 
 <Image alt="usinganallowedmodel_new.png" border={false} src="https://files.readme.io/843add4b7c3092c4accbe46accb7d3ee4172ab7c75d2bb1bf6e0392c63b2a718-uuid-97c3e7f7-146f-bd6f-6b8f-bf743f340714.png" />
 
