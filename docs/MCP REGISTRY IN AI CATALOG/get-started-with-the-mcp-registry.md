@@ -10,4 +10,12 @@ metadata:
 ---
 ## Prerequisites
 
-<br />
+The MCP Gateway connects you to tools, but it does not install the underlying runtimes for them. Before proceeding, ensure your machine has the runtimes matching the tools you plan to use:
+
+* **Node.js (npx):** Required for running NPM-based MCPs.
+* **Python (uv):** Required for running Python-based MCPs.
+* **Docker:** Required for running containerized MCPs.
+
+<Callout icon="📘" theme="info">
+   The installation script will check for these and warn you if they are missing, but it will not install them for you.
+</Callout>
