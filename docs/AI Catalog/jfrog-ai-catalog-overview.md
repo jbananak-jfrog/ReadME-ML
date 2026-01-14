@@ -23,7 +23,7 @@ metadata:
       UUID-1ad62589-2b99-9618-45a3-d0f8e8cc0823_UUID-c116acd5-572c-85de-e937-03dfe07a73dd
   robots: index
 ---
-Welcome to the JFrog AI Catalog – your centralized hub for AI model discovery, governance, and deployment. Here you can view and manage all AI models in your organization, including both those you are currently using, and those you want to use.
+Here you can view and manage all AI assets in your organization, including both those you are currently using, and those you want to use.
 
 <Image align="center" border={false} src="https://files.readme.io/13fd2fa88b522d1925286c4f005188ff317292d616c56369421cff1136d15a1d-Registry.png" />
 
