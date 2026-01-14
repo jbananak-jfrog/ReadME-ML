@@ -32,4 +32,4 @@ Policies are defined at the **Project level** within the server's configuration 
      **Deny List:** Tool names matching the pattern are blocked.
      * Example: `._delete._` (Blocks `delete_table`, `delete_file`).
 
-<br />
+**Configuration:** If the MCP server requires **Runtime Arguments **or **Environment Variables** (like API keys), you can pre-populate them here. These values are securely synchronized to your local Gateway.
