@@ -24,7 +24,7 @@ The AI Catalog enables you to fully manage all AI assets in your organisation, Y
 
 * Explore the various models available for use in your organization in the **Discovery** page
 * You can see which models have already been allowed for use in your projects inn the **Registry** page
-* Detect **all** AI assets that are used in your system, but are unmanaged by AI catalog, and possibly even unvetted by your organization, in the **Detection** page. For more information about detecting unmanaged AI assets, see [Detect Shadow AI](/docs/shadow-ai-detection-governing-unmanaged-models)​​​.
+* Detect **all** AI assets that are used in your system, but are unmanaged by AI catalog, and possibly even unvetted by your organization, in the **Detection** page. For more information about detecting unmanaged AI assets, see [Detect Shadow AI](/docs/shadow-ai-detection-governing-unmanaged-models)Enterz​​​.
 
 ## Managing Allowed Models
 
@@ -55,10 +55,14 @@ For model packages, the AI Catalog streamlines the path to production:
 
 In order to help you find the best model for your project in the AI Catalog, in the **Discovery** tab on the _Models_ page you can search for and filter models by:
 
-* **Free text**: Either in the filter panel or the search bar, enter text to search.
-* **Allowed status**: Select to display only allowed models.
+* **Free text**: Enter the search term in the search bar. Click enter and either select the required asset or click "Show all results for "xxx". The filter panel on the left opens for further filtering.
+
+  <Image align="center" border={false} src="https://files.readme.io/cbc15d755581d06346e6ef60882af890ce9118b8e0b75593e61a54afc1ade203-discoverysearch.png" />
+* **Status**: In the filter pane, Select to display allowed and or live models.
+
+  <Image align="center" border={false} src="https://files.readme.io/125e7691977646aa6af5276fe81f08ca38f551584fe17f934ad70631bb1c9614-discoverysearchandfilter.png" />
 * **Model type:** Select a specific model type to display. Options: All/Custom/External/Package.
-  ![](https://files.readme.io/e639adbcaf0a8238835b684242f3f918afaa515cc2628c3ae5d19ed1be92a197-uuid-71a3b4c8-054f-61a8-0d00-4c55a681a6a3.png)
+
 
 The filters selected are shown across the top of the models, and the search text remains in the free text box in the Filters panel:
 
