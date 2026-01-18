@@ -14,7 +14,7 @@ JFrog’s Shadow AI detection helps identify and bring unmanaged AI models into 
 ​
 By scanning all artifacts across the JFrog Platform, we identify what models are being used, keeping you up to date with what is in your system.
 
-<Image align="center" border={false} src="https://files.readme.io/ec692d50a500640ec09e78bf0475408c5402753c5c6cc1ed9189d2638d46c34f-detection.png" />
+<Image align="center" border={true} src="https://files.readme.io/ec692d50a500640ec09e78bf0475408c5402753c5c6cc1ed9189d2638d46c34f-detection.png" className="border" />
 
 Shadow AI detection gives you the ability to manage and prevent the entry of unvetted AI assets into your system.
 
@@ -108,14 +108,14 @@ Shadow AI Detection integrates tightly with JFrog’s security components:
 
 1. In the AI Catalog, open the ​**Detection**​​ page.
 2. Either:
-   1. Select the row of the model to be blocked; the Model details pane is displayed. 
+   1. Select the row of the model to be blocked; the Model details pane is displayed.
    2. Click **Manage**; the Manage Model pane is displayed.
 
-      or 
+      or
    * Click the **Block** button to the left of the model's details; the Manage Model pane is displayed.
 3. In the **Block this Model** section, select the projects and or the repositories without a project for which to block the model.
 
-   <Image align="center" border={false} src="https://files.readme.io/661918f5ae90613b774103274c013ad900520ed8a0cc4c5ba445cabf6d04bc8f-managemodel_block.png" />
+   <Image align="center" border={true} src="https://files.readme.io/661918f5ae90613b774103274c013ad900520ed8a0cc4c5ba445cabf6d04bc8f-managemodel_block.png" className="border" />
 4. Click **Save**.​​
 5. Click **Close**
 
