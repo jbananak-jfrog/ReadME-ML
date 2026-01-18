@@ -24,7 +24,7 @@ The AI Catalog enables you to fully manage all AI assets in your organisation, Y
 
 * Explore the various models available for use in your organization in the **Discovery** page
 * You can see which models have already been allowed for use in your projects inn the **Registry** page
-* Detect **all** AI assets that are used in your system, but are unmanaged by AI catalog, and possibly even unvetted by your organization, in the **Detection** page. For more information about detecting unmanaged AI assets, see [Detect Shadow AI](/docs/shadow-ai-detection-governing-unmanaged-models)Enterz​​​.
+* Detect **all** AI assets that are used in your system, but are unmanaged by AI catalog, and possibly even unvetted by your organization, in the **Detection** page. For more information about detecting unmanaged AI assets, see [Detect Shadow AI](/docs/shadow-ai-detection-governing-unmanaged-models)​​​.
 
 ## Managing Allowed Models
 
@@ -62,7 +62,6 @@ In order to help you find the best model for your project in the AI Catalog, in 
 
   <Image align="center" border={false} src="https://files.readme.io/125e7691977646aa6af5276fe81f08ca38f551584fe17f934ad70631bb1c9614-discoverysearchandfilter.png" />
 * **Model type:** Select a specific model type to display. Options: All/Custom/External/Package.
-
 
 The filters selected are shown across the top of the models, and the search text remains in the free text box in the Filters panel:
 
