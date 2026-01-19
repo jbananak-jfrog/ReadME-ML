@@ -132,7 +132,7 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
 
    * **For Model Packages only:** Click **Allow**. The Allowed models tab is displayed.
    * **For External API Models only:**  First [create a new connection](/docs/connect-ai-providers#create-a-new-model-provider-connection)¹² for the project, and then click **Allow**.
-4. To Use the Model: See instructions how to <Anchor label="Integrate Models in Your Code" title="Integrate Models in Your Code" href="/docs/integrate-models-in-your-code">Integrate Models in Your Code</Anchor>.
+4. To Use the Model: See instructions how to [Use Models in Your Code](/docs/integrate-models-in-your-code).
 
 <Callout icon="📘" theme="info">
   **Note**
