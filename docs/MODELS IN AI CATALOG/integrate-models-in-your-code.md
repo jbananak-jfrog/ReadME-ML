@@ -15,8 +15,6 @@ metadata:
 This procedure explains how to utilize the allowed models within your organization's code.
 
 <Callout icon="📘" theme="info">
-  **Note**
-
   Note that the integration process varies depending on the model type. Follow the procedure according to the model that you are invoking.
 </Callout>
 
