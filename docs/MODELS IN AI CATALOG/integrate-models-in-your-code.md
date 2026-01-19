@@ -46,7 +46,7 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
 
 4. Browse through the example code snippets for different libraries and frameworks (Python, Javascript, cURL).
 
-   <Image align="center" border={false} src="https://files.readme.io/8d926de42892815c5efcfc6f508c88c025ea514a5c11f6e14037a37b6ca04fbf-use_model.png" />
+   <Image align="center" border={false} src="https://files.readme.io/5bf27b5bb54b29c4bab7af26d3a168d1c56af8237ad526ce9169ee80000afe0b-use_model.png" />
 
    <Image align="center" alt="usemodel_externalnew.png" border={true} src="https://files.readme.io/ec567ae747bcc8bdf1a3cae95cd5e7a7984ed954b93a296196b71e0949e1d6de-uuid-6e700449-f4f8-c9cc-169e-7f61f39f1f5a.png" className="border" />
 
