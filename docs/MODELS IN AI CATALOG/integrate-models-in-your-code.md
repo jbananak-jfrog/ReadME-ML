@@ -26,13 +26,13 @@ This procedure explains how to utilize the allowed models within your organizati
 
 When a model is allowed, the **Use Model** button appears in the _Model information_ window with the relevant code snippets.
 
-1. Click the allowed model.
+1. Navigate to AI/ML > Registry. 
 
-2. Click the project name in the **Allowed in projects** list.
+2. Click the project for which the model is allowed in the projects list on the left, and then select (double-click) the model from project's allowed models' list.
 
    For example:
 
-   <Image alt="clickprojectname.png" border={false} src="https://files.readme.io/86d23b25e173118efeba38a73865eff315f783f47995b0a0599a6c65b1915e14-uuid-f4c25885-17bd-5203-6cbb-6e0baae5e9cd.png" />
+   <Image align="center" border={true} src="https://files.readme.io/39ba04e9dcf697b8841ce1f4f3e066bd0d455f6791222d4f0222dd9131659725-usemodels_modelsinproject.png" className="border" />
 
    The model dashboard is shown.
 
@@ -121,11 +121,14 @@ After a model. package has been allowed, the **Use Model** and **Deploy** button
 
 **▶ To use the allowed model only with the transformers library:**
 
-1. Click the allowed model.
-2. Click the project name in the **Allowed in projects** list.
-3. Click **Use Model**. The _Use model_ pane is displayed. Here you define how to use this model securely with your framework of choice.
+1. On the **Registry** page, either click the allowed model in the list or select the model from under the relevant project on the left.
 
-   <Image alt="usemodelbutton.png" border={false} src="https://files.readme.io/8911d7370e6857dd47f57798bda8b4eee0957e1f7dd63ccb2bf5d7aede0dc3d2-uuid-0904a59a-38c7-b378-ca45-36bbb033cc59.png" />
+   <Image align="center" border={false} src="https://files.readme.io/7753c33c2fd3d84f40c768588648f662d85d51f0805f3de42c559b93f3ffc8b6-use_model_package.png" />
+
+   <br />
+2. Click **Use Model**. The _Use model_ pane is displayed. Here you define how to use this model securely with your framework of choice.
+
+   <Image align="center" alt="usemodelbutton.png" border={false} src="https://files.readme.io/62cc556cd4472a3400d41c26265f4e1a966cf6cfc8f153df02d66a4885db200a-usemodel_pane_package.png" />
 
 <Callout icon="📘" theme="info">
   **Note**
