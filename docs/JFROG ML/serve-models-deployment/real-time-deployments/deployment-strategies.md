@@ -135,7 +135,7 @@ double score = singlePrediction.get().getValueAsDouble("score");
 ## REST API
 
 ```
-curl --location --request POST 'https://models.<environment_name>.qwak.ai/v1/test_model/<variation_name>/predict' \
+curl --location --request POST 'https://<tenantId>.ml.jfrog.io/v1/test_model/<variation_name>/predict' \
      --header 'Content-Type: application/json' \
      --header 'Authorization: Bearer <Auth Token>' \
      --data '{"columns":["feature_a","feature_b","feature_c"],"index":[0],"data":[["feautre_value",1,0.5]]}'
@@ -156,7 +156,7 @@ You need to pass a key-value dictionary, its value will lead the traffic to the 
 ### REST API
 
 ```
-curl --location --request POST 'https://models.<environment_name>.qwak.ai/v1/test_model/<variation_name>/predict' \
+curl --location --request POST 'https://<tenantId>.ml.jfrog.io/v1/test_model/<variation_name>/predict' \
      --header 'Content-Type: application/json' \
      --header 'Authorization: Bearer <Auth Token>' \
      --header "<key>: <value>" \
@@ -285,7 +285,7 @@ client.predict(feature_vector, metadata=metadata)
 ##### Using REST Calls
 
 ```
-curl --location --request POST 'https://models.<your_env>.qwak.ai/v1/1_hour_model/predict' \
+curl --location --request POST 'https://<tenantId>.ml.jfrog.io/v1/1_hour_model/predict' \
 --header 'Content-Type: application/json' \
 --header 'location: new-york' \
 --header 'age: 25' \
