@@ -22,13 +22,13 @@ metadata:
 
 The AI Catalog enables you to fully manage all AI assets in your organisation, You can:
 
-* Explore the various models available for use in your organization in the **Discovery** page
-* You can see which models have already been allowed for use in your projects inn the **Registry** page
+* Explore the various models available for use in your organization in the **Discovery** page.
+* You can see which models have already been allowed for use in your projects inn the **Registry** page.
 * Detect **all** AI assets that are used in your system, but are unmanaged by AI catalog, and possibly even unvetted by your organization, in the **Detection** page. For more information about detecting unmanaged AI assets, see [Detect Shadow AI](/docs/shadow-ai-detection-governing-unmanaged-models)​​​.
 
 ## Managing Allowed Models
 
-After you have allowed your first model, you will see that the allowed models all appear in the **Registry** tab.
+After you have allowed your first model, you will see that the allowed models all appear in the **Registry** page.
 
 * For instructions how to start allowing models, see <Anchor label="**Allowing Your First Model**" title="Allow Your First Model" href="#allow-your-first-model">**Allowing Your First Model**</Anchor>.
 * To allow additional models, the same instructions can be followed.
@@ -53,7 +53,7 @@ For model packages, the AI Catalog streamlines the path to production:
 
 ## Searching and Filtering AI Models
 
-In order to help you find the best model for your project in the AI Catalog, in the **Discovery** tab on the _Models_ page you can search for and filter models by:
+In order to help you find the best model for your project in the AI Catalog, in the **Discovery** page you can search for and filter models by:
 
 * **Free text**: Enter the search term in the search bar. Click enter and either select the required asset or click "Show all results for "xxx". The filter panel on the left opens for further filtering.
 
@@ -106,10 +106,6 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
     </Column>
   </Columns>
 </div>
-
-<Callout icon="📘" theme="info">
-  The Allow/Connect & allow buttons appear twice on the page and you can use either.
-</Callout>
 
 <ol style={{ listStyleType: 'lower-roman', marginLeft: '20px' }} start="2">
   <li>In the *Allow Model Usage* pane, select the project from the drop-down list.</li>
