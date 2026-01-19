@@ -37,7 +37,7 @@ The AI Catalog has three main windows:
 
 To explore all available models, switch to the **Discovery** page. This page displays the full list of models that can be reviewed and allowed for use within your organization.
 
-<Image alt="discovery_callouts_new.png" border={false} src="https://files.readme.io/b5d1f24f9cfdd91ccd1975576539062b1a510ba5f3e4f550188d27a6da8e81f1-uuid-b8bdfc28-e136-b233-92ad-7dc8947fb882.png" />
+<Image align="center" border={false} src="https://files.readme.io/447c5840bb2ea524b2b31250dbb164fa7d24274d4e835ce7e08976d5e178e242-Discovery_page-models.png" />
 
 <Callout icon="📘" theme="info">
   **Note**
