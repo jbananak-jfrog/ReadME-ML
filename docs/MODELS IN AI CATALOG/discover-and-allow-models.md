@@ -81,12 +81,11 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
 
 1. **Select a model**:
 
-   1. From the JFrog platform menu, select **AI/ML** > **Discovery**. The Models _Discovery_ page opens. (If you are selecting your first model, the _Registry_ page is empty.)
-
-   <Image align="center" border={false} src="https://files.readme.io/ccd43cbb223c801cd2b63912b44a0fcfba8397cca37d009b38e56384e2d040ff-Discovery.png" />
-
-   1. Browse through the catalog to find the model you want. You can [search and filter](/docs/discover-and-allow-models) to locate a specific model or model type.
-   2. Click the model you wish to allow. The model details are displayed. To enable your developers to use this model, assign it to a project, connect it (for external models), and allow it.
+   1. From the JFrog platform menu, select **AI/ML** > **Discovery**. The Models _Discovery_ page opens. (If you are selecting your first model, the _Registry_ page is empty.) 
+   2. Browse through the catalog to find the model you want. You can [search and filter](/docs/discover-and-allow-models) to locate a specific model or model type.
+   3. Click the model you wish to allow. The model details are displayed. To enable your developers to use this model, assign it to a project, connect it (for external models), and allow it.
+   4. Browse through the catalog to find the model you want. You can [search and filter](/docs/discover-and-allow-models) to locate a specific model or model type.
+   5. Click the model you wish to allow. The model details are displayed. To enable your developers to use this model, assign it to a project, connect it (for external models), and allow it.
 2. **Select the project and configure model allowance:**
 
    1. In the model's detail page, click as follows:
