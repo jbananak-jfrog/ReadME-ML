@@ -115,7 +115,7 @@ After a model. package has been allowed, the **Use Model** and **Deploy** button
 **Using the Model with Your Transformers Library vs. Deploying:**
 
 * **Use Model:** Enables you to integrate the model with the transformers library, you use the model locally within your development environment. This approach is ideal for experimenting, testing, and small-scale applications. For instructions, see below.
-* **Deploy:** Deploying the model through this platform involves configuring it to run within a managed infrastructure. Once deployed, the model can be accessed and used across all your applications, facilitating consistent performance and scalability. For instructions, see [Deploy Model Packages](/docs/deploy-model-packages) [Deploy Model Packages](doc:deploy-model-packages-open-source).
+* **Deploy:** Deploying the model through this platform involves configuring it to run within a managed infrastructure. Once deployed, the model can be accessed and used across all your applications, facilitating consistent performance and scalability. For instructions, see [Deploy Model Packages](/docs/deploy-model-packages).
 
 **▶ To use the allowed model only with the transformers library:**
 
