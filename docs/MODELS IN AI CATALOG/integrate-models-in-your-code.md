@@ -26,7 +26,7 @@ This procedure explains how to utilize the allowed models within your organizati
 
 When a model is allowed, the **Use Model** button appears in the _Model information_ window with the relevant code snippets.
 
-1. Navigate to AI/ML > Registry. 
+1. Navigate to AI/ML > Registry.
 
 2. Click the project for which the model is allowed in the projects list on the left, and then select (double-click) the model from project's allowed models' list.
 
@@ -166,4 +166,6 @@ Now you are ready to use the model directly within your development environment 
 
 **To use the model with all your applications (Deploy):**
 
-* **See [Deploy Model Packages](doc:deploy-model-packages-open-source) for instructions.** These instructions include how to deploy the model **and** also how to configure the model for use in your developments. After you have deployed and configured the model, you can see the model's usage metrics in the model _Overview_ page.
+* **See [Deploy Model Packages](/docs/deploy-model-packages) for instructions.** These instructions include how to deploy the model **and** also how to configure the model for use in your developments. After you have deployed and configured the model, you can see the model's usage metrics in the model _Overview_ page.
+
+<br />
