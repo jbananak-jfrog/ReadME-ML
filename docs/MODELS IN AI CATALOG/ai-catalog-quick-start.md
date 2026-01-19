@@ -37,7 +37,7 @@ The AI Catalog has three main windows:
 
 To explore all available models, switch to the **Discovery** page. This page displays the full list of models that can be reviewed and allowed for use within your organization.
 
-<Image align="center" border={false} src="https://files.readme.io/447c5840bb2ea524b2b31250dbb164fa7d24274d4e835ce7e08976d5e178e242-Discovery_page-models.png" />
+<Image align="center" border={true} src="https://files.readme.io/447c5840bb2ea524b2b31250dbb164fa7d24274d4e835ce7e08976d5e178e242-Discovery_page-models.png" className="border" />
 
 <Callout icon="📘" theme="info">
   **Note**
@@ -48,13 +48,13 @@ To explore all available models, switch to the **Discovery** page. This page dis
 
 ### Finding Your First Model
 
-Since the **Registry** tab is empty on first use, your first action is to switch to the **Discovery** page. Browse the comprehensive catalog of external APIs, model packages, and your own custom models to discover the best fits for your project requirements.
+Since the **Registry** page is empty on first use, your first action is to switch to the **Discovery** page. Browse the comprehensive catalog of external APIs, model packages, and your own custom models to discover the best fits for your project requirements.
 
 Use the [**Filter & Search**](/docs/discover-and-allow-models#searching-and-filtering-ai-models) functionality to quickly pinpoint the most suitable models.
 
 The JFrog platform automatically scans each model for vulnerabilities, and offers transparent license information to help you avoid compliance issues.
 
-<Image alt="modeldetails.png" border={false} src="https://files.readme.io/c338827ad0a4936b782d2feda9208535d8cb7c173f768d837198d11500e1040f-uuid-e38f6c34-b8b8-e8ea-f30b-5ce210887d4f.png" />
+<Image align="center" border={true} src="https://files.readme.io/405864e6687ef55e8b6095643b8cfcb1d1df3387eeaa8e2c78297ed95948f087-discovery_with_model_details.png" className="border" />
 
 <Callout icon="📘" theme="info">
   **Note**
