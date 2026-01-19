@@ -37,7 +37,7 @@ Using`curl`as the REST client, invoke the model with your generated token:
 ```shell
 export TOKEN=""
 
-curl --location --request POST 'https://models.<environment_name>.qwak.ai/v1/test_model/predict' 
+curl --location --request POST 'https://<tenantId>.ml.jfrog.io/v1/test_model/predict' 
     --header 'Content-Type: application/json' \
     --header 'Authorization: Bearer '$TOKEN'' \
     --header 'X-JFrog-Tenant-Id: <TENANT ID>' \
@@ -49,7 +49,7 @@ curl --location --request POST 'https://models.<environment_name>.qwak.ai/v1/tes
 When working with variations, you can create an inference for a specific variation (endpoint) by appending the variation name to the URL as shown below:
 
 ```shell
-curl --location --request POST 'https://models.<environment_name>.qwak.ai/v1/test_model/variation_name/predict' \
+curl --location --request POST 'https://<tenantId>.ml.jfrog.io/v1/test_model/variation_name/predict' \
     --header 'Content-Type: application/json' \
     --header 'Authorization: Bearer '$TOKEN'' \
     --header 'X-JFrog-Tenant-Id: <TENANT ID>'
