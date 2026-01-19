@@ -24,7 +24,7 @@ This procedure explains how to utilize the allowed models within your organizati
 
 When a model is allowed, the **Use Model** button appears in the _Model information_ window with the relevant code snippets.
 
-1. Navigate to AI/ML > Registry.
+1. Navigate to **AI/ML** > **Registry**.
 
 2. Click the project for which the model is allowed in the projects list on the left, and then select (double-click) the model from project's allowed models' list.
 
