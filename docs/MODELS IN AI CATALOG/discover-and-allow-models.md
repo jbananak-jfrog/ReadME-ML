@@ -30,7 +30,7 @@ The AI Catalog enables you to fully manage all AI assets in your organisation, Y
 
 After you have allowed your first model, you will see that the allowed models all appear in the **Registry** page.
 
-* For instructions how to start allowing models, see <Anchor label="**Allowing Your First Model**" title="Allow Your First Model" href="#allow-your-first-model">**Allowing Your First Model**</Anchor>.
+* For instructions how to start allowing models, see [**Allowing Your First Model**](/docs/discover-and-allow-models#allow-your-first-model).
 * To allow additional models, the same instructions can be followed.
 * <Callout icon="📘" theme="info">
     When allowing models, if the **model provider is already associated with the project** (meaning that another model from the same provider is associated with the project), the **connection is already set up** and does not need to be re-selected.
