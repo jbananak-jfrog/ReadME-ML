@@ -64,9 +64,9 @@ The JFrog platform automatically scans each model for vulnerabilities, and offer
 
 ### Allow Models
 
-Next, governance becomes straightforward and effective. Admin users can easily allow models (from the <Anchor label="Discovery" title="Discover and Allow Models" href="/docs/discover-and-allow-models">Discovery</Anchor> tab) for secure use within your organization. Models can be approved on a per-project basis, with a comprehensive list of allowed models available on the _[Registry](/docs/discover-and-allow-models)_ _(allowed models)_ page.
+Next, governance becomes straightforward and effective. Admin users can easily allow models (from the <Anchor label="Discovery" title="Discover and Allow Models" href="/docs/discover-and-allow-models">Discovery</Anchor> page) for secure use within your organization. Models can be approved on a per-project basis, with a comprehensive list of allowed models available on the _[Registry](/docs/discover-and-allow-models)_ _(allowed models)_ page.
 
-<Image alt="registry.png" border={false} src="https://files.readme.io/5f29ba39c68182a139f14e7386eff2f7d44bd9b1d9da029b51129c754526036f-uuid-9a9ffa87-6cb7-5559-4d09-332db660a3dc.png" />
+<Image align="center" border={false} src="https://files.readme.io/d017974e2b2fb9b34721d8fd8fab51f12f96b045bbdde3dbd9519252b35df593-Models_in_registry.png" />
 
 You can create an allow-list of models, ensuring that if a model is not on the list, it cannot be used, thereby preventing unvetted models from entering your supply chain.
 
