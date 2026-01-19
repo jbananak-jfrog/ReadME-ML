@@ -24,7 +24,7 @@ The AI Catalog enables you to fully manage all AI assets in your organisation, Y
 
 * Explore the various models available for use in your organization in the **Discovery** page.
 * You can see which models have already been allowed for use in your projects inn the **Registry** page.
-* Detect **all** AI assets that are used in your system, but are unmanaged by AI catalog, and possibly even unvetted by your organization, in the **Detection** page. For more information about detecting unmanaged AI assets, see [Detect Shadow AI](/docs/shadow-ai-detection-governing-unmanaged-models)​​​.
+* Detect **all** AI assets that are used in your system, but are unmanaged by AI catalog, and possibly even unvetted by your organization, in the **Detection** page. For more information about detecting unmanaged AI assets, see [Detect Shadow AI](/docs/detect-shadow-ai)​​​.
 
 ## Managing Allowed Models
 
