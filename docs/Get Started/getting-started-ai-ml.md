@@ -240,11 +240,11 @@ The JFrog AI ML guide walks you through key concepts, tutorials, or best practic
 
 <div>
   <Cards columns={2}>
-    <Card title="JFrog ML" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/setting-up-jfrog-ml" target="_self">
+    <Card title="JFrog ML" icon="fa-star" href="/ai-ml/docs/setting-up-jfrog-ml" target="_self">
       <small>*Your dedicated solution to build, fine-tune, and serve models from experimentation to production.*</small>
     </Card>
 
-    <Card title="AI Catalog" icon="fa-star" href="https://jfrog-enterprise-group.readme.io/ai-ml/docs/jfrog-ai-catalog" target="_self">
+    <Card title="AI Catalog" icon="fa-star" href="/ai-ml/docs/ai-catalog-quick-start" target="_self">
       (Including Shadow AI Detection)<br />
       <small>*Your centralized hub to govern, secure, and manage all AI assets across the organization.*</small>
     </Card>
