@@ -2,7 +2,7 @@
 title: Connect Your IDE
 excerpt: To use your installed MCP gateway, instruct your IDE to use it.
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
