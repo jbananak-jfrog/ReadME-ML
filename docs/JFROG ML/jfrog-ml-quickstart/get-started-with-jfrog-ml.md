@@ -36,17 +36,17 @@ This example tutorial, shows how to create a model using the FrogML CLI.
 
 1. Create the `Credit Risk` model and associate it with an existing project (for example, the `Credit Risk Modeling` project):
 
-   ```
+   ```shell
    frogml models create "Credit Risk" --project-key={Artifactory-project-key}
    ```
 2. Generate a local example model with all the required files:
 
-   ```
+   ```shell
    frogml models init --example credit_risk .
    ```
 3. Remotely build the model on JFrog ML by pointing the `FrogML` client to your local model directory and specifying the remote model ID. JFrog ML generates model IDs automatically by converting the model name to lowercase and removing any spaces:
 
-   ```
+   ```shell
    frogml models build ./credit_risk --model-id credit_risk --name "credit_risk_build_v1"
    ```
 
@@ -95,13 +95,13 @@ _An example of the build logs page on FrogML_
 
 > Using the `--deploy` flag will build and automatically deploy your model.
 >
-> ```
+> ```shell
 > frogml models build ./credit_risk --model-id credit_risk --name "credit_risk_build_v1" --deploy
 > ```
 >
 > Which will show the following in the terminal:
 >
-> ```
+> ```shell
 > # ✅ Fetching Model Code (0:00:00.19)
 > # ✅ Registering frogml Build - 100% (0:00:06.17)
 > # ✅ Deploying - Waiting for build to finish (0:03:14.53)
@@ -116,13 +116,13 @@ _An example of the build logs page on FrogML_
 
 After a successful build, our model can be deployed as a real-time inference endpoint on JFrog ML, ready to handle predictions. Copy the build ID from the previous build step and replace it with `YOUR_BUILD_ID`
 
-```
+```shell
 frogml models deploy realtime --model-id credit_risk --build-id {YOUR_BUILD_ID}
 ```
 
 After running the deployment command, you can expect to see the following output:
 
-```
+```shell
 ╒═══════════════╤══════════════════════════════════════╕
 │ Environment   │ jfrog_demo                            │
 ├───────────────┼──────────────────────────────────────┤
@@ -142,7 +142,7 @@ After a successful model deployment, you can test your live inference endpoint.
 
 The Frogml Python SDK includes a real-time client module which you have to separately install:
 
-```
+```shell
 pip install frogml-inference
 ```
 
