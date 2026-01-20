@@ -1,5 +1,5 @@
 ---
-title: Discover and Approve Public Servers
+title: Discover and Allow MCP Servers
 deprecated: false
 hidden: true
 metadata:
@@ -20,13 +20,13 @@ Before enabling a tool, check if it is safe.
 **To review security:**
 
 1. Click on any server card (e.g., sqlite-mcp) to open its details.
-2. Look for the **Xray Data** section.
+2. Review security details:
    * **Vulnerabilities:** JFrog Xray scans the underlying Docker image or NPM/Python package to detect known CVEs.
    * **Licenses:** detailed license information ensures compliance with your organization’s legal policies.
 
 ## Approving MCP Servers for Projects
 
-By default, public servers are blocked. To make one available:
+By default, public MCP servers are blocked. To make one available:
 
 1. Click the **Add to Allowed** button on the server card.
 2. Select the **Project**(s) for which you want this tool to be available.
