@@ -274,7 +274,7 @@ In addition, you can follow and search the applicable logs produced by your mode
 
 To attach a new auto-scaling to a running model:
 
-1. **Create a config file:****
+1. **Create a config file:**
 
 ```python
 api_version: v1
