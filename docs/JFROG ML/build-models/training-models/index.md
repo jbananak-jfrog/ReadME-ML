@@ -37,11 +37,11 @@ FrogML's GPU instances provide high-performance computing resources to accelerat
 Easily customize your training resources to achieve faster training times and better results.
 
 <Callout icon="⚠️" theme="warning">
-**Warning**
+  **Warning**
 
-Building your first model?
+  Building your first model?
 
-Please refer to our**[JFrog ML Quickstart](https://www.google.com/search?q=/docs/get-started-with-jfrog-ml)**guide if you're creating your first model. The guide provides step-by-step instructions on how to install all relevant dependencies to get you up and running.
+  Please refer to our**[JFrog ML Quickstart](/docs/get-started-with-jfrog-ml)**guide if you're creating your first model. The guide provides step-by-step instructions on how to install all relevant dependencies to get you up and running.
 </Callout>
 
 ### Training HuggingFace Models
@@ -52,7 +52,7 @@ In this tutorial, we use a `distilbert` text classifier from HuggingFace and to 
 
 ### Choosing the Correct GPU
 
-Visit the [GPU Instance Sizes](https://www.google.com/search?q=doc:instance-sizes-ml-credits) page to view the full specifications of FrogML's GPU instance selection.
+Visit the [GPU Instance Sizes](doc:instance-sizes-ml-credits) page to view the full specifications of FrogML's GPU instance selection.
 
 ### Project Dependencies
 
@@ -183,7 +183,7 @@ def build(self):
 
 The inference method is called when the model is invoked through the real-time endpoint, batch or streaming inference. This method is only triggered when the model is deployed or during local testing.
 
-The inference method receives and returns a Pandas `DataFrame` by default. Provide it with [Prediction Input & Output Adapters](https://www.google.com/search?q=doc:prediction-input-output-adapters) to receive and return different data types.
+The inference method receives and returns a Pandas `DataFrame` by default. Provide it with [Prediction Input & Output Adapters](doc:prediction-input-output-adapters) to receive and return different data types.
 
 ```python
     @frogml.api()
@@ -414,16 +414,16 @@ frogml models build --model-id hugging_face_tokenizer_model --instance "gpu.t4.x
 
 ```
 
-Visit the JFrog [GPU Instance Sizes](https://www.google.com/search?q=doc:instance-sizes-ml-credits) page to choose the resources that fit your use case best. Each GPU type has its own configuration for pre-defined memory and number of CPUs.
+Visit the JFrog [GPU Instance Sizes](doc:instance-sizes-ml-credits) page to choose the resources that fit your use case best. Each GPU type has its own configuration for pre-defined memory and number of CPUs.
 
 <Callout icon="📘" theme="info">
-**Note**
+  **Note**
 
-**Using GPU Spot Instances**
+  **Using GPU Spot Instances**
 
-JFrog ML uses EC2 Spot instances for GPU-based builds to keep costs low for users.
+  JFrog ML uses EC2 Spot instances for GPU-based builds to keep costs low for users.
 
-As a result, it may take slightly longer for a GPU Spot Instance to become available.
+  As a result, it may take slightly longer for a GPU Spot Instance to become available.
 </Callout>
 
 #### Build for GPU Deployments
@@ -485,7 +485,7 @@ RuntimeError: Attempting to deserialize object on a CUDA device but torch.cuda.i
 
 ```
 
-By employing a custom *unpickler* you can ensure the model is properly directed to the CPU during loading. The following example demonstrates how to implement such a solution:
+By employing a custom _unpickler_ you can ensure the model is properly directed to the CPU during loading. The following example demonstrates how to implement such a solution:
 
 my_model.py
 
@@ -624,15 +624,16 @@ This issue occurs because the base Docker image does not include the necessary d
 You can update the base image in one of two ways:
 
 1. **Via Command Line**
-Add the `--base-image` parameter when building your model:
+   Add the `--base-image` parameter when building your model:
+
 ```shell
 frogml models build --base-image 'public.ecr.aws/w8k8y6b6/qwak-base:0.0.14-gpu-opencv'
 
 ```
 
-
 2. **Via YAML Configuration**
-Update your YAML configuration file with the base image settings. Refer to our [Build Configurations](https://jfrog-enterprise-group.readme.io/ai-ml/docs/advanced-build-concepts#build-configurations) page for more details.
+   Update your YAML configuration file with the base image settings. Refer to our [Build Configurations](https://jfrog-enterprise-group.readme.io/ai-ml/docs/advanced-build-concepts#build-configurations) page for more details.
+
 ```yaml
 build_env:
   docker:
@@ -640,8 +641,6 @@ build_env:
 
 ```
 
-
-
 <br />
 
----
+***
