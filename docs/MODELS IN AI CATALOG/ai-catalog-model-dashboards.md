@@ -1,5 +1,6 @@
 ---
-title: Use the Model Dashboards
+title: Runtime Metrics
+excerpt: Viewing the model dashboard
 deprecated: false
 hidden: false
 metadata:

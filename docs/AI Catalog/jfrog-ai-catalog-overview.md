@@ -23,9 +23,9 @@ metadata:
       UUID-1ad62589-2b99-9618-45a3-d0f8e8cc0823_UUID-c116acd5-572c-85de-e937-03dfe07a73dd
   robots: index
 ---
-Here you can view and manage all AI assets in your organization, including both those you are currently using, and those you want to use.
+Welcome to the JFrog AI Catalog – your centralized hub for AI model discovery, governance, and deployment. Here you can view and manage all AI assets in your organization, including both those you are currently using, and those you want to use.
 
-<Image align="center" border={false} src="https://files.readme.io/13fd2fa88b522d1925286c4f005188ff317292d616c56369421cff1136d15a1d-Registry.png" />
+<Image align="center" border={false} src="https://files.readme.io/8ef0cbedcda3efb5910749a4caae86544a9b5ff86152970f1cf2b54901cf222e-AI_ML_in_menu.png" />
 
 ## AI Challenges
 
@@ -33,21 +33,27 @@ Here you can view and manage all AI assets in your organization, including both 
 
 ## How Can the AI Catalog Help You?
 
-The JFrog AI Catalog simplifies the process of integrating AI into your projects. It enables you to find, govern, and deploy AI models quickly and securely, streamlining your workflow.
+The JFrog AI Catalog simplifies the process of integrating AI into your projects. It is your centralized hub for discovering, governing, and securing all AI assets in your organization. 
 
-The AI Catalog shadow AI detection, enables you to find all models used in your organization and manage them securely.
+The AI Catalog bridges the gap between MLOps, Platform Engineering, and Development by providing a single source of truth for the two critical pillars of modern AI:
 
-This documentation is tailored for developers, DevOps, and MLOps teams who are looking to efficiently manage and govern AI models.
+* **AI Models:** The intelligent engines themselves (for example, GPT-4, Llama 3, or custom internal models).
+* **MCP Servers** (Tools)**:** The "hands" of the AI—connectors that allow AI agents to read files, query databases, and execute actions on your infrastructure.
+
+Whether you are deploying a model to production or connecting an AI Assistant to your database, the AI Catalog ensures every asset is vetted, secure, and compliant. It enables you to find, govern, and deploy AI models quickly and securely, streamlining your workflow.
+
+The AI Catalog shadow AI detection, enables you to find all assets used in your organization and manage them securely.
 
 Whether you are new to JFrog or seeking to leverage advanced features, this guide will help you navigate core capabilities and essential functions, making your AI integration process straightforward and secure. You'll gain insights into managing both external models, model packages, and your custom models, allowing you to maintain control over which models can be deployed within your organization.
 
-AI Catalog supports **three types of models**:
+AI Catalog supports **four main types of AI assets**:
 
-| Model Types         | Description                                                            |
-| ------------------- | ---------------------------------------------------------------------- |
-| **External Models** | Accessed via third-party APIs (for example, OpenAI, and Google Gemini) |
-| **Model Packages**  | Utilized from public repositories (for example, Hugging Face)          |
-| **Custom Models**   | Internally developed models tailored to your organization's needs      |
+| Model Types         | Description                                                                    |
+| ------------------- | ------------------------------------------------------------------------------ |
+| **External Models** | Accessed via third-party APIs (for example, OpenAI, and Google Gemini)         |
+| **Model Packages**  | Utilized from public repositories (for example, Hugging Face)                  |
+| **Custom Models**   | Internally developed models tailored to your organization's needs              |
+| **MCP Servers**     | Servers implementing the Model Context Protocol to provide tools to AI agents. |
 
 All these models need governance, have many versions, and may have issues. The AI Catalog allows you to manage them all in a unified way.
 

@@ -1,5 +1,5 @@
 ---
-title: Integrate Models in Your Code
+title: Use Models in Your Code
 deprecated: false
 hidden: false
 metadata:
@@ -15,8 +15,6 @@ metadata:
 This procedure explains how to utilize the allowed models within your organization's code.
 
 <Callout icon="📘" theme="info">
-  **Note**
-
   Note that the integration process varies depending on the model type. Follow the procedure according to the model that you are invoking.
 </Callout>
 
@@ -26,19 +24,19 @@ This procedure explains how to utilize the allowed models within your organizati
 
 When a model is allowed, the **Use Model** button appears in the _Model information_ window with the relevant code snippets.
 
-1. Click the allowed model.
+1. Navigate to **AI/ML** > **Registry**.
 
-2. Click the project name in the **Allowed in projects** list.
+2. Click the project for which the model is allowed in the projects list on the left, and then select (double-click) the model from project's allowed models' list.
 
    For example:
 
-   <Image alt="clickprojectname.png" border={false} src="https://files.readme.io/86d23b25e173118efeba38a73865eff315f783f47995b0a0599a6c65b1915e14-uuid-f4c25885-17bd-5203-6cbb-6e0baae5e9cd.png" />
+   <Image align="center" border={true} src="https://files.readme.io/39ba04e9dcf697b8841ce1f4f3e066bd0d455f6791222d4f0222dd9131659725-usemodels_modelsinproject.png" className="border" />
 
    The model dashboard is shown.
 
    <Image alt="modeldashboard.png" border={false} src="https://files.readme.io/d617d3968c9e7b6abb6eb1e36d0cee8c25fb9cce1bc822f7d7a8cbcada4b9f93-uuid-77f9b35c-94e6-6893-516a-e4b0f63f54cf.png" />
 
-   For details on how to read the dashboard to monitor and interpret the model's performance, refer to [Use the Model Dashboards](/docs/use-the-model-dashboards)
+   For details on how to read the dashboard to monitor and interpret the model's performance, refer to [Use the Model Dashboards](/docs/ai-catalog-model-dashboards).
 
    Note that the dashboard only shows data when there is traffic.
 
@@ -46,7 +44,7 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
 
 4. Browse through the example code snippets for different libraries and frameworks (Python, Javascript, cURL).
 
-   <Image alt="usemodel_externalnew.png" border={false} src="https://files.readme.io/ec567ae747bcc8bdf1a3cae95cd5e7a7984ed954b93a296196b71e0949e1d6de-uuid-6e700449-f4f8-c9cc-169e-7f61f39f1f5a.png" />
+   <Image align="center" border={false} src="https://files.readme.io/5bf27b5bb54b29c4bab7af26d3a168d1c56af8237ad526ce9169ee80000afe0b-use_model.png" />
 
    Note that this code snippet shown includes a placeholder for the `api_key` for the token you are about to generate, and the `model` name, which includes the name of the connection.
 
@@ -55,7 +53,7 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
 
    client = OpenAI(
      api_key="your_jfrog_api_key",
-     base_url="https://models.a0smkltuxjyst.qwak.ai/v1"
+     base_url="https://a0smkltuxjyst.ml.jfrog.io/v1"
    )
 
    response = client.chat.completions.create(
@@ -92,7 +90,7 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
 
    client = OpenAI(
      api_key="abcdefghijklmnopqrstuvwxyz1234567890_tokenexample",
-     base_url="https://models.a0smkltuxjyst.qwak.ai/v1"
+     base_url="https://a0smkltuxjyst.ml.jfrog.io/v1""
    )
 
    response = client.chat.completions.create(
@@ -117,15 +115,18 @@ After a model. package has been allowed, the **Use Model** and **Deploy** button
 **Using the Model with Your Transformers Library vs. Deploying:**
 
 * **Use Model:** Enables you to integrate the model with the transformers library, you use the model locally within your development environment. This approach is ideal for experimenting, testing, and small-scale applications. For instructions, see below.
-* **Deploy:** Deploying the model through this platform involves configuring it to run within a managed infrastructure. Once deployed, the model can be accessed and used across all your applications, facilitating consistent performance and scalability. For instructions, see [Deploy Model Packages](doc:deploy-model-packages-open-source).
+* **Deploy:** Deploying the model through this platform involves configuring it to run within a managed infrastructure. Once deployed, the model can be accessed and used across all your applications, facilitating consistent performance and scalability. For instructions, see [Deploy Model Packages](/docs/deploy-model-packages).
 
 **▶ To use the allowed model only with the transformers library:**
 
-1. Click the allowed model.
-2. Click the project name in the **Allowed in projects** list.
-3. Click **Use Model**. The _Use model_ pane is displayed. Here you define how to use this model securely with your framework of choice.
+1. On the **Registry** page, either click the allowed model in the list or select the model from under the relevant project on the left.
 
-   <Image alt="usemodelbutton.png" border={false} src="https://files.readme.io/8911d7370e6857dd47f57798bda8b4eee0957e1f7dd63ccb2bf5d7aede0dc3d2-uuid-0904a59a-38c7-b378-ca45-36bbb033cc59.png" />
+   <Image align="center" border={false} src="https://files.readme.io/7753c33c2fd3d84f40c768588648f662d85d51f0805f3de42c559b93f3ffc8b6-use_model_package.png" />
+
+   <br />
+2. Click **Use Model**. The _Use model_ pane is displayed. Here you define how to use this model securely with your framework of choice.
+
+   <Image align="center" alt="usemodelbutton.png" border={false} src="https://files.readme.io/62cc556cd4472a3400d41c26265f4e1a966cf6cfc8f153df02d66a4885db200a-usemodel_pane_package.png" />
 
 <Callout icon="📘" theme="info">
   **Note**
@@ -163,4 +164,6 @@ Now you are ready to use the model directly within your development environment 
 
 **To use the model with all your applications (Deploy):**
 
-* **See [Deploy Model Packages](doc:deploy-model-packages-open-source) for instructions.** These instructions include how to deploy the model **and** also how to configure the model for use in your developments. After you have deployed and configured the model, you can see the model's usage metrics in the model _Overview_ page.
+* **See [Deploy Model Packages](/docs/deploy-model-packages) for instructions.** These instructions include how to deploy the model **and** also how to configure the model for use in your developments. After you have deployed and configured the model, you can see the model's usage metrics in the model _Overview_ page.
+
+<br />

@@ -22,15 +22,15 @@ metadata:
 
 The AI Catalog enables you to fully manage all AI assets in your organisation, You can:
 
-* Explore the various models available for use in your organization in the **Discovery** page
-* You can see which models have already been allowed for use in your projects inn the **Registry** page
-* Detect **all** AI assets that are used in your system, but are unmanaged by AI catalog, and possibly even unvetted by your organization, in the **Detection** page. For more information about detecting unmanaged AI assets, see [Detect Shadow AI](/docs/shadow-ai-detection-governing-unmanaged-models)​​​.
+* Explore the various models available for use in your organization in the **Discovery** page.
+* You can see which models have already been allowed for use in your projects inn the **Registry** page.
+* Detect **all** AI assets that are used in your system, but are unmanaged by AI catalog, and possibly even unvetted by your organization, in the **Detection** page. For more information about detecting unmanaged AI assets, see [Detect Shadow AI](/docs/detect-shadow-ai)​​​.
 
 ## Managing Allowed Models
 
-After you have allowed your first model, you will see that the allowed models all appear in the **Registry** tab.
+After you have allowed your first model, you will see that the allowed models all appear in the **Registry** page.
 
-* For instructions how to start allowing models, see <Anchor label="**Allowing Your First Model**" title="Allow Your First Model" href="#allow-your-first-model">**Allowing Your First Model**</Anchor>.
+* For instructions how to start allowing models, see [**Allowing Your First Model**](/docs/discover-and-allow-models#allow-your-first-model).
 * To allow additional models, the same instructions can be followed.
 * <Callout icon="📘" theme="info">
     When allowing models, if the **model provider is already associated with the project** (meaning that another model from the same provider is associated with the project), the **connection is already set up** and does not need to be re-selected.
@@ -53,12 +53,15 @@ For model packages, the AI Catalog streamlines the path to production:
 
 ## Searching and Filtering AI Models
 
-In order to help you find the best model for your project in the AI Catalog, in the **Discovery** tab on the _Models_ page you can search for and filter models by:
+In order to help you find the best model for your project in the AI Catalog, in the **Discovery** page you can search for and filter models by:
 
-* **Free text**: Either in the filter panel or the search bar, enter text to search.
-* **Allowed status**: Select to display only allowed models.
+* **Free text**: Enter the search term in the search bar. Click enter and either select the required asset or click "Show all results for "xxx". The filter panel on the left opens for further filtering.
+
+  <Image align="center" border={false} src="https://files.readme.io/cbc15d755581d06346e6ef60882af890ce9118b8e0b75593e61a54afc1ade203-discoverysearch.png" />
+* **Status**: In the filter pane, Select to display allowed and or live models.
+
+  <Image align="center" border={false} src="https://files.readme.io/125e7691977646aa6af5276fe81f08ca38f551584fe17f934ad70631bb1c9614-discoverysearchandfilter.png" />
 * **Model type:** Select a specific model type to display. Options: All/Custom/External/Package.
-  ![](https://files.readme.io/e639adbcaf0a8238835b684242f3f918afaa515cc2628c3ae5d19ed1be92a197-uuid-71a3b4c8-054f-61a8-0d00-4c55a681a6a3.png)
 
 The filters selected are shown across the top of the models, and the search text remains in the free text box in the Filters panel:
 
@@ -80,10 +83,11 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
 
    1. From the JFrog platform menu, select **AI/ML** > **Discovery**. The Models _Discovery_ page opens. (If you are selecting your first model, the _Registry_ page is empty.)
 
-   <Image align="center" border={false} src="https://files.readme.io/ccd43cbb223c801cd2b63912b44a0fcfba8397cca37d009b38e56384e2d040ff-Discovery.png" />
-
-   1. Browse through the catalog to find the model you want. You can [search and filter](/docs/discover-and-allow-models) to locate a specific model or model type.
-   2. Click the model you wish to allow. The model details are displayed. To enable your developers to use this model, assign it to a project, connect it (for external models), and allow it.
+      <Image align="center" border={false} src="https://files.readme.io/6c0ccb2d97d8cab0106057bdc4fedf73e922ce232a42b33ca90c024ef430ad1a-Discovery.png" />
+   2. Browse through the catalog to find the model you want. You can [search and filter](/docs/discover-and-allow-models#searching-and-filtering-ai-models) to locate a specific model or model type.
+   3. Click the model you wish to allow. The model details are displayed. To enable your developers to use this model, assign it to a project, connect it (for external models), and allow it.
+   4. Browse through the catalog to find the model you want. You can [search and filter](/docs/discover-and-allow-models#searching-and-filtering-ai-models) to locate a specific model or model type.
+   5. Click the model you wish to allow. The model details are displayed. To enable your developers to use this model, assign it to a project, connect it (for external models), and allow it.
 2. **Select the project and configure model allowance:**
 
    1. In the model's detail page, click as follows:
@@ -103,10 +107,6 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
     </Column>
   </Columns>
 </div>
-
-<Callout icon="📘" theme="info">
-  The Allow/Connect & allow buttons appear twice on the page and you can use either.
-</Callout>
 
 <ol style={{ listStyleType: 'lower-roman', marginLeft: '20px' }} start="2">
   <li>In the *Allow Model Usage* pane, select the project from the drop-down list.</li>
@@ -132,7 +132,7 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
 
    * **For Model Packages only:** Click **Allow**. The Allowed models tab is displayed.
    * **For External API Models only:**  First [create a new connection](/docs/connect-ai-providers#create-a-new-model-provider-connection)¹² for the project, and then click **Allow**.
-4. To Use the Model: See instructions how to <Anchor label="Integrate Models in Your Code" title="Integrate Models in Your Code" href="/docs/integrate-models-in-your-code">Integrate Models in Your Code</Anchor>.
+4. To Use the Model: See instructions how to [Use Models in Your Code](/docs/integrate-models-in-your-code).
 
 <Callout icon="📘" theme="info">
   **Note**

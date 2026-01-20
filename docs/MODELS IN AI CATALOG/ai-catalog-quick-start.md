@@ -1,5 +1,5 @@
 ---
-title: 'AI Catalog Quick Start  '
+title: 'Quick Start  '
 excerpt: Follow these steps to start managing your AI assets.
 deprecated: false
 hidden: false
@@ -27,17 +27,17 @@ Once you have set up your JFrog ML account and your AI catalog entitlement, all 
 
 ### Access the AI Catalog
 
-From the JFrog Platform menu, navigate to **AI/ML** > **Models** to open the AI Catalog.
+From the JFrog Platform menu, select **AI/ML**. The **Registry** page opens by default.
 
-The AI Catalog has three main pages:
+The AI Catalog has three main windows:
 
-* **Registry:** This is the default view. It lists the models approved for use in your organization. If you are a new user, this page is empty until models are approved.
+* **Registry:** The default view, this lists the models approved for use in your organization. If you are a new user, this tab is empty until models are approved.
 * **Discovery:** Explore all available models provided by approved (supported) providers that you can review and approve for use.
 * **Detection:** View and manage all package* type models found in your organization’s artifacts as scanned by JFrog Xray.
 
 To explore all available models, switch to the **Discovery** page. This page displays the full list of models that can be reviewed and allowed for use within your organization.
 
-<Image alt="discovery_callouts_new.png" border={false} src="https://files.readme.io/b5d1f24f9cfdd91ccd1975576539062b1a510ba5f3e4f550188d27a6da8e81f1-uuid-b8bdfc28-e136-b233-92ad-7dc8947fb882.png" />
+<Image align="center" border={true} src="https://files.readme.io/447c5840bb2ea524b2b31250dbb164fa7d24274d4e835ce7e08976d5e178e242-Discovery_page-models.png" className="border" />
 
 <Callout icon="📘" theme="info">
   **Note**
@@ -54,19 +54,19 @@ Use the [**Filter & Search**](/docs/discover-and-allow-models#searching-and-filt
 
 The JFrog platform automatically scans each model for vulnerabilities, and offers transparent license information to help you avoid compliance issues.
 
-<Image alt="modeldetails.png" border={false} src="https://files.readme.io/c338827ad0a4936b782d2feda9208535d8cb7c173f768d837198d11500e1040f-uuid-e38f6c34-b8b8-e8ea-f30b-5ce210887d4f.png" />
+<Image align="center" border={true} src="https://files.readme.io/405864e6687ef55e8b6095643b8cfcb1d1df3387eeaa8e2c78297ed95948f087-discovery_with_model_details.png" className="border" />
 
 <Callout icon="📘" theme="info">
   **Note**
 
-  Even if your AI Catalog is empty, that does not mean your organization is not using any models. It maybe be using unmanaged models. Using the [Shadow AI detection](/docs/shadow-ai-detection-governing-unmanaged-models) feature, which uses Xray to scan your JFrog artifacts, you can detect which models are already being used, and manage them in the AI Catalog.
+  Even if your AI Catalog is empty, that does not mean your organization is not using any models. It maybe be using unmanaged models. Using the [Shadow AI detection ](/docs/shadow-ai-detection-governing-unmanaged-models)feature, which uses Xray to scan your JFrog artifacts, you can detect which models are already being used, and manage them in the AI Catalog.
 </Callout>
 
 ### Allow Models
 
 Next, governance becomes straightforward and effective. Admin users can easily allow models (from the <Anchor label="Discovery" title="Discover and Allow Models" href="/docs/discover-and-allow-models">Discovery</Anchor> page) for secure use within your organization. Models can be approved on a per-project basis, with a comprehensive list of allowed models available on the _[Registry](/docs/discover-and-allow-models)_ _(allowed models)_ page.
 
-<Image align="center" border={false} src="https://files.readme.io/fe8845cc6d3a1ebe53f85881e00794db2fecd68f716b3db518d397d01e7a53e1-Models_in_registry.png" />
+<Image align="center" border={false} src="https://files.readme.io/d017974e2b2fb9b34721d8fd8fab51f12f96b045bbdde3dbd9519252b35df593-Models_in_registry.png" />
 
 You can create an allow-list of models, ensuring that if a model is not on the list, it cannot be used, thereby preventing unvetted models from entering your supply chain.
 

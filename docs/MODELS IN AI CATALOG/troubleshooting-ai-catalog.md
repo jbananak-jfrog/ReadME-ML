@@ -1,5 +1,6 @@
 ---
-title: Troubleshooting AI Catalog
+title: Troubleshooting
+excerpt: Troubleshooting your AI Catalog
 deprecated: false
 hidden: false
 metadata:
