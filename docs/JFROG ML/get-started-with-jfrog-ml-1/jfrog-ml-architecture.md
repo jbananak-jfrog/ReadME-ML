@@ -40,9 +40,9 @@ The Control Plane is the centralized orchestration and management layer, securel
 
 _**Core Responsibilities:**_
 
-* **Orchestration & Metadata Management:**Manages all non-sensitive metadata for entities such as models, builds, pipelines, and deployments. This includes tracking versions, parameters, and relationships between these entities.
-* **Orchestration & Workflow Management:**Coordinates multi-step workflows such as build, deploy, promote and monitor and delegates sensitive operations to the Data Plane.
-* **Delegation & Status Reporting:**Sends requests to the data plane and receives operation updates (for example, build progress, deployment status).
+* **Orchestration & Metadata Management:** Manages all non-sensitive metadata for entities such as models, builds, pipelines, and deployments. This includes tracking versions, parameters, and relationships between these entities.
+* **Orchestration & Workflow Management:** Coordinates multi-step workflows such as build, deploy, promote and monitor and delegates sensitive operations to the Data Plane.
+* **Delegation & Status Reporting:** Sends requests to the data plane and receives operation updates (for example, build progress, deployment status).
 
 ### JFrog ML Data Plane
 
