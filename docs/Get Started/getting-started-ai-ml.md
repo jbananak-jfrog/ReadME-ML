@@ -23,7 +23,7 @@ With security and compliance enforced proactively at the gate, your teams can sa
 
 The diagram above illustrates this secure AI supply chain in action. It maps the flow of AI assets through the JFrog Platform, how malicious and non-compliant models are detected and blocked at the perimeter, while trusted assets are cataloged and made available for rapid development.
 
-## How Does it Work?
+## How Does It Work?
 
 <HTMLBlock>{`
 <style>
