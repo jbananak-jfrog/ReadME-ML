@@ -16,9 +16,8 @@ metadata:
 ---
 This section reviews the following topics:
 
-[Features in Inference](/docs/feature-consumption%23features-in-inference)
-
-[Features in Training](/docs/feature-consumption%23features-in-training)
+[Features in Inference](/docs/feature-consumption#features-in-inference)
+[Features in Training](/docs/feature-consumption#features-in-training)
 
 ## Features in Inference
 
@@ -141,15 +140,15 @@ curl --location 'https://grpc.<YOUR-ACCOUNT>.qwak.ai/api/v1/rest-serving/multiFe
 ```
 
 <Callout icon="📘" theme="info">
-When referencing feature sets in SDK or REST calls, use hyphens `-` instead of underscores `_`. This is a common notation in the JFrog ML platform to ensure consistency and avoid errors during calls.
+  When referencing feature sets in SDK or REST calls, use hyphens `-` instead of underscores `_`. This is a common notation in the JFrog ML platform to ensure consistency and avoid errors during calls.
 </Callout>
 
 <Callout icon="❗️" theme="error">
-**Important**
+  **Important**
 
-If you're on a SaaS account, use `batchV1Feature` as suggested in the example above.
+  If you're on a SaaS account, use `batchV1Feature` as suggested in the example above.
 
-For [hybrid](/docs/jfrog-ml-architecture) accounts, switch to using `batchFeature` in the REST data JSON payload.
+  For [hybrid](/docs/jfrog-ml-architecture) accounts, switch to using `batchFeature` in the REST data JSON payload.
 </Callout>
 
 Example JSON Response:
@@ -163,7 +162,7 @@ Example JSON Response:
 
 These examples are using `curl` for REST calls but any other REST client will work just as well.
 
----
+***
 
 ## Features in Training
 
@@ -187,16 +186,19 @@ This API retrieves features from an offline feature store for one or more featur
 **Arguments:**
 
 * `features: List[FeatureSetFeatures]` - **required**
-A list of feature sets to fetch.
+  A list of feature sets to fetch.
+
 * `population: pd.DataFrame` - **required**
-A DataFrame containing:
+  A DataFrame containing:
+
 * All keys of the requested feature sets.
+
 * A point in time column.
+
 * Optional enrichments, e.g., labels.
 
-
 * `point_in_time_column_name: str` - **required**
-The name of the point in time column in the `population` DataFrame.
+  The name of the point in time column in the `population` DataFrame.
 
 **Returns:** `pd.DataFrame`
 
@@ -253,17 +255,15 @@ Retrieve features from an offline feature-set for a given time range. The result
 **Arguments:**
 
 * `features: FeatureSetFeatures` - **required**:
-A list of features to fetch from a single feature set.
+  A list of features to fetch from a single feature set.
 * `start_date: datetime` - **required**:
-The lower time bound.
+  The lower time bound.
 * `end_date: datetime` - **required**:
-The upper time bound.
+  The upper time bound.
 * `population: pd.DataFrame` - **optional**:
-A DataFrame containing the following columns:
+  A DataFrame containing the following columns:
 * The key of the requested feature-set **required**
 * Enrichments e.g., labels. **optional**
-
-
 
 **Returns:** `pd.DataFrame`
 
@@ -307,9 +307,9 @@ print(train_df.head())
 ```
 
 <Callout icon="📘" theme="info">
-***Current Limitations***
+  _**Current Limitations**_
 
-The get_feature_range_values API call is currently not available for Streaming Aggregations feature sets and not available to fetch data for multiple feature sets at the same time (join data).
+  The get_feature_range_values API call is currently not available for Streaming Aggregations feature sets and not available to fetch data for multiple feature sets at the same time (join data).
 </Callout>
 
 Would you like me to check any other sections of your documentation for formatting consistency?
