@@ -209,7 +209,7 @@ As a best practice, before registering the Feature Set, **fetch a sample** of da
 
 To test or explore features before deployment, use the `get_sample` method on the feature set definition function:
 
-```
+```python
 # feature_set.py
 # Get a live sample of your ingested data from the feature store
 print(user_features.get_sample())
@@ -217,7 +217,21 @@ print(user_features.get_sample())
 
 The output should be the following:
 
-                                  user_id  age     sex  job housing saving_account checking_account  credit_amount  duration                purpose   date_created 0  baf1aed9-b16a-46f1-803b-e2b08c8b47de   67    male    2     own           None           little           1169         6               radio/TV  1609459200000 1  574a2cb7-f3ae-48e7-bd32-b44015bf9dd4   22  female    2     own         little         moderate           5951        48               radio/TV  1609459200000 2  1b044db3-3bd1-4b71-a4e9-336210d6503f   49    male    1     own         little             None           2096        12              education  1609459200000 3  ac8ec869-1a05-4df9-9805-7866ca42b31c   45    male    2    free         little           little           7882        42  furniture/equipment  1609459200000 4  aa974eeb-ed0e-450b-90d0-4fe4592081c1   53    male    2    free         little           little           4870        24                  car  1609459200000 5  7b3d019c-82a7-42d9-beb8-2c57a246ff16   35    male    1    free           None             None           9055        36              education  1609459200000 6  6bc1fd70-897e-49f4-ae25-960d490cb74e   53    male    2     own     quite rich             None           2835        24  furniture/equipment  1609459200000 7  193158eb-5552-4ce5-92a4-2a966895bec5   35    male    3    rent         little         moderate           6948        36                  car  1609459200000 8  759b5b46-dbe9-40ef-a315-107ddddc64b5   61    male    1     own           rich             None           3059        12               radio/TV  1609459200000 9  e703c351-41a8-43ea-9615-8605da7ee718   28    male    3     own         little         moderate           5234        30                  car  1609459200000
+```shell
+user_id                               age  sex     job  housing  saving_account  checking_account  credit_amount  duration  purpose              date_created
+0  baf1aed9-b16a-46f1-803b-e2b08c8b47de  67   male    2    own      None            little            1169           6         radio/TV             1609459200000
+1  574a2cb7-f3ae-48e7-bd32-b44015bf9dd4  22   female  2    own      little          moderate          5951           48        radio/TV             1609459200000
+2  1b044db3-3bd1-4b71-a4e9-336210d6503f  49   male    1    own      little          None              2096           12        education            1609459200000
+3  ac8ec869-1a05-4df9-9805-7866ca42b31c  45   male    2    free     little          little            7882           42        furniture/equipment  1609459200000
+4  aa974eeb-ed0e-450b-90d0-4fe4592081c1  53   male    2    free     little          little            4870           24        car                  1609459200000
+5  7b3d019c-82a7-42d9-beb8-2c57a246ff16  35   male    1    free     None            None              9055           36        education            1609459200000
+6  6bc1fd70-897e-49f4-ae25-960d490cb74e  53   male    2    own      quite rich      None              2835           24        furniture/equipment  1609459200000
+7  193158eb-5552-4ce5-92a4-2a966895bec5  35   male    3    rent     little          moderate          6948           36        car                  1609459200000
+8  759b5b46-dbe9-40ef-a315-107ddddc64b5  61   male    1    own      rich            None              3059           12        radio/TV             1609459200000
+9  e703c351-41a8-43ea-9615-8605da7ee718  28   male    3    own      little          moderate          5234           30        car                  1609459200000
+```
+
+<br />
 
 ## Register the Feature Set
 
@@ -229,7 +243,7 @@ The output should be the following:
 
 To register the FeatureSet you just defined, you can use the **JFrog ML CLI** by running the following command in the same directory where your `feature_set.py` file is located.
 
-```
+```shell
 frogml features register
 ```
 
@@ -254,14 +268,14 @@ Let's consider a generic FrogMlModel that requires data from the new Credit Risk
 
 * **Initialization**: Initializes an instance of the OfflineClientV2 class.
 
-  ```
+  ```python
   from frogml.feature_store.offline import OfflineClientV2
 
   offline_client = OfflineClientV2()
   ```
 * **Features**: Defines a list of features to retrieve from a specific feature-set.
 
-  ```
+  ```python
   from frogml.core.feature_store.offline.feature_set_features import FeatureSetFeatures
 
   features = FeatureSetFeatures(
@@ -271,7 +285,7 @@ Let's consider a generic FrogMlModel that requires data from the new Credit Risk
   ```
 * **Date Range**: Specifies the start and end dates for which the feature values are to be fetched. In this example, the start date is set to January 1, 2021, and the end date is set to today's date.
 
-  ```
+  ```python
   from datetime import datetime
 
   feature_range_start = datetime(year=2021, month=1, day=1)
@@ -279,7 +293,7 @@ Let's consider a generic FrogMlModel that requires data from the new Credit Risk
   ```
 * **Fetch Features**: Calls the `get_feature_range_values` method on the `offline_client` instance. The method returns the requested feature values for the specified key and date range, storing them in a `pandas.DataFrame`.
 
-  ```
+  ```python
   data = offline_client.get_feature_range_values(
                 features=features,
                 start_date=feature_range_start,
@@ -462,7 +476,7 @@ JFrog ML offers you multiple options to test your models, locally, where you can
 
 Please use the `test_model_locally.py` file to run the model locally on your laptop using the JFrog ML `run_local` functionality.
 
-```
+```shell
 python test_model_locally.py
 ```
 
@@ -470,7 +484,7 @@ python test_model_locally.py
 
 Once you have a working version of your model, please run the `test_live_model.py` file to use the JFrog ML `RealTimeClient` and query your live model endpoint.
 
-```
+```shell
 python test_live_mode.py <your-model-id>
 ```
 
