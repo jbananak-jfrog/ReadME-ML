@@ -13,7 +13,7 @@ metadata:
 ---
 ### Deploy Model Validate Fails
 
-| Problem   | Local system fails to recognize the `frogml` command.        |
+| Problem   | Local system fails to recognize the _frogml_ command.        |
 | :-------- | :----------------------------------------------------------- |
 | Solution: | Ensure it's added to your system's PATH environment variable |
 
