@@ -1,7 +1,7 @@
 ---
 title: Connect Remote MCP Servers
 deprecated: false
-hidden: false
+hidden: true
 icon: ❓
 metadata:
   robots: index
