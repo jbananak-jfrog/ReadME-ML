@@ -23,7 +23,7 @@ Before proceeding with the local deployment, ensure you meet the following requi
 
 Run the deployment command (`deploy`): Execute the following command to deploy your model locally. Replace `<YOUR_MODEL>` with the actual model ID you wish to deploy.
 
-```
+```shell
 frogml models deploy realtime --model-id "<YOUR_MODEL>" --build-id "<YOUR_BUILD_ID>" --local
 ```
 
