@@ -1,7 +1,7 @@
 ---
 title: 'Reference: CLI Commands'
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
