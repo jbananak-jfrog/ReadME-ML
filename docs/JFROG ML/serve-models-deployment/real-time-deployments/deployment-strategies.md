@@ -30,7 +30,7 @@ The first build automatically receives 100% of the traffic.
 
 Then you can attach it to the model in the deployment process.
 
-▶ **To deploy an additional variation:**
+**To deploy an additional variation:**
 
 1. Click the deploy button next to the build you want to deploy.
 2. In the deployment popup, enter a **new variation name** and click **create new variation** in the select.
@@ -58,7 +58,7 @@ Then you can attach it to the model in the deployment process.
 
 ## Deployment via the CLI
 
-▶ **To deploy a model with variations via the CLI, use this command:**
+**To deploy a model with variations via the CLI, use this command:**
 
 ```shell
 frogml models deploy realtime --from-file <config-file-path>
