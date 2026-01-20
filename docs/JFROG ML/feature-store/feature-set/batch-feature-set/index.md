@@ -337,7 +337,7 @@ user_features_df = user_features.get_sample(number_of_rows=10)
 
 The following is an example of `user_features_df` Dataframe result:
 
-```
+```shell
 +----+--------------------------------------+--------------+-----------------+------------------+------------------+
 |    | user_id                              |  date_created |avg_credit_amount | max_credit_amount | first_transaction |
 |----+--------------------------------------+----------------+-----------------+------------------+------------------|
@@ -377,7 +377,7 @@ There are two options for registering new features:
   The same feature set transformation function name, cannot be defined more than once per .py file.
 </Callout>
 
-```
+```shell
 ✅ Recursively looking for python files in input dir (0:00:00.61)
 ✅ Finding Data Sources to register (0:00:00.01)
 👀 Found 2 Data Sources
@@ -414,8 +414,7 @@ There's no need to be located in a certain folder in the project structure.
 
 For example, in the above examples we created a feature set named `user-features`. To delete this feature set via the JFrog ML CLI, all I need is the following command.
 
-```
-# Shell Command
+```shell
 frogml features delete user-features
 ```
 
@@ -425,7 +424,7 @@ In case you would like to execute an ingestion job immediately, the following op
 
 * **Python SDK** - using the `FrogMlClient`:
 
-  ```
+  ```python
   from frogml import FrogMlClient
 
   client = FrogMlClient()
@@ -433,8 +432,7 @@ In case you would like to execute an ingestion job immediately, the following op
   ```
 * **CLI** - using the following command:
 
-  ```
-  # CLI
+  ```shell
   frogml features run user-features
   ```
 * **JFrog ML UI** - via the 'Jobs' tab in the app, click on 'Execute Job'.
@@ -453,15 +451,13 @@ For example, if an hourly feature set we paused for 3 days - after resuming it, 
 
 ▶ **To pause a batch feature set**:  Use the JFrog ML CLI:
 
-```
-# CLI
+```shell
 frogml features pause user-features
 ```
 
 ▶ **To resume the batch feature set:**
 
-```
-# CLI
+```shell
 frogml features resume user-features
 ```
 
@@ -526,7 +522,7 @@ When creating transformations, keep the following guidelines in mind:
 
 To use this feature, ensure that you have installed the `frogml-cli` with the feature-store extra.
 
-```
+```shell
 pip install -U "frogml-sdk[feature-store]"
 ```
 
@@ -716,7 +712,7 @@ The "Full Read" policy, when applied to a single data source, involves consuming
 
    1. In scenarios where a complete snapshot of the data source is required, each batch job reads all the data until the execution time.
 
-      ```
+      ```python
       from frogml.core.feature_store.feature_sets.read_policies import ReadPolicy
       from frogml.feature_store.feature_sets import batch
 
@@ -732,7 +728,7 @@ The "Full Read" policy, when applied to a single data source, involves consuming
 
    1. When joining a dimension table of user information with another data source, the Full Read policy ensures that all relevant records are considered.
 
-      ```
+      ```python
       from frogml.core.feature_store.feature_sets.read_policies import ReadPolicy
       from frogml.feature_store.feature_sets import batch
 
@@ -886,13 +882,13 @@ See Defining a Feature set. [Feature Store Quick Start Guide](/docs/feature-stor
 
 **Interval Backfill**
 
-```
+```shell
 frogml features backfill --start-time <start_time> --stop-time <stop_time> [--cluster-template <cluster_template>] [--comment <comment>] --environment <environment> --feature-set <feature_set_name>
 ```
 
 **Reset Backfill**
 
-```
+```shell
 frogml features backfill --reset-backfill [--cluster-template <cluster_template>] [--comment <comment>] --environment <environment> --feature-set <feature_set_name>
 ```
 
@@ -909,3 +905,5 @@ frogml features backfill --reset-backfill [--cluster-template <cluster_template>
 * `--comment TEXT`: Optional comment tag line for the backfill job.
 * `--environment ENVIRONMENT`: JFrog ML environment.
 * `--feature-set TEXT or --name TEXT`: The name of the feature set for which the backfill process is to be performed. This option is required.
+
+<br />
