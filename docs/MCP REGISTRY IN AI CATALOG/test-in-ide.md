@@ -2,7 +2,7 @@
 title: Test ? in IDE
 excerpt: Once the gateway is running and the IDE is configured, verify the connection.
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
