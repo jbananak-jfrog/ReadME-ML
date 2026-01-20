@@ -140,14 +140,14 @@ After a model. package has been allowed, the **Use Model** and **Deploy** button
 
    1. **Copy** the code snippet with the `export` commands into your code interface. This configures the Hugging Face client to work with Artifactory, and adds your repository.
 
-      ```python
+      ```shell
       export HF_HUB_ETAG_TIMEOUT=86400
       export HF_HUB_DOWNLOAD_TIMEOUT=86400
       export HF_ENDPOINT=https://jmlsoleng.jfrog.io/artifactory/api/huggingfaceml/research-research-huggingface-remote
       ```
    2. **Copy** and run the code snippet with the export token (to authenticate the Hugging Face client with Artifactory).
 
-      ```python
+      ```shell
       export HF_TOKEN=tokenexample
       ```
    3. Click **Done**.
