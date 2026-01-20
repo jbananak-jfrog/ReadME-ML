@@ -57,7 +57,7 @@ To use your own custom models, you just need to upload the models to JFrog ML. A
       </td>
 
       <td>
-        ```
+        ```shell
         frogml models create "<MODEL_NAME>" --project "<PROJECT_NAME>"
         ```
       </td>
@@ -73,6 +73,8 @@ To use your own custom models, you just need to upload the models to JFrog ML. A
 
 6. Build and deploy - trigger your first build in JFrog ML.
 
-   ```
+   ```shell
    frogml models build ./<MODEL_FOLDER> --model-id "<MODEL_NAME>" --deploy
    ```
+
+<br />
