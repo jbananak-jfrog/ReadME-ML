@@ -8,10 +8,7 @@ hidden: true
 metadata:
   robots: index
 ---
-
 This section gives you visibility into how the MCP Catalog is being used across your organization and highlights potential security risks.
-
-Navigate to the MCP Catalog view in the Detection tab: [Shadow MCP Reporting](/docs/shadow-ai-detection-governing-unmanaged-models).
 
 The primary report focuses on detecting "Shadow AI"— understanding which tools developers are using locally that have not been vetted or approved by the organization.
 
