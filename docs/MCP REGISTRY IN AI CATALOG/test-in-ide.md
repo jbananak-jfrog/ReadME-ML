@@ -1,5 +1,5 @@
 ---
-title: Test ? in IDE
+title: Test Connection in IDE
 excerpt: Once the gateway is running and the IDE is configured, verify the connection.
 deprecated: false
 hidden: true
