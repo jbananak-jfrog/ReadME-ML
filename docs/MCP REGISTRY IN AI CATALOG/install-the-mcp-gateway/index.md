@@ -1,12 +1,13 @@
 ---
 title: Install the MCP Gateway
+excerpt: >-
+  The MCP gateway is responsible for the interactions between your MCP server
+  and JFrog’s AI catalog.
 deprecated: false
 hidden: true
 metadata:
   robots: index
 ---
-The MCP gateway is responsible for the interactions between your MCP server and JFrog’s AI catalog.
-
 To use MCP tools, you  must run a project-scoped script that installs the JFrog CLI (if it is not already installed), and  the mcp-gateway gateway plugin, and configures your local environment to talk to the correct JFrog Project.
 
 1. Log in to the JFrog Platform and navigate to AI/ML > MCP Servers.
@@ -17,10 +18,8 @@ To use MCP tools, you  must run a project-scoped script that installs the JFrog 
    <br />
 
    ```
-   take from slack
+   curl -fL https://releases.jfrog.io/artifactory/mcp-scripts/mcp-scripts.sh | AUTH=<USER>:<TOKEN> PROJECT_KEY=<KEY> IDE=<IDE> bash
    ```
-
-   <br />
 
    What this script does:
 
