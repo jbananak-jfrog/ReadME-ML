@@ -44,7 +44,7 @@ JFrog sets up the network requirements and deploys your model on a managed Kuber
 
 <Image alt="Deploying a real-time model from the UI" border={false} src="https://files.readme.io/c37504c48ecaf10085959181c6692b60a42ebe123e004704f8af89c3c79dff23-uuid-ba434fe8-6697-f02d-b1e0-c884dee29695.gif" />
 
-▶ **To deploy a real-time model from the UI:**
+**To deploy a real-time model from the UI:**
 
 1. Select **Models** in the left navigation bar
 2. Select a project and a model.
