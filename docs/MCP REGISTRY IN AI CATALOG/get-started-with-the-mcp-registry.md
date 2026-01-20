@@ -2,7 +2,7 @@
 title: 'Get Started '
 excerpt: >-
   Follow these steps to install the JFrog MCP Gateway and connect your IDE to
-  your organization's approved tools.How to get started using your MCP Registry
+  your organization's approved tools.
 deprecated: false
 hidden: true
 metadata:
@@ -16,6 +16,16 @@ The MCP Gateway connects you to tools, but it does not install the underlying ru
 * **Python (uv):** Required for running Python-based MCPs.
 * **Docker:** Required for running containerized MCPs.
 
+Once you are sure you have the required runtimes, install the MCP Registry as follows:
+
+Install the MCP Gateway
+
+Connect Your IDE
+
+Start the  MCP Gateway
+
+Test Your Connection to the IDE
+
 <Callout icon="📘" theme="info">
-   The installation script will check for these and warn you if they are missing, but it will not install them for you.
+  The installation script will check for these and warn you if they are missing, but it will not install them for you.
 </Callout>
