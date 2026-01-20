@@ -22,7 +22,7 @@ The data is stored as parquet files in your object storage, and you can also loa
 
 **Enabling JFrog ML Analytics Collection**: JFrog ML Analytics collection is enabled by default when using the `api` decorator.
 
-```
+```python
 @frogml.api()
 def predict(self, df):
     return pd.DataFrame(self.catboost.predict(df[self.columns]), columns=['churn'])
@@ -30,7 +30,7 @@ def predict(self, df):
 
 **Disabling JFrog ML Lake Analytics**:  It can be turned off by passing `analytics=False` to the decorator.
 
-```
+```python
 @frogml.api(analytics=False)
 def predict(self, df):
     return pd.DataFrame(self.catboost.predict(df[self.columns]), columns=['churn'])
@@ -47,7 +47,7 @@ def predict(self, df):
 
 ▶ **To configure columns to be excluded from analytics**, configure the decorator with the column names:
 
-```
+```python
 @frogml.api(analytics_exclude_columns=['col_1', 'col_2'])
 ```
 
@@ -67,7 +67,7 @@ To analyze the model requests and predictions, write SQL queries In the **Analyt
 
 To retrieve data from JFrog ML Analytics Engine into a Pandas `Dataframe` use the `run_analytics_query` function of the `FrogMLClient`:
 
-```
+```python
 from frogML import FrogMlClient
 
 client = FrogMlClient()
@@ -78,7 +78,7 @@ When you call the code as shown below, the function will wait until the result i
 
 However, you can also control how long you want to wait for the result by passing the `timeout` parameter to the `run_analytics_query` function. If the JFrog ML Analytics Engine won't return a response within a given time window, the client will raise a `TimeoutError`.
 
-```
+```python
 from datetime import timedelta
 from frogml import FrogMlClient 
 
@@ -91,7 +91,7 @@ df = client.run_analytics_query("select * from your_table", timeout=timedelta(se
 A model's predict function can log custom data during the inference request. To use the custom data logger, we need to add the `analytics_logger` parameter to the predict function.  
 **Important:** The parameter MUST be called `analytics_logger`!
 
-```
+```python
 @frogml.api(analytics=True)
 def predict(self, df, analytics_logger):
     ...
@@ -103,13 +103,13 @@ Now, in the predict function, we can log any scalar value, lists, dictionaries, 
 
 1. One at a time:
 
-   ```
+   ```python
    analytics_logger.log(column=’my_column’, value=the_value)
    analytics_logger.log(column=’some_other_column’, value=yet_another_value)
    ```
 2. Multiple values at once:
 
-   ```
+   ```python
    analytics_logger.log_multi(
        values={‘another_column’: ‘some_value’, 'something_else': 123}
    )
@@ -124,5 +124,3 @@ If you log different values with the same column name, only the last logged valu
 The JFrog ML Analytics view in the JFrog ML UI  displays all the logged values with the column prefix `logger_`.
 
 If `analytics_logger.log(column=’my_column’, value=the_value)` are ;logged, JFrog ML Analytics displays a column `logger_my_column` with a value retrieved from the variable `the_value`.
-
-<br />
