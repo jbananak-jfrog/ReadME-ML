@@ -140,7 +140,7 @@ In some cases, a model needs to access external services during the runtime. If 
 
 The IAM role should be created with the following trust policy:
 
-```python
+```json IAM Policy
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -297,7 +297,7 @@ spec:
 
 2. **Run the following command:**
 
-```
+```shell
 frogml models autoscaling attach -f config.yaml
 ```
 
