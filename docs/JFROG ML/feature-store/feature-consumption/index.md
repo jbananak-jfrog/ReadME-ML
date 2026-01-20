@@ -16,9 +16,9 @@ metadata:
 ---
 This section reviews the following topics:
 
-[Features in Inference](/docs/feature-consumption#features-in-inference)
+[Features in Inference](/docs/feature-consumption%23features-in-inference)
 
-[Features in Training](/docs/feature-consumption#features-in-training)
+[Features in Training](/docs/feature-consumption%23features-in-training)
 
 ## Features in Inference
 
@@ -30,9 +30,9 @@ In the predict function, we create an instance of the `OnlineClient`.
 
 After that, we create a `ModelSchema` containing all of the features we want to retrieve.
 
-We create a DataFrame containing the entities identifiers and pass it to <Anchor label="the Feature Store" target="_blank" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/">the Feature Store</Anchor>. As a response, we get a Pandas DataFrame with the requested features.
+We create a DataFrame containing the entities identifiers and pass it to <Anchor label="the Feature Store" target="_blank" href="[https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/](https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/)">the Feature Store</Anchor>. As a response, we get a Pandas DataFrame with the requested features.
 
-```
+```python
 import pandas as pd
 from frogml.feature_store.online.client import OnlineClient
 from frogml.sdk.model.schema_entities import FeatureStoreInput
@@ -61,13 +61,14 @@ df = pd.DataFrame(columns=['user', 'post_id'],
 user_features = online_client.get_feature_values(model_schema, df)
 
 print(user_features)
+
 ```
 
 ### Using the `frogml.api()` Decorator
 
 Alternatively, we could use the features_extraction parameter and get the features automatically extracted when the Entity is being sent in your prediction input Dataframe . As with the `OnlineClient`, the `ModelSchema` is required to define what features are to be extracted from the Online Store.
 
-```
+```python
 # model.py
 import frogml
 
@@ -77,6 +78,7 @@ def predict(self, df, extracted_df):
     # Add prediction logic here
     
     return output_dataframe
+
 ```
 
 In the predict function, use the `frogml.api()`decorator with the parameter `feature_extraction=True` as in the code example above.
@@ -91,23 +93,25 @@ The JFrog ML Online Store can also be queried via REST calls as shown in the exa
 
 Use the following command to obtain a token, valid for 24 hours:
 
-```
+```shell
 curl --request POST 'https://grpc.qwak.ai/api/v1/authentication/qwak-api-key' \
       --header 'Content-Type: application/json' \
       --data '{"qwakApiKey": "<QWAK_API_KEY>"}'
+
 ```
 
 Optionally, store the token in an environment variable:
 
-```
+```shell
 export JFROG_TOKEN="<OUTPUT_FROM_AUTHENTICATION_CURL_CALL>"
+
 ```
 
 #### Retrieve Online Features
 
 With the fresh JFrog ML token, use the following command to extract features:
 
-```
+```shell
 curl --location 'https://grpc.<YOUR-ACCOUNT>.qwak.ai/api/v1/rest-serving/multiFeatureValues/' \
 --header 'Authorization: Bearer '$JFROG_TOKEN'' \
 --header 'Content-Type: application/json' \
@@ -133,40 +137,45 @@ curl --location 'https://grpc.<YOUR-ACCOUNT>.qwak.ai/api/v1/rest-serving/multiFe
     }]
   }
 }'
+
 ```
 
 <Callout icon="📘" theme="info">
-  When referencing feature sets in SDK or REST calls, use hyphens `-` instead of underscores `_`. This is a common notation in the JFrog ML platform to ensure consistency and avoid errors during calls.
+When referencing feature sets in SDK or REST calls, use hyphens `-` instead of underscores `_`. This is a common notation in the JFrog ML platform to ensure consistency and avoid errors during calls.
 </Callout>
 
 <Callout icon="❗️" theme="error">
-  **Important**
+**Important**
 
-  If you're on a SaaS account, use `batchV1Feature` as suggested in the example above.
+If you're on a SaaS account, use `batchV1Feature` as suggested in the example above.
 
-  For [hybrid](/docs/jfrog-ml-architecture) accounts, switch to using `batchFeature` in the REST data JSON payload.
+For [hybrid](/docs/jfrog-ml-architecture) accounts, switch to using `batchFeature` in the REST data JSON payload.
 </Callout>
 
 Example JSON Response:
 
-```
+```json
 {
   "featureValues": "{\"index\":[0],\"data\":[[\"moderate\",27]],\"columns\":[\"user-credit-risk-features.checking_account\",\"user-credit-risk-features.age\"]}"
 }
+
 ```
 
 These examples are using `curl` for REST calls but any other REST client will work just as well.
 
+---
+
 ## Features in Training
 
-This documentation provides examples and usage patterns for interacting with the <Anchor label="Offline Feature Store" target="_blank" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/">Offline Feature Store</Anchor> -  using the `OfflineClientV2` in Python (available from SDK version 0.5.61 and higher). It covers how to retrieve feature values for machine learning model training and analysis.
+This documentation provides examples and usage patterns for interacting with the <Anchor label="Offline Feature Store" target="_blank" href="[https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/](https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/)">Offline Feature Store</Anchor> -  using the `OfflineClientV2` in Python (available from SDK version 0.5.61 and higher). It covers how to retrieve feature values for machine learning model training and analysis.
 
 ### Prerequisites:
 
 Before using these examples, ensure you have the following Python packages installed:
 
-```
+```shell
 pip install pyathena pyarrow
+
 ```
 
 ### APIs:
@@ -178,24 +187,22 @@ This API retrieves features from an offline feature store for one or more featur
 **Arguments:**
 
 * `features: List[FeatureSetFeatures]` - **required**
-
-  A list of feature sets to fetch.
+A list of feature sets to fetch.
 * `population: pd.DataFrame` - **required**
+A DataFrame containing:
+* All keys of the requested feature sets.
+* A point in time column.
+* Optional enrichments, e.g., labels.
 
-  A DataFrame containing:
 
-  * All keys of the requested feature sets.
-  * A point in time column.
-  * Optional enrichments, e.g., labels.
 * `point_in_time_column_name: str` - **required**
+The name of the point in time column in the `population` DataFrame.
 
-  The name of the point in time column in the `population` DataFrame.
-
-**Returns:**`pd.DataFrame`
+**Returns:** `pd.DataFrame`
 
 **Example call:**
 
-```
+```python
 import pandas as pd
 from frogml.feature_store.offline import OfflineClientV2
 from frogml.core.feature_store.offline.feature_set_features import FeatureSetFeatures
@@ -224,15 +231,17 @@ train_df: pd.DataFrame = offline_feature_store.get_feature_values(
 )
 
 print(train_df.head())
+
 ```
 
 **Example results:**
 
-```
+```python
 # train_df
-#    impression_id   purchase_id           timestamp           label   impressions.number_of_impressions   purchases.number_of_purchases   purchases.avg_purchase_amount
-# 0       1               100       2021-04-24 17:00:00       1                   312                                         76                                4.796842
-# 1       2               200       2021-04-24 12:00:00       0                    86                                          5                                1.548000
+#   impression_id   purchase_id           timestamp           label   impressions.number_of_impressions   purchases.number_of_purchases   purchases.avg_purchase_amount
+# 0       1               100       2021-04-24 17:00:00       1                   312                                         76                                4.796842
+# 1       2               200       2021-04-24 12:00:00       0                    86                                          5                                1.548000
+
 ```
 
 In this example, the `label` serves as an enhancement to the dataset, rather than a criterion for data selection. This approach is particularly useful when you possess a comprehensive list of keys along with their respective timestamps. The Feature Store API is designed to cater to scenarios requiring data amalgamation from multiple feature sets, ensuring that, for each row in population_df, no more than one corresponding record is returned. Leveraging JFrog ML time-series based feature store, which organizes data within `start_timestamp` and `end_timestamp` bounds for each feature vector (key), guarantees that a singular, most relevant result is retrieved for every unique key-timestamp combination.
@@ -244,26 +253,23 @@ Retrieve features from an offline feature-set for a given time range. The result
 **Arguments:**
 
 * `features: FeatureSetFeatures` - **required**:
-
-  A list of features to fetch from a single feature set.
+A list of features to fetch from a single feature set.
 * `start_date: datetime` - **required**:
-
-  The lower time bound.
+The lower time bound.
 * `end_date: datetime` - **required**:
-
-  The upper time bound.
+The upper time bound.
 * `population: pd.DataFrame` - **optional**:
+A DataFrame containing the following columns:
+* The key of the requested feature-set **required**
+* Enrichments e.g., labels. **optional**
 
-  A DataFrame containing the following columns:
 
-  * The key of the requested feature-set **required**
-  * Enrichments e.g., labels. **optional**
 
-**Returns:**`pd.DataFrame`
+**Returns:** `pd.DataFrame`
 
 **Example Call:**
 
-```
+```python
 from datetime import datetime
 import pandas as pd
 from frogml.feature_store.offline import OfflineClientV2
@@ -285,21 +291,25 @@ train_df: pd.DataFrame = offline_feature_store.get_feature_range_values(
 )
 
 print(train_df.head())
+
 ```
 
 **Example Results:**
 
-```
+```python
 # train_df
-#      purchase_id           timestamp           purchases.number_of_purchases     purchases.avg_purchase_amount
-# 0       1             2021-01-02 17:00:00               76                                4.796842
-# 1       1             2021-01-01 12:00:00                5                                1.548000
-# 2       2             2021-01-02 12:00:00                5                                5.548000
-# 3       2             2021-01-01 18:00:00                5                                2.788000                        
+#      purchase_id           timestamp           purchases.number_of_purchases     purchases.avg_purchase_amount
+# 0       1             2021-01-02 17:00:00               76                                4.796842
+# 1       1             2021-01-01 12:00:00                5                                1.548000
+# 2       2             2021-01-02 12:00:00                5                                5.548000
+# 3       2             2021-01-01 18:00:00                5                                2.788000                         
+
 ```
 
 <Callout icon="📘" theme="info">
-  _**Current Limitations**_
+***Current Limitations***
 
-  The get_feature_range_values API call is currently not available for Streaming Aggregations feature sets and not available to fetch data for multiple feature sets at the same time (join data).
+The get_feature_range_values API call is currently not available for Streaming Aggregations feature sets and not available to fetch data for multiple feature sets at the same time (join data).
 </Callout>
+
+Would you like me to check any other sections of your documentation for formatting consistency?
