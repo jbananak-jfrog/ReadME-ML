@@ -35,7 +35,7 @@ If no models appear in the Detection tab, verify that the correct repositories a
 
   1. ​In the ​Administration​ Module, navigate to ​**Xray Settings**​ > **​Indexed Resources**​​.
   2. Browse the list of repositories displayed. If the repositories you want to be scanned are not selected, click ​**Add a Repository**​​.
-  3. Select the repositories you want Xray to scan to detect models and the arrow button to move it into the ​**Selected Repositories**​​ column.
+  3. Select the repositories you want Xray to scan to detect models and the arrow button to move them into the ​**Selected Repositories**​​ column.
   4. Click **Save**.
 
   <Image align="center" border={true} src="https://files.readme.io/7fddbb9f1b8afe6e90a73feaa912a8205b50e70b7b7889bd3f22abef61a39199-addrepositorytoxrayscan.gif" className="border" />
@@ -47,7 +47,7 @@ Currently, Shadow AI detection supports only model packages.
 
 | Category          | Description                                                                                                                                |
 | :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------- |
-| Managed           | Every instance of the model is either allowed in the ai catalog or blocked by security policies. No instances of the model are unmanaged.  |
+| Managed           | Every instance of the model is either allowed in the AI Catalog or blocked by security policies. No instances of the model are unmanaged.  |
 | Unmanaged         | No instances of the model are allowed in ai catalog or blocked by security policies.                                                       |
 | Partially Managed | Models approved for use in at least one project and/or blocked in at least one project, but not yet fully governed across other instances. |
 
@@ -95,7 +95,7 @@ Shadow AI Detection integrates tightly with JFrog’s security components:
   * ​**JFrog Advanced Security (JAS):** Identifies external API calls through source-code analysis.
 * Block Policies:
   * For **​local repositories​​:** Blocking applies Xray's Download Block policy.
-  * For​​ **remote repositories​​:** Create a Curation by label policy that blocks the model from the cache in remote repositories./
+  * For​​ **remote repositories​​:** Create a Curation by label policy that blocks the model from the cache in remote repositories.
 
 ​Both these policies block future downloads of the blocked model for that repository.
 
@@ -115,7 +115,7 @@ Shadow AI Detection integrates tightly with JFrog’s security components:
 
       or
    * Click the **Block** button to the left of the model's details; the Manage Model pane is displayed.
-3. In the **Block this Model** section, select the projects and or the repositories without a project for which to block the model.
+3. In the **Block this Model** section, select the projects and or the repositories not assigned to project for which to block the model.
 
    <Image align="center" border={true} src="https://files.readme.io/661918f5ae90613b774103274c013ad900520ed8a0cc4c5ba445cabf6d04bc8f-managemodel_block.png" className="border" />
 4. Click **Save**.​​
