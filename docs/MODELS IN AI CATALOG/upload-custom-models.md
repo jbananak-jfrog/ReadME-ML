@@ -14,7 +14,7 @@ metadata:
 ---
 To use your own custom models, you just need to upload the models to JFrog ML. After uploading, custom models are automatically allowed for use.
 
-**▶ To upload a custom model**:
+**To upload a custom model**:
 
 1. From the JFrog platform menu, select **AI/ML** > **Models**.
 
