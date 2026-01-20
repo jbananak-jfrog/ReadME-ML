@@ -57,7 +57,7 @@ Start by creating a new project and model on the JFrog ML platform. Note that th
 
 Your model ID will be the model name in lowercase letters and stripped from spaces, in this example, `titanic`.
 
-```
+```shell
 frogml models create "Titanic" --project "example-models"
 ```
 
@@ -67,13 +67,13 @@ Generate the **Titanic** example model, which is available in the example templa
 
 This command will create the files needed to build a model on JFrog ML.
 
-```
+```shell
 frogml models init --example titanic .
 ```
 
 The models init command works in the following format:
 
-```
+```shell
 frog models init --example <example-name> <local-model-directory>
 ```
 
@@ -126,7 +126,7 @@ Visit your model's page and choose the current build ID. Alternatively, follow t
 
 #### Option 2: Following Logs in the CLI
 
-```
+```shell
 frogml models builds logs -b <build-id> --follow
 ```
 
@@ -138,7 +138,7 @@ JFrog ML [_GPU Instances_](/docs/instance-sizes-ml-credits#deploy-models-on-gpu-
 
 To build a model on a GPU instance, specify the following additional arguments in the model build command:
 
-```
+```shell
 frogml models build  --model-id <model-id> --instance gpu.t4.xl .
 ```
 
@@ -172,7 +172,7 @@ When deploying a model on a GPU instance, you must verify that the model was bui
 
 Creating a GPU compatible image is simply done by adding the `--gpu-compatible` flag:
 
-```
+```shell
 frogml models build  --model-id <model-id> --gpu-compatible .
 ```
 
