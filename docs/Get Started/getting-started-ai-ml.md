@@ -244,7 +244,7 @@ The JFrog AI ML guide walks you through key concepts, tutorials, or best practic
       <small>*Your dedicated solution to build, fine-tune, and serve models from experimentation to production.*</small>
     </Card>
 
-    <Card title="AI Catalog" icon="fa-star" href="/ai-ml/docs/ai-catalog-quick-start" target="_self">
+    <Card title="AI Catalog" icon="fa-star" href="/ai-ml/docs/jfrog-ai-catalog-overview" target="_self">
       (Including Shadow AI Detection)<br />
       <small>*Your centralized hub to govern, secure, and manage all AI assets across the organization.*</small>
     </Card>
