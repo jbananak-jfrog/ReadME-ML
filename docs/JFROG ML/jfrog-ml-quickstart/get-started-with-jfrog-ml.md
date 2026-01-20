@@ -52,7 +52,7 @@ This example tutorial, shows how to create a model using the FrogML CLI.
 
    Which will show the following in the terminal:
 
-   ```
+   ```shell
    ✅ Fetching model code (0:00:00.22)
    ✅ Registering frogml build - 100% (0:00:05.77)
 
