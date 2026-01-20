@@ -22,13 +22,13 @@ This process is useful when you're predicting inside a notebook or as part of an
 
 To enable batch processing of data from your local computer using Python Dataframes with the `frogml-inference` client, you need to install additional libraries that are not included by default in the client. Therefore, it is necessary to install the `[batch]` version of the package to ensure the successful execution of data batches.
 
-```
+```shell
 pip install frogml-inference[batch]
 ```
 
 ## Execution Example
 
-```
+```python
 from frogml_inference import BatchInferenceClient
 
 # You can also set the FROG_MODEL_ID environment variable instead of passing it
@@ -54,7 +54,7 @@ The parallelism, that is, how many tasks are running in parallel, is controlled 
 
 Code example:
 
-```
+```python
 import pandas as pd
 import numpy as np
 from frogml_inference import BatchInferenceClient
@@ -76,7 +76,7 @@ result_df = batch_inference_client.run(
 
 The provided parameters will be available as **environment variables**, and can be accessed as in the following example:
 
-```
+```python
 import os
 import frogml
 import pandas as pd
