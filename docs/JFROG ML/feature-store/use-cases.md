@@ -71,7 +71,7 @@ The purpose of this feature set is to analyze data within a designated time peri
 
 The process begins by establishing a data source with a query designed to filter and compute data before the feature set is defined. When this data source is utilized, the query executes within the source itself before fetching the data. This approach facilitates the incorporation of feature store-specific logic that can be shared across multiple feature sets.
 
-```
+```python
 from frogml.feature_store.sources.data_sources import AthenaSource
 
 athena_source = AthenaSource(
