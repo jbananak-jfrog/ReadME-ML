@@ -141,7 +141,7 @@ def check_and_retrieve_failed_executions(minutes_to_search_back):
 
 Once the failed executions are identified, the next step is to format the data and send an alert. The following script accepts the list of failures identified in the previous step and sends a formatted message to the configured Slack Webhook.
 
-```
+```python
 # notify_on_slack.py
 import requests
 import json
