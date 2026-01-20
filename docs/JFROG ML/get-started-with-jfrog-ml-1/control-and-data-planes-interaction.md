@@ -17,7 +17,7 @@ The interaction between the control plane and the data plane is best illustrated
 
 ## Model Build & Scan
 
-1. **Build Trigger:** A user, via the JFrog ML CLI or SDK, initiates a jfrog ml build command. The request is authenticated by the control plane, which creates a unique build ID and records the initial metadata.
+1. **Build Trigger:** A user, via the JFrog ML CLI or SDK, initiates a JFrog ML build command. The request is authenticated by the control plane, which creates a unique build ID and records the initial metadata.
 2. **Code Upload:** The control plane provides a secure, pre-signed URL for the user's client to upload the model source code directly to a staging area within the data plane.
 3. **Build & Scan Execution:** The data plane picks up the job, builds the model code into a containerized artifact, and runs predefined tests. Critically, it then invokes JFrog Xray to scan the resulting artifact and its dependencies for security vulnerabilities.
 4. **Store in Artifactory:** Upon a successful and clean scan, the data plane pushes the versioned, immutable model artifact to its designated repository in JFrog Artifactory.
@@ -36,8 +36,8 @@ The following are the stages of model deployment:
 
 This example ensures that model endpoints remain performant and cost-efficient under variable load without manual intervention.
 
-1. **Monitor Metrics:**The data plane continuously monitors real-time performance metrics for each deployed model, such as request rate (RPS), P95 latency, error rates, and CPU/GPU utilization.
-2. **Scale Autonomously:**Based on pre-defined autoscaling policies, the data plane autonomously adjusts the endpoint's resources. This can involve scaling out by adding replicas to handle traffic spikes or scaling in by removing them during idle periods to optimize costs.
+1. **Monitor Metrics:** The data plane continuously monitors real-time performance metrics for each deployed model, such as request rate (RPS), P95 latency, error rates, and CPU/GPU utilization.
+2. **Scale Autonomously:** Based on pre-defined autoscaling policies, the data plane autonomously adjusts the endpoint's resources. This can involve scaling out by adding replicas to handle traffic spikes or scaling in by removing them during idle periods to optimize costs.
 3. **Report State:** The data plane reports the new scaling state, current replica count, and overall health summary back to the control plane. This ensures that the platform's UI and API always reflect the endpoint's real-time operational status.
 
 ## Feature Store Execution
