@@ -148,7 +148,7 @@ pip install frogml-inference
 
 You can use it to run inference and predictions using your deployed real-time model:
 
-```
+```python
 from frogml_inference.realtime_client import RealTimeClient
 
 FROGML_MODEL_ID = 'credit_risk'
@@ -186,5 +186,3 @@ Querying model predictions is an essential step in the machine learning developm
 2. Select the **Analytics** tab.
 3. Click **Run**, and you'll see a table containing a row for every prediction made against the model.
    ![](https://files.readme.io/a07558344f54383960de540117aecb833433ef430e53a38734a9fdd2e8b103aa-uuid-905ee08a-6227-73eb-c357-e15313332776.png)
-
-_The Analytics tab on the model page_
