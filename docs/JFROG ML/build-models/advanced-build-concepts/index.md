@@ -28,8 +28,6 @@ This section reviews the following topics:
 
 [Custom HTTP Status Codes](/docs/advanced-build-concepts#custom-http-status-codes)
 
-***
-
 <br />
 
 ## Build Configurations
@@ -44,7 +42,7 @@ If a build needs to access external AWS resources, a custom AWS IAM role can be 
 
 The IAM role ARN can be passed directly to a build using the `--iam-role-arn` flag. For example:
 
-```
+```shell
 frogml models build \
     --model-id <model-id> \
     --iam-role-arn arn:aws:iam::<account-id>:role/<role-name> \
@@ -77,7 +75,7 @@ In order to reach a GCP client resource make sure to create secret with you json
 
 To generate a config file from a command that you already use, specify the `--outconf` flag, which will print to the console a ready config based on the options you specified. For example assume you run the following command:
 
-```
+```shell
 frogml models build \
     --model-id test_model \
     -T tag_1 -T tag_2 \
@@ -90,7 +88,7 @@ Here is an example of the output:
 
 `YAML`
 
-```
+```yaml
 build_env:
   docker:
     base_image: qwak-base:0.0.18-cpu
@@ -139,9 +137,7 @@ You can use a custom Docker image for the build process. The custom base image w
 
 When executing a build, the image should be specified using the `--base-image` flag:
 
-`Shell`
-
-```
+```shell
 frogml models build \
     --model-id <model> \
     --base-image <image-id> \
@@ -163,9 +159,7 @@ The custom docker image should be based on:
 
 You can choose either `ondemand` or `spot` by using the flag `--purchase-option`. By default the remote build will run on `spot` . For example:
 
-`Shell`
-
-```
+```shell
 frogml models build \
     --model-id <model> \
     --purchase-option ondemand \
@@ -175,7 +169,7 @@ frogml models build \
 
 Configuring environment variable in build and serving environment, The environment variables should specified with the flag `-E` when executing a build:
 
-```
+```shell
 frogml models build \
     --model-id <model> \
     -E <key>=<value> -E <key>=<value> \
@@ -500,7 +494,7 @@ In JFrog ML, there are two primary methods for passing hyperparameters to your B
 
    hyperparameters.json
 
-   ```
+   ```json
    {
        "n_estimators": [50, 100, 200],
        "max_depth": [10, 20, 30],
@@ -516,7 +510,7 @@ In JFrog ML, there are two primary methods for passing hyperparameters to your B
 
    model.py
 
-   ```
+   ```python
    import json
 
    class SampleModel(FrogMLClient):
@@ -534,7 +528,7 @@ In JFrog ML, there are two primary methods for passing hyperparameters to your B
 
    ##### Using Environment Variables
 
-   ```
+   ```shell
    frogml models builds --model-id sample_model \
    -E N_ESTIMATORS="50,100,200" \
    -E MAX_DEPTH="10,20,30" \
@@ -546,7 +540,7 @@ In JFrog ML, there are two primary methods for passing hyperparameters to your B
 
    ##### Using Build Parameters
 
-   ```
+   ```shell
    frogml models builds --model-id sample_model \
    -P N_ESTIMATORS="50,100,200" \
    -P MAX_DEPTH="10,20,30" \
