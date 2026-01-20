@@ -110,27 +110,21 @@ print(pandas_df)
 
 The output should look like the following:
 
-   age     sex  job housing saving_account checking_account  credit_amount  duration                purpose  risk                                  user_id   date_created
+```shell
+age     sex  job housing saving_account checking_account  credit_amount  duration              purpose  risk                               user_id   date_created
+0   67    male    2     own           None           little           1169         6             radio/TV  good  baf1aed9-b16a-46f1-803b-e2b08c8b47de  1609459200000
+1   22  female    2     own         little         moderate           5951        48             radio/TV   bad  574a2cb7-f3ae-48e7-bd32-b44015bf9dd4  1609459200000
+2   49    male    1     own         little             None           2096        12            education  good  1b044db3-3bd1-4b71-a4e9-336210d6503f  1609459200000
+3   45    male    2    free         little           little           7882        42  furniture/equipment  good  ac8ec869-1a05-4df9-9805-7866ca42b31c  1609459200000
+4   53    male    2    free         little           little           4870        24                  car   bad  aa974eeb-ed0e-450b-90d0-4fe4592081c1  1609459200000
+5   35    male    1    free           None             None           9055        36            education  good  7b3d019c-82a7-42d9-beb8-2c57a246ff16  1609459200000
+6   53    male    2     own     quite rich             None           2835        24  furniture/equipment  good  6bc1fd70-897e-49f4-ae25-960d490cb74e  1609459200000
+7   35    male    3    rent         little         moderate           6948        36                  car  good  193158eb-5552-4ce5-92a4-2a966895bec5  1609459200000
+8   61    male    1     own           rich             None           3059        12             radio/TV  good  759b5b46-dbe9-40ef-a315-107ddddc64b5  1609459200000
+9   28    male    3     own         little         moderate           5234        30                  car   bad  e703c351-41a8-43ea-9615-8605da7ee718  1609459200000
+```
 
-0   67    male    2     own           None           little           1169         6               radio/TV  good  baf1aed9-b16a-46f1-803b-e2b08c8b47de  1609459200000
-
-1   22  female    2     own         little         moderate           5951        48               radio/TV   bad  574a2cb7-f3ae-48e7-bd32-b44015bf9dd4  1609459200000
-
-2   49    male    1     own         little             None           2096        12              education  good  1b044db3-3bd1-4b71-a4e9-336210d6503f  1609459200000
-
-3   45    male    2    free         little           little           7882        42  furniture/equipment  good  ac8ec869-1a05-4df9-9805-7866ca42b31c  1609459200000
-
-4   53    male    2    free         little           little           4870        24                  car   bad  aa974eeb-ed0e-450b-90d0-4fe4592081c1  1609459200000
-
-5   35    male    1    free           None             None           9055        36              education  good  7b3d019c-82a7-42d9-beb8-2c57a246ff16  1609459200000
-
-6   53    male    2     own     quite rich             None           2835        24  furniture/equipment  good  6bc1fd70-897e-49f4-ae25-960d490cb74e  1609459200000
-
-7   35    male    3    rent         little         moderate           6948        36                  car  good  193158eb-5552-4ce5-92a4-2a966895bec5  1609459200000
-
-8   61    male    1     own           rich             None           3059        12               radio/TV  good  759b5b46-dbe9-40ef-a315-107ddddc64b5  1609459200000
-
-9   28    male    3     own         little         moderate           5234        30                  car   bad  e703c351-41a8-43ea-9615-8605da7ee718  1609459200000
+<br />
 
 ## Define a Feature Set
 
@@ -140,7 +134,7 @@ The last piece in our feature extraction pipeline is creating and registering th
 
 To programmatically define a Batch Feature Set in JFrog ML, you will use the `@batch.feature_set()` Python decorator as follows. Please copy-paste the following code snippets into your `feature_set.py` file, one by one.
 
-```
+```python
 # feature_set.py
 from datetime import datetime
 from frogml.feature_store.feature_sets import batch
