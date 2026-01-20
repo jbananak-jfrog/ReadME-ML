@@ -20,7 +20,7 @@ Deploy your first model on JFrog ML in minutes!
 
 ## Building Your First Model
 
-It's time to build your first ML model on JFrog ML.🚀
+It's time to build your first ML model on JFrog ML!
 
 A model build is a trained, serialized and tested model instance, bundled with necessary dependencies that can be later deployed to production.
 
