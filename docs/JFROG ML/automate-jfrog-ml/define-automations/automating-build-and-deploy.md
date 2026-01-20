@@ -87,7 +87,7 @@ In this example, `dir_1/dir_2` should be the directory containing the `main` and
 
 When using private repositories,  the access token or private key must also be specified.
 
-As the JFrog ML platform does not allow the usage of plain text token, the access tokens must be stored in the [JFrog ML Secret Manager](/docs/doc:secret-management#model-build-credentials), and only the secret name should be specified.
+As the JFrog ML platform does not allow the usage of plain text token, the access tokens must be stored in the <Anchor label="Secret Manager" title="Secret Management" href="/docs/secret-management">Secret Manager</Anchor>, and only the secret name should be specified.
 
 If the default folder structure (in which `main` is the models folder) is **not** used, you must also specify the git branch and the directory containing the ML model.
 
@@ -151,7 +151,7 @@ The `BuildMetric` object has three parameters:
 
 ### Dynamic Threshold
 
-To use a dynamic threshold, use an SQL expression as the threshold value. 
+To use a dynamic threshold, use an SQL expression as the threshold value.
 
 In this case, the JFrog ML platform runs the SQL query in JFrog ML Model Analytics and compares the model's metric with the threshold produced by the SQL query.
 
@@ -359,7 +359,7 @@ You can specify:
 
 To define an auto-scaling policy for the deployment, use the following pattern:
 
-```
+```python
 auto_scale_config = AutoScalingConfig(min_replica_count=1,
                                           max_replica_count=10,
                                           polling_interval=30,
