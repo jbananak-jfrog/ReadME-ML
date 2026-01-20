@@ -47,7 +47,9 @@ The _Versions_ tab in the Custom Models page shows a list of available versions 
   To learn more about FrogML and machine learning repositories in Artifactory, see [Machine Learning Repositories](/artifactory/docs/machine-learning-repositories)
 </Callout>
 
-### Log your model - Simple model version
+### Log your model
+
+**Simple model version**
 
 ```python
 import frogml
@@ -62,7 +64,9 @@ frogml.catboost.log_model(
 )
 ```
 
-### Log your model - Model with additional metadata and properties
+<br />
+
+**Model with additional metadata and properties**
 
 ```python
 import frogml
@@ -202,7 +206,7 @@ frogml.huggingface.log_model(
 
   **Recommended Solution:**  Log the parent directory that contains your package.
 
-  |                    | Description                                                                                              |
+  |                    | Description                                                                                                 |
   | :----------------- | :---------------------------------------------------------------------------------------------------------- |
   | **Serving Code:**  | `code_dir="."` (assuming that your script is in the parent folder).                                         |
   | **Remote Result:** | The `serving_code` folder is correctly copied. The remote structure becomes `main/serving_code/predict.py`. |
