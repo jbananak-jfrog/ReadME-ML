@@ -36,7 +36,7 @@ This example tutorial, shows how to create a model using the FrogML CLI.
 
 1. Create the `Credit Risk` model and associate it with an existing project (for example, the `Credit Risk Modeling` project):
 
-   ```text
+   ```
    frogml models create "Credit Risk" --project-key={Artifactory-project-key}
    ```
 2. Generate a local example model with all the required files:
