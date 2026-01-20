@@ -4,7 +4,7 @@ excerpt: >-
   The MCP Registry governs the active tools those models use, giving you
   complete control over actions like "read_file" or "query_db".
 deprecated: false
-hidden: false
+hidden: true
 link:
   new_tab: false
 metadata:
