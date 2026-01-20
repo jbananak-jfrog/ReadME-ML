@@ -36,7 +36,7 @@ You can use streaming deployments in the following scenarios:
 
 You can also deploy your streaming model using the command line interface (CLI). The following shows the general command structure:
 
-```bash
+```shell
 frogml models deploy stream \
     --model-id <model-id> \
     --build-id <build-id> \
@@ -76,7 +76,7 @@ To use streaming inference on JFrog ML, use the following examples:
 
 You can also deploy your streaming model using the command line interface (CLI). Here’s a general command structure:
 
-```bash
+```shell
 frogml models deploy stream \
     --model-id <model-id> \
     --build-id <build-id> \
@@ -88,9 +88,11 @@ frogml models deploy stream \
     --producer-topic <producer-topic-name>
 ```
 
-#### Example Command 1 (using the above structure): Deploying a FLAN-T5 streaming model with 2 replicas on 2 A10.XL on-demand GPU instances
+ Example Command 1 (using the above structure): 
 
-```
+Deploying a FLAN-T5 streaming model with 2 replicas on 2 A10.XL on-demand GPU instances
+
+```shell
 # Deploy a FLAN-T5 streaming model on 2 A10.XL on-demand instances
 frogml models deploy stream \
     --model-id "flan-t5" \
@@ -105,7 +107,9 @@ frogml models deploy stream \
 
 ```
 
-#### Example Command 2 (using the above structure): Deploying a churn streaming model on 2 small instances
+Example Command 2 (using the above structure): 
+
+Deploying a churn streaming model on 2 small instances
 
 ```
 # Deploy a churn streaming model on 2 small instances
@@ -129,9 +133,7 @@ frogml models deploy stream \
 
 You can also configure your streaming model with a YAML file.
 
-#### Example
-
-```
+```yaml
 build_id: "d4d56c1a-f326-40a0-88f3-f8e59c691a3e"
 model_id: "stream-churn-model"
 resources:
@@ -147,7 +149,7 @@ stream:
 
 Then run the deployment command:
 
-```
+```shell
 frogml models deploy stream --from-file stream_deploy_config.yaml
 ```
 
@@ -157,7 +159,7 @@ Additionally, you can mix and match between using command line arguments and a c
 
 #### Example Command
 
-```
+```shell
 frogml models deploy stream --replicas 5 --from-file stream_deploy_config.yaml
 ```
 
@@ -337,7 +339,7 @@ If the consumer group does n**ot have a previously committed offset** (for examp
 
   <tbody>
     <tr>
-      <td style={{ verticalAlign: 'top' }}>
+      <td>
         Producer Bootstrap Servers (Required)
       </td>
 
@@ -355,7 +357,7 @@ If the consumer group does n**ot have a previously committed offset** (for examp
     </tr>
 
     <tr>
-      <td style={{ verticalAlign: 'top' }}>
+      <td>
         Producer Topic*
       </td>
 
@@ -373,96 +375,115 @@ If the consumer group does n**ot have a previously committed offset** (for examp
     </tr>
 
     <tr>
-      <td rowspan="6" style={{ verticalAlign: 'top' }}>
+      <td>
         Compression Type
       </td>
 
-      <td colspan="3">
+      <td>
         Determines how messages are compressed before being stored in Kafka.
 
         Default: uncompressed
 
         Compressing messages can significantly reduce the amount of data transmitted over the network and storage requirements in Kafka. Options:
       </td>
+
+      <td>
+
+      </td>
+
+      <td>
+
+      </td>
     </tr>
 
     <tr>
-      <td style={{ verticalAlign: 'top' }}>
+      <td>
         **Compression Type**
       </td>
 
-      <td style={{ verticalAlign: 'top' }}>
+      <td>
         **Description**
       </td>
 
-      <td style={{ verticalAlign: 'top' }}>
+      <td>
         **Best Use**
       </td>
 
+      <td>
+
+      </td>
     </tr>
 
     <tr>
-      <td style={{ verticalAlign: 'top' }}>
+      <td>
         None (`none`)
       </td>
 
-      <td style={{ verticalAlign: 'top' }}>
+      <td>
         No compression applied.
       </td>
 
-      <td style={{ verticalAlign: 'top' }}>
+      <td>
         When message size isn’t important, or data is already compressed or optimized.
       </td>
 
-   
+      <td>
+
+      </td>
     </tr>
 
     <tr>
-      <td style={{ verticalAlign: 'top' }}>
+      <td>
         Gzip ( `gzip`)
       </td>
 
-      <td style={{ verticalAlign: 'top' }}>
+      <td>
         Compresses messages with the gzip algorithm.
       </td>
 
-      <td style={{ verticalAlign: 'top' }}>
+      <td>
         Provides a good balance between compression ratio and CPU overhead.
       </td>
 
-     
+      <td>
+
+      </td>
     </tr>
 
     <tr>
-      <td style={{ verticalAlign: 'top' }}>
+      <td>
         Snappy ( ` snappy`)
       </td>
 
-      <td style={{ verticalAlign: 'top' }}>
+      <td>
         Compresses messages with the Snappy algorithm.
       </td>
 
-      <td style={{ verticalAlign: 'top' }}>
+      <td>
         Faster than gzip but with a lower compression ratio.
       </td>
 
-      
+      <td>
+
+      </td>
     </tr>
 
     <tr>
-      <td style={{ verticalAlign: 'top' }}>
+      <td>
         LZ4 (`lz4`)
       </td>
 
-      <td style={{ verticalAlign: 'top' }}>
+      <td>
         Compresses messages with the LZ4 algorithm.
       </td>
 
-      <td style={{ verticalAlign: 'top' }}>
+      <td>
         Fastest option; slightly lower compression ratio than gzip or Snappy.
       </td>
 
-      
+      <td>
+
+      </td>
     </tr>
   </tbody>
 </Table>
