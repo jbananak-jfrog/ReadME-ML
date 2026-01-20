@@ -38,7 +38,7 @@ This design ensures that sensitive data and computational workloads remain isola
 
 The Control Plane is the centralized orchestration and management layer, securely hosted and managed by JFrog. It serves as the brain of the system, coordinating all activities without ever accessing sensitive customer data or models. Its sole focus is on metadata, workflow management, and state tracking.
 
-_**Core Responsibilities:**_
+**Core Responsibilities:**
 
 * **Orchestration & Metadata Management:** Manages all non-sensitive metadata for entities such as models, builds, pipelines, and deployments. This includes tracking versions, parameters, and relationships between these entities.
 * **Orchestration & Workflow Management:** Coordinates multi-step workflows such as build, deploy, promote and monitor and delegates sensitive operations to the Data Plane.
@@ -48,7 +48,7 @@ _**Core Responsibilities:**_
 
 The Data Plane is the secure execution environment where all sensitive data processing, model computation, and artifact storage occurs. This plane is deployed either in JFrog's secure cloud (for a fully managed SaaS experience) or directly within a customer's own cloud environment/VPC (for a hybrid deployment). This flexibility ensures data sovereignty, and enables integration with private data sources via mechanisms like VPC Peering or AWS PrivateLink.
 
-_Core Responsibilities:_
+**Core Responsibilities:**
 
 * **Secure Execution Environment:** Executes all computational workloads, including model training jobs, build processes, and batch inference tasks.
 * **Model Repository & Artifact Storage:** Stores models, artifacts, and associated metadata in encrypted registries or object stores.
