@@ -408,7 +408,7 @@ If it's required to specify a specific datetime filter for each batch source (me
   Filtering per data source is optional, but keep in mind that the general start and end time filter set for the backfill will be lower and upper limits for any sub specific backfill source filter
 </Callout>
 
-```
+```python
 data_source_specs = [
     BackfillBatchDataSourceSpec(
         data_source_name="sample-batch-source",
@@ -519,7 +519,7 @@ When selecting JSON, the features are written into the the topic according to th
 * **Message Key:** the key of the feature vector (for example, the value of "user_id" in the above example).
 * **Message Value:** a JSON string according to the following specification:
 
-```
+```json
 {
   "featureset_name": "<featureset_name>",
   "featureset_id": "<featureset_id>",
@@ -535,3 +535,5 @@ When selecting JSON, the features are written into the the topic according to th
   }
 }
 ```
+
+<br />
