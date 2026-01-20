@@ -620,9 +620,7 @@ The `conda.yml` file can be placed at the root level alongside `main` or within 
 
 To get started, here’s a basic `conda.yml` setup:
 
-conda.yml
-
-```conda
+```yaml
 name: example_conda_model
 channels:
   - defaults
@@ -648,7 +646,7 @@ Occasionally, we may want to exclude a file from the JFrog ML build but keep it 
 
 In the file, we define the patterns to match files to exclude from the model build. For example, suppose we have the following file structure:
 
-```
+```yaml
 .frogmlignore
 main/
     __init__.py
@@ -690,7 +688,7 @@ The wheel file has to be uploaded as part of an additional dependencies folder, 
 
 Model Build Container Directory
 
-```
+```yaml
 /frogml/model_dir/
 .├── main                   # Main directory containing core code
 │   ├── __init__.py        # An empty file that indicates this directory is a Python package
@@ -709,9 +707,7 @@ Model Build Container Directory
 
 Include the `.whl` file in your `conda.yaml` as follows:
 
-conda.yaml
-
-```
+```yaml
 name: test_model
 channels:
   - defaults
@@ -751,7 +747,7 @@ Directly reference the `.whl` file path relative to the requirements file locati
 
 `requirements.txt`
 
-```
+```shell
 ## requirements file located in main model folder
 ./../deps/wheel_test-0.1-py3-none-any.whl
 
@@ -773,8 +769,6 @@ import pandas as pd
 
 As an example, we will use the well-known Iris Classifier SVM model, which typically looks as follows:
 
-train.py
-
 ```python
 from sklearn import svm
 from sklearn import datasets
@@ -792,7 +786,7 @@ clf.fit(X, y)
 
 Below, we show the default and recommended structure of a model project on JFrog ML.
 
-```python
+```yaml Project Structure
 frogml_based_model/
 ├── main/
 │   ├── __init__.py    # Required for exporting model from main
@@ -810,7 +804,7 @@ frogml_based_model/
 
 First, we will generate the directory structure for our JFrog ML-based model. To do so, you can use the following command:
 
-```
+```shell
 frogml models init \ --model-directory <model-dir-path> \ --model-class-name <model-class> \ <dest>
 ```
 
@@ -822,7 +816,7 @@ Where:
 
 As an example, we will use the following command:
 
-```
+```shell
 frogml models init \
     --model-directory iris_model \
     --model-class-name IrisClassifier \
@@ -851,7 +845,7 @@ Read more about JFrogMl's model class method and how they can be used in the ded
 
 For example, we can implement the Iris classifier in the following way:
 
-```
+```python
 import pandas as pd
 from sklearn import svm, datasets
 from frogml import api,FrogMlModel
@@ -892,7 +886,7 @@ The `__init__.py` file lets the Python interpreter know that a directory contain
 
 **init**.py (Option 1)
 
-```
+```python
 from .model import IrisClassifier
 ```
 
@@ -900,7 +894,7 @@ Or:
 
 **init**.py (Option 2)
 
-```
+```python
 from .model import IrisClassifier
 
 def load_model():
@@ -994,7 +988,7 @@ If we use a different package manager, we should follow their instructions regar
 1. We must remove the content of the `__init__.py` file.
 2. In the `model.py` file, we import the FrogML model class (the one added as a dependency in pip) and implement the `load_model` function to return the **class** (not an instance of the class!). For example:
 
-```
+```python
 from importfrogmlmodelfrompackage.model import TestModel
 
 def load_model():
@@ -1011,7 +1005,7 @@ This Python file will define unit tests that will run during the build process. 
 
 util.py
 
-```
+```python
 def add(x, y):
     return x + y
 ```
@@ -1020,7 +1014,7 @@ Then we can define the following test:
 
 test_util.py
 
-```
+```python
 from main.util import add
 
 def add_test():
@@ -1060,7 +1054,7 @@ However, it is possible to modify this behavior by adding the `--dependency_requ
 
 Examples:
 
-```
+```shell
 frogml models build --model-id your_model_id --dependency_required_folders additional_dir .
 frogml models build --model-id your_model_id --dependency_required_folders additional_dir --dependency_required_folders some_other_dir .
 ```
@@ -1304,7 +1298,7 @@ def predict(self, df):
 
 Or even loading a pre-trained model:
 
-```
+```python
 def initialize_model(self):
     with open('model.pkl', 'rb') as infile:
         self._model = pickle.load(infile)
@@ -1318,7 +1312,7 @@ def predict(self, df: pd.DataFrame) -> pd.DataFrame:
 
 To log statements during the build and deployment stages on the FrogML platform, you can utilize the FrogML `Logger` object. This is accessible through the utility method demonstrated below:
 
-```
+```python
 from frogml.core.tools.logger.logger import get_frogml_logger
 
 logger = get_frogml_logger()
