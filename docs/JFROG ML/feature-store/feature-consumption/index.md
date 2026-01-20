@@ -17,6 +17,8 @@ metadata:
 This section reviews the following topics:
 
 [Features in Inference](/docs/feature-consumption#features-in-inference)
+
+
 [Features in Training](/docs/feature-consumption#features-in-training)
 
 ## Features in Inference
