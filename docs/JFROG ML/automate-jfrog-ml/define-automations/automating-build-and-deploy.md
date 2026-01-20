@@ -24,7 +24,7 @@ You can also define a deployment conditions to verify that the new build passes 
 
 The automation fetches the model's code during the training process. When using a private repository, you must generate a Git access token and securely store the key in the <Anchor label="Secret Manager" title="Secret Management" href="/docs/secret-management">Secret Manager</Anchor>.
 
-```
+```python
 from frogml.core.automations import Automation, ScheduledTrigger, FrogmlBuildDeploy,\
     BuildSpecifications, BuildMetric, ThresholdDirection, DeploymentSpecifications
 
@@ -97,19 +97,19 @@ In the build specification, you can control the number of CPUs, amount of memory
 
 **Defining CPU resources:**
 
-```
+```python
 resources=CpuResources(cpu_fraction=2, memory="2Gi"))
 ```
 
 **Defining GPU resources:**
 
-```
+```python
 resources=GpuResources(gpu_type="NVIDIA_K80", gpu_amount=1)
 ```
 
 Alternatively, you can specify the instance type instead of fractions of resources. For example:
 
-```
+```python
 resources=ClientResources(instance='gpu.a10.8xl') #GPU
 
 #OR
