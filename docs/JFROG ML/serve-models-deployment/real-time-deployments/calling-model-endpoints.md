@@ -5,8 +5,6 @@ hidden: false
 metadata:
   robots: index
 ---
-<br />
-
 In this section, you'll learn how to effectively interact with and call real-time model endpoints using various SDKs and our REST API.
 
 [JFrog ML Rest API](/docs/calling-model-endpoints#jfrog-ml-rest-api) | [Python SDK](/docs/calling-model-endpoints#python-sdk)| [Java SDK](/docs/calling-model-endpoints#java-sdk) | [Go SDK](/docs/calling-model-endpoints#go-sdk)
@@ -22,7 +20,7 @@ To access the REST client, you first need to generate an access token.
 1. [Generate an access token](/administration/docs/access-tokens).
 2. Set up your environment: Add the generated token to your environment by using the following command;
 
-```
+```shell
 export TOKEN="<Auth Token>"
 ```
 
@@ -91,7 +89,7 @@ response = client.predict(feature_vector)
 
 You can optionally specify a variation name when working with the `RealtimeClient`.
 
-```
+```python
 from frogml_inference import RealTimeClient
 
 model_id = "test_model"
@@ -111,7 +109,7 @@ response = client.predict(feature_vector)
 
 When working in a multi environment account, you need to specify a environment name when sending an inference to a non-default account using the `RealtimeClient`.
 
-```
+```python
 from frogml_inference import RealTimeClient
 from frogml_inference.configuration import Session
 
@@ -142,7 +140,7 @@ The Java Inference SDK is hosted on JFrog ML's internal maven repository.
 
 To set up a Maven-based application that uses the Java Inference SDK, add the following sections to the projects `pom.xml`:
 
-```
+```xml
 <project>
 
 ...
@@ -172,7 +170,7 @@ To set up a Maven-based application that uses the Java Inference SDK, add the fo
 
 The following example invokes the model `test_model`. The model accepts one feature vector which contains three fields and produces one output field named "score".
 
-```
+```java
 RealtimeClient client = RealtimeClient.builder()
           .environment("env_name")
           .apiKey(API_KEY)
@@ -195,7 +193,7 @@ double score = singlePrediction.get().getValueAsDouble("score");
 
 To set up a Gradle-based application that uses the Java Inference SDK, add the following sections to the projects `build.gradle`:
 
-```
+```xml Gradle
 repositories {
   maven {
     url "https://qwak.jfrog.io/artifactory/qwak-mvn"
@@ -230,7 +228,7 @@ libraryDependencies ++= Seq(
 
 To retrieve the model metadata, use the `ModelMetadataClient`:
 
-```
+```java
 import com.qwak.ai.metadata.client.output.ModelMetadata;
 
 ...
@@ -243,7 +241,7 @@ ModelMetadata metadata = client.getModelMetadata("MODEL NAME");
 
 The `ModelMetadata` class has the following methods:
 
-```
+```java
 public Map<String, Object> getModel() # returns information about the model
 public List<Map<String, Object>> getDeploymentDetails() # if the model is deployed, it returns data about deployment configuration
 public Map<String, Map<String, Object>> getAudienceRoutesByEnvironment() # audience configuration per environment
@@ -258,7 +256,7 @@ After you deploy a FrogML-based model, your Go-based client applications can use
 
 To install the SDK and its dependencies, run the following Go command:
 
-```
+```shell
 go get github.com/qwak-ai/go-sdk/qwak
 ```
 
@@ -266,7 +264,7 @@ go get github.com/qwak-ai/go-sdk/qwak
 
 The following example invokes the model `test_model` which accepts one feature vector which contains three fields and produces one output field named "score".
 
-```
+```go
 package main
 
 import (
