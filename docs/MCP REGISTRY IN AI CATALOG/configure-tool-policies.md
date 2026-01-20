@@ -1,7 +1,7 @@
 ---
 title: Configure Tool Policies
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
