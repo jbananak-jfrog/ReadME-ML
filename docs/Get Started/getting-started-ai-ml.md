@@ -6,10 +6,10 @@ link:
   new_tab: false
 next:
   pages:
-    - slug: jfrog-ai-catalog
+    - slug: jfrog-ai-catalog-overview
       title: JFrog AI Catalog Overview
       type: basic
-    - slug: get-started-with-jfrog-ml
+    - slug: jfrog-ml-quickstart
       title: Get Started with JFrog ML
       type: basic
 ---
