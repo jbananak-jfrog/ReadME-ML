@@ -45,7 +45,7 @@ JFrog ML provides Python classes to define any data source type using the `frogm
 
 For example, you can define a CsvSource to read from an S3 based CSV file as follows:
 
-```
+```python
 from frogml.feature_store.data_sources import CsvSource
 
 # The S3 anonymous config class is required for public S3 buckets
@@ -85,7 +85,7 @@ csv_source = CsvSource(
 
 To register a data source class defined with the SDK you can use the JFrog ML CLI `features` command as follows:
 
-```
+```shell
 frogml features register -p data_source.py
 ```
 
@@ -93,7 +93,7 @@ frogml features register -p data_source.py
 
 To delete a data source, execute the following `frogml` command in the terminal:
 
-```
+```shell
 frogml features delete --data-source <data-source-name>
 ```
 
@@ -133,13 +133,13 @@ When registering a batch data source, the JFrog ML System will try to validate i
 
 Additionally, batch data sources support the following validation function:
 
-```
+```python
 def get_sample(self, number_of_rows: int = 10) -> DataFrame:
 ```
 
 Usage example:
 
-```
+```python
 from frogml.feature_store.data_sources import ParquetSource, AnonymousS3Configuration
 
 parquet_source = ParquetSource(
@@ -178,7 +178,7 @@ In order to create a Snowflake connection, before creating a connector make sure
 
    1. Providing `table`.
 
-      ```
+      ```python
       from frogml.feature_store.data_sources import SnowflakeSource
 
       snowflake_source = SnowflakeSource(
@@ -196,7 +196,7 @@ In order to create a Snowflake connection, before creating a connector make sure
       ```
    2. Providing `query`.
 
-      ```
+      ```python
       from frogml.feature_store.data_sources import SnowflakeSource
 
       snowflake_source = SnowflakeSource(
@@ -236,7 +236,7 @@ bigquery.readsessions.* bigquery.jobs.create
 
 Once you've downloaded _credentials.json_, encode it with base64 and set it as a JFrog ML secret using the JFrog ML Secret Service.
 
-```
+```python
 import json
 import base64
 from frogml.core.clients.secret_service import SecretServiceClient
@@ -256,7 +256,7 @@ There are two distinct ways to use the BigQuery connector:
 
 ##### 1. Providing `dataset` and `table`
 
-```
+```python
 from frogml.feature_store.data_sources import BigQuerySource
 
 some_bigquery_source = BigQuerySource(
@@ -275,7 +275,7 @@ some_bigquery_source = BigQuerySource(
 
 ##### 2. Providing `sql`
 
-```
+```python
 from frogml.feature_store.data_sources import BigQuerySource
 
 big_query_source = BigquerySource(
@@ -299,7 +299,7 @@ big_query_source = BigquerySource(
 
 #### MongoDB
 
-```
+```python
 from frogml.feature_store.data_sources.batch.mongodb import MongoDbSource 
 
 mongo_source = MongoDbSource(
@@ -325,7 +325,7 @@ To access more of your data from a different S3 bucket, use this optional config
 
 Once creating the relevant secrets using the JFrog ML-CLI you can use:
 
-```
+```python
 from frogml.feature_store.data_sources import ParquetSource, AwsS3FileSystemConfiguration
 
 parquet_source = ParquetSource(
@@ -361,7 +361,7 @@ parquet_source = ParquetSource(
 
 CSV access works like reading a Parquet file from S3. We either specify the AWS access keys as environment variables or access a public object.
 
-```
+```python
 from frogml.feature_store.data_sources import CsvSource, AnonymousS3Configuration
 
 csv_source = CsvSource(
@@ -415,7 +415,7 @@ To securely leverage data stored in Amazon S3 buckets within the JFrog ML featur
 
 After setting up your authentication method, use the `aws_authentication` object to configure your CSV or Parquet data source, by assigning it to the `filesystem_configuration` parameter, as in the example below:
 
-```
+```python
 from frogml.feature_store.data_sources.batch.csv import CsvSource
 from frogml.feature_store.data_sources.batch.parquet import ParquetSource
 
@@ -434,7 +434,7 @@ csv_source = CsvSource(
 
 In order to connect to Redshift source, you will need to grant access either using AWS Access Key & Secret Key or using IAM Role.
 
-```
+```python
 from frogml.feature_store.data_sources import RedshiftSource
 
 redshift_source = RedshiftSource(
@@ -451,7 +451,7 @@ redshift_source = RedshiftSource(
 
 #### MySQL
 
-```
+```python
 from frogml.feature_store.data_sources import MysqlSource
 
 mysql_source = MysqlSource(
@@ -468,7 +468,7 @@ mysql_source = MysqlSource(
 
 #### Postgres
 
-```
+```python
 from frogml.feature_store.data_sources.batch.postgres import ProtoPostgresqlSource
 
 postgres_source = ProtoPostgresqlSource(
@@ -485,7 +485,7 @@ postgres_source = ProtoPostgresqlSource(
 
 #### Clickhouse
 
-```
+```python
 from frogml.feature_store.data_sources import ClickhouseSource
 
 clickhouse_source = ClickhouseSource(
@@ -502,7 +502,7 @@ clickhouse_source = ClickhouseSource(
 
 #### Vertica
 
-```
+```python
 from frogml.feature_store.data_sources import VerticaSource
 
 vertica_source = VerticaSource(
@@ -523,7 +523,7 @@ vertica_source = VerticaSource(
 
 The Athena source is used to connect JFrog ML to Amazon Athena, allowing users to query and ingest data seamlessly
 
-```
+```python
 from frogml.feature_store.data_sources.batch.athena import AthenaSource
 from frogml.core.feature_store.data_sources.source_authentication import AwsAssumeRoleAuthentication
 from frogml.core.feature_store.data_sources.time_partition_columns import DatePartitionColumns
@@ -577,7 +577,7 @@ athena_source = AthenaSource(
       * `secret_key_secret_name: str`: Mandatory
     * **Example:**
 
-      ```
+      ```python
       from frogml.core.feature_store.data_sources.source_authentication import AwsCredentialsAuthentication
 
       aws_authentication = AwsCredentialsAuthentication(access_key_secret_name='your-access-key-frogml-secret', 
@@ -600,7 +600,7 @@ athena_source = AthenaSource(
       * `date_format: str`: Mandatory
     * **Example:**
 
-      ```
+      ```python
       from frogml.core.feature_store.data_sources.time_partition_columns import DatePartitionColumns
 
       time_partition_columns = DatePartitionColumns(date_column_name='date_pt', date_format='%Y%m%d')
@@ -616,7 +616,7 @@ athena_source = AthenaSource(
 
       * For `year=2022/month=01/day=05`:
 
-        ```
+        ```python
         from frogml.core.feature_store.data_sources.time_partition_columns import (
             ColumnRepresentation,
             TimeFragmentedPartitionColumns,
@@ -632,7 +632,7 @@ athena_source = AthenaSource(
         ```
       * For `year=2022/month=January/day=5`:
 
-        ```
+        ```python
         from frogml.core.feature_store.data_sources.time_partition_columns import (
             ColumnRepresentation,
             DayFragmentColumn,
@@ -662,7 +662,7 @@ There are two distinct ways to use the Unity Catalog connector:
 
 Providing `query`.
 
-```
+```python
 unitycatalog_source = UnityCatalogSource(
     name="my_source",
     description="some unity catalog data source",
@@ -677,7 +677,7 @@ unitycatalog_source = UnityCatalogSource(
 
 Providing `table`.
 
-```
+```python
 unitycatalog_source = UnityCatalogSource(
     name="my_source",
     description="some unity catalog data source",
@@ -696,7 +696,7 @@ unitycatalog_source = UnityCatalogSource(
 
 ### Kafka Source
 
-```
+```python
 from frogml.feature_store.data_sources import KafkaSource
 
 kafka_source = KafkaSource(name="sample_source",
@@ -738,7 +738,7 @@ The Kafka streaming data source currently supports 2 types of message deserializ
 
 When using JSON the schema is in the Spark-proprietary JSON schema definition (**NOT JSON Schema**):
 
-```
+```json
 {
   "type": "struct",
   "fields": [
@@ -764,7 +764,7 @@ When using JSON the schema is in the Spark-proprietary JSON schema definition (*
 }
 ```
 
-```
+```python
 from frogml.feature_store.data_sources import KafkaSource, MessageFormat, GenericDeserializer
 
 deserializer = GenericDeserializer(
@@ -794,7 +794,7 @@ kafka_source = KafkaSource(name="sample_source",
 
 When using Avro the schema is an <Anchor label="Avro schema" target="_blank" href="https://avro.apache.org/docs/1.12.0/specification/">Avro schema</Anchor> :
 
-```
+```python
 from frogml.feature_store.data_sources import KafkaSource, MessageFormat, GenericDeserializer
 
 deserializer = GenericDeserializer(
