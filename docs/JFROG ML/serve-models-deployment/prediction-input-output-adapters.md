@@ -10,7 +10,7 @@ metadata:
     - UUID-fcb1409b-f141-035c-5562-252fc7a3cb1c
   robots: index
 ---
-Adapters help customize the input and output formats of machine learning models. JFrog ML uses adapters to validate the formats of model inputs and outputs and to perform relevant type conversions. 
+Adapters help customize the input and output formats of machine learning models. JFrog ML uses adapters to validate the formats of model inputs and outputs and to perform relevant type conversions.
 
 This document provides a comprehensive list of the available input and output adapters.
 
@@ -176,7 +176,7 @@ If you are using the protobuf library in your software, it may also be beneficia
 
 Assuming a protobuf definition for input data:
 
-```
+```go
 syntax = "proto3";
 
 package frogml.demo;
@@ -194,7 +194,7 @@ message ModelInput {
 
 and output data:
 
-```
+```go
 syntax = "proto3";
 
 package frogml.demo;
@@ -212,7 +212,7 @@ Generate the protobuf classes for both the client application and the ML code. T
 
 In the model class, import the protobuf class and the input adapter:
 
-```
+```go
 from frogml.sdk.model.adapters import ProtoInputAdapter, ProtoOutputAdapter
 from .frogml_proto_demo.input_pb import ModelInput
 from .frogml.output_pb import ModelOutput
@@ -233,7 +233,7 @@ def predict(self, input) -> ModelOutput:
 
 In the implementation, use the `ParseFromString` function to read a protobuf message, and remember to serialize  classes using the `SerializeToString` function.
 
-```
+```go
 message = ModelInput(f1=1, f2=2).SerializeToString()
 ```
 
@@ -256,9 +256,9 @@ curl -i –header "Content-Type: application/json" –request POST –data '{"in
 
 ## Multi Input
 
-The `MultiInputAdapter` supports automatic input format detection. To deploy a single model with **multiple different input adapters**, use a `MultiInputAdapter`to handle various input formats with a single model. 
+The `MultiInputAdapter` supports automatic input format detection. To deploy a single model with **multiple different input adapters**, use a `MultiInputAdapter`to handle various input formats with a single model.
 
-```
+```python
 from frogml.sdk.model.adapters import DefaultOutputAdapter, DataFrameInputAdapter, ImageInputAdapter, MultiInputAdapter
 
 @frogml.api(
@@ -274,7 +274,7 @@ To use the `MultiInputAdapter` adapter, pass a list of adapters to its construct
 
 Be cautious with the following adapter configuration:
 
-```
+```python
 input_adapter=MultiInputAdapter([JsonInputAdapter, DataFrameInputAdapter]),
 ```
 
@@ -284,7 +284,7 @@ The `JsonInputAdapter` will successfully parse a JSON representation of a DataFr
 
 A `NumpyInputAdapter` can automatically parse a JSON array as a Numpy array and reshape it to the desired structure. When configuring the `NumpyInputAdapter`, specify the content type and its shape:
 
-```
+```python
 from frogml.sdk.model.adapters import NumpyInputAdapter, NumpyOutputAdapter
 
 @frogml.api(
@@ -299,9 +299,9 @@ def predict(self, input):
 
 When the input adapter is configured as shown (in the above example), if the model receives the value `[[5,4,3,2]]`, the output will be equivalent to running `np.array([[5, 4, 3, 2]], dtype=np.int32).reshape(2, 2)`.
 
-The `NumpyOutputAdapter` converts the returned output array directly to JSON without changing its structure. For example, if the model returns this Numpy array: 
+The `NumpyOutputAdapter` converts the returned output array directly to JSON without changing its structure. For example, if the model returns this Numpy array:
 
-`np.array([[5, 4, 3, 2]], dtype=np.int32).reshape(2, 2)`, 
+`np.array([[5, 4, 3, 2]], dtype=np.int32).reshape(2, 2)`,
 
 it will be converted to: `[[5, 4], [3, 2]]`.
 
@@ -311,7 +311,7 @@ Starting from SDK version 0.9.87 it will return Numpy binary format .
 
 The `DefaultOutputAdapter` enables returning multiple result formats from a single model. The adapter  automatically detects the type of the returned value.
 
-```
+```python
 from frogml.sdk.model.adapters import DefaultOutputAdapter, ImageInputAdapter
 
 @frogml.api(
@@ -328,7 +328,7 @@ Note that the `DefaultOutputAdapter` doesn't work with Protobuf objects! To auto
 
 When using JsonOutputAdapter to return Dict results, the output **must be iterable.**
 
-```
+```python
 from frogml.sdk.model.adapters import ProtoInputAdapter, AutodetectOutputAdapter
 
 @frogml.api(
@@ -345,7 +345,7 @@ from frogml.sdk.model.adapters import ProtoInputAdapter, AutodetectOutputAdapter
 
 Automatic output format detection with Protobuf support operates like the `DefaultOutputAdapter`, but it can also handle Protobuf classes:
 
-```
+```python
 from frogml.sdk.model.adapters import ProtoInputAdapter, AutodetectOutputAdapter
 
 @frogml.api(
@@ -385,10 +385,10 @@ You can also just choose the data frame adapters with default values:
 ```python
 from frogml.sdk.model.adapters import DataFrameInputAdapter, DataFrameOutputAdapter
 
-    @frogml.api(
-        analytics=False,
-        input_adapter=DataFrameInputAdapter(),
-        output_adapter=DataFrameOutputAdapter(),
+@frogml.api(
+      analytics=False,
+      input_adapter=DataFrameInputAdapter(),
+      output_adapter=DataFrameOutputAdapter(),
     )
   def predict(self, df) -> pd.DataFrame:
       # ... your prediction logic here ...
