@@ -58,7 +58,7 @@ For this quick start guide, we will use the SDK to connect to a CSV file stored 
 
 Create a new Python file (for example, `data_source.py` ) in your project structure and copy-paste the following code snippet to define the `CsvSource` configuration object.
 
-```
+```python
 # data_source.py
 from frogml.feature_store.data_sources import CsvSource, AnonymousS3Configuration
 
@@ -93,7 +93,7 @@ Before proceeding to the next step, ensure you have the necessary data manipulat
 
 The next step is to explore the raw data sample before defining the feature set. First, ensure you have the necessary data manipulation library installed: install a version of `pandas` that best suits your project. If you have no version requirements, simply install the latest version.
 
-```
+```shell
 pip install pandas
 ```
 
@@ -101,7 +101,7 @@ pip install pandas
 
 Explore the connection and view a sample of the ingested data by running the `get_sample` method:
 
-```
+```python
 # feature_set.py
 # Get and print a sample from your live data source
 pandas_df = csv_source.get_sample()
