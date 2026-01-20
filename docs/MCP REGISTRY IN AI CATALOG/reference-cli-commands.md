@@ -163,7 +163,7 @@ The `jf mcp-gateway` tool allows you to manage your local your local environment
       </td>
 
       <td style={{ textAlign: "left" }}>
-        list-installed
+        `list-installed`
       </td>
 
       <td style={{ textAlign: "left" }}>
@@ -177,7 +177,7 @@ The `jf mcp-gateway` tool allows you to manage your local your local environment
       </td>
 
       <td style={{ textAlign: "left" }}>
-        list-available
+        `list-available`
       </td>
 
       <td style={{ textAlign: "left" }}>
@@ -191,7 +191,7 @@ The `jf mcp-gateway` tool allows you to manage your local your local environment
       </td>
 
       <td style={{ textAlign: "left" }}>
-        init
+        `init`
       </td>
 
       <td style={{ textAlign: "left" }}>
@@ -205,7 +205,7 @@ The `jf mcp-gateway` tool allows you to manage your local your local environment
       </td>
 
       <td style={{ textAlign: "left" }}>
-        project-show
+        `project-show`
       </td>
 
       <td style={{ textAlign: "left" }}>
