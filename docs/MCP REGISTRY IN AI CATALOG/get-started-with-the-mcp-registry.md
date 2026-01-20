@@ -18,7 +18,8 @@ The MCP Gateway connects you to tools, but it does not install the underlying ru
 
 Once you are sure you have the required runtimes, install the MCP Registry as follows:
 
-Install the MCP Gateway
+* [Install the MCP Gateway](/docs/install-the-mcp-gateway)
+* <br />
 
 Connect Your IDE
 
