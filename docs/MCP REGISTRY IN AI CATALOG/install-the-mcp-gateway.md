@@ -14,17 +14,13 @@ To use MCP tools, you  must run a project-scoped script that installs the JFrog 
 3. Click Set Me Up to generate your custom installation script.
 4. Run the command in your terminal. Choose the method that matches your authentication preference:
 
-   **Option A: SSO / Interactive Login (Recommended)** - Use this if you want to log in via your browser.
+   <br />
 
    ```
    take from slack
    ```
 
-   **Option B: Token-Based Authentication**  - Use this for automated setups or if you already have an Identity Token.
-
-   ```Text bash
-   curl -sL https://get.jfrog.io/mcp | bash -s -- --config <YOUR_TOKEN> --project <PROJECT_KEY>
-   ```
+   <br />
 
    What this script does:
 
