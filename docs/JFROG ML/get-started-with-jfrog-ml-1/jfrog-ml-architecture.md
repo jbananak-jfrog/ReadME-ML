@@ -27,8 +27,8 @@ This document outlines the architecture that enables this powerful combination o
 
 The JFrog ML architecture is fundamentally based on a separation of concerns, divided into two distinct components:
 
-* the JFrog ML Control Plane, and
-* the JFrog ML Data Plane
+* The JFrog ML Control Plane, and
+* The JFrog ML Data Plane
 
 This design ensures that sensitive data and computational workloads remain isolated within a secure environment, while orchestration and metadata management are handled centrally.
 
