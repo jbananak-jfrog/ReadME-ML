@@ -53,7 +53,7 @@ pip install frogml-cli
         * Model Name
         * Project
 
-        Click **Create Model**./
+        Click **Create Model**.
       </td>
 
       <td>
