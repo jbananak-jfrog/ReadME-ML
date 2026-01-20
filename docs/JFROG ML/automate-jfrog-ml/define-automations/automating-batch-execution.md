@@ -27,7 +27,7 @@ Defining a batch execution automation includes two parts:
 
 For more details on all available parameters for configuring batch model executions, please refer to [Storage-Based Execution](/docs/storage-based-execution) page.
 
-```
+```python
 from frogml.core.automations import Automation, ScheduledTrigger, \
     BatchExecution, BatchJobDataSpecifications, BatchJobExecutionSpecifications
 
