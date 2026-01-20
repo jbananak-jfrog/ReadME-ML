@@ -1,8 +1,9 @@
 ---
 title: What is the MCP Registry?
 excerpt: >-
-  The MCP Registry governs the active tools those models use, giving you
-  complete control over actions like "read_file" or "query_db".
+  Extending the AI Catalog as the single source of truth for all models, the MCP
+  Registry provides a unified solution to discover, govern, and connect to local
+  and remote MCP servers and tools used in the organization.
 deprecated: false
 hidden: true
 link:
