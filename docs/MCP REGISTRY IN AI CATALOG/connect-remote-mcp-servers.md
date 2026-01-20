@@ -1,5 +1,5 @@
 ---
-title: Connect Remote MCP Servers
+title: Connect MCP Servers - keep hidden
 deprecated: false
 hidden: true
 icon: ❓
