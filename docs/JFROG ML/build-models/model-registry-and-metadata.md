@@ -152,7 +152,7 @@ class MyModel(FrogMlModel):
 
 You can add parameters to the build CLI command when you start a new build:
 
-```
+```shell
 frogml models build \
     --model-id <model-id> \
     -P <key>=<value> -P <key>=<value> \
@@ -230,7 +230,7 @@ log_file(from_path='model.pkl', tag='catboost_model', model_id='some_model_id')
 
 When you execute a build, you can store the build data:
 
-```
+```python
 import frogml
 
 frogml.log_data(pd.dataframe, tag)
@@ -348,7 +348,9 @@ During every build, the JFrog ML platform runs `pip freeze` to capture the envir
 <Callout icon="⚠️" theme="warning">
   **Warning**
 
-  **Do not include your file `requirements.lock` in the `jfrogml_artifacts` directory.**
+  Do not include your file `requirements.lock` in the `jfrogml_artifacts` directory.
 
-  **It will be overwritten!**
+  It will be overwritten!
 </Callout>
+
+<br />
