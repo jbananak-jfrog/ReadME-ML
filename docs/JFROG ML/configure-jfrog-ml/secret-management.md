@@ -64,7 +64,7 @@ Secrets may be created directly using the JFrog ML CLI.
 
 Use the following commands:
 
-```
+```shell
 frogml secrets set --name <aws-api-key> --value <the_value_of_the_key>
 frogml secrets set --name <aws-api-secret> --value <the_value_of_the_secret>
 ```
@@ -100,7 +100,7 @@ JFrog ML <Anchor label="Feature Store" title="Feature Store" href="/docs/feature
 
 1. Create new secrets with the user name and password:
 
-   ```
+   ```shell
    frogml secrets set --name snowflake_user --value <snowflake_user>
    frogml secrets set --name snowflake_password --value <secured_password_1234>
    ```
