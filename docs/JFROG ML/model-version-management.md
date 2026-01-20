@@ -93,7 +93,7 @@ This feature meets the demand for custom prediction logic in real-world deployme
 1. In your python code, use the example code snippet below to add a custom prediction function.
 2. If you want to define the name of the new build version, add the line: `version="<new version name>"` in the code.
 
-#### Code Example - Logging a Hugging Face model without a custom prediction function:
+**Logging a Hugging Face model without a custom prediction function**:
 
 ```python
 import frogml
@@ -111,7 +111,7 @@ frogml.huggingface.log_model(
 )
 ```
 
-#### Code Example - Logging a Hugging Face model with a custom prediction function:
+**Logging a Hugging Face model with a custom prediction function:**
 
 ```python
 import frogml
