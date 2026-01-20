@@ -102,7 +102,7 @@ The IAM role should be created with the following trust policy:
 
 ▶ **To start an execution from the SDK:**
 
-```
+```python
 from frogml.core.clients.batch_job_management.client import BatchJobManagerClient
 from frogml.core.clients.batch_job_management.results import StartExecutionResult
 from frogml.core.clients.batch_job_management.executions_config import ExecutionConfig
@@ -135,8 +135,8 @@ execution_result: StartExecutionResult = batch_job_manager_client.start_executio
 execution_id = execution_result.execution_id
 ```
 
-```
-frogml models execution start \                                                                                                                             TERM ✘  8m 34s   base   12:58:22 
+```shell
+frogml models execution start \                                                                       
     --model-id <model-id> \
     --source-bucket <source-bucket-name> \
     --source-folder <source-folder-path> \
@@ -156,7 +156,7 @@ frogml models execution start \                                                 
 
 Here is a simplified version with all the default values:
 
-```
+```python
 from frogml.core.clients.batch_job_management.client import BatchJobManagerClient
 from frogml.core.clients.batch_job_management.results import StartExecutionResult
 from frogml.core.clients.batch_job_management.executions_config import ExecutionConfig
@@ -179,8 +179,8 @@ execution_result: StartExecutionResult = batch_job_manager_client.start_executio
 execution_id = execution_result.execution_id
 ```
 
-```
-frogml models execution start \                                                                                                                             TERM ✘  8m 34s   base   12:58:22 
+```shell
+frogml models execution start \                                                                       
     --model-id <model-id> \
     --bucket <bucket-name> \
     --source-folder <source-folder-path> \
@@ -214,7 +214,7 @@ To override the instance type for a specific batch execution, specify the purcha
 
 If you do not specify this option, the execution defaults to the configuration defined in the currently deployed model.
 
-```
+```python
 from frogml.core.clients.batch_job_management.executions_config import ExecutionConfig
 
 # Using an on-demand instance for this execution
@@ -242,7 +242,7 @@ It is also possible to run a batch execution using files stored locally.
 
 The local file mode can be started by either using the `local_file_run` function from the `BatchInferenceClient`:
 
-```
+```python
 from frogml_inference.batch_client.batch_client import BatchInferenceClient
 
 client = BatchInferenceClient()
@@ -306,7 +306,7 @@ Example: `frogml models execution start --model-id the_model_id --source-folder 
 
 Use the following curl command template to send requests to the Batch Job Manager. Replace `<your-environment>` with the name of your account, which can be found in the bottom left corner of the JFrog ML Dashboard, and fill in the batch job details as per your needs.
 
-```
+```curl
 curl --location --request POST '[https://grpc.](https://grpc.)<your-environment>.qwak.ai/api/v1/batch-job/start-job'  
 --header 'Content-Type: application/json'  
 --header "Authorization: Bearer $JFROG_TOKEN"  
@@ -333,7 +333,7 @@ Ensure the header is enclosed in double quotes (") when passing the `JFROG_TOKEN
 
 **Example Output:**
 
-```
+```json
 {
   "batch_id": "<some_execution_id>",
   "success": true,
