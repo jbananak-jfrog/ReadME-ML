@@ -87,13 +87,13 @@ With the local model code, and our new model on JFrog ML, we can initiate a mode
   Note that the build name parameter is optional.
 </Callout>
 
-```
+```shell
 frogml models build --model-id titanic --name v1 ./titanic_survival_classification
 ```
 
 The models build command works in the following format:
 
-```
+```shell
 frogml models build --model-id <remote-model-id> --name <build-name> <local-model-directory>
 ```
 
@@ -184,7 +184,7 @@ Tags can be attached to specific builds for identification and tracking.
 
 Add model tags from JFrog ML UI manually, or add tags via the FrogML CLI:
 
-```
+```shell
 frogml models build --model-id <model-id> -T <tag_1> -T <tag_2> <local-model-directory>
 ```
 
@@ -194,13 +194,13 @@ Use the `model-id` of the model to which you want to attach tags.
 
 You may use and pass environment variables to your models build in the CLI using the following command:
 
-```
+```shell
 frogml models build --model-id <model-id> -E ENV_VAR=VALUE <local-model-directory>
 ```
 
 or for example with mock values:
 
-```
+```shell
 frogml models build --model-id "titanic" -E VERSION_NUMBER=1.2 -E MODEL_NAME=catboost .
 ```
 
@@ -233,7 +233,7 @@ In general, there are two choices when working with the Build SDK:
 1. Providing a pre-trained model artifact to the `build_model` method.
 2. Omitting a pre-built model, in which case the SDK will upload local model files and builds the model on JFrog ML.
 
-```
+```python
 from frogml.sdk.frogml_client.client import FrogMLClient
 from frogml.sdk.model.tools import run_local
 
@@ -403,7 +403,7 @@ Let's create a new model instance and run the build method to train it.
 
 **titanic/run_build.py**
 
-```
+```python
 from titanic.main import TitanicSurvivalPrediction
 
 ## Create a new model instance
@@ -447,7 +447,7 @@ client.build_model(
 
 **Output**
 
-```
+```shell
 Fetching model code - Using given build ID - 116a6385-8bbf-41bb-b30f-d6528869fac9
 Fetching model code - Found dependency type: PIP by file: main/requirements.txt
 Fetching model code - Successfully fetched model code
