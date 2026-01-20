@@ -1063,7 +1063,7 @@ Within the build container, additional dependency folders are placed alongside `
 
 Here's an illustrative directory structure:
 
-```
+```yaml Project Files
 /frogml/model_dir/
 .
 ├── main                     # Main directory containing core code
