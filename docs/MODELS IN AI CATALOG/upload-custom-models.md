@@ -26,7 +26,7 @@ To use your own custom models, you just need to upload the models to JFrog ML. A
 
 3. If you have not Installed it yet, install the frogml CLI (use Python versions. 3.10 to 3.13).
 
-   ```
+   ```shell
    pip install frogml-cli
    ```
 
