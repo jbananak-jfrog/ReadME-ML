@@ -2,7 +2,7 @@
 title: Access Tools for a Different Project
 excerpt: Switching projects.
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
