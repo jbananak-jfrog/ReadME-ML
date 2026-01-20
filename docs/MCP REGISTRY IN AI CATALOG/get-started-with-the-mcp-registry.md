@@ -21,6 +21,7 @@ Once you are sure you have the required runtimes, install the MCP Registry as fo
 * [Install the MCP Gateway](/docs/install-the-mcp-gateway)
 * [Connect Your IDE](/docs/connect-your-ide)
 * [Start the  MCP Gateway](/docs/start-the-mcp-gateway)
+* <br />
 
 <br />
 
