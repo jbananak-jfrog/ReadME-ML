@@ -37,11 +37,11 @@ FrogML's GPU instances provide high-performance computing resources to accelerat
 Easily customize your training resources to achieve faster training times and better results.
 
 <Callout icon="⚠️" theme="warning">
-  **Warning**
+**Warning**
 
-  Building your first model?
+Building your first model?
 
-  Please refer to our**[JFrog ML Quickstart](/docs/get-started-with-jfrog-ml)**guide if you're creating your first model. The guide provides step-by-step instructions on how to install all relevant dependencies to get you up and running.
+Please refer to our**[JFrog ML Quickstart](https://www.google.com/search?q=/docs/get-started-with-jfrog-ml)**guide if you're creating your first model. The guide provides step-by-step instructions on how to install all relevant dependencies to get you up and running.
 </Callout>
 
 ### Training HuggingFace Models
@@ -52,7 +52,7 @@ In this tutorial, we use a `distilbert` text classifier from HuggingFace and to 
 
 ### Choosing the Correct GPU
 
-Visit the [GPU Instance Sizes](doc:instance-sizes-ml-credits) page to view the full specifications of FrogML's GPU instance selection.
+Visit the [GPU Instance Sizes](https://www.google.com/search?q=doc:instance-sizes-ml-credits) page to view the full specifications of FrogML's GPU instance selection.
 
 ### Project Dependencies
 
@@ -60,29 +60,30 @@ This is the content of our `conda.yml` file which contains the necessary depende
 
 conda.yml
 
-```
+```yaml
 channels:
-  - defaults
-  - conda-forge
-  - huggingface
-  - pytorch
+  - defaults
+  - conda-forge
+  - huggingface
+  - pytorch
 dependencies:
-  - python=3.11
-  - pip
-  - pandas=1.1.5
-  - transformers
-  - scikit-learn
-  - datasets
-  - pytorch
-  - huggingface_hub
-  - evaluate
+  - python=3.11
+  - pip
+  - pandas=1.1.5
+  - transformers
+  - scikit-learn
+  - datasets
+  - pytorch
+  - huggingface_hub
+  - evaluate
+
 ```
 
 ### Adding Imports
 
 We need to import all the relevant methods from FrogML and from the other packages we're using
 
-```
+```python
 import frogml
 from frogml.sdk.model.base import BaseModel as FrogMlModel
 import pandas as pd
@@ -92,6 +93,7 @@ import torch
 from datasets import load_dataset
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from transformers import TrainingArguments, Trainer
+
 ```
 
 ### Initializing FrogML Model
@@ -100,20 +102,21 @@ The `FrogMlModel` is our base class that implements all relevant helper methods 
 
 In this example, we load the `distilbert-base-uncased` model from HuggingFace.
 
-```
+```python
 class HuggingFaceTokenizerModel(FrogMlModel):
 
     def __init__(self):
         model_id = "distilbert-base-uncased"
         self.tokenizer = AutoTokenizer.from_pretrained(model_id)
         self.model = AutoModelForSequenceClassification.from_pretrained(model_id, num_labels=2)
+
 ```
 
 ### Defining Model Build
 
 The build method is called once and only during the model build phase. This method is called when generating a docker image of your model build.
 
-```
+```python
 def build(self):
         """
         The build() method is called once during the remote build process on JFrogML.
@@ -173,16 +176,17 @@ def build(self):
 
         # Log metrics into JFrog ML
         frogml.log_metric({"val_accuracy" : eval_acc})
+
 ```
 
 ### Configuring Inference
 
 The inference method is called when the model is invoked through the real-time endpoint, batch or streaming inference. This method is only triggered when the model is deployed or during local testing.
 
-The inference method receives and returns a Pandas `DataFrame` by default. Provide it with [Prediction Input & Output Adapters](doc:prediction-input-output-adapters) to receive and return different data types.
+The inference method receives and returns a Pandas `DataFrame` by default. Provide it with [Prediction Input & Output Adapters](https://www.google.com/search?q=doc:prediction-input-output-adapters) to receive and return different data types.
 
-```
-    @frogml.api()
+```python
+    @frogml.api()
     def predict(self, df: pd.DataFrame) -> pd.DataFrame:
         """
         The predict() method takes a pandas DataFrame (df) as input
@@ -220,6 +224,7 @@ The inference method receives and returns a Pandas `DataFrame` by default. Provi
             })
         
         return pd.DataFrame(result)
+
 ```
 
 ### Complete Model Code
@@ -343,7 +348,8 @@ class HuggingFaceTokenizerModel(FrogMlModel):
                 'positive': float(prob[1])
             })
         
-        return pd.DataFrame(result)          
+        return pd.DataFrame(result)          
+
 ```
 
 ### Adding Integration Tests
@@ -354,7 +360,7 @@ This code below should be copied into a new Python file under the tests folder i
 
 test_frogml_model.py
 
-```
+```python
 import pandas as pd
 from frogml.core.testing.fixtures import real_time_client
 
@@ -383,6 +389,7 @@ def test_realtime_api(real_time_client):
     # Also verify that probabilities sum to approximately 1.0
     row_sum = first_prediction['negative'] + first_prediction['positive']
     assert abs(row_sum - 1.0) < 0.01, f"Expected probabilities to sum to 1.0, got {row_sum}"
+
 ```
 
 ### Initiating Remote GPU Build
@@ -393,28 +400,30 @@ It's now time to build the model!
 
 #### Create a Model on FrogML
 
-```
+```shell
 frogml models create "Hugging Face Tokenizer Model" --project-key "examples"
+
 ```
 
 #### Build Your Models on GPUs
 
 Our model is quite large, so we need to ask for a large GPU-based machine that has enough memory.
 
-```
+```shell
 frogml models build --model-id hugging_face_tokenizer_model --instance "gpu.t4.xl" .
+
 ```
 
-Visit the JFrog [GPU Instance Sizes](doc:instance-sizes-ml-credits) page to choose the resources that fit your use case best. Each GPU type has its own configuration for pre-defined memory and number of CPUs.
+Visit the JFrog [GPU Instance Sizes](https://www.google.com/search?q=doc:instance-sizes-ml-credits) page to choose the resources that fit your use case best. Each GPU type has its own configuration for pre-defined memory and number of CPUs.
 
 <Callout icon="📘" theme="info">
-  **Note**
+**Note**
 
-  **Using GPU Spot Instances**
+**Using GPU Spot Instances**
 
-  JFrog ML uses EC2 Spot instances for GPU-based builds to keep costs low for users.
+JFrog ML uses EC2 Spot instances for GPU-based builds to keep costs low for users.
 
-  As a result, it may take slightly longer for a GPU Spot Instance to become available.
+As a result, it may take slightly longer for a GPU Spot Instance to become available.
 </Callout>
 
 #### Build for GPU Deployments
@@ -423,15 +432,16 @@ When deploying a model on a GPU instance, we must verify that the model was buil
 
 Creating a GPU compatible image is simply done by adding the `--gpu-compatible` flag:
 
-```
+```shell
 frogml models build --model-id <model-id> --gpu-compatible .
+
 ```
 
 ### Discover GPU Cores
 
 ▶ **To see which GPUs were provided on your build machine, print the number of available GPUs:**
 
-```
+```python
 # catboost
 from catboost.utils import get_gpu_device_count
 print(f'{get_gpu_device_count()} GPU devices')
@@ -443,6 +453,7 @@ print(f'{len(tf.config.list_physical_devices("GPU"))} GPU devices')
 # pytorch
 import torch
 print(f'{torch.cuda.device_count()} GPU devices')
+
 ```
 
 Running the above command will build your model on a regular CPU instance, but will allow you to later deploy it on a GPU instance.
@@ -464,15 +475,17 @@ class MyModel(FrogMlModel):
     
   def initialize_model():
           self.model = torch.load("model.pkl", map_location=torch.device('cpu'))
+
 ```
 
 Occasionally, you might encounter a Torch-related issue during model deserialization that disregards the specified CPU target, prompting a RuntimeError due to an attempt to deserialize on a CUDA device while CUDA is unavailable:
 
-```
+```text
 RuntimeError: Attempting to deserialize object on a CUDA device but torch.cuda.is_available() is False. If you are running on a CPU-only machine, please use torch.load with map_location=torch.device('cpu') to map your storages to the CPU.
+
 ```
 
-By employing a custom _unpickler_ you can ensure the model is properly directed to the CPU during loading. The following example demonstrates how to implement such a solution:
+By employing a custom *unpickler* you can ensure the model is properly directed to the CPU during loading. The following example demonstrates how to implement such a solution:
 
 my_model.py
 
@@ -505,6 +518,7 @@ class MyModel(FrogMlModel):
         self.model = CPU_Unpickler(handle).load()
 
         print (self.model.params)
+
 ```
 
 This adjustment ensures the model, trained within a GPU-accelerated environment, is seamlessly transitioned for execution on CPU-based deployment targets.
@@ -523,8 +537,9 @@ To align PyTorch with the CUDA version on your instance, use the following index
 
 Use this command in your workspace environment:
 
-```
+```shell
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
 ```
 
 #### In Model Builds
@@ -533,7 +548,7 @@ For `requirements.txt`, your file should look like this:
 
 requirements.txt
 
-```
+```text
 scipy
 scikit-learn
 pandas
@@ -542,13 +557,14 @@ pandas
 torch
 torchvision
 torchaudio
+
 ```
 
 For Conda environments, here's an example configuration:
 
 conda.yaml
 
-```
+```yaml
 name: your-conda-environment
 channels:
   - defaults
@@ -565,6 +581,7 @@ dependencies:
   - accelerate
   - scikit-learn
   - pandas
+
 ```
 
 Please note that the `conda.yaml` above is just an example, not all the dependencies are required.
@@ -573,7 +590,7 @@ Please note that the `conda.yaml` above is just an example, not all the dependen
 
 After installation, confirm that `PyTorch` is utilizing the GPU. Add the following code snippet to your `FrogMlModel`. For training models, insert it at the start of the `build()` method. If loading a pre-trained model, place it in the `initialize_model()` method.
 
-```
+```python
 import torch
 
 print("Torch version:",torch.__version__)
@@ -581,6 +598,7 @@ print("Torch version:",torch.__version__)
 # Automatically use CUDA if available, else use CPU
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"The PyTorch device used by the model is {device}\n")
+
 ```
 
 This should output `cuda` as device in your FrogML model build logs, indicating that PyTorch is correctly set up to use the GPU.
@@ -593,8 +611,9 @@ If you don't see `True` in your logs, check the **Code** tab within your Build p
 
 When you add the `opencv-python` library and import the `cv2` module, you might encounter the following error:
 
-```
+```text
 Exception: Error in importing module libGL.so.1: cannot open shared object file: No such file or directory
+
 ```
 
 This issue occurs because the base Docker image does not include the necessary dependencies for OpenCV. To resolve this, you need to use a Docker image that supports OpenCV.
@@ -605,20 +624,26 @@ This issue occurs because the base Docker image does not include the necessary d
 You can update the base image in one of two ways:
 
 1. **Via Command Line**
+Add the `--base-image` parameter when building your model:
+```shell
+frogml models build --base-image 'public.ecr.aws/w8k8y6b6/qwak-base:0.0.14-gpu-opencv'
 
-   Add the `--base-image` parameter when building your model:
+```
 
-   ```
-   frogml models build --base-image 'public.ecr.aws/w8k8y6b6/qwak-base:0.0.14-gpu-opencv'
-   ```
+
 2. **Via YAML Configuration**
+Update your YAML configuration file with the base image settings. Refer to our [Build Configurations](https://jfrog-enterprise-group.readme.io/ai-ml/docs/advanced-build-concepts#build-configurations) page for more details.
+```yaml
+build_env:
+  docker:
+    base_image: public.ecr.aws/w8k8y6b6/qwak-base:0.0.14-gpu-opencv
 
-   Update your YAML configuration file with the base image settings. Refer to our [Build Configurations](https://jfrog-enterprise-group.readme.io/ai-ml/docs/advanced-build-concepts#build-configurations) page for more details.
+```
 
-   ```
-   build_env:
-     docker:
-       base_image: public.ecr.aws/w8k8y6b6/qwak-base:0.0.14-gpu-opencv
-   ```
+
 
 <br />
+
+---
+
+Would you like me to help you format any other documentation or perhaps convert this into a different configuration format like a Dockerfile or a CI/CD pipeline script?
