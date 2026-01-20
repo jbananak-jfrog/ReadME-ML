@@ -50,7 +50,7 @@ To explore all available models, switch to the **Discovery** page. This page dis
 
 Since the **Registry** page is empty on first use, your first action is to switch to the **Discovery** page. Browse the comprehensive catalog of external APIs, model packages, and your own custom models to discover the best fits for your project requirements.
 
-Use the [**Filter & Search**](/docs/discover-and-allow-models#searching-and-filtering-ai-models) functionality to quickly pinpoint the most suitable models.
+Use the [Filter & Search](/docs/discover-and-allow-models#searching-and-filtering-ai-models) functionality to quickly pinpoint the most suitable models.
 
 The JFrog platform automatically scans each model for vulnerabilities, and offers transparent license information to help you avoid compliance issues.
 
