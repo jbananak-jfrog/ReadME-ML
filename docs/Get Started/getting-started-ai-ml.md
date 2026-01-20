@@ -13,7 +13,7 @@ next:
       title: Get Started with JFrog ML
       type: basic
 ---
-JFrog ML is acts as a centralized hub that proactively secures every AI workload — from third-party downloads and Model Context Protocol (MCP) servers to custom in-house models — giving you the visibility needed to eliminate Shadow AI.
+JFrog ML is acts as a centralized hub that proactively secures every AI workload — from third-party downloads \{/\*and Model Context Protocol (MCP) servers \*/}to custom in-house models — giving you the visibility needed to eliminate Shadow AI.
 
 With security and compliance enforced proactively at the gate, your teams can safely accelerate the development of trusted AI applications without compromising control.
 
