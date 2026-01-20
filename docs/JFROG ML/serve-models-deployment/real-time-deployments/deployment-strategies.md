@@ -60,13 +60,13 @@ Then you can attach it to the model in the deployment process.
 
 ▶ **To deploy a model with variations via the CLI, use this command:**
 
-```
+```shell
 frogml models deploy realtime --from-file <config-file-path>
 ```
 
 The configuration file should look like this:
 
-```
+```yaml
 model_id: <model-id>
 build_id: <build-id-to-deploy>
 realtime:
@@ -94,7 +94,7 @@ You can run an inference against a specific variation by using one of the client
 
 ## Python Runtime SDK
 
-```
+```python
 import pandas as pd
 from frogml_inference import RealTimeClient
 
@@ -112,7 +112,7 @@ response: pd.DataFrame = client.predict(feature_vector)
 
 ## Java Inference SDK
 
-```
+```java
 RealtimeClient client = RealtimeClient.builder()
           .environment("env_name")
           .apiKey(API_KEY)
@@ -134,7 +134,7 @@ double score = singlePrediction.get().getValueAsDouble("score");
 
 ## REST API
 
-```
+```curl
 curl --location --request POST 'https://<tenantId>.ml.jfrog.io/v1/test_model/<variation_name>/predict' \
      --header 'Content-Type: application/json' \
      --header 'Authorization: Bearer <Auth Token>' \
@@ -147,7 +147,7 @@ curl --location --request POST 'https://<tenantId>.ml.jfrog.io/v1/test_model/<va
 
 You can run an inference against a specific audience by using the python sdk:
 
-```
+```python
 client.predict(feature_vector, metadata: {<key>:<value>})
 ```
 
@@ -155,7 +155,7 @@ You need to pass a key-value dictionary, its value will lead the traffic to the 
 
 ### REST API
 
-```
+```curl
 curl --location --request POST 'https://<tenantId>.ml.jfrog.io/v1/test_model/<variation_name>/predict' \
      --header 'Content-Type: application/json' \
      --header 'Authorization: Bearer <Auth Token>' \
@@ -189,7 +189,7 @@ The first condition matches the `location` field to be `new-york`. This match ha
 
 The second condition is binary, where the `age` key is in the range specified with `first_operand` and `second_operand`.
 
-```
+```yaml
 api_version: v1
 spec:
   audiences:
@@ -236,7 +236,7 @@ The following condition types are available when creating an audience:
 
 Apply an audience configuration using a CLI command:
 
-```
+```shell
 frogml audiences create -f <path_of_audience_config.yaml>
 ```
 
@@ -244,7 +244,7 @@ frogml audiences create -f <path_of_audience_config.yaml>
 
 Returns a list of audience ids and names.
 
-```
+```shell
 frogml audiences list
 ```
 
@@ -270,7 +270,7 @@ In the following examples, we demonstrate how to route requests to specific Audi
 
 ##### Using the Python Client
 
-```
+```python
 from frog_inference import RealTimeClient
 
 model_id = <your_model_id>
@@ -284,7 +284,7 @@ client.predict(feature_vector, metadata=metadata)
 
 ##### Using REST Calls
 
-```
+```curl
 curl --location --request POST 'https://<tenantId>.ml.jfrog.io/v1/1_hour_model/predict' \
 --header 'Content-Type: application/json' \
 --header 'location: new-york' \
@@ -340,7 +340,7 @@ In certain scenarios, you may not require the traditional traffic categorization
 
 Below is an example of configuring the default audience to enable variations:
 
-```
+```yaml
 api_version: v1
 spec:
   audiences:
@@ -360,7 +360,7 @@ The following is an example of a deployment request that incorporates traffic sp
   The 'default' variation must always be deployed before any other variations. Additionally, the combined percentage of all variations must total 100%.
 </Callout>
 
-```
+```yaml
 realtime:
   variation_name: test-variation
   audiences:
@@ -391,7 +391,7 @@ Once you have more than one build deployed, when you undeploy an existing build,
 
 **▶ To undeploy a model with variation from the CLI, run the following command:**
 
-```
+```shell
 frogml models undeploy \
     --model-id <model-id> \
     --variation-name <variation-name> \
@@ -400,7 +400,7 @@ frogml models undeploy \
 
 With a configuration file as follows:
 
-```
+```yaml
 realtime:
   variation_name: <The variation name being undeployed>
    audiences:
@@ -515,7 +515,7 @@ By setting a deployment as protected, you can make sure only admins and maintain
 
 Starting `frogml-cli 1.1`, you may use the `--protected` flag when deploying a real time model to set the model variation as protected.
 
-```
+```shell
 frogml models deploy realtime --model-id "my-model-id" --variation-name "default" --protected
 ```
 
