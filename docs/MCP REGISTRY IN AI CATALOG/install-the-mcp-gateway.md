@@ -1,7 +1,7 @@
 ---
 title: Install the MCP Gateway
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
