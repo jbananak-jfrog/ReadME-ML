@@ -105,7 +105,7 @@ The `jf mcp-gateway` tool allows you to manage your local your local environment
       </td>
 
       <td style={{ textAlign: "left" }}>
-        ```jf mcp-gateway project-set <KEY>```
+        `jf mcp-gateway project-set <KEY>`
       </td>
 
       <td style={{ textAlign: "left" }}>
@@ -140,6 +140,76 @@ The `jf mcp-gateway` tool allows you to manage your local your local environment
 
       <td style={{ textAlign: "left" }}>
         Displays the full list of available commands and flags.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        Edit Server
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Edit an existing server
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        List Installed MCP Servers
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        list-installed
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Displays only the MCP servers installed on your machine
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        List Allowed MCP Servers
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        list-available
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        List allowed servers from the JFrog AI Catalog
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        Initialize
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        init
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Initialize the curation registry.
+      </td>
+    </tr>
+
+    <tr>
+      <td style={{ textAlign: "left" }}>
+        Show selected project
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        project-show
+      </td>
+
+      <td style={{ textAlign: "left" }}>
+        Show the currently selected project (from plugin settings) and all available projects for the user.
       </td>
     </tr>
 
