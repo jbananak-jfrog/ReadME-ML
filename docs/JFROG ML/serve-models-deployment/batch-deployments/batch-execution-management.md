@@ -10,11 +10,11 @@ metadata:
 
 **▶ To check the current status of a batch execution:**
 
-```
+```shell
 frogml models execution status --execution-id <execution-id>
 ```
 
-```
+```python
 from frogml.core.clients.batch_job_management.client import BatchJobManagerClient
 from frogml.core.clients.batch_job_management.results import ExecutionStatusResult
 
@@ -29,11 +29,11 @@ The `execution_id` is returned when an execution is created, and is also visible
 
 ▶ **To cancel a batch execution:**
 
-```
+```shell
 frogml models execution cancel --execution-id <execution-id>
 ```
 
-```
+```python
 from frogml.core.clients.batch_job_management.client import BatchJobManagerClient
 
 batch_job_manager_client = BatchJobManagerClient()
@@ -42,13 +42,13 @@ batch_job_manager_client.cancel_execution("<execution-id>")
 
 ## &#x20;Warmup
 
-Use the **warmup** option when the speed of execution is critical, and the execution is a single step in a larger workflow orchestration. 
+Use the **warmup** option when the speed of execution is critical, and the execution is a single step in a larger workflow orchestration.
 
 The warmup option enables you to allocate the resources for execution before the execution starts. The resources are raised and kept running until the execution itself starts. This is especially relevant when a lot of resources are required, or when reducing the running time by even 5 minutes is critical.
 
 ### Low-level API
 
-```
+```python
 from frogml.core.clients.batch_job_management.client import BatchJobManagerClient
 from frogml.core.clients.batch_job_management.executions_config import ExecutionConfig
 
@@ -77,7 +77,7 @@ batch_job_manager_client.start_warmup_job(execution_config)
 
 ### DF API
 
-```
+```python
 from frogml_inference.batch_client.batch_client import BatchInferenceClient
 
 # You can also set FROGML_MODEL_ID environment variable instead of passing it
@@ -100,11 +100,11 @@ For each execution there are two types of logs.
 
 To view both log types, use the following command:
 
-```
+```shell
 frogml models execution report --execution-id <execution-id>
 ```
 
-```
+```python
 from frogml.core.clients.batch_job_management.client import BatchJobManagerClient
 from frogml.core.clients.batch_job_management.results import GetExecutionReportResult
 
@@ -115,7 +115,7 @@ model_logs = execution_report.model_logs
 
 In some cases you might want to output logs from the model itself in order to better understand the model processing behavior. In order to make the logs available, you need to use the JFrog ML Logger in your model's code.
 
-```
+```python
 from frogml.core.tools.logger import get_frogml_logger
 
 logger = get_frogml_logger()
