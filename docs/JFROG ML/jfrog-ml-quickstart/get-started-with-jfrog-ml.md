@@ -75,7 +75,7 @@ Logs provide real-time updates on the process, including any errors or warnings 
 
 **App:** To view build logs via the UI, follow the links provided in the terminal when building a model.
 
-```
+```shell
 frogml models build ./credit_risk --model-id “credit_risk” --name "credit_risk_build_v1"
 ✅ Fetching model code (0:00:00.30)
 ✅ Registering frogml build - 100% (0:00:06.01)
