@@ -4,7 +4,7 @@ excerpt: >-
   The platform provides built-in reporting to help Admins track adoption,
   security, and performance.
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
