@@ -33,7 +33,7 @@ Welcome to the JFrog AI Catalog – your centralized hub for AI model discovery,
 
 ## How Can the AI Catalog Help You?
 
-The JFrog AI Catalog simplifies the process of integrating AI into your projects. It is your centralized hub for discovering, governing, and securing all AI assets in your organization. 
+The JFrog AI Catalog simplifies the process of integrating AI into your projects. It is your centralized hub for discovering, governing, and securing all AI assets in your organization.
 
 The AI Catalog bridges the gap between MLOps, Platform Engineering, and Development by providing a single source of truth for the two critical pillars of modern AI:
 
@@ -72,17 +72,7 @@ All these models need governance, have many versions, and may have issues. The A
     <center>**Unified Security and Permissions in the JFrog Platform**</center>
   </Card>
 
-  <Card title="">
-    <center>**Quick access for enhanced productivity**</center>
-  </Card>
-
-  <Card title="">
-    <center>**Collaboration for AI teams by streamlined model discovery**</center>
-  </Card>
-
-  <Card title="">
-    <center>**Informed Decisions - make better choices on model implementation based on available options**</center>
-  </Card>
+  
 </Cards>
 
 > See also:
