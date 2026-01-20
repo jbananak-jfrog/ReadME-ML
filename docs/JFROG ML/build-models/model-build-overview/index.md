@@ -99,7 +99,7 @@ frogml models build --model-id <remote-model-id> --name <build-name> <local-mode
 
 Running the above command generates the build ID and a link you can follow to view the live build status:
 
-```
+```shell
 ✅ Fetching model code (0:00:00.22)
 ✅ Registering frogml build - 100% (0:00:05.77)
 
