@@ -4,7 +4,7 @@ excerpt: >-
   The gateway acts as a local server that your IDE talks to. It must be running
   for your AI to access tools. 
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
