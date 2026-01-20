@@ -67,9 +67,9 @@ pip install frogml-cli
 
 5. Select a template or an example as the base for your model.
 
-| Start from Template                    | Start from Example                         |
-| -------------------------------------- | ------------------------------------------ |
-| frogml models init --example general . | frogml models init --example credit_risk . |
+| Start from Template                      | Start from Example                           |
+| ---------------------------------------- | -------------------------------------------- |
+| `frogml models init --example general .` | `frogml models init --example credit_risk .` |
 
 6. Build and deploy - trigger your first build in JFrog ML.
 
