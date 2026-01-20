@@ -30,13 +30,13 @@ This guide assumes that you have already trained the model and stored it in S3. 
 
 First, create a new FrogML project and models:
 
-```
+```shell
 frogml models create "Pre Trained Model" --project-key "examples"
 ```
 
 Then we want to create an empty project template:
 
-```
+```shell
 frogml models init .
 ```
 
@@ -58,7 +58,7 @@ Additionally, we have to add boto3 because we will use it to download the pre-tr
 
 conda.yml
 
-```
+```yaml
 channels:
   - defaults
   - conda-forge
@@ -224,9 +224,9 @@ That is also the place where we call the model to obtain the predictions:
 
 ```python
 @frogml.api()
-    def predict(self, df: pd.DataFrame) -> pd.DataFrame:
-        df = df.drop(['PassengerId'], axis=1)
-        return pd.DataFrame(self.model.predict_proba(df)[:, 1], columns=['Survived_Probability'])
+def predict(self, df: pd.DataFrame) -> pd.DataFrame:
+    df = df.drop(['PassengerId'], axis=1)
+      return pd.DataFrame(self.model.predict_proba(df)[:, 1], columns=['Survived_Probability'])
 ```
 
 ## Build the Model
@@ -235,6 +235,6 @@ Now you have everything you need to deploy your pre-trained model as a FrogML mo
 
 To start a build locally from your terminal, use the following command; this command will also automatically deploy your model after the build is complete.
 
-```
+```shell
 frogml models build --model-id pre_trained_model . --deploy
 ```
