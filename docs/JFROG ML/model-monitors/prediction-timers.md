@@ -33,7 +33,7 @@ See the JFrog ML prediction timer in the Model Overview
 
 Frog ML timers can be configured using function decorators, enabling you to easily wrap and time specific methods executed during the prediction process.
 
-```
+```python
 from frogml import frogml_timer
 from frogml import FrogMlModel
 
@@ -55,7 +55,7 @@ class MyModel(FrogMlModel):
 
 Use the context manager to (configure JFrog ML timers and) measure specific logic blocks within your code without defining a separate function.
 
-```
+```python
 from frogml import frogml_timer
 from frogml import FrogMlModel
 
