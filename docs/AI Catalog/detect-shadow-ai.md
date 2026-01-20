@@ -120,5 +120,3 @@ Shadow AI Detection integrates tightly with JFrog’s security components:
    <Image align="center" border={true} src="https://files.readme.io/661918f5ae90613b774103274c013ad900520ed8a0cc4c5ba445cabf6d04bc8f-managemodel_block.png" className="border" />
 4. Click **Save**.​​
 5. Click **Close**
-
-See []()
