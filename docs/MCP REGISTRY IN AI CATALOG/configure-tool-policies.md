@@ -1,15 +1,16 @@
 ---
 title: Configure Tool Policies
+excerpt: >-
+  "Allow" grants access to a server, but **Policies** control exactly what that
+  server is allowed to do.
 deprecated: false
 hidden: true
 metadata:
   robots: index
 ---
-Approval grants access to a server, but **Policies** control exactly what that server is allowed to do.
-
 **What this step does:** It enables you to define granular rules (using Regex patterns) to strictly allow or block specific tools within a server.
 
-**Why do this?** To prevent "Over-Privileged AI." You might trust a database server to `read_data`, but you don't want it to `drop_tables`. Policies ensure that your AI agents operate strictly within safe boundaries.
+**Why configure tool policies?** To prevent "over-privileged AI." You might trust a database server to `read_data`, but you don't want it to `drop_tables`. Policies ensure that your AI agents operate strictly within safe boundaries.
 
 Policies are defined at the **Project level** within the server's configuration page.
 
@@ -28,8 +29,9 @@ Policies are defined at the **Project level** within the server's configuration 
      **Behavior:** You define specific Regex patterns to Allow or Deny tools.
 
      **Allow List:** Only tool names matching the pattern are accessible.
+
      * Example: `^get_.*` (Allows `get_user`, `get_log`; implicitly blocks `delete_user`).
-     **Deny List:** Tool names matching the pattern are blocked.
+       **Deny List:** Tool names matching the pattern are blocked.
      * Example: `._delete._` (Blocks `delete_table`, `delete_file`).
 
-**Configuration:** If the MCP server requires **Runtime Arguments **or **Environment Variables** (like API keys), you can pre-populate them here. These values are securely synchronized to your local Gateway.
+**Configuration:** If the MCP server requires **Runtime Arguments** or **Environment Variables** (like API keys), you can pre-populate them here. These values are securely synchronized to your local Gateway.
