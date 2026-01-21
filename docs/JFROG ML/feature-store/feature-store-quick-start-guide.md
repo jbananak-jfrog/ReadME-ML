@@ -50,7 +50,7 @@ Feature extraction begins by defining a **Data Source**, which is a configuratio
 Batch Data Sources can be defined using one of two methods:
 
 * **SDK/CLI (Recommended for automation):** Define the soruce programmatically using a Python class and register to via the CLI.
-* **UI:** Create the data source directly through the JFrog ML dashboard (see <Anchor label="Data Sources" title="Data Sources" href="/docs/data-sources">Data Sources</Anchor> for details.
+* **UI:** Create the data source directly through the JFrog ML dashboard (see <Anchor label="Data Sources" title="Data Sources" href="/docs/data-sources">Data Sources</Anchor> for details).
 
 For this quick start guide, we will use the SDK to connect to a CSV file stored in a public S3 bucket, defining a `CsvSource` object with the required configuration.
 
