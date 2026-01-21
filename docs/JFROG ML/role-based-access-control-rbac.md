@@ -14,7 +14,7 @@ This document focuses on the permissions specific to JFrog ML resources. For a c
 
 In JFrog ML, all assets are treated as resources that require specific permissions for you to perform actions on them. This ensures that only authorized users can access, modify, or deploy critical AI assets. The key resource types are:
 
-* **Models: **The core AI models.
+* **Models:** The core AI models.
 * **Model Repositories:** The repositories where models are stored.
 * **Feature sets:** Collections of features used for model training and serving.
 * **Feature set Repositories:** Repositories for feature sets.
@@ -36,6 +36,6 @@ When you lack the necessary permission for an action, the JFrog Platform's UI, S
     In both cases, the UI displays a standard error notification to inform you of the restriction: "You do not have permission to perform this action. Please consult with your JFrog Administrator."
 * **SDK and CLI Behavior:** When you attempt to run a command without the required permission, the API request returns a clear, specific error message. For example: "You do not have permission to perform this action. Please consult with your JFrog Administrator."
 
-## Permissions Matrix for JFrog ML Resources  
+## Permissions Matrix for JFrog ML Resources
 
 The permissions matrix for JFrog ML can be found on the [Manage Global Roles](/docs/manage-global-roles) page, together with all JFrog's other RBAC permissions.
