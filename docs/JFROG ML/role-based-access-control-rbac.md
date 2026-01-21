@@ -2,7 +2,7 @@
 title: Role-based Access Control (RBAC)
 excerpt: For AI/ML
 deprecated: false
-hidden: false
+hidden: true
 metadata:
   robots: index
 ---
