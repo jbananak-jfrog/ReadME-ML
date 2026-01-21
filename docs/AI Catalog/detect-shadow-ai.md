@@ -100,8 +100,9 @@ Shadow AI Detection integrates tightly with JFrog’s security components:
 ​Both these policies block future downloads of the blocked model for that repository.
 
 <Callout icon="📘" theme="info">
+
+
   In the AI Catalog, models detected by Xray display an indicator showing “Detected in x artifacts” along with the associated risk level.
-  ​
 </Callout>
 
 ## How to Block Models
