@@ -22,4 +22,4 @@ The primary report focuses on detecting Shadow AI — understanding which tools 
 * **Security & Risk:** Useful for understanding how often JFrog’s security policies are blocking actions:
   * **Blocked Tools:** A count of specific tools (capabilities) that were blocked by policy.
 * **Performance:** Is the system slow? How long do updates take to reach developers?
-  * **Policy Sync Latency:** The average time it takes for a policy change (e.g., blocking a tool) to propagate to developer machines (Target: \< 1 minute).
+  * **Policy Sync Latency:** The average time it takes for a policy change (for example, blocking a tool) to propagate to developer machines (Target: \< 1 minute).
