@@ -1,6 +1,6 @@
 ---
 title: Role-based Access Control (RBAC) in JFrog ML
-excerpt: For AI/ML
+excerpt: Define roles for AI/ML use-cases and workflows.
 deprecated: false
 hidden: true
 metadata:
@@ -22,7 +22,7 @@ In JFrog ML, all assets are treated as resources that require specific permissio
 * **Secrets:** Credentials and other sensitive information.
 * **Runtime Environments:** The environments where models are deployed and executed.
 
-Specific actions on these resources, such as building a model or querying a featureset, require a corresponding permission to be assigned to a user's role.
+Specific actions on these resources, such as building a model or querying a feature set, require a corresponding permission to be assigned to a user's role.
 
 <br />
 
@@ -41,3 +41,5 @@ When you lack the necessary permission for an action, the JFrog Platform's UI, S
 ## Permissions Matrix for JFrog ML Resources
 
 The permissions matrix for JFrog ML can be found on the [Manage Global Roles](/docs/manage-global-roles) page, together with all JFrog's other RBAC permissions.
+
+<br />
