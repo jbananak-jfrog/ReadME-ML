@@ -16,15 +16,13 @@ To use your own custom models, you just need to upload the models to JFrog ML. A
 
 **To upload a custom model**:
 
-1. From the JFrog platform menu, select **AI/ML** > **Models**.
-
-   <Image alt="uploadmodelbutton.png" border={false} src="https://files.readme.io/42e68b1d0722a75399c91e2a8136b5f6928e9fd6626eb53c664b4abc5dca4d1a-uuid-3e6f1070-9d8e-0a2c-ecf1-a22575b106d9.png" />
+1. From the JFrog platform menu, select **AI/ML** > **Discovery**.
 
 2. Click **Upload Model**.
 
    <Image align="center" alt="uploadmodel.png" border={false} width="80% " src="https://files.readme.io/70b10e7495204032da4d0dd4d1a8da2eb2af50608222df32768abf8d7887fa79-uuid-7d904203-e479-3cac-1ab5-db9604ecc1fa.png" />
 
-3. If you have not Installed it yet, install the frogml-cli (use Python versions. 3.10 to 3.13)
+3. If you have not Installed it yet, install the frogml-cli (use Python versions. 3.10 to 3.13).
 
 ```shell
 pip install frogml-cli
