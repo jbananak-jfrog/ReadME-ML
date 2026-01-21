@@ -12,7 +12,7 @@ metadata:
 ---
 ## Summary
 
-Model Versions are trained experiments saved with their code, dependencies, and optional data like metrics or parameters. Version Management ensures these experiments are reproducible, traceable, and securely stored in JFrog Artifactory as a single source of truth.
+Model Versions are trained experiments saved with their code, dependencies, and optional data like metrics or parameters. Version management ensures these experiments are reproducible, traceable, and securely stored in JFrog Artifactory as a single source of truth.
 
 With the FrogML SDK, you can easily log, package, and upload models as trackable versions. Validated models can be promoted to production builds, creating immutable Docker images through an automated workflow. You can also include custom prediction logic to ensure deployed models handle specific inference requirements.
 
@@ -20,8 +20,8 @@ The _Versions_ tab in the Custom Models page shows a list of available versions 
 
 <Image alt="catboost_model_mor_1.png" border={false} src="https://files.readme.io/85273a3a00c871ce486b2cf6f05754fb9d53a92df6307fb2723a1f5d5a841f5d-uuid-c313ed70-f97c-5376-c818-15fa4886459a.png" />
 
-* **Unbuilt Versions:** New versions exist but have not yet been built (processed). These model versions have the "**Build Version**" button in the Build column.
-* **Built Versions:** Versions of a model that have already undergone the necessary processing and compilation that makes them ready for deployment and integration into various applications. These model versions have the "**Rebuild Version**" button in the Build column.
+* **Unbuilt Versions:** New versions exist but have not yet been built (processed). These model versions have the "**Build Version**" button in the **Action** column.
+* **Built Versions:** Versions of a model that have already undergone the necessary processing and compilation that makes them ready for deployment and integration into various applications. These model versions have the "**Rebuild Version**" button in the **Action** column.
 
 <Cards columns={4}>
   <Card title="Train Your Model →" href="https://readme.com" target="_blank">
