@@ -78,8 +78,6 @@ This code snippet instructs the JFrog ML platform how to access the CSV file, lo
 If CSV files do not cover your use case, please refer to other <Anchor label="Data Sources" title="Data Sources" href="/docs/data-sources">Data Sources</Anchor> and then continue with this guide for the next steps.
 
 <Callout icon="📘" theme="info">
-  **Note**
-
   The `date_created_column` tells JFrog ML which column to use as a timestamp when filtering through data later on. This column is mandatory to contain the date or datetime type in the file or table registered as a Data Source and should be monotonically increasing. Learn more about SCD Type 2.
 </Callout>
 
