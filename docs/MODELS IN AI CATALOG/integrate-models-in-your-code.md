@@ -16,6 +16,8 @@ This procedure explains how to utilize the allowed models within your organizati
 
 <Callout icon="📘" theme="info">
   Note that the integration process varies depending on the model type. Follow the procedure according to the model that you are invoking.
+
+  [External APIs](/docs/integrate-models-in-your-code#external-apis) | [Model Packages](/docs/integrate-models-in-your-code#model-packages)
 </Callout>
 
 ## External API Models
