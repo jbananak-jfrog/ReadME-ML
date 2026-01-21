@@ -30,7 +30,7 @@ Currently, only alerts for batch feature set failures are supported. These alert
 3. Select the **Alerts** tab.
 4. Click  **Create new alert**.
 5. Select **Failure** to be notified of failed feature set ingestions.
-6. Choose the relevant alert channels to receive notifications. (If no channels appear, go to [Alert Integrations](/docs/jfrog-ml-alerts) to add them.)
+6. Choose the relevant alert channels to receive notifications. (If no channels appear, go to [JFrog ML Alerts](/docs/jfrog-ml-alerts) to add them.)
 
    <Image alt="feature-set-alert-dashboard.png" border={false} src="https://files.readme.io/6c28c289c4568a78fc0e54c8d50ed4ef64048d88080f6b98f5142f91e9e4322e-uuid-755425ea-ff3e-5cdb-b588-b925ddb2e129.png" />
 7. Optional: Add a description for the alert, which will be included in the notification body.
