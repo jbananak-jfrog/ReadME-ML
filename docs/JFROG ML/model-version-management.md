@@ -47,7 +47,7 @@ The _Versions_ tab in the Custom Models page shows a list of available versions 
   To learn more about FrogML and machine learning repositories in Artifactory, see [Machine Learning Repositories](/artifactory/docs/machine-learning-repositories)
 </Callout>
 
-### Log your model
+### Log Your Model
 
 **Simple model version**
 
@@ -88,7 +88,7 @@ frogml.catboost.log_model(
 
 This feature meets the demand for custom prediction logic in real-world deployment scenarios, accommodating common requirements like data validation, transformation, and other runtime needs. It enables the inclusion of user-defined prediction functions within a model version, ensuring the deployed model performs exactly as intended.
 
-### How to add custom prediction code:
+### How to Add Custom Prediction Code
 
 1. In your python code, use the example code snippet below to add a custom prediction function.
 2. If you want to define the name of the new build version, add the line: `version="<new version name>"` in the code.
@@ -231,7 +231,7 @@ The FrogML platform enables efficient movement of successful experiments from de
   </Card>
 </Cards>
 
-### How to create a build from the model versions tab:
+### How to Create a Build From the Model Versions Tab
 
 1. Navigate to **AI Catalog**  > **Models**.
 
