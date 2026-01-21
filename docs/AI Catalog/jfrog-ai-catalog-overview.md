@@ -38,7 +38,7 @@ The JFrog AI Catalog simplifies the process of integrating AI into your projects
 The AI Catalog bridges the gap between MLOps, Platform Engineering, and Development by providing a single source of truth for the two critical pillars of modern AI:
 
 * **AI Models:** The intelligent engines themselves (for example, GPT-4, Llama 3, or custom internal models).
-* **MCP Servers** (Tools)**:** The "hands" of the AI—connectors that allow AI agents to read files, query databases, and execute actions on your infrastructure.
+* COMING SOON: **Model Context Protocal (MCP) Servers** (Tools)**:** The "hands" of the AI—connectors that allow AI agents to read files, query databases, and execute actions on your infrastructure.
 
 Whether you are deploying a model to production or connecting an AI Assistant to your database, the AI Catalog ensures every asset is vetted, secure, and compliant. It enables you to find, govern, and deploy AI models quickly and securely, streamlining your workflow.
 
@@ -46,14 +46,64 @@ The AI Catalog shadow AI detection, enables you to find all assets used in your 
 
 Whether you are new to JFrog or seeking to leverage advanced features, this guide will help you navigate core capabilities and essential functions, making your AI integration process straightforward and secure. You'll gain insights into managing both external models, model packages, and your custom models, allowing you to maintain control over which models can be deployed within your organization.
 
-AI Catalog supports **four main types of AI assets**:
+AI Catalog supports **three main types of AI assets**:
 
-| Model Types         | Description                                                                    |
-| ------------------- | ------------------------------------------------------------------------------ |
-| **External Models** | Accessed via third-party APIs (for example, OpenAI, and Google Gemini)         |
-| **Model Packages**  | Utilized from public repositories (for example, Hugging Face)                  |
-| **Custom Models**   | Internally developed models tailored to your organization's needs              |
-| **MCP Servers**     | Servers implementing the Model Context Protocol to provide tools to AI agents. |
+<Table>
+  <thead>
+    <tr>
+      <th>
+        Model Types
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        **External Models**
+      </td>
+
+      <td>
+        Accessed via third-party APIs (for example, OpenAI, and Google Gemini)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Model Packages**
+      </td>
+
+      <td>
+        Utilized from public repositories (for example, Hugging Face)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **Custom Models**
+      </td>
+
+      <td>
+        Internally developed models tailored to your organization's needs
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        Coming soon...   
+        **MCP Servers**
+      </td>
+
+      <td>
+        Servers implementing the Model Context Protocol to provide tools to AI agents.
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 All these models need governance, have many versions, and may have issues. The AI Catalog allows you to manage them all in a unified way.
 
@@ -71,8 +121,6 @@ All these models need governance, have many versions, and may have issues. The A
   <Card title="">
     <center>**Unified Security and Permissions in the JFrog Platform**</center>
   </Card>
-
-  
 </Cards>
 
 > See also:
