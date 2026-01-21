@@ -1,5 +1,5 @@
 ---
-title: Role-based Access Control (RBAC)
+title: Role-based Access Control (RBAC) in JFrog ML
 excerpt: For AI/ML
 deprecated: false
 hidden: true
@@ -16,8 +16,8 @@ In JFrog ML, all assets are treated as resources that require specific permissio
 
 * **Models: **The core AI models.
 * **Model Repositories:** The repositories where models are stored.
-* **Featuresets:** Collections of features used for model training and serving.
-* **Featureset Repositories:** Repositories for feature sets.
+* **Feature sets:** Collections of features used for model training and serving.
+* **Feature set Repositories:** Repositories for feature sets.
 * **Data Sources:** The source of data used for features.
 * **Secrets:** Credentials and other sensitive information.
 * **Runtime Environments:** The environments where models are deployed and executed.
