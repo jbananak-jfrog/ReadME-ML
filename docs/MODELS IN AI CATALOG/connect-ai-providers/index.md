@@ -99,8 +99,6 @@ This procedure outlines the steps to create a new secret, which is used to secur
 2. Enter a **Secret name** and the **Secret value**.
 
    <Callout icon="📘" theme="info">
-     **Note**
-
      For important information about choosing a name for your secret, see <Anchor label="Secret Management" title="Secret Management" href="/docs/secret-management">Secret Management</Anchor>.
    </Callout>
 
