@@ -90,7 +90,7 @@ This feature meets the demand for custom prediction logic in real-world deployme
 
 ### How to Add Custom Prediction Code
 
-1. In your python code, use the example code snippet below to add a custom prediction function.
+1. In your Python code, use the example code snippet below to add a custom prediction function.
 2. If you want to define the name of the new build version, add the line: `version="<new version name>"` in the code.
 
 **Logging a Hugging Face model without a custom prediction function**:
@@ -208,18 +208,18 @@ frogml.huggingface.log_model(
 
   |                    | Description                                                                                                 |
   | :----------------- | :---------------------------------------------------------------------------------------------------------- |
-  | **Serving Code:**  | `code_dir="."` (assuming that your script is in the parent folder).                                         |
+  | **Serving Code:**  | `code_dir="."` (assuming that your script is in the parent folder)                                          |
   | **Remote Result:** | The `serving_code` folder is correctly copied. The remote structure becomes `main/serving_code/predict.py`. |
   | **The Solution:**  | The unpickler can now successfully import `serving_code.predict` and load your model.                       |
 </Callout>
 
 ## Promotion of Model Version to Production-Ready Build
 
-The FrogML platform enables efficient movement of successful experiments from development to production. It allows conversion of a Model Version—an experiment with code and metadata—into a Build, which serves as a self-contained, traceable record of all artifacts and dependencies required to create a production-ready Docker image for deployment.. This automated process is seamless, and one model version can generate multiple builds, thus facilitating deployment of the same model with varied dependencies or configurations.
+The FrogML platform enables efficient movement of successful experiments from development to production. It allows conversion of a model version—an experiment with code and metadata—into a build, which serves as a self-contained, traceable record of all artifacts and dependencies required to create a production-ready Docker image for deployment.. This automated process is seamless, and one model version can generate multiple builds, thus facilitating deployment of the same model with varied dependencies or configurations.
 
 <Cards columns={3}>
   <Card title="Initiate Promotion →">
-    Initiate the process by clicking a button in the JFrog UI, selecting the desired model version, and providing any required details, such as a name for the new build
+    Initiate the process by clicking a button in the JFrog UI, selecting the desired model version, and providing any required details, such as a name for the new build.
   </Card>
 
   <Card title="Automated Build Process →">
