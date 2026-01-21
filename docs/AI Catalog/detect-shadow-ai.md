@@ -22,7 +22,7 @@ Shadow AI detection gives you the ability to manage and prevent the entry of unv
   Shadow AI Detection is available to all organizations with an active AI Catalog subscription.
 </Callout>
 
-## How does the Shadow AI Detection Process Work?
+## How Does the Shadow AI Detection Process Work?
 
 The ​**Detection**​​ page provides a single view of all AI models discovered in your JFrog Platform, whether managed or unmanaged. To detect models, your JFrog system uses Xray to scan artifacts.
 ​
@@ -86,7 +86,7 @@ See also: [Discover and Allow Models](doc:discover-and-allow-models)
 
 Shadow IAI enables you to detect all AI assets in your system. You may need to block specific AI assets due for security and compliance reasons. To do this you need to block the assets via security policies.
 
-### How does Shadow AI Integrate with JFrog Security?
+### How Does Shadow AI Integrate with JFrog Security?
 
 Shadow AI Detection integrates tightly with JFrog’s security components:
 
