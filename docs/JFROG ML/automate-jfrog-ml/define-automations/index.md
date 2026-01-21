@@ -35,7 +35,7 @@ In the JFrog ML platform, you can easily define either time-based or trigger-bas
 
 To configure an automation, create an instance of the Automation class and configure it:
 
-```
+```python
 from frogml.core.automations import Automation, ScheduledTrigger, FrogmlBuildDeploy,\
     BuildSpecifications, BuildMetric, ThresholdDirection, DeploymentSpecifications
 
@@ -71,7 +71,7 @@ test_automation = Automation(
 
 You can specify the `purchase_option` parameter of the `BuildSpecifications` to select between on-demand and spot instances. Available values: `spot` and `ondemand`. For example:
 
-```
+```python
 ... 
 build_spec=BuildSpecifications(
   git_uri="https://github.com/org_id/repository_name.git#dir_1/dir_2",
@@ -110,7 +110,7 @@ To retrain the model based on production performance metrics, use the `MetricBas
 
 In this case, specify a SQL query which should return the metric value from JFrog ML model Analytics:
 
-```
+```python
 from frogml.core.automations import MetricBasedTrigger, ThresholdDirection, SqlMetric
 
 MetricBasedTrigger(
@@ -129,7 +129,7 @@ JFrog ML supports configuring notifications in case of an error or success using
 
 This option sends a Slack message when the automation is finished - containing the execution time, the model, the automation name, and the final status of the automation.
 
-```
+```python
 from frogml.core.automations import SlackNotification, ScheduledTrigger,FrogmlBuildDeploy,\
     BuildSpecifications, BuildMetric, DeploymentSpecifications, Automation
 
@@ -159,7 +159,7 @@ test_automation = Automation(
 
 The alternative notification option is to be notified to a custom webhook, using the following configuration:
 
-```
+```python
 from frogml.core.automations import CustomWebhook
 
 on_success=CustomWebhook(
@@ -186,7 +186,7 @@ If the HTTP method defined is `GET` - the `data` field plus the JFrog ML paramet
 
 Once configured and notification is set up, register the automation using the JFrog ML CLI:
 
-```
+```shell
 frogml automations register -p .
 ```
 
