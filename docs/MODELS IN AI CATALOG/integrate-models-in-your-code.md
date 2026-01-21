@@ -85,7 +85,7 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
 8. Click **Done**.
 9. Select the correct framework (Python/Javascript/cURL), and note that the token has been inserted into the `api_key`.
 
-   Example `Python`
+   Example:
 
    ```python
    from openai import OpenAI
