@@ -40,6 +40,6 @@ When you lack the necessary permission for an action, the JFrog Platform's UI, S
 
 ## Permissions Matrix for JFrog ML Resources
 
-The permissions matrix for JFrog ML can be found on the [Manage Global Roles](/docs/manage-global-roles) page, together with all JFrog's other RBAC permissions.
+The permissions matrix for JFrog ML can be found on the [Manage Global Roles](/projects/docs/manage-global-roles) page, together with all JFrog's other RBAC permissions.
 
 <br />
