@@ -149,5 +149,3 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
 ¹ Connections are per provider per project. For more info, see <Anchor label="Connect AI Providers" title="Connect AI Providers" href="/docs/connect-ai-providers">Connect AI Providers</Anchor>.
 
 ² When allowing a model for which a connection is already set up between the project and the model provider, you do not need to define a new connection.
-
-##
