@@ -142,8 +142,7 @@ test_automation = Automation(
         deployment_condition=BuildMetric(...),
         deployment_spec=DeploymentSpecifications(...)
     ),
-    on_error=SlackNotification(webhook="https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX"),
-    on_success=SlackNotification(webhook="https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX")
+    on_error=SlackNotification(webhook="https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX"), on_success=SlackNotification(webhook="https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX")
 )
 ```
 
