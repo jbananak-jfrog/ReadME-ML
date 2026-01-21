@@ -146,7 +146,7 @@ Note that the dashboard only shows data when there is traffic.
       <td>
         The overall percentage of requests that resulted in errors, out of all requests.
 
-        Measurement: %
+        Measurement: %.
       </td>
 
       <td>
