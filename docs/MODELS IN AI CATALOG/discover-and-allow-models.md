@@ -24,12 +24,10 @@ The AI Catalog enables you to fully manage all AI assets in your organisation, Y
 
 * Explore the various models available for use in your organization in the **Discovery** page.
 
-  <Image align="center" border={false} src="https://files.readme.io/dfbb35752cec0507b28ed37cd1fe5e3a179b4c2ac637e0d5fd79b8c602e0a923-Discovery.png" />
-
-  <Image align="center" border={false} src="https://files.readme.io/398bea0b47e9956ed196f3888b22cf620fc15d67a4299f4d5b778f3ae47832de-Discovery.png" />
+  <Image align="center" border={false} src="https://files.readme.io/2d5650b9d63c27f6ec2ad92df9c856d9974e79808b722441ea5e7ed538955701-discovery2.png" />
 * You can see which models have already been allowed for use in your projects inn the **Registry** page.
 
-  <Image align="center" border={false} src="https://files.readme.io/5b543b77d1ea8850a9eb81f1c8f030fd6b7b5c30ec84efa78a94b23956f57fad-Registry.png" />
+  <Image align="center" border={false} src="https://files.readme.io/a295ce002951b631fdc4661988b2b93c928b1a532d56346b13948799694b6cce-registry_cr.png" />
 * Detect **all** AI assets that are used in your system, but are unmanaged by AI catalog, and possibly even unvetted by your organization, in the **Detection** page. For more information about detecting unmanaged AI assets, see [Detect Shadow AI](/docs/detect-shadow-ai)​​​.
 
   <Image align="center" border={false} src="https://files.readme.io/afb83966b5d392426e65576b2afacef232b131e3ccbe5132229672a3eaadd403-detection2_cr.png" />
