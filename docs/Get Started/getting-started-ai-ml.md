@@ -198,7 +198,7 @@ The diagram above illustrates this secure AI supply chain in action. It maps the
 
   <div class="tab-content content-1">
     <h3 style="margin-top:0;">Gain Full AI Visibility</h3>
-    <p>You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory. By revealing "Shadow AI", you can assess immediate risks and establish a clean, trusted baseline for your AI operations journey.</p>
+    <p>You cannot govern what you cannot see. JFrog automatically scans your repositories and builds to uncover every existing AI model and external API currently in your Artifactory. By revealing Shadow AI, you can assess immediate risks and establish a clean, trusted baseline for your AI operations journey.</p>
   </div>
 
   <div class="tab-content content-2">
@@ -236,7 +236,7 @@ The diagram above illustrates this secure AI supply chain in action. It maps the
 
 ## Where to Start?
 
-The JFrog AI ML guide walks you through key concepts, tutorials, or best practices. Either use the search bar or select from the options below.
+The JFrog AI/ML guide walks you through key concepts, tutorials, or best practices. Either use the search bar or select from the options below.
 
 <div>
   <Cards columns={2}>
