@@ -33,9 +33,7 @@ When you lack the necessary permission for an action, the JFrog Platform's UI, S
 * **UI Behavior:** All actions and views remain visible and interactive regardless of your current permission scope, however:
   * **Action Execution:** If you try to perform a restricted action (e.g., Build a model or Deploy a model), the operation will fail immediately.
   * **Data Access:** If you attempt to navigate to or load a restricted view (e.g., Model Logs), the data will not be loaded.
-
-In both cases the UI displays a standard error notification to inform you of the restriction: "_You do not have permission to perform this action. Please consult with your JFrog Administrator._"
-
+  In both cases the UI displays a standard error notification to inform you of the restriction: "_You do not have permission to perform this action. Please consult with your JFrog Administrator._"
 * **SDK and CLI Behavior:** When you attempt to run a command without the required permission, the API request returns a clear, specific error message. For example: "You do not have permission to perform this action. Please consult with your JFrog Administrator."
 
 ## Permissions Matrix for JFrog ML Resources
