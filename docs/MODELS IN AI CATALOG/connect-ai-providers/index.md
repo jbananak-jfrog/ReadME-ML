@@ -1,9 +1,5 @@
 ---
 title: Connect AI Providers
-excerpt: >-
-  A Connection stores the credentials required to access an external API model
-  provider, and can be established with providers such as OpenAI, or other cloud
-  services such as Amazon Bedrock.
 deprecated: false
 hidden: false
 link:
@@ -30,8 +26,6 @@ A **Connection** stores the credentials required to access an external API model
 In the _Connections_ page, you can view a list of all the connections defined in your system.
 
 <Callout icon="📘" theme="info">
-  **Note**
-
   The _Connections_ page is only available to platform admins.
 </Callout>
 
