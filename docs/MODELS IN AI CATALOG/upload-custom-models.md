@@ -24,57 +24,62 @@ To use your own custom models, you just need to upload the models to JFrog ML. A
 
 3. Click **Upload custom model**.
 
-   <Image align="center" border={false} src="https://files.readme.io/e524fcb438af404cf71ba74a0c179860ed1177a1fae373d09b3e268b2a335721-upload_model_needs_replacing.png" />
+   <Image align="left" border={true} src="https://files.readme.io/e524fcb438af404cf71ba74a0c179860ed1177a1fae373d09b3e268b2a335721-upload_model_needs_replacing.png" className="border" />
 
 4. If you have not Installed it yet, install the frogml-cli (use Python versions. 3.10 to 3.13).
+   ```shell Shell
+   pip install frogml-cli
+   ```
+   <br />
 
-```shell
-pip install frogml-cli
-```
+5. Create the model either by entering the details here, or using the CLI.
 
-4. Create the model either by entering the details here, or using the CLI.
+   <Table align={["left","left"]}>
+     <thead>
+       <tr>
+         <th style={{ textAlign: "left" }}>
+           Enter details in   
+           _Upload Model_ pane:
+         </th>
 
-<Table>
-  <thead>
-    <tr>
-      <th>
-        Enter details in _Upload Model_ pane:
-      </th>
+         <th style={{ textAlign: "left" }}>
+           Using CLI:
+         </th>
+       </tr>
+     </thead>
 
-      <th>
-        Using CLI:
-      </th>
-    </tr>
-  </thead>
+     <tbody>
+       <tr>
+         <td style={{ textAlign: "left" }}>
+           a. Enter:
 
-  <tbody>
-    <tr>
-      <td>
-        Enter:
+           1. Model Name
+           2. Project
 
-        * Model Name
-        * Project
+           b. Click **Create Model**.
+         </td>
 
-        Click **Create Model**.
-      </td>
+         <td style={{ textAlign: "left" }}>
+           ```shell
+           frogml models create "<MODEL_NAME>" --project "<PROJECT_NAME>"
+           ```
+         </td>
+       </tr>
+     </tbody>
+   </Table>
 
-      <td>
-        ```shell
-        frogml models create "<MODEL_NAME>" --project "<PROJECT_NAME>"
-        ```
-      </td>
-    </tr>
-  </tbody>
-</Table>
+   <br />
 
-5. Select a template or an example as the base for your model.
+6. Select a template or an example as the base for your model.
 
-| Start from Template                      | Start from Example                           |
-| ---------------------------------------- | -------------------------------------------- |
-| `frogml models init --example general .` | `frogml models init --example credit_risk .` |
+   | Start from Template                      | Start from Example                           |
+   | :--------------------------------------- | :------------------------------------------- |
+   | `frogml models init --example general .` | `frogml models init --example credit_risk .` |
 
-6. Build and deploy - trigger your first build in JFrog ML.
+   <br />
 
-```shell
-frogml models build ./<MODEL_FOLDER> --model-id "<MODEL_NAME>" --deploy
-```
+7. Build and deploy - trigger your first build in JFrog ML.
+   ```shell
+   frogml models build ./<MODEL_FOLDER> --model-id "<MODEL_NAME>" --deploy
+   ```
+   <br />
