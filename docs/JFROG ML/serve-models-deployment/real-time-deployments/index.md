@@ -127,9 +127,7 @@ The following table contains the possible parameters and variables for deploying
 | Purchase option                 | Rather to use spot/ondemand.                                                                                                                                                                                                                                                                                                                                           | spot     |
 
 <Callout icon="⚠️" theme="warning">
-  **Warning**
-
-  _**Worker Memory Allocation**_
+  **Warning** - _**Worker Memory Allocation**_
 
   When deploying workers through an HTTP web server, it's essential to understand that each worker operates in its isolated memory space. Consequently, every worker independently loads a model instance into memory. This characteristic should be carefully considered when determining the required memory capacity for your chosen instance type, ensuring sufficient resources are available for all worker models to load and function optimally.
 </Callout>
