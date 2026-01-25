@@ -43,11 +43,7 @@ After you have allowed your first model, you will see that the allowed models al
   <Callout icon="📘" theme="info">
     When allowing models, if the **model provider is already associated with the project** (meaning that another model from the same provider is associated with the project), the **connection is already set up** and does not need to be re-selected.
   </Callout>
-* <Callout icon="📘" theme="info">
 
-  </Callout>
-
-<br />
 
 ## Managing External APIs
 
