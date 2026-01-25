@@ -46,7 +46,7 @@ The Control Plane is the centralized orchestration and management layer, securel
 
 ### JFrog ML Data Plane
 
-The Data Plane is the secure execution environment where all sensitive data processing, model computation, and artifact storage occurs. This plane is deployed either in JFrog's secure cloud (for a fully managed SaaS experience) or directly within a customer's own cloud environment/VPC (for a hybrid deployment). This flexibility ensures data sovereignty, and enables integration with private data sources via mechanisms like VPC Peering or AWS PrivateLink.
+The Data Plane is the secure execution environment where all sensitive data processing, model computation, and artifact storage occurs. This plane is deployed either in JFrog's secure cloud (for a fully managed SaaS experience) or directly within a customer's own cloud environment when deploying JFrog ML self-hosted. This flexibility ensures data sovereignty, and enables integration with private data sources via mechanisms like VPC Peering or AWS PrivateLink.
 
 **Core Responsibilities:**
 
