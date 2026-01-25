@@ -47,13 +47,6 @@ In the _Connections_ page, you can:
 * Group by project
 * Show/hide columns
 
-{/* See also:
-
-[Create a New Model Provider Connection](/docs/create-a-new-model-provider-connection "Create a New Model Provider Connection")
-
-[Create a New Secret](/docs/create-a-new-secret "Create a New Secret")
-*/}
-
 ## Create a New Model Provider Connection
 
 Each model provider-project pair requires a unique connection.
