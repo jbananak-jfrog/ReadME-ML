@@ -18,7 +18,6 @@ This section reviews the following topics:
 
 [Features in Inference](/docs/feature-consumption#features-in-inference)
 
-
 [Features in Training](/docs/feature-consumption#features-in-training)
 
 ## Features in Inference
@@ -31,7 +30,7 @@ In the predict function, we create an instance of the `OnlineClient`.
 
 After that, we create a `ModelSchema` containing all of the features we want to retrieve.
 
-We create a DataFrame containing the entities identifiers and pass it to <Anchor label="the Feature Store" target="_blank" href="[https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/](https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/)">the Feature Store</Anchor>. As a response, we get a Pandas DataFrame with the requested features.
+We create a DataFrame containing the entities identifiers and pass it to <Anchor label="the Feature Store" target="_blank" href="https://jfrog.com/blog/what-is-a-feature-store-in-ml-and-do-i-need-one/">the Feature Store</Anchor>. As a response, we get a Pandas DataFrame with the requested features.
 
 ```python
 import pandas as pd
