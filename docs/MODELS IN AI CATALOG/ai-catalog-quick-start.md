@@ -60,7 +60,7 @@ The JFrog platform automatically scans each model for vulnerabilities, and offer
   **Note**
 
   * Even if your AI Catalog is empty, that does not mean your organization is not using any models. It may be using unmanaged models. Using the [Shadow AI detection ](/docs/detect-shadow-ai) feature, which uses Xray to scan your JFrog artifacts, you can detect which models are already being used, and manage them in the AI Catalog.
-  * Before allowing any models you must set up your curation settings.
+  * Before allowing any models you must [set up your curation settings](/docs/ai-catalog-quick-start#prerequisite-set-up-curation-settings-for-model-packages).
 </Callout>
 
 ### Allow Models
