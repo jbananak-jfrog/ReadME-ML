@@ -20,7 +20,7 @@ metadata:
 ---
 ## Exploring the AI Catalog
 
-The AI Catalog enables you to fully manage all AI assets in your organisation, You can:
+The AI Catalog enables you to fully manage all AI assets in your organization.
 
 * Explore the various models available for use in your organization in the **Discovery** page.
 
