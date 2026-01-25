@@ -14,7 +14,7 @@ metadata:
 
 Model Versions are trained experiments saved with their code, dependencies, and optional data like metrics or parameters. Version management ensures these experiments are reproducible, traceable, and securely stored in JFrog Artifactory as a single source of truth.
 
-With the FrogML SDK, you can easily log, package, and upload models as trackable versions. Validated models can be promoted to production builds, creating immutable Docker images through an automated workflow. You can also include custom prediction logic to ensure deployed models handle specific inference requirements.
+With the FrogML SDK, you can easily log, package, and upload models as trackable versions. Validated models can be promoted to production builds, creating immutable Docker images through an automated workflow. You can also include custom inference logic to ensure deployed models handle specific inference requirements.
 
 The _Versions_ tab in the Custom Models page shows a list of available versions of the model you selected from the AI Catalog. This list might include versions that have been built, unbuilt, or updated.
 
@@ -84,16 +84,16 @@ frogml.catboost.log_model(
 )
 ```
 
-## Custom Prediction Logic Integration
+## Custom Inference Logic Integration
 
-This feature meets the demand for custom prediction logic in real-world deployment scenarios, accommodating common requirements like data validation, transformation, and other runtime needs. It enables the inclusion of user-defined prediction functions within a model version, ensuring the deployed model performs exactly as intended.
+This feature meets the demand for custom inference logic in real-world deployment scenarios, accommodating common requirements like data validation, transformation, and other runtime needs. It enables the inclusion of user-defined inference functions within a model version, ensuring the deployed model performs exactly as intended.
 
-### How to Add Custom Prediction Code
+### How to Add Custom Inference Code
 
-1. In your Python code, use the example code snippet below to add a custom prediction function.
+1. In your Python code, use the example code snippet below to add a custom inference function.
 2. If you want to define the name of the new build version, add the line: `version="<new version name>"` in the code.
 
-**Logging a Hugging Face model without a custom prediction function**:
+**Logging a Hugging Face model without a custom inference function**:
 
 ```python
 import frogml
@@ -111,7 +111,7 @@ frogml.huggingface.log_model(
 )
 ```
 
-**Logging a Hugging Face model with a custom prediction function:**
+**Logging a Hugging Face model with a custom inference function:**
 
 ```python
 import frogml
