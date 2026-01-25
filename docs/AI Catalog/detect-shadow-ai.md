@@ -84,7 +84,7 @@ See also: [Discover and Allow Models](doc:discover-and-allow-models)
 
 ## Keep Your System Secure
 
-Shadow IAI enables you to detect all AI assets in your system. You may need to block specific AI assets due for security and compliance reasons. To do this you need to block the assets via security policies.
+Shadow AI enables you to detect all AI assets in your system. You may need to block specific AI assets due for security and compliance reasons. To do this you need to block the assets via security policies.
 
 ### How Does Shadow AI Integrate with JFrog Security?
 
@@ -100,8 +100,6 @@ Shadow AI Detection integrates tightly with JFrog’s security components:
 ​Both these policies block future downloads of the blocked model for that repository.
 
 <Callout icon="📘" theme="info">
-
-
   In the AI Catalog, models detected by Xray display an indicator showing “Detected in x artifacts” along with the associated risk level.
 </Callout>
 
