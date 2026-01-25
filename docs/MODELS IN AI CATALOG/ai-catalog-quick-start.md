@@ -79,7 +79,7 @@ Once a model has been successfully allowed in a project, it moves into the **Reg
 
 See: [Allow Your First Model](/docs/discover-and-allow-models#allow-your-first-model) | <Anchor label="Discover and Allow Models" title="Discover and Allow Models" href="/docs/discover-and-allow-models">Discover and Allow Models</Anchor> | <Anchor label="Get Started with JFrog ML" title="Get Started with JFrog ML" href="/docs/get-started-with-jfrog-ml">Get Started with JFrog ML</Anchor>
 
-## Prerequisite: Set Up Curation Settings for Model Packages
+## Set Up Curation Settings for Model Packages
 
 This procedure outlines the **prerequisite steps** to enable the use of **model packages** on your platform. Specifically, it involves configuring the curation settings in the administration module.
 
