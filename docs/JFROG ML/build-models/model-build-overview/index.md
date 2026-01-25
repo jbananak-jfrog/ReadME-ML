@@ -155,7 +155,7 @@ frogml models build  --model-id <model-id> --instance gpu.t4.xl .
 <Callout icon="📘" theme="info">
   **Note**
 
-  JFrog ML utilizes EC2 Spot instances for cost-effective GPU-based builds. This may result in a slightly extended wait time when initiating GPU Spot instances.
+  JFrog ML utilizes Spot instances for cost-effective GPU-based builds. This may result in a slightly extended wait time when initiating GPU Spot instances.
 </Callout>
 
 ### Deploying Models with GPUs
