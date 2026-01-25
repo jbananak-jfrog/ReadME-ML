@@ -40,9 +40,7 @@ After you have allowed your first model, you will see that the allowed models al
 
 * For instructions how to start allowing models, see [**Allowing Your First Model**](/docs/discover-and-allow-models#allow-your-first-model).
 * To allow additional models, the same instructions can be followed.
-  <Callout icon="📘" theme="info">
-    When allowing models, if the **model provider is already associated with the project** (meaning that another model from the same provider is associated with the project), the **connection is already set up** and does not need to be re-selected.
-  </Callout>
+  
 
 
 ## Managing External APIs
