@@ -1,13 +1,17 @@
 ---
-title: Runtime Metrics
+title: Inference Metrics
 excerpt: Viewing the model dashboard
 deprecated: false
 hidden: false
 metadata:
-  title: Use the Model Dashboards
+  title: Inference Metrics
   description: >-
     The model dashboards enable you to monitor and interpret a model's
     performance.
+  keywords:
+    - inference
+    - metrics
+    - model dashboards
   legacyUUIDs:
     - UUID-55302b8d-08af-416c-72e1-68141963c71d
     - UUID-26cb2236-2b87-1873-404b-298a5e8430c6
