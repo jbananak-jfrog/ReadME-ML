@@ -74,7 +74,7 @@ frogml models init --example titanic .
 The models init command works in the following format:
 
 ```shell
-frog models init --example <example-name> <local-model-directory>
+frogml models init --example <example-name> <local-model-directory>
 ```
 
 ### 3. Building Your Model
