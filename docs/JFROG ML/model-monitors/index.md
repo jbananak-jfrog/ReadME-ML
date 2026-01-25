@@ -12,6 +12,6 @@ metadata:
 ---
 This section reviews the following topics:
 
-<Anchor label="Runtime Metrics" title="Runtime Metrics" href="/docs/runtime-metrics">Runtime Metrics</Anchor> | <Anchor label="Monitor Model Data" title="Monitor Model Data" href="/docs/monitor-model-data">Monitor Model Data</Anchor> | <Anchor label="Prediction Timers" title="Prediction Timers" href="/docs/prediction-timers">Prediction Timers</Anchor> | <Anchor label="Performance Monitors" title="Performance Monitors" href="/docs/performance-monitors">Performance Monitors</Anchor> | <Anchor label="Inference Distribution (Analytics)" title="Inference Distribution (Analytics)" href="/docs/inference-distribution--analytics-">Inference Distribution (Analytics)</Anchor>
+[Runtime Metrics](/docs/runtime-metrics) | <Anchor label="Monitor Model Data" title="Monitor Model Data" href="/docs/monitor-model-data">Monitor Model Data</Anchor> | <Anchor label="Prediction Timers" title="Prediction Timers" href="/docs/prediction-timers">Prediction Timers</Anchor> | <Anchor label="Performance Monitors" title="Performance Monitors" href="/docs/performance-monitors">Performance Monitors</Anchor> | <Anchor label="Inference Distribution (Analytics)" title="Inference Distribution (Analytics)" href="/docs/inference-distribution--analytics-">Inference Distribution (Analytics)</Anchor>
 
 <br />
