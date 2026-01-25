@@ -92,7 +92,7 @@ frogml models deploy realtime \
 
 ## Deploying a Real-time Model Using GPUs
 
-Realtime models can be deployed on GPU instances, simply by selecting a [GPU Instance](/docs/instance-sizes-ml-credits#instances-sizes-in-the-ui) from the available options.
+Realtime models can be deployed on GPU instances, simply by selecting a [GPU Instance](/docs/instance-sizes-ml-credits#gpu-instances) from the available options.
 
 ```shell
 frogl models deploy realtime \
