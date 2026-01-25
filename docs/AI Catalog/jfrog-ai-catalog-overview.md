@@ -1,10 +1,5 @@
 ---
 title: JFrog AI Catalog Overview
-excerpt: >-
-  Welcome to the JFrog AI Catalog – your centralized hub for AI model discovery,
-  governance, and deployment. Here you can view and manage all AI models in your
-  organization, including both those you are currently using, and those you want
-  to use.
 deprecated: false
 hidden: false
 link:
