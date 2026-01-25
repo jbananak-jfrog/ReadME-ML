@@ -26,7 +26,7 @@ To use your own custom models, you just need to upload the models to JFrog ML. A
 
    <Image align="left" border={true} src="https://files.readme.io/e524fcb438af404cf71ba74a0c179860ed1177a1fae373d09b3e268b2a335721-upload_model_needs_replacing.png" className="border" />
 
-4. If you have not Installed it yet, install the frogml-cli (use Python versions. 3.10 to 3.13).
+4. If you have not Installed it yet, install the `frogml-cli` (use Python versions **3.10 to 3.13**).
    ```shell Shell
    pip install frogml-cli
    ```
@@ -38,7 +38,7 @@ To use your own custom models, you just need to upload the models to JFrog ML. A
      <thead>
        <tr>
          <th style={{ textAlign: "left" }}>
-           Enter details in   
+           Enter details in  
            _Upload Model_ pane:
          </th>
 
@@ -83,3 +83,5 @@ To use your own custom models, you just need to upload the models to JFrog ML. A
    frogml models build ./<MODEL_FOLDER> --model-id "<MODEL_NAME>" --deploy
    ```
    <br />
+
+<br />
