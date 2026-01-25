@@ -11,9 +11,7 @@ metadata:
 This process is useful when you're predicting inside a notebook or as part of another process that already has a DataFrame ready. Behind the scenes, we take the DataFrame, transform it, upload the files to the cloud, and run the execution for you, waiting for a successful response.
 
 <Callout icon="❗️" theme="error">
-  **Important**
-
-  _**Output Row Order**_
+  **Important** - _**Output Row Order**_
 
   The order of the results DataFrame is not guaranteed to be in the order of the input DataFrame. If the ordering is critical, consider adding a column you can sort on in the results DataFrame.
 </Callout>
