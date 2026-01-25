@@ -12,8 +12,6 @@ metadata:
     - UUID-c8aaae0a-a2b6-fb4f-b789-b9acea06c841
   robots: index
 ---
-## AI Catalog High Level Architecture
-
 This diagram shows how JFrog's AI Catalog works together with the various components of the JFrog platform.
 
 <Image alt="Screenshot_2025-08-27_at_17_44_07.png" border={false} src="https://files.readme.io/706b0ee87658aaef28f0b7a864287393f0fc4075767077bb709cadf83ab51202-uuid-473ad575-fe34-030c-84c5-912146a9361b.png" />
