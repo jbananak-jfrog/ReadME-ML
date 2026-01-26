@@ -47,9 +47,13 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
 
 4. Browse through the example code snippets for different libraries and frameworks (Python, Javascript, cURL).
 
+   <br />
+
    <Image align="center" border={false} width="70% " src="https://files.readme.io/5bf27b5bb54b29c4bab7af26d3a168d1c56af8237ad526ce9169ee80000afe0b-use_model.png" />
 
    Note that this code snippet shown includes a placeholder for the `api_key` for the token you are about to generate, and the `model` name, which includes the name of the connection.
+
+   <br />
 
    ```python
    from openai import OpenAI
