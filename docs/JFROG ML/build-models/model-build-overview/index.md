@@ -141,9 +141,7 @@ frogml models build  --model-id <model-id> --instance gpu.t4.xl .
 ```
 
 <Callout icon="📘" theme="info">
-  **Note**
-
-  _**Choosing the Correct GPU**_
+  **Note** - _**Choosing the Correct GPU**_
 
   Visit the JFrog ML [_GPU Resources_](/docs/instance-sizes-ml-credits#instances-sizes-in-the-ui) page to select the resources that best fit your use-case.
 
@@ -258,9 +256,7 @@ client.build_model(
 ### Folder Structure
 
 <Callout icon="⚠️" theme="warning">
-  **Warning**
-
-  _**File Structure Requirements**_
+  **Warning** - _**File Structure Requirements**_
 
   When using the Build SDK, your file and folder structure is preserved when uploading to JFrogML.
 
@@ -275,7 +271,7 @@ client.build_model(
 
 The Build SDK uploads local model files together with the trained model object. By default, the Build SDK uploads the `main` folder under the current file location.
 
-Make sure to place your model files in the `main` directory.
+Make sure that you place your model files in the `main` directory.
 
 ```
 -> your-model-directory
@@ -488,9 +484,9 @@ The Build SDK supports a multitude of parameters which users may configure
 | `validate_build_artifact_timeout` | No       |               | Model validation timeout                                                                                          |
 | `frogml_model`                    | No       |               | Providing a prebuilt FrogmlModel instance will skip the build phase and use a pre-existing trained model version. |
 
-For example, the below is an example using the advanced features of the Build SDK.
+The example below uses the advanced features of the Build SDK.
 
-The code snippet using a medium instance to build the model, provide build tags and build a GPU compatible image.
+The code snippet uses a medium instance to build the model, provide build tags and build a GPU compatible image.
 
 `Python`
 
@@ -519,7 +515,7 @@ client.build_model(
 
 ### Unsupported Parameters in Build SDK
 
-The Build SDK support most of the parameters that are supported in the FrogML CLI under `frogml models build`
+The Build SDK supports most of the parameters that are supported in the FrogML CLI under `frogml models build`.
 
 The following parameters are not supported:
 
@@ -596,7 +592,7 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 ```
 
-> The `frogml-sdk` dependency is included only in the `dev` section, as it's needed for local development but not for remote builds. When you run the `frogml models build` command, the SDK version you used locally will be automatically included in the remote environment.
+> The `frogml-sdk` dependency is included only in the `dev` section, as it's needed for local development but not for remote builds. When you run the `frogml models build` command, the SDK version you used locally is automatically included in the remote environment.
 
 ### Using Conda with JFrogML
 
@@ -640,9 +636,9 @@ dependencies:
 
 ### .frogmlignore file
 
-Occasionally, we may want to exclude a file from the JFrog ML build but keep it in the repository with the model code. In such cases, we should add the `.frogmlignore` file to the root directory of our project.
+Occasionally, you may want to exclude a file from the JFrog ML build but keep it in the repository with the model code. In such cases, add the `.frogmlignore` file to the root directory of our project.
 
-In the file, we define the patterns to match files to exclude from the model build. For example, suppose we have the following file structure:
+In this file, we define the patterns to match files to exclude from the model build. For example, suppose we have the following file structure:
 
 ```yaml
 .frogmlignore
@@ -665,18 +661,16 @@ README.md
 ```
 
 <Callout icon="📘" theme="info">
-  **Note**
+  **Note** - _**Hidden Files**_
 
-  _**Hidden Files**_
+  By default, JFrog ML disregards hidden files. Hidden files are files or directories whose names start with a dot (`.`) in Unix-like operating systems, or with the "Hidden" attribute set in Windows. These files are typically used to store configuration data or hold temporary information.
 
-  By default, JFrog ML disregards hidden files. Hidden files are files or directories whose names start with a dot (`.`) in Unix-like operating systems, or they may have the "Hidden" attribute set in Windows. These files are typically used to store configuration data or hold temporary information.
-
-  Suppose you have a directory with files and subdirectories, including a hidden file named `.config_file`. JFrog ML, following its default behavior, will exclude this file from processing when triggering a remote build.
+  For example, in the case that you have a directory with files and subdirectories, including a hidden file named `.config_file`. JFrog ML, following its default behavior, will exclude this file from processing when triggering a remote build.
 </Callout>
 
 ### Incorporating Python Dependencies from .whl Files
 
-JFrog ML facilitates the use of Python dependencies packaged as `.whl` files through `requirements.txt` and `conda.yaml` for managing dependencies. It is important to note that Poetry's support for dependencies from .whl files is limited.
+JFrog ML facilitates the use of Python dependencies packaged as `.whl` files through `requirements.txt` and `conda.yaml` for managing dependencies. However, it is important to note that Poetry's support for dependencies from .whl files is limited.
 
 #### 1. Preparing Your .whl Files
 
@@ -765,7 +759,7 @@ import pandas as pd
 
 ## FrogML Model Anatomy
 
-As an example, we will use the well-known Iris Classifier SVM model, which typically looks as follows:
+Here, the well-known Iris Classifier SVM model is used as an example. This model typically looks as follows:
 
 ```python
 from sklearn import svm
@@ -782,7 +776,7 @@ clf.fit(X, y)
 
 ### Model Directory Structure
 
-Below, we show the default and recommended structure of a model project on JFrog ML.
+The code below shows the default and recommended structure of a model project on JFrog ML.
 
 ```yaml Project Structure
 frogml_based_model/
@@ -800,7 +794,7 @@ frogml_based_model/
 
 ### Generating the Directory Structure
 
-First, we will generate the directory structure for our JFrog ML-based model. To do so, you can use the following command:
+Start by generating the directory structure for a JFrog ML-based model. To do so, you can use the following command:
 
 ```shell
 frogml models init \ --model-directory <model-dir-path> \ --model-class-name <model-class> \ <dest>
@@ -812,7 +806,7 @@ Where:
 * `<model-class>`: JFrog ML-based model class name (Camel case)
 * `<dest>`: Destination path on local host.
 
-As an example, we will use the following command:
+As an example, use the following command:
 
 ```shell
 frogml models init \
@@ -821,7 +815,7 @@ frogml models init \
     ~/
 ```
 
-That will create a new directory named `iris_model` at the user's home directory.
+This creates a new directory named `iris_model` in your (the user's) home directory.
 
 #### `main` Directory
 
