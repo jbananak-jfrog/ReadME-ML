@@ -1,5 +1,5 @@
 ---
-title: Load Pre-built Models
+title: Loading Pre-built Models
 excerpt: >-
   The fastest way to start using FrogML is to deploy a model that was previously
   trained as a FrogML service.
