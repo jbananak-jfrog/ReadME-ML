@@ -112,25 +112,23 @@ OR
 
 1. For this option, you need to make sure you have enabled token generation API as follows:
 
-         a. In the Administration module, select **Security** > **General**.
+   a. In the Administration module, select **Security** > **General**.
 
-         b. Scroll down and click **Enable token generation via api**. under **Basic Authentication**.
+   b. Scroll down and click **Enable token generation via api**. under **Basic Authentication**.
 
-         c. Click **Save**.
+   c. Click **Save**.
 
 ***
 
 2. Then, type in the following command, replacing the variables:
-
-```shell
-frogml config add --url={server_url} --username={user_name} --password{password} --server-id={optional_server_id}
-```
-
-When configured correctly, you'll receive the following message:
-
-```shell
-Logged in successfully to: <PLATFORM_BASE_URL>
-```
+   ```shell
+   frogml config add --url={server_url} --username={user_name} --password{password} --server-id={optional_server_id}
+   ```
+   When configured correctly, you'll receive the following message:
+   ```
+   Logged in successfully to: <PLATFORM_BASE_URL>
+   ```
+   <br />
 
 <Callout icon="📘" theme="info">
   **Note**
