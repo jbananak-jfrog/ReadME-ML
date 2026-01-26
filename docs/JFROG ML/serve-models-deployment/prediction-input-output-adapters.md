@@ -15,9 +15,7 @@ Adapters help customize the input and output formats of machine learning models.
 This document provides a comprehensive list of the available input and output adapters.
 
 <Callout icon="⚠️" theme="warning">
-  **Warning**
-
-  _**Adapters Support**_
+  **Warning** - _**Adapters Support**_
 
   Input and output adapters are currently supported only in real-time and streaming deployed models, and **not in Batch-deployed models**. Efforts are ongoing to extend support for adapters across all deployment types.
 </Callout>
