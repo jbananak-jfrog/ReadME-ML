@@ -137,11 +137,7 @@ After a model. package has been allowed, the **Use Model** and **Deploy** button
 
 <Image align="center" alt="usemodelbutton.png" border={false} width="70% " src="https://files.readme.io/62cc556cd4472a3400d41c26265f4e1a966cf6cfc8f153df02d66a4885db200a-usemodel_pane_package.png" />
 
-<Callout icon="📘" theme="info">
-  **dafsdfadfadfasfsafasfafafas
-</Callout>
-
-4. <Callout icon="📘" theme="info">
+    <Callout icon="📘" theme="info">
      Note
 
      Keep the default repository.
