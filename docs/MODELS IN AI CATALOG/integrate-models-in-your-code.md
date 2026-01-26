@@ -1,5 +1,6 @@
 ---
 title: Use Models in Your Code
+excerpt: ' Integrate allowed models within your code.'
 deprecated: false
 hidden: false
 metadata:
@@ -50,27 +51,27 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
 
    Note that this code snippet shown includes a placeholder for the `api_key` for the token you are about to generate, and the `model` name, which includes the name of the connection.
 
-   ```python
-   from openai import OpenAI
+```python
+from openai import OpenAI
 
-   client = OpenAI(
-     api_key="your_jfrog_api_key",
-     base_url="https://a0smkltuxjyst.ml.jfrog.io/v1"
-   )
+client = OpenAI(
+  api_key="your_jfrog_api_key",
+  base_url="https://<your-id>.ml.jfrog.io/v1"
+)
 
-   response = client.chat.completions.create(
-     model="OpenAI/gpt-3.5-turbo-1106",
-     messages=[
-       {"role": "system", "content": "You are a helpful assistant."},
-       {
-         "role": "user",
-         "content": "Explain to me how AI works in one sentence"
-       }
-     ]
-   )
+response = client.chat.completions.create(
+  model="OpenAI/gpt-3.5-turbo-1106",
+  messages=[
+    {"role": "system", "content": "You are a helpful assistant."},
+    {
+      "role": "user",
+      "content": "Explain to me how AI works in one sentence"
+    }
+  ]
+)
 
-   print(response.choices[0].message)
-   ```
+print(response.choices[0].message)
+```
 
 5. Click **Generate a token**. The _Set Up A Generic Client_ pane is displayed.
 
@@ -83,7 +84,7 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
 6. In the **Configure** tab, enter your JFrog account password and click **Generate Token & Create Instructions**. The token is displayed.
 7. Click **Copy**.
 8. Click **Done**.
-9. Select the correct framework (Python/Javascript/cURL), and note that the token has been inserted into the `api_key`.
+9. Select the framework (Python/Javascript/cURL), and note that the token has been inserted into the `api_key`.
 
    Example:
 
@@ -92,7 +93,7 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
 
    client = OpenAI(
      api_key="abcdefghijklmnopqrstuvwxyz1234567890_tokenexample",
-     base_url="https://a0smkltuxjyst.ml.jfrog.io/v1""
+     base_url="https://<your-id>.ml.jfrog.io/v1""
    )
 
    response = client.chat.completions.create(
