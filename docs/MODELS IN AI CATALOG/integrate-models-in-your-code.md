@@ -33,13 +33,11 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
 
    For example:
 
-   <Image align="center" border={true} width="70% " src="https://files.readme.io/39ba04e9dcf697b8841ce1f4f3e066bd0d455f6791222d4f0222dd9131659725-usemodels_modelsinproject.png" className="border" />
+   <Image align="center" border={true} width="70% " src="https://files.readme.io/5f3dfbc23e0e87b5e135c643cf7884af195f3457deba0af40e0828f9f5e6a647-usemodels_modelsinproject.png" className="border" />
 
    The model dashboard is shown.
 
-   <br />
-
-   <Image align="center" alt="modeldashboard.png" border={true} width="70% " src="https://files.readme.io/d617d3968c9e7b6abb6eb1e36d0cee8c25fb9cce1bc822f7d7a8cbcada4b9f93-uuid-77f9b35c-94e6-6893-516a-e4b0f63f54cf.png" className="border" />
+   <Image align="center" alt="modeldashboard.png" border={false} width="70% " src="https://files.readme.io/d617d3968c9e7b6abb6eb1e36d0cee8c25fb9cce1bc822f7d7a8cbcada4b9f93-uuid-77f9b35c-94e6-6893-516a-e4b0f63f54cf.png" />
 
    For details on how to read the dashboard to monitor and interpret the model's performance, refer to [Runtime Metrics](/docs/ai-catalog-model-dashboards).
 
@@ -49,54 +47,43 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
 
 4. Browse through the example code snippets for different libraries and frameworks (Python, Javascript, cURL).
 
-   <br />
-
-   <Image align="center" border={false} width="70% " src="https://files.readme.io/5bf27b5bb54b29c4bab7af26d3a168d1c56af8237ad526ce9169ee80000afe0b-use_model.png" />
-
-   <br />
+   <Image align="center" border={false} width="70% " src="https://files.readme.io/d44e4861131702726602f86f9608ca78642c2b4b3edd39aac79295ee451fa792-use_model.png" />
 
    Note that this code snippet shown includes a placeholder for the `api_key` for the token you are about to generate, and the `model` name, which includes the name of the connection.
 
-   <br />
+```python
+from openai import OpenAI
 
-   ```python
-   from openai import OpenAI
+client = OpenAI(
+  api_key="your_jfrog_api_key",
+  base_url="https://<your-id>.ml.jfrog.io/v1"
+)
 
-   client = OpenAI(
-     api_key="your_jfrog_api_key",
-     base_url="https://<your-id>.ml.jfrog.io/v1"
-   )
+response = client.chat.completions.create(
+  model="OpenAI/gpt-3.5-turbo-1106",
+  messages=[
+    {"role": "system", "content": "You are a helpful assistant."},
+    {
+      "role": "user",
+      "content": "Explain to me how AI works in one sentence"
+    }
+  ]
+)
 
-   response = client.chat.completions.create(
-     model="OpenAI/gpt-3.5-turbo-1106",
-     messages=[
-       {"role": "system", "content": "You are a helpful assistant."},
-       {
-         "role": "user",
-         "content": "Explain to me how AI works in one sentence"
-       }
-     ]
-   )
-
-   print(response.choices[0].message)
-   ```
-
-   <br />
+print(response.choices[0].message)
+```
 
 5. Click **Generate a token**. The _Set Up A Generic Client_ pane is displayed.
 
-   <Callout icon="📘" theme="info">
-     Note
+<Callout icon="📘" theme="info">
+  **Note**
 
-     Keep the default repository.
-   </Callout>
+  Keep the default repository.
+</Callout>
 
 6. In the **Configure** tab, enter your JFrog account password and click **Generate Token & Create Instructions**. The token is displayed.
-
 7. Click **Copy**.
-
 8. Click **Done**.
-
 9. Select the framework (Python/Javascript/cURL), and note that the token has been inserted into the `api_key`.
 
    Example:
@@ -122,7 +109,6 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
 
    print(response.choices[0].message)
    ```
-
 10. Copy the code snippet into your code editor. You can now use this model in your applications.
 
 ## &#x20;Model Packages
@@ -143,19 +129,17 @@ After a model. package has been allowed, the **Use Model** and **Deploy** button
    <br />
 2. Click **Use Model**. The _Use model_ pane is displayed. Here you define how to use this model securely with your framework of choice.
 
-<br />
-
-<Image align="center" alt="usemodelbutton.png" border={false} width="70% " src="https://files.readme.io/62cc556cd4472a3400d41c26265f4e1a966cf6cfc8f153df02d66a4885db200a-usemodel_pane_package.png" />
+   <Image align="center" alt="usemodelbutton.png" border={false} width="70% " src="https://files.readme.io/62cc556cd4472a3400d41c26265f4e1a966cf6cfc8f153df02d66a4885db200a-usemodel_pane_package.png" />
 
 <Callout icon="📘" theme="info">
-  Note
+  **Note**
 
   Keep the default repository.
 </Callout>
 
-5. Click **Configure** to configure your SDK to pull this model. The _Set Up A HuggingFaceML Client_ pane is displayed. These steps tell the system where to take the model from.
-6. Enter your JFrog account password and click **Generate Token & Create Instructions**.
-7. Follow the instructions on the Configure tab:
+4. Click **Configure** to configure your SDK to pull this model. The _Set Up A HuggingFaceML Client_ pane is displayed. These steps tell the system where to take the model from.
+5. Enter your JFrog account password and click **Generate Token & Create Instructions**.
+6. Follow the instructions on the Configure tab:
 
    1. **Copy** the code snippet with the `export` commands into your code interface. This configures the Hugging Face client to work with Artifactory, and adds your repository.
 
@@ -170,7 +154,7 @@ After a model. package has been allowed, the **Use Model** and **Deploy** button
       export HF_TOKEN=tokenexample
       ```
    3. Click **Done**.
-8. To use the allowed model, please copy the Transformers code snippet into your Python environment:
+7. To use the allowed model, please copy the Transformers code snippet into your Python environment:
 
    ```python
    # Load model directly
