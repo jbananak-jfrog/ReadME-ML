@@ -51,6 +51,8 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
 
    <Image align="center" border={false} width="70% " src="https://files.readme.io/5bf27b5bb54b29c4bab7af26d3a168d1c56af8237ad526ce9169ee80000afe0b-use_model.png" />
 
+   <br />
+
    Note that this code snippet shown includes a placeholder for the `api_key` for the token you are about to generate, and the `model` name, which includes the name of the connection.
 
    <br />
@@ -77,7 +79,9 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
    print(response.choices[0].message)
    ```
 
-   Click **Generate a token**. The _Set Up A Generic Client_ pane is displayed.
+   <br />
+
+5. Click **Generate a token**. The _Set Up A Generic Client_ pane is displayed.
 
    <Callout icon="📘" theme="info">
      Note
@@ -85,13 +89,13 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
      Keep the default repository.
    </Callout>
 
-5. In the **Configure** tab, enter your JFrog account password and click **Generate Token & Create Instructions**. The token is displayed.
+6. In the **Configure** tab, enter your JFrog account password and click **Generate Token & Create Instructions**. The token is displayed.
 
-6. Click **Copy**.
+7. Click **Copy**.
 
-7. Click **Done**.
+8. Click **Done**.
 
-8. Select the framework (Python/Javascript/cURL), and note that the token has been inserted into the `api_key`.
+9. Select the framework (Python/Javascript/cURL), and note that the token has been inserted into the `api_key`.
 
    Example:
 
@@ -117,7 +121,7 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
    print(response.choices[0].message)
    ```
 
-9. Copy the code snippet into your code editor. You can now use this model in your applications.
+10. Copy the code snippet into your code editor. You can now use this model in your applications.
 
 ## &#x20;Model Packages
 
