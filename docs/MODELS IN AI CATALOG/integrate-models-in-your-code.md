@@ -75,20 +75,19 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
 
    <br />
 
-```python
-```
-
 5. Click **Generate a token**. The _Set Up A Generic Client_ pane is displayed.
+   <Callout icon="📘" theme="info">
+     Note
 
-<Callout icon="📘" theme="info">
-  **Note**
-
-  Keep the default repository.
-</Callout>
+     Keep the default repository.
+   </Callout>
 
 6. In the **Configure** tab, enter your JFrog account password and click **Generate Token & Create Instructions**. The token is displayed.
+
 7. Click **Copy**.
+
 8. Click **Done**.
+
 9. Select the framework (Python/Javascript/cURL), and note that the token has been inserted into the `api_key`.
 
    Example:
@@ -114,6 +113,7 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
 
    print(response.choices[0].message)
    ```
+
 10. Copy the code snippet into your code editor. You can now use this model in your applications.
 
 ## &#x20;Model Packages
