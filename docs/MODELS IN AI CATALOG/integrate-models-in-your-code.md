@@ -51,26 +51,31 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
 
    Note that this code snippet shown includes a placeholder for the `api_key` for the token you are about to generate, and the `model` name, which includes the name of the connection.
 
+   ```python
+   from openai import OpenAI
+
+   client = OpenAI(
+     api_key="your_jfrog_api_key",
+     base_url="https://<your-id>.ml.jfrog.io/v1"
+   )
+
+   response = client.chat.completions.create(
+     model="OpenAI/gpt-3.5-turbo-1106",
+     messages=[
+       {"role": "system", "content": "You are a helpful assistant."},
+       {
+         "role": "user",
+         "content": "Explain to me how AI works in one sentence"
+       }
+     ]
+   )
+
+   print(response.choices[0].message)
+   ```
+
+   <br />
+
 ```python
-from openai import OpenAI
-
-client = OpenAI(
-  api_key="your_jfrog_api_key",
-  base_url="https://<your-id>.ml.jfrog.io/v1"
-)
-
-response = client.chat.completions.create(
-  model="OpenAI/gpt-3.5-turbo-1106",
-  messages=[
-    {"role": "system", "content": "You are a helpful assistant."},
-    {
-      "role": "user",
-      "content": "Explain to me how AI works in one sentence"
-    }
-  ]
-)
-
-print(response.choices[0].message)
 ```
 
 5. Click **Generate a token**. The _Set Up A Generic Client_ pane is displayed.
