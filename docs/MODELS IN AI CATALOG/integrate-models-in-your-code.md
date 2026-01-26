@@ -37,6 +37,8 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
 
    The model dashboard is shown.
 
+   <br />
+
    <Image align="center" alt="modeldashboard.png" border={false} width="70% " src="https://files.readme.io/d617d3968c9e7b6abb6eb1e36d0cee8c25fb9cce1bc822f7d7a8cbcada4b9f93-uuid-77f9b35c-94e6-6893-516a-e4b0f63f54cf.png" />
 
    For details on how to read the dashboard to monitor and interpret the model's performance, refer to [Runtime Metrics](/docs/ai-catalog-model-dashboards).
