@@ -82,7 +82,7 @@ With the local model code, and our new model on JFrog ML, we can initiate a mode
 <Callout icon="📘" theme="info">
   **Note**
 
-  Note that the build name parameter is optional.
+  The build name parameter is optional.
 </Callout>
 
 ```shell
