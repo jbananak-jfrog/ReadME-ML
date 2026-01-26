@@ -33,11 +33,11 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
 
    For example:
 
-   <Image align="center" border={true} src="https://files.readme.io/39ba04e9dcf697b8841ce1f4f3e066bd0d455f6791222d4f0222dd9131659725-usemodels_modelsinproject.png" className="border" />
+   <Image align="center" border={true} width="70% " src="https://files.readme.io/39ba04e9dcf697b8841ce1f4f3e066bd0d455f6791222d4f0222dd9131659725-usemodels_modelsinproject.png" className="border" />
 
    The model dashboard is shown.
 
-   <Image alt="modeldashboard.png" border={false} src="https://files.readme.io/d617d3968c9e7b6abb6eb1e36d0cee8c25fb9cce1bc822f7d7a8cbcada4b9f93-uuid-77f9b35c-94e6-6893-516a-e4b0f63f54cf.png" />
+   <Image align="center" alt="modeldashboard.png" border={false} width="70% " src="https://files.readme.io/d617d3968c9e7b6abb6eb1e36d0cee8c25fb9cce1bc822f7d7a8cbcada4b9f93-uuid-77f9b35c-94e6-6893-516a-e4b0f63f54cf.png" />
 
    For details on how to read the dashboard to monitor and interpret the model's performance, refer to [Runtime Metrics](/docs/ai-catalog-model-dashboards).
 
@@ -47,7 +47,7 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
 
 4. Browse through the example code snippets for different libraries and frameworks (Python, Javascript, cURL).
 
-   <Image align="center" border={false} src="https://files.readme.io/5bf27b5bb54b29c4bab7af26d3a168d1c56af8237ad526ce9169ee80000afe0b-use_model.png" />
+   <Image align="center" border={false} width="70% " src="https://files.readme.io/5bf27b5bb54b29c4bab7af26d3a168d1c56af8237ad526ce9169ee80000afe0b-use_model.png" />
 
    Note that this code snippet shown includes a placeholder for the `api_key` for the token you are about to generate, and the `model` name, which includes the name of the connection.
 
@@ -124,12 +124,12 @@ After a model. package has been allowed, the **Use Model** and **Deploy** button
 
 1. On the **Registry** page, either click the allowed model in the list or select the model from under the relevant project on the left.
 
-   <Image align="center" border={false} src="https://files.readme.io/7753c33c2fd3d84f40c768588648f662d85d51f0805f3de42c559b93f3ffc8b6-use_model_package.png" />
+   <Image align="center" border={false} width="70% " src="https://files.readme.io/7753c33c2fd3d84f40c768588648f662d85d51f0805f3de42c559b93f3ffc8b6-use_model_package.png" />
 
    <br />
 2. Click **Use Model**. The _Use model_ pane is displayed. Here you define how to use this model securely with your framework of choice.
 
-   <Image align="center" alt="usemodelbutton.png" border={false} src="https://files.readme.io/62cc556cd4472a3400d41c26265f4e1a966cf6cfc8f153df02d66a4885db200a-usemodel_pane_package.png" />
+   <Image align="center" alt="usemodelbutton.png" border={false} width="70% " src="https://files.readme.io/62cc556cd4472a3400d41c26265f4e1a966cf6cfc8f153df02d66a4885db200a-usemodel_pane_package.png" />
 
 <Callout icon="📘" theme="info">
   **Note**
