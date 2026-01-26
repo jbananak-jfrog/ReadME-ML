@@ -47,9 +47,7 @@ The example below contains a simple FLAN-T5 model loaded from HuggingFace. To te
 We import `from frogml.sdk.model.tools import run_local` and call our local model via `run_local(m, input_vector)`, which invokes all the relevant model methods.
 
 <Callout icon="⚠️" theme="warning">
-  **Warning**
-
-  _**Production Models**_
+  **Warning** - _**Production Models**_
 
   Please do not leave `from frogml.sdk.model.tools import run_local` imports in production models, as it may affect model behavior. One option would be to create a separate file outside of your `main` directory where you have all the local testing code, including the `run_local` import.
 </Callout>
@@ -143,9 +141,7 @@ Running the `run_local` method calls the following methods in a single command:
 **Note: The `build` and `initialize_model` functions are called during the first `run_local` run only.**
 
 <Callout icon="❗️" theme="error">
-  **Important**
-
-  _**Debugging Input and Output Adapters**_
+  **Important** - _**Debugging Input and Output Adapters**_
 
   Calling the `predict` method locally doesn't trigger the input and output adapters. Please use `run_local` instead.
 </Callout>
