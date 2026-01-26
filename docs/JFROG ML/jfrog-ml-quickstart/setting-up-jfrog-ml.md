@@ -83,7 +83,7 @@ After your Admin has setup the JFrog ML on your account (SAAS or self-managed), 
 
 After installing the frogml-cli, you need to configure it. You have two main options, with several sub-options:
 
-* **Configure [Via CLI](*/docs/setting-up-jfrog-ml#to-configure-via-cli)**
+* **Configure [Via CLI](/docs/setting-up-jfrog-ml#to-configure-via-cli)**
 * **Configure [Via environment variable](/docs/setting-up-jfrog-ml#to-configure-via-environment-variable)**
 
 ### To configure via CLI:
