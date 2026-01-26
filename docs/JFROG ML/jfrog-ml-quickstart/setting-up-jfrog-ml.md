@@ -88,32 +88,35 @@ After installing the frogml-cli, you need to configure it. You have two main opt
 
 ### To configure via CLI:
 
-**Sub-option 1: Define access token:**
+1. **Sub-option 1: Define access token:**
+   1. With this option, you must first [generate an access token](/administration/docs/access-tokens) in the Jfrog platform.
 
-1. With this option, you must first [generate an access token](/administration/docs/access-tokens) in the Jfrog platform.
+      <Image alt="configuring-qwak-sdk-jfrogml.png" border={false} src="https://files.readme.io/994c0d7f55ccbd32b229d01d1b5707fc6f8ab0ddd785e8d0d5afe33f5275170b-uuid-e2092192-8a39-bb2e-7f5e-2ce203e74599.png" />
+   2. Open the terminal and type in the following command, replacing the variables:
 
-   <Image alt="configuring-qwak-sdk-jfrogml.png" border={false} src="https://files.readme.io/994c0d7f55ccbd32b229d01d1b5707fc6f8ab0ddd785e8d0d5afe33f5275170b-uuid-e2092192-8a39-bb2e-7f5e-2ce203e74599.png" />
-2. Open the terminal and type in the following command, replacing the variables:
+      ```shell
+      frogml config add --url={server_url} --access-token={access_token_from_artifactory} --server-id={optional_server_id}
+      ```
 
-   ```shell
-   frogml config add --url={server_url} --access-token={access_token_from_artifactory} --server-id={optional_server_id}
-   ```
+      For example:
 
-   For example:
+      ```shell
+      frogml config add --url=https://mydemo.jfrog.io --access-token=token123 --server-id=testing-server
+      ```
 
-   ```shell
-   frogml config add --url=https://mydemo.jfrog.io --access-token=token123 --server-id=testing-server
-   ```
+or 
 
-**Sub-option 2: Only if you already have the JF_CLI installed and configured, use your username and password:**
+     **Sub-option 2: Only if you already have the JF_CLI installed and configured, use your username and password:**
 
-For this option, you need to make sure you have enabled token generation API as follows:
+      For this option, you need to make sure you have enabled token generation API as follows:
 
-1. In the Administration module, select **Security** > **General**.
-2. Scroll down and click **Enable token generation via api**. under **Basic Authentication**.
-3. Click **Save**.
+      i. In the Administration module, select **Security** > **General**.
 
-Then, type in the following command, replacing the variables:
+      ii. Scroll down and click **Enable token generation via api**. under **Basic Authentication**.
+
+      iii. Click **Save**.
+
+2.Then, type in the following command, replacing the variables:
 
 ```shell
 frogml config add --url={server_url} --username={user_name} --password{password} --server-id={optional_server_id}
