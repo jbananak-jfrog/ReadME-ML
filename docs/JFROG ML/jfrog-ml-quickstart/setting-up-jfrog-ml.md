@@ -35,7 +35,7 @@ This page describes how to set up JFrog ML, including installing and configuring
    <Image alt="JFrog ML Setup Form" border={false} src="https://files.readme.io/e4d6fb33474a29a2b9dcfa89a760b4d5a7de4c4e51940e12c0363ff9ff3308ff-uuid-7f7888c7-668d-78cb-a11f-cfb4eee8e2eb.png" />
 2. During setup, you'll need to select:
 
-   1. A JFrog project where JFrog ML will store generated artifacts, such as Docker images and files.
+   1.  A JFrog project where JFrog ML will store generated artifacts, such as Docker images and files.
    2. A cloud provider (currently AWS & GCP; Azure support).
    3. A cloud region for deployment.
 3. Click **Get Started**. JFrog ML is enabled in your JFrog account.
