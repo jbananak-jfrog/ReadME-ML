@@ -26,7 +26,7 @@ A model build in JFrog ML is the process of creating a ready-for-deployment, tra
 
 During the build, JFrog ML packages your model’s source code, dependencies, and metadata into a secure, immutable artifact stored in JFrog Artifactory.
 
-The build process can be triggered from the FrogML CLI/SDK or the platform UI, and it runs on JFrog’s scalable infrastructure that supports any workload size, from lightweight pre-trained models to full training pipelines.
+The build process can be triggered from the FrogML CLI/SDK, and it runs on JFrog’s scalable infrastructure that supports any workload size, from lightweight pre-trained models to full training pipelines.
 
 <Image alt="Model build lifecycle diagram" border={false} src="https://files.readme.io/1266aa9e944c458dfad58d56b022c7e24d1d56346550568c46cb84efd5eab7a3-uuid-0a72d21a-026a-197b-1e97-18074b5c7136.png" />
 
