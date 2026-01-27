@@ -987,7 +987,7 @@ def load_model():
     return TestModel
 ```
 
-## # `tests` Directory
+**`tests` Directory**
 
 The directory `tests` is where tests of each component in the model reside.
 
