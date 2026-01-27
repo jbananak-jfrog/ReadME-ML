@@ -7,7 +7,7 @@ metadata:
 ---
 JFrog ML supports a variety of Python frameworks to manage model dependencies.
 
-### Supported Python Versions
+## Supported Python Versions
 
 When building and managing your Python projects, different tools have varying levels of support for Python versions. Below is a summary of the supported Python versions for each tool:
 
@@ -15,7 +15,7 @@ When building and managing your Python projects, different tools have varying le
 * **Conda** supports Python versions: 3.10 - 3.13
 * **requirements.txt (pip)** supports Python versions: 3.10 - 3.13
 
-### Using Poetry with JFrogML
+## Using Poetry with JFrogML
 
 <Callout icon="⚠️" theme="warning">
   **Warning**
@@ -23,7 +23,7 @@ When building and managing your Python projects, different tools have varying le
   JFrogML uses **Poetry version 1.8.3**.JFrog ML supports `poetry.lock` files as long as they're under the same scope as the `pyproject.toml` file.
 </Callout>
 
-#### Model Directory Structure
+### Model Directory Structure
 
 ```
 frogml_based_model/
@@ -35,7 +35,7 @@ frogml_based_model/
 
 Both files `pyproject.toml` and `poetry.lock` will be used by Poetry while executing the `poetry install` command.
 
-#### Example Project Setup
+### Example Project Setup
 
 **pyproject.tom**l
 
@@ -62,11 +62,11 @@ build-backend = "poetry.core.masonry.api"
 
 > The `frogml-sdk` dependency is included only in the `dev` section, as it's needed for local development but not for remote builds. When you run the `frogml models build` command, the SDK version you used locally is automatically included in the remote environment.
 
-### Using Conda with JFrogML
+## Using Conda with JFrogML
 
 > JFrogML uses **Conda version 24.7.1**
 
-#### Model Directory Structure
+### Model Directory Structure
 
 ```
 frogml_based_model/
@@ -78,7 +78,7 @@ frogml_based_model/
 
 The `conda.yml` file can be placed at the root level alongside `main` or within it—both structures work equally well.
 
-#### Example Project Setup
+### Example Project Setup
 
 To get started, here’s a basic `conda.yml` setup:
 
@@ -102,7 +102,7 @@ dependencies:
   There’s no need to manually add `frogml-sdk` to the environment. JFrogML’s build process includes it automatically based on your local version.
 </Callout>
 
-### .frogmlignore file
+## .frogmlignore file
 
 Occasionally, you may want to exclude a file from the JFrog ML build but keep it in the repository with the model code. In such cases, add the `.frogmlignore` file to the root directory of our project.
 
@@ -136,11 +136,11 @@ README.md
   For example, in the case that you have a directory with files and subdirectories, including a hidden file named `.config_file`. JFrog ML, following its default behavior, will exclude this file from processing when triggering a remote build.
 </Callout>
 
-### Incorporating Python Dependencies from .whl Files
+## Incorporating Python Dependencies from .whl Files
 
 JFrog ML facilitates the use of Python dependencies packaged as `.whl` files through `requirements.txt` and `conda.yaml` for managing dependencies. However, it is important to note that Poetry's support for dependencies from .whl files is limited.
 
-#### 1. Preparing Your .whl Files
+### 1. Preparing Your .whl Files
 
 First, ensure your `.whl` file(s) are either uploaded with your model code or fetched from external storage. For instructions on uploading additional dependencies, refer to the FrogML CLI documentation (`frogml models build --help`). Below is an example directory structure for your model, where `main` is uploaded by default and the `dep` directory, containing the pandas dependency in a `.whl` file, is included via the `--dependency-required-folders dep` option in the FrogML command.
 
@@ -161,9 +161,9 @@ Model Build Container Directory
 └── 
 ```
 
-#### 2. Configuring Dependency Management Files
+### 2. Configuring Dependency Management Files
 
-##### Conda
+#### Conda
 
 Include the `.whl` file in your `conda.yaml` as follows:
 
@@ -178,7 +178,7 @@ dependencies:
     - "/frogml/model_dir/dep/pandas-2.2.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
 ```
 
-##### Poetry
+#### Poetry
 
 pyproject.toml
 
@@ -201,7 +201,7 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 ```
 
-##### Requirements.txt
+#### Requirements.txt
 
 Directly reference the `.whl` file path relative to the requirements file location:
 
@@ -215,7 +215,7 @@ Directly reference the `.whl` file path relative to the requirements file locati
 ./deps/wheel_test-0.1-py3-none-any.whl
 ```
 
-#### 3. Using the Dependency in Your Code
+### 3. Using the Dependency in Your Code
 
 Once the dependency is properly configured, you can import and use it in your Python code as usual:
 
