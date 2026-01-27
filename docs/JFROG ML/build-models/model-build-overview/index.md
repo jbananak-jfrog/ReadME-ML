@@ -166,13 +166,13 @@ frogml models build  --model-id <model-id> --instance gpu.t4.xl .
 
 When deploying a model on a GPU instance, you must verify that the model was build using a GPU compatible image. Building a model using a GPU compatible image installs additional dependencies and drivers.
 
-Creating a GPU compatible image is simply done by adding the `--gpu-compatible` flag:
+Creating a GPU compatible image is done by adding the `--gpu-compatible` flag or building your model on a GPU instance.
+
+Running the below command will build your model on a regular CPU instance, but will enable you to later deploy it on a GPU instance.
 
 ```shell
 frogml models build  --model-id <model-id> --gpu-compatible .
 ```
-
-Running the above command will build your model on a regular CPU instance, but will enable you to later deploy it on a GPU instance.
 
 ### Tagging Your Model Build
 
