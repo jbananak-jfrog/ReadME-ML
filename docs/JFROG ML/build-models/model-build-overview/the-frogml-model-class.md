@@ -5,8 +5,6 @@ hidden: false
 metadata:
   robots: index
 ---
-<br />
-
 ## The`FrogMlModel`
 
 The FrogML model class is the core abstraction which encapsulates the model build and serving logic. Every Frogml-based model should inherit from `FrogMModel` which is defined as:
