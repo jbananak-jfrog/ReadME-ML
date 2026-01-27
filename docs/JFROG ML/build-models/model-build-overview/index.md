@@ -200,6 +200,26 @@ or for example with mock values:
 frogml models build --model-id "titanic" -E VERSION_NUMBER=1.2 -E MODEL_NAME=catboost .
 ```
 
+#### Passing Secrets as Environment Variables
+
+JFrog ML allows passing environment variables to model builds which receive values from JFrog ML secrets during the model build process.
+
+While secret values will be accessible as environment variables during the build, they won't be displayed in the UI alongside other passed environment variables.
+
+To implement this, you need to supply the environment variable value in the specified format: `<key>=<secret.{secret-name}>` .
+
+For instance, if you have an API token stored under a JFrog ML secret named `cloud_token` and wish to pass it in the build under the environment variable `APP_TOKEN`, you would utilize the following command as an example:
+
+```shell
+frogml models build --model-id <model>  -E APP_TOKEN=secret.cloud_token <dest>
+```
+
+<Callout icon="📘" theme="info">
+  **Note**
+
+  Note: Please note that the secrets must exist in the JFrog ML platform before running the above command.
+</Callout>
+
 ## Model Builds SDK
 
 Data scientists often train models in Workspaces, Jupyter notebooks or locally, and require a seamless process to save, register and manage model versions for production use.
