@@ -190,26 +190,6 @@ frogml models build \
   When you pass environment variables to the build process, their impact goes beyond just the build phase. These variables are not only propagated to the `testing` phase but are also 'baked' into the resulting image. As a result, they remain available during deployment, providing flexibility to overwrite them as needed. This enables seamless configuration management throughout the entire lifecycle of your application.
 </Callout>
 
-#### Passing Secrets as Environment Variables
-
-JFrog ML allows passing environment variables to model builds which receive values from JFrog ML secrets during the model build process.
-
-While secret values will be accessible as environment variables during the build, they won't be displayed in the UI alongside other passed environment variables.
-
-To implement this, you need to supply the environment variable value in the specified format: `<key>=<secret.{secret-name}>` .
-
-For instance, if you have an API token stored under a JFrog ML secret named `cloud_token` and wish to pass it in the build under the environment variable `APP_TOKEN`, you would utilize the following command as an example:
-
-```shell
-frogml models build --model-id <model>  -E APP_TOKEN=secret.cloud_token <dest>
-```
-
-<Callout icon="📘" theme="info">
-  **Note**
-
-  Note: Please note that the secrets must exist in the JFrog ML platform before running the above command.
-</Callout>
-
 #### Customizing Main Directory
 
 Given the following FrogML-based model directory structure:
