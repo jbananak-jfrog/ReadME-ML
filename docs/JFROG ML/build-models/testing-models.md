@@ -39,7 +39,7 @@ The example below contains a simple FLAN-T5 model loaded from HuggingFace. To te
 <Callout icon="📘" theme="info">
   **Note**
 
-  Please make sure to install the <Anchor label="**frogml-cli**" title="Get Started with JFrog ML" href="/docs/get-started-with-jfrog-ml">**frogml-cli**</Anchor> in your local environment.
+  Please make sure to install the <Anchor label="**frogml-cli**" title="Get Started with JFrog ML" href="/docs/get-started-with-jfrog-ml">**frogml-cli**</Anchor> or just `frogml` in your local environment.
 </Callout>
 
 ### Running Models Locally
