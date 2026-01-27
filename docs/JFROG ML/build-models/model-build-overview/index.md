@@ -141,17 +141,14 @@ frogml models build  --model-id <model-id> --instance gpu.t4.xl .
 ```
 
 <Callout icon="📘" theme="info">
-  **Note** - _**Choosing the Correct GPU**_
+  **Notes** 
 
-  Visit the JFrog ML [_GPU Resources_](/docs/instance-sizes-ml-credits#instances-sizes-in-the-ui) page to select the resources that best fit your use-case.
+  * _**Choosing the Correct GPU**_
 
-  Each GPU type has its own configuration of pre-defined memory and number of CPUs.
-</Callout>
+    Visit the JFrog ML [_GPU Resources_](/docs/instance-sizes-ml-credits#instances-sizes-in-the-ui) page to select the resources that best fit your use-case.
 
-<Callout icon="📘" theme="info">
-  **Note**
-
-  JFrog ML utilizes Spot instances for cost-effective GPU-based builds. This may result in a slightly extended wait time when initiating GPU Spot instances.
+    Each GPU type has its own configuration of pre-defined memory and number of CPUs.
+  * JFrog ML utilizes Spot instances for cost-effective GPU-based builds. This may result in a slightly extended wait time when initiating GPU Spot instances.
 </Callout>
 
 ### Deploying Models with GPUs
@@ -219,4 +216,3 @@ frogml models build --model-id <model>  -E APP_TOKEN=secret.cloud_token <dest>
 
   Note: Please note that the secrets must exist in the JFrog ML platform before running the above command.
 </Callout>
-
