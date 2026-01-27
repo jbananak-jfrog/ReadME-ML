@@ -5,10 +5,6 @@ hidden: false
 metadata:
   robots: index
 ---
-<br />
-
-## Managing Dependencies
-
 JFrog ML supports a variety of Python frameworks to manage model dependencies.
 
 ### Supported Python Versions
