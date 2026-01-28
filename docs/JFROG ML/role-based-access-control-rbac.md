@@ -2,7 +2,7 @@
 title: Role-based Access Control (RBAC) in JFrog ML
 excerpt: Define roles for AI/ML use-cases and workflows.
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
