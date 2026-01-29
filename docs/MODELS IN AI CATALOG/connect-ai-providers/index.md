@@ -66,9 +66,9 @@ EITHER:
 OR:
 
 1. In the Administration module menu bar, select **AI/ML Settings** > **Connections**.
-
-   <Image align="center" alt="createnewconnection_admin.png" border={false} src="https://files.readme.io/5a020ab84cf44c513d60a505fbb380ba08a796de71bb79b31c21833d75f76304-createnewconnection_admin.png" />
 2. Click **Create new connection**.
+
+   <Image align="center" border={false} src="https://files.readme.io/ba8f2dcd1d6774a5f14380c399c5ee4186804685b20cf564999e774e779d00f0-createnewconnection_admin.png" />
 3. Enter a unique **Connection name**, the project and the model provider for the connection.
 4. Select a secret for the connection from the **API Key as Secret Name** dropdown list or <Anchor label="Create a New Secret" title="Create a New Secret" href="#create-a-new-secret">Create a New Secret</Anchor>.
 5. Click **Save**.
