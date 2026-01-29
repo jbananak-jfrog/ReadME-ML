@@ -1,6 +1,6 @@
 ---
 title: Add Projects to an Allowed Model
-deprecated: false
+deprecated: true
 hidden: true
 metadata:
   robots: index
