@@ -28,11 +28,11 @@ Explore the various models available for use in your organization in the **Disco
 
 You can see which models have already been allowed for use in your projects inn the **Registry** page.
 
-<Image align="center" border={false} src="https://files.readme.io/a295ce002951b631fdc4661988b2b93c928b1a532d56346b13948799694b6cce-registry_cr.png" />
+<Image align="center" border={false} src="https://files.readme.io/8278f9a798b5ca0261506d75fbf8b8add65feac973bc61777021b90d2cdc6dd5-registry_cr.png" />
 
 Detect **all** AI assets that are used in your system, but are unmanaged by AI catalog, and possibly even unvetted by your organization, in the **Detection** page. For more information about detecting unmanaged AI assets, see [Detect Shadow AI](/docs/detect-shadow-ai)​​​.
 
-<Image align="center" border={false} src="https://files.readme.io/afb83966b5d392426e65576b2afacef232b131e3ccbe5132229672a3eaadd403-detection2_cr.png" />
+<Image align="center" border={false} src="https://files.readme.io/bd027f3940782ce21b8a60741e3ebb11dd5b8859e1a82e2c9976634dac76a2b9-detection2_cr.png" />
 
 ## Managing Allowed Models
 
@@ -40,6 +40,7 @@ After you have allowed your first model, you will see that the allowed models al
 
 * For instructions how to start allowing models, see [**Allowing Your First Model**](/docs/discover-and-allow-models#allow-your-first-model).
 * To allow additional models, the same instructions can be followed.
+
   <Callout icon="📘" theme="info">
     Note
 
