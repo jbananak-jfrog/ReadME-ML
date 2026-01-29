@@ -68,7 +68,7 @@ In order to help you find the best model for your project in the AI Catalog, in 
 
 * **Free text**: Enter the search term in the search bar. Click enter and either select the required asset or click "Show all results for "xxx". The filter panel on the left opens for further filtering.
 
-  <Image align="center" border={false} src="https://files.readme.io/cbc15d755581d06346e6ef60882af890ce9118b8e0b75593e61a54afc1ade203-discoverysearch.png" />
+  <Image align="center" border={false} src="https://files.readme.io/2fbd7bb62ef4e7d50dd98d7d957d5788138004d421ea8377bcd78272a215aea5-discovery_mcp_blurred.png" />
 * **Status**: In the filter pane, Select to display allowed and or live models.
 
   <Image align="center" border={false} src="https://files.readme.io/125e7691977646aa6af5276fe81f08ca38f551584fe17f934ad70631bb1c9614-discoverysearchandfilter.png" />
@@ -76,7 +76,7 @@ In order to help you find the best model for your project in the AI Catalog, in 
 
 The filters selected are shown across the top of the models, and the search text remains in the free text box in the Filters panel:
 
-<Image alt="filter2.png" border={false} src="https://files.readme.io/72286d78a1c5df5a9ead1ae122eb56f28d13a2c4fe03f9991d2de4e01ac1e24f-uuid-cf3cf075-2a48-86b7-5e61-e3b788ab7a30.png" />
+<Image align="center" alt="filter2.png" border={false} src="https://files.readme.io/418a41452fa88f90ff03db8e34865edfe60ea0a69130e9b86ae18d9a223ab5c8-filters-mini-package.png" />
 
 Click **Clear all** to remove all filters.
 
