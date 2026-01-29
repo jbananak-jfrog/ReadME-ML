@@ -88,11 +88,11 @@ This procedure outlines the **prerequisite steps** to enable the use of **model 
 1. Navigate to the curation settings: Select **Administration** > **Curation Settings** > **General**.
 2. Toggle the **Curation On** switch to **ON**.
 
-   <Image alt="generalcurationsettings.png" border={false} src="https://files.readme.io/f510882210e66935fde8abe1a3fb135a1b71c2756fa67a6a698123c7e1cc9488-uuid-0ba2785a-f59a-4165-4377-d92a96a8bc51.png" />
+   <Image align="center" alt="generalcurationsettings.png" border={false} src="https://files.readme.io/b30f3ad83548d80ce42cdcad16ab5863c06a963463e85798ac4601f070dc8e94-curation_on_steps.png" />
 3. Click **Enable repositories** to navigate to the _Remote Repositories_ page.
 4. Verify the **PackageType**. Ensure that HuggingFaceML is toggled **ON**.
 
-   <Image alt="enable_package_type.png" border={false} src="https://files.readme.io/4166d946f0869f019052e907fbcdab1220ccdb9a50a56df5ebfb83149c34a134-uuid-c4e98f40-913f-b505-7bb7-427a0bec44bf.png" />
+   <Image align="center" alt="enable_package_type.png" border={true} src="https://files.readme.io/fcd99c2f0fb3f3b11cce3ab196250dba811316b156b6c1dadfccc73353ca84e6-remoterepositories.png" className="border" />
 5. Click the package type row to view the package type's repositories.
 6. Make sure all the repositories in the package type are also enabled. If any are not enabled, a notification is shown at the top, for example, "_Connect package type status: Partially Connected_".
 
