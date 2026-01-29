@@ -29,7 +29,7 @@ In the _Connections_ page, you can view a list of all the connections defined in
   The _Connections_ page is only available to platform admins.
 </Callout>
 
-<Image alt="connections.png" border={false} src="https://files.readme.io/9d8003abfcd79d3733037c33ef2209e94cc48cd6d65e37821629eea6f967df96-uuid-7e511d8a-5063-80df-e79f-286f041f8e9c.png" />
+<Image align="center" alt="connections.png" border={false} src="https://files.readme.io/c0d2fbc03920e536f708ccc223e6fbc13ca83d563c821d1427c729adee7e4c66-connections_window.png" />
 
 To view the _Connections_ page:
 
@@ -67,7 +67,7 @@ OR:
 
 1. In the Administration module menu bar, select **AI/ML Settings** > **Connections**.
 
-   <Image alt="createnewconnection_admin.png" border={false} src="https://files.readme.io/a4a376d61d8b9477032da9ed4a6233a0baaab35bce8d6b60030d4376427882b8-uuid-13eca0a8-3e13-1944-5679-e21c4ea4f2d3.png" />
+   <Image align="center" alt="createnewconnection_admin.png" border={false} src="https://files.readme.io/5a020ab84cf44c513d60a505fbb380ba08a796de71bb79b31c21833d75f76304-createnewconnection_admin.png" />
 2. Click **Create new connection**.
 3. Enter a unique **Connection name**, the project and the model provider for the connection.
 4. Select a secret for the connection from the **API Key as Secret Name** dropdown list or <Anchor label="Create a New Secret" title="Create a New Secret" href="#create-a-new-secret">Create a New Secret</Anchor>.
