@@ -76,6 +76,7 @@ When a model is allowed, the **Use Model** button appears in the _Model informat
    <br />
 
 5. Click **Generate a token**. The _Set Up A Generic Client_ pane is displayed.
+
    <Callout icon="📘" theme="info">
      Note
 
@@ -134,7 +135,7 @@ After a model. package has been allowed, the **Use Model** and **Deploy** button
    <br />
 2. Click **Use Model**. The _Use model_ pane is displayed. Here you define how to use this model securely with your framework of choice.
 
-   <Image align="center" alt="usemodelbutton.png" border={false} width="70% " src="https://files.readme.io/62cc556cd4472a3400d41c26265f4e1a966cf6cfc8f153df02d66a4885db200a-usemodel_pane_package.png" />
+   <Image align="center" alt="usemodelbutton.png" border={true} width="70% " src="https://files.readme.io/da67e23418d39d034628724dccb5aecb4add99ba26a826379198c298743ffdca-usemodel_pane_package.png" className="border" />
 
 <Callout icon="📘" theme="info">
   **Note**
