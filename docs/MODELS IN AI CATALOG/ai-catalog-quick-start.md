@@ -1,6 +1,6 @@
 ---
-title: 'Quick Start  '
-excerpt: Follow these steps to start managing your AI assets.
+title: 'Get Started  '
+excerpt: Follow these steps to start managing your AI models.
 deprecated: false
 hidden: false
 metadata:
