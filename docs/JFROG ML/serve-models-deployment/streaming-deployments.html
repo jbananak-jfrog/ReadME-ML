@@ -26,9 +26,9 @@ You can use streaming deployments in the following scenarios:
 2. Click **Deploy** and select **Streaming**.
 3. Select the **instance type** and configure the **Kafka server** and **topics**.
 
-> **Note**
->
-> Make sure you select the number of replicas and instance type to achieve a balance with the number of partitions from your Kafka broker. The partitions will be divided across all the replicas from your deployment.
+ **Note**
+
+Make sure you select the number of replicas and instance type to achieve a balance with the number of partitions from your Kafka broker. The partitions will be divided across all the replicas from your deployment.
 
 4. Click **Deploy** to make your model live.
 
@@ -88,7 +88,7 @@ frogml models deploy stream \
     --producer-topic <producer-topic-name>
 ```
 
- Example Command 1 (using the above structure): 
+Example Command 1 (using the above structure):
 
 Deploying a FLAN-T5 streaming model with 2 replicas on 2 A10.XL on-demand GPU instances
 
@@ -107,7 +107,7 @@ frogml models deploy stream \
 
 ```
 
-Example Command 2 (using the above structure): 
+Example Command 2 (using the above structure):
 
 Deploying a churn streaming model on 2 small instances
 
