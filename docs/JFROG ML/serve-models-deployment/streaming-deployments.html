@@ -8,7 +8,7 @@ excerpt: >-
 
 Leveraging this architecture simplifies the process of processing large amounts of distributed data by eliminating the need for complex triggering and scheduling as fresh data arrives.
 
-### Streaming Use Cases
+## Streaming Use Cases
 
 You can use streaming deployments in the following scenarios:
 
@@ -16,15 +16,16 @@ You can use streaming deployments in the following scenarios:
 2. **Real-time decision-making:** Process data 'as it arrives' for time-sensitive systems.
 3. **Scalable processing:** Efficiently handle large data volumes from multiple sources.
 
-### Deploying Streaming Models
+## Deploying Streaming Models
 
 ▶ **To use streaming inference on JFrog ML, use one of the following options:**
 
-#### Option 1: Deploy via UI
+### Option 1: Deploy via UI
 
 1. Build a new model.
 2. Click **Deploy** and select **Streaming**.
 3. Select the **instance type** and configure the **Kafka server** and **topics**.
+
    <Callout icon="📘" theme="info">
      Note:
 
@@ -32,49 +33,9 @@ You can use streaming deployments in the following scenarios:
    </Callout>
 4. Click **Deploy** to make your model live.
 
-#### Option 2: Deploy via CLI
+### Option 2: Deploy via CLI
 
 You can also deploy your streaming model using the command line interface (CLI). The following shows the general command structure:
-
-```shell
-frogml models deploy stream \
-    --model-id <model-id> \
-    --build-id <build-id> \
-    --instance <instance-type> \
-    --replicas <number-of-replicas> \
-    --consumer-bootstrap-server <bootstrap-server> \
-    --consumer-topic <consumer-topic-name> \
-    --producer-bootstrap-server <bootstrap-server> \
-    --producer-topic <producer-topic-name>
-```
-
-## Streaming Use Cases
-
-Consider using streaming deployments in the following scenarios:
-
-1. **Event-driven applications:** Respond to specific events or triggers in real-time.
-2. **Real-time decision-making:** Process data 'as it arrives' for time-sensitive systems.
-3. **Scalable processing:** Efficiently handle large data volumes from multiple sources.
-
-## Deploying Streaming Models
-
-To use streaming inference on JFrog ML, use the following examples:
-
-### Option 1: Deploying via UI
-
-1. Build a new model.
-2. Click **Deploy** and choose **Streaming**.
-3. Choose the **instance type** and configure the **Kafka server** and **topics**.
-
-<Callout icon="📘" theme="info">
-  > Make sure you select the number of replicas and instance type to achieve a balance with the number of partitions from your Kafka broker. The partitions will be divided across all the replicas from your deployment.
-</Callout>
-
-4. Click **Deploy** to make your model live.
-
-### Option 2: Deploying via CLI
-
-You can also deploy your streaming model using the command line interface (CLI). Here’s a general command structure:
 
 ```shell
 frogml models deploy stream \
