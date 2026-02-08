@@ -25,11 +25,11 @@ You can use streaming deployments in the following scenarios:
 1. Build a new model.
 2. Click **Deploy** and select **Streaming**.
 3. Select the **instance type** and configure the **Kafka server** and **topics**.
+   <Callout icon="📘" theme="info">
+     Note:
 
- **Note**
-
-Make sure you select the number of replicas and instance type to achieve a balance with the number of partitions from your Kafka broker. The partitions will be divided across all the replicas from your deployment.
-
+     Make sure you select the number of replicas and instance type to achieve a balance with the number of partitions from your Kafka broker. The partitions will be divided across all the replicas from your deployment.
+   </Callout>
 4. Click **Deploy** to make your model live.
 
 #### Option 2: Deploy via CLI
