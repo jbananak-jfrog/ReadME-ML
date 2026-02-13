@@ -17,7 +17,7 @@ This page describes how to set up JFrog ML, including installing and configuring
 <Callout icon="📘" theme="info">
   **Note for Self-Managed**
 
-  For self-managed, follow the instructions in [Activate AI ML](https://jfrog-enterprise-group.readme.io/installation/docs/activate-ai-ml).
+  For self-managed, follow the instructions in [Activate AI ML](https://jfrog-enterprise-group.readme.io/installation/docs/activate-ai-ml) and [Self-Managed Installation](doc:self-managed-installation).
 </Callout>
 
 ## Setting Up JFrog ML in SaaS
@@ -32,7 +32,7 @@ This page describes how to set up JFrog ML, including installing and configuring
 
 1. Click on the **AI/ML** link in the left sidebar of your JFrog platform. This will open the JFrog ML setup form.
 
-   <Image alt="JFrog ML Setup Form" border={false} src="https://files.readme.io/e4d6fb33474a29a2b9dcfa89a760b4d5a7de4c4e51940e12c0363ff9ff3308ff-uuid-7f7888c7-668d-78cb-a11f-cfb4eee8e2eb.png" />
+   ![JFrog ML Setup Form](https://files.readme.io/e4d6fb33474a29a2b9dcfa89a760b4d5a7de4c4e51940e12c0363ff9ff3308ff-uuid-7f7888c7-668d-78cb-a11f-cfb4eee8e2eb.png)
 2. During setup, you'll need to select:
 
    1. A JFrog project where JFrog ML will store generated artifacts, such as Docker images and files.
@@ -92,7 +92,7 @@ After installing the frogml-cli, you need to configure it. You have two main opt
 
    a. With this option, you must first [generate an access token](/administration/docs/access-tokens) in the Jfrog platform.
 
-   <Image alt="configuring-qwak-sdk-jfrogml.png" border={false} src="https://files.readme.io/994c0d7f55ccbd32b229d01d1b5707fc6f8ab0ddd785e8d0d5afe33f5275170b-uuid-e2092192-8a39-bb2e-7f5e-2ce203e74599.png" />
+   ![configuring-qwak-sdk-jfrogml.png](https://files.readme.io/994c0d7f55ccbd32b229d01d1b5707fc6f8ab0ddd785e8d0d5afe33f5275170b-uuid-e2092192-8a39-bb2e-7f5e-2ce203e74599.png)
 
    b. Open the terminal and type in the following command, replacing the variables:
 
@@ -135,7 +135,7 @@ OR
 
   There is an additional option, called "interactive". If you have previously configured the frogml-cli, it enables you to load the configuration. Alternatively, it enables your to connect to a new server using the access token or username and password, but in an interactive 'guided' manner.
 
-  <Image alt="interactive_config_via_cli.gif" border={false} src="https://files.readme.io/ade0f02f2c03299c158f5f76e4c1d5f58297e21528a09fa6bd951f03c6f8b4ec-uuid-a6c3024a-c6bc-e93d-d6e0-f6bb2b6ac03f.gif" />
+  ![interactive\_config\_via\_cli.gif](https://files.readme.io/ade0f02f2c03299c158f5f76e4c1d5f58297e21528a09fa6bd951f03c6f8b4ec-uuid-a6c3024a-c6bc-e93d-d6e0-f6bb2b6ac03f.gif)
 </Callout>
 
 ### To configure via environment variable:
