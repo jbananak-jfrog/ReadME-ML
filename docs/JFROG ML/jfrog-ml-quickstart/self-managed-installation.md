@@ -443,7 +443,7 @@ First, follow the [Installation](doc:installing-the-qwak-sdk) Guide to set up yo
 
 The following components are installed as part of the JFrog ML self-hosted setup:
 
-### JPD-Related
+**JPD-Related**
 
 | Component     | Description                                                                |
 | :------------ | :------------------------------------------------------------------------- |
@@ -451,7 +451,7 @@ The following components are installed as part of the JFrog ML self-hosted setup
 
 ### JFrog ML Data Plane
 
-#### Open-source Tools
+**Open-source Tools**
 
 | Component                                            | Description                                             |
 | :--------------------------------------------------- | :------------------------------------------------------ |
@@ -465,7 +465,7 @@ The following components are installed as part of the JFrog ML self-hosted setup
 | Spark & Sparkhistory                                 | Process Feature Sets and analytics data                 |
 | Dcgm-exporter \ node-exporter \ nvidia-device-plugin | Collect node, GPU, and pod-level metrics for monitoring |
 
-#### JFrog ML Services
+**JFrog ML Services**
 
 | Component                                 | Description                                                             |
 | :---------------------------------------- | :---------------------------------------------------------------------- |
