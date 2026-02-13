@@ -11,7 +11,9 @@ metadata:
 This guide walks you through installing the self-hosted version of JFrog ML. It outlines the required infrastructure and resources for a successful deployment.
 
 <Callout icon="📘" theme="info">
-  **Note:** JFrog ML requires an existing JFrog Platform Deployment (JPD). It is installed as an additional component alongside JPD.
+
+
+  JFrog ML requires an existing JFrog Platform Deployment (JPD). It is installed as an additional component alongside JPD.
 </Callout>
 
 ## Overview
