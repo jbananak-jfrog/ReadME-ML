@@ -437,7 +437,7 @@ An environment is an isolated runtime within a cluster, designed for deploying a
 ## Start Using JFrog ML
 
 After completing the cluster installation and setting up your first environment, you're ready to build and deploy models with JFrog ML.  
-First, follow the [Installation](doc:installing-the-qwak-sdk) Guide to set up your local client. Then, head over to the [Getting Started](doc:getting-started) Guide to build and deploy your first model.
+First, follow the , head over to the [Getting Started](ref:getting-started) Guide to build and deploy your first model.
 
 ## Installed Components
 
