@@ -120,7 +120,7 @@ Batch data sources share three common parameters:
 <Callout icon="⚠️" theme="warning">
   **Warning** - `date_created_column`:
 
-  Values in this column must be increasing chronologically. If the date_created is prior to the previous date, the event will not be ingested. Missed data can be added using the <Anchor label="Backfill" title="Backfill" href="/docs/backfill">Backfill</Anchor>.
+  Values in this column must be increasing chronologically. If the date_created is prior to the previous date, the event will not be ingested. Missed data can be added using the [Backfill](/docs/batch-feature-set#backfill).
 </Callout>
 
 <Callout icon="📘" theme="info">
