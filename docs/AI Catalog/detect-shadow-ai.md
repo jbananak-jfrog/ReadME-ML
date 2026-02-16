@@ -9,8 +9,12 @@ metadata:
 ## Introduction
 
 Uncontrolled use of AI models introduces security, compliance, and cost risks.
+
+
 ​
 JFrog’s Shadow AI detection helps identify and bring unmanaged AI models into the AI Catalog, enabling you to apply governance and security policies.
+
+
 ​
 By scanning all artifacts across the JFrog Platform, we identify what models are being used, keeping you up to date with what is in your system.
 
@@ -73,7 +77,7 @@ Allowing a model will bring an unmanaged or partially managed model under govern
    2. Click anywhere on the model row, and then in the model pane, click ​**Manage**​​.
 2. Select the projects for which you wish to allow the model, and click ​**Save**​​.
 
-   <Image align="center" border={false} src="https://files.readme.io/44dc81fe27f3d6c2f9aa996ee40441d66a157abdf73f76cb7a35824922cbb7f5-managemodel_allow.png" />
+   <Image align="center" src="https://files.readme.io/44dc81fe27f3d6c2f9aa996ee40441d66a157abdf73f76cb7a35824922cbb7f5-managemodel_allow.png" />
 3. Click ​**Close**​​ to close the window.
 
 The model is added to the AI Catalog and becomes Managed for that project and appears in the ​**Registry**​​ page.
