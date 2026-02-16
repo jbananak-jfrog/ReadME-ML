@@ -28,10 +28,8 @@ Shadow AI detection gives you the ability to manage and prevent the entry of unv
 
 The ​**Detection**​​ page provides a single view of all AI models discovered in your JFrog Platform, whether managed or unmanaged. To detect models, your JFrog system uses Xray to scan artifacts.
 
-
 ​
 According to your Xray scan settings, repositories are scanned to detect models.
-
 
 ​
 If no models appear in the Detection page, verify that the correct repositories are being scanned by Xray.
@@ -49,7 +47,7 @@ If no models appear in the Detection page, verify that the correct repositories 
 
 Currently, Shadow AI detection supports only model packages.
 
-​In the ​Detection​​ tab, models are automatically grouped into three categories to help you prioritize review and governance actions:
+​In the ​**Detection**​​ page, models are automatically grouped into three categories to help you prioritize review and governance actions:
 
 | Category          | Description                                                                                                                                |
 | :---------------- | :----------------------------------------------------------------------------------------------------------------------------------------- |
@@ -79,18 +77,18 @@ Allowing a model will bring an unmanaged or partially managed model under govern
    2. Click anywhere on the model row, and then in the model pane, click ​**Manage**​​.
 2. Select the projects for which you wish to allow the model, and click ​**Save**​​.
 
-   <Image align="center" src="https://files.readme.io/44dc81fe27f3d6c2f9aa996ee40441d66a157abdf73f76cb7a35824922cbb7f5-managemodel_allow.png" />
+   <Image align="left" border={true} width="70% " src="https://files.readme.io/44dc81fe27f3d6c2f9aa996ee40441d66a157abdf73f76cb7a35824922cbb7f5-managemodel_allow.png" className="border" />
 3. Click ​**Close**​​ to close the window.
 
 The model is added to the AI Catalog and becomes Managed for that project and appears in the ​**Registry**​​ page.
 ​
-Once all instances of a model are allowed, its overall status updates to Managed. If a model still has unmanaged instances, then it’s status is indicated as Partially Managed.
+Once all instances of a model are allowed, its overall status updates to Managed. If a model still has unmanaged instances, then its status is indicated as Partially Managed.
 
 See also: [Discover and Allow Models](doc:discover-and-allow-models)
 
 ## Keep Your System Secure
 
-Shadow AI enables you to detect all AI assets in your system. You may need to block specific AI assets due for security and compliance reasons. To do this you need to block the assets via security policies.
+Shadow AI enables you to detect all AI assets in your system. You may need to block specific AI assets due to security and compliance reasons. To do this you need to block the assets via security policies.
 
 ### How Does Shadow AI Integrate with JFrog Security?
 
@@ -122,6 +120,6 @@ Shadow AI Detection integrates tightly with JFrog’s security components:
    * Click the **Block** button to the left of the model's details; the Manage Model pane is displayed.
 3. In the **Block this Model** section, select the projects and or the repositories not assigned to project for which to block the model.
 
-   <Image align="center" border={true} src="https://files.readme.io/661918f5ae90613b774103274c013ad900520ed8a0cc4c5ba445cabf6d04bc8f-managemodel_block.png" className="border" />
+   <Image align="left" border={true} width="70% " src="https://files.readme.io/661918f5ae90613b774103274c013ad900520ed8a0cc4c5ba445cabf6d04bc8f-managemodel_block.png" className="border" />
 4. Click **Save**.​​
 5. Click **Close**.
