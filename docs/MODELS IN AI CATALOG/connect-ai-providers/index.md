@@ -29,9 +29,9 @@ In the _Connections_ page, you can view a list of all the connections defined in
   The _Connections_ page is only available to platform admins.
 </Callout>
 
-<Image align="center" alt="connections.png" border={false} src="https://files.readme.io/c0d2fbc03920e536f708ccc223e6fbc13ca83d563c821d1427c729adee7e4c66-connections_window.png" />
+<Image align="center" alt="connections.png" src="https://files.readme.io/c0d2fbc03920e536f708ccc223e6fbc13ca83d563c821d1427c729adee7e4c66-connections_window.png" />
 
-To view the _Connections_ page:
+**> To view the _Connections_ page:**
 
 1. In the JFrog platform, select the **Administration** module.
 2. Scroll down to the bottom of the left menu bar and select **AI/ML Settings** > **Connections**.
@@ -59,7 +59,7 @@ EITHER:
 
 1. In the _Allow Model Usage_ pane, enter a unique **Connection name**.
 
-   <Image align="center" alt="createconnection_allowmodelusage.png" border={false} src="https://files.readme.io/2b35d96ffb6292a18e3456e2995e3f48ca17b77f49799dd17c4de3ceb2e7b6ff-uuid-29575b5f-c35e-a875-5cd9-26bbc11b60f0.png" />
+   <Image align="center" alt="createconnection_allowmodelusage.png" src="https://files.readme.io/2b35d96ffb6292a18e3456e2995e3f48ca17b77f49799dd17c4de3ceb2e7b6ff-uuid-29575b5f-c35e-a875-5cd9-26bbc11b60f0.png" />
 2. Select a secret from the **API Key as Secret Name** dropdown list or <Anchor label="Create a New Secret" title="Create a New Secret" href="#create-a-new-secret">Create a New Secret</Anchor>.
 3. Click **Create connection**. The "_Connection created successfully_" notification is displayed.
 
@@ -68,7 +68,7 @@ OR:
 1. In the Administration module menu bar, select **AI/ML Settings** > **Connections**.
 2. Click **Create new connection**.
 
-   <Image align="center" border={false} src="https://files.readme.io/ba8f2dcd1d6774a5f14380c399c5ee4186804685b20cf564999e774e779d00f0-createnewconnection_admin.png" />
+   <Image align="center" src="https://files.readme.io/ba8f2dcd1d6774a5f14380c399c5ee4186804685b20cf564999e774e779d00f0-createnewconnection_admin.png" />
 3. Enter a unique **Connection name**, the project and the model provider for the connection.
 4. Select a secret for the connection from the **API Key as Secret Name** dropdown list or <Anchor label="Create a New Secret" title="Create a New Secret" href="#create-a-new-secret">Create a New Secret</Anchor>.
 5. Click **Save**.
@@ -87,7 +87,7 @@ This procedure outlines the steps to create a new secret, which is used to secur
 
 1. In the _Allow Model Usage_ pane, click **Create new secret**.
 
-   <Image alt="createnewsecret.png" border={false} src="https://files.readme.io/740d60fbb5bba070e491ad73871321e3b8e70c3694f57bddd312e1a5a0a70aa2-uuid-52761a2e-a9cb-e72d-0913-9b903ba655d8.png" />
+   ![createnewsecret.png](https://files.readme.io/740d60fbb5bba070e491ad73871321e3b8e70c3694f57bddd312e1a5a0a70aa2-uuid-52761a2e-a9cb-e72d-0913-9b903ba655d8.png)
 
 2. Enter a **Secret name** and the **Secret value**.
 
