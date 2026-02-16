@@ -81,7 +81,9 @@ Allowing a model will bring an unmanaged or partially managed model under govern
 3. Click ​**Close**​​ to close the window.
 
 The model is added to the AI Catalog and becomes Managed for that project and appears in the ​**Registry**​​ page.
-​
+
+<br />
+
 Once all instances of a model are allowed, its overall status updates to Managed. If a model still has unmanaged instances, then its status is indicated as Partially Managed.
 
 See also: [Discover and Allow Models](doc:discover-and-allow-models)
