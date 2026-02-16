@@ -86,6 +86,8 @@ The model is added to the AI Catalog and becomes Managed for that project and ap
 
 Once all instances of a model are allowed, its overall status updates to Managed. If a model still has unmanaged instances, then its status is indicated as Partially Managed.
 
+<br />
+
 See also: [Discover and Allow Models](doc:discover-and-allow-models)
 
 ## Keep Your System Secure
