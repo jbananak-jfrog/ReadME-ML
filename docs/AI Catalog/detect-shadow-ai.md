@@ -80,7 +80,7 @@ Allowing a model will bring an unmanaged or partially managed model under govern
    <Image align="left" border={true} width="70% " src="https://files.readme.io/44dc81fe27f3d6c2f9aa996ee40441d66a157abdf73f76cb7a35824922cbb7f5-managemodel_allow.png" className="border" />
 3. Click ​**Close**​​ to close the window.
 
-The model is added to the AI Catalog and becomes Managed for that project and appears in the ​**Registry**​​ page.
+The model is added to the AI Catalog and becomes Managed for that project and appears in the ​**Registry**​​ page. 
 
 <br />
 
