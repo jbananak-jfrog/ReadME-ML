@@ -843,6 +843,8 @@ JFrog ML feature sets support fetching data from multiple sources, with differen
 
 The feature set backfill process enables users to replace data, either entirely or within a specific time interval, ensuring both online and offline data are appropriately updated according to the specific requirements.
 
+**Prerequisistes:** You have at least one feature set defined.
+
 Backfill can be triggered via the JFrog platform UI or via CLI command options.
 
 There are three types of backfill:
@@ -863,8 +865,10 @@ The backfill command can be run via the UI or using the CLI, as described below.
 
 1. In the JFrog platform, navigate to **AI/ML** > **Feature Sets**.
 2. Select an existing feature set, and click the three dots button in the top-right corner.
-3. From the drop down menu that displays, select Run backfill.
-4. Enter the details in the backfill window and run the backfill.
+3. From the drop down menu that displays, select **Run backfill**.
+4. Enter the details in the backfill window and click **Run backfill** (run the backfill).
+
+   <Image align="center" border={true} width="70% " src="https://files.readme.io/2066ace6cae0c71ef78272f653dafbcafb24c8b50e08c64821a9680a3db5e62a-run_backfill_wdw.png" className="border" />
 
 <Callout icon="📘" theme="info">
   **Note**
