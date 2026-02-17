@@ -23,7 +23,7 @@ Once you have set up your JFrog ML account and your AI catalog entitlement, all 
 
 ## Workflow for Using the AI Catalog
 
-<Image alt="AIWORKFLOW1HORIZONTAL2.png" border={false} src="https://files.readme.io/83b9af02da8e5642f158bf939206e339fe2ab1b2b6489cdae811633b61074907-uuid-828e705f-fb86-8866-f036-653a28178d36.png" />
+![AIWORKFLOW1HORIZONTAL2.png](https://files.readme.io/83b9af02da8e5642f158bf939206e339fe2ab1b2b6489cdae811633b61074907-uuid-828e705f-fb86-8866-f036-653a28178d36.png)
 
 ### Access the AI Catalog
 
@@ -31,7 +31,7 @@ From the JFrog Platform menu, select **AI/ML**. The **Registry** page opens by d
 
 The AI Catalog has three main windows:
 
-* **Registry:** The default view, this lists the models approved for use in your organization. If you are a new user, this tab is empty until models are approved.
+* **Registry:** The default view, this lists the models approved for use in your organization. If you are a new user, this page is empty until models are approved.
 * **Discovery:** Explore all available models provided by approved (supported) providers that you can review and approve for use.
 * **Detection:** View and manage all package* type models found in your organization’s artifacts as scanned by JFrog Xray.
 
@@ -67,7 +67,7 @@ The JFrog platform automatically scans each model for vulnerabilities, and offer
 
 Next, governance becomes straightforward and effective. Admin users can easily allow models (from the <Anchor label="Discovery" title="Discover and Allow Models" href="/docs/discover-and-allow-models">Discovery</Anchor> page) for secure use within your organization. Models can be approved on a per-project basis, with a comprehensive list of allowed models available on the _[Registry](/docs/discover-and-allow-models)_ _(allowed models)_ page.
 
-<Image align="center" border={false} src="https://files.readme.io/d017974e2b2fb9b34721d8fd8fab51f12f96b045bbdde3dbd9519252b35df593-Models_in_registry.png" />
+<Image align="center" src="https://files.readme.io/d017974e2b2fb9b34721d8fd8fab51f12f96b045bbdde3dbd9519252b35df593-Models_in_registry.png" />
 
 You can create an allow-list of models, ensuring that if a model is not on the list, it cannot be used, thereby preventing unvetted models from entering your supply chain.
 
@@ -75,7 +75,7 @@ You can create an allow-list of models, ensuring that if a model is not on the l
 
 Once a model has been successfully allowed in a project, it moves into the **Registry** page and is ready for use. The steps for model consumption vary depending on the model type (Package or External API).
 
-<Image alt="usinganallowedmodel_new.png" border={false} src="https://files.readme.io/843add4b7c3092c4accbe46accb7d3ee4172ab7c75d2bb1bf6e0392c63b2a718-uuid-97c3e7f7-146f-bd6f-6b8f-bf743f340714.png" />
+![usinganallowedmodel\_new.png](https://files.readme.io/843add4b7c3092c4accbe46accb7d3ee4172ab7c75d2bb1bf6e0392c63b2a718-uuid-97c3e7f7-146f-bd6f-6b8f-bf743f340714.png)
 
 See: [Allow Your First Model](/docs/discover-and-allow-models#allow-your-first-model) | <Anchor label="Discover and Allow Models" title="Discover and Allow Models" href="/docs/discover-and-allow-models">Discover and Allow Models</Anchor> | <Anchor label="Get Started with JFrog ML" title="Get Started with JFrog ML" href="/docs/get-started-with-jfrog-ml">Get Started with JFrog ML</Anchor>
 
@@ -88,7 +88,7 @@ This procedure outlines the **prerequisite steps** to enable the use of **model 
 1. Navigate to the curation settings: Select **Administration** > **Curation Settings** > **General**.
 2. Toggle the **Curation On** switch to **ON**.
 
-   <Image align="center" alt="generalcurationsettings.png" border={false} src="https://files.readme.io/b30f3ad83548d80ce42cdcad16ab5863c06a963463e85798ac4601f070dc8e94-curation_on_steps.png" />
+   <Image align="center" alt="generalcurationsettings.png" src="https://files.readme.io/b30f3ad83548d80ce42cdcad16ab5863c06a963463e85798ac4601f070dc8e94-curation_on_steps.png" />
 3. Click **Enable repositories** to navigate to the _Remote Repositories_ page.
 4. Verify the **PackageType**. Ensure that HuggingFaceML is toggled **ON**.
 
@@ -103,5 +103,5 @@ The prerequisite Curation Settings setup is now complete. If required, you can n
 
   Failure to activate these curation settings may result in the following error when attempting to add a model package. To resolve this error, ensure both settings are activated as described.
 
-  <Image alt="curationerror.png" border={false} src="https://files.readme.io/929da6052201da6b2a2360dc7233c3ca3b0f803e03de5732edb9a209664a5b69-uuid-96821bba-e102-d87a-fa81-0d0dc9df5e09.png" />
+  ![curationerror.png](https://files.readme.io/929da6052201da6b2a2360dc7233c3ca3b0f803e03de5732edb9a209664a5b69-uuid-96821bba-e102-d87a-fa81-0d0dc9df5e09.png)
 </Callout>
