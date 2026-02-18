@@ -911,3 +911,64 @@ frogml features backfill --reset-backfill [--cluster-template <cluster_template>
 * `--feature-set TEXT or --name TEXT`: The name of the feature set for which the backfill process is to be performed. This option is required.
 
 <br />
+
+## Configure Data Retention (TTL)
+
+Data Retention lets you manage the lifecycle of data in the Online Store by defining a Time to Live (TTL) for Batch Feature Sets. TTL determines how long an entity stays in the Online Store before it is expired and removed. This helps keep the Online Store relevant, improves performance, and reduces storage cost.
+
+TTL for Batch Feature Sets is set at the Feature Set level and is calculated from each entity's event time (timestamp). After an entity exceeds the TTL, it is logically expired and removed in the next ingestion cycle.
+
+**Prerequisites:** You need an existing Batch Feature Set defined with the JFrog ML SDK (FrogML). For more information on Feature Sets, see the FrogML documentation.
+
+<Callout icon="📘" theme="info">
+  **Notes:**
+
+  * TTL applies only to the Online Store. Data in the Offline Store (Iceberg) is not deleted by this process, so you keep full history for training.
+  * For streaming aggregation Feature Sets, TTL is built in. Data is tied to time windows and expires as it leaves the window, so you do not configure TTL separately.
+</Callout>
+
+**To configure Data Retention (TTL) for a Batch Feature Set:**
+
+1. Open your Feature Set definition file in a text editor or IDE.
+
+2. In the `@batch.feature_set` decorator, add the TTL parameter. The parameter name may be `online_time_to_live` (with a timedelta). Set the value to the duration after which an entity should be considered expired.
+
+   **Where:**
+
+   * `online_time_to_live` – (Optional) The duration after which an entity is considered expired. An entity is deleted only when Current Time − Event Timestamp > TTL. Deletion is not immediate; it runs during the next Batch Ingestion job.
+
+**Example:**
+
+```python
+from frogml.feature_store.feature_sets import batch
+from datetime import timedelta
+
+@batch.feature_set(
+    name="user_login_stats",
+    key="user_id",
+    timestamp_column_name="login_time",
+    online_time_to_live=timedelta(days=30),  # 30 days TTL
+    data_sources={"log_source": ReadPolicy.NewOnly})
+def user_login_stats():
+    # Feature set logic here
+    pass
+```
+
+3. Save the file and run or deploy your Feature Set so that the next Batch Ingestion job uses the new TTL setting.
+
+<Callout icon="📘" theme="info">
+  Note:
+
+  Enabling TTL on an existing Feature Set that already has a large history can make the first ingestion job take longer, because the system processes many expired keys. Billing metrics are updated after entities are successfully deleted from the Online Store.
+</Callout>
+
+## How Expiration Works
+
+Expiration runs as an automated step at the start of each Batch Ingestion job:
+
+1. **Watermark tracking** – The system keeps an "Expiration Watermark" in metadata. This watermark is the timestamp of the last expired (deleted) key, not the last job time or (last job time − TTL). That timestamp becomes the next watermark.
+2. **Identification** – Before ingesting new data, the system finds all keys in the Online Store whose event timestamps have exceeded the TTL since the last watermark.
+3. **Deletion** – Those expired keys are removed from the Online Store.
+4. **Ingestion** – After cleanup, the new batch of data is ingested.
+
+For more information on Batch Feature Sets, see [Batch Feature Sets](\docs\batch-feature-sets).
