@@ -31,7 +31,7 @@ In the _Connections_ page, you can view a list of all the connections defined in
 
 <Image align="center" alt="connections.png" src="https://files.readme.io/c0d2fbc03920e536f708ccc223e6fbc13ca83d563c821d1427c729adee7e4c66-connections_window.png" />
 
-**> To view the _Connections_ page:**
+**To view the _Connections_ page:**
 
 1. In the JFrog platform, select the **Administration** module.
 2. Scroll down to the bottom of the left menu bar and select **AI/ML Settings** > **Connections**.
