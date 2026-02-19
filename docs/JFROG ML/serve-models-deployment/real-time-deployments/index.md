@@ -38,11 +38,11 @@ JFrog ML real time models deploy your ML models with a lightweight, simple and s
 
 JFrog sets up the network requirements and deploys your model on a managed Kubernetes cluster, enabling you to leverage auto-scaling and security. JFrog ML also adds a suite of monitoring tools, simplifying the process of managing your model performance.
 
-<Image alt="Real-time model deployment overview" border={false} src="https://files.readme.io/c22e14438f25fe2ee4e3b4a00a29a8e5206e9356f795e0290e3d6251393c2c4e-uuid-5a77810a-0d93-ea20-6692-73b7b87032e3.png" />
+![Real-time model deployment overview](https://files.readme.io/c22e14438f25fe2ee4e3b4a00a29a8e5206e9356f795e0290e3d6251393c2c4e-uuid-5a77810a-0d93-ea20-6692-73b7b87032e3.png)
 
 ## Deploying Real-time Models from the UI
 
-<Image alt="Deploying a real-time model from the UI" border={false} src="https://files.readme.io/c37504c48ecaf10085959181c6692b60a42ebe123e004704f8af89c3c79dff23-uuid-ba434fe8-6697-f02d-b1e0-c884dee29695.gif" />
+![Deploying a real-time model from the UI](https://files.readme.io/c37504c48ecaf10085959181c6692b60a42ebe123e004704f8af89c3c79dff23-uuid-ba434fe8-6697-f02d-b1e0-c884dee29695.gif)
 
 **To deploy a real-time model from the UI:**
 
@@ -262,41 +262,47 @@ JFrog ML comes bundled with Grafana and Prometheus to provide monitoring dashboa
 
 The following health metrics appear in the model **Overview** tab:
 
-<Image alt="Model health monitoring dashboard" border={false} src="https://files.readme.io/8de63ece4bf79ce77ad93a33db42bde236adfd2ca428c31b2264933be23e0a8f-uuid-3c1b994a-ff06-7bdc-d129-5bfce1b81001.png" />
+![Model health monitoring dashboard](https://files.readme.io/8de63ece4bf79ce77ad93a33db42bde236adfd2ca428c31b2264933be23e0a8f-uuid-3c1b994a-ff06-7bdc-d129-5bfce1b81001.png)
 
 In addition, you can follow and search the applicable logs produced by your model in the **Logs** tab:
 
-<Image alt="Model logs tab" border={false} src="https://files.readme.io/e3e6dc87c0d361da0419c49706cd4fc07c9d483534a7ddd2990f755ee8216a38-uuid-96057c91-dc54-213f-69da-34593108ce29.png" />
+![Model logs tab](https://files.readme.io/e3e6dc87c0d361da0419c49706cd4fc07c9d483534a7ddd2990f755ee8216a38-uuid-96057c91-dc54-213f-69da-34593108ce29.png)
 
 ## Auto-scaling Real-time Models
 
-To attach a new auto-scaling to a running model:
+Auto-scaling of a real-time model is done as part of the deployment process. See the following example of the configuration file, and the deployment command:
 
-1. **Create a config file:**
+**Create a config file:**
 
 ```python
-api_version: v1
-spec:
-  model_id: <model-id>
-  variation_name: <variation-name>
-  auto_scaling:
+model_id: [model_id}
+build_id: db2fb18a-20b1-4cd6-9463-33d32c72d322
+realtime:
+    variation_name: default
+    timeout: 6000
+    workers: 2
+auto_scaling:
     min_replica_count: 1
     max_replica_count: 10
     polling_interval: 30
     cool_down_period: 300
     triggers:
-      prometheus_trigger:
-        - query_spec:
-            metric_type: <cpu/gpu/memory/latency/error_rate/throughput>
-            aggregation_type: <min/max/avg/sum>
-            time_period: 30
-          threshold: 60
+        prometheus_trigger:
+            - query_spec:
+                metric_type: throughput
+                aggregation_type: max
+                time_period: 30
+              threshold: 3
+resources:
+    pods: 1
+    cpus: 2
+    memory: 512
 ```
 
 2. **Run the following command:**
 
 ```shell
-frogml models autoscaling attach -f config.yaml
+frogml models deploy realtime --model-id [model_id] --build-id db2fb18a-20b1-4cd6-9463-33d32c72d322 --variation-name default --from-file deployment_config_autoscaling.yaml
 ```
 
 ## Configuration
