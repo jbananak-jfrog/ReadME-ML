@@ -41,31 +41,16 @@ Our general-purpose instances provide varying levels of CPU and memory resources
 
 Select the instance size that best matches your requirements from the table below:
 
-
-|id|display_name|display_order|cpu|memory_amount|memory_unit|enabled|qpu|cluster_type|
-|--|------------|-------------|---|-------------|-----------|-------|---|------------|
-|large|Large|5|8.0|16|GIB|true|2.0|SAAS|
-|medium|Medium|4|4.0|8|GIB|true|1.0|SAAS|
-|prompt|Prompt|1|0.5|1|GIB|true|0.125|SAAS|
-|small|Small|3|2.0|4|GIB|true|0.5|SAAS|
-|tiny|Tiny|2|1.0|2|GIB|true|0.25|SAAS|
-|xlarge|XLarge|6|16.0|32|GIB|true|4.0|SAAS|
-|2xlarge|2XLarge|7|32.0|64|GIB|true|8.0|SAAS|
-|4xlarge|4XLarge|8|64.0|128|GIB|true|16.0|SAAS|
-
-
-
-
-
-| Instance | CPUs | Memory (GB) | ML Credits (per hour) |
-| :------- | :--- | :---------- | :-------------------- |
-| Tiny     | 1    | 2           | 0.25                  |
-| Small    | 2    | 8           | 0.5                   |
-| Medium   | 4    | 16          | 1                     |
-| Large    | 8    | 32          | 2                     |
-| XLarge   | 16   | 64          | 4                     |
-| 2XLarge  | 32   | 128         | 8                     |
-| 4XLarge  | 64   | 256         | 16                    |
+| Instance ID | display_name | display_order | CPUs | Memory (GB)   | Enabled | GPU   | cluster_type |
+| :---------- | :----------- | :------------ | :--- | :------------ | :------ | :---- | :----------- |
+| prompt      | Prompt       | 1             | 0.5  | 1             | true    | 0.125 | SAAS         |
+| tiny        | Tiny         | 2             | 1.0  | 2             | true    | 0.25  | SAAS         |
+| small       | Small        | 3             | 2.0  | 4             | true    | 0.5   | SAAS         |
+| medium      | Medium       | 4             | 4.0  | 8             | true    | 1.0   | SAAS         |
+| large       | Large        | 5             | 8.0  | 16            | true    | 2.0   | SAAS         |
+| xlarge      | XLarge       | 6             | 16.0 | 32            | true    | 4.0   | SAAS         |
+| 2xlarge     | 2XLarge      | 7             | 32.0 | 64            | true    | 8.0   | SAAS         |
+| 4xlarge     | 4XLarge      | 8             | 64.0 | 128           | true    | 16.0  | SAAS         |
 
 ### GPU Instances
 
