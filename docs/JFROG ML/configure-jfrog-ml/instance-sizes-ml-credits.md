@@ -23,7 +23,7 @@ On this page, you will find detailed information about the different instance si
   Please note that as of February 2025, we've updated our data cluster sizes and ML Credits to reflect upgrades to next-gen instances, providing faster runtimes and greater efficiency.
 </Callout>
 
-<Image alt="Select an instance size from a wide variety of options" border={false} src="https://files.readme.io/291ff7f2790ceb85c5fdbb6d7b704f62bf3987301fd415b01531ea92b0e9ab9e-uuid-4ba037ac-da87-52f2-cc89-a75d978ad32d.gif" />
+![Select an instance size from a wide variety of options](https://files.readme.io/291ff7f2790ceb85c5fdbb6d7b704f62bf3987301fd415b01531ea92b0e9ab9e-uuid-4ba037ac-da87-52f2-cc89-a75d978ad32d.gif)
 
 ## Build & Deploy Models
 
@@ -40,6 +40,22 @@ JFrog ML offers a wide range of instance size to build and deploy models.
 Our general-purpose instances provide varying levels of CPU and memory resources, allowing you to optimize efficiency and performance.
 
 Select the instance size that best matches your requirements from the table below:
+
+
+|id|display_name|display_order|cpu|memory_amount|memory_unit|enabled|qpu|cluster_type|
+|--|------------|-------------|---|-------------|-----------|-------|---|------------|
+|large|Large|5|8.0|16|GIB|true|2.0|SAAS|
+|medium|Medium|4|4.0|8|GIB|true|1.0|SAAS|
+|prompt|Prompt|1|0.5|1|GIB|true|0.125|SAAS|
+|small|Small|3|2.0|4|GIB|true|0.5|SAAS|
+|tiny|Tiny|2|1.0|2|GIB|true|0.25|SAAS|
+|xlarge|XLarge|6|16.0|32|GIB|true|4.0|SAAS|
+|2xlarge|2XLarge|7|32.0|64|GIB|true|8.0|SAAS|
+|4xlarge|4XLarge|8|64.0|128|GIB|true|16.0|SAAS|
+
+
+
+
 
 | Instance | CPUs | Memory (GB) | ML Credits (per hour) |
 | :------- | :--- | :---------- | :-------------------- |
@@ -134,7 +150,7 @@ In the JFrog ML UI, you can easily select and configure instance sizes for your 
 
 During the deployment process, use the dropdown to specify the instance size for optimal performance.
 
-<Image alt="The instance size dropdown offers a wide selection of available instances" border={false} src="https://files.readme.io/9f9b031bccbe0d341900f9e5a1d094a63eabf6069961758961cf677df1f1346c-uuid-7390d979-0e43-86be-41eb-d3b241cecbcf.gif" />
+![The instance size dropdown offers a wide selection of available instances](https://files.readme.io/9f9b031bccbe0d341900f9e5a1d094a63eabf6069961758961cf677df1f1346c-uuid-7390d979-0e43-86be-41eb-d3b241cecbcf.gif)
 
 ## Setting Custom Configuration
 
@@ -142,4 +158,4 @@ JFrog ML enables you to manually set custom instance configuration sizes for bui
 
 Custom instance type configuration is currently available for CPU deployments only.
 
-<Image alt="Set custom instance configuration for CPU deployments" border={false} src="https://files.readme.io/f9db731b02a5a51843ced0d19d33bd564e73950155e3f557c7222a48333ec293-uuid-46a5d4d7-3652-849c-7a84-e75fe4316e80.gif" />
+![Set custom instance configuration for CPU deployments](https://files.readme.io/f9db731b02a5a51843ced0d19d33bd564e73950155e3f557c7222a48333ec293-uuid-46a5d4d7-3652-849c-7a84-e75fe4316e80.gif)
