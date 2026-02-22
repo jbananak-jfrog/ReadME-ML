@@ -54,7 +54,7 @@ Select the instance size that best matches your requirements from the table belo
 
 ### GPU Instances
 
-Build and deploy models on GPU-based machines from the selection available in the below table:
+Build and deploy models on GPU-based machines from the selection available in the table below (scroll right for more data):
 
 | Instance ID          | Display Name | Display Order | CPU  | Memory Amount (GB) | GPU Amount | GPU Type                   | AWS Supported | GCP Supported | qpu        | Enabled | Cluster Type | Azure Supported |
 | -------------------- | ------------ | ------------- | ---- | ------------------ | ---------- | -------------------------- | ------------- | ------------- | ---------- | ------- | ------------ | --------------- |
