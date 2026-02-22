@@ -55,39 +55,40 @@ Select the instance size that best matches your requirements from the table belo
 ### GPU Instances
 
 Build and deploy models on GPU-based machines from the selection available in the below table:
-|id|display_name|display_order|cpu|memory_amount|memory_unit|gpu_amount|gpu_type|aws_supported|gcp_supported|qpu|enabled|cluster_type|azure_supported|
-|--|------------|-------------|---|-------------|-----------|----------|--------|-------------|-------------|---|-------|------------|---------------|
-|gpu.azure.m60.4xl|M60 4XLarge|3|47.0|443|GIB|4|NVIDIA_M60|false|false|22.8|true|SAAS|true|
-|gpu.azure.m60.2xl|M60 2XLarge|2|23.0|219|GIB|2|NVIDIA_M60|false|false|11.4|true|SAAS|true|
-|gpu.azure.m60.xl|M60 XLarge|1|11.0|107|GIB|1|NVIDIA_M60|false|false|5.7|true|SAAS|true|
-|gpu.azure.a10.xl|A10 XLarge|11|71.0|875|GIB|1|NVIDIA_A10|false|false|32.6|true|SAAS|true|
-|gpu.azure.a10.large|A10 Large|10|35.0|435|GIB|1|NVIDIA_A10|false|false|16.0|true|SAAS|true|
-|gpu.azure.a10.medium|A10 Medium|9|17.0|215|GIB|1|NVIDIA_A10|false|false|8.0|true|SAAS|true|
-|gpu.azure.a10.small|A10 Small|8|11.0|105|GIB|1|NVIDIA_A10|false|false|4.54|true|SAAS|true|
-|gpu.azure.t4.8xl|T4 8XLarge|7|64.0|435|GIB|4|NVIDIA_T4|false|false|21.76|true|SAAS|true|
-|gpu.azure.t4.4xl|T4 4XLarge|6|15.0|105|GIB|1|NVIDIA_T4|false|false|6.02|true|SAAS|true|
-|gpu.azure.t4.2xl|T4 2XLarge|5|7.0|51|GIB|1|NVIDIA_T4|false|false|3.76|true|SAAS|true|
-|gpu.azure.t4.xl|T4 XLarge|4|3.0|23|GIB|1|NVIDIA_T4|false|false|2.63|true|SAAS|true|
-|gpu.a10.12xl|A10 12Xlarge|15|47.0|189|GIB|4|NVIDIA_A10G|true|false|28.3600006|true|SAAS|false|
-|gpu.a10.2xl|A10 2Xlarge|2|7.0|28|GIB|1|NVIDIA_A10G|true|false|6.05999994|true|SAAS|false|
-|gpu.a10.4xl|A10 4Xlarge|3|15.0|59|GIB|1|NVIDIA_A10G|true|false|8.11999989|true|SAAS|false|
-|gpu.a10.8xl|A10 8Xlarge|4|31.0|123|GIB|1|NVIDIA_A10G|true|false|12.2399998|true|SAAS|false|
-|gpu.a10.xl|A10 Xlarge|1|3.0|14|GIB|1|NVIDIA_A10G|true|false|5.03000021|true|SAAS|false|
-|gpu.a100.8xl|A100 8Xlarge|8|95.0|1072|GIB|8|NVIDIA_A100|true|false|163.199997|true|SAAS|false|
-|gpu.gcp.a100.8xl|A100 8Xlarge|8|95.0|1072|GIB|8|NVIDIA_A100_80GB_8_96_1360|false|true|163.199997|true|SAAS|false|
-|gpu.gcp.t4.2xl|T4 2Xlarge|6|7.0|25|GIB|1|NVIDIA_T4_1_8_30|false|true|3.31999993|true|SAAS|false|
-|gpu.gcp.t4.4xl|T4 4Xlarge|7|15.0|52|GIB|1|NVIDIA_T4_1_16_60|false|true|5.57999992|true|SAAS|false|
-|gpu.gcp.t4.xl|T4 Xlarge|5|3.0|11|GIB|1|NVIDIA_T4_1_4_15|false|true|2.19000006|true|SAAS|false|
-|gpu.l4.xl|L4 Xlarge|17|3.0|12|GIB|1|NVIDIA_L4|true|false|3.52999997|true|SAAS|false|
-|gpu.t4.2xl|T4 2Xlarge|6|7.0|28|GIB|1|NVIDIA_T4|true|false|3.31999993|true|SAAS|false|
-|gpu.t4.4xl|T4 4Xlarge|7|15.0|59|GIB|1|NVIDIA_T4|true|false|5.57999992|true|SAAS|false|
-|gpu.t4.xl|T4 Xlarge|5|3.0|14|GIB|1|NVIDIA_T4|true|false|2.19000006|true|SAAS|false|
-|gpu.v100.4xl|V100 4Xlarge|10|31.0|227|GIB|4|NVIDIA_V100|true|false|63.5999985|true|SAAS|false|
-|gpu.v100.8xl|V100 8Xlarge|11|63.0|454|GIB|8|NVIDIA_V100|true|false|127.199997|true|SAAS|false|
-|gpu.a100.xl|A100 Xlarge|16|10.0|75|GIB|1|NVIDIA_A100|true|false|15.8999996|true|SAAS|false|
-|gpu.v100.xl|V100 Xlarge|9|7.0|53|GIB|1|NVIDIA_V100|true|false|15.8999996|true|SAAS|false|
-|gpu.gcp.v100.xl|V100 Xlarge|9|7.0|52|GIB|1|NVIDIA_V100_1_8_52|false|true|15.8999996|true|SAAS|false|
-|gpu.gcp.v100.4xl|V100 4Xlarge|10|31.0|208|GIB|4|NVIDIA_V100_4_32_208|false|true|63.5999985|true|SAAS|false|
+
+| Instance ID          | Display Name | Display Order | CPU  | Memory Amount (GB) | GPU Amount | GPU Type                   | AWS Supported | GCP Supported | qpu        | Enabled | Cluster Type | Azure Supported |
+| -------------------- | ------------ | ------------- | ---- | ------------------ | ---------- | -------------------------- | ------------- | ------------- | ---------- | ------- | ------------ | --------------- |
+| gpu.azure.m60.4xl    | M60 4XLarge  | 3             | 47.0 | 443                | 4          | NVIDIA_M60                 | false         | false         | 22.8       | true    | SAAS         | true            |
+| gpu.azure.m60.2xl    | M60 2XLarge  | 2             | 23.0 | 219                | 2          | NVIDIA_M60                 | false         | false         | 11.4       | true    | SAAS         | true            |
+| gpu.azure.m60.xl     | M60 XLarge   | 1             | 11.0 | 107                | 1          | NVIDIA_M60                 | false         | false         | 5.7        | true    | SAAS         | true            |
+| gpu.azure.a10.xl     | A10 XLarge   | 11            | 71.0 | 875                | 1          | NVIDIA_A10                 | false         | false         | 32.6       | true    | SAAS         | true            |
+| gpu.azure.a10.large  | A10 Large    | 10            | 35.0 | 435                | 1          | NVIDIA_A10                 | false         | false         | 16.0       | true    | SAAS         | true            |
+| gpu.azure.a10.medium | A10 Medium   | 9             | 17.0 | 215                | 1          | NVIDIA_A10                 | false         | false         | 8.0        | true    | SAAS         | true            |
+| gpu.azure.a10.small  | A10 Small    | 8             | 11.0 | 105                | 1          | NVIDIA_A10                 | false         | false         | 4.54       | true    | SAAS         | true            |
+| gpu.azure.t4.8xl     | T4 8XLarge   | 7             | 64.0 | 435                | 4          | NVIDIA_T4                  | false         | false         | 21.76      | true    | SAAS         | true            |
+| gpu.azure.t4.4xl     | T4 4XLarge   | 6             | 15.0 | 105                | 1          | NVIDIA_T4                  | false         | false         | 6.02       | true    | SAAS         | true            |
+| gpu.azure.t4.2xl     | T4 2XLarge   | 5             | 7.0  | 51                 | 1          | NVIDIA_T4                  | false         | false         | 3.76       | true    | SAAS         | true            |
+| gpu.azure.t4.xl      | T4 XLarge    | 4             | 3.0  | 23                 | 1          | NVIDIA_T4                  | false         | false         | 2.63       | true    | SAAS         | true            |
+| gpu.a10.12xl         | A10 12Xlarge | 15            | 47.0 | 189                | 4          | NVIDIA_A10G                | true          | false         | 28.3600006 | true    | SAAS         | false           |
+| gpu.a10.2xl          | A10 2Xlarge  | 2             | 7.0  | 28                 | 1          | NVIDIA_A10G                | true          | false         | 6.05999994 | true    | SAAS         | false           |
+| gpu.a10.4xl          | A10 4Xlarge  | 3             | 15.0 | 59                 | 1          | NVIDIA_A10G                | true          | false         | 8.11999989 | true    | SAAS         | false           |
+| gpu.a10.8xl          | A10 8Xlarge  | 4             | 31.0 | 123                | 1          | NVIDIA_A10G                | true          | false         | 12.2399998 | true    | SAAS         | false           |
+| gpu.a10.xl           | A10 Xlarge   | 1             | 3.0  | 14                 | 1          | NVIDIA_A10G                | true          | false         | 5.03000021 | true    | SAAS         | false           |
+| gpu.a100.8xl         | A100 8Xlarge | 8             | 95.0 | 1072               | 8          | NVIDIA_A100                | true          | false         | 163.199997 | true    | SAAS         | false           |
+| gpu.gcp.a100.8xl     | A100 8Xlarge | 8             | 95.0 | 1072               | 8          | NVIDIA_A100_80GB_8_96_1360 | false         | true          | 163.199997 | true    | SAAS         | false           |
+| gpu.gcp.t4.2xl       | T4 2Xlarge   | 6             | 7.0  | 25                 | 1          | NVIDIA_T4_1_8_30           | false         | true          | 3.31999993 | true    | SAAS         | false           |
+| gpu.gcp.t4.4xl       | T4 4Xlarge   | 7             | 15.0 | 52                 | 1          | NVIDIA_T4_1_16_60          | false         | true          | 5.57999992 | true    | SAAS         | false           |
+| gpu.gcp.t4.xl        | T4 Xlarge    | 5             | 3.0  | 11                 | 1          | NVIDIA_T4_1_4_15           | false         | true          | 2.19000006 | true    | SAAS         | false           |
+| gpu.l4.xl            | L4 Xlarge    | 17            | 3.0  | 12                 | 1          | NVIDIA_L4                  | true          | false         | 3.52999997 | true    | SAAS         | false           |
+| gpu.t4.2xl           | T4 2Xlarge   | 6             | 7.0  | 28                 | 1          | NVIDIA_T4                  | true          | false         | 3.31999993 | true    | SAAS         | false           |
+| gpu.t4.4xl           | T4 4Xlarge   | 7             | 15.0 | 59                 | 1          | NVIDIA_T4                  | true          | false         | 5.57999992 | true    | SAAS         | false           |
+| gpu.t4.xl            | T4 Xlarge    | 5             | 3.0  | 14                 | 1          | NVIDIA_T4                  | true          | false         | 2.19000006 | true    | SAAS         | false           |
+| gpu.v100.4xl         | V100 4Xlarge | 10            | 31.0 | 227                | 4          | NVIDIA_V100                | true          | false         | 63.5999985 | true    | SAAS         | false           |
+| gpu.v100.8xl         | V100 8Xlarge | 11            | 63.0 | 454                | 8          | NVIDIA_V100                | true          | false         | 127.199997 | true    | SAAS         | false           |
+| gpu.a100.xl          | A100 Xlarge  | 16            | 10.0 | 75                 | 1          | NVIDIA_A100                | true          | false         | 15.8999996 | true    | SAAS         | false           |
+| gpu.v100.xl          | V100 Xlarge  | 9             | 7.0  | 53                 | 1          | NVIDIA_V100                | true          | false         | 15.8999996 | true    | SAAS         | false           |
+| gpu.gcp.v100.xl      | V100 Xlarge  | 9             | 7.0  | 52                 | 1          | NVIDIA_V100_1_8_52         | false         | true          | 15.8999996 | true    | SAAS         | false           |
+| gpu.gcp.v100.4xl     | V100 4Xlarge | 10            | 31.0 | 208                | 4          | NVIDIA_V100_4_32_208       | false         | true          | 63.5999985 | true    | SAAS         | false           |
 
 ## Feature Store
 
