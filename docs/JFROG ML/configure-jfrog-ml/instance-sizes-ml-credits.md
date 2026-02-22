@@ -90,6 +90,10 @@ Build and deploy models on GPU-based machines from the selection available in th
 | gpu.gcp.v100.xl      | V100 Xlarge  | 9             | 7.0  | 52                 | 1          | NVIDIA_V100_1_8_52         | false         | true          | 15.8999996 | true    | SAAS         | false           |
 | gpu.gcp.v100.4xl     | V100 4Xlarge | 10            | 31.0 | 208                | 4          | NVIDIA_V100_4_32_208       | false         | true          | 63.5999985 | true    | SAAS         | false           |
 
+<Callout icon="📘" theme="info">
+  Instance specifications are based on AWS standards. Actual resource allocation may vary slightly depending on your cloud provider (AWS, GCP, or Azure), but will consistently meet the performance tier requirements.
+</Callout>
+
 ## Feature Store
 
 ### Data Cluster Sizes
