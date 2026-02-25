@@ -79,7 +79,7 @@ And two optional ones:
 1. `schema` - defines the model interface - input and the output of your model.
 2. `initialize_model` - invoked when the model is loaded during the serving container initialization.
 
-Read more about JFrogMl's model class method and how they can be used in the dedicated [section](/docs/model-build-overview#the-frogml-model-class).
+Read more about JFrogMl's model class method and how they can be used in the  section [The FrogML Model Class](/docs/the-frogml-model-class).
 
 For example, we can implement the Iris classifier in the following way:
 
