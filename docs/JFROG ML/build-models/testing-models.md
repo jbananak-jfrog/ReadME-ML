@@ -16,9 +16,9 @@ metadata:
 ---
 This section reviews the following topics:
 
-[Local Testing](/docs/testing-models#local-testing)
+[Local Testing](#local-testing)
 
-[Adding Integration Tests to a Model Build](https://jfrog-enterprise-group.readme.io/ai-ml/docs/testing-models#adding-integration-tests-to-a-model-build)
+[Adding Integration Tests to a Model Build](https://jfrog-enterprise-group.readme.io/ai-ml/doc#adding-integration-tests-to-a-model-build)
 
 ***
 
