@@ -280,7 +280,7 @@ def test_iris_classifier(real_time_client):
 ```
 
 <Callout icon="📘" theme="info">
-  Notes:
+  **Notes:**
 
   * **Files operations** - The current working directory of build execution is the root directory of the model. For example, if a file is located in `./main/sample.txt` and you want to read it simply open it in path `./main/sample.txt` where `.` represents the model root directory.
   * **Model fields** - Model fields should be objects which can be pickled, S3 client, for example, can't pickle due to the fact that the session should remain active.
