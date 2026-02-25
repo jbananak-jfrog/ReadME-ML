@@ -19,7 +19,7 @@ metadata:
 ---
 ## Train Models on JFrog ML
 
-JFrog ML let's you easily train models on a scalable infrastructure, either with CPU or GPU-based instances. Easily choose the resources you'd like to use and train your models with several easy commands. 🚀
+JFrog ML let's you easily train models on a scalable infrastructure, either with CPU or GPU-based instances. Easily choose the resources you'd like to use and train your models with several easy commands. 
 
 Training takes place during the build phase on the model. Your training code should be placed inside the `build()` method, which is called only once during the build phase.
 
@@ -29,16 +29,14 @@ In this section we will show you how to train your models using various examples
 
 ## Train Models with GPUs
 
-GPU instances provide high-performance resources to accelerate the model training process.
-
-FrogML's GPU instances provide high-performance computing resources to accelerate the training process. 🚀
+FrogML's GPU instances provide high-performance computing resources to accelerate the training process. 
 
 Easily customize your training resources to achieve faster training times and better results.
 
 <Callout icon="⚠️" theme="warning">
   **Warning** - Building your first model?
 
-  Please refer to our **[JFrog ML Quickstart](/docs/get-started-with-jfrog-ml)** guide if you're creating your first model. The guide provides step-by-step instructions on how to install all relevant dependencies to get you up and running.
+  Please refer to the **[JFrog ML Quickstart](/docs/get-started-with-jfrog-ml)** guide if you're creating your first model. The guide provides step-by-step instructions on how to install all relevant dependencies to get you up and running.
 </Callout>
 
 ### Training HuggingFace Models
