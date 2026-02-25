@@ -1,5 +1,6 @@
 ---
 title: Training Models
+excerpt: Train your models on a scalable infrastructure using JFrog ML.
 deprecated: false
 hidden: false
 metadata:
@@ -16,8 +17,6 @@ metadata:
     - UUID-821dbd59-af20-7ea9-9a2e-2347361cc19f
   robots: index
 ---
-Train your models on a scalable infrastructure using JFrog ML.
-
 ## Train Models on JFrog ML
 
 JFrog ML let's you easily train models on a scalable infrastructure, either with CPU or GPU-based instances. Easily choose the resources you'd like to use and train your models with several easy commands. 🚀
