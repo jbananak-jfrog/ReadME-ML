@@ -142,9 +142,7 @@ def predict(self, df: pd.DataFrame) -> pd.DataFrame:
 Notice that in this case we use pandas `DataFrame` for both the input and the output. For other options, see [Prediction Input & Output Adapters](/docs/prediction-input-output-adapters).
 
 <Callout icon="📘" theme="info">
-  **Note**
-
-  **Inference Batching**
+  **Note - Inference Batching**
 
   By default, the endpoint doesn't batch predictions. You can control this configuration using the `MAX BATCH SIZE` parameter (default: 1).
 
