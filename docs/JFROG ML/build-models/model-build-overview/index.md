@@ -35,7 +35,7 @@ The build process is designed to be integrated directly into your development wo
 **JFrog ML UI:** The Web UI is used for managing existing builds. While you cannot trigger a brand-new build from scratch here, you can perform specific actions such as:
 
 * **Rebuild:** Re-run a previous build configuration.
-* **Promote to Build:** Transition a successful experiment (model version) into a formal build artifact.
+* **Promote to Build:** Transition a successful experiment ([model version](/docs/model-version-management)) into a formal build artifact.
 
 The build runs on JFrog’s scalable infrastructure, supporting any workload size—from lightweight pre-trained models to full-scale training pipelines.
 
