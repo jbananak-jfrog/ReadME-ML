@@ -113,6 +113,38 @@ This section reviews the following topics:
   <tbody>
     <tr>
       <td>
+        ##### Problem: 
+
+        Need to verify CLI and SDK installation.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        ##### Solution
+
+        Run the following commands to ensure your environment is configured correctly:
+        * **For the CLI:** Run frogml --version. If the command is not found, ensure the FrogML CLI is in your system's PATH.
+        * **For the SDK:** Run pip show frogml. This confirms the FrogML Python SDK package is installed in your current Python environment.Make sure you are not running with rosetta.
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+<br />
+
+<Table align={["left"]}>
+  <thead>
+    <tr>
+      <th>
+
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
         ##### Symptom: Getting grpc errors (have 'x86_64', need 'arm64')
       </td>
     </tr>
