@@ -58,5 +58,3 @@ The Data Plane is the secure execution environment where all sensitive data proc
 * **Compute & Autoscaling Management:** Provisions the necessary compute resources for all jobs and manages the autoscaling of model endpoints based on real-time traffic, latency, or custom metrics.
 
 See [Control and Data Planes Interaction](/docs/control-and-data-planes-interaction)
-
-<br />
