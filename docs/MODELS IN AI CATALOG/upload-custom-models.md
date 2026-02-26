@@ -30,7 +30,6 @@ To use your own custom models, you just need to upload the models to JFrog ML. A
    ```shell Shell
    pip install frogml-cli
    ```
-   <br />
 
 5. Create the model either by entering the details here, or using the CLI.
 
