@@ -19,7 +19,7 @@ At its core, the architecture leverages the power of the JFrog platform. JFrog A
 
 Seamlessly integrating with the JFrog platform, JFrog ML enables you to use JFrog Artifactory as a trusted model registry while leveraging JFrog Security products to secure your entire model development lifecycle.
 
-<Image alt="JFrog ML Logo" border={false} src="https://files.readme.io/581df9b88feda60fe172d526e7da2416b26d5d092552cd1e7ffdabfcb9d9a848-uuid-593a04bd-f54d-8c1b-8702-5291c546c32d.png" />
+![JFrog ML Logo](https://files.readme.io/581df9b88feda60fe172d526e7da2416b26d5d092552cd1e7ffdabfcb9d9a848-uuid-593a04bd-f54d-8c1b-8702-5291c546c32d.png)
 
 This document outlines the architecture that enables this powerful combination of flexibility and security.
 
@@ -32,7 +32,7 @@ The JFrog ML architecture is fundamentally based on a separation of concerns, di
 
 This design ensures that sensitive data and computational workloads remain isolated within a secure environment, while orchestration and metadata management are handled centrally.
 
-<Image alt="JFrog ML high level overview" border={false} src="https://files.readme.io/494adbc982d4684e99bb9a7707576e6bc1cae534c6120164a85ddd64c3278503-uuid-f5a6747b-cb2c-d992-2d0b-b30d141a3471.png" />
+![JFrog ML high level overview](https://files.readme.io/494adbc982d4684e99bb9a7707576e6bc1cae534c6120164a85ddd64c3278503-uuid-f5a6747b-cb2c-d992-2d0b-b30d141a3471.png)
 
 ### JFrog ML Control Plane
 
@@ -46,7 +46,7 @@ The Control Plane is the centralized orchestration and management layer, securel
 
 ### JFrog ML Data Plane
 
-The Data Plane is the secure execution environment where all sensitive data processing, model computation, and artifact storage occurs. This plane is deployed either in JFrog's secure cloud (for a fully managed SaaS experience) or directly within a customer's own cloud environment when deploying JFrog ML self-hosted. 
+The Data Plane is the secure execution environment where all sensitive data processing, model computation, and artifact storage occurs. This plane is deployed either in JFrog's secure cloud (for a fully managed SaaS experience) or directly within a customer's own cloud environment when deploying JFrog ML self-hosted.
 
 **Core Responsibilities:**
 
@@ -57,6 +57,6 @@ The Data Plane is the secure execution environment where all sensitive data proc
 * **Real-time Model Serving:** Manages the deployment of models as scalable, high-availability endpoints, complete with built-in monitoring and logging.
 * **Compute & Autoscaling Management:** Provisions the necessary compute resources for all jobs and manages the autoscaling of model endpoints based on real-time traffic, latency, or custom metrics.
 
-See <Anchor label="Control and Data Planes Interaction" target="_blank" href="/docs/control-and-data-planes-interaction">Control and Data Planes Interaction</Anchor>
+See [Control and Data Planes Interaction](/docs/control-and-data-planes-interaction)
 
 <br />
