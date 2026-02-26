@@ -42,6 +42,12 @@ This page describes how to set up JFrog ML, including installing and configuring
 
 ## Install FrogML CLI
 
+<Callout icon="📘" theme="info">
+  **Note**
+
+  Installing the FrogML CLI also installs the FrogML SDK.
+</Callout>
+
 After your Admin has setup the JFrog ML on your account (SAAS or self-managed), you are ready to start using the JFrog ML solution. Within JFrog ML, the FrogML SDK & CLI are your gateway to building and deploying models and features on JFrog ML, seamlessly integrating with your existing JFrog platform.
 
 <Callout icon="❗️" theme="error">
@@ -72,12 +78,6 @@ After your Admin has setup the JFrog ML on your account (SAAS or self-managed), 
    ```shell
    poetry add frogml-cli
    ```
-
-<Callout icon="📘" theme="info">
-  **Note**
-
-  Installing the FrogML CLI also installs the FrogML SDK.
-</Callout>
 
 ## Configuring FrogML SDK and CLI
 
