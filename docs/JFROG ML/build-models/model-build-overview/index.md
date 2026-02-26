@@ -138,7 +138,7 @@ frogml models builds logs -b <build-id> --follow
 
 * `<build-id>` - The build ID that you received when executing the build remotely.
 
-### Building Models with GPUs....
+### Building Models with GPUs
 
 JFrog ML [_GPU Instances_](/docs/instance-sizes-ml-credits#deploy-models-on-gpu-instances) provide high-performance computing resources that can significantly accelerate the model build process. Easily customize your build resources to achieve faster training times and better results.
 
