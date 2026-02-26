@@ -61,16 +61,15 @@ Before starting, you must install the required development tools:
 
 * **[FrogML CLI](/docs/setting-up-jfrog-ml#install-frogml-cli)** Ensure the CLI is installed and configured on your machine.
 * **FrogML Python SDK:** Install the FrogML Python SDK via pip:  
-
   ```shell
    [install the FrogML CLI](/docs/setting-up-jfrog-ml#install-frogml-cli).
   ```
 
 ### 1. Creating a New Model
 
-Start by creating a new project and model on the JFrog ML platform. Note that the command doesn't generate local output but rather creates a remote project and model.
+Start by creating a new project and model on the JFrog ML platform. Note that the command creates a remote project and model rather than local files.
 
-Your model ID will be the model name in lowercase letters and stripped from spaces, in this example, `titanic`.
+Your model ID will be the model name in lowercase letters and stripped from spaces (for example, `titanic`).
 
 ```shell
 frogml models create "Titanic" --project "example-models"
@@ -78,33 +77,29 @@ frogml models create "Titanic" --project "example-models"
 
 ### 2. Generating the Model Code
 
-Generate the **Titanic** example model, which is available in the example templates provided with the FrogML SDK.
+Generate the *Titanic* example model, from the templates provided with the FrogML SDK.
 
-This command will create the files needed to build a model on JFrog ML.
+This command creates the local files necessary for the build (on JFrog ML).
 
 ```shell
 frogml models init --example titanic .
 ```
 
-The models init command works in the following format:
-
-```shell
-frogml models init --example <example-name> <local-model-directory>
-```
+Format: ``frogml models init --example <example-name> <local-model-directory>``
 
 ### 3. Building Your Model
 
-With the local model code, and our new model on JFrog ML, we can initiate a model build. Build names are unique across a project.
+With the local code ready, and the remote model record created, initiate the build. Build names are unique across a project.
+
+```shell
+frogml models build --model-id titanic --name v1 ./titanic_survival_classification
+```
 
 <Callout icon="📘" theme="info">
   **Note**
 
   The build name parameter is optional.
 </Callout>
-
-```shell
-frogml models build --model-id titanic --name v1 ./titanic_survival_classification
-```
 
 The models build command works in the following format:
 
@@ -147,7 +142,7 @@ frogml models builds logs -b <build-id> --follow
 
 * `<build-id>` - The build ID that you received when executing the build remotely.
 
-### Building Models with GPUs
+### Building Models with GPUs....
 
 JFrog ML [_GPU Instances_](/docs/instance-sizes-ml-credits#deploy-models-on-gpu-instances) provide high-performance computing resources that can significantly accelerate the model build process. Easily customize your build resources to achieve faster training times and better results.
 
