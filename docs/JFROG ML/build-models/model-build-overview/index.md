@@ -55,9 +55,16 @@ The remote build process on JFrog ML comprises the following steps:
 
 The following steps will show you how easily to build your first model on JFrog ML.
 
-<Callout icon="❗️" theme="error">
-  **Important** - You need to [install the FrogML CLI](/docs/setting-up-jfrog-ml#install-frogml-cli).
-</Callout>
+### Prerequisites
+
+Before starting, you must install the required development tools:
+
+* **[FrogML CLI](/docs/setting-up-jfrog-ml#install-frogml-cli)** Ensure the CLI is installed and configured on your machine.
+* **FrogML Python SDK:** Install the FrogML Python SDK via pip:  
+
+  ```shell
+   [install the FrogML CLI](/docs/setting-up-jfrog-ml#install-frogml-cli).
+  ```
 
 ### 1. Creating a New Model
 
