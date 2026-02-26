@@ -26,9 +26,19 @@ A model build in JFrog ML is the process of creating a ready-for-deployment, tra
 
 During the build, JFrog ML packages your model’s source code, dependencies, and metadata into a secure, immutable artifact stored in JFrog Artifactory.
 
-The build process can be triggered from the FrogML CLI/SDK, and it runs on JFrog’s scalable infrastructure that supports any workload size, from lightweight pre-trained models to full training pipelines.
+## Triggering a Build
 
-<Image alt="Model build lifecycle diagram" border={false} src="https://files.readme.io/1266aa9e944c458dfad58d56b022c7e24d1d56346550568c46cb84efd5eab7a3-uuid-0a72d21a-026a-197b-1e97-18074b5c7136.png" />
+The build process is designed to be integrated directly into your development workflow. Depending on your goal, you can trigger a build through the following methods:
+
+**JFrog ML CLI/SDK:** Use the CLI or SDK to trigger a new build from your local environment or CI/CD pipeline. This is the primary method for creating initial model versions.
+
+**JFrog ML UI:** The Web UI is used for managing existing builds. While you cannot trigger a brand-new build from scratch here, you can perform specific actions such as:
+
+**Rebuild:** Re-run a previous build configuration.
+
+**Promote to Build:** Transition a successful experiment or run into a formal build artifact.
+
+The build runs on JFrog’s scalable infrastructure, supporting any workload size—from lightweight pre-trained models to full-scale training pipelines.
 
 ## Model Build Lifecycle
 
@@ -141,7 +151,7 @@ frogml models build  --model-id <model-id> --instance gpu.t4.xl .
 ```
 
 <Callout icon="📘" theme="info">
-  **Notes** 
+  **Notes**
 
   * _**Choosing the Correct GPU**_
 
