@@ -39,7 +39,7 @@ The example below contains a simple FLAN-T5 model loaded from HuggingFace. To te
 <Callout icon="📘" theme="info">
   **Note**
 
-  For testing, we require the frogml package (the SDK). The CLI includes the SDK so make sure to i[nstall the **frogml-cli** or just `frogml` ](/docs/setting-up-jfrog-ml#install-frogml-cli)in your local environment.
+  For testing, we require the frogml package (the SDK). The CLI includes the SDK so make sure to [install the **frogml-cli** or just `frogml` ](/docs/setting-up-jfrog-ml#install-frogml-cli)in your local environment.
 </Callout>
 
 ### Running Models Locally
