@@ -20,7 +20,7 @@ To use your own custom models, you just need to upload the models to JFrog ML. A
 
 2. Click the **+** adjacent to the project on the left for which you want to upload and allow the custom model.
 
-   <Image align="left" border={true} src="https://files.readme.io/4b73714f09a04d5d6fdf188c92bbe4a00bd680d1e47912ca9474280205ec3a96-uploadcustommodels_button.png" className="border" />
+   <Image align="left" border={true} src="https://files.readme.io/59b21bb5a7cadec577a9018b016dbc97fff99275d772faca893b031bb66b0739-uploadcustommodels.png" className="border" />
 
 3. Click **Upload custom model**.
 
