@@ -34,9 +34,8 @@ The build process is designed to be integrated directly into your development wo
 
 **JFrog ML UI:** The Web UI is used for managing existing builds. While you cannot trigger a brand-new build from scratch here, you can perform specific actions such as:
 
-**Rebuild:** Re-run a previous build configuration.
-
-**Promote to Build:** Transition a successful experiment or run into a formal build artifact.
+* **Rebuild:** Re-run a previous build configuration.
+* **Promote to Build:** Transition a successful experiment (model version) into a formal build artifact.
 
 The build runs on JFrog’s scalable infrastructure, supporting any workload size—from lightweight pre-trained models to full-scale training pipelines.
 
@@ -60,7 +59,7 @@ The following steps will show you how easily to build your first model on JFrog 
 Before starting, you must install the required development tools:
 
 * **[FrogML CLI](/docs/setting-up-jfrog-ml#install-frogml-cli)** Ensure the CLI is installed and configured on your machine.
-* **FrogML Python SDK:** Install the FrogML Python SDK via pip:  
+* **FrogML Python SDK:** Install the FrogML Python SDK via pip:
   ```shell
    [install the FrogML CLI](/docs/setting-up-jfrog-ml#install-frogml-cli).
   ```
@@ -77,7 +76,7 @@ frogml models create "Titanic" --project "example-models"
 
 ### 2. Generating the Model Code
 
-Generate the *Titanic* example model, from the templates provided with the FrogML SDK.
+Generate the _Titanic_ example model, from the templates provided with the FrogML SDK.
 
 This command creates the local files necessary for the build (on JFrog ML).
 
@@ -85,7 +84,7 @@ This command creates the local files necessary for the build (on JFrog ML).
 frogml models init --example titanic .
 ```
 
-Format: ``frogml models init --example <example-name> <local-model-directory>``
+Format: `frogml models init --example <example-name> <local-model-directory>`
 
 ### 3. Building Your Model
 
