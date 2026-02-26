@@ -59,7 +59,7 @@ The following steps will show you how easily to build your first model on JFrog 
 Before starting, you must install the required development tools:
 
 * **[FrogML CLI](/docs/setting-up-jfrog-ml#install-frogml-cli)** Ensure the CLI is installed and configured on your machine.
-* **FrogML Python SDK:** Install the FrogML Python SDK via pip:
+* **FrogML Python SDK:** [Install the FrogML Python SDK via pip](https://pypi.org/project/frogml/)
   ```shell
    [install the FrogML CLI](/docs/setting-up-jfrog-ml#install-frogml-cli).
   ```
