@@ -195,13 +195,13 @@ Use the `model-id` of the model to which you want to attach tags.
 
 ### Using Environment Variable in Model Builds
 
-You may use and pass environment variables to your models build in the CLI using the following command:
+You can inject environment variables into your model build via the CLI using the -E flag:
 
 ```shell
 frogml models build --model-id <model-id> -E ENV_VAR=VALUE <local-model-directory>
 ```
 
-or for example with mock values:
+For example, using specific values:
 
 ```shell
 frogml models build --model-id "titanic" -E VERSION_NUMBER=1.2 -E MODEL_NAME=catboost .
@@ -209,13 +209,15 @@ frogml models build --model-id "titanic" -E VERSION_NUMBER=1.2 -E MODEL_NAME=cat
 
 #### Passing Secrets as Environment Variables
 
-JFrog ML allows passing environment variables to model builds which receive values from JFrog ML secrets during the model build process.
+JFrog ML enables you to inject sensitive data into your build environment as environment variables using JFrog ML secrets.
 
-While secret values will be accessible as environment variables during the build, they won't be displayed in the UI alongside other passed environment variables.
+This approach ensures that secrets are available during the build process but remain hidden—they are never exposed in the build details or displayed within the UI alongside standard environment variables.
 
-To implement this, you need to supply the environment variable value in the specified format: `<key>=<secret.{secret-name}>` .
+To inject a secret, use the following format:
 
-For instance, if you have an API token stored under a JFrog ML secret named `cloud_token` and wish to pass it in the build under the environment variable `APP_TOKEN`, you would utilize the following command as an example:
+`<key>=<secret.{secret-name}>` .
+
+For example, to map a secret named `cloud_token` to an environment variable called `APP_TOKEN`, you would use the command:
 
 ```shell
 frogml models build --model-id <model>  -E APP_TOKEN=secret.cloud_token <dest>
@@ -224,5 +226,5 @@ frogml models build --model-id <model>  -E APP_TOKEN=secret.cloud_token <dest>
 <Callout icon="📘" theme="info">
   **Note**
 
-  Note: Please note that the secrets must exist in the JFrog ML platform before running the above command.
+  Ensure the secrets are already created in the JFrog ML platform before initiating the build command.
 </Callout>
