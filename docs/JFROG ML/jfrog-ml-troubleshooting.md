@@ -113,9 +113,7 @@ This section reviews the following topics:
   <tbody>
     <tr>
       <td>
-        ##### Problem:
-
-        Need to verify CLI and SDK installation.
+        ##### Issue: Need to verify CLI and SDK installation.
       </td>
     </tr>
 
