@@ -155,7 +155,7 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
 
 ² When allowing a model for which a connection is already set up between the project and the model provider, you do not need to define a new connection.
 
-/See also:
+See also:
 
 [Prevent the Use of Unsecured ML Models](/docs/prevent-the-use-of-unsecured-ml-models)
 
