@@ -157,8 +157,8 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
 
 See also:
 
-[Prevent the Use of Unsecured ML Models](/docs/prevent-the-use-of-unsecured-ml-models)
+[Prevent the Use of Unsecured ML Models](/security/docs/prevent-the-use-of-unsecured-ml-models)
 
-[ML Model Policy](/docs/ml-model-policy)
+[ML Model Policy](/security/docs/ml-model-policy)
 
 <br />
