@@ -24,15 +24,15 @@ The AI Catalog enables you to fully manage all AI assets in your organization.
 
 Explore the various models available for use in your organization in the **Discovery** page.
 
-<Image align="center" border={false} src="https://files.readme.io/2d5650b9d63c27f6ec2ad92df9c856d9974e79808b722441ea5e7ed538955701-discovery2.png" />
+<Image align="center" src="https://files.readme.io/2d5650b9d63c27f6ec2ad92df9c856d9974e79808b722441ea5e7ed538955701-discovery2.png" />
 
 You can see which models have already been allowed for use in your projects inn the **Registry** page.
 
-<Image align="center" border={false} src="https://files.readme.io/8278f9a798b5ca0261506d75fbf8b8add65feac973bc61777021b90d2cdc6dd5-registry_cr.png" />
+<Image align="center" src="https://files.readme.io/8278f9a798b5ca0261506d75fbf8b8add65feac973bc61777021b90d2cdc6dd5-registry_cr.png" />
 
 Detect **all** AI assets that are used in your system, but are unmanaged by AI catalog, and possibly even unvetted by your organization, in the **Detection** page. For more information about detecting unmanaged AI assets, see [Detect Shadow AI](/docs/detect-shadow-ai)​​​.
 
-<Image align="center" border={false} src="https://files.readme.io/bd027f3940782ce21b8a60741e3ebb11dd5b8859e1a82e2c9976634dac76a2b9-detection2_cr.png" />
+<Image align="center" src="https://files.readme.io/bd027f3940782ce21b8a60741e3ebb11dd5b8859e1a82e2c9976634dac76a2b9-detection2_cr.png" />
 
 ## Managing Allowed Models
 
@@ -68,15 +68,15 @@ In order to help you find the best model for your project in the AI Catalog, in 
 
 * **Free text**: Enter the search term in the search bar. Click enter and either select the required asset or click "Show all results for "xxx". The filter panel on the left opens for further filtering.
 
-  <Image align="center" border={false} src="https://files.readme.io/2fbd7bb62ef4e7d50dd98d7d957d5788138004d421ea8377bcd78272a215aea5-discovery_mcp_blurred.png" />
+  <Image align="center" src="https://files.readme.io/2fbd7bb62ef4e7d50dd98d7d957d5788138004d421ea8377bcd78272a215aea5-discovery_mcp_blurred.png" />
 * **Status**: In the filter pane, Select to display allowed and or live models.
 
-  <Image align="center" border={false} src="https://files.readme.io/125e7691977646aa6af5276fe81f08ca38f551584fe17f934ad70631bb1c9614-discoverysearchandfilter.png" />
+  <Image align="center" src="https://files.readme.io/125e7691977646aa6af5276fe81f08ca38f551584fe17f934ad70631bb1c9614-discoverysearchandfilter.png" />
 * **Model type:** Select a specific model type to display. Options: All/Custom/External/Package.
 
 The filters selected are shown across the top of the models, and the search text remains in the free text box in the Filters panel:
 
-<Image align="center" alt="filter2.png" border={false} src="https://files.readme.io/418a41452fa88f90ff03db8e34865edfe60ea0a69130e9b86ae18d9a223ab5c8-filters-mini-package.png" />
+<Image align="center" alt="filter2.png" src="https://files.readme.io/418a41452fa88f90ff03db8e34865edfe60ea0a69130e9b86ae18d9a223ab5c8-filters-mini-package.png" />
 
 Click **Clear all** to remove all filters.
 
@@ -94,7 +94,7 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
 
    1. From the JFrog platform menu, select **AI/ML** > **Discovery**. The Models _Discovery_ page opens. (If you are selecting your first model, the _Registry_ page is empty.)
 
-      <Image align="center" border={false} src="https://files.readme.io/6c0ccb2d97d8cab0106057bdc4fedf73e922ce232a42b33ca90c024ef430ad1a-Discovery.png" />
+      <Image align="center" src="https://files.readme.io/6c0ccb2d97d8cab0106057bdc4fedf73e922ce232a42b33ca90c024ef430ad1a-Discovery.png" />
    2. Browse through the catalog to find the model you want. You can [search and filter](/docs/discover-and-allow-models#searching-and-filtering-ai-models) to locate a specific model or model type.
    3. Click the model you wish to allow. The model details are displayed. To enable your developers to use this model, assign it to a project, connect it (for external models), and allow it.
    4. Browse through the catalog to find the model you want. You can [search and filter](/docs/discover-and-allow-models#searching-and-filtering-ai-models) to locate a specific model or model type.
@@ -154,3 +154,7 @@ The AI Catalog provides access to thousands of models. This guide outlines the s
 ¹ Connections are per provider per project. For more info, see <Anchor label="Connect AI Providers" title="Connect AI Providers" href="/docs/connect-ai-providers">Connect AI Providers</Anchor>.
 
 ² When allowing a model for which a connection is already set up between the project and the model provider, you do not need to define a new connection.
+
+See also:
+
+[Prevent the Use of Unsecured ML Models](/docs/prevent-the-use-of-unsecured-ml-models)
