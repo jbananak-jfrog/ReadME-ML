@@ -159,4 +159,6 @@ See also:
 
 [Prevent the Use of Unsecured ML Models](/docs/prevent-the-use-of-unsecured-ml-models)
 
+[ML Model Policy](/docs/ml-model-policy)
+
 <br />
