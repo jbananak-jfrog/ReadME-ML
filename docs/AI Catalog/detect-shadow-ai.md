@@ -26,7 +26,7 @@ Shadow AI detection gives you the ability to manage and prevent the entry of unv
 
 ## How Does the Shadow AI Detection Process Work?
 
-The ​**Detection**​​ page provides a single view of all AI models discovered in your JFrog Platform, whether managed or unmanaged. To detect models, your JFrog system uses Xray to scan artifacts.
+The ​**Shadow AI**​​ page provides a single view of all AI models discovered in your JFrog Platform, whether managed or unmanaged. To detect models, your JFrog system uses Xray to scan artifacts.
 
 ​
 According to your Xray scan settings, repositories are scanned to detect models.
